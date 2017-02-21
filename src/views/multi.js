@@ -75,6 +75,15 @@ export class Multi extends Base {
             searchText: '',
         };
     }
+    componentWillReceiveProps(nextProps) {
+        const search = Object.assign({}, this.state.search);
+        if (_.keys(search).length == 0) {
+            _.each(this.props.search || [], s => {
+                if (s.default) search[s.key] = [s.default];
+            });
+            this.setState({search});
+        }
+    }
     addNewEntry () {
         console.log('todo', 'addNewEntry');
     }

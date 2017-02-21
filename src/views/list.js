@@ -62,7 +62,6 @@ export class List extends Multi {
     }
     onRowSelection(selectedRows) {
         const selectedIds = selectedRows == 'all' ? this.props.ids : _.map(selectedRows, i => this.props.ids[i]);
-        console.log('plop', selectedRows, selectedIds)
         this.setState({selectedIds})
     }
     renderLine (lineId) {
