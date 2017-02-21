@@ -1,0 +1,23 @@
+syntax: glob
+
+etc/
+build/
+var/
+doc/
+node_modules/
+develop-eggs
+docs/_build/
+.installed.cfg
+*.egg-info
+*.swp
+*.mo
+*.orig
+*.dump
+*.pyc
+*.pyo
+*.log
+*.coverage
+*.noseids
+*\#
+*.\#*
+*~
