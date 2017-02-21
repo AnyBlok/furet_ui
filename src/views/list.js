@@ -48,11 +48,11 @@ export class List extends Multi {
             '/list/get', 
             {
                 model: this.props.model,
-                filter: [],
+                filter: this.state.search,
             },
             {
                 onSuccess: (results) => {
-                    this.props.dispatchAll(result);
+                    this.props.dispatchAll(results);
                 },
             },
         );

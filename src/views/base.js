@@ -10,6 +10,10 @@ export default class extends React.Component {
         console.log('getField', viewType, fieldType, value)
         return value;
     }
+    call_server () {}
+    componentDidMount () {
+        this.call_server();
+    }
     render () {
         return (
             <div>

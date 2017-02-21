@@ -382,8 +382,6 @@ def getLoginData():
     ]
     data.append(getSpace('1'))
     data.append(getAction('1'))
-    data.append(getView('1'))
-    data.extend(getData('1'))
     return dumps(data)
 
 
@@ -435,8 +433,11 @@ def application(environ, start_response):
             ('Content-Type', 'text/json'),
             ('Content-Length', str(len(response_body)))
         ]
-    elif environ['PATH_INFO'].split('/')[2] == 'view':
-        response_body = dumps([getView(environ['PATH_INFO'].split('/')[3])])
+    elif environ['PATH_INFO'] == '/furetui/list/get':
+        data = []
+        data.append(getView('1'))
+        data.extend(getData('1'))
+        response_body = dumps(data)
         status = '200 OK'
         response_headers = [
             ('Content-Type', 'text/json'),
