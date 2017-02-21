@@ -85,7 +85,14 @@ export class Multi extends Base {
         }
     }
     addNewEntry () {
-        console.log('todo', 'addNewEntry');
+        if (this.props.onSelect) {
+            this.props.dispatch({
+                type: 'UPDATE_ACTION_SELECT_VIEW',
+                actionId: this.props.actionId,
+                viewId: this.props.onSelect,
+                params: {id: null},
+            })
+        }
     }
     removeEntry () {
         console.log('todo', 'removeEntry');
