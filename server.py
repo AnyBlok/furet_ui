@@ -174,7 +174,7 @@ def getViewList(state):
         'creatable': True,
         'deletable': True,
         'selectable': True,
-        'onSelect': '2',
+        'onSelect': '3',
         'headers': [
             {
                 'name': 'name',

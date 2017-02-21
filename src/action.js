@@ -47,7 +47,13 @@ class ActionCpt extends React.Component {
     renderView () {
         const selector = this.renderSelector();
         const view = _.find(this.props.views || [], view => (view.viewId == this.props.viewId));
-        if (view) return getView(view.type, view.viewId, {selector, model: this.props.model});
+        if (view) return getView(view.type, view.viewId, 
+                                 {
+                                    selector, 
+                                    model: this.props.model, 
+                                    params: this.props.params,
+                                    actionId: this.props.actionId,
+                                });
         return null;
     }
     render () {

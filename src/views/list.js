@@ -58,7 +58,14 @@ export class List extends Multi {
         );
     }
     onLineClick(lineId) {
-        console.log('TODO', 'onLineClick', lineId);
+        if (this.props.onSelect) {
+            this.props.dispatch({
+                type: 'UPDATE_ACTION_SELECT_VIEW',
+                actionId: this.props.actionId,
+                viewId: this.props.onSelect,
+                params: {id: lineId},
+            })
+        }
     }
     onRowSelection(selectedRows) {
         const selectedIds = selectedRows == 'all' ? this.props.ids : _.map(selectedRows, i => this.props.ids[i]);
