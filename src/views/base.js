@@ -1,6 +1,7 @@
 import React from 'react';
 import {json_post} from '../server-call';
 import {Parser, ProcessNodeDefinitions} from 'html-to-react';
+import plugin from '../plugin';
 
 export const processNodeDefinitions = new ProcessNodeDefinitions(React);
 
@@ -15,8 +16,12 @@ export default class extends React.Component {
         return true
     }
     getField(viewType, fieldType, attribs, value) {
-        console.log('getField', viewType, fieldType, attribs, value)
-        return <div>{value}</div>;
+        let field = plugin.get(['field', viewType, fieldType, attribs.name]);
+        if (!field) {
+            field = plugin.get(['field', 'Unknown']);
+            console.log('getField', viewType, fieldType, attribs, value)
+        }
+        return React.createElement(field, Object.assign({}, attribs, {value}));
     }
     renderTemplate (template, processingInstructions) {
         const htmlToReactParser = new Parser();

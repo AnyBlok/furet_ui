@@ -3,6 +3,7 @@ import './clients';
 import './list';
 import './thumbnail';
 import './form';
+import '../fields';
 import {dispatchAll} from '../reducers';
 import {connect} from 'react-redux'
 import plugin from '../plugin';
