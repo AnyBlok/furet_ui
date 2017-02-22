@@ -23,16 +23,6 @@ export class Thumbnail extends Multi {
             },
         );
     }
-    onThumbNailClick(thumbnailId) {
-        if (this.props.onSelect) {
-            this.props.dispatch({
-                type: 'UPDATE_ACTION_SELECT_VIEW',
-                actionId: this.props.actionId,
-                viewId: this.props.onSelect,
-                params: {id: thumbnailId},
-            });
-        }
-    }
     renderTemplate (template, thumbnailId) {
         const self = this;
         const processingInstructions = [
@@ -64,7 +54,7 @@ export class Thumbnail extends Multi {
     renderThumbNail (thumbnailId) {
         return (
             <Card 
-                onClick={this.onThumbNailClick.bind(this)}
+                onClick={() => this.onEntrySelect(thumbnailId)}
             >
                 {this.renderTemplate(this.props.template, thumbnailId)}
             </Card>

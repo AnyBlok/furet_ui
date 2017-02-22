@@ -2,6 +2,7 @@ import React from 'react';
 import './clients';
 import './list';
 import './thumbnail';
+import './form';
 import {dispatchAll} from '../reducers';
 import {connect} from 'react-redux'
 import plugin from '../plugin';
@@ -83,7 +84,11 @@ export const getView = (viewType, viewId, params) => {
             params
         );
     }
-    return React.createElement(connect(mapStateToProps, mapDispatchToProps)(view), {key: 'client-' + viewType + '-' + viewId});
+    return (
+        <div style={{margin: 20}}>
+            {React.createElement(connect(mapStateToProps, mapDispatchToProps)(view), {key: 'client-' + viewType + '-' + viewId})}
+        </div>
+    );
 };
 
 export default {

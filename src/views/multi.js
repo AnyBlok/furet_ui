@@ -4,66 +4,11 @@ import ActionNoteAdd from 'material-ui/svg-icons/action/note-add';
 import ActionDeleteForever from 'material-ui/svg-icons/action/delete-forever';
 import IconButton from 'material-ui/IconButton';
 import {blue500, red500} from 'material-ui/styles/colors';
-import Popover from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 import AutoComplete from 'material-ui/AutoComplete';
 import Chip from 'material-ui/Chip';
+import DropdownMenu from './dropdown';
 
-class DropdownMenu extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false,
-        };
-    }
-    handleTouchTap (event) {
-        event.preventDefault();
-        this.setState({
-            open: true,
-            anchorEl: event.currentTarget,
-        });
-    }
-    handleRequestClose () {
-        this.setState({open: false});
-    }
-    callAction (buttonId) {
-        console.log('callAction', this.props.label, buttonId, this.props.selectedIds) 
-        this.handleRequestClose();
-    }
-    render() {
-        return (
-            <div>
-                <RaisedButton
-                    fullWidth={true}
-                    onClick={this.handleTouchTap.bind(this)}
-                    label={this.props.label}
-                    style={{
-                        marginTop: 10,
-                    }}
-                />
-                <Popover
-                    open={this.state.open}
-                    anchorEl={this.state.anchorEl}
-                    anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-                    targetOrigin={{horizontal: 'left', vertical: 'top'}}
-                    onRequestClose={this.handleRequestClose.bind(this)}
-                >
-                    <Menu>
-                        {_.map(this.props.menus, menu => (
-                            <MenuItem 
-                                key={menu.buttonId}
-                                primaryText={menu.label} 
-                                onClick={() => {this.callAction(menu.buttonId)}}
-                            />
-                        ))}
-                    </Menu>
-                </Popover>
-            </div>
-        );
-    }
-}
 
 export class Multi extends Base {
     constructor (props) {
@@ -90,7 +35,7 @@ export class Multi extends Base {
                 type: 'UPDATE_ACTION_SELECT_VIEW',
                 actionId: this.props.actionId,
                 viewId: this.props.onSelect,
-                params: {id: null},
+                params: {id: null, readonly: false, returnView: this.props.viewId},
             })
         }
     }
@@ -168,6 +113,16 @@ export class Multi extends Base {
     updateSearchQuery (search) {
         console.log('updateSearchQuery', this.state.search);
         this.setState({search});
+    }
+    onEntrySelect(id) {
+        if (this.props.onSelect) {
+            this.props.dispatch({
+                type: 'UPDATE_ACTION_SELECT_VIEW',
+                actionId: this.props.actionId,
+                viewId: this.props.onSelect,
+                params: {id, returnView: this.props.viewId},
+            })
+        }
     }
     onNewRequest (val) {
         const search = Object.assign({}, this.state.search),
