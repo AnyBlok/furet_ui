@@ -1,6 +1,7 @@
 import React from 'react';
 import './clients';
 import './list';
+import './thumbnail';
 import {dispatchAll} from '../reducers';
 import {connect} from 'react-redux'
 import plugin from '../plugin';

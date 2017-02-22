@@ -219,6 +219,44 @@ def getViewList(state):
     })
 
 
+def getViewThumbnail(state):
+    state.update({
+        'creatable': True,
+        'deletable': True,
+        'onSelect': '3',
+        'search': [
+            {
+                'key': 'name',
+                'label': 'Label',
+                "default": 'test',
+            },
+            {
+                'key': 'creation_date',
+                'label': 'Creation date',
+            },
+        ],
+        'template': '''
+            <div className="row">
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="name" widget="String" ></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="state" widget="Seletions" selection="[{'new': 'New', 'started': 'Started', 'done': 'Done'}]"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="creation_date" widget="DateTime" ></field>
+                </div>
+            </div>
+        ''',
+        'buttons': [
+            {
+                'label': 'Make a call',
+                'buttonId': '1',
+            },
+        ],
+    })
+
+
 def getView(viewId):
     res = {
         'type': 'UPDATE_VIEW',
@@ -227,6 +265,8 @@ def getView(viewId):
     }
     if viewId == '1':
         getViewList(res)
+    if viewId == '2':
+        getViewThumbnail(res)
 
     return res
 
@@ -437,6 +477,16 @@ def application(environ, start_response):
         data = []
         data.append(getView('1'))
         data.extend(getData('1'))
+        response_body = dumps(data)
+        status = '200 OK'
+        response_headers = [
+            ('Content-Type', 'text/json'),
+            ('Content-Length', str(len(response_body)))
+        ]
+    elif environ['PATH_INFO'] == '/furetui/thumbnail/get':
+        data = []
+        data.append(getView('2'))
+        data.extend(getData('2'))
         response_body = dumps(data)
         status = '200 OK'
         response_headers = [

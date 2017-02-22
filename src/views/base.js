@@ -1,14 +1,29 @@
 import React from 'react';
 import {json_post} from '../server-call';
+import {Parser, ProcessNodeDefinitions} from 'html-to-react';
+
+export const processNodeDefinitions = new ProcessNodeDefinitions(React);
+
+
 
 export default class extends React.Component {
     constructor(props) {
         super(props);
-        this.json_post = json_post
+        this.json_post = json_post;
     }
-    getField(viewType, fieldType, value) {
-        console.log('getField', viewType, fieldType, value)
-        return value;
+    isValidNode () {
+        return true
+    }
+    getField(viewType, fieldType, attribs, value) {
+        console.log('getField', viewType, fieldType, attribs, value)
+        return <div>{value}</div>;
+    }
+    renderTemplate (template, processingInstructions) {
+        const htmlToReactParser = new Parser();
+        const _template = template.replace(/(\r\n|\n|\r)/gmi,"").trim();
+        return htmlToReactParser.parseWithInstructions(
+            _template, this.isValidNode.bind(this), processingInstructions
+        );
     }
     call_server () {}
     componentDidMount () {
