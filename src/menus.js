@@ -9,6 +9,7 @@ import Picture from './picture';
 import IconSearch from 'material-ui/svg-icons/action/search'
 import TextField from 'material-ui/TextField';
 import {json_post} from './server-call';
+import translate from 'counterpart';
 
 class BaseMenu extends React.Component {
     constructor(props) {
@@ -56,7 +57,7 @@ class BaseMenu extends React.Component {
         if (!this.props.value.label) return null;
         const actions = [
             <FlatButton
-                label="Close"
+                label={translate('furetUI.menus.close', {fallback: 'Close'})}
                 primary={true}
                 onTouchTap={this.handleClose.bind(this)}
             />,
@@ -92,7 +93,7 @@ class BaseMenu extends React.Component {
                             <li style={{width: '88%'}}>
                                 <TextField 
                                     fullWidth={true}
-                                    hintText="Search ..."
+                                    hintText={translate('furetUI.menus.search', {fallback: 'Search ...'})}
                                     value={this.state.searchText}
                                     onChange={(e) => {this.setState({searchText: e.target.value})}}
                                 />

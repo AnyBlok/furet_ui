@@ -9,15 +9,16 @@ import {connect} from 'react-redux'
 import plugin from '../plugin';
 import IconButton from 'material-ui/IconButton';
 import AlertWarning from 'material-ui/svg-icons/alert/warning';
+import translate from 'counterpart';
 
 class Unknown extends React.Component {
     render () {
         return (
             <div className="container">
                 {this.props.selector || null}
-                <h1>The wanted client view "{this.props.viewName || this.props.viewType}" is unknown</h1>
+                <h1>{translate('furetUI.views.unknown.title', {name: this.props.viewName || this.props.viewType, fallback: 'The wanted view "%(name)s" is unknown'})}</h1>
                 <p>
-                    Report this message to the administrator
+                    {translate('furetUI.views.unknown.message', {fallback: 'Report this message to the administrator'})}
                 </p>
             </div>
         );

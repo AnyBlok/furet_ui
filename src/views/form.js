@@ -11,6 +11,7 @@ import ContentSave from 'material-ui/svg-icons/content/save';
 import IconButton from 'material-ui/IconButton';
 import {blue500, red500} from 'material-ui/styles/colors';
 import DropdownMenu from './dropdown';
+import translate from 'counterpart';
 
 plugin.set(['views', 'icon'], {Form: (props) => {
     return <EditorInsertDriveFile />;
@@ -57,13 +58,17 @@ export class Form extends Base {
         this.setState({readonly: true});
     }
     componentWillReceiveProps(nextProps) {
-        console.log('=>', nextProps)
         if (nextProps.params) {
             const state = {}
             if (nextProps.params.readonly != undefined) state.readonly = nextProps.params.readonly;
             if (nextProps.params.id != undefined) state.id = nextProps.params.id;
             this.setState(state);
         }
+    }
+    onChange(field, value) {
+        const change = Object.assign({}, this.state.change);
+        change[field] = value;
+        this.setState({change})
     }
     renderTemplate (template) {
         if (!template) return null;
@@ -79,8 +84,8 @@ export class Form extends Base {
                     return self.getField(
                         'Form', 
                         node.attribs.widget, 
-                        node.attribs, 
-                        change[node.attribs.name] || data[node.attribs.name]
+                        Object.assign(node.attribs, {readonly: self.state.readonly, onChange: self.onChange.bind(self)}),
+                        change[node.attribs.name] != undefined ? change[node.attribs.name] : data[node.attribs.name]
                     );
                 }
             }, 
@@ -103,6 +108,7 @@ export class Form extends Base {
                     >
                         <IconButton
                             onClick={this.saveEntry.bind(this)}
+                            tooltip={translate('furetUI.views.common.save', {fallback: 'Save'})}
                             iconStyle={{
                                 width: 36,
                                 height: 36,
@@ -122,6 +128,7 @@ export class Form extends Base {
                     >
                         <IconButton
                             onClick={this.addNewEntry.bind(this)}
+                            tooltip={translate('furetUI.views.common.create', {fallback: 'Create'})}
                             iconStyle={{
                                 width: 36,
                                 height: 36,
@@ -141,6 +148,7 @@ export class Form extends Base {
                     >
                         <IconButton
                             onClick={() => this.setState({readonly: false})}
+                            tooltip={translate('furetUI.views.common.edit', {fallback: 'Edit'})}
                             iconStyle={{
                                 width: 36,
                                 height: 36,
@@ -160,6 +168,7 @@ export class Form extends Base {
                     >
                         <IconButton
                             onClick={() => this.setState({readonly: true, change: {}})}
+                            tooltip={translate('furetUI.views.common.cancel', {fallback: 'Cancel'})}
                             iconStyle={{
                                 width: 36,
                                 height: 36,
@@ -179,6 +188,7 @@ export class Form extends Base {
                     >
                         <IconButton
                             onClick={this.removeEntry.bind(this)}
+                            tooltip={translate('furetUI.views.common.delete', {fallback: 'Delete'})}
                             iconStyle={{
                                 width: 36,
                                 height: 36,
@@ -198,6 +208,7 @@ export class Form extends Base {
                     >
                         <IconButton
                             onClick={this.returnPreviousView.bind(this)}
+                            tooltip={translate('furetUI.views.common.close', {fallback: 'Close'})}
                             iconStyle={{
                                 width: 36,
                                 height: 36,
@@ -214,7 +225,7 @@ export class Form extends Base {
                 { (this.props.buttons || []).length != 0 && 
                     <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <DropdownMenu 
-                            label="Actions" 
+                            label={translate('furetUI.views.common.actions', {fallback: 'Actions'})}
                             menus={this.props.buttons} 
                         />
                     </div>

@@ -39,6 +39,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-loader": "^2.0.0-beta.20",
+    "counterpart": "^0.17.7",
     "font-awesome": "^4.7.0",
     "html-to-react": "^1.2.3",
     "jquery": "^3.1.1",

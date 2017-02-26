@@ -16,7 +16,7 @@ export default class extends React.Component {
         return true
     }
     getField(viewType, fieldType, attribs, value) {
-        let field = plugin.get(['field', viewType, fieldType, attribs.name]);
+        let field = plugin.get(['field', viewType, fieldType]);
         if (!field) {
             field = plugin.get(['field', 'Unknown']);
             console.log('getField', viewType, fieldType, attribs, value)

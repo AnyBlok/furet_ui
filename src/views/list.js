@@ -91,7 +91,7 @@ export class List extends Multi {
                             {this.getField(
                                 'List', 
                                 header.type, 
-                                {},
+                                header,
                                 change[header.name] || data[header.name]
                             )}
                         </div>

@@ -8,11 +8,24 @@ import {action_manager} from './action_manager';
 import actions from './actions';
 import views from './views';
 import data from './data';
+import translate from 'counterpart';
 
 
 export const dispatchAll = (dispatch, datas) => {
     _.each(datas, data => {
-        if (data.type) dispatch(data);
+        if (data.type) {
+            switch (data.type) {
+                case 'UPDATE_LOCALES':
+                    _.each(data.locales, d => {
+                        translate.registerTranslations(d.locale, {furetUI: d.counterpart});
+                    });
+                    break
+                case 'SET_LOCALE':
+                    translate.setLocale(data.locale)
+                default:
+                    dispatch(data);
+            }
+        }
     });
 }
 

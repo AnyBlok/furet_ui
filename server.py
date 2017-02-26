@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from wsgiref.simple_server import make_server
 from pprint import pprint
 from simplejson import dumps
@@ -82,6 +83,68 @@ def getInitRequiredData():
         },
         {
             'type': 'CLEAR_LEFT_MENU',
+        },
+    ]
+    return dumps(data)
+
+
+def getInitOptionnalData():
+    data = [
+        {
+            'type': 'UPDATE_LOCALES',
+            'locales': [
+                {
+                    'locale': 'fr-FR',
+                    'counterpart': {
+                        'formats': {
+                            'date': {
+                                'default': '%d-%m-%Y',
+                                'long': '%A %d %B %Y',
+                                'short': '%m-%Y',
+                            },
+                            'time': {
+                                'default': '%H:%M',
+                                'long': '%H:%M:%S %z',
+                                'short': '%H:%M',
+                            },
+                            'datetime': {
+                                'default': '%d-%m-%Y %H:%M',
+                                'long': '%A, %d %B %Y %H:%M:%S %z',
+                                'short': '%m-%Y %H:%M',
+                            },
+                        },
+                        'menus': {
+                            'close': 'Fermer',
+                            'search': 'Filtrer par ...',
+                        },
+                        'views': {
+                            'unknown': {
+                                'title': 'Le vue "%(name)s" est inconnue',
+                                'message': "Veuillez contacter l'administrateur",
+                            },
+                            'common': {
+                                'create': 'Créer',
+                                'save': 'Sauvegarder',
+                                'edit': 'Modifier',
+                                'cancel': 'Annuler',
+                                'delete': 'Supprimer',
+                                'close': 'Fermer',
+                                'actions': 'Actions',
+                                'more': 'Autre',
+                            },
+                            'clients': {
+                                'login': {
+                                    'button': 'Connexion',
+                                },
+                            },
+                        },
+                    },
+                },
+            ],
+        },
+        {
+            'type': 'SET_LOCALE',
+            'locale': 'fr-FR',
         },
     ]
     return dumps(data)
@@ -185,11 +248,11 @@ def getViewList(state):
                 'name': 'state',
                 'type': 'Selection',
                 'label': 'State',
-                'selections': [{'new': 'New', 'started': 'Started', 'done': 'Done'}],
+                'selections': {'new': 'New', 'started': 'Started', 'done': 'Done'},
             },
             {
                 'name': 'creation_date',
-                'type': 'DateTime',
+                'type': 'Date',
                 'label': 'Creation date',
             },
         ],
@@ -238,13 +301,13 @@ def getViewThumbnail(state):
         'template': '''
             <div className="row">
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="name" widget="String" ></field>
+                    <field name="name" widget="String" label="Label" fullwidth="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="state" widget="Seletions" selection="[{'new': 'New', 'started': 'Started', 'done': 'Done'}]"></field>
+                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" fullwidth="true"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="creation_date" widget="DateTime" ></field>
+                    <field name="creation_date" widget="Date" label="Creation date"></field>
                 </div>
             </div>
         ''',
@@ -266,13 +329,13 @@ def getViewForm(state):
         'template': '''
             <div className="row">
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="name" widget="String" ></field>
+                    <field name="name" widget="String" label="Label" required="true"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="state" widget="Seletions" selection="[{'new': 'New', 'started': 'Started', 'done': 'Done'}]"></field>
+                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="creation_date" widget="DateTime" ></field>
+                    <field name="creation_date" widget="Date" label="Creation date"></field>
                 </div>
             </div>
         ''',
@@ -470,6 +533,13 @@ def application(environ, start_response):
         ]
     elif environ['PATH_INFO'] == '/furetui/init/required/data':
         response_body = getInitRequiredData()
+        status = '200 OK'
+        response_headers = [
+            ('Content-Type', 'text/json'),
+            ('Content-Length', str(len(response_body)))
+        ]
+    elif environ['PATH_INFO'] == '/furetui/init/optionnal/data':
+        response_body = getInitOptionnalData()
         status = '200 OK'
         response_headers = [
             ('Content-Type', 'text/json'),

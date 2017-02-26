@@ -8,6 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import AutoComplete from 'material-ui/AutoComplete';
 import Chip from 'material-ui/Chip';
 import DropdownMenu from './dropdown';
+import translate from 'counterpart';
 
 
 export class Multi extends Base {
@@ -51,6 +52,7 @@ export class Multi extends Base {
                     >
                         <IconButton
                             onClick={this.addNewEntry.bind(this)}
+                            tooltip={translate('furetUI.views.common.create', {fallback: 'Create'})}
                             iconStyle={{
                                 width: 36,
                                 height: 36,
@@ -70,6 +72,7 @@ export class Multi extends Base {
                     >
                         <IconButton
                             onClick={this.removeEntry.bind(this)}
+                            tooltip={translate('furetUI.views.common.delete', {fallback: 'Delete'})}
                             iconStyle={{
                                 width: 36,
                                 height: 36,
@@ -88,7 +91,7 @@ export class Multi extends Base {
                          style={{paddingLeft: 10, paddingRight: 0}}
                     >
                         <DropdownMenu 
-                            label="Actions" 
+                            label={translate('furetUI.views.common.actions', {fallback: 'Actions'})}
                             menus={this.props.buttons} 
                         />
                     </div>
@@ -98,7 +101,7 @@ export class Multi extends Base {
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
                         <DropdownMenu 
-                            label="More" 
+                            label={translate('furetUI.views.common.more', {fallback: 'More'})}
                             menus={this.props.onSelect_buttons} 
                             selectedIds={this.state.selectedIds}
                         />

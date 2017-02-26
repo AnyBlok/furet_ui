@@ -1,6 +1,7 @@
 import Client from '../client';
 import plugin from '../../plugin';
 import RaisedButton from 'material-ui/RaisedButton';
+import translate from 'counterpart';
 
 
 class Login extends Client {
@@ -21,7 +22,7 @@ class Login extends Client {
                 <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
                     <RaisedButton 
                         style={{marginTop: 100}}
-                        label="Login" 
+                        label={translate('furetUI.views.clients.login.button', {fallback: 'Login'})}
                         fullWidth={true} 
                         primary={true}
                         onClick={this.onCallServer.bind(this)}
