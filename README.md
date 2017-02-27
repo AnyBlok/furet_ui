@@ -11,3 +11,4 @@ TRY:
 https://github.com/hustcc/gantt-for-react
 https://github.com/yang-wei/rd3
 https://www.npmjs.com/package/react-fullcalendar
+https://www.npmjs.com/package/react-virtual-kanban

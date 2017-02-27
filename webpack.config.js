@@ -19,23 +19,23 @@ if (PROD) {
 }
 
 module.exports = {
-    entry: "./src/client",
+    entry: ['bootstrap-loader', "./src/client"],
     output: {
         path: "./build",
         filename: PROD ? 'bundle.min.js' : 'bundle.js'
     },
     resolve: {
-        extensions: ['', '.jsx', '.scss', '.js', '.json']
+        extensions: ['*', '.jsx', '.scss', '.js', '.json']
     },
     module: {
         loaders: [
             {
                 test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'url'
+                loader: require.resolve('url-loader')
             },
             {
                 test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-                loader: 'file'
+                loader: require.resolve('file-loader')
             },
             {
                 test: /\.json$/,

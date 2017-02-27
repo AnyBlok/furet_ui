@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-require('bootstrap-loader');
 require("font-awesome-loader");
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import {getMuiTheme, MuiThemeProvider} from 'material-ui/styles';
