@@ -4,6 +4,7 @@ etc/
 build/
 var/
 doc/
+coverage/
 node_modules/
 develop-eggs
 docs/_build/

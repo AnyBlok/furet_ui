@@ -62,6 +62,6 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverage": true,
-    "coverageDirectory": "src"
+    "coverageDirectory": "coverage"
   }
 }
