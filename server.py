@@ -111,6 +111,9 @@ def getInitOptionnalData():
                             'close': 'Fermer',
                             'search': 'Filtrer par ...',
                         },
+                        'space': {
+                            'close': 'Fermer',
+                        },
                         'views': {
                             'unknown': {
                                 'title': 'Le vue "%(name)s" est inconnue',
@@ -130,6 +133,12 @@ def getInitOptionnalData():
                                 'login': {
                                     'button': 'Connexion',
                                 },
+                            },
+                        },
+                        'fields': {
+                            'date': {
+                                'ok': 'Ok',
+                                'cancel': 'Annuler',
                             },
                         },
                     },
