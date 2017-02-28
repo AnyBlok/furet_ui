@@ -14,12 +14,20 @@ import translate from 'counterpart';
 class Unknown extends React.Component {
     render () {
         return (
-            <div className="container">
-                {this.props.selector || null}
-                <h1>{translate('furetUI.views.unknown.title', {name: this.props.viewName || this.props.viewType, fallback: 'The wanted view "%(name)s" is unknown'})}</h1>
-                <p>
-                    {translate('furetUI.views.unknown.message', {fallback: 'Report this message to the administrator'})}
-                </p>
+            <div>
+                <div className="row">
+                    <div className="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+                    </div>
+                    <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                        {this.props.selector || null}
+                    </div>
+                </div>
+                <div className="container">
+                    <h1>{translate('furetUI.views.unknown.title', {name: this.props.viewName || this.props.viewType, fallback: 'The wanted view "%(name)s" is unknown'})}</h1>
+                    <p>
+                        {translate('furetUI.views.unknown.message', {fallback: 'Report this message to the administrator'})}
+                    </p>
+                </div>
             </div>
         );
     }

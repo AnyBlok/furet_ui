@@ -237,10 +237,10 @@ export class Form extends Base {
         return (
             <div>
                 <div className="row">
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div className="col-xs-12 col-sm-8 col-md-8 col-lg-9">
                         {this.renderButton()}
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3">
                         {this.props.selector}
                     </div>
                 </div>

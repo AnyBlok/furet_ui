@@ -13,6 +13,7 @@ import Picture from './picture';
 import {green500} from 'material-ui/styles/colors';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import {json_post} from './server-call';
+import translate from 'counterpart';
 
 class Loading extends React.Component {
     render () {
@@ -105,7 +106,7 @@ class SpaceCpt extends React.Component {
                         this.setState(val);
                     }}
                     >
-                        Close
+                        {translate('furetUI.space.close', {fallback: 'Close'})}
                     </MenuItem>
                     <Divider />
                     <List>

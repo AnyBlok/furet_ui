@@ -98,24 +98,21 @@ def getInitOptionnalData():
                     'counterpart': {
                         'formats': {
                             'date': {
-                                'default': '%d-%m-%Y',
-                                'long': '%A %d %B %Y',
-                                'short': '%m-%Y',
+                                'default': '%d/%m/%Y',
                             },
                             'time': {
-                                'default': '%H:%M',
-                                'long': '%H:%M:%S %z',
-                                'short': '%H:%M',
+                                'default': '%H/%M/%S',
                             },
                             'datetime': {
-                                'default': '%d-%m-%Y %H:%M',
-                                'long': '%A, %d %B %Y %H:%M:%S %z',
-                                'short': '%m-%Y %H:%M',
+                                'default': '%d/%m/%Y %H:%M:%S',
                             },
                         },
                         'menus': {
                             'close': 'Fermer',
                             'search': 'Filtrer par ...',
+                        },
+                        'space': {
+                            'close': 'Fermer',
                         },
                         'views': {
                             'unknown': {
@@ -136,6 +133,12 @@ def getInitOptionnalData():
                                 'login': {
                                     'button': 'Connexion',
                                 },
+                            },
+                        },
+                        'fields': {
+                            'date': {
+                                'ok': 'Ok',
+                                'cancel': 'Annuler',
                             },
                         },
                     },
