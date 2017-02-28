@@ -60,6 +60,8 @@
     "xhr": "^2.4.0"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "src"
   }
 }
