@@ -57,4 +57,5 @@ class FuretUI extends React.Component {
 window.FuretUI = FuretUI;
 window.React = React;
 window.ReactDOM = ReactDOM;
+window.plugin = plugin;
 export default FuretUI;

@@ -29,5 +29,4 @@ class Plugin {
 }
 
 const plugin = new Plugin();
-window.plugin = plugin;
 export default plugin;

@@ -1,3 +1,4 @@
+import React from 'react';
 import Multi from './multi';
 import plugin from '../plugin';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
