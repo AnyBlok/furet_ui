@@ -47,8 +47,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'FuretUI'
-copyright = '2017, Jean-Sébastien Suzanne'
-author = 'Jean-Sébastien Suzanne'
+copyright = u'2017, Jean-Sébastien Suzanne'
+author = u'Jean-Sébastien Suzanne'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -128,7 +128,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'FuretUI.tex', 'FuretUI Documentation',
-     'Jean-Sébastien Suzanne', 'manual'),
+     u'Jean-Sébastien Suzanne', 'manual'),
 ]
 
 
