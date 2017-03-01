@@ -91,8 +91,29 @@ const mapDispatchToPropsAction = (dispatch) => {
 
 export const Action = connect(mapStateToPropsAction, mapDispatchToPropsAction)(ActionCpt);
 
-
+/**
+ * ActionManager is a component which display RIGHT / LEFT menus and breadscrum
+ *
+ * props:
+ *  @actionId (string, required): the first actions of the breadscrum
+ *  @left_menu: iconmenu or icon drawer
+ *  @right_menu: iconmenu or icon drawer
+ *
+ * import {ActionManager} from './action';
+ * <ActionManager actionId={actionId} />
+ *
+**/
 class ActionManagerCpt extends React.Component {
+    /**
+     * Render one Action
+     *
+     * params:
+     *  @actionId: string of the action id of the action to create
+     *  @order: integer of the position in the breadscrum, a same action can be have more than one position in the breadscrum
+     *  @disabled: if true the action in the breadcrum won't be actif
+     *
+     * return one Action componant
+    **/
     renderAction(actionId, order, disabled) {
         const action = this.props.action_data[actionId];
         return (
@@ -106,6 +127,12 @@ class ActionManagerCpt extends React.Component {
             />
         );
     }
+    /**
+     * Display the actions in the breadcrumb
+     *
+     * All the action are rendered, but only one is visible
+     *
+    **/
     getEntryPointApp () {
         const res = [];
         if ((this.props.actions || []).length != 0) {
@@ -114,6 +141,12 @@ class ActionManagerCpt extends React.Component {
         }
         return res;
     }
+    /**
+     * Display the breadcrum
+     *
+     * List the actions, the last is disabled because it is always the displayed action
+     *
+    **/
     getBreadcrumb () {
         const action = this.props.action_data[this.props.actionId];
         return (
