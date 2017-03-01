@@ -18,7 +18,24 @@ import {getViewIcon, getView} from './views';
 import {json_post} from './server-call';
 
 
+/**
+ * ActionManager is a component which display RIGHT / LEFT menus and breadscrum
+ *
+ * props:
+ *  @actionId (string, required): the first actions of the breadscrum
+ *  @model: string, name of the model
+ *  @viewId: string, id of the view to render
+ *  @views: Array of object [{viewId, actionId}, ...]
+ *
+ * import {Action} from './action';
+ * <Action actionId={actionId} />
+ *
+**/
 class ActionCpt extends React.Component {
+    /**
+     * Render the selector list. List the available view for the action
+     *
+    **/
     renderSelector() {
         return (
             <ul className="list-inline"
@@ -77,6 +94,10 @@ class ActionCpt extends React.Component {
         );
     }
 }
+
+ActionCpt.propTypes = {
+    actionId: React.PropTypes.string.isRequired,
+};
 
 const mapStateToPropsAction = (state, props) => {
     return state.actions[props.actionId] || {};

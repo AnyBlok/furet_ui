@@ -84,3 +84,98 @@ test('Render Action Manager with default value from redux store with actionId', 
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
+
+test('Render Action with default value from redux store', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const actions = require('./action'),
+          Action = actions.Action;
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                <Action/>
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('Render Action with default value from redux store with unexisting actionId', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const actions = require('./action'),
+          Action = actions.Action;
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                <Action actionId='1'/>
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('Render Action with default value from redux store with actionId', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const actions = require('./action'),
+          Action = actions.Action;
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                <Action 
+                    actionId='1'
+                    model='Todo'
+                    viewId='1'
+                    views={[
+                        {
+                            'viewId': '2',
+                            'type': 'Thumbnail',
+                        },
+                    ]}
+                />
+            </MuiThemeProvider>
+        </Provider>
+    );
+    store.dispatch({
+        'type': 'UPDATE_ACTION_SELECT_VIEW',
+        'actionId': '1',
+        'viewId': '2',
+    });
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('Render Action with default value from redux store with disabled actionId', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const actions = require('./action'),
+          Action = actions.Action;
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                <Action 
+                    actionId='1'
+                    model='Todo'
+                    viewId='1'
+                    views={[
+                        {
+                            'viewId': '2',
+                            'type': 'Thumbnail',
+                        },
+                    ]}
+                    disabled={true}
+                />
+            </MuiThemeProvider>
+        </Provider>
+    );
+    store.dispatch({
+        'type': 'UPDATE_ACTION_SELECT_VIEW',
+        'actionId': '1',
+        'viewId': '2',
+    });
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});

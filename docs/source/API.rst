@@ -9,6 +9,25 @@
 API
 ===
 
+Render the application, need the providers for theme and redux storage
+
+|api|
+
+::
+
+    import App from './app':
+    
+    <Provider store={store}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+            <App />
+        </MuiThemeProvider>
+    </Provider>
+
+..warning::
+
+    All the component under App need to be under the provider.
+
+
 ActionManager
 -------------
 
@@ -31,5 +50,42 @@ This composant is connected at Redux with the state ``action_manager``.
     />
 
 
+Action
+------
+
+Render one action and on view
+
+::
+
+    import {Action} from './action';
+
+    <Action
+        actionId={actionId (string, required)}
+        model={model (string)}
+        viewId={viewId (string)}
+        views={[{actionId (string, required), viewId (string, required)}, ...]}
+        disabled={disabled (boolean)}
+    />
+
+Picture
+-------
+
+Render a picture, the picture can be come from:
+
+* svg-icon: Material design icon
+* font-icon: font-awesome class
+
+::
+
+    import {Picture} from './picture';
+
+    <Picture type="font-icon" value="fa-user" iconSize="fa-3x" />
+    or
+    <Picture type="svg-icon" value="ActionAndroid" style={{height: 48, width: 48}} />
+
+
 .. |action_manager| image:: _static/api/action-manager.png
     :alt: Action manager
+
+.. |app| image:: _static/api/app.png
+    :alt: App

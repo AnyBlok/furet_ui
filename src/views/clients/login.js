@@ -1,3 +1,4 @@
+import React from 'react';
 import Client from '../client';
 import plugin from '../../plugin';
 import RaisedButton from 'material-ui/RaisedButton';
