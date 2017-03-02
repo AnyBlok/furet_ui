@@ -1,3 +1,12 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import Base from './base';
 import React from 'react';
 import ActionNoteAdd from 'material-ui/svg-icons/action/note-add';
@@ -11,6 +20,9 @@ import DropdownMenu from './dropdown';
 import translate from 'counterpart';
 
 
+/**
+ * Base view for view which render multi value
+**/
 export class Multi extends Base {
     constructor (props) {
         super(props);
@@ -30,6 +42,9 @@ export class Multi extends Base {
             this.setState({search});
         }
     }
+    /**
+     * Action call when the create button is clicked
+    **/
     addNewEntry () {
         if (this.props.onSelect) {
             this.props.dispatch({
@@ -40,9 +55,15 @@ export class Multi extends Base {
             })
         }
     }
+    /**
+     * Action call when the remove button is clicked
+    **/
     removeEntry () {
         console.log('todo', 'removeEntry');
     }
+    /**
+     * Render the button near search box
+    **/
     renderSearchBarButton () {
         return (
             <div className="row">
@@ -110,13 +131,22 @@ export class Multi extends Base {
             </div>
         )
     }
+    /**
+     * Update the searchText value in state
+    **/
     onUpdateInput (val) {
         this.setState({searchText: val});
     }
+    /**
+     * Update chip componnents
+    **/
     updateSearchQuery (search) {
         console.log('updateSearchQuery', this.state.search);
         this.setState({search});
     }
+    /**
+     * Change view when an entry has selected
+    **/
     onEntrySelect(id) {
         if (this.props.onSelect) {
             this.props.dispatch({
@@ -127,6 +157,9 @@ export class Multi extends Base {
             })
         }
     }
+    /**
+     * Add new chip in search box
+    **/
     onNewRequest (val) {
         const search = Object.assign({}, this.state.search),
               index = val.text.indexOf(' : '),
@@ -138,11 +171,17 @@ export class Multi extends Base {
             this.updateSearchQuery(search)
         }
     }
+    /**
+     * Remove chip in search box
+    **/
     onRequestDelete (key) {
         const search = Object.assign({}, this.state.search)
         if (search[key]) delete search[key];
         this.updateSearchQuery(search)
     }
+    /**
+     * Render search bar
+    **/
     renderSearchBar () {
         const tags = [],
               choices=[];

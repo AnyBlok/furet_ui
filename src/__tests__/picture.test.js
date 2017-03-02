@@ -1,5 +1,14 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import React from 'react';
-import Picture from './picture';
+import Picture from '../picture';
 import renderer from 'react-test-renderer';
 import sinon from 'sinon';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -51,4 +60,16 @@ test('Picture svg-icon ActionAndroid with style', () => {
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+});
+
+test.skip('Picture with base64', () => {
+});
+
+test.skip('Picture with url', () => {
+});
+
+test.skip('Picture with base64 with style', () => {
+});
+
+test.skip('Picture with url with style', () => {
 });

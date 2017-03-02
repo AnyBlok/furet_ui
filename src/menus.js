@@ -1,3 +1,12 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import React from 'react';
 import { connect } from 'react-redux'
 import {dispatchAll} from './reducers';
@@ -11,6 +20,14 @@ import TextField from 'material-ui/TextField';
 import {json_post} from './server-call';
 import translate from 'counterpart';
 
+/**
+ * Render a Dialog box, with thumbnail menu and search box to filter thumbnail
+ *
+ * the props come from redx store
+ *
+ * and the click on a thumbnail change the redux store
+ *
+**/
 class BaseMenu extends React.Component {
     constructor(props) {
         super(props);
@@ -19,12 +36,22 @@ class BaseMenu extends React.Component {
             searchText: '',
         };
     }
+    /**
+     * Open the Dialog box
+    **/
     handleOpen () {
         this.setState({open: true});
     };
+    /**
+     * Close the Dialog box
+    **/
     handleClose () {
         this.setState({open: false});
     };
+    /**
+     * Update the redux store when a card is selected
+     *
+    **/
     selectCard (card) {
         switch (card.type) {
             case 'client':

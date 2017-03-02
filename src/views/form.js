@@ -1,3 +1,4 @@
+import React from 'react';
 import Base from './base';
 import plugin from '../plugin';
 import EditorInsertDriveFile from 'material-ui/svg-icons/editor/insert-drive-file';

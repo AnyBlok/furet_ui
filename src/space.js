@@ -1,9 +1,18 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import React from 'react';
 import {dispatchAll} from './reducers';
 import {connect} from 'react-redux';
 import {ActionManager} from './action';
 import {getClientView} from './views';
-import IconButton from 'material-ui/IconButton'; 
+import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/svg-icons/navigation/menu';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -14,17 +23,14 @@ import {green500} from 'material-ui/styles/colors';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import {json_post} from './server-call';
 import translate from 'counterpart';
+import Loading from './loading';
 
-class Loading extends React.Component {
-    render () {
-        return (
-            <div className="container">
-                <h1><i className="fa fa-spinner fa-spin fa-lg fa-fw"></i>Loading ...</h1>
-            </div>
-        );
-    }
-}
-
+/**
+ * Render a specific space
+ *
+ * @spaceId: (string, required) id of the space to render
+ *
+**/
 class SpaceCpt extends React.Component {
     constructor(props) {
         super(props);
@@ -33,6 +39,13 @@ class SpaceCpt extends React.Component {
             right_menu: false,
         }
     }
+    /**
+     * transform menus definition to one component
+     *
+     * @menus: array of object, definition of the structure
+     * @menuId: current menu rendered
+     *
+    **/
     renderMenu (menus, menuId) {
         const res = [];
         let has_menu = false;
@@ -82,11 +95,19 @@ class SpaceCpt extends React.Component {
         });
         return {menus: res, has_menu};
     }
+    /**
+     * Render A Drawer
+     *
+     * @menus: array of object, definition of the structure
+     * @state: key in the state to indicate if it is right_menu or left_menu
+     * @menuId: current menu rendered
+     *
+    **/
     renderDrawer(menus, state, menuId) {
         if ((menus || []).length == 0) return null;
         return (
             <div>
-                <IconButton 
+                <IconButton
                     onClick={() => {
                         const val = {};
                         val[state] = true;
@@ -94,10 +115,10 @@ class SpaceCpt extends React.Component {
                     }}
                     iconStyle={{width: 40, height: 40}}
                 >
-                    <IconMenu/>                       
-                </IconButton> 
-                <Drawer 
-                    openSecondary={state == 'right_menu'} 
+                    <IconMenu/>
+                </IconButton>
+                <Drawer
+                    openSecondary={state == 'right_menu'}
                     open={this.state[state]}
                 >
                     <MenuItem onClick={() => {
@@ -116,6 +137,9 @@ class SpaceCpt extends React.Component {
             </div>
         );
     }
+    /**
+     * Render children in function of redux storage
+    **/
     getEntryPointApp () {
         const res = [],
               space_state = this.props.space_state,
@@ -123,9 +147,9 @@ class SpaceCpt extends React.Component {
               right_menu = this.renderDrawer(space_state.right_menu, 'right_menu', space_state.menuId);
         if (this.props.space_state.actionId) {
             res.push(
-                <ActionManager 
-                    key={this.props.space_state.actionId} 
-                    actionId={this.props.space_state.actionId} 
+                <ActionManager
+                    key={this.props.space_state.actionId}
+                    actionId={this.props.space_state.actionId}
                     left_menu={left_menu}
                     right_menu={right_menu}
                 />

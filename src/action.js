@@ -1,3 +1,12 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import React from 'react';
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import {dispatchAll} from './reducers';
@@ -9,7 +18,24 @@ import {getViewIcon, getView} from './views';
 import {json_post} from './server-call';
 
 
+/**
+ * ActionManager is a component which display RIGHT / LEFT menus and breadscrum
+ *
+ * props:
+ *  @actionId (string, required): the first actions of the breadscrum
+ *  @model: string, name of the model
+ *  @viewId: string, id of the view to render
+ *  @views: Array of object [{viewId, actionId}, ...]
+ *
+ * import {Action} from './action';
+ * <Action actionId={actionId} />
+ *
+**/
 class ActionCpt extends React.Component {
+    /**
+     * Render the selector list. List the available view for the action
+     *
+    **/
     renderSelector() {
         return (
             <ul className="list-inline"
@@ -69,6 +95,10 @@ class ActionCpt extends React.Component {
     }
 }
 
+ActionCpt.propTypes = {
+    actionId: React.PropTypes.string.isRequired,
+};
+
 const mapStateToPropsAction = (state, props) => {
     return state.actions[props.actionId] || {};
 }
@@ -82,8 +112,29 @@ const mapDispatchToPropsAction = (dispatch) => {
 
 export const Action = connect(mapStateToPropsAction, mapDispatchToPropsAction)(ActionCpt);
 
-
+/**
+ * ActionManager is a component which display RIGHT / LEFT menus and breadscrum
+ *
+ * props:
+ *  @actionId (string, required): the first actions of the breadscrum
+ *  @left_menu: iconmenu or icon drawer
+ *  @right_menu: iconmenu or icon drawer
+ *
+ * import {ActionManager} from './action';
+ * <ActionManager actionId={actionId} />
+ *
+**/
 class ActionManagerCpt extends React.Component {
+    /**
+     * Render one Action
+     *
+     * params:
+     *  @actionId: string of the action id of the action to create
+     *  @order: integer of the position in the breadscrum, a same action can be have more than one position in the breadscrum
+     *  @disabled: if true the action in the breadcrum won't be actif
+     *
+     * return one Action componant
+    **/
     renderAction(actionId, order, disabled) {
         const action = this.props.action_data[actionId];
         return (
@@ -97,6 +148,12 @@ class ActionManagerCpt extends React.Component {
             />
         );
     }
+    /**
+     * Display the actions in the breadcrumb
+     *
+     * All the action are rendered, but only one is visible
+     *
+    **/
     getEntryPointApp () {
         const res = [];
         if ((this.props.actions || []).length != 0) {
@@ -105,6 +162,12 @@ class ActionManagerCpt extends React.Component {
         }
         return res;
     }
+    /**
+     * Display the breadcrum
+     *
+     * List the actions, the last is disabled because it is always the displayed action
+     *
+    **/
     getBreadcrumb () {
         const action = this.props.action_data[this.props.actionId];
         return (
@@ -150,4 +213,5 @@ const mapDispatchToProps = (dispatch) => {
 export const ActionManager = connect(mapStateToProps, mapDispatchToProps)(ActionManagerCpt);
 export default {
     ActionManager,
+    Action,
 };
