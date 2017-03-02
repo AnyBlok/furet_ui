@@ -1,3 +1,12 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import React from 'react';
 import './clients';
 import './list';
@@ -11,7 +20,16 @@ import IconButton from 'material-ui/IconButton';
 import AlertWarning from 'material-ui/svg-icons/alert/warning';
 import translate from 'counterpart';
 
-class Unknown extends React.Component {
+/**
+ * Unknown view, use if no view found
+ *
+ * props:
+ *  @selector: Component used by the view
+ *  @viewName: Name of the custom view which is not available
+ *  @viewType: Name of the standard view which is not available
+ *
+**/
+export class Unknown extends React.Component {
     render () {
         return (
             <div>
@@ -42,6 +60,12 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
+/**
+ * Return a component with the wanted view, if no view the the return view will be the Unknown view
+ *
+ * @viewName: name of the wanted view
+ *
+**/
 export const getClientView = (viewName) => {
     let view = plugin.get(['views', 'type', 'client', viewName]);
     if (!view) view = plugin.get(['views', 'Unknown']);
@@ -65,10 +89,20 @@ export const getClientView = (viewName) => {
 };
 
 
+/**
+ * Unknown icon for view selector
+**/
 plugin.set(['views', 'icon'], {Unknown: (props) => {
     return <AlertWarning />;
 }});
 
+/**
+ * Return the Icon component which represent the standard view
+ *
+ * @type: typs of the standard view
+ * @onClick: onClick callback on the Icon
+ *
+**/
 export const getViewIcon = (type, onclick) => {
     let view = plugin.get(['views', 'icon', type]);
     if (!view) view = plugin.get(['views', 'icon', 'Unknown']);
@@ -83,6 +117,14 @@ export const getViewIcon = (type, onclick) => {
     );
 }
 
+/**
+ * Return the stanadrd view
+ *
+ * @viewType: type of the standard view
+ * @viewd: (string) id of the view
+ * @params: object
+ *
+**/
 export const getView = (viewType, viewId, params) => {
     let view = plugin.get(['views', 'type', viewType]);
     if (!view) view = plugin.get(['views', 'Unknown']);
@@ -105,4 +147,5 @@ export default {
     getClientView,
     getViewIcon,
     getView,
+    Unknown,
 }

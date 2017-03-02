@@ -14,15 +14,15 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import chai from 'chai';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
-import reducers from './reducers';
+import reducers from '../reducers';
 import {updateGlobal} from './testcase';
 
-jest.mock('./server-call');
+jest.mock('../server-call');
 
 test('Render App with default value from redux store', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const App = require('./app').default;
+    const App = require('../app').default;
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
@@ -37,7 +37,7 @@ test('Render App with default value from redux store', () => {
 test('Render App with default value from redux store with title', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const App = require('./app').default;
+    const App = require('../app').default;
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
@@ -56,7 +56,7 @@ test('Render App with default value from redux store with title', () => {
 test('Render App with default value from redux store with spaceId', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const App = require('./app').default;
+    const App = require('../app').default;
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
@@ -75,7 +75,7 @@ test('Render App with default value from redux store with spaceId', () => {
 test('Render App with default value from redux store with custome_view', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const App = require('./app').default;
+    const App = require('../app').default;
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>

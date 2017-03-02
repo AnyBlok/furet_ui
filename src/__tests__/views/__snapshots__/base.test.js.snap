@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Login 1`] = `
+<div>
+  <div
+    className="row"
+  />
+  Base view
+</div>
+`;

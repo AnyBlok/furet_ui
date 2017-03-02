@@ -14,19 +14,15 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import chai from 'chai';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
-import reducers from './reducers';
+import reducers from '../reducers';
 import {updateGlobal} from './testcase';
 
-jest.mock('./server-call', () => {
-    return {
-        json_post: (url, data, {onSuccess, onError, onComplete}) => {},
-    }
-});
+jest.mock('../server-call')
 
 test('Render Action Manager with default value from redux store', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const actions = require('./action'),
+    const actions = require('../action'),
           ActionManager = actions.ActionManager;
     const component = renderer.create(
         <Provider store={store}>
@@ -42,7 +38,7 @@ test('Render Action Manager with default value from redux store', () => {
 test('Render Action Manager with default value from redux store with unexisting actionId', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const actions = require('./action'),
+    const actions = require('../action'),
           ActionManager = actions.ActionManager;
     const component = renderer.create(
         <Provider store={store}>
@@ -59,7 +55,7 @@ test('Render Action Manager with default value from redux store with actionId', 
     const store = createStore(combineReducers(reducers));
     updateGlobal();
 
-    const actions = require('./action'),
+    const actions = require('../action'),
           ActionManager = actions.ActionManager;
     const component = renderer.create(
         <Provider store={store}>
@@ -88,7 +84,7 @@ test('Render Action Manager with default value from redux store with actionId', 
 test('Render Action with default value from redux store', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const actions = require('./action'),
+    const actions = require('../action'),
           Action = actions.Action;
     const component = renderer.create(
         <Provider store={store}>
@@ -104,7 +100,7 @@ test('Render Action with default value from redux store', () => {
 test('Render Action with default value from redux store with unexisting actionId', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const actions = require('./action'),
+    const actions = require('../action'),
           Action = actions.Action;
     const component = renderer.create(
         <Provider store={store}>
@@ -120,7 +116,7 @@ test('Render Action with default value from redux store with unexisting actionId
 test('Render Action with default value from redux store with actionId', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const actions = require('./action'),
+    const actions = require('../action'),
           Action = actions.Action;
     const component = renderer.create(
         <Provider store={store}>
@@ -151,7 +147,7 @@ test('Render Action with default value from redux store with actionId', () => {
 test('Render Action with default value from redux store with disabled actionId', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
-    const actions = require('./action'),
+    const actions = require('../action'),
           Action = actions.Action;
     const component = renderer.create(
         <Provider store={store}>

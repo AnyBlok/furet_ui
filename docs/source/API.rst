@@ -9,6 +9,9 @@
 API
 ===
 
+APP
+---
+
 Render the application, need the providers for theme and redux storage
 
 |api|
@@ -26,6 +29,31 @@ Render the application, need the providers for theme and redux storage
 ..warning::
 
     All the component under App need to be under the provider.
+
+Right and Left Menu
+-------------------
+
+It is a Modal menu. It is a thumbnail render, the thumbnail can be filtered by a searchBox
+
+|dialog|
+
+::
+
+    import {LeftMenu, RightMenu} from './menus'
+
+    <LeftMenu />
+    <RightMenu />
+
+Space
+-----
+
+A space is an environnement for a specific behavior. Each space can defined menus, actions, views
+
+::
+
+    import Space from './space';
+
+    <Space spaceId={spaceId (string, required)} />
 
 
 ActionManager
@@ -67,6 +95,7 @@ Render one action and on view
         disabled={disabled (boolean)}
     />
 
+
 Picture
 -------
 
@@ -83,6 +112,48 @@ Render a picture, the picture can be come from:
     or
     <Picture type="svg-icon" value="ActionAndroid" style={{height: 48, width: 48}} />
 
+Views
+-----
+
+List the type of view available for the server.
+
+The view type can be:
+
+* standard: List, Form, Thumbnail
+* custom: Login, Logout
+
+All the view are present in the plugin system of FuretUI.
+
+the methods:
+
+* getClientView(viewName): return the custom view component
+* getViewIcon(type, onClick): return the icon of the view to add it in the selector
+* getView(type, viewId, params): return the standard view
+
+Unknown
+~~~~~~~
+
+Replace the wanted view if no view are available
+
+
+Plugin
+------
+
+It is not a composent, it allow to save some function / object / class. This function / object / class
+are used and can be overwrite easily to change the behavior.
+
+::
+
+    import plugin from './plugin';
+
+    const func = (props) => {return <span>'Hello'</span>}
+    plugin(['path', 'to', 'save', 'in', 'plugin'], {Hello: func});
+
+    plugin.get(['path', 'to', 'save', 'in', 'plugin', 'Hello']);
+
+
+.. |dialog| image:: _static/api/dialog.png
+    :alt: Dialog
 
 .. |action_manager| image:: _static/api/action-manager.png
     :alt: Action manager
