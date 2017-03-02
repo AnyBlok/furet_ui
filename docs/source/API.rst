@@ -14,7 +14,7 @@ APP
 
 Render the application, need the providers for theme and redux storage
 
-|api|
+|app|
 
 ::
 
@@ -155,7 +155,7 @@ are used and can be overwrite easily to change the behavior.
 .. |dialog| image:: _static/api/dialog.png
     :alt: Dialog
 
-.. |action_manager| image:: _static/api/action-manager.png
+.. |action_manager| image:: _static/api/action_manager.png
     :alt: Action manager
 
 .. |app| image:: _static/api/app.png
