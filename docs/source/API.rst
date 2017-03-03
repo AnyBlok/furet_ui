@@ -176,6 +176,21 @@ Render a react template, the template come from serveur and stock in the redux s
 
     getView('Thumbnail', viewId (string), {ids: [dataId (string)]})
 
+Field
+-----
+
+Each field must be defined by views type. The list views are:
+
+* Date
+* Selection
+* String
+
+::
+
+    import {getField} from './fields';
+
+    getField(viewType (string), fieldType (string), params (object), value)
+
 
 Plugin
 ------

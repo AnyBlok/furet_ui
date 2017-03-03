@@ -1,3 +1,12 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import React from 'react';
 import plugin from '../plugin';
 import DatePicker from 'material-ui/DatePicker';
@@ -19,6 +28,7 @@ class DateThumbnail extends React.Component {
         const date = this.props.value ? new Date(Date.parse(this.props.value)): null;
         return (
             <DatePicker
+                id={this.props.id}
                 floatingLabelText={this.props.label}
                 fullWidth={Boolean(eval(this.props.fullwidth))}
                 disabled={true}
@@ -40,6 +50,7 @@ class DateForm extends React.Component {
         const date = this.props.value ? new Date(Date.parse(this.props.value)): null;
         return (
             <DatePicker
+                id={this.props.id}
                 floatingLabelText={this.props.label}
                 fullWidth={Boolean(eval(this.props.fullwidth))}
                 disabled={this.props.readonly}
