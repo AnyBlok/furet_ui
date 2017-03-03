@@ -446,7 +446,7 @@ exports[`Render App with default value from redux store with title 1`] = `
         }
       }
     >
-      
+      Title
     </h1>
     <div
       style={
