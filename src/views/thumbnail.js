@@ -1,3 +1,12 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import React from 'react';
 import Multi from './multi';
 import plugin from '../plugin';
@@ -5,10 +14,17 @@ import NavigationApps from 'material-ui/svg-icons/navigation/apps';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import {processNodeDefinitions} from './base';
 
+/**
+ * Add Icon for Thumbnail view
+**/
 plugin.set(['views', 'icon'], {Thumbnail: (props) => {
     return <NavigationApps />;
 }});
 
+/**
+ * Thumbnail view
+ *
+**/
 export class Thumbnail extends Multi {
     call_server () {
         this.json_post(
@@ -24,6 +40,9 @@ export class Thumbnail extends Multi {
             },
         );
     }
+    /**
+     * Render the template for one thumbnail
+    **/
     renderTemplate (template, thumbnailId) {
         const self = this;
         const processingInstructions = [
@@ -52,14 +71,20 @@ export class Thumbnail extends Multi {
         ];
         return super.renderTemplate(template, processingInstructions);
     }
+    /**
+     * Render one thumbnail
+    **/
     renderThumbNail (thumbnailId) {
-        return (
-            <Card 
-                onClick={() => this.onEntrySelect(thumbnailId)}
-            >
-                {this.renderTemplate(this.props.template, thumbnailId)}
-            </Card>
-        );
+        if (this.props.template) {
+            return (
+                <Card 
+                    onClick={() => this.onEntrySelect(thumbnailId)}
+                >
+                    {this.renderTemplate(this.props.template, thumbnailId)}
+                </Card>
+            );
+        }
+        return null;
     }
     render () {
         return (

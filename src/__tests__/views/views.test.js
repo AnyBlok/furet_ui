@@ -16,7 +16,7 @@ import chai from 'chai';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';
-import {updateGlobal} from '../testcase';
+import {updateGlobal} from '../../testcase';
 import {Unknown, getClientView, getViewIcon, getView} from '../../views';
 import plugin from '../../plugin';
 

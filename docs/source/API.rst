@@ -135,6 +135,47 @@ Unknown
 
 Replace the wanted view if no view are available
 
+List
+~~~~
+
+Render a list of data
+
+|list_view|
+
+::
+
+    import {getView} from './views':
+
+    getView('List', viewId (string), {ids: [dataId (string)]})
+
+
+Form
+~~~~
+
+Render a react template, the template come from serveur and stock in the redux store
+
+|form_view|
+
+::
+
+    import {getView} from './views':
+
+    getView('Form', viewId (string), {id: dataId (string), readonly: readonly (boolean)})
+
+
+Thumbnail
+~~~~~~~~~
+
+Render a react template, the template come from serveur and stock in the redux store
+
+|thumbnail_view|
+
+::
+
+    import {getView} from './views':
+
+    getView('Thumbnail', viewId (string), {ids: [dataId (string)]})
+
 
 Plugin
 ------
@@ -160,3 +201,12 @@ are used and can be overwrite easily to change the behavior.
 
 .. |app| image:: _static/api/app.png
     :alt: App
+
+.. |form_view| image:: _static/api/form_view.png
+    :alt: Form view
+
+.. |thumbnail_view| image:: _static/api/thumbnail_view.png
+    :alt: Thumbnail view
+
+.. |list_view| image:: _static/api/list_view.png
+    :alt: List view

@@ -5,6 +5,9 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 import Checkbox from 'material-ui/Checkbox';
 import ActionViewList from 'material-ui/svg-icons/action/view-list';
 
+/**
+ * Add Icon for List view
+**/
 plugin.set(['views', 'icon'], {List: (props) => {
     return <ActionViewList />;
 }});
@@ -43,6 +46,10 @@ class TableBodyExtended extends TableBody {
     }
 }
 
+/**
+ * List view
+ *
+**/
 export class List extends Multi {
     call_server () {
         this.json_post(
@@ -58,10 +65,16 @@ export class List extends Multi {
             },
         );
     }
+    /**
+     * call by click on row
+    **/
     onRowSelection(selectedRows) {
         const selectedIds = selectedRows == 'all' ? this.props.ids : _.map(selectedRows, i => this.props.ids[i]);
         this.setState({selectedIds})
     }
+    /**
+     * render line
+    **/
     renderLine (lineId) {
         const data = this.props.data[lineId] || {},
               change = this.state.change,

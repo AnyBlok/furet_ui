@@ -7,13 +7,16 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
+jest.mock('react-dom')
 import React from 'react';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../reducers';
-import {updateGlobal} from './testcase';
+import {updateGlobal} from '../testcase';
+import {shallow} from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 jest.mock('../server-call')
 
@@ -39,6 +42,30 @@ test('Render Space with default value from redux store with spaceId', () => {
     const space = require('../space'),
           Space = space.default;
     const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                <Space spaceId='1'/>
+            </MuiThemeProvider>
+        </Provider>
+    );
+    store.dispatch({
+        'type': 'UPDATE_SPACE',
+        'spaceId': '1',
+        'menuId': '1',
+        'actionId': '1',
+        'viewId': '1',
+        'custom_view': '',
+    });
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('Render Space with default value from redux store with spaceId with menu', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const space = require('../space'),
+          Space = space.default;
+    const component = shallow(
         <Provider store={store}>
             <MuiThemeProvider>
                 <Space spaceId='1'/>
@@ -85,14 +112,14 @@ test('Render Space with default value from redux store with spaceId', () => {
     store.dispatch({
         'type': 'UPDATE_SPACE',
         'spaceId': '1',
-        //'left_menu': getMenu('left', '1'),
+        'left_menu': getMenu('left', '1'),
         'menuId': '1',
-        //'right_menu': getMenu('right', '1'),
+        'right_menu': getMenu('right', '1'),
         'actionId': '1',
         'viewId': '1',
         'custom_view': '',
     });
-    let tree = component.toJSON();
+    let tree = toJson(component);
     expect(tree).toMatchSnapshot();
 });
 

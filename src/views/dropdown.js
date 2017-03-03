@@ -1,9 +1,26 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import React from 'react';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 
+/**
+ * Render Dropdown button
+ *
+ * props:
+ *  @label: label of the button
+ *  @menus: array of object to describe items [{buttonId (string), label (string)}, ...]
+ *
+**/
 export default class extends React.Component {
     constructor(props) {
         super(props);
@@ -11,6 +28,9 @@ export default class extends React.Component {
             open: false,
         };
     }
+    /**
+     * Open the dropdown
+    **/
     handleTouchTap (event) {
         event.preventDefault();
         this.setState({
@@ -18,6 +38,9 @@ export default class extends React.Component {
             anchorEl: event.currentTarget,
         });
     }
+    /**
+     * Close the dropdown
+    **/
     handleRequestClose () {
         this.setState({open: false});
     }
@@ -27,7 +50,10 @@ export default class extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div
+                testHandleTouchTap={() => {this.handleTouchTap({preventDefault: () => {}})}}
+                testHandleRequestClose={this.handleRequestClose.bind(this)}
+            >
                 <RaisedButton
                     fullWidth={true}
                     onClick={this.handleTouchTap.bind(this)}

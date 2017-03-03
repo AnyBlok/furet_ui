@@ -15,7 +15,7 @@ import chai from 'chai';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../reducers';
-import {updateGlobal} from './testcase';
+import {updateGlobal} from '../testcase';
 
 jest.mock('../server-call');
 
