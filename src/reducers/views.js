@@ -9,16 +9,16 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 export const defaultState = {}
 
-export const views = (state = defaultState, view) => {
-    const value = Object.assign({}, view);
+export const views = (state = defaultState, action) => {
+    const value = Object.assign({}, action);
     delete value.type;
-    switch (view.type) {
+    switch (action.type) {
         case 'UPDATE_VIEW':
             delete value.viewId;
             const values = {};
-            values[view.viewId] = Object.assign({}, state[view.viewId], value);
+            values[action.viewId] = Object.assign({}, state[action.viewId], value);
             return Object.assign({}, state, values);
-        case 'CLEAR_ACTION':
+        case 'CLEAR_VIEW':
             return defaultState;
         default:
             return state

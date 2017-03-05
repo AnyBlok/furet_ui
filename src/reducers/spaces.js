@@ -14,9 +14,10 @@ export const defaultSpace = {
     menuId: '',
     actionId: '',
     custom_view: '',
-}
+};
+export const defaultState = {};
 
-export const spaces = (state = {}, action) => {
+export const spaces = (state = defaultState, action) => {
     const value = Object.assign({}, action);
     delete value.type;
     switch (action.type) {
@@ -26,7 +27,7 @@ export const spaces = (state = {}, action) => {
             values[action.spaceId] = Object.assign({}, state[action.spaceId] || defaultSpace, value)
             return Object.assign({}, state, values);
         case 'CLEAR_SPACE':
-            return {};
+            return defaultState;
         default:
             return state
     }
