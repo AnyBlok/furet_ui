@@ -5,4 +5,4 @@ Lite and generic based an specific API.
 
 Furet UI is released under the terms of the `Mozilla Public License`.
 
-See the `latest documentation <http://furet-ui.readthedocs.io/en/latest/index.html/>`_
+See the [latest documentation](http://furet-ui.readthedocs.io/en/latest/index.html)
