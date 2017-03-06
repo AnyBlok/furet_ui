@@ -243,6 +243,11 @@ def getViewList(state):
         'onSelect': '3',
         'headers': [
             {
+                'name': 'id',
+                'type': 'Integer',
+                'label': 'ID',
+            },
+            {
                 'name': 'name',
                 'type': 'String',
                 'label': 'Label',
@@ -303,7 +308,10 @@ def getViewThumbnail(state):
         ],
         'template': '''
             <div className="row">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <field name="id" widget="Integer" label="ID" fullwidth="1"></field>
+                </div>
+                <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                     <field name="name" widget="String" label="Label" fullwidth="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -331,8 +339,11 @@ def getViewForm(state):
         'onClose': '1',
         'template': '''
             <div className="row">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="name" widget="String" label="Label" required="true"></field>
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <field name="id" widget="Integer" label="ID" fullwidth="1"></field>
+                </div>
+                <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <field name="name" widget="String" label="Label" fullwidth="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
