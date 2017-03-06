@@ -185,6 +185,7 @@ Each field must be defined by views type. The list views are:
 * Date
 * Integer
 * Selection
+* SmallInteger
 * String
 
 ::

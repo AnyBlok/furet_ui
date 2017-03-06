@@ -65,6 +65,9 @@ plugin.set(['field', 'Form'], {'Integer': IntegerForm});
 plugin.set(['field', 'List'], {'BigInteger': IntegerList});
 plugin.set(['field', 'Thumbnail'], {'BigInteger': IntegerThumbnail});
 plugin.set(['field', 'Form'], {'BigInteger': IntegerForm});
+plugin.set(['field', 'List'], {'SmallInteger': IntegerList});
+plugin.set(['field', 'Thumbnail'], {'SmallInteger': IntegerThumbnail});
+plugin.set(['field', 'Form'], {'SmallInteger': IntegerForm});
 
 export default {
     IntegerList,
