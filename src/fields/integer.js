@@ -62,6 +62,9 @@ export class IntegerForm extends React.Component {
 plugin.set(['field', 'List'], {'Integer': IntegerList});
 plugin.set(['field', 'Thumbnail'], {'Integer': IntegerThumbnail});
 plugin.set(['field', 'Form'], {'Integer': IntegerForm});
+plugin.set(['field', 'List'], {'BigInteger': IntegerList});
+plugin.set(['field', 'Thumbnail'], {'BigInteger': IntegerThumbnail});
+plugin.set(['field', 'Form'], {'BigInteger': IntegerForm});
 
 export default {
     IntegerList,
