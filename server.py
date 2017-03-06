@@ -26,24 +26,28 @@ def getData(viewId):
                     'name': "todo 1",
                     'creation_date': '2017-02-20',
                     'state': 'new',
+                    'number': 1.2345678,
                 },
                 {
                     'id': '2',
                     'name': "todo 2",
                     'creation_date': '2017-02-21',
                     'state': 'started',
+                    'number': 1.2345678,
                 },
                 {
                     'id': '3',
                     'name': "todo 3",
                     'creation_date': '2017-02-21',
                     'state': 'done',
+                    'number': 1.2345678,
                 },
                 {
                     'id': '4',
                     'name': "todo 4",
                     'creation_date': '2017-02-21',
                     'state': 'done',
+                    'number': 1.2345678,
                 },
             ],
         },
@@ -243,6 +247,11 @@ def getViewList(state):
         'onSelect': '3',
         'headers': [
             {
+                'name': 'id',
+                'type': 'Integer',
+                'label': 'ID',
+            },
+            {
                 'name': 'name',
                 'type': 'String',
                 'label': 'Label',
@@ -257,6 +266,11 @@ def getViewList(state):
                 'name': 'creation_date',
                 'type': 'Date',
                 'label': 'Creation date',
+            },
+            {
+                'name': 'number',
+                'type': 'Float',
+                'label': 'Number',
             },
         ],
         'search': [
@@ -303,7 +317,10 @@ def getViewThumbnail(state):
         ],
         'template': '''
             <div className="row">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <field name="id" widget="Integer" label="ID" fullwidth="1"></field>
+                </div>
+                <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                     <field name="name" widget="String" label="Label" fullwidth="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -311,6 +328,9 @@ def getViewThumbnail(state):
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="creation_date" widget="Date" label="Creation date"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="number" widget="Float" label="Number"></field>
                 </div>
             </div>
         ''',
@@ -331,14 +351,20 @@ def getViewForm(state):
         'onClose': '1',
         'template': '''
             <div className="row">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="name" widget="String" label="Label" required="true"></field>
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <field name="id" widget="Integer" label="ID" fullwidth="1"></field>
+                </div>
+                <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <field name="name" widget="String" label="Label" fullwidth="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="creation_date" widget="Date" label="Creation date"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="number" widget="Float" label="Number"></field>
                 </div>
             </div>
         ''',

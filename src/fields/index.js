@@ -12,6 +12,8 @@ import plugin from '../plugin';
 import './string';
 import './selection';
 import './date';
+import './integer';
+import './float';
 
 
 /**

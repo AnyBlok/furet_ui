@@ -20,4 +20,4 @@ Welcome to FuretUI's documentation!
 
    FRONT.rst
    API.rst
-   ../../LICENSE.rst
+   LICENSE.rst
