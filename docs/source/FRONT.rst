@@ -1,0 +1,76 @@
+.. This file is a part of the FuretUI project                                   
+..
+..    Copyright (C) 2014 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+..
+.. This Source Code Form is subject to the terms of the Mozilla Public License,
+.. v. 2.0. If a copy of the MPL was not distributed with this file,You can
+.. obtain one at http://mozilla.org/MPL/2.0/.
+
+.. contents::
+
+Front Matter
+============
+
+Information about the FuretUI project.
+
+Project Homepage
+----------------
+
+FuretUI is hosted on `github <http://github.com>`_ - the main project
+page is at http://github.com/AnyBlok/furet_ui. Source code is tracked here
+using `GIT <https://git-scm.com>`_.
+
+The most recent published version of this documentation should be at
+http://furet-ui.readthedocs.io/en/latest/index.html.
+
+Project Status
+--------------
+
+FuretUI is currently in development status and is expected to be fairly
+stable.   Users should take care to report bugs and missing features on an as-needed
+basis.  It should be expected that the development version may be required
+for proper implementation of recently repaired issues in between releases;
+the latest master is always available at https://github.com/AnyBlok/furet_ui/archive/master.zip.
+
+Installation
+------------
+
+Install latest versions of FuretUI from github (need **npm**)::
+
+    https://github.com/AnyBlok/furet_ui.git
+    npm install
+    npm run build-prod
+
+
+Unit Test
+---------
+
+Run the test with ``npm``::
+
+    npm run test
+
+
+AnyBlok is tested using `Travis <https://travis-ci.org/AnyBlok/furet_ui>`_
+
+Contributing (hackers needed!)
+------------------------------
+
+FuretUI is at a very early stage, feel free to fork, talk with core dev, and spread the word!
+
+Author
+------
+
+Jean-Sébastien Suzanne
+
+Contributors
+------------
+
+`Anybox <http://anybox.fr>`_ team:
+
+* Jean-Sébastien Suzanne
+
+Bugs
+----
+
+Bugs and feature enhancements to AnyBlok should be reported on the `Issue 
+tracker <https://github.com/AnyBlok/furet_ui/issues>`_.

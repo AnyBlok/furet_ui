@@ -18,4 +18,6 @@ Welcome to FuretUI's documentation!
 .. toctree::
    :maxdepth: 2
 
+   FRONT.rst
    API.rst
+   ../../LICENSE.rst

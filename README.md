@@ -1,16 +1,17 @@
+<!--
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+-->
 # furet_ui
 
-Lite and generic client based an specific API.
+Furet UI is generic client on top of ``Reactjs`` and ``material-ui``. 
+Lite and generic based an specific API.
 
+Furet UI is released under the terms of the `Mozilla Public License`.
 
-## LICENSE
-
-MPL2
-
-TRY:
-https://facebook.github.io/jest/docs/tutorial-react.html
-https://github.com/hustcc/gantt-for-react
-https://github.com/yang-wei/rd3
-https://www.npmjs.com/package/react-fullcalendar
-https://www.npmjs.com/package/react-virtual-kanban
-http://redux.js.org/docs/recipes/WritingTests.html
+See the [latest documentation](http://furet-ui.readthedocs.io/en/latest/index.html)

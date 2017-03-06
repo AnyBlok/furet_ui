@@ -1,3 +1,12 @@
+/**
+This file is a part of the FuretUI project
+
+   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file,You can
+obtain one at http://mozilla.org/MPL/2.0/.
+**/
 import React from 'react';
 import Base from './base';
 import plugin from '../plugin';
@@ -14,10 +23,17 @@ import {blue500, red500} from 'material-ui/styles/colors';
 import DropdownMenu from './dropdown';
 import translate from 'counterpart';
 
+/**
+ * Add Icon for Form view
+**/
 plugin.set(['views', 'icon'], {Form: (props) => {
     return <EditorInsertDriveFile />;
 }});
 
+/**
+ * Form view
+ *
+**/
 export class Form extends Base {
     constructor(props) {
         super(props);
@@ -37,10 +53,16 @@ export class Form extends Base {
             },
         );
     }
+    /**
+     * call by create action
+    **/
     addNewEntry () {
         this.setState({readonly: false, id: null});
         this.call_server(null);
     }
+    /**
+     * Close the current view and route to previous view
+    **/
     returnPreviousView() {
         const viewId = (this.props.params && this.props.params.returnView) || this.props.onSelect;
         if (viewId) {
@@ -51,9 +73,15 @@ export class Form extends Base {
             })
         }
     }
+    /**
+     * call by delete button
+    **/
     removeEntry () {
         console.log('todo', 'removeEntry');
     }
+    /**
+     * call by save button
+    **/
     saveEntry () {
         console.log('todo', 'saveEntry');
         this.setState({readonly: true});
@@ -71,6 +99,9 @@ export class Form extends Base {
         change[field] = value;
         this.setState({change})
     }
+    /**
+     * Render the template of the form view
+    **/
     renderTemplate (template) {
         if (!template) return null;
         const self = this;
@@ -100,6 +131,9 @@ export class Form extends Base {
         ];
         return super.renderTemplate(template, processingInstructions);
     }
+    /**
+     * Render the buttons
+    **/
     renderButton () {
         return (
             <div className="row">
@@ -242,7 +276,7 @@ export class Form extends Base {
                         {this.renderButton()}
                     </div>
                     <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3">
-                        {this.props.selector}
+                        {this.state.readonly && this.props.selector}
                     </div>
                 </div>
                 <div className="row">

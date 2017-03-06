@@ -1,0 +1,1680 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getField for Form 1`] = `
+<div
+  className={undefined}
+  required={false}
+  style={
+    Object {
+      "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "backgroundColor": "transparent",
+      "cursor": "auto",
+      "display": "inline-block",
+      "fontFamily": "Roboto, sans-serif",
+      "fontSize": 16,
+      "height": 48,
+      "lineHeight": "24px",
+      "muiPrepared": true,
+      "position": "relative",
+      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "width": 256,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "bottom": 12,
+        "color": "rgba(0, 0, 0, 0.3)",
+        "muiPrepared": true,
+        "opacity": 0,
+        "position": "absolute",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      }
+    }
+  >
+     
+  </div>
+  <div
+    className={undefined}
+    disabled={false}
+    id="view-type-Form-field_type-Selection-field-name-"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "backgroundColor": "rgba(0,0,0,0)",
+        "border": "none",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "cursor": "inherit",
+        "display": "block",
+        "font": "inherit",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSize": 15,
+        "height": "100%",
+        "muiPrepared": true,
+        "outline": "none",
+        "padding": 0,
+        "position": "relative",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "height": "100%",
+          "muiPrepared": true,
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+            "lineHeight": "56px",
+            "muiPrepared": true,
+            "opacity": 1,
+            "overflow": "hidden",
+            "paddingLeft": 0,
+            "paddingRight": 56,
+            "position": "relative",
+            "textOverflow": "ellipsis",
+            "top": -4,
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        New
+      </div>
+      <button
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOut={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "background": "none",
+            "border": 10,
+            "boxSizing": "border-box",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#e0e0e0",
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": 0,
+            "fontWeight": "inherit",
+            "height": 48,
+            "margin": 0,
+            "muiPrepared": true,
+            "outline": "none",
+            "overflow": "visible",
+            "padding": 12,
+            "position": "absolute",
+            "right": 0,
+            "textDecoration": "none",
+            "top": 0,
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "verticalAlign": null,
+            "width": 48,
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+        >
+          <svg
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "MozUserSelect": "none",
+                "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "WebkitUserSelect": "none",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fill": "inherit",
+                "height": 24,
+                "msUserSelect": "none",
+                "muiPrepared": true,
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+                "width": 24,
+              }
+            }
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </button>
+      <div
+        style={
+          Object {
+            "borderTop": "none",
+            "bottom": 1,
+            "left": 0,
+            "margin": "-1px 24px",
+            "muiPrepared": true,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "clear": "both",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+  </div>
+  <div>
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "borderBottom": "solid 1px",
+          "borderColor": "#e0e0e0",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "muiPrepared": true,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    />
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "WebkitTransform": "scaleX(0)",
+          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "borderBottom": "solid 2px",
+          "borderColor": "#00bcd4",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "msTransform": "scaleX(0)",
+          "muiPrepared": true,
+          "position": "absolute",
+          "transform": "scaleX(0)",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`getField for Form fullwith 1`] = `
+<div
+  className={undefined}
+  required={false}
+  style={
+    Object {
+      "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "backgroundColor": "transparent",
+      "cursor": "auto",
+      "display": "inline-block",
+      "fontFamily": "Roboto, sans-serif",
+      "fontSize": 16,
+      "height": 72,
+      "lineHeight": "24px",
+      "muiPrepared": true,
+      "position": "relative",
+      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "width": 256,
+    }
+  }
+>
+  <label
+    className={undefined}
+    htmlFor="view-type-Form-field_type-Selection-field-name-"
+    onTouchTap={undefined}
+    style={
+      Object {
+        "MozUserSelect": "none",
+        "WebkitTransform": "scale(0.75) translate(0, -28px)",
+        "WebkitTransformOrigin": "left top",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "WebkitUserSelect": "none",
+        "color": "rgba(0, 0, 0, 0.3)",
+        "lineHeight": "22px",
+        "msTransform": "scale(0.75) translate(0, -28px)",
+        "msTransformOrigin": "left top",
+        "msUserSelect": "none",
+        "muiPrepared": true,
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 38,
+        "transform": "scale(0.75) translate(0, -28px)",
+        "transformOrigin": "left top",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
+      }
+    }
+  >
+    Test
+  </label>
+  <div
+    className={undefined}
+    disabled={false}
+    id="view-type-Form-field_type-Selection-field-name-"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "MozBoxSizing": "border-box",
+        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "backgroundColor": "rgba(0,0,0,0)",
+        "border": "none",
+        "boxSizing": "border-box",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "cursor": "inherit",
+        "display": "block",
+        "font": "inherit",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSize": 15,
+        "height": "100%",
+        "marginTop": 14,
+        "muiPrepared": true,
+        "outline": "none",
+        "padding": 0,
+        "position": "relative",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "height": "100%",
+          "muiPrepared": true,
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+            "lineHeight": "56px",
+            "muiPrepared": true,
+            "opacity": 1,
+            "overflow": "hidden",
+            "paddingLeft": 0,
+            "paddingRight": 56,
+            "position": "relative",
+            "textOverflow": "ellipsis",
+            "top": 6,
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        New
+      </div>
+      <button
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOut={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "background": "none",
+            "border": 10,
+            "boxSizing": "border-box",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#e0e0e0",
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": 0,
+            "fontWeight": "inherit",
+            "height": 48,
+            "margin": 0,
+            "muiPrepared": true,
+            "outline": "none",
+            "overflow": "visible",
+            "padding": 12,
+            "position": "absolute",
+            "right": 0,
+            "textDecoration": "none",
+            "top": 8,
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "verticalAlign": null,
+            "width": 48,
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+        >
+          <svg
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "MozUserSelect": "none",
+                "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "WebkitUserSelect": "none",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fill": "inherit",
+                "height": 24,
+                "msUserSelect": "none",
+                "muiPrepared": true,
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+                "width": 24,
+              }
+            }
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </button>
+      <div
+        style={
+          Object {
+            "borderTop": "none",
+            "bottom": 1,
+            "left": 0,
+            "margin": "-1px 24px",
+            "muiPrepared": true,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "clear": "both",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+  </div>
+  <div>
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "borderBottom": "solid 1px",
+          "borderColor": "#e0e0e0",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "muiPrepared": true,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    />
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "WebkitTransform": "scaleX(0)",
+          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "borderBottom": "solid 2px",
+          "borderColor": "#00bcd4",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "msTransform": "scaleX(0)",
+          "muiPrepared": true,
+          "position": "absolute",
+          "transform": "scaleX(0)",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`getField for Form readonly 1`] = `
+<div
+  className={undefined}
+  required={false}
+  style={
+    Object {
+      "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "backgroundColor": "transparent",
+      "cursor": "not-allowed",
+      "display": "inline-block",
+      "fontFamily": "Roboto, sans-serif",
+      "fontSize": 16,
+      "height": 72,
+      "lineHeight": "24px",
+      "muiPrepared": true,
+      "position": "relative",
+      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "width": 256,
+    }
+  }
+>
+  <label
+    className={undefined}
+    htmlFor="view-type-Form-field_type-Selection-field-name-"
+    onTouchTap={undefined}
+    style={
+      Object {
+        "MozUserSelect": "none",
+        "WebkitTransform": "scale(0.75) translate(0, -28px)",
+        "WebkitTransformOrigin": "left top",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "WebkitUserSelect": "none",
+        "color": "rgba(0, 0, 0, 0.3)",
+        "lineHeight": "22px",
+        "msTransform": "scale(0.75) translate(0, -28px)",
+        "msTransformOrigin": "left top",
+        "msUserSelect": "none",
+        "muiPrepared": true,
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 38,
+        "transform": "scale(0.75) translate(0, -28px)",
+        "transformOrigin": "left top",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
+      }
+    }
+  >
+    Test
+  </label>
+  <div
+    className={undefined}
+    disabled={true}
+    id="view-type-Form-field_type-Selection-field-name-"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "MozBoxSizing": "border-box",
+        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "backgroundColor": "rgba(0,0,0,0)",
+        "border": "none",
+        "boxSizing": "border-box",
+        "color": "rgba(0, 0, 0, 0.3)",
+        "cursor": "inherit",
+        "display": "block",
+        "font": "inherit",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSize": 15,
+        "height": "100%",
+        "marginTop": 14,
+        "muiPrepared": true,
+        "outline": "none",
+        "padding": 0,
+        "position": "relative",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "cursor": "not-allowed",
+          "height": "100%",
+          "muiPrepared": true,
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.3)",
+            "lineHeight": "56px",
+            "muiPrepared": true,
+            "opacity": 1,
+            "overflow": "hidden",
+            "paddingLeft": 0,
+            "paddingRight": 56,
+            "position": "relative",
+            "textOverflow": "ellipsis",
+            "top": 6,
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        New
+      </div>
+      <button
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOut={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "background": "none",
+            "border": 10,
+            "boxSizing": "border-box",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#e0e0e0",
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": 0,
+            "fontWeight": "inherit",
+            "height": 48,
+            "margin": 0,
+            "muiPrepared": true,
+            "outline": "none",
+            "overflow": "visible",
+            "padding": 12,
+            "position": "absolute",
+            "right": 0,
+            "textDecoration": "none",
+            "top": 8,
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "verticalAlign": null,
+            "width": 48,
+            "zIndex": 1,
+          }
+        }
+        tabIndex={-1}
+        type="button"
+      >
+        <div
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+        >
+          <svg
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "MozUserSelect": "none",
+                "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "WebkitUserSelect": "none",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fill": "inherit",
+                "height": 24,
+                "msUserSelect": "none",
+                "muiPrepared": true,
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+                "width": 24,
+              }
+            }
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </button>
+      <div
+        style={
+          Object {
+            "borderTop": "none",
+            "bottom": 1,
+            "left": 0,
+            "margin": "-1px 24px",
+            "muiPrepared": true,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "clear": "both",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+  </div>
+  <div>
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "borderBottom": "dotted 2px",
+          "borderColor": "rgba(0, 0, 0, 0.3)",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "muiPrepared": true,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    />
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "WebkitTransform": "scaleX(0)",
+          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "borderBottom": "solid 2px",
+          "borderColor": "#00bcd4",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "msTransform": "scaleX(0)",
+          "muiPrepared": true,
+          "position": "absolute",
+          "transform": "scaleX(0)",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`getField for Form required 1`] = `
+<div
+  className={undefined}
+  required={true}
+  style={
+    Object {
+      "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "backgroundColor": "transparent",
+      "cursor": "auto",
+      "display": "inline-block",
+      "fontFamily": "Roboto, sans-serif",
+      "fontSize": 16,
+      "height": 72,
+      "lineHeight": "24px",
+      "muiPrepared": true,
+      "position": "relative",
+      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "width": 256,
+    }
+  }
+>
+  <label
+    className={undefined}
+    htmlFor="view-type-Form-field_type-Selection-field-name-"
+    onTouchTap={undefined}
+    style={
+      Object {
+        "MozUserSelect": "none",
+        "WebkitTransform": "scale(0.75) translate(0, -28px)",
+        "WebkitTransformOrigin": "left top",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "WebkitUserSelect": "none",
+        "color": "rgba(0, 0, 0, 0.3)",
+        "lineHeight": "22px",
+        "msTransform": "scale(0.75) translate(0, -28px)",
+        "msTransformOrigin": "left top",
+        "msUserSelect": "none",
+        "muiPrepared": true,
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 38,
+        "transform": "scale(0.75) translate(0, -28px)",
+        "transformOrigin": "left top",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
+      }
+    }
+  >
+    Test
+  </label>
+  <div
+    className={undefined}
+    disabled={false}
+    id="view-type-Form-field_type-Selection-field-name-"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "MozBoxSizing": "border-box",
+        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "backgroundColor": "rgba(0,0,0,0)",
+        "border": "none",
+        "boxSizing": "border-box",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "cursor": "inherit",
+        "display": "block",
+        "font": "inherit",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSize": 15,
+        "height": "100%",
+        "marginTop": 14,
+        "muiPrepared": true,
+        "outline": "none",
+        "padding": 0,
+        "position": "relative",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "height": "100%",
+          "muiPrepared": true,
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+            "lineHeight": "56px",
+            "muiPrepared": true,
+            "opacity": 1,
+            "overflow": "hidden",
+            "paddingLeft": 0,
+            "paddingRight": 56,
+            "position": "relative",
+            "textOverflow": "ellipsis",
+            "top": 6,
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        New
+      </div>
+      <button
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOut={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "background": "none",
+            "border": 10,
+            "boxSizing": "border-box",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#e0e0e0",
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": 0,
+            "fontWeight": "inherit",
+            "height": 48,
+            "margin": 0,
+            "muiPrepared": true,
+            "outline": "none",
+            "overflow": "visible",
+            "padding": 12,
+            "position": "absolute",
+            "right": 0,
+            "textDecoration": "none",
+            "top": 8,
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "verticalAlign": null,
+            "width": 48,
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+        >
+          <svg
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "MozUserSelect": "none",
+                "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "WebkitUserSelect": "none",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fill": "inherit",
+                "height": 24,
+                "msUserSelect": "none",
+                "muiPrepared": true,
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+                "width": 24,
+              }
+            }
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </button>
+      <div
+        style={
+          Object {
+            "borderTop": "none",
+            "bottom": 1,
+            "left": 0,
+            "margin": "-1px 24px",
+            "muiPrepared": true,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "clear": "both",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+  </div>
+  <div>
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "borderBottom": "solid 1px",
+          "borderColor": "#e0e0e0",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "muiPrepared": true,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    />
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "WebkitTransform": "scaleX(0)",
+          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "borderBottom": "solid 2px",
+          "borderColor": "#00bcd4",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "msTransform": "scaleX(0)",
+          "muiPrepared": true,
+          "position": "absolute",
+          "transform": "scaleX(0)",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`getField for Form required with emptu value 1`] = `
+<div
+  className={undefined}
+  required={true}
+  style={
+    Object {
+      "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "backgroundColor": "transparent",
+      "cursor": "auto",
+      "display": "inline-block",
+      "fontFamily": "Roboto, sans-serif",
+      "fontSize": 16,
+      "height": 72,
+      "lineHeight": "24px",
+      "muiPrepared": true,
+      "position": "relative",
+      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "width": 256,
+    }
+  }
+>
+  <label
+    className={undefined}
+    htmlFor="view-type-Form-field_type-Selection-field-name-"
+    onTouchTap={undefined}
+    style={
+      Object {
+        "MozUserSelect": "none",
+        "WebkitTransform": "scale(1) translate(0, 0)",
+        "WebkitTransformOrigin": "left top",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "WebkitUserSelect": "none",
+        "color": "rgba(0, 0, 0, 0.3)",
+        "lineHeight": "22px",
+        "msTransform": "scale(1) translate(0, 0)",
+        "msTransformOrigin": "left top",
+        "msUserSelect": "none",
+        "muiPrepared": true,
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 38,
+        "transform": "scale(1) translate(0, 0)",
+        "transformOrigin": "left top",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
+      }
+    }
+  >
+    Test
+  </label>
+  <div
+    className={undefined}
+    disabled={false}
+    id="view-type-Form-field_type-Selection-field-name-"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "MozBoxSizing": "border-box",
+        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "backgroundColor": "rgba(0,0,0,0)",
+        "border": "none",
+        "boxSizing": "border-box",
+        "color": "rgba(0, 0, 0, 0.87)",
+        "cursor": "inherit",
+        "display": "block",
+        "font": "inherit",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSize": 15,
+        "height": "100%",
+        "marginTop": 14,
+        "muiPrepared": true,
+        "outline": "none",
+        "padding": 0,
+        "position": "relative",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+          "height": "100%",
+          "muiPrepared": true,
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+            "lineHeight": "56px",
+            "muiPrepared": true,
+            "opacity": 1,
+            "overflow": "hidden",
+            "paddingLeft": 0,
+            "paddingRight": 56,
+            "position": "relative",
+            "textOverflow": "ellipsis",
+            "top": 6,
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        
+      </div>
+      <button
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOut={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "background": "none",
+            "border": 10,
+            "boxSizing": "border-box",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#e0e0e0",
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": 0,
+            "fontWeight": "inherit",
+            "height": 48,
+            "margin": 0,
+            "muiPrepared": true,
+            "outline": "none",
+            "overflow": "visible",
+            "padding": 12,
+            "position": "absolute",
+            "right": 0,
+            "textDecoration": "none",
+            "top": 8,
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "verticalAlign": null,
+            "width": 48,
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+        >
+          <svg
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "MozUserSelect": "none",
+                "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "WebkitUserSelect": "none",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fill": "inherit",
+                "height": 24,
+                "msUserSelect": "none",
+                "muiPrepared": true,
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+                "width": 24,
+              }
+            }
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </button>
+      <div
+        style={
+          Object {
+            "borderTop": "none",
+            "bottom": 1,
+            "left": 0,
+            "margin": "-1px 24px",
+            "muiPrepared": true,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "clear": "both",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+  </div>
+  <div>
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "borderBottom": "solid 1px",
+          "borderColor": "#e0e0e0",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "muiPrepared": true,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    />
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "WebkitTransform": "scaleX(0)",
+          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "borderBottom": "solid 2px",
+          "borderColor": "#00bcd4",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "msTransform": "scaleX(0)",
+          "muiPrepared": true,
+          "position": "absolute",
+          "transform": "scaleX(0)",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`getField for List 1`] = `
+<span>
+  
+</span>
+`;
+
+exports[`getField for Thumbnail 1`] = `
+<div
+  className={undefined}
+  style={
+    Object {
+      "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "backgroundColor": "transparent",
+      "cursor": "not-allowed",
+      "display": "inline-block",
+      "fontFamily": "Roboto, sans-serif",
+      "fontSize": 16,
+      "height": 48,
+      "lineHeight": "24px",
+      "muiPrepared": true,
+      "position": "relative",
+      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "width": 256,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "bottom": 12,
+        "color": "rgba(0, 0, 0, 0.3)",
+        "muiPrepared": true,
+        "opacity": 0,
+        "position": "absolute",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      }
+    }
+  >
+     
+  </div>
+  <div
+    className={undefined}
+    disabled={true}
+    id="view-type-Thumbnail-field_type-Selection-field-name-"
+    onBlur={[Function]}
+    onChange={undefined}
+    onFocus={[Function]}
+    style={
+      Object {
+        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "backgroundColor": "rgba(0,0,0,0)",
+        "border": "none",
+        "color": "rgba(0, 0, 0, 0.3)",
+        "cursor": "inherit",
+        "display": "block",
+        "font": "inherit",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSize": 15,
+        "height": "100%",
+        "muiPrepared": true,
+        "outline": "none",
+        "padding": 0,
+        "position": "relative",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "cursor": "not-allowed",
+          "height": "100%",
+          "muiPrepared": true,
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.3)",
+            "lineHeight": "56px",
+            "muiPrepared": true,
+            "opacity": 1,
+            "overflow": "hidden",
+            "paddingLeft": 0,
+            "paddingRight": 56,
+            "position": "relative",
+            "textOverflow": "ellipsis",
+            "top": -4,
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        New
+      </div>
+      <button
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOut={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "background": "none",
+            "border": 10,
+            "boxSizing": "border-box",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fill": "#e0e0e0",
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": 0,
+            "fontWeight": "inherit",
+            "height": 48,
+            "margin": 0,
+            "muiPrepared": true,
+            "outline": "none",
+            "overflow": "visible",
+            "padding": 12,
+            "position": "absolute",
+            "right": 0,
+            "textDecoration": "none",
+            "top": 0,
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "verticalAlign": null,
+            "width": 48,
+            "zIndex": 1,
+          }
+        }
+        tabIndex={-1}
+        type="button"
+      >
+        <div
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+        >
+          <svg
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "MozUserSelect": "none",
+                "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "WebkitUserSelect": "none",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "inline-block",
+                "fill": "inherit",
+                "height": 24,
+                "msUserSelect": "none",
+                "muiPrepared": true,
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+                "width": 24,
+              }
+            }
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </button>
+      <div
+        style={
+          Object {
+            "borderTop": "none",
+            "bottom": 1,
+            "left": 0,
+            "margin": "-1px 24px",
+            "muiPrepared": true,
+            "position": "absolute",
+            "right": 0,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "boxSizing": "border-box",
+            "clear": "both",
+            "content": "' '",
+            "display": "table",
+            "muiPrepared": true,
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+  </div>
+  <div>
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "borderBottom": "dotted 2px",
+          "borderColor": "rgba(0, 0, 0, 0.3)",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "muiPrepared": true,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    />
+    <hr
+      style={
+        Object {
+          "MozBoxSizing": "content-box",
+          "WebkitTransform": "scaleX(0)",
+          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "borderBottom": "solid 2px",
+          "borderColor": "#00bcd4",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "bottom": 8,
+          "boxSizing": "content-box",
+          "margin": 0,
+          "msTransform": "scaleX(0)",
+          "muiPrepared": true,
+          "position": "absolute",
+          "transform": "scaleX(0)",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
