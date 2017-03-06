@@ -26,24 +26,28 @@ def getData(viewId):
                     'name': "todo 1",
                     'creation_date': '2017-02-20',
                     'state': 'new',
+                    'number': 1.2345678,
                 },
                 {
                     'id': '2',
                     'name': "todo 2",
                     'creation_date': '2017-02-21',
                     'state': 'started',
+                    'number': 1.2345678,
                 },
                 {
                     'id': '3',
                     'name': "todo 3",
                     'creation_date': '2017-02-21',
                     'state': 'done',
+                    'number': 1.2345678,
                 },
                 {
                     'id': '4',
                     'name': "todo 4",
                     'creation_date': '2017-02-21',
                     'state': 'done',
+                    'number': 1.2345678,
                 },
             ],
         },
@@ -263,6 +267,11 @@ def getViewList(state):
                 'type': 'Date',
                 'label': 'Creation date',
             },
+            {
+                'name': 'number',
+                'type': 'Float',
+                'label': 'Number',
+            },
         ],
         'search': [
             {
@@ -320,6 +329,9 @@ def getViewThumbnail(state):
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="creation_date" widget="Date" label="Creation date"></field>
                 </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="number" widget="Float" label="Number"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -350,6 +362,9 @@ def getViewForm(state):
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="creation_date" widget="Date" label="Creation date"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="number" widget="Float" label="Number"></field>
                 </div>
             </div>
         ''',
