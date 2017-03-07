@@ -29,6 +29,7 @@ def getData(viewId):
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
                     'uuid': 'uuid---',
+                    'password': 'password',
                 },
                 {
                     'id': '2',
@@ -38,6 +39,7 @@ def getData(viewId):
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
                     'uuid': 'uuid---',
+                    'password': 'password',
                 },
                 {
                     'id': '3',
@@ -47,6 +49,7 @@ def getData(viewId):
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
                     'uuid': 'uuid---',
+                    'password': 'password',
                 },
                 {
                     'id': '4',
@@ -56,6 +59,7 @@ def getData(viewId):
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
                     'uuid': 'uuid---',
+                    'password': 'password',
                 },
             ],
         },
@@ -290,6 +294,11 @@ def getViewList(state):
                 'type': 'UUID',
                 'label': 'UUID',
             },
+            {
+                'name': 'password',
+                'type': 'Password',
+                'label': 'Password',
+            },
         ],
         'search': [
             {
@@ -356,6 +365,9 @@ def getViewThumbnail(state):
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
                 </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="password" widget="Password" label="Password" fullwidth="1"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -395,6 +407,9 @@ def getViewForm(state):
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="password" widget="Password" label="Password" fullwidth="1" required="1"></field>
                 </div>
             </div>
         ''',
