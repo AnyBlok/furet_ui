@@ -186,9 +186,11 @@ Each field must be defined by views type. The list views are:
 * Float
 * Integer
 * Selection
+* Sequence
 * SmallInteger
 * String
 * URL
+* UUID
 
 ::
 

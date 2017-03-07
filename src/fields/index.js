@@ -16,6 +16,7 @@ import './integer';
 import './float';
 import './url';
 import './uuid';
+import './sequence';
 
 
 /**
