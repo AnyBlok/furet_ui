@@ -364,19 +364,19 @@ def getViewForm(state):
         'template': '''
             <div className="row">
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <field name="id" widget="Integer" label="ID" fullwidth="1"></field>
+                    <field name="id" widget="Integer" label="ID" fullwidth="1" required="1"></field>
                 </div>
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <field name="name" widget="String" label="Label" fullwidth="1"></field>
+                    <field name="name" widget="String" label="Label" fullwidth="1" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
+                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="creation_date" widget="Date" label="Creation date"></field>
+                    <field name="creation_date" widget="Date" label="Creation date" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="number" widget="Float" label="Number"></field>
+                    <field name="number" widget="Float" label="Number" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="url" widget="URL" label="URL" required="1"></field>

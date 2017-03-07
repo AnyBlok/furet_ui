@@ -10,6 +10,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import React from 'react';
 import plugin from '../plugin';
 import TextField from 'material-ui/TextField';
+import {indigo500} from 'material-ui/styles/colors';
 
 export class FloatList extends React.Component {
     render () {
@@ -48,12 +49,15 @@ export class FloatForm extends React.Component {
         if (required && !this.props.readonly && !this.props.value) {
             error = 'This field is required';
         }
+        const floatingLabelStyle = {};
+        if (required && !this.props.readonly) floatingLabelStyle.color = indigo500;
         return (
             <TextField
                 id={this.props.id}
                 type='number'
                 step={this.props.step || '0.01'}
                 floatingLabelText={this.props.label}
+                floatingLabelStyle={floatingLabelStyle}
                 fullWidth={Boolean(eval(this.props.fullwidth))}
                 disabled={this.props.readonly}
                 required={Boolean(eval(this.props.required))}
