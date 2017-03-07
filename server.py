@@ -27,6 +27,7 @@ def getData(viewId):
                     'creation_date': '2017-02-20',
                     'state': 'new',
                     'number': 1.2345678,
+                    'url': 'http://furet-ui.readthedocs.io',
                 },
                 {
                     'id': '2',
@@ -34,6 +35,7 @@ def getData(viewId):
                     'creation_date': '2017-02-21',
                     'state': 'started',
                     'number': 1.2345678,
+                    'url': 'http://furet-ui.readthedocs.io',
                 },
                 {
                     'id': '3',
@@ -41,6 +43,7 @@ def getData(viewId):
                     'creation_date': '2017-02-21',
                     'state': 'done',
                     'number': 1.2345678,
+                    'url': 'http://furet-ui.readthedocs.io',
                 },
                 {
                     'id': '4',
@@ -48,6 +51,7 @@ def getData(viewId):
                     'creation_date': '2017-02-21',
                     'state': 'done',
                     'number': 1.2345678,
+                    'url': 'http://furet-ui.readthedocs.io',
                 },
             ],
         },
@@ -272,6 +276,11 @@ def getViewList(state):
                 'type': 'Float',
                 'label': 'Number',
             },
+            {
+                'name': 'url',
+                'type': 'URL',
+                'label': 'URL',
+            },
         ],
         'search': [
             {
@@ -332,6 +341,9 @@ def getViewThumbnail(state):
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="number" widget="Float" label="Number"></field>
                 </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="url" widget="URL" label="URL" fullwidth="1" required="1"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -365,6 +377,9 @@ def getViewForm(state):
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="number" widget="Float" label="Number"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="url" widget="URL" label="URL" required="1"></field>
                 </div>
             </div>
         ''',

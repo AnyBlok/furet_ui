@@ -188,6 +188,7 @@ Each field must be defined by views type. The list views are:
 * Selection
 * SmallInteger
 * String
+* URL
 
 ::
 
