@@ -30,6 +30,7 @@ def getData(viewId):
                     'url': 'http://furet-ui.readthedocs.io',
                     'uuid': 'uuid---',
                     'password': 'password',
+                    'color': '#36c',
                 },
                 {
                     'id': '2',
@@ -40,6 +41,7 @@ def getData(viewId):
                     'url': 'http://furet-ui.readthedocs.io',
                     'uuid': 'uuid---',
                     'password': 'password',
+                    'color': '#36c',
                 },
                 {
                     'id': '3',
@@ -50,6 +52,7 @@ def getData(viewId):
                     'url': 'http://furet-ui.readthedocs.io',
                     'uuid': 'uuid---',
                     'password': 'password',
+                    'color': '#36c',
                 },
                 {
                     'id': '4',
@@ -60,6 +63,7 @@ def getData(viewId):
                     'url': 'http://furet-ui.readthedocs.io',
                     'uuid': 'uuid---',
                     'password': 'password',
+                    'color': '#36c',
                 },
             ],
         },
@@ -299,6 +303,11 @@ def getViewList(state):
                 'type': 'Password',
                 'label': 'Password',
             },
+            {
+                'name': 'color',
+                'type': 'Color',
+                'label': 'Color',
+            },
         ],
         'search': [
             {
@@ -368,6 +377,9 @@ def getViewThumbnail(state):
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="password" widget="Password" label="Password" fullwidth="1"></field>
                 </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="color" widget="Color" label="Color" fullwidth="1"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -410,6 +422,9 @@ def getViewForm(state):
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="password" widget="Password" label="Password" fullwidth="1" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="color" widget="Color" label="Color" fullwidth="1" required="1"></field>
                 </div>
             </div>
         ''',
