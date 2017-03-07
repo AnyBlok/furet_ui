@@ -15,6 +15,7 @@ import './date';
 import './integer';
 import './float';
 import './url';
+import './uuid';
 
 
 /**

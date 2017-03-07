@@ -28,6 +28,7 @@ def getData(viewId):
                     'state': 'new',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
+                    'uuid': 'uuid---',
                 },
                 {
                     'id': '2',
@@ -36,6 +37,7 @@ def getData(viewId):
                     'state': 'started',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
+                    'uuid': 'uuid---',
                 },
                 {
                     'id': '3',
@@ -44,6 +46,7 @@ def getData(viewId):
                     'state': 'done',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
+                    'uuid': 'uuid---',
                 },
                 {
                     'id': '4',
@@ -52,6 +55,7 @@ def getData(viewId):
                     'state': 'done',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
+                    'uuid': 'uuid---',
                 },
             ],
         },
@@ -281,6 +285,11 @@ def getViewList(state):
                 'type': 'URL',
                 'label': 'URL',
             },
+            {
+                'name': 'uuid',
+                'type': 'UUID',
+                'label': 'UUID',
+            },
         ],
         'search': [
             {
@@ -344,6 +353,9 @@ def getViewThumbnail(state):
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="url" widget="URL" label="URL" fullwidth="1" required="1"></field>
                 </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -380,6 +392,9 @@ def getViewForm(state):
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="url" widget="URL" label="URL" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
                 </div>
             </div>
         ''',
