@@ -132,6 +132,9 @@ export class TextForm extends React.Component {
 plugin.set(['field', 'List'], {'Text': TextList});
 plugin.set(['field', 'Thumbnail'], {'Text': TextThumbnail});
 plugin.set(['field', 'Form'], {'Text': TextForm});
+plugin.set(['field', 'List'], {'uText': TextList});
+plugin.set(['field', 'Thumbnail'], {'uText': TextThumbnail});
+plugin.set(['field', 'Form'], {'uText': TextForm});
 
 
 export default {

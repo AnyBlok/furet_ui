@@ -192,6 +192,7 @@ Each field must be defined by views type. The list views are:
 * String
 * Text
 * uString
+* uText
 * URL
 * UUID
 
