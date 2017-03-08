@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getField for List 1`] = `
+<div
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <span>
+    #123456
+  </span>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#123456",
+        "border": "1px solid black",
+        "display": "inline-block",
+        "height": 20,
+        "marginLeft": 10,
+        "verticalAlign": "middle",
+        "width": 40,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`getField for Thumbnail 1`] = `
+<div
+  style={
+    Object {
+      "display": "inline-block",
+      "width": 256,
+    }
+  }
+>
+  <div
+    className={undefined}
+    style={
+      Object {
+        "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "backgroundColor": "transparent",
+        "cursor": "not-allowed",
+        "display": "inline-block",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSize": 16,
+        "height": 48,
+        "lineHeight": "24px",
+        "muiPrepared": true,
+        "position": "relative",
+        "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "width": "60%",
+      }
+    }
+  >
+    <input
+      disabled={true}
+      id="view-type-Thumbnail-field_type-Color-field-name-"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      style={
+        Object {
+          "MozAppearance": "textfield",
+          "WebkitAppearance": "textfield",
+          "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+          "appearance": "textfield",
+          "backgroundColor": "rgba(0,0,0,0)",
+          "border": "none",
+          "color": "rgba(0, 0, 0, 0.3)",
+          "cursor": "inherit",
+          "font": "inherit",
+          "height": "100%",
+          "muiPrepared": true,
+          "outline": "none",
+          "padding": 0,
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+      type="text"
+      value="#123456"
+    />
+    <div>
+      <hr
+        style={
+          Object {
+            "MozBoxSizing": "content-box",
+            "borderBottom": "dotted 2px",
+            "borderColor": "rgba(0, 0, 0, 0.3)",
+            "borderLeft": "none",
+            "borderRight": "none",
+            "borderTop": "none",
+            "bottom": 8,
+            "boxSizing": "content-box",
+            "margin": 0,
+            "muiPrepared": true,
+            "position": "absolute",
+            "width": "100%",
+          }
+        }
+      />
+      <hr
+        style={
+          Object {
+            "MozBoxSizing": "content-box",
+            "WebkitTransform": "scaleX(0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "borderBottom": "solid 2px",
+            "borderColor": "#00bcd4",
+            "borderLeft": "none",
+            "borderRight": "none",
+            "borderTop": "none",
+            "bottom": 8,
+            "boxSizing": "content-box",
+            "margin": 0,
+            "msTransform": "scaleX(0)",
+            "muiPrepared": true,
+            "position": "absolute",
+            "transform": "scaleX(0)",
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+        "height": 20,
+        "width": "10%",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "backgroundColor": "#123456",
+        "border": "1px solid black",
+        "display": "inline-block",
+        "height": 30,
+        "verticalAlign": "middle",
+        "width": "30%",
+      }
+    }
+  />
+</div>
+`;
