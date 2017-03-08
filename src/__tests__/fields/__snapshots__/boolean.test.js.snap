@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getField for Form 1`] = `<div />`;
+
+exports[`getField for Form icon favorite 1`] = `<div />`;
+
+exports[`getField for Form icon favorite with false 1`] = `<div />`;
+
+exports[`getField for Form icon location 1`] = `<div />`;
+
+exports[`getField for Form icon location with false 1`] = `<div />`;
+
+exports[`getField for Form icon mic 1`] = `<div />`;
+
+exports[`getField for Form icon mic with false 1`] = `<div />`;
+
+exports[`getField for Form icon star 1`] = `<div />`;
+
+exports[`getField for Form icon star with false 1`] = `<div />`;
+
+exports[`getField for Form icon visibility 1`] = `<div />`;
+
+exports[`getField for Form icon visibility with false 1`] = `<div />`;
+
+exports[`getField for Form labelPosition left 1`] = `<div />`;
+
+exports[`getField for Form readonly 1`] = `<div />`;
+
+exports[`getField for Form with false 1`] = `<div />`;
+
+exports[`getField for List 1`] = `<div />`;
+
+exports[`getField for List with false 1`] = `<div />`;
+
+exports[`getField for Thumbnail 1`] = `<div />`;
+
+exports[`getField for Thumbnail with false 1`] = `<div />`;

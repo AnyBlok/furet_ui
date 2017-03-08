@@ -32,6 +32,7 @@ def getData(viewId):
                     'password': 'password',
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p></div>',
+                    'bool': True,
                 },
                 {
                     'id': '2',
@@ -44,6 +45,7 @@ def getData(viewId):
                     'password': 'password',
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p></div>',
+                    'bool': True,
                 },
                 {
                     'id': '3',
@@ -56,6 +58,7 @@ def getData(viewId):
                     'password': 'password',
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p></div>',
+                    'bool': False,
                 },
                 {
                     'id': '4',
@@ -68,6 +71,7 @@ def getData(viewId):
                     'password': 'password',
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p><p>Other line</p></div>',
+                    'bool': False,
                 },
             ],
         },
@@ -302,6 +306,11 @@ def getViewList(state):
                 'type': 'Text',
                 'label': 'Text',
             },
+            {
+                'name': 'bool',
+                'type': 'Boolean',
+                'label': 'Boolean',
+            },
         ],
         'search': [
             {
@@ -377,6 +386,9 @@ def getViewThumbnail(state):
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="text" widget="Text" label="Text"></field>
                 </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="bool" widget="Boolean" label="Boolean"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -425,6 +437,9 @@ def getViewForm(state):
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="text" widget="Text" label="Text" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="bool" widget="Boolean" label="Boolean"></field>
                 </div>
             </div>
         ''',

@@ -182,7 +182,10 @@ Field
 Each field must be defined by views type. The list views are:
 
 * BigInteger
+* Boolean
+* Color
 * Date
+* Decimal
 * Float
 * Integer
 * Password

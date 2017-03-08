@@ -73,6 +73,10 @@ plugin.set(['field', 'List'], {'Float': FloatList});
 plugin.set(['field', 'Thumbnail'], {'Float': FloatThumbnail});
 plugin.set(['field', 'Form'], {'Float': FloatForm});
 
+plugin.set(['field', 'List'], {'Decimal': FloatList});
+plugin.set(['field', 'Thumbnail'], {'Decimal': FloatThumbnail});
+plugin.set(['field', 'Form'], {'Decimal': FloatForm});
+
 export default {
     FloatList,
     FloatThumbnail,
