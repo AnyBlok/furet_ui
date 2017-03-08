@@ -45,7 +45,6 @@ test('getField for Thumbnail', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
-/*
 test('getField for Form', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
@@ -57,6 +56,10 @@ test('getField for Form', () => {
         </Provider>
     );
     let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    tree.props.testToggle();
+    expect(tree).toMatchSnapshot();
+    tree.props.testToggle();
     expect(tree).toMatchSnapshot();
 });
 
@@ -71,6 +74,23 @@ test('getField for Form readonly', () => {
         </Provider>
     );
     let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+test('getField for Form for github', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                {getField('Form', 'Color', {label: 'Test', picker: 'github'}, "#123456")}
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    tree.props.testToggle();
+    expect(tree).toMatchSnapshot();
+    tree.props.testToggle();
     expect(tree).toMatchSnapshot();
 });
 
@@ -115,4 +135,3 @@ test('getField for Form required with emptu value', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
-*/
