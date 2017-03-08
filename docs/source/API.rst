@@ -190,6 +190,8 @@ Each field must be defined by views type. The list views are:
 * Sequence
 * SmallInteger
 * String
+* Text
+* uString
 * URL
 * UUID
 

@@ -275,7 +275,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -311,7 +312,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -347,7 +349,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -383,7 +386,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -419,7 +423,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -455,7 +460,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -491,7 +497,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -527,7 +534,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -563,7 +571,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -599,7 +608,8 @@ exports[`Render List view selectable 1`] = `
                 Object {
                   "borderBottom": false,
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -912,7 +922,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -948,7 +959,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -984,7 +996,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1020,7 +1033,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1056,7 +1070,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1092,7 +1107,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1128,7 +1144,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1164,7 +1181,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1200,7 +1218,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1236,7 +1255,8 @@ exports[`Render List view selectable 2`] = `
                 Object {
                   "borderBottom": false,
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1549,7 +1569,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1585,7 +1606,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1621,7 +1643,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1657,7 +1680,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1693,7 +1717,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1729,7 +1754,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1765,7 +1791,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1801,7 +1828,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1837,7 +1865,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -1873,7 +1902,8 @@ exports[`Render List view selectable without button 1`] = `
                 Object {
                   "borderBottom": false,
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2186,7 +2216,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2222,7 +2253,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2258,7 +2290,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2294,7 +2327,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2330,7 +2364,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2366,7 +2401,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2402,7 +2438,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2438,7 +2475,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2474,7 +2512,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": "1px solid #e0e0e0",
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }
@@ -2510,7 +2549,8 @@ exports[`Render List view selectable without button 2`] = `
                 Object {
                   "borderBottom": false,
                   "color": "rgba(0, 0, 0, 0.87)",
-                  "height": 32,
+                  "height": 48,
+                  "minHeight": 32,
                   "muiPrepared": true,
                 }
               }

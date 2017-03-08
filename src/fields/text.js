@@ -7,16 +7,19 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-if (global.jest) {
-    console.log('plop')
-}
 import React from 'react';
 import plugin from '../plugin';
 import TextField from 'material-ui/TextField';
 import {red500, indigo500, darkBlack} from 'material-ui/styles/colors';
 import transitions from 'material-ui/styles/transitions';
 import {fade} from 'material-ui/utils/colorManipulator';
-import RichTextEditor from 'react-rte';
+let RichTextEditor = null;
+if (process.env.NODE_ENV == 'test') {
+    RichTextEditor = () => {return <div />};
+    RichTextEditor.createValueFromString = () => {return 'Test'};
+} else {
+    RichTextEditor = require('react-rte').default;
+}
 
 export class TextList extends React.Component {
     render () {
@@ -77,7 +80,6 @@ export class TextForm extends React.Component {
     }
     render () {
         const required = Boolean(eval(this.props.required));
-        console.log(this.props.value)
         let error = ''
         if (required && !this.props.readonly && this.props.value == '<p><br></p>') {
             error = 'This field is required';

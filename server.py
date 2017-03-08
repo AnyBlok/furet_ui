@@ -31,6 +31,7 @@ def getData(viewId):
                     'uuid': 'uuid---',
                     'password': 'password',
                     'color': '#36c',
+                    'text': '<div><p><em>Plop</em></p></div>',
                 },
                 {
                     'id': '2',
@@ -42,6 +43,7 @@ def getData(viewId):
                     'uuid': 'uuid---',
                     'password': 'password',
                     'color': '#36c',
+                    'text': '<div><p><em>Plop</em></p></div>',
                 },
                 {
                     'id': '3',
@@ -53,6 +55,7 @@ def getData(viewId):
                     'uuid': 'uuid---',
                     'password': 'password',
                     'color': '#36c',
+                    'text': '<div><p><em>Plop</em></p></div>',
                 },
                 {
                     'id': '4',
@@ -64,6 +67,7 @@ def getData(viewId):
                     'uuid': 'uuid---',
                     'password': 'password',
                     'color': '#36c',
+                    'text': '<div><p><em>Plop</em></p><p>Other line</p></div>',
                 },
             ],
         },
@@ -289,24 +293,14 @@ def getViewList(state):
                 'label': 'Number',
             },
             {
-                'name': 'url',
-                'type': 'URL',
-                'label': 'URL',
-            },
-            {
-                'name': 'uuid',
-                'type': 'UUID',
-                'label': 'UUID',
-            },
-            {
-                'name': 'password',
-                'type': 'Password',
-                'label': 'Password',
-            },
-            {
                 'name': 'color',
                 'type': 'Color',
                 'label': 'Color',
+            },
+            {
+                'name': 'text',
+                'type': 'Text',
+                'label': 'Text',
             },
         ],
         'search': [
@@ -380,6 +374,9 @@ def getViewThumbnail(state):
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="color" widget="Color" label="Color" fullwidth="1"></field>
                 </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="text" widget="Text" label="Text"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -425,6 +422,9 @@ def getViewForm(state):
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="color" widget="Color" label="Color" fullwidth="1" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="text" widget="Text" label="Text" required="1"></field>
                 </div>
             </div>
         ''',
