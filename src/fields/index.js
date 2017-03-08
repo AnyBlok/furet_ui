@@ -19,6 +19,7 @@ import './uuid';
 import './sequence';
 import './password';
 import './color';
+import './text';
 
 /**
  * Unknown field, used only if the wanted field is not available
