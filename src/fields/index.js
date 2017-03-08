@@ -20,6 +20,7 @@ import './sequence';
 import './password';
 import './color';
 import './text';
+import './boolean';
 
 /**
  * Unknown field, used only if the wanted field is not available
