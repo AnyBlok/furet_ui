@@ -27,6 +27,11 @@ def getData(viewId):
                     'creation_date': '2017-02-20',
                     'state': 'new',
                     'number': 1.2345678,
+                    'url': 'http://furet-ui.readthedocs.io',
+                    'uuid': 'uuid---',
+                    'password': 'password',
+                    'color': '#36c',
+                    'text': '<div><p><em>Plop</em></p></div>',
                 },
                 {
                     'id': '2',
@@ -34,6 +39,11 @@ def getData(viewId):
                     'creation_date': '2017-02-21',
                     'state': 'started',
                     'number': 1.2345678,
+                    'url': 'http://furet-ui.readthedocs.io',
+                    'uuid': 'uuid---',
+                    'password': 'password',
+                    'color': '#36c',
+                    'text': '<div><p><em>Plop</em></p></div>',
                 },
                 {
                     'id': '3',
@@ -41,6 +51,11 @@ def getData(viewId):
                     'creation_date': '2017-02-21',
                     'state': 'done',
                     'number': 1.2345678,
+                    'url': 'http://furet-ui.readthedocs.io',
+                    'uuid': 'uuid---',
+                    'password': 'password',
+                    'color': '#36c',
+                    'text': '<div><p><em>Plop</em></p></div>',
                 },
                 {
                     'id': '4',
@@ -48,6 +63,11 @@ def getData(viewId):
                     'creation_date': '2017-02-21',
                     'state': 'done',
                     'number': 1.2345678,
+                    'url': 'http://furet-ui.readthedocs.io',
+                    'uuid': 'uuid---',
+                    'password': 'password',
+                    'color': '#36c',
+                    'text': '<div><p><em>Plop</em></p><p>Other line</p></div>',
                 },
             ],
         },
@@ -272,6 +292,16 @@ def getViewList(state):
                 'type': 'Float',
                 'label': 'Number',
             },
+            {
+                'name': 'color',
+                'type': 'Color',
+                'label': 'Color',
+            },
+            {
+                'name': 'text',
+                'type': 'Text',
+                'label': 'Text',
+            },
         ],
         'search': [
             {
@@ -332,6 +362,21 @@ def getViewThumbnail(state):
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="number" widget="Float" label="Number"></field>
                 </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="url" widget="URL" label="URL" fullwidth="1" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="password" widget="Password" label="Password" fullwidth="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="color" widget="Color" label="Color" fullwidth="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="text" widget="Text" label="Text"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -352,19 +397,34 @@ def getViewForm(state):
         'template': '''
             <div className="row">
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <field name="id" widget="Integer" label="ID" fullwidth="1"></field>
+                    <field name="id" widget="Integer" label="ID" fullwidth="1" required="1"></field>
                 </div>
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <field name="name" widget="String" label="Label" fullwidth="1"></field>
+                    <field name="name" widget="String" label="Label" fullwidth="1" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
+                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="creation_date" widget="Date" label="Creation date"></field>
+                    <field name="creation_date" widget="Date" label="Creation date" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="number" widget="Float" label="Number"></field>
+                    <field name="number" widget="Float" label="Number" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="url" widget="URL" label="URL" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="password" widget="Password" label="Password" fullwidth="1" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="color" widget="Color" label="Color" fullwidth="1" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field name="text" widget="Text" label="Text" required="1"></field>
                 </div>
             </div>
         ''',

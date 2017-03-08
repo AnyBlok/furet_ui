@@ -14,7 +14,12 @@ import './selection';
 import './date';
 import './integer';
 import './float';
-
+import './url';
+import './uuid';
+import './sequence';
+import './password';
+import './color';
+import './text';
 
 /**
  * Unknown field, used only if the wanted field is not available

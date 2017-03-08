@@ -22,12 +22,11 @@ exports[`getField for Form 1`] = `
 >
   <input
     disabled={false}
-    id="view-type-Form-field_type-Float-field-name-"
+    id="view-type-Form-field_type-URL-field-name-"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
     required={false}
-    step="0.01"
     style={
       Object {
         "MozAppearance": "textfield",
@@ -47,8 +46,8 @@ exports[`getField for Form 1`] = `
         "width": "100%",
       }
     }
-    type="number"
-    value={1.23}
+    type="text"
+    value="Test"
   />
   <div>
     <hr
@@ -73,27 +72,42 @@ exports[`getField for Form 1`] = `
       style={
         Object {
           "MozBoxSizing": "content-box",
-          "WebkitTransform": "scaleX(0)",
+          "WebkitTransform": "scaleX(1)",
           "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "borderBottom": "solid 2px",
-          "borderColor": "#00bcd4",
+          "borderColor": "#f44336",
           "borderLeft": "none",
           "borderRight": "none",
           "borderTop": "none",
           "bottom": 8,
           "boxSizing": "content-box",
           "margin": 0,
-          "msTransform": "scaleX(0)",
+          "msTransform": "scaleX(1)",
           "muiPrepared": true,
           "position": "absolute",
-          "transform": "scaleX(0)",
+          "transform": "scaleX(1)",
           "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "width": "100%",
         }
       }
     />
   </div>
-  
+  <div
+    style={
+      Object {
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "bottom": 2,
+        "color": "#f44336",
+        "fontSize": 12,
+        "lineHeight": "12px",
+        "muiPrepared": true,
+        "position": "relative",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      }
+    }
+  >
+    It is not an url
+  </div>
 </div>
 `;
 
@@ -119,7 +133,7 @@ exports[`getField for Form fullwith 1`] = `
 >
   <label
     className={undefined}
-    htmlFor="view-type-Form-field_type-Float-field-name-"
+    htmlFor="view-type-Form-field_type-URL-field-name-"
     onTouchTap={undefined}
     style={
       Object {
@@ -149,12 +163,11 @@ exports[`getField for Form fullwith 1`] = `
   </label>
   <input
     disabled={false}
-    id="view-type-Form-field_type-Float-field-name-"
+    id="view-type-Form-field_type-URL-field-name-"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
     required={false}
-    step="0.01"
     style={
       Object {
         "MozAppearance": "textfield",
@@ -177,8 +190,8 @@ exports[`getField for Form fullwith 1`] = `
         "width": "100%",
       }
     }
-    type="number"
-    value={1.23}
+    type="text"
+    value="Test"
   />
   <div>
     <hr
@@ -203,157 +216,191 @@ exports[`getField for Form fullwith 1`] = `
       style={
         Object {
           "MozBoxSizing": "content-box",
-          "WebkitTransform": "scaleX(0)",
+          "WebkitTransform": "scaleX(1)",
           "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "borderBottom": "solid 2px",
-          "borderColor": "#00bcd4",
+          "borderColor": "#f44336",
           "borderLeft": "none",
           "borderRight": "none",
           "borderTop": "none",
           "bottom": 8,
           "boxSizing": "content-box",
           "margin": 0,
-          "msTransform": "scaleX(0)",
+          "msTransform": "scaleX(1)",
           "muiPrepared": true,
           "position": "absolute",
-          "transform": "scaleX(0)",
+          "transform": "scaleX(1)",
           "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "width": "100%",
         }
       }
     />
   </div>
-  
+  <div
+    style={
+      Object {
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "bottom": 15,
+        "color": "#f44336",
+        "fontSize": 12,
+        "lineHeight": "12px",
+        "muiPrepared": true,
+        "position": "relative",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      }
+    }
+  >
+    It is not an url
+  </div>
 </div>
 `;
 
 exports[`getField for Form readonly 1`] = `
 <div
-  className={undefined}
   style={
     Object {
-      "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-      "backgroundColor": "transparent",
-      "cursor": "not-allowed",
       "display": "inline-block",
-      "fontFamily": "Roboto, sans-serif",
-      "fontSize": 16,
-      "height": 72,
-      "lineHeight": "24px",
-      "muiPrepared": true,
-      "position": "relative",
-      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
       "width": 256,
     }
   }
 >
-  <label
+  <div
     className={undefined}
-    htmlFor="view-type-Form-field_type-Float-field-name-"
-    onTouchTap={undefined}
     style={
       Object {
-        "MozUserSelect": "none",
-        "WebkitTransform": "scale(0.75) translate(0, -28px)",
-        "WebkitTransformOrigin": "left top",
-        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-        "WebkitUserSelect": "none",
-        "color": "rgba(0, 0, 0, 0.3)",
-        "lineHeight": "22px",
-        "msTransform": "scale(0.75) translate(0, -28px)",
-        "msTransformOrigin": "left top",
-        "msUserSelect": "none",
+        "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "backgroundColor": "transparent",
+        "cursor": "not-allowed",
+        "display": "inline-block",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSize": 16,
+        "height": 72,
+        "lineHeight": "24px",
         "muiPrepared": true,
-        "pointerEvents": "none",
-        "position": "absolute",
-        "top": 38,
-        "transform": "scale(0.75) translate(0, -28px)",
-        "transformOrigin": "left top",
-        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-        "userSelect": "none",
-        "zIndex": 1,
+        "position": "relative",
+        "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "width": "90%",
       }
     }
   >
-    Test
-  </label>
-  <input
-    disabled={true}
-    id="view-type-Form-field_type-Float-field-name-"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    required={false}
-    step="0.01"
+    <label
+      className={undefined}
+      htmlFor="view-type-Form-field_type-URL-field-name-"
+      onTouchTap={undefined}
+      style={
+        Object {
+          "MozUserSelect": "none",
+          "WebkitTransform": "scale(0.75) translate(0, -28px)",
+          "WebkitTransformOrigin": "left top",
+          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "WebkitUserSelect": "none",
+          "color": "rgba(0, 0, 0, 0.3)",
+          "lineHeight": "22px",
+          "msTransform": "scale(0.75) translate(0, -28px)",
+          "msTransformOrigin": "left top",
+          "msUserSelect": "none",
+          "muiPrepared": true,
+          "pointerEvents": "none",
+          "position": "absolute",
+          "top": 38,
+          "transform": "scale(0.75) translate(0, -28px)",
+          "transformOrigin": "left top",
+          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "userSelect": "none",
+          "width": "90%",
+          "zIndex": 1,
+        }
+      }
+    >
+      Test
+    </label>
+    <input
+      disabled={true}
+      id="view-type-Form-field_type-URL-field-name-"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      style={
+        Object {
+          "MozAppearance": "textfield",
+          "MozBoxSizing": "border-box",
+          "WebkitAppearance": "textfield",
+          "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+          "appearance": "textfield",
+          "backgroundColor": "rgba(0,0,0,0)",
+          "border": "none",
+          "boxSizing": "border-box",
+          "color": "rgba(0, 0, 0, 0.3)",
+          "cursor": "inherit",
+          "font": "inherit",
+          "height": "100%",
+          "marginTop": 14,
+          "muiPrepared": true,
+          "outline": "none",
+          "padding": 0,
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+      type="url"
+      value="Test"
+    />
+    <div>
+      <hr
+        style={
+          Object {
+            "MozBoxSizing": "content-box",
+            "borderBottom": "dotted 2px",
+            "borderColor": "rgba(0, 0, 0, 0.3)",
+            "borderLeft": "none",
+            "borderRight": "none",
+            "borderTop": "none",
+            "bottom": 8,
+            "boxSizing": "content-box",
+            "margin": 0,
+            "muiPrepared": true,
+            "position": "absolute",
+            "width": "100%",
+          }
+        }
+      />
+      <hr
+        style={
+          Object {
+            "MozBoxSizing": "content-box",
+            "WebkitTransform": "scaleX(0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "borderBottom": "solid 2px",
+            "borderColor": "#00bcd4",
+            "borderLeft": "none",
+            "borderRight": "none",
+            "borderTop": "none",
+            "bottom": 8,
+            "boxSizing": "content-box",
+            "margin": 0,
+            "msTransform": "scaleX(0)",
+            "muiPrepared": true,
+            "position": "absolute",
+            "transform": "scaleX(0)",
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <a
+    href="Test"
     style={
       Object {
-        "MozAppearance": "textfield",
-        "MozBoxSizing": "border-box",
-        "WebkitAppearance": "textfield",
-        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-        "appearance": "textfield",
-        "backgroundColor": "rgba(0,0,0,0)",
-        "border": "none",
-        "boxSizing": "border-box",
-        "color": "rgba(0, 0, 0, 0.3)",
-        "cursor": "inherit",
-        "font": "inherit",
-        "height": "100%",
-        "marginTop": 14,
-        "muiPrepared": true,
-        "outline": "none",
-        "padding": 0,
-        "position": "relative",
-        "width": "100%",
+        "width": "10%",
       }
     }
-    type="number"
-    value={1.23}
-  />
-  <div>
-    <hr
-      style={
-        Object {
-          "MozBoxSizing": "content-box",
-          "borderBottom": "dotted 2px",
-          "borderColor": "rgba(0, 0, 0, 0.3)",
-          "borderLeft": "none",
-          "borderRight": "none",
-          "borderTop": "none",
-          "bottom": 8,
-          "boxSizing": "content-box",
-          "margin": 0,
-          "muiPrepared": true,
-          "position": "absolute",
-          "width": "100%",
-        }
-      }
+  >
+    <i
+      className="fa fa-external-link fa-lg"
     />
-    <hr
-      style={
-        Object {
-          "MozBoxSizing": "content-box",
-          "WebkitTransform": "scaleX(0)",
-          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-          "borderBottom": "solid 2px",
-          "borderColor": "#00bcd4",
-          "borderLeft": "none",
-          "borderRight": "none",
-          "borderTop": "none",
-          "bottom": 8,
-          "boxSizing": "content-box",
-          "margin": 0,
-          "msTransform": "scaleX(0)",
-          "muiPrepared": true,
-          "position": "absolute",
-          "transform": "scaleX(0)",
-          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-          "width": "100%",
-        }
-      }
-    />
-  </div>
-  
+  </a>
 </div>
 `;
 
@@ -379,7 +426,7 @@ exports[`getField for Form required 1`] = `
 >
   <label
     className={undefined}
-    htmlFor="view-type-Form-field_type-Float-field-name-"
+    htmlFor="view-type-Form-field_type-URL-field-name-"
     onTouchTap={undefined}
     style={
       Object {
@@ -409,12 +456,11 @@ exports[`getField for Form required 1`] = `
   </label>
   <input
     disabled={false}
-    id="view-type-Form-field_type-Float-field-name-"
+    id="view-type-Form-field_type-URL-field-name-"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
     required={true}
-    step="0.01"
     style={
       Object {
         "MozAppearance": "textfield",
@@ -437,8 +483,8 @@ exports[`getField for Form required 1`] = `
         "width": "100%",
       }
     }
-    type="number"
-    value={1.23}
+    type="text"
+    value="Test"
   />
   <div>
     <hr
@@ -463,31 +509,46 @@ exports[`getField for Form required 1`] = `
       style={
         Object {
           "MozBoxSizing": "content-box",
-          "WebkitTransform": "scaleX(0)",
+          "WebkitTransform": "scaleX(1)",
           "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "borderBottom": "solid 2px",
-          "borderColor": "#00bcd4",
+          "borderColor": "#f44336",
           "borderLeft": "none",
           "borderRight": "none",
           "borderTop": "none",
           "bottom": 8,
           "boxSizing": "content-box",
           "margin": 0,
-          "msTransform": "scaleX(0)",
+          "msTransform": "scaleX(1)",
           "muiPrepared": true,
           "position": "absolute",
-          "transform": "scaleX(0)",
+          "transform": "scaleX(1)",
           "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           "width": "100%",
         }
       }
     />
   </div>
-  
+  <div
+    style={
+      Object {
+        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "bottom": 15,
+        "color": "#f44336",
+        "fontSize": 12,
+        "lineHeight": "12px",
+        "muiPrepared": true,
+        "position": "relative",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      }
+    }
+  >
+    It is not an url
+  </div>
 </div>
 `;
 
-exports[`getField for Form required with emptu value 1`] = `
+exports[`getField for Form required with empty value 1`] = `
 <div
   className={undefined}
   style={
@@ -509,25 +570,25 @@ exports[`getField for Form required with emptu value 1`] = `
 >
   <label
     className={undefined}
-    htmlFor="view-type-Form-field_type-Float-field-name-"
+    htmlFor="view-type-Form-field_type-URL-field-name-"
     onTouchTap={undefined}
     style={
       Object {
         "MozUserSelect": "none",
-        "WebkitTransform": "scale(0.75) translate(0, -28px)",
+        "WebkitTransform": "scale(1) translate(0, 0)",
         "WebkitTransformOrigin": "left top",
         "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
         "WebkitUserSelect": "none",
         "color": "#3f51b5",
         "lineHeight": "22px",
-        "msTransform": "scale(0.75) translate(0, -28px)",
+        "msTransform": "scale(1) translate(0, 0)",
         "msTransformOrigin": "left top",
         "msUserSelect": "none",
         "muiPrepared": true,
         "pointerEvents": "none",
         "position": "absolute",
         "top": 38,
-        "transform": "scale(0.75) translate(0, -28px)",
+        "transform": "scale(1) translate(0, 0)",
         "transformOrigin": "left top",
         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
         "userSelect": "none",
@@ -539,12 +600,11 @@ exports[`getField for Form required with emptu value 1`] = `
   </label>
   <input
     disabled={false}
-    id="view-type-Form-field_type-Float-field-name-"
+    id="view-type-Form-field_type-URL-field-name-"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
     required={true}
-    step="0.01"
     style={
       Object {
         "MozAppearance": "textfield",
@@ -567,8 +627,8 @@ exports[`getField for Form required with emptu value 1`] = `
         "width": "100%",
       }
     }
-    type="number"
-    value={0}
+    type="text"
+    value=""
   />
   <div>
     <hr
@@ -633,102 +693,124 @@ exports[`getField for Form required with emptu value 1`] = `
 `;
 
 exports[`getField for List 1`] = `
-<span>
-  1.23
-</span>
+<a
+  href="Test"
+>
+  Test
+</a>
 `;
 
 exports[`getField for Thumbnail 1`] = `
 <div
-  className={undefined}
   style={
     Object {
-      "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-      "backgroundColor": "transparent",
-      "cursor": "not-allowed",
       "display": "inline-block",
-      "fontFamily": "Roboto, sans-serif",
-      "fontSize": 16,
-      "height": 48,
-      "lineHeight": "24px",
-      "muiPrepared": true,
-      "position": "relative",
-      "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
       "width": 256,
     }
   }
 >
-  <input
-    disabled={true}
-    id="view-type-Thumbnail-field_type-Float-field-name-"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    step="0.01"
+  <div
+    className={undefined}
     style={
       Object {
-        "MozAppearance": "textfield",
-        "WebkitAppearance": "textfield",
-        "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-        "appearance": "textfield",
-        "backgroundColor": "rgba(0,0,0,0)",
-        "border": "none",
-        "color": "rgba(0, 0, 0, 0.3)",
-        "cursor": "inherit",
-        "font": "inherit",
-        "height": "100%",
+        "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "backgroundColor": "transparent",
+        "cursor": "not-allowed",
+        "display": "inline-block",
+        "fontFamily": "Roboto, sans-serif",
+        "fontSize": 16,
+        "height": 48,
+        "lineHeight": "24px",
         "muiPrepared": true,
-        "outline": "none",
-        "padding": 0,
         "position": "relative",
-        "width": "100%",
+        "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "width": "90%",
       }
     }
-    type="number"
-    value={1.23}
-  />
-  <div>
-    <hr
+  >
+    <input
+      disabled={true}
+      id="view-type-Thumbnail-field_type-URL-field-name-"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
       style={
         Object {
-          "MozBoxSizing": "content-box",
-          "borderBottom": "dotted 2px",
-          "borderColor": "rgba(0, 0, 0, 0.3)",
-          "borderLeft": "none",
-          "borderRight": "none",
-          "borderTop": "none",
-          "bottom": 8,
-          "boxSizing": "content-box",
-          "margin": 0,
+          "MozAppearance": "textfield",
+          "WebkitAppearance": "textfield",
+          "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+          "appearance": "textfield",
+          "backgroundColor": "rgba(0,0,0,0)",
+          "border": "none",
+          "color": "rgba(0, 0, 0, 0.3)",
+          "cursor": "inherit",
+          "font": "inherit",
+          "height": "100%",
           "muiPrepared": true,
-          "position": "absolute",
+          "outline": "none",
+          "padding": 0,
+          "position": "relative",
           "width": "100%",
         }
       }
+      type="url"
+      value="Test"
     />
-    <hr
-      style={
-        Object {
-          "MozBoxSizing": "content-box",
-          "WebkitTransform": "scaleX(0)",
-          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-          "borderBottom": "solid 2px",
-          "borderColor": "#00bcd4",
-          "borderLeft": "none",
-          "borderRight": "none",
-          "borderTop": "none",
-          "bottom": 8,
-          "boxSizing": "content-box",
-          "margin": 0,
-          "msTransform": "scaleX(0)",
-          "muiPrepared": true,
-          "position": "absolute",
-          "transform": "scaleX(0)",
-          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-          "width": "100%",
+    <div>
+      <hr
+        style={
+          Object {
+            "MozBoxSizing": "content-box",
+            "borderBottom": "dotted 2px",
+            "borderColor": "rgba(0, 0, 0, 0.3)",
+            "borderLeft": "none",
+            "borderRight": "none",
+            "borderTop": "none",
+            "bottom": 8,
+            "boxSizing": "content-box",
+            "margin": 0,
+            "muiPrepared": true,
+            "position": "absolute",
+            "width": "100%",
+          }
         }
-      }
-    />
+      />
+      <hr
+        style={
+          Object {
+            "MozBoxSizing": "content-box",
+            "WebkitTransform": "scaleX(0)",
+            "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "borderBottom": "solid 2px",
+            "borderColor": "#00bcd4",
+            "borderLeft": "none",
+            "borderRight": "none",
+            "borderTop": "none",
+            "bottom": 8,
+            "boxSizing": "content-box",
+            "margin": 0,
+            "msTransform": "scaleX(0)",
+            "muiPrepared": true,
+            "position": "absolute",
+            "transform": "scaleX(0)",
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
   </div>
+  <a
+    href="Test"
+    style={
+      Object {
+        "width": "10%",
+      }
+    }
+  >
+    <i
+      className="fa fa-external-link fa-lg"
+    />
+  </a>
 </div>
 `;

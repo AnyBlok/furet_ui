@@ -41,6 +41,10 @@ Install latest versions of FuretUI from github (need **npm**)::
     npm install
     npm run build-prod
 
+..warning::
+
+    ``build-prod`` return a minimify build
+
 
 Unit Test
 ---------
@@ -51,6 +55,12 @@ Run the test with ``npm``::
 
 
 AnyBlok is tested using `Travis <https://travis-ci.org/AnyBlok/furet_ui>`_
+
+Run the mock server fron the project::
+
+    npm run build
+    python server.py
+
 
 Contributing (hackers needed!)
 ------------------------------

@@ -11,6 +11,7 @@ import React from 'react';
 import plugin from '../plugin';
 import DatePicker from 'material-ui/DatePicker';
 import translate from 'counterpart';
+import {indigo500} from 'material-ui/styles/colors';
 
 
 class DateList extends React.Component {
@@ -47,14 +48,18 @@ class DateForm extends React.Component {
         this.props.onChange(this.props.name, d);
     }
     render () {
+        const required = Boolean(eval(this.props.required));
         const date = this.props.value ? new Date(Date.parse(this.props.value)): null;
+        const floatingLabelStyle = {};
+        if (required && !this.props.readonly) floatingLabelStyle.color = indigo500;
         return (
             <DatePicker
                 id={this.props.id}
                 floatingLabelText={this.props.label}
+                floatingLabelStyle={floatingLabelStyle}
                 fullWidth={Boolean(eval(this.props.fullwidth))}
                 disabled={this.props.readonly}
-                required={Boolean(eval(this.props.required))}
+                required={required}
                 value={date}
                 formatDate={(d) => translate.localize(d, {type: 'date', scope: 'furetUI'})}
                 okLabel={translate('furetUI.fields.date.ok', {fallback: 'Ok'})}

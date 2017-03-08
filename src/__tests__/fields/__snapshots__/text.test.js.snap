@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getField for Form 1`] = `
+<div>
+  <label
+    style={
+      Object {
+        "color": "rgba(0, 0, 0, 0.87)",
+        "fontSize": 16,
+        "lineHeight": "22px",
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 38,
+        "transform": "scale(0.75) translate(0, -28px)",
+        "transformOrigin": "left top",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
+      }
+    }
+  />
+  <div
+    style={Object {}}
+  >
+    <div />
+  </div>
+  
+</div>
+`;
+
+exports[`getField for Form readonly 1`] = `
+<div>
+  <label
+    style={
+      Object {
+        "color": "rgba(0, 0, 0, 0.3)",
+        "fontSize": 16,
+        "lineHeight": "22px",
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 38,
+        "transform": "scale(0.75) translate(0, -28px)",
+        "transformOrigin": "left top",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
+      }
+    }
+  >
+    Test
+  </label>
+  <div
+    style={
+      Object {
+        "marginTop": 38,
+      }
+    }
+  >
+    <div />
+  </div>
+  
+</div>
+`;
+
+exports[`getField for Form required 1`] = `
+<div>
+  <label
+    style={
+      Object {
+        "color": "#3f51b5",
+        "fontSize": 16,
+        "lineHeight": "22px",
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 38,
+        "transform": "scale(0.75) translate(0, -28px)",
+        "transformOrigin": "left top",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
+      }
+    }
+  >
+    Test
+  </label>
+  <div
+    style={
+      Object {
+        "marginTop": 38,
+      }
+    }
+  >
+    <div />
+  </div>
+  
+</div>
+`;
+
+exports[`getField for Form required with empty value 1`] = `
+<div>
+  <label
+    style={
+      Object {
+        "color": "#3f51b5",
+        "fontSize": 16,
+        "lineHeight": "22px",
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 38,
+        "transform": "scale(0.75) translate(0, -28px)",
+        "transformOrigin": "left top",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
+      }
+    }
+  >
+    Test
+  </label>
+  <div
+    style={
+      Object {
+        "marginTop": 38,
+      }
+    }
+  >
+    <div />
+  </div>
+  
+</div>
+`;
+
+exports[`getField for List 1`] = `<div />`;
+
+exports[`getField for Thumbnail 1`] = `
+<div>
+  <label
+    style={
+      Object {
+        "color": "rgba(0, 0, 0, 0.3)",
+        "fontSize": 16,
+        "lineHeight": "22px",
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 38,
+        "transform": "scale(0.75) translate(0, -28px)",
+        "transformOrigin": "left top",
+        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "marginTop": 38,
+      }
+    }
+  >
+    <div />
+  </div>
+</div>
+`;

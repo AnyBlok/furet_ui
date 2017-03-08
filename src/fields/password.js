@@ -11,22 +11,23 @@ import React from 'react';
 import plugin from '../plugin';
 import TextField from 'material-ui/TextField';
 import {indigo500} from 'material-ui/styles/colors';
+import _ from 'underscore';
 
-export class IntegerList extends React.Component {
+export class PasswordList extends React.Component {
     render () {
+        const value = _.map(this.props.value || [], a => ('*')).join('');
         return (
-            <span>{this.props.value}</span>
+            <span>{value}</span>
         );
     }
 }
 
-export class IntegerThumbnail extends React.Component {
+export class PasswordThumbnail extends React.Component {
     render () {
         return (
             <TextField
                 id={this.props.id}
-                type='number'
-                step='1'
+                type="password"
                 floatingLabelText={this.props.label}
                 fullWidth={Boolean(eval(this.props.fullwidth))}
                 disabled={true}
@@ -36,9 +37,9 @@ export class IntegerThumbnail extends React.Component {
     }
 }
 
-export class IntegerForm extends React.Component {
+export class PasswordForm extends React.Component {
     render () {
-        const required= Boolean(eval(this.props.required));
+        const required = Boolean(eval(this.props.required));
         let error = ''
         if (required && !this.props.readonly && !this.props.value) {
             error = 'This field is required';
@@ -48,11 +49,10 @@ export class IntegerForm extends React.Component {
         return (
             <TextField
                 id={this.props.id}
-                type='number'
-                step='1'
+                type="password"
                 floatingLabelText={this.props.label}
-                floatingLabelStyle={floatingLabelStyle}
                 fullWidth={Boolean(eval(this.props.fullwidth))}
+                floatingLabelStyle={floatingLabelStyle}
                 disabled={this.props.readonly}
                 required={Boolean(eval(this.props.required))}
                 value={this.props.value}
@@ -63,18 +63,12 @@ export class IntegerForm extends React.Component {
     }
 }
 
-plugin.set(['field', 'List'], {'Integer': IntegerList});
-plugin.set(['field', 'Thumbnail'], {'Integer': IntegerThumbnail});
-plugin.set(['field', 'Form'], {'Integer': IntegerForm});
-plugin.set(['field', 'List'], {'BigInteger': IntegerList});
-plugin.set(['field', 'Thumbnail'], {'BigInteger': IntegerThumbnail});
-plugin.set(['field', 'Form'], {'BigInteger': IntegerForm});
-plugin.set(['field', 'List'], {'SmallInteger': IntegerList});
-plugin.set(['field', 'Thumbnail'], {'SmallInteger': IntegerThumbnail});
-plugin.set(['field', 'Form'], {'SmallInteger': IntegerForm});
+plugin.set(['field', 'List'], {'Password': PasswordList});
+plugin.set(['field', 'Thumbnail'], {'Password': PasswordThumbnail});
+plugin.set(['field', 'Form'], {'Password': PasswordForm});
 
 export default {
-    IntegerList,
-    IntegerThumbnail,
-    IntegerForm,
+    PasswordList,
+    PasswordThumbnail,
+    PasswordForm,
 }

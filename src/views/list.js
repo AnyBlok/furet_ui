@@ -93,7 +93,7 @@ export class List extends Multi {
                 key={lineId}
                 hoverable={true}
                 selectable={this.props.selectable}
-                style={{height: 32}}
+                style={{minHeight: 32}}
             >
                 {_.map(this.props.headers || [], header => (
                     <TableRowColumn 
@@ -103,7 +103,7 @@ export class List extends Multi {
                     >
                         <div 
                             style={{
-                                height: 32,
+                                minHeight: 32,
                                 paddingTop: 8
                             }}
                             onClick={(e) => {
