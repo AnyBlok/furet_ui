@@ -13,21 +13,13 @@ import _ from 'underscore';
 import {BaseList, BaseThumbnail, BaseForm} from './base';
 
 export class PasswordList extends BaseList {
-    getInput () {
-        const value = _.map(this.props.value || [], a => ('*')).join('');
-        return (
-            <span>{value}</span>
-        );
+    getValue () {
+        return _.map(this.props.value || [], a => ('*')).join('');
     }
 }
 export class PasswordThumbnail extends BaseThumbnail {
-    getInput () {
-        const value = _.map(this.props.value || [], a => ('*')).join('');
-        return (
-            <div>
-                <span>{value}</span>
-            </div>
-        );
+    getValue () {
+        return _.map(this.props.value || [], a => ('*')).join('');
     }
 }
 export class PasswordForm extends BaseForm {

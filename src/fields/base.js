@@ -25,7 +25,7 @@ class Base extends React.Component {
         const props = {
             className: "form-control",
             id: this.props.id, 
-            value: this.props.value,
+            value: this.value,
         };
         return props;
     }
@@ -38,10 +38,14 @@ class Base extends React.Component {
             className: 'form-group',
         }
     }
+    getValue () {
+        return this.props.value;
+    }
     updateThisData () {
+        this.value = this.getValue();
         this.required = Boolean(eval(this.props.required));
         this.error = ''
-        if (this.required && !this.props.readonly && !this.props.value) {
+        if (this.required && !this.props.readonly && !this.value) {
             this.error = 'This field is required';
         }
     }
@@ -76,7 +80,7 @@ export class BaseList extends Base {
         return null;
     }
     getInput () {
-        return <span>{this.props.value}</span>
+        return <span>{this.value}</span>
     }
     getError () {
         return null;
@@ -87,7 +91,7 @@ export class BaseThumbnail extends Base {
     getInput () {
         return (
             <div>
-                <span>{this.props.value}</span>
+                <span>{this.value}</span>
             </div>
         )
     }
