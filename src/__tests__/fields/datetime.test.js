@@ -17,6 +17,9 @@ import {Provider} from 'react-redux';
 import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
 import {getField} from '../../fields';
+import * as moment from 'moment';
+import 'moment';
+moment.locale('en-EN')
 
 test('getField for List', () => {
     const store = createStore(combineReducers(reducers));
@@ -81,20 +84,6 @@ test('getField for Form required', () => {
         <Provider store={store}>
             <MuiThemeProvider>
                 {getField('Form', 'DateTime', {required: '1', label: '2017-03-01'}, '2017-03-01T01:02:03+01:00')}
-            </MuiThemeProvider>
-        </Provider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form required with empty value', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Form', 'DateTime', {required: '1', label: '2017-03-01'}, '')}
             </MuiThemeProvider>
         </Provider>
     );
