@@ -185,6 +185,7 @@ Each field must be defined by views type. The list views are:
 * Boolean
 * Color
 * Date
+* DateTime
 * Decimal
 * Float
 * Integer

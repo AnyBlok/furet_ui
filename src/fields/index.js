@@ -12,6 +12,7 @@ import plugin from '../plugin';
 import './string';
 import './selection';
 import './date';
+import './datetime';
 import './integer';
 import './float';
 import './url';

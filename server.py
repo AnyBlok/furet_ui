@@ -24,7 +24,7 @@ def getData(viewId):
                 {
                     'id': '1',
                     'name': "todo 1",
-                    'creation_date': '2017-02-20',
+                    'creation_date': '2017-02-20T01:02:04-00:00',
                     'state': 'new',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
@@ -37,7 +37,7 @@ def getData(viewId):
                 {
                     'id': '2',
                     'name': "todo 2",
-                    'creation_date': '2017-02-21',
+                    'creation_date': '2017-02-20T01:02:04-00:00',
                     'state': 'started',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
@@ -50,7 +50,7 @@ def getData(viewId):
                 {
                     'id': '3',
                     'name': "todo 3",
-                    'creation_date': '2017-02-21',
+                    'creation_date': '2017-02-20T01:02:04-00:00',
                     'state': 'done',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
@@ -63,7 +63,7 @@ def getData(viewId):
                 {
                     'id': '4',
                     'name': "todo 4",
-                    'creation_date': '2017-02-21',
+                    'creation_date': '2017-02-20T01:02:04-00:00',
                     'state': 'done',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
@@ -132,7 +132,7 @@ def getInitOptionnalData():
                                 'default': '%H/%M/%S',
                             },
                             'datetime': {
-                                'default': '%d/%m/%Y %H:%M:%S',
+                                'default': '%d/%m/%Y %H:%M:%S %z',
                             },
                         },
                         'menus': {
@@ -170,6 +170,10 @@ def getInitOptionnalData():
                             'date': {
                                 'invalid': 'Date invalide',
                                 'format': 'DD/MM/YYYY',
+                            },
+                            'datetime': {
+                                'invalid': 'Date et heure invalide',
+                                'format': 'DD/MM/YYYY HH:mm:ss Z',
                             },
                             'url': {
                                 'invalid': 'URL invalide',
@@ -294,7 +298,7 @@ def getViewList(state):
             },
             {
                 'name': 'creation_date',
-                'type': 'Date',
+                'type': 'DateTime',
                 'label': 'Creation date',
             },
             {
@@ -372,7 +376,7 @@ def getViewThumbnail(state):
                     <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="creation_date" widget="Date" label="Creation date"></field>
+                    <field name="creation_date" widget="DateTime" label="Creation date"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="number" widget="Float" label="Number"></field>
@@ -424,7 +428,7 @@ def getViewForm(state):
                     <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" required="1"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="creation_date" widget="Date" label="Creation date" required="1"></field>
+                    <field name="creation_date" widget="DateTime" label="Creation date" required="1"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="number" widget="Float" label="Number" required="1"></field>
