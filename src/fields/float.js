@@ -9,70 +9,36 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import plugin from '../plugin';
-import TextField from 'material-ui/TextField';
-import {indigo500} from 'material-ui/styles/colors';
+import {BaseList, BaseThumbnail, BaseForm} from './base';
 
-export class FloatList extends React.Component {
-    render () {
-        const rounding = this.props.step || '0.01',
-              value = Math.round(this.props.value / rounding) * rounding;
-        return (
-            <span>{value}</span>
-        );
+export class FloatList extends BaseList {
+    getValue () {
+        const rounding = this.props.step || '0.01';
+        return Math.round(this.props.value / rounding) * rounding;
     }
 }
-
-export class FloatThumbnail extends React.Component {
-    render () {
-        const rounding = this.props.step || '0.01',
-              value = Math.round(this.props.value / rounding) * rounding;
-        return (
-            <TextField
-                id={this.props.id}
-                type='number'
-                step={this.props.step || '0.01'}
-                floatingLabelText={this.props.label}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                disabled={true}
-                value={value}
-            />
-        );
+export class FloatThumbnail extends BaseThumbnail {
+    getValue () {
+        const rounding = this.props.step || '0.01';
+        return Math.round(this.props.value / rounding) * rounding;
     }
 }
-
-export class FloatForm extends React.Component {
-    render () {
-        const required= Boolean(eval(this.props.required));
-        const rounding = this.props.step || '0.01',
-              value = Math.round(this.props.value / rounding) * rounding;
-        let error = ''
-        if (required && !this.props.readonly && !this.props.value) {
-            error = 'This field is required';
-        }
-        const floatingLabelStyle = {};
-        if (required && !this.props.readonly) floatingLabelStyle.color = indigo500;
-        return (
-            <TextField
-                id={this.props.id}
-                type='number'
-                step={this.props.step || '0.01'}
-                floatingLabelText={this.props.label}
-                floatingLabelStyle={floatingLabelStyle}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                disabled={this.props.readonly}
-                required={Boolean(eval(this.props.required))}
-                value={value}
-                onChange={(e) => this.props.onChange(this.props.name, e.target.value)}
-                errorText={error}
-            />
-        );
+export class FloatForm extends BaseForm {
+    getValue () {
+        const rounding = this.props.step || '0.01';
+        return Math.round(this.props.value / rounding) * rounding;
+    }
+    getInputProps () {
+        const props = super.getInputProps();
+        props.type = 'number';
+        props.step= this.props.step || '0.01';
+        return props;
     }
 }
 
 plugin.set(['field', 'List'], {'Float': FloatList});
 plugin.set(['field', 'Thumbnail'], {'Float': FloatThumbnail});
 plugin.set(['field', 'Form'], {'Float': FloatForm});
-
 plugin.set(['field', 'List'], {'Decimal': FloatList});
 plugin.set(['field', 'Thumbnail'], {'Decimal': FloatThumbnail});
 plugin.set(['field', 'Form'], {'Decimal': FloatForm});
