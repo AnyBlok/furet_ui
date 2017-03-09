@@ -31,11 +31,6 @@ export class ColorList extends BaseList {
 }
 
 export class ColorThumbnail extends BaseThumbnail {
-    getInputProps () {
-        const props = super.getInputProps();
-        props.maxlength = "4";
-        return props;
-    }
     getInput () {
         return (
             <div>
@@ -98,7 +93,7 @@ export class ColorForm extends BaseForm {
     getInputProps () {
         const props = super.getInputProps();
         props.type = 'text';
-        props.maxlength = "4";
+        props.maxLength = "7";
         return props;
     }
     getInput () {
