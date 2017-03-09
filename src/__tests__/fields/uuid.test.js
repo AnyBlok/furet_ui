@@ -59,17 +59,3 @@ test('getField for Form', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
-
-test('getField for Form fullwith', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Form', 'UUID', {fullwith: '1', label: 'Test'}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
