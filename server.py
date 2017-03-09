@@ -164,9 +164,15 @@ def getInitOptionnalData():
                             },
                         },
                         'fields': {
+                            'common': {
+                                'required': 'Ce champs est requis',
+                            },
                             'date': {
-                                'ok': 'Ok',
-                                'cancel': 'Annuler',
+                                'invalid': 'Date invalide',
+                                'format': 'DD/MM/YYYY',
+                            },
+                            'url': {
+                                'invalid': 'URL invalide',
                             },
                         },
                     },

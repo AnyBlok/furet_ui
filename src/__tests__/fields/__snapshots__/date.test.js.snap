@@ -386,7 +386,7 @@ exports[`getField for Form 1`] = `
         className="form-control"
         onChange={[Function]}
         type="text"
-        value="01/03/2017"
+        value="2017-03-01"
       />
       <span
         className="input-group-addon"
@@ -812,7 +812,7 @@ exports[`getField for Form required 1`] = `
         className="form-control"
         onChange={[Function]}
         type="text"
-        value="01/03/2017"
+        value="2017-03-01"
       />
       <span
         className="input-group-addon"
@@ -1218,7 +1218,7 @@ exports[`getField for Form required with empty value 1`] = `
         className="form-control"
         onChange={[Function]}
         type="text"
-        value="09/03/2017"
+        value="2017-03-09"
       />
       <span
         className="input-group-addon"

@@ -10,6 +10,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import React from 'react';
 import plugin from '../plugin';
 import {BaseList, BaseThumbnail, BaseForm} from './base';
+import translate from 'counterpart';
 
 /** CFor unit test **/
 let RichTextEditor = null;
@@ -66,7 +67,8 @@ export class TextForm extends BaseForm {
     updateThisData () {
         super.updateThisData();
         if (this.required && !this.props.readonly && this.value == '<p><br></p>') {
-            this.error = 'This field is required';
+            this.error = translate('furetUI.fields.common.required', 
+                                   {fallback: 'This field is required'});
         }
     }
     getInput () {

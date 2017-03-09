@@ -10,6 +10,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import React from 'react';
 import plugin from '../plugin';
 import {BaseList, BaseThumbnail, BaseForm} from './base';
+import translate from 'counterpart';
 
 export class URLList extends BaseList {
     getInput () {
@@ -33,7 +34,9 @@ export class URLForm extends BaseForm {
         super.updateThisData();
         if (!this.error) {
             const reg = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
-            if (!reg.test(this.value)) this.error = 'It is not an url';
+            if (!reg.test(this.value))
+                this.error = translate('furetUI.fields.url.invalid', 
+                                       {fallback: 'It is not an url'});
         }
     }
     getInputProps () {

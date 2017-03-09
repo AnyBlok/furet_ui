@@ -13,6 +13,7 @@ import {BaseList, BaseThumbnail, BaseForm} from './base';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
+import translate from 'counterpart';
 
 export class SelectionList extends BaseList {
     getValue () {
@@ -64,7 +65,8 @@ export class SelectionForm extends BaseForm {
     updateThisData () {
         super.updateThisData();
         if (this.required && !this.props.readonly && this.value == ' --- ') {
-            this.error = 'This field is required';
+            this.error = translate('furetUI.fields.common.required', 
+                                   {fallback: 'This field is required'});
         }
     }
     getInput () {

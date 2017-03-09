@@ -45,7 +45,7 @@ class DateForm extends BaseForm {
         delete props.value;
         delete props.className;
         props.mode = 'date';
-        props.inputFormat = 'DD/MM/YYYY';
+        props.inputFormat = translate('furetUI.fields.date.format', {fallback: 'YYYY-MM-DD'});
         if (this.value) {
             props.format = 'YYYY-MM-DD';
             props.dateTime = this.props.value;
@@ -56,7 +56,8 @@ class DateForm extends BaseForm {
     updateThisData () {
         super.updateThisData()
         if (this.required && !this.props.readonly && (this.value == 'Invalid date' || this.props.value == 'Invalid date')) {
-            this.error = 'Invalid date';
+            this.error = translate('furetUI.fields.date.invalid', 
+                                   {fallback: 'Invalid date'});
         }
     }
     getInput () {

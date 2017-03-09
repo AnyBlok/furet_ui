@@ -9,6 +9,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import {indigo500, red500} from 'material-ui/styles/colors';
+import translate from 'counterpart';
 
 class Base extends React.Component {
     getLabelProps () {
@@ -46,7 +47,8 @@ class Base extends React.Component {
         this.required = Boolean(eval(this.props.required));
         this.error = ''
         if (this.required && !this.props.readonly && !this.value) {
-            this.error = 'This field is required';
+            this.error = translate('furetUI.fields.common.required', 
+                                   {fallback: 'This field is required'});
         }
     }
     getError () {
