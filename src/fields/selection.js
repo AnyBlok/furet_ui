@@ -9,63 +9,90 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import plugin from '../plugin';
-import SelectField from 'material-ui/SelectField';
+import {BaseList, BaseThumbnail, BaseForm} from './base';
+import Popover from 'material-ui/Popover';
+import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import {indigo500} from 'material-ui/styles/colors';
 
-
-class SelectionList extends React.Component {
-    render () {
-        return (
-            <span>{this.props.selections[this.props.value] || ''}</span>
-        );
+export class SelectionList extends BaseList {
+    getValue () {
+        if ((this.props.selections || {})[this.props.value])
+            return this.props.selections[this.props.value];
+        return ' --- ';
     }
 }
-
-
-class SelectionThumbnail extends React.Component {
-    render () {
-        return (
-            <SelectField
-                id={this.props.id}
-                floatingLabelText={this.props.label}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                disabled={true}
-                value={this.props.value}
-            >
-                {_.map(JSON.parse(this.props.selections || '[]'), s => (
-                    <MenuItem key={s[0]} value={s[0]} primaryText={s[1]} />
-                ))}
-            </SelectField>
-        );
+export class SelectionThumbnail extends BaseThumbnail {
+    getValue () {
+        const selections = {}
+        _.each(JSON.parse(this.props.selections || '[]'), s => {
+            selections[s[0]] = s[1];
+        })
+        return selections[this.props.value] || ' --- ';
     }
 }
-
-
-class SelectionForm extends React.Component {
-    render () {
-        const required= Boolean(eval(this.props.required));
-        let error = ''
-        if (required && !this.props.readonly && !this.props.value) {
-            error = 'This field is required';
+export class SelectionForm extends BaseForm {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+        };
+    }
+    getValue () {
+        const selections = {}
+        _.each(JSON.parse(this.props.selections || '[]'), s => {
+            selections[s[0]] = s[1];
+        })
+        return selections[this.props.value] || ' --- ';
+    }
+    getInputProps () {
+        const props = super.getInputProps();
+        props.type = 'text';
+        props.disabled = true;
+        if (!this.props.readonly) {
+            props.onTouchTap = this.handleTouchTap.bind(this);
+            props.style = {cursor: 'pointer', backgroundColor: 'white'};
         }
-        const floatingLabelStyle = {};
-        if (required && !this.props.readonly) floatingLabelStyle.color = indigo500;
+        return props;
+    }
+    handleTouchTap (event) {
+        event.preventDefault();
+        this.setState({open: true, anchorEl: event.currentTarget});
+    }
+    handleRequestClose () {
+        this.setState({open: false});
+    }
+    updateThisData () {
+        super.updateThisData();
+        if (this.required && !this.props.readonly && this.value == ' --- ') {
+            this.error = 'This field is required';
+        }
+    }
+    getInput () {
         return (
-            <SelectField
-                id={this.props.id}
-                floatingLabelText={this.props.label}
-                floatingLabelStyle={floatingLabelStyle}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                disabled={this.props.readonly}
-                required={required}
-                value={this.props.value}
-                onChange={(e, key, payload) => this.props.onChange(this.props.name, payload)}
-            >
-                {_.map(JSON.parse(this.props.selections || '[]'), s => (
-                    <MenuItem key={s[0]} value={s[0]} primaryText={s[1]} />
-                ))}
-            </SelectField>
+            <div>
+                {super.getInput()}
+                <Popover
+                    open={this.state.open}
+                    anchorEl={this.state.anchorEl}
+                    anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                    targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                    onRequestClose={this.handleRequestClose.bind(this)}
+                >
+                    <Menu>
+                        {_.map(JSON.parse(this.props.selections || '[]'), s => (
+                            <MenuItem 
+                                key={s[0]} 
+                                value={s[0]} 
+                                primaryText={s[1]} 
+                                onClick={() => {
+                                    this.props.onChange(this.props.name, s[0]);
+                                    this.setState({open: false});
+                                }}
+                            />
+                        ))}
+                    </Menu>
+                </Popover>
+            </div>
         );
     }
 }

@@ -9,10 +9,9 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import plugin from '../plugin';
- import TextField from 'material-ui/TextField';
- import {red500, indigo500, darkBlack} from 'material-ui/styles/colors';
- import transitions from 'material-ui/styles/transitions';
-import {fade} from 'material-ui/utils/colorManipulator';
+import {BaseList, BaseThumbnail, BaseForm} from './base';
+
+/** CFor unit test **/
 let RichTextEditor = null;
 if (process.env.NODE_ENV == 'test') {
     RichTextEditor = () => {return <div />};
@@ -20,8 +19,7 @@ if (process.env.NODE_ENV == 'test') {
 } else {
     RichTextEditor = require('react-rte').default;
 }
-
-import {BaseList, BaseThumbnail, BaseForm} from './base';
+/** CFor unit test **/
 
 export class TextList extends BaseList {
     getInput () {

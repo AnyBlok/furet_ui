@@ -76,19 +76,6 @@ test('getField for Form readonly', () => {
     expect(tree).toMatchSnapshot();
 });
 
-test('getField for Form fullwith', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Form', 'Selection', {fullwith: '1', label: 'Test', selections}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
 
 test('getField for Form required', () => {
     const store = createStore(combineReducers(reducers));
@@ -104,7 +91,7 @@ test('getField for Form required', () => {
     expect(tree).toMatchSnapshot();
 });
 
-test('getField for Form required with emptu value', () => {
+test('getField for Form required with empty value', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
     const component = renderer.create(
