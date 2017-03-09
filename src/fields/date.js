@@ -9,64 +9,62 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import plugin from '../plugin';
-import DatePicker from 'material-ui/DatePicker';
 import translate from 'counterpart';
-import {indigo500} from 'material-ui/styles/colors';
+import {BaseList, BaseThumbnail, BaseForm} from './base';
+import DateTimeField from 'react-bootstrap-datetimepicker-seconds';
 
-
-class DateList extends React.Component {
-    render () {
+export class DateList extends BaseList {
+    getValue () {
         if (this.props.value) {
             const date = new Date(Date.parse(this.props.value));
-            return <span>{translate.localize(date, {type: 'date', scope: 'furetUI'})}</span>
+            return translate.localize(date, {type: 'date', scope: 'furetUI'});
+        }
+        return null;
+    }
+}
+export class DateThumbnail extends BaseThumbnail {
+    getValue () {
+        if (this.props.value) {
+            const date = new Date(Date.parse(this.props.value));
+            return translate.localize(date, {type: 'date', scope: 'furetUI'});
         }
         return null;
     }
 }
 
-class DateThumbnail extends React.Component {
-    render () {
-        const date = this.props.value ? new Date(Date.parse(this.props.value)): null;
-        return (
-            <DatePicker
-                id={this.props.id}
-                floatingLabelText={this.props.label}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                disabled={true}
-                value={date}
-                formatDate={(d) => translate.localize(d, {type: 'date', scope: 'furetUI'})}
-                okLabel={translate('furetUI.field.date.ok', {fallback: 'Ok'})}
-                cancelLabel={translate('furetUI.field.date.cancel', {fallback: 'Cancel'})}
-            />
-        );
+class DateForm extends BaseForm {
+    getValue () {
+        if (this.props.value) {
+            const date = new Date(Date.parse(this.props.value));
+            return translate.localize(date, {type: 'date', scope: 'furetUI'});
+        }
+        return '';
     }
-}
-
-class DateForm extends React.Component {
-    onChange(event, date) {
-        const d = [date.getFullYear(), date.getMonth() + 1, date.getDate()].join('-');
-        this.props.onChange(this.props.name, d);
+    getInputPropsRW () {
+        const props = this.getInputProps();
+        delete props.value;
+        delete props.className;
+        props.mode = 'date';
+        props.inputFormat = 'DD/MM/YYYY';
+        if (this.value) {
+            props.format = 'YYYY-MM-DD';
+            props.dateTime = this.props.value;
+        }
+        props.onChange = (e) => {this.props.onChange(this.props.name, e)}
+        return props;
     }
-    render () {
-        const required = Boolean(eval(this.props.required));
-        const date = this.props.value ? new Date(Date.parse(this.props.value)): null;
-        const floatingLabelStyle = {};
-        if (required && !this.props.readonly) floatingLabelStyle.color = indigo500;
-        return (
-            <DatePicker
-                id={this.props.id}
-                floatingLabelText={this.props.label}
-                floatingLabelStyle={floatingLabelStyle}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                disabled={this.props.readonly}
-                required={required}
-                value={date}
-                formatDate={(d) => translate.localize(d, {type: 'date', scope: 'furetUI'})}
-                okLabel={translate('furetUI.fields.date.ok', {fallback: 'Ok'})}
-                cancelLabel={translate('furetUI.fields.date.cancel', {fallback: 'Cancel'})}
-                onChange={this.onChange.bind(this)}
-            />
-        );
+    updateThisData () {
+        super.updateThisData()
+        if (this.required && !this.props.readonly && (this.value == 'Invalid date' || this.props.value == 'Invalid date')) {
+            this.error = 'Invalid date';
+        }
+    }
+    getInput () {
+        if (this.props.readonly) {
+            return super.getInput();
+        }
+        const props = this.getInputPropsRW()
+        return <DateTimeField {...props}/>
     }
 }
 
