@@ -9,31 +9,18 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import plugin from '../plugin';
-import TextField from 'material-ui/TextField';
+import {BaseList, BaseThumbnail, BaseForm} from './base';
 
-export class SequenceList extends React.Component {
-    render () {
-        return (
-            <span>{this.props.value}</span>
-        );
+export class SequenceList extends BaseList {}
+export class SequenceThumbnail extends BaseThumbnail {}
+export class SequenceForm extends BaseForm {
+    getInputProps () {
+        const props = super.getInputProps();
+        props.type = 'text';
+        props.disabled = true;
+        return props;
     }
 }
-
-export class SequenceThumbnail extends React.Component {
-    render () {
-        return (
-            <TextField
-                id={this.props.id}
-                floatingLabelText={this.props.label}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                disabled={true}
-                value={this.props.value}
-            />
-        );
-    }
-}
-
-export class SequenceForm extends SequenceThumbnail {}
 
 plugin.set(['field', 'List'], {'Sequence': SequenceList});
 plugin.set(['field', 'Thumbnail'], {'Sequence': SequenceThumbnail});
