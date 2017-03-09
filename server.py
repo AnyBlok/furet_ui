@@ -362,31 +362,31 @@ def getViewThumbnail(state):
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                     <field name="name" widget="String" label="Label"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="creation_date" widget="Date" label="Creation date"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="number" widget="Float" label="Number"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="url" widget="URL" label="URL" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="uuid" widget="UUID" label="UUID"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="password" widget="Password" label="Password"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="color" widget="Color" label="Color"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="text" widget="Text" label="Text"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="bool" widget="Boolean" label="Boolean"></field>
                 </div>
             </div>
@@ -414,31 +414,31 @@ def getViewForm(state):
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                     <field name="name" widget="String" label="Label" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="creation_date" widget="Date" label="Creation date" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="number" widget="Float" label="Number" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="url" widget="URL" label="URL" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="uuid" widget="UUID" label="UUID"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="password" widget="Password" label="Password" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="color" widget="Color" label="Color" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="text" widget="Text" label="Text" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="bool" widget="Boolean" label="Boolean"></field>
                 </div>
             </div>
