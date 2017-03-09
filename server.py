@@ -357,13 +357,13 @@ def getViewThumbnail(state):
         'template': '''
             <div className="row">
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <field name="id" widget="Integer" label="ID" fullwidth="1"></field>
+                    <field name="id" widget="Integer" label="ID"></field>
                 </div>
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <field name="name" widget="String" label="Label" fullwidth="1"></field>
+                    <field name="name" widget="String" label="Label"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" fullwidth="true"></field>
+                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="creation_date" widget="Date" label="Creation date"></field>
@@ -372,16 +372,16 @@ def getViewThumbnail(state):
                     <field name="number" widget="Float" label="Number"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="url" widget="URL" label="URL" fullwidth="1" required="1"></field>
+                    <field name="url" widget="URL" label="URL" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
+                    <field name="uuid" widget="UUID" label="UUID"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="password" widget="Password" label="Password" fullwidth="1"></field>
+                    <field name="password" widget="Password" label="Password"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="color" widget="Color" label="Color" fullwidth="1"></field>
+                    <field name="color" widget="Color" label="Color"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="text" widget="Text" label="Text"></field>
@@ -409,10 +409,10 @@ def getViewForm(state):
         'template': '''
             <div className="row">
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <field name="id" widget="Integer" label="ID" fullwidth="1" required="1"></field>
+                    <field name="id" widget="Integer" label="ID" required="1"></field>
                 </div>
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <field name="name" widget="String" label="Label" fullwidth="1" required="1"></field>
+                    <field name="name" widget="String" label="Label" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" required="1"></field>
@@ -427,13 +427,13 @@ def getViewForm(state):
                     <field name="url" widget="URL" label="URL" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
+                    <field name="uuid" widget="UUID" label="UUID"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="password" widget="Password" label="Password" fullwidth="1" required="1"></field>
+                    <field name="password" widget="Password" label="Password" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="color" widget="Color" label="Color" fullwidth="1" required="1"></field>
+                    <field name="color" widget="Color" label="Color" required="1"></field>
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field name="text" widget="Text" label="Text" required="1"></field>
@@ -473,7 +473,7 @@ def getAction(actionId):
         'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
         'actionId': actionId,
         'label': 'Action : ' + actionId,
-        'viewId': '1',
+        'viewId': '2',
         'views': [
             {
                 'viewId': '1',
