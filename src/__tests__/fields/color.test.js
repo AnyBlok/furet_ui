@@ -57,10 +57,6 @@ test('getField for Form', () => {
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    tree.props.testToggle();
-    expect(tree).toMatchSnapshot();
-    tree.props.testToggle();
-    expect(tree).toMatchSnapshot();
 });
 
 test('getField for Form readonly', () => {
@@ -88,24 +84,6 @@ test('getField for Form for github', () => {
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    tree.props.testToggle();
-    expect(tree).toMatchSnapshot();
-    tree.props.testToggle();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form fullwith', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Form', 'Color', {fullwith: '1', label: 'Test'}, "#123456")}
-            </MuiThemeProvider>
-        </Provider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
 });
 
 test('getField for Form required', () => {
@@ -122,7 +100,7 @@ test('getField for Form required', () => {
     expect(tree).toMatchSnapshot();
 });
 
-test('getField for Form required with emptu value', () => {
+test('getField for Form required with empty value', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
     const component = renderer.create(
