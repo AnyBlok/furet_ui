@@ -30,10 +30,6 @@ test('Render drop down button for view empty view', () => {
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    tree.props.testHandleTouchTap();
-    expect(tree).toMatchSnapshot();
-    tree.props.testHandleRequestClose();
-    expect(tree).toMatchSnapshot();
 });
 
 test('Render drop down button for view empty view', () => {
@@ -56,7 +52,7 @@ test('Render drop down button for view empty view', () => {
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                <DropDown label="The label"/>
+                <DropDown label="The label" menus={menus}/>
             </MuiThemeProvider>
         </Provider>
     );

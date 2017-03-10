@@ -13,30 +13,30 @@ import translate from 'counterpart';
 import {BaseList, BaseThumbnail, BaseForm} from './base';
 import DateTimeField from 'react-bootstrap-datetimepicker-seconds';
 
-export class DateList extends BaseList {
+export class DateTimeList extends BaseList {
     getValue () {
         if (this.props.value) {
             const date = new Date(Date.parse(this.props.value));
-            return translate.localize(date, {type: 'date', scope: 'furetUI'});
+            return translate.localize(date, {type: 'datetime', scope: 'furetUI'});
         }
         return null;
     }
 }
-export class DateThumbnail extends BaseThumbnail {
+export class DateTimeThumbnail extends BaseThumbnail {
     getValue () {
         if (this.props.value) {
             const date = new Date(Date.parse(this.props.value));
-            return translate.localize(date, {type: 'date', scope: 'furetUI'});
+            return translate.localize(date, {type: 'datetime', scope: 'furetUI'});
         }
         return null;
     }
 }
 
-class DateForm extends BaseForm {
+class DateTimeForm extends BaseForm {
     getValue () {
         if (this.props.value) {
             const date = new Date(Date.parse(this.props.value));
-            return translate.localize(date, {type: 'date', scope: 'furetUI'});
+            return translate.localize(date, {type: 'datetime', scope: 'furetUI'});
         }
         return '';
     }
@@ -44,10 +44,9 @@ class DateForm extends BaseForm {
         const props = this.getInputProps();
         delete props.value;
         delete props.className;
-        props.mode = 'date';
-        props.inputFormat = translate('furetUI.fields.date.format', {fallback: 'YYYY-MM-DD'});
+        props.inputFormat = translate('furetUI.fields.datetime.format', {fallback: 'YYYY-MM-DDTHH:mm:ssZ'});
         if (this.value) {
-            props.format = 'YYYY-MM-DD';
+            props.format = 'YYYY-MM-DDTHH:mm:ssZ';
             props.dateTime = this.props.value;
         }
         props.onChange = (e) => {this.props.onChange(this.props.name, e)}
@@ -56,7 +55,7 @@ class DateForm extends BaseForm {
     updateThisData () {
         super.updateThisData()
         if (this.required && !this.props.readonly && (this.value == 'Invalid date' || this.props.value == 'Invalid date')) {
-            this.error = translate('furetUI.fields.date.invalid', 
+            this.error = translate('furetUI.fields.datetime.invalid', 
                                    {fallback: 'Invalid date'});
         }
     }
@@ -69,12 +68,12 @@ class DateForm extends BaseForm {
     }
 }
 
-plugin.set(['field', 'List'], {'Date': DateList});
-plugin.set(['field', 'Thumbnail'], {'Date': DateThumbnail});
-plugin.set(['field', 'Form'], {'Date': DateForm});
+plugin.set(['field', 'List'], {'DateTime': DateTimeList});
+plugin.set(['field', 'Thumbnail'], {'DateTime': DateTimeThumbnail});
+plugin.set(['field', 'Form'], {'DateTime': DateTimeForm});
 
 export default {
-    DateList,
-    DateThumbnail,
-    DateForm,
+    DateTimeList,
+    DateTimeThumbnail,
+    DateTimeForm,
 }

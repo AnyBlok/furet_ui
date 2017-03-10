@@ -24,7 +24,7 @@ test('getField for List', () => {
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getField('List', 'UUID', {}, 'Test')}
+                {getField('List', 'DateTime', {}, '2017-03-01T01:02:03+01:00')}
             </MuiThemeProvider>
         </Provider>
     );
@@ -38,7 +38,7 @@ test('getField for Thumbnail', () => {
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getField('Thumbnail', 'UUID', {}, 'Test')}
+                {getField('Thumbnail', 'DateTime', {}, '2017-03-01T01:02:03+01:00')}
             </MuiThemeProvider>
         </Provider>
     );
@@ -52,7 +52,35 @@ test('getField for Form', () => {
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getField('Form', 'UUID', {}, 'Test')}
+                {getField('Form', 'DateTime', {}, '2017-03-01T01:02:03+01:00')}
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('getField for Form readonly', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                {getField('Form', 'DateTime', {readonly: true, label: '2017-03-01'}, '2017-03-01T01:02:03+01:00')}
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('getField for Form required', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                {getField('Form', 'DateTime', {required: '1', label: '2017-03-01'}, '2017-03-01T01:02:03+01:00')}
             </MuiThemeProvider>
         </Provider>
     );

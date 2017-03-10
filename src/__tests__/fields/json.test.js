@@ -24,7 +24,7 @@ test('getField for List', () => {
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getField('List', 'UUID', {}, 'Test')}
+                {getField('List', 'Json', {}, '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}')}
             </MuiThemeProvider>
         </Provider>
     );
@@ -38,7 +38,7 @@ test('getField for Thumbnail', () => {
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getField('Thumbnail', 'UUID', {}, 'Test')}
+                {getField('Thumbnail', 'Json', {}, '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}')}
             </MuiThemeProvider>
         </Provider>
     );
@@ -52,7 +52,49 @@ test('getField for Form', () => {
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getField('Form', 'UUID', {}, 'Test')}
+                {getField('Form', 'Json', {}, '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}')}
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('getField for Form readonly', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                {getField('Form', 'Json', {readonly: true, label: 'Test'}, '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}')}
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('getField for Form required', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                {getField('Form', 'Json', {required: '1', label: 'Test'}, '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}')}
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+test('getField for Form required with empty value', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                {getField('Form', 'Json', {required: '1', label: 'Test'}, '')}
             </MuiThemeProvider>
         </Provider>
     );

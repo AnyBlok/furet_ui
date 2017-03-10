@@ -9,31 +9,18 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import plugin from '../plugin';
-import TextField from 'material-ui/TextField';
+import {BaseList, BaseThumbnail, BaseForm} from './base';
 
-export class UUIDList extends React.Component {
-    render () {
-        return (
-            <span>{this.props.value}</span>
-        );
+export class UUIDList extends BaseList {}
+export class UUIDThumbnail extends BaseThumbnail {}
+export class UUIDForm extends BaseForm {
+    getInputProps () {
+        const props = super.getInputProps();
+        props.type = 'text';
+        props.disabled = true;
+        return props;
     }
 }
-
-export class UUIDThumbnail extends React.Component {
-    render () {
-        return (
-            <TextField
-                id={this.props.id}
-                floatingLabelText={this.props.label}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                disabled={true}
-                value={this.props.value}
-            />
-        );
-    }
-}
-
-export class UUIDForm extends UUIDThumbnail {}
 
 plugin.set(['field', 'List'], {'UUID': UUIDList});
 plugin.set(['field', 'Thumbnail'], {'UUID': UUIDThumbnail});

@@ -18,6 +18,8 @@ import actions from './actions';
 import views from './views';
 import data from './data';
 import translate from 'counterpart';
+import * as moment from 'moment';
+import 'moment';
 
 
 export const dispatchAll = (dispatch, datas) => {
@@ -31,6 +33,7 @@ export const dispatchAll = (dispatch, datas) => {
                     break
                 case 'SET_LOCALE':
                     translate.setLocale(data.locale)
+                    moment.locale(data.locale) 
                 default:
                     dispatch(data);
             }

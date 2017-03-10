@@ -9,10 +9,10 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import plugin from '../plugin';
-import TextField from 'material-ui/TextField';
-import {red500, indigo500, darkBlack} from 'material-ui/styles/colors';
-import transitions from 'material-ui/styles/transitions';
-import {fade} from 'material-ui/utils/colorManipulator';
+import {BaseList, BaseThumbnail, BaseForm} from './base';
+import translate from 'counterpart';
+
+/** CFor unit test **/
 let RichTextEditor = null;
 if (process.env.NODE_ENV == 'test') {
     RichTextEditor = () => {return <div />};
@@ -20,51 +20,32 @@ if (process.env.NODE_ENV == 'test') {
 } else {
     RichTextEditor = require('react-rte').default;
 }
+/** CFor unit test **/
 
-export class TextList extends React.Component {
-    render () {
+export class TextList extends BaseList {
+    getInput () {
         return (
             <RichTextEditor
-                value={RichTextEditor.createValueFromString(this.props.value || '', 'html')}
+                value={RichTextEditor.createValueFromString(this.value || '', 'html')}
                 readOnly={true}
             />
         );
     }
 }
 
-export class TextThumbnail extends React.Component {
-    render () {
+export class TextThumbnail extends BaseThumbnail {
+    getInput () {
         return (
-            <div>
-                <label style={{
-                    position: 'absolute',
-                    lineHeight: '22px',
-                    top: 38,
-                    transition: transitions.easeOut(),
-                    zIndex: 1, // Needed to display label above Chrome's autocomplete field background
-                    transform: 'scale(0.75) translate(0, -28px)',
-                    transformOrigin: 'left top',
-                    pointerEvents: 'none',
-                    userSelect: 'none',
-                    color: fade(darkBlack, 0.3),
-                    fontSize: 16,
-                }}>
-                    {this.props.label}
-                </label>
-                <div
-                    style={{marginTop: 38}}
-                >
-                    <RichTextEditor
-                        value={RichTextEditor.createValueFromString(this.props.value || '', 'html')}
-                        readOnly={true}
-                    />
-                </div>
-            </div>
+            <RichTextEditor
+                id={this.props.id}
+                value={RichTextEditor.createValueFromString(this.value || '', 'html')}
+                readOnly={true}
+            />
         );
     }
 }
 
-export class TextForm extends React.Component {
+export class TextForm extends BaseForm {
     constructor(props) {
         super(props);
         this.state = {
@@ -72,59 +53,34 @@ export class TextForm extends React.Component {
         };
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.readonly != this.props.readonly) {
+        if (nextProps.readonly !== this.props.readonly) {
+            this.setState({
+                value: RichTextEditor.createValueFromString(nextProps.value || this.props.value || '', 'html'),
+            });
+        }
+        else if (nextProps.readonly && this.props.value != nextProps.value) {
             this.setState({
                 value: RichTextEditor.createValueFromString(nextProps.value || this.props.value || '', 'html'),
             });
         }
     }
-    render () {
-        const required = Boolean(eval(this.props.required));
-        let error = ''
-        if (required && !this.props.readonly && this.props.value == '<p><br></p>') {
-            error = 'This field is required';
+    updateThisData () {
+        super.updateThisData();
+        if (this.required && !this.props.readonly && this.value == '<p><br></p>') {
+            this.error = translate('furetUI.fields.common.required', 
+                                   {fallback: 'This field is required'});
         }
-        let color = darkBlack;
-        if (this.props.readonly) color = fade(darkBlack, 0.3);
-        else if (required) color = indigo500;
-        const style = {};
-        if (this.props.label) style.marginTop = 38;
-        if (error) {
-            style.border = 1;
-            style.borderStyle = 'solid';
-            style.borderColor = red500;
-        }
+    }
+    getInput () {
         return (
-            <div>
-                <label style={{
-                    position: 'absolute',
-                    lineHeight: '22px',
-                    top: 38,
-                    transition: transitions.easeOut(),
-                    zIndex: 1, // Needed to display label above Chrome's autocomplete field background
-                    transform: 'scale(0.75) translate(0, -28px)',
-                    transformOrigin: 'left top',
-                    pointerEvents: 'none',
-                    userSelect: 'none',
-                    color,
-                    fontSize: 16,
-                }}>
-                    {this.props.label}
-                </label>
-                <div
-                    style={style}
-                >
-                    <RichTextEditor
-                        value={this.state.value}
-                        readOnly={this.props.readonly}
-                        onChange={(value) => {
-                            this.setState({value});
-                            this.props.onChange(this.props.name, value.toString('html'))
-                        }}
-                    />
-                </div>
-                {error && <div style={{color: red500}}>{error}</div>}
-            </div>
+            <RichTextEditor
+                value={this.state.value}
+                readOnly={this.props.readonly}
+                onChange={(value) => {
+                    this.setState({value});
+                    this.props.onChange(this.props.name, value.toString('html'))
+                }}
+            />
         );
     }
 }

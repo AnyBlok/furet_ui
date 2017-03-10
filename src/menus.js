@@ -15,8 +15,6 @@ import FlatButton from 'material-ui/FlatButton';
 import _ from 'underscore';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import Picture from './picture';
-import IconSearch from 'material-ui/svg-icons/action/search'
-import TextField from 'material-ui/TextField';
 import {json_post} from './server-call';
 import translate from 'counterpart';
 
@@ -104,28 +102,18 @@ class BaseMenu extends React.Component {
                     autoScrollBodyContent={true}
                     contentStyle={{width: '95%', maxWidth: 'none'}}
                     title={
-                        <ul className="list-inline"                                         
-                            style={{
-                                padding: 0,
-                                margin: 10,
-                                border: '1px solid gray',
-                                WebkitBorderRadius: '10px',
-                                MozBorderRadius: '10px',
-                                borderRadius: '10px',
-                            }}
-                        >                                                                   
-                            <li>
-                                <IconSearch />
-                            </li>
-                            <li style={{width: '88%'}}>
-                                <TextField 
-                                    fullWidth={true}
-                                    hintText={translate('furetUI.menus.search', {fallback: 'Search ...'})}
-                                    value={this.state.searchText}
-                                    onChange={(e) => {this.setState({searchText: e.target.value})}}
-                                />
-                            </li>
-                        </ul> 
+                        <div className="input-group">
+                            <span className="input-group-addon">
+                                <i className="glyphicon glyphicon-search"></i>
+                            </span>
+                            <input 
+                                type="text" 
+                                className="form-control" 
+                                placeholder={translate('furetUI.menus.search', {fallback: 'Search ...'})}
+                                value={this.state.searchText}
+                                onChange={(e) => {this.setState({searchText: e.target.value})}}
+                            />
+                        </div>
                     }
                 >
                     {_.map(this.props.values, group => (

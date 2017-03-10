@@ -24,7 +24,7 @@ def getData(viewId):
                 {
                     'id': '1',
                     'name': "todo 1",
-                    'creation_date': '2017-02-20',
+                    'creation_date': '2017-02-20T01:02:04-00:00',
                     'state': 'new',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
@@ -33,11 +33,13 @@ def getData(viewId):
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p></div>',
                     'bool': True,
+                    'time': '01:02:03',
+                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
                 {
                     'id': '2',
                     'name': "todo 2",
-                    'creation_date': '2017-02-21',
+                    'creation_date': '2017-02-20T01:02:04-00:00',
                     'state': 'started',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
@@ -46,11 +48,13 @@ def getData(viewId):
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p></div>',
                     'bool': True,
+                    'time': '01:02:03',
+                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
                 {
                     'id': '3',
                     'name': "todo 3",
-                    'creation_date': '2017-02-21',
+                    'creation_date': '2017-02-20T01:02:04-00:00',
                     'state': 'done',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
@@ -59,11 +63,13 @@ def getData(viewId):
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p></div>',
                     'bool': False,
+                    'time': '01:02:03',
+                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
                 {
                     'id': '4',
                     'name': "todo 4",
-                    'creation_date': '2017-02-21',
+                    'creation_date': '2017-02-20T01:02:04-00:00',
                     'state': 'done',
                     'number': 1.2345678,
                     'url': 'http://furet-ui.readthedocs.io',
@@ -72,6 +78,8 @@ def getData(viewId):
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p><p>Other line</p></div>',
                     'bool': False,
+                    'time': '01:02:03',
+                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
             ],
         },
@@ -128,11 +136,8 @@ def getInitOptionnalData():
                             'date': {
                                 'default': '%d/%m/%Y',
                             },
-                            'time': {
-                                'default': '%H/%M/%S',
-                            },
                             'datetime': {
-                                'default': '%d/%m/%Y %H:%M:%S',
+                                'default': '%d/%m/%Y %H:%M:%S %z',
                             },
                         },
                         'menus': {
@@ -164,9 +169,25 @@ def getInitOptionnalData():
                             },
                         },
                         'fields': {
+                            'common': {
+                                'required': 'Ce champs est requis',
+                            },
                             'date': {
-                                'ok': 'Ok',
-                                'cancel': 'Annuler',
+                                'invalid': 'Date invalide',
+                                'format': 'DD/MM/YYYY',
+                            },
+                            'time': {
+                                'invalid': 'Heure invalide',
+                            },
+                            'datetime': {
+                                'invalid': 'Date et heure invalide',
+                                'format': 'DD/MM/YYYY HH:mm:ss Z',
+                            },
+                            'url': {
+                                'invalid': 'URL invalide',
+                            },
+                            'json': {
+                                'invalid': 'Format JSON invalide',
                             },
                         },
                     },
@@ -288,7 +309,7 @@ def getViewList(state):
             },
             {
                 'name': 'creation_date',
-                'type': 'Date',
+                'type': 'DateTime',
                 'label': 'Creation date',
             },
             {
@@ -307,9 +328,14 @@ def getViewList(state):
                 'label': 'Text',
             },
             {
-                'name': 'bool',
-                'type': 'Boolean',
-                'label': 'Boolean',
+                'name': 'time',
+                'type': 'Time',
+                'label': 'Time',
+            },
+            {
+                'name': 'json',
+                'type': 'Json',
+                'label': 'Json',
             },
         ],
         'search': [
@@ -357,37 +383,43 @@ def getViewThumbnail(state):
         'template': '''
             <div className="row">
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <field name="id" widget="Integer" label="ID" fullwidth="1"></field>
+                    <field name="id" widget="Integer" label="ID"></field>
                 </div>
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <field name="name" widget="String" label="Label" fullwidth="1"></field>
+                    <field name="name" widget="String" label="Label"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" fullwidth="true"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="creation_date" widget="Date" label="Creation date"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="creation_date" widget="DateTime" label="Creation date"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="number" widget="Float" label="Number"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="url" widget="URL" label="URL" fullwidth="1" required="1"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="url" widget="URL" label="URL" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="uuid" widget="UUID" label="UUID"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="password" widget="Password" label="Password" fullwidth="1"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="password" widget="Password" label="Password"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="color" widget="Color" label="Color" fullwidth="1"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="color" widget="Color" label="Color"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="text" widget="Text" label="Text"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="bool" widget="Boolean" label="Boolean"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="time" widget="Time" label="Time"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="json" widget="Json" label="JSON" required="1"></field>
                 </div>
             </div>
         ''',
@@ -409,37 +441,43 @@ def getViewForm(state):
         'template': '''
             <div className="row">
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <field name="id" widget="Integer" label="ID" fullwidth="1" required="1"></field>
+                    <field name="id" widget="Integer" label="ID" required="1"></field>
                 </div>
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <field name="name" widget="String" label="Label" fullwidth="1" required="1"></field>
+                    <field name="name" widget="String" label="Label" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="json" widget="Json" label="JSON" required="1"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="creation_date" widget="Date" label="Creation date" required="1"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="creation_date" widget="DateTime" label="Creation date" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="number" widget="Float" label="Number" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="url" widget="URL" label="URL" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="uuid" widget="UUID" label="UUID" fullwidth="1"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="uuid" widget="UUID" label="UUID"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="password" widget="Password" label="Password" fullwidth="1" required="1"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="password" widget="Password" label="Password" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field name="color" widget="Color" label="Color" fullwidth="1" required="1"></field>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="color" widget="Color" label="Color" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="text" widget="Text" label="Text" required="1"></field>
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="bool" widget="Boolean" label="Boolean"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="time" widget="Time" label="Time"></field>
                 </div>
             </div>
         ''',
@@ -473,7 +511,7 @@ def getAction(actionId):
         'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
         'actionId': actionId,
         'label': 'Action : ' + actionId,
-        'viewId': '1',
+        'viewId': '2',
         'views': [
             {
                 'viewId': '1',

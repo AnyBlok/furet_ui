@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getField for Form 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Json-field-name-"
+    style={Object {}}
+  >
+     
+  </label>
+  <textarea
+    disabled={undefined}
+    id="view-type-Form-field_type-Json-field-name-"
+    onChange={[Function]}
+    rows={12}
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+    value="{
+    \\"a\\": {
+      \\"b\\": [
+        {
+          \\"c\\": \\"d\\"
+        },
+        {
+          \\"e\\": \\"f\\"
+        }
+      ]
+    }
+  }"
+  />
+</div>
+`;
+
+exports[`getField for Form readonly 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Json-field-name-"
+    style={Object {}}
+  >
+    Test
+  </label>
+  <pre
+    disabled={true}
+    id="view-type-Form-field_type-Json-field-name-"
+    onChange={[Function]}
+    style={
+      Object {
+        "paddind": 2,
+        "width": "100%",
+      }
+    }
+  >
+    {
+      "a": {
+        "b": [
+          {
+            "c": "d"
+          },
+          {
+            "e": "f"
+          }
+        ]
+      }
+    }
+  </pre>
+</div>
+`;
+
+exports[`getField for Form required 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Json-field-name-"
+    style={
+      Object {
+        "color": "#3f51b5",
+      }
+    }
+  >
+    Test
+  </label>
+  <textarea
+    disabled={undefined}
+    id="view-type-Form-field_type-Json-field-name-"
+    onChange={[Function]}
+    rows={12}
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+    value="{
+    \\"a\\": {
+      \\"b\\": [
+        {
+          \\"c\\": \\"d\\"
+        },
+        {
+          \\"e\\": \\"f\\"
+        }
+      ]
+    }
+  }"
+  />
+</div>
+`;
+
+exports[`getField for Form required with empty value 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Json-field-name-"
+    style={
+      Object {
+        "color": "#3f51b5",
+      }
+    }
+  >
+    Test
+  </label>
+  <textarea
+    disabled={undefined}
+    id="view-type-Form-field_type-Json-field-name-"
+    onChange={[Function]}
+    rows={1}
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+    value=""
+  />
+  <div>
+    <span
+      style={
+        Object {
+          "color": "#f44336",
+        }
+      }
+    >
+      This field is required
+    </span>
+  </div>
+</div>
+`;
+
+exports[`getField for List 1`] = `
+<div>
+  <pre
+    id="view-type-List-field_type-Json-field-name-"
+    style={
+      Object {
+        "backgroundColor": "white",
+        "paddind": 2,
+        "width": "100%",
+      }
+    }
+  >
+    {
+      "a": {
+        "b": [
+          {
+            "c": "d"
+          },
+          {
+            "e": "f"
+          }
+        ]
+      }
+    }
+  </pre>
+</div>
+`;
+
+exports[`getField for Thumbnail 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-Json-field-name-"
+  >
+     
+  </label>
+  <pre
+    id="view-type-Thumbnail-field_type-Json-field-name-"
+    style={
+      Object {
+        "backgroundColor": "white",
+        "paddind": 2,
+        "width": "100%",
+      }
+    }
+  >
+    {
+      "a": {
+        "b": [
+          {
+            "c": "d"
+          },
+          {
+            "e": "f"
+          }
+        ]
+      }
+    }
+  </pre>
+</div>
+`;

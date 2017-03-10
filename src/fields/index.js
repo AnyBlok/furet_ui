@@ -12,6 +12,8 @@ import plugin from '../plugin';
 import './string';
 import './selection';
 import './date';
+import './datetime';
+import './time';
 import './integer';
 import './float';
 import './url';
@@ -21,6 +23,7 @@ import './password';
 import './color';
 import './text';
 import './boolean';
+import './json';
 
 /**
  * Unknown field, used only if the wanted field is not available

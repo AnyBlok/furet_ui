@@ -9,57 +9,24 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import plugin from '../plugin';
-import TextField from 'material-ui/TextField';
-import {indigo500} from 'material-ui/styles/colors';
 import _ from 'underscore';
+import {BaseList, BaseThumbnail, BaseForm} from './base';
 
-export class PasswordList extends React.Component {
-    render () {
-        const value = _.map(this.props.value || [], a => ('*')).join('');
-        return (
-            <span>{value}</span>
-        );
+export class PasswordList extends BaseList {
+    getValue () {
+        return _.map(this.props.value || [], a => ('*')).join('');
     }
 }
-
-export class PasswordThumbnail extends React.Component {
-    render () {
-        return (
-            <TextField
-                id={this.props.id}
-                type="password"
-                floatingLabelText={this.props.label}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                disabled={true}
-                value={this.props.value}
-            />
-        );
+export class PasswordThumbnail extends BaseThumbnail {
+    getValue () {
+        return _.map(this.props.value || [], a => ('*')).join('');
     }
 }
-
-export class PasswordForm extends React.Component {
-    render () {
-        const required = Boolean(eval(this.props.required));
-        let error = ''
-        if (required && !this.props.readonly && !this.props.value) {
-            error = 'This field is required';
-        }
-        const floatingLabelStyle = {};
-        if (required && !this.props.readonly) floatingLabelStyle.color = indigo500;
-        return (
-            <TextField
-                id={this.props.id}
-                type="password"
-                floatingLabelText={this.props.label}
-                fullWidth={Boolean(eval(this.props.fullwidth))}
-                floatingLabelStyle={floatingLabelStyle}
-                disabled={this.props.readonly}
-                required={Boolean(eval(this.props.required))}
-                value={this.props.value}
-                onChange={(e) => this.props.onChange(this.props.name, e.target.value)}
-                errorText={error}
-            />
-        );
+export class PasswordForm extends BaseForm {
+    getInputProps () {
+        const props = super.getInputProps();
+        props.type = 'password';
+        return props;
     }
 }
 
