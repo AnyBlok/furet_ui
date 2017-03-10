@@ -1,4 +1,12 @@
 language: node_js
+addons:
+    apt:
+        packages:
+            - language-pack-fr
+env:
+    global:
+        - LANG=fr_FR.UTF-8
+        - LC_ALL=fr_FR.UTF-8
 node_js:
     - "node"
     - "6"

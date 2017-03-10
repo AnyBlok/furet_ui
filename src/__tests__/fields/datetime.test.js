@@ -17,9 +17,6 @@ import {Provider} from 'react-redux';
 import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
 import {getField} from '../../fields';
-import * as moment from 'moment';
-import 'moment';
-moment.locale('en-EN')
 
 test('getField for List', () => {
     const store = createStore(combineReducers(reducers));
