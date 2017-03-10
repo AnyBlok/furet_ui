@@ -189,6 +189,7 @@ Each field must be defined by views type. The list views are:
 * Decimal
 * Float
 * Integer
+* JSON
 * Password
 * Selection
 * Sequence

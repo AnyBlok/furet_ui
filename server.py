@@ -34,6 +34,7 @@ def getData(viewId):
                     'text': '<div><p><em>Plop</em></p></div>',
                     'bool': True,
                     'time': '01:02:03',
+                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
                 {
                     'id': '2',
@@ -48,6 +49,7 @@ def getData(viewId):
                     'text': '<div><p><em>Plop</em></p></div>',
                     'bool': True,
                     'time': '01:02:03',
+                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
                 {
                     'id': '3',
@@ -62,6 +64,7 @@ def getData(viewId):
                     'text': '<div><p><em>Plop</em></p></div>',
                     'bool': False,
                     'time': '01:02:03',
+                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
                 {
                     'id': '4',
@@ -76,6 +79,7 @@ def getData(viewId):
                     'text': '<div><p><em>Plop</em></p><p>Other line</p></div>',
                     'bool': False,
                     'time': '01:02:03',
+                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
             ],
         },
@@ -181,6 +185,9 @@ def getInitOptionnalData():
                             },
                             'url': {
                                 'invalid': 'URL invalide',
+                            },
+                            'json': {
+                                'invalid': 'Format JSON invalide',
                             },
                         },
                     },
@@ -325,6 +332,11 @@ def getViewList(state):
                 'type': 'Time',
                 'label': 'Time',
             },
+            {
+                'name': 'json',
+                'type': 'Json',
+                'label': 'Json',
+            },
         ],
         'search': [
             {
@@ -406,6 +418,9 @@ def getViewThumbnail(state):
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="time" widget="Time" label="Time"></field>
                 </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="json" widget="Json" label="JSON" required="1"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -430,6 +445,9 @@ def getViewForm(state):
                 </div>
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                     <field name="name" widget="String" label="Label" required="1"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="json" widget="Json" label="JSON" required="1"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" required="1"></field>

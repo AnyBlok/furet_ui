@@ -23,6 +23,7 @@ import './password';
 import './color';
 import './text';
 import './boolean';
+import './json';
 
 /**
  * Unknown field, used only if the wanted field is not available
