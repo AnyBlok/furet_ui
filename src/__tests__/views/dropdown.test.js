@@ -18,7 +18,7 @@ import {updateGlobal} from '../../testcase';
 jest.mock('../../server-call')
 import DropDown from '../../views/dropdown';
 
-test('Render drop down button for view empty view', () => {
+test.skip('Render drop down button for view empty view', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
     const component = renderer.create(
@@ -36,7 +36,7 @@ test('Render drop down button for view empty view', () => {
     expect(tree).toMatchSnapshot();
 });
 
-test('Render drop down button for view empty view', () => {
+test.skip('Render drop down button for view empty view', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
     const menus = [
