@@ -1,0 +1,440 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getField for Form 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Time-field-name-"
+    style={Object {}}
+  >
+     
+  </label>
+  <div>
+    <span />
+    <div
+      className=""
+      style={
+        Object {
+          "display": "block",
+          "left": -9999,
+          "position": "absolute",
+          "zIndex": "9999 !important",
+        }
+      }
+    >
+      <ul
+        className="list-unstyled"
+      >
+        <li>
+          <div
+            className="timepicker"
+          >
+            <div
+              className="timepicker-picker"
+            >
+              <table
+                className="table-condensed"
+              >
+                <tbody>
+                  <tr>
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-up"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-up"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-up"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                  </tr>
+                  <tr>
+                    <td>
+                      <span
+                        className="timepicker-hour"
+                        onClick={[Function]}
+                      >
+                        1
+                      </span>
+                    </td>
+                    <td
+                      className="separator"
+                    >
+                      :
+                    </td>
+                    <td>
+                      <span
+                        className="timepicker-minute"
+                        onClick={[Function]}
+                      >
+                        02
+                      </span>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <span
+                        className="timepicker-second"
+                        onClick={[Function]}
+                      >
+                        03
+                      </span>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <button
+                        className="btn btn-primary"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        AM
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-down"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-down"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-down"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="input-group date "
+    >
+      <input
+        className="form-control"
+        onChange={[Function]}
+        type="text"
+        value="01:02:03"
+      />
+      <span
+        className="input-group-addon"
+        onBlur={undefined}
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-time"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for Form readonly 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Time-field-name-"
+    style={Object {}}
+  >
+    2017-03-01
+  </label>
+  <input
+    className="form-control"
+    disabled={true}
+    id="view-type-Form-field_type-Time-field-name-"
+    onChange={[Function]}
+    value="01:02:03"
+  />
+</div>
+`;
+
+exports[`getField for Form required 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Time-field-name-"
+    style={
+      Object {
+        "color": "#3f51b5",
+      }
+    }
+  >
+    2017-03-01
+  </label>
+  <div>
+    <span />
+    <div
+      className=""
+      style={
+        Object {
+          "display": "block",
+          "left": -9999,
+          "position": "absolute",
+          "zIndex": "9999 !important",
+        }
+      }
+    >
+      <ul
+        className="list-unstyled"
+      >
+        <li>
+          <div
+            className="timepicker"
+          >
+            <div
+              className="timepicker-picker"
+            >
+              <table
+                className="table-condensed"
+              >
+                <tbody>
+                  <tr>
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-up"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-up"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-up"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                  </tr>
+                  <tr>
+                    <td>
+                      <span
+                        className="timepicker-hour"
+                        onClick={[Function]}
+                      >
+                        1
+                      </span>
+                    </td>
+                    <td
+                      className="separator"
+                    >
+                      :
+                    </td>
+                    <td>
+                      <span
+                        className="timepicker-minute"
+                        onClick={[Function]}
+                      >
+                        02
+                      </span>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <span
+                        className="timepicker-second"
+                        onClick={[Function]}
+                      >
+                        03
+                      </span>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <button
+                        className="btn btn-primary"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        AM
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-down"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-down"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                    <td>
+                      <a
+                        className="btn"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-down"
+                        />
+                      </a>
+                    </td>
+                    <td
+                      className="separator"
+                    />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="input-group date "
+    >
+      <input
+        className="form-control"
+        onChange={[Function]}
+        type="text"
+        value="01:02:03"
+      />
+      <span
+        className="input-group-addon"
+        onBlur={undefined}
+        onClick={[Function]}
+      >
+        <span
+          className="glyphicon glyphicon-time"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for List 1`] = `
+<div>
+  <span>
+    01:02:03
+  </span>
+</div>
+`;
+
+exports[`getField for Thumbnail 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-Time-field-name-"
+  >
+     
+  </label>
+  <div>
+    <span>
+      01:02:03
+    </span>
+  </div>
+</div>
+`;

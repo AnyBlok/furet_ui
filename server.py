@@ -33,6 +33,7 @@ def getData(viewId):
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p></div>',
                     'bool': True,
+                    'time': '01:02:03',
                 },
                 {
                     'id': '2',
@@ -46,6 +47,7 @@ def getData(viewId):
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p></div>',
                     'bool': True,
+                    'time': '01:02:03',
                 },
                 {
                     'id': '3',
@@ -59,6 +61,7 @@ def getData(viewId):
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p></div>',
                     'bool': False,
+                    'time': '01:02:03',
                 },
                 {
                     'id': '4',
@@ -72,6 +75,7 @@ def getData(viewId):
                     'color': '#36c',
                     'text': '<div><p><em>Plop</em></p><p>Other line</p></div>',
                     'bool': False,
+                    'time': '01:02:03',
                 },
             ],
         },
@@ -128,9 +132,6 @@ def getInitOptionnalData():
                             'date': {
                                 'default': '%d/%m/%Y',
                             },
-                            'time': {
-                                'default': '%H/%M/%S',
-                            },
                             'datetime': {
                                 'default': '%d/%m/%Y %H:%M:%S %z',
                             },
@@ -170,6 +171,9 @@ def getInitOptionnalData():
                             'date': {
                                 'invalid': 'Date invalide',
                                 'format': 'DD/MM/YYYY',
+                            },
+                            'time': {
+                                'invalid': 'Heure invalide',
                             },
                             'datetime': {
                                 'invalid': 'Date et heure invalide',
@@ -317,9 +321,9 @@ def getViewList(state):
                 'label': 'Text',
             },
             {
-                'name': 'bool',
-                'type': 'Boolean',
-                'label': 'Boolean',
+                'name': 'time',
+                'type': 'Time',
+                'label': 'Time',
             },
         ],
         'search': [
@@ -399,6 +403,9 @@ def getViewThumbnail(state):
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="bool" widget="Boolean" label="Boolean"></field>
                 </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="time" widget="Time" label="Time"></field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -450,6 +457,9 @@ def getViewForm(state):
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="bool" widget="Boolean" label="Boolean"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="time" widget="Time" label="Time"></field>
                 </div>
             </div>
         ''',

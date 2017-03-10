@@ -13,6 +13,7 @@ import './string';
 import './selection';
 import './date';
 import './datetime';
+import './time';
 import './integer';
 import './float';
 import './url';

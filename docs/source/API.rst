@@ -195,6 +195,7 @@ Each field must be defined by views type. The list views are:
 * SmallInteger
 * String
 * Text
+* Time
 * uString
 * uText
 * URL
