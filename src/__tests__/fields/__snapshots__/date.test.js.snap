@@ -178,13 +178,13 @@ exports[`getField for Form 1`] = `
                       8
                     </td>
                     <td
-                      className="day today"
+                      className="day"
                       onClick={[Function]}
                     >
                       9
                     </td>
                     <td
-                      className="day"
+                      className="day today"
                       onClick={[Function]}
                     >
                       10
@@ -604,13 +604,13 @@ exports[`getField for Form required 1`] = `
                       8
                     </td>
                     <td
-                      className="day today"
+                      className="day"
                       onClick={[Function]}
                     >
                       9
                     </td>
                     <td
-                      className="day"
+                      className="day today"
                       onClick={[Function]}
                     >
                       10
@@ -1010,13 +1010,13 @@ exports[`getField for Form required with empty value 1`] = `
                       8
                     </td>
                     <td
-                      className="day active today"
+                      className="day"
                       onClick={[Function]}
                     >
                       9
                     </td>
                     <td
-                      className="day"
+                      className="day active today"
                       onClick={[Function]}
                     >
                       10
@@ -1218,7 +1218,7 @@ exports[`getField for Form required with empty value 1`] = `
         className="form-control"
         onChange={[Function]}
         type="text"
-        value="2017-03-09"
+        value="2017-03-10"
       />
       <span
         className="input-group-addon"
