@@ -37,7 +37,8 @@ plugin.set(['views', 'icon'], {Form: (props) => {
 export class Form extends Base {
     constructor(props) {
         super(props);
-        this.state = {change: {}, readonly: true, id: null};
+        const id = props.params && props.params.id || null;
+        this.state = {change: {}, readonly: true, id};
     }
     call_server (id) {
         this.json_post(
