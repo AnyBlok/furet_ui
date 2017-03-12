@@ -32,7 +32,7 @@ export class URLThumbnail extends BaseThumbnail {
 export class URLForm extends BaseForm {
     updateThisData () {
         super.updateThisData();
-        if (!this.error) {
+        if (!this.props.readonly && !this.error) {
             const reg = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
             if (!reg.test(this.value))
                 this.error = translate('furetUI.fields.url.invalid', 

@@ -51,7 +51,7 @@ export class Thumbnail extends Multi {
                     return node.name === 'field';
                 },
                 processNode: function(node, children) {
-                    const data = self.props.data[thumbnailId] || {},
+                    const data = self.props.data && self.props.data[thumbnailId] || {},
                           change = self.state.change;
                     return self.getField(
                         'Thumbnail', 

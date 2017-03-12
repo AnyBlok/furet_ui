@@ -49,6 +49,8 @@ class DateForm extends BaseForm {
         if (this.value) {
             props.format = 'YYYY-MM-DD';
             props.dateTime = this.props.value;
+        } else {
+            props.defaultText = '';
         }
         props.onChange = (e) => {this.props.onChange(this.props.name, e)}
         return props;

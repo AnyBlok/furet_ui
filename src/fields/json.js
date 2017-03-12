@@ -62,7 +62,7 @@ export class JsonForm extends BaseForm {
     }
     updateThisData () {
         super.updateThisData();
-        if (!this.error) {
+        if (!this.props.readonly && !this.error) {
             try {
                 JSON.parse(this.value);
             } catch (e) {
@@ -82,7 +82,7 @@ export class JsonForm extends BaseForm {
         const props = this.getInputProps();
         delete props.className;
         props.style = {width: '100%', height: '100%'};
-        props.rows = this.value.split('\n').length;
+        props.rows = this.value && this.value.split('\n').length;
         return props;
     }
     getInput () {

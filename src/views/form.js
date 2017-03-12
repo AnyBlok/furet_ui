@@ -112,7 +112,7 @@ export class Form extends Base {
                     return node.name === 'field';
                 },
                 processNode: function(node, children) {
-                    const data = self.props.data[self.state.id] || {},
+                    const data = self.props.data && self.props.data[self.state.id] || {},
                           change = self.state.change;
                     return self.getField(
                         'Form', 
