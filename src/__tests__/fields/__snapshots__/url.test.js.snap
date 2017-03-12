@@ -80,17 +80,6 @@ exports[`getField for Form readonly 1`] = `
       </a>
     </span>
   </div>
-  <div>
-    <span
-      style={
-        Object {
-          "color": "#f44336",
-        }
-      }
-    >
-      It is not an url
-    </span>
-  </div>
 </div>
 `;
 

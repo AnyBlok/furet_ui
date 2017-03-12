@@ -133,7 +133,7 @@ exports[`getField for Form required with empty value 1`] = `
     disabled={undefined}
     id="view-type-Form-field_type-Json-field-name-"
     onChange={[Function]}
-    rows={1}
+    rows=""
     style={
       Object {
         "height": "100%",
