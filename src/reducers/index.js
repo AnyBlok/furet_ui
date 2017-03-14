@@ -17,6 +17,7 @@ import {action_manager} from './action_manager';
 import actions from './actions';
 import views from './views';
 import data from './data';
+import change from './change';
 import translate from 'counterpart';
 import * as moment from 'moment';
 import 'moment';
@@ -51,4 +52,5 @@ export default {
     actions,
     views,
     data,
+    change,
 }

@@ -51,13 +51,16 @@ export class Thumbnail extends Multi {
                     return node.name === 'field';
                 },
                 processNode: function(node, children) {
-                    const data = self.props.data && self.props.data[thumbnailId] || {},
-                          change = self.state.change;
+                    const data = Object.assign(
+                        {}, 
+                        self.props.data && self.props.data[thumbnailId],
+                        self.props.computed && self.props.computed[thumbnailId],
+                        self.props.change[thumbnailId]);
                     return self.getField(
                         'Thumbnail', 
                         node.attribs.widget, 
                         node.attribs, 
-                        change[node.attribs.name] || data[node.attribs.name]
+                        data[node.attribs.name]
                     );
                 }
             }, 

@@ -85,8 +85,12 @@ export class List extends Multi {
      * render line
     **/
     renderLine (lineId) {
-        const data = this.props.data[lineId] || {},
-              change = this.state.change,
+        const data = Object.assign(
+            {}, 
+            this.props.data[lineId], 
+            this.props.computed[lineId], 
+            this.props.change[lineId]
+              ),
               selected = this.state.selectedIds.indexOf(lineId) != -1;
         return (
             <TableRow 
@@ -115,7 +119,7 @@ export class List extends Multi {
                                 'List', 
                                 header.type, 
                                 header,
-                                change[header.name] || data[header.name]
+                                data[header.name]
                             )}
                         </div>
                     </TableRowColumn>

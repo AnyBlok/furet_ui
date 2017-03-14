@@ -38,7 +38,7 @@ export class Form extends Base {
     constructor(props) {
         super(props);
         const id = props.params && props.params.id || null;
-        this.state = {change: {}, readonly: true, id};
+        this.state = {readonly: true, id};
     }
     call_server (id) {
         this.json_post(
@@ -95,11 +95,6 @@ export class Form extends Base {
             this.setState(state);
         }
     }
-    onChange(field, value) {
-        const change = Object.assign({}, this.state.change);
-        change[field] = value;
-        this.setState({change})
-    }
     /**
      * Render the template of the form view
     **/
@@ -112,13 +107,22 @@ export class Form extends Base {
                     return node.name === 'field';
                 },
                 processNode: function(node, children) {
-                    const data = self.props.data && self.props.data[self.state.id] || {},
-                          change = self.state.change;
+                    const data = Object.assign(
+                        {}, 
+                        self.props.data && self.props.data[self.state.id],
+                        self.props.computed && self.props.computed[self.state.id],
+                        self.props.change && self.props.change[self.state.id]
+                    );
                     return self.getField(
                         'Form', 
                         node.attribs.widget, 
-                        Object.assign(node.attribs, {readonly: self.state.readonly, onChange: self.onChange.bind(self)}),
-                        change[node.attribs.name] != undefined ? change[node.attribs.name] : data[node.attribs.name]
+                        Object.assign(node.attribs, {
+                            readonly: self.state.readonly, 
+                            onChange: (fieldname, newValue) => {
+                                self.props.onChange(self.state.id, fieldname, newValue);
+                            }
+                        }),
+                        data[node.attribs.name]
                     );
                 }
             }, 
@@ -203,7 +207,10 @@ export class Form extends Base {
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
                         <IconButton
-                            onClick={() => this.setState({readonly: true, change: {}})}
+                            onClick={() => {
+                                this.props.clearChange();
+                                this.setState({readonly: true});
+                            }}
                             tooltip={translate('furetUI.views.common.cancel', {fallback: 'Cancel'})}
                             iconStyle={{
                                 width: 36,
