@@ -18,10 +18,10 @@ def readFile(_file, environ):
 def getData(viewId):
     return [
         {
-            'type': 'UPDATE_MULTI_DATA',
+            'type': 'UPDATE_DATA',
             'model': 'Todo',
-            'data': [
-                {
+            'data': {
+                '1': {
                     'id': '1',
                     'name': "todo 1",
                     'creation_date': '2017-02-20T01:02:04-00:00',
@@ -36,7 +36,7 @@ def getData(viewId):
                     'time': '01:02:03',
                     'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
-                {
+                '2': {
                     'id': '2',
                     'name': "todo 2",
                     'creation_date': '2017-02-20T01:02:04-00:00',
@@ -51,7 +51,7 @@ def getData(viewId):
                     'time': '01:02:03',
                     'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
-                {
+                '3': {
                     'id': '3',
                     'name': "todo 3",
                     'creation_date': '2017-02-20T01:02:04-00:00',
@@ -66,7 +66,7 @@ def getData(viewId):
                     'time': '01:02:03',
                     'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
-                {
+                '4': {
                     'id': '4',
                     'name': "todo 4",
                     'creation_date': '2017-02-20T01:02:04-00:00',
@@ -81,7 +81,7 @@ def getData(viewId):
                     'time': '01:02:03',
                     'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
                 },
-            ],
+            },
         },
         {
             'type': 'UPDATE_VIEW',

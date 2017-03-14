@@ -198,7 +198,7 @@ exports[`getField for Form 1`] = `
                   </tr>
                   <tr>
                     <td
-                      className="day today"
+                      className="day"
                       onClick={[Function]}
                     >
                       12
@@ -210,7 +210,7 @@ exports[`getField for Form 1`] = `
                       13
                     </td>
                     <td
-                      className="day"
+                      className="day today"
                       onClick={[Function]}
                     >
                       14
@@ -624,7 +624,7 @@ exports[`getField for Form required 1`] = `
                   </tr>
                   <tr>
                     <td
-                      className="day today"
+                      className="day"
                       onClick={[Function]}
                     >
                       12
@@ -636,7 +636,7 @@ exports[`getField for Form required 1`] = `
                       13
                     </td>
                     <td
-                      className="day"
+                      className="day today"
                       onClick={[Function]}
                     >
                       14
@@ -1030,7 +1030,7 @@ exports[`getField for Form required with empty value 1`] = `
                   </tr>
                   <tr>
                     <td
-                      className="day active today"
+                      className="day"
                       onClick={[Function]}
                     >
                       12
@@ -1042,7 +1042,7 @@ exports[`getField for Form required with empty value 1`] = `
                       13
                     </td>
                     <td
-                      className="day"
+                      className="day active today"
                       onClick={[Function]}
                     >
                       14
