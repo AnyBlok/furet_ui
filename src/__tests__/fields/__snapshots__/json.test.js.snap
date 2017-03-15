@@ -163,7 +163,7 @@ exports[`getField for List 1`] = `
     style={
       Object {
         "backgroundColor": "white",
-        "paddind": 2,
+        "padding": 2,
         "width": "100%",
       }
     }
@@ -198,7 +198,7 @@ exports[`getField for Thumbnail 1`] = `
     style={
       Object {
         "backgroundColor": "white",
-        "paddind": 2,
+        "padding": 2,
         "width": "100%",
       }
     }

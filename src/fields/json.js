@@ -24,7 +24,7 @@ export class JsonList extends BaseList {
         const props = super.getInputProps();
         delete props.className;
         delete props.value;
-        props.style = {width: '100%', paddind: 2, backgroundColor: 'white'};
+        props.style = {width: '100%', padding: 2, backgroundColor: 'white'};
         return props;
     }
     getInput () {
@@ -44,7 +44,7 @@ export class JsonThumbnail extends BaseThumbnail {
         const props = super.getInputProps();
         delete props.className;
         delete props.value;
-        props.style = {width: '100%', paddind: 2, backgroundColor: 'white'};
+        props.style = {width: '100%', padding: 2, backgroundColor: 'white'};
         return props;
     }
     getInput () {
