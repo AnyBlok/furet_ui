@@ -9,53 +9,22 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import renderer from 'react-test-renderer';
-import sinon from 'sinon';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import chai from 'chai';
-import {createStore, combineReducers} from 'redux';
-import {Provider} from 'react-redux';
-import reducers from '../../reducers';
-import {updateGlobal} from '../../testcase';
 import {getField} from '../../fields';
 
 test('getField for List', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('List', 'UUID', {}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
-    );
+    const component = renderer.create(getField('List', 'UUID', {}, 'Test'));
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 test('getField for Thumbnail', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Thumbnail', 'UUID', {}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
-    );
+    const component = renderer.create(getField('Thumbnail', 'UUID', {}, 'Test'));
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 test('getField for Form', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Form', 'UUID', {}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
-    );
+    const component = renderer.create(getField('Form', 'UUID', {}, 'Test'));
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
