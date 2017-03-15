@@ -19,6 +19,7 @@ import plugin from '../plugin';
 import IconButton from 'material-ui/IconButton';
 import AlertWarning from 'material-ui/svg-icons/alert/warning';
 import translate from 'counterpart';
+import uuid from 'uuid/v1';
 
 /**
  * Unknown view, use if no view found
@@ -162,9 +163,14 @@ export const getView = (viewType, viewId, params) => {
     );
 };
 
+export const getNewID = (model) => {
+    return 'new-' + model + '-' + uuid();
+}
+
 export default {
     getClientView,
     getViewIcon,
     getView,
     Unknown,
+    getNewID,
 }

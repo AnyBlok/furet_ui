@@ -22,6 +22,7 @@ import IconButton from 'material-ui/IconButton';
 import {blue500, red500} from 'material-ui/styles/colors';
 import DropdownMenu from './dropdown';
 import translate from 'counterpart';
+import {getNewID} from './index';
 
 /**
  * Add Icon for Form view
@@ -38,14 +39,15 @@ export class Form extends Base {
     constructor(props) {
         super(props);
         const id = props.params && props.params.id || null;
-        this.state = {readonly: true, id};
+        this.state = {readonly: true, id, new: props.params && props.params.new || false};
     }
-    call_server (id) {
+    call_server () {
         this.json_post(
             '/form/get', 
             {
                 model: this.props.model,
-                id: (id != undefined) ? id : this.state.id,
+                id: this.state.id,
+                new: this.state.new,
             },
             {
                 onSuccess: (results) => {
@@ -58,8 +60,10 @@ export class Form extends Base {
      * call by create action
     **/
     addNewEntry () {
-        this.setState({readonly: false, id: null});
-        this.call_server(null);
+        const id = getNewID(this.props.model);
+        this.setState({readonly: false, id, new: true}, () => {
+            this.call_server(id);
+        });
     }
     /**
      * Close the current view and route to previous view
@@ -88,7 +92,7 @@ export class Form extends Base {
         this.setState({readonly: true});
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.params) {
+        if (nextProps.params && !this.state.new) {
             const state = {}
             if (nextProps.params.readonly != undefined) state.readonly = nextProps.params.readonly;
             if (nextProps.params.id != undefined) state.id = nextProps.params.id;
@@ -101,18 +105,18 @@ export class Form extends Base {
     renderTemplate (template) {
         if (!template) return null;
         const self = this;
+        const data = Object.assign(
+            {}, 
+            self.props.data && self.props.data[self.state.id],
+            self.props.computed && self.props.computed[self.state.id],
+            self.props.change && self.props.change[self.state.id]
+        );
         const processingInstructions = [
             {
                 shouldProcessNode: function(node) {
                     return node.name === 'field';
                 },
                 processNode: function(node, children) {
-                    const data = Object.assign(
-                        {}, 
-                        self.props.data && self.props.data[self.state.id],
-                        self.props.computed && self.props.computed[self.state.id],
-                        self.props.change && self.props.change[self.state.id]
-                    );
                     return self.getField(
                         'Form', 
                         node.attribs.widget, 
@@ -122,7 +126,7 @@ export class Form extends Base {
                                 self.props.onChange(self.state.id, fieldname, newValue);
                             }
                         }),
-                        data[node.attribs.name]
+                        data[node.attribs.name] || null
                     );
                 }
             }, 
@@ -209,7 +213,11 @@ export class Form extends Base {
                         <IconButton
                             onClick={() => {
                                 this.props.clearChange();
-                                this.setState({readonly: true});
+                                if (this.state.new) {
+                                    this.returnPreviousView();
+                                } else {
+                                    this.setState({readonly: true});
+                                }
                             }}
                             tooltip={translate('furetUI.views.common.cancel', {fallback: 'Cancel'})}
                             iconStyle={{

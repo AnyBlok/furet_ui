@@ -63,6 +63,11 @@ export class TextForm extends BaseForm {
                 value: RichTextEditor.createValueFromString(nextProps.value || this.props.value || '', 'html'),
             });
         }
+        else if (nextProps.value == null) {
+            this.setState({
+                value: RichTextEditor.createValueFromString('', 'html'),
+            });
+        }
     }
     updateThisData () {
         super.updateThisData();

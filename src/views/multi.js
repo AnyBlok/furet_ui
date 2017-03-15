@@ -18,6 +18,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import Chip from 'material-ui/Chip';
 import DropdownMenu from './dropdown';
 import translate from 'counterpart';
+import {getNewID} from './index';
 
 
 /**
@@ -51,7 +52,12 @@ export class Multi extends Base {
                 type: 'UPDATE_ACTION_SELECT_VIEW',
                 actionId: this.props.actionId,
                 viewId: this.props.onSelect,
-                params: {id: null, readonly: false, returnView: this.props.viewId},
+                params: {
+                    id: getNewID(this.props.model), 
+                    readonly: false, 
+                    returnView: this.props.viewId,
+                    new: true,
+                },
             })
         }
     }
