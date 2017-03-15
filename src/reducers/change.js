@@ -15,13 +15,13 @@ export const defaultState = {
 }
 
 export const change = (state = defaultState, action) => {
-    const newState = Object.assign({}, state);
     switch (action.type) {
         case 'ON_CHANGE':
-            if (newState.current[action.model] == undefined) newState.current[action.model] = {};
-            if (newState.current[action.model][action.dataId] == undefined) newState.current[action.model][action.dataId] = {};
-            newState.current[action.model][action.dataId][action.fieldname] = action.newValue;
-            return newState;
+            const current = Object.assign({}, state.current);
+            if (current[action.model] == undefined) current[action.model] = {};
+            if (current[action.model][action.dataId] == undefined) current[action.model][action.dataId] = {};
+            current[action.model][action.dataId][action.fieldname] = action.newValue;
+            return Object.assign({}, state, {current});
         case 'CLEAR_CHANGE':
             return Object.assign({}, state, {current: {}});
         default:
