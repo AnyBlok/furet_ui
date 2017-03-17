@@ -37,7 +37,8 @@ Installation
 
 Install latest versions of FuretUI from github (need **npm**)::
 
-    https://github.com/AnyBlok/furet_ui.git
+    git clone https://github.com/AnyBlok/furet_ui.git
+    cd furet_ui
     npm install
     npm run build-prod
 
@@ -78,9 +79,10 @@ Contributors
 `Anybox <http://anybox.fr>`_ team:
 
 * Jean-Sébastien Suzanne
+* Simon ANDRÉ
 
 Bugs
 ----
 
-Bugs and feature enhancements to AnyBlok should be reported on the `Issue 
+Bugs and feature enhancements to FuretUI should be reported on the `Issue 
 tracker <https://github.com/AnyBlok/furet_ui/issues>`_.
