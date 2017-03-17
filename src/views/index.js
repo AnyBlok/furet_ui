@@ -154,6 +154,16 @@ export const getView = (viewType, viewId, params) => {
             clearChange: () => {
                 dispatch({type: 'CLEAR_CHANGE'});
             },
+            onSave: (dataId, newData) => {
+                dispatch({
+                    type: 'ON_SAVE', 
+                    newData, 
+                    dataId, 
+                    model: params.model,
+                    uuid: uuid(),
+                });
+                console.log('onSave', 'need call server');
+            },
         });
     };
     return (

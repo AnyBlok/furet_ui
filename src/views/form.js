@@ -88,8 +88,8 @@ export class Form extends Base {
      * call by save button
     **/
     saveEntry () {
-        console.log('todo', 'saveEntry');
-        this.setState({readonly: true});
+        this.props.onSave(this.state.id, this.state.new);
+        this.setState({readonly: true, new: false});
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.params && !this.state.new) {
