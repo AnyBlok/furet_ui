@@ -92,7 +92,7 @@ export class Form extends Base {
         this.setState({readonly: true, new: false});
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.params && !this.state.new) {
+        if (nextProps.params && (nextProps.params.new || !this.state.new)) {
             const state = {}
             if (nextProps.params.readonly != undefined) state.readonly = nextProps.params.readonly;
             if (nextProps.params.id != undefined) state.id = nextProps.params.id;

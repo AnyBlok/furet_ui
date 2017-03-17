@@ -66,7 +66,9 @@ export const change = (state = defaultState, action) => {
     switch (action.type) {
         case 'ON_CHANGE':
             if (current[action.model] == undefined) current[action.model] = {};
+            else current[action.model] = Object.assign({}, current[action.model]);
             if (current[action.model][action.dataId] == undefined) current[action.model][action.dataId] = {};
+            else current[action.model][action.dataId] = Object.assign({}, current[action.model][action.dataId]);
             current[action.model][action.dataId][action.fieldname] = action.newValue;
             return Object.assign({}, state, {current});
         case 'CLEAR_CHANGE':
@@ -74,7 +76,6 @@ export const change = (state = defaultState, action) => {
         case 'ON_SAVE':
             current2Sync(current, toSync, action.uuid, action.model, action.dataId, action.newData);
             toSync2computed(toSync, computed)
-            console.log(toSync, computed)
             return Object.assign({}, state, {current: {}, toSync, computed});
         default:
             return state

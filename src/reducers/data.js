@@ -15,6 +15,7 @@ export const data = (state = defaultState, action) => {
         case 'UPDATE_DATA':
             const values = Object.assign({}, state);
             if (values[action.model] == undefined) values[action.model] = {};
+            else values[action.model] = Object.assign({}, values[action.model]);
             Object.assign(values[action.model], action.data);
             return values;
         case 'CLEAR_DATA':

@@ -14,11 +14,12 @@ import translate from 'counterpart';
 
 export class JsonList extends BaseList {
     getValue () {
+        const value = super.getValue();
         if (this.props.value)
             try {
-                return JSON.stringify(JSON.parse(this.props.value),null,2); 
+                return JSON.stringify(JSON.parse(value), null, 2);
             } catch (e) {};
-        return this.props.value;
+        return value;
     }
     getInputProps () {
         const props = super.getInputProps();
@@ -34,11 +35,12 @@ export class JsonList extends BaseList {
 }
 export class JsonThumbnail extends BaseThumbnail {
     getValue () {
+        const value = super.getValue();
         if (this.props.value)
             try {
-                return JSON.stringify(JSON.parse(this.props.value),null,2); 
+                return JSON.stringify(JSON.parse(value), null, 2);
             } catch (e) {};
-        return this.props.value;
+        return value;
     }
     getInputProps () {
         const props = super.getInputProps();
@@ -54,11 +56,12 @@ export class JsonThumbnail extends BaseThumbnail {
 }
 export class JsonForm extends BaseForm {
     getValue () {
+        const value = super.getValue();
         if (this.props.value)
             try {
-                return JSON.stringify(JSON.parse(this.props.value),null,2); 
+                return JSON.stringify(JSON.parse(value), null, 2);
             } catch (e) {};
-        return this.props.value;
+        return value;
     }
     updateThisData () {
         super.updateThisData();
@@ -81,7 +84,7 @@ export class JsonForm extends BaseForm {
     getInputPropsRW () {
         const props = this.getInputProps();
         delete props.className;
-        props.style = {width: '100%', height: '100%'};
+        props.style = {width: '100%', height: '100%', resize: 'none'};
         props.rows = this.value && this.value.split('\n').length;
         return props;
     }
