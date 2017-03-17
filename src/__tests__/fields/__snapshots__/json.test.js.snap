@@ -18,6 +18,7 @@ exports[`getField for Form 1`] = `
     style={
       Object {
         "height": "100%",
+        "resize": "none",
         "width": "100%",
       }
     }
@@ -96,6 +97,7 @@ exports[`getField for Form required 1`] = `
     style={
       Object {
         "height": "100%",
+        "resize": "none",
         "width": "100%",
       }
     }
@@ -137,6 +139,7 @@ exports[`getField for Form required with empty value 1`] = `
     style={
       Object {
         "height": "100%",
+        "resize": "none",
         "width": "100%",
       }
     }
