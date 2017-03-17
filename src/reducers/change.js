@@ -38,7 +38,7 @@ export const current2Sync = (current, toSync, uuid, model, dataId, newData) => {
                 newSync.data.push({
                     model: modelName,
                     dataId: id,
-                    newData: typeof id == 'object',
+                    newData: (new RegExp('^new-.*')).test(id),
                     data: current[modelName][id],
                 });
             }
