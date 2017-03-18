@@ -8,7 +8,7 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import chai from 'chai';
-import reducer, {defaultState, current2Sync} from '../../reducers/change';
+import reducer, {defaultState, current2Sync, toSync2computed} from '../../reducers/change';
 
 test('get init value', () => {
     chai.expect(reducer(defaultState, {type: 'UNKNOWN_FOR_TEST'})).to.deep.equal(defaultState);
@@ -229,4 +229,286 @@ test('current2Sync current multi data with new', () => {
         ],
     }
     chai.expect(toSync[0]).to.deep.equal(expected);
+});
+test('current2Sync current multi data with new with different Model', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+                'Test2': {
+                    'new-2': {
+                        name: 'Name 2',
+                        title: 'Title 2',
+                    },
+                },
+          },
+          toSync = [],
+          uuid = 'uuid',
+          model = 'Test',
+          dataId = '1',
+          newData = false;
+
+    current2Sync(current, toSync, uuid, model, dataId, newData);
+    chai.expect(toSync.length).to.equal(1);
+    const expected = {
+        uuid,
+        state: 'toSend',
+        data: [
+            {
+                model: 'Test',
+                dataId: '1',
+                newData: false,
+                data: {
+                    name: 'Name 1',
+                    title: 'Title 1',
+                },
+            },
+            {
+                model: 'Test2',
+                dataId: 'new-2',
+                newData: true,
+                data: {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            },
+        ],
+    }
+    chai.expect(toSync[0]).to.deep.equal(expected);
+});
+test('toSync2computed simple', () => {
+    const computed = {},
+          toSync = [
+            {
+                uuid: 'uuid',
+                state: 'toSend',
+                data: [
+                    {
+                        model: 'Test',
+                        dataId: '1',
+                        newData: false,
+                        data: {
+                            name: 'Name 1',
+                            title: 'Title 1',
+                        },
+                    },
+                ],
+            }
+          ];
+
+    toSync2computed(toSync, computed);
+    const expected = {
+        'Test': {
+            '1': {
+                name: 'Name 1',
+                title: 'Title 1',
+            },
+        },
+    }
+    chai.expect(computed).to.deep.equal(expected);
+});
+test('toSync2computed double', () => {
+    const computed = {},
+          toSync = [
+            {
+                uuid: 'uuid',
+                state: 'toSend',
+                data: [
+                    {
+                        model: 'Test',
+                        dataId: '1',
+                        newData: false,
+                        data: {
+                            name: 'Name 1',
+                            title: 'Title 1',
+                        },
+                    },
+                    {
+                        model: 'Test',
+                        dataId: '2',
+                        newData: true,
+                        data: {
+                            name: 'Name 2',
+                            title: 'Title 2',
+                        },
+                    },
+                ],
+            }
+          ];
+
+    toSync2computed(toSync, computed);
+    const expected = {
+        'Test': {
+            '1': {
+                name: 'Name 1',
+                title: 'Title 1',
+            },
+            '2': {
+                name: 'Name 2',
+                title: 'Title 2',
+            },
+        },
+    }
+    chai.expect(computed).to.deep.equal(expected);
+});
+test('toSync2computed double with different model', () => {
+    const computed = {},
+          toSync = [
+            {
+                uuid: 'uuid',
+                state: 'toSend',
+                data: [
+                    {
+                        model: 'Test',
+                        dataId: '1',
+                        newData: false,
+                        data: {
+                            name: 'Name 1',
+                            title: 'Title 1',
+                        },
+                    },
+                    {
+                        model: 'Test2',
+                        dataId: '2',
+                        newData: true,
+                        data: {
+                            name: 'Name 2',
+                            title: 'Title 2',
+                        },
+                    },
+                ],
+            }
+          ];
+
+    toSync2computed(toSync, computed);
+    const expected = {
+        'Test': {
+            '1': {
+                name: 'Name 1',
+                title: 'Title 1',
+            },
+        },
+        'Test2': {
+            '2': {
+                name: 'Name 2',
+                title: 'Title 2',
+            },
+        },
+    }
+    chai.expect(computed).to.deep.equal(expected);
+});
+test('ON_SAVE', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+                'Test2': {
+                    'new-2': {
+                        name: 'Name 2',
+                        title: 'Title 2',
+                    },
+                },
+          },
+          toSync = [
+            {
+                uuid: 'uuid0',
+                state: 'toSend',
+                data: [
+                    {
+                        model: 'Test',
+                        dataId: '2',
+                        newData: true,
+                        data: {
+                            name: 'Name 2',
+                            title: 'Title 2',
+                        },
+                    },
+                ],
+            }
+          ],
+          computed = {
+            'Test': {
+                '2': {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            },
+          },
+          action = {
+              type: 'ON_SAVE',
+              uuid: 'uuid',
+              model: 'Test',
+              dataId: '1',
+              newData: false
+          };
+    const result = reducer({current, toSync, computed}, action);
+    const expected = {
+        current: {},
+        toSync: [ 
+            { 
+                uuid: 'uuid0', 
+                state: 'toSend', 
+                data: [
+                    {
+                        model: 'Test',
+                        dataId: '2',
+                        newData: true,
+                        data: {
+                            name: 'Name 2',
+                            title: 'Title 2',
+                        },
+                    },
+                ], 
+            },
+            { 
+                uuid: 'uuid', 
+                state: 'toSend', 
+                data: [
+                    {
+                        model: 'Test',
+                        dataId: '1',
+                        newData: false,
+                        data: {
+                            name: 'Name 1',
+                            title: 'Title 1',
+                        },
+                    },
+                    {
+                        model: 'Test2',
+                        dataId: 'new-2',
+                        newData: true,
+                        data: {
+                            name: 'Name 2',
+                            title: 'Title 2',
+                        },
+                    },
+                ] 
+            }, 
+        ],
+        computed: { 
+            Test: { 
+                '1': {
+                    name: 'Name 1',
+                    title: 'Title 1',
+                }, 
+                '2': {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            },
+            Test2: { 
+                'new-2': {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            }, 
+        },
+    };
+    chai.expect(result).to.deep.equal(expected);
 });
