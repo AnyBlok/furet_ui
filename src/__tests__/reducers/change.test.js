@@ -8,7 +8,7 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import chai from 'chai';
-import reducer, {defaultState, current2Sync, toSync2computed} from '../../reducers/change';
+import reducer, {defaultState, current2Sync, toSync2computed, changeState, removeUuid} from '../../reducers/change';
 
 test('get init value', () => {
     chai.expect(reducer(defaultState, {type: 'UNKNOWN_FOR_TEST'})).to.deep.equal(defaultState);
@@ -512,3 +512,408 @@ test('ON_SAVE', () => {
     };
     chai.expect(result).to.deep.equal(expected);
 });
+
+test('changeState with one value', () => {
+    const toSync = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ];
+    chai.expect(changeState(toSync, 'uuid', 'Sent')).to.deep.equal([
+        {
+            uuid: 'uuid',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ]);
+});
+
+test('changeState with two value', () => {
+    const toSync = [
+        {
+            uuid: 'uuid1',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+        {
+            uuid: 'uuid2',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ];
+    chai.expect(changeState(toSync, 'uuid1', 'Sent')).to.deep.equal([
+        {
+            uuid: 'uuid1',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+        {
+            uuid: 'uuid2',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ]);
+});
+
+test('changeState with two value 2', () => {
+    const toSync = [
+        {
+            uuid: 'uuid1',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+        {
+            uuid: 'uuid2',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ];
+    chai.expect(changeState(toSync, 'uuid2', 'Sent')).to.deep.equal([
+        {
+            uuid: 'uuid1',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+        {
+            uuid: 'uuid2',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ]);
+});
+test('reducer SYNC', () => {
+    const toSync = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ];
+    const result = reducer({current: {}, computed: {}, toSync}, {type: 'SYNC', uuid: 'uuid'});
+    chai.expect(result.toSync).to.deep.equal([
+        {
+            uuid: 'uuid',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ]);
+});
+test('reducer UNSYNC', () => {
+    const toSync = [
+        {
+            uuid: 'uuid',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ];
+    const result = reducer({current: {}, computed: {}, toSync}, {type: 'UNSYNC', uuid: 'uuid'});
+    chai.expect(result.toSync).to.deep.equal([
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ]);
+});
+test('removeUuid one element', () => {
+    const toSync = [
+        {
+            uuid: 'uuid',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ];
+    chai.expect(removeUuid(toSync, 'uuid')).to.deep.equal([]);
+})
+test('removeUuid two elements', () => {
+    const toSync = [
+        {
+            uuid: 'uuid1',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+        {
+            uuid: 'uuid2',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ];
+    chai.expect(removeUuid(toSync, 'uuid1')).to.deep.equal([
+        {
+            uuid: 'uuid2',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ]);
+})
+test('removeUuid two elements 2', () => {
+    const toSync = [
+        {
+            uuid: 'uuid1',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+        {
+            uuid: 'uuid2',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ];
+    chai.expect(removeUuid(toSync, 'uuid2')).to.deep.equal([
+        {
+            uuid: 'uuid1',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name',
+                    },
+                },
+            ],
+        },
+    ]);
+})
+test('SYNCED', () => {
+    const toSync = [
+        {
+            uuid: 'uuid1',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name 1',
+                    },
+                },
+            ],
+        },
+        {
+            uuid: 'uuid2',
+            state: 'Sent',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: '1',
+                    type: 'CREATE',
+                    data: {
+                        name: 'Name 2',
+                    },
+                },
+            ],
+        },
+    ];
+    const result = reducer({current: {}, computed: {}, toSync}, {type: 'SYNCED', uuid: 'uuid1'});
+    chai.expect(result).to.deep.equal({
+        current: {},
+        toSync: [
+            {
+                uuid: 'uuid2',
+                state: 'Sent',
+                data: [
+                    {
+                        model: 'Test',
+                        dataId: '1',
+                        type: 'CREATE',
+                        data: {
+                            name: 'Name 2',
+                        },
+                    },
+                ],
+            },
+        ],
+        computed: {
+            'Test': {
+                '1': {
+                    name: 'Name 2',
+                },
+            },
+        },
+    });
+})

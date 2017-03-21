@@ -59,8 +59,8 @@ export const toSync2computed = (toSync, computed) => {
     });
 }
 
-export const removeUUid = toSync => {
-    return _.filter(toSync, s => s.uuid != action.uuid);
+export const removeUuid = (toSync, uuid) => {
+    return _.filter(toSync, s => s.uuid != uuid);
 }
 
 export const changeState = (toSync, uuid, state) => {
@@ -96,7 +96,7 @@ export const change = (state = defaultState, action) => {
         case 'UNSYNC':
             return Object.assign({}, state, {toSync: changeState(toSync, action.uuid, 'toSend')});
         case 'SYNCED':
-            let _toSync = removeUUid(toSync);
+            let _toSync = removeUuid(toSync, action.uuid);
             toSync2computed(_toSync, computed)
             return Object.assign({}, state, {toSync: _toSync, computed});
         default:
