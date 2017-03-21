@@ -12,12 +12,12 @@ import ReactDOM from 'react-dom';
 require("font-awesome-loader");
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import {getMuiTheme, MuiThemeProvider} from 'material-ui/styles';
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import {json_post} from './server-call';
 import {dispatchAll} from './reducers';
-import reducers from './reducers';
+import reducers, {send2Server} from './reducers';
 import plugin from './plugin';
 import './views';
 import App from './app';
@@ -44,8 +44,10 @@ plugin.set([], {initData: (store) => {
 }});
 
 injectTapEventPlugin();
-const store = createStore(combineReducers(reducers));
-
+const store = createStore(
+    combineReducers(reducers), 
+    applyMiddleware(send2Server)
+);
 
 class FuretUI extends React.Component {
     componentDidMount () {

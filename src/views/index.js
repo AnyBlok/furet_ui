@@ -162,7 +162,7 @@ export const getView = (viewType, viewId, params) => {
                     model: params.model,
                     uuid: uuid(),
                 });
-                console.log('onSave', 'need call server');
+                dispatch({type: 'TO_SEND'});
             },
         });
     };

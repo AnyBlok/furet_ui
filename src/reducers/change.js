@@ -59,6 +59,10 @@ export const toSync2computed = (toSync, computed) => {
     });
 }
 
+export const removeUUid = toSync => {
+    return _.filter(toSync, s => s.uuid != action.uuid);
+}
+
 export const change = (state = defaultState, action) => {
     const current = Object.assign({}, state.current),
           toSync = state.toSync.slice(0),
@@ -77,6 +81,30 @@ export const change = (state = defaultState, action) => {
             current2Sync(current, toSync, action.uuid, action.model, action.dataId, action.newData);
             toSync2computed(toSync, computed)
             return Object.assign({}, state, {current: {}, toSync, computed});
+        case 'SYNC':
+            return Object.assign({}, state, {
+                toSync: _.map(toSync, s => {
+                    const val = Object.assign({}, s)
+                    if (action.uuid == s.uuid) {
+                        val.state = 'Sand';
+                    }
+                    return val;
+                }),
+            });
+        case 'UNSYNC':
+            return Object.assign({}, state, {
+                toSync: _.map(toSync, s => {
+                    const val = Object.assign({}, s)
+                    if (action.uuid == s.uuid) {
+                        val.state = 'toSend';
+                    }
+                    return val;
+                }),
+            });
+        case 'SYNCED':
+            let _toSync = removeUUid(toSync);
+            toSync2computed(_toSync, computed)
+            return Object.assign({}, state, {toSync: _toSync, computed});
         default:
             return state
     }
