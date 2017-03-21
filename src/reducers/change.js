@@ -38,7 +38,7 @@ export const current2Sync = (current, toSync, uuid, model, dataId, newData) => {
                 newSync.data.push({
                     model: modelName,
                     dataId: id,
-                    newData: (new RegExp('^new-.*')).test(id) ? 'CREATE' : 'UPDATE',
+                    type: (new RegExp('^new-.*')).test(id) ? 'CREATE' : 'UPDATE',
                     data: current[modelName][id],
                 });
             }
@@ -63,6 +63,16 @@ export const removeUUid = toSync => {
     return _.filter(toSync, s => s.uuid != action.uuid);
 }
 
+export const changeState = (toSync, uuid, state) => {
+    return _.map(toSync, s => {
+        const val = Object.assign({}, s)
+        if (uuid == s.uuid) {
+            val.state = state;
+        }
+        return val;
+    });
+}
+
 export const change = (state = defaultState, action) => {
     const current = Object.assign({}, state.current),
           toSync = state.toSync.slice(0),
@@ -82,25 +92,9 @@ export const change = (state = defaultState, action) => {
             toSync2computed(toSync, computed)
             return Object.assign({}, state, {current: {}, toSync, computed});
         case 'SYNC':
-            return Object.assign({}, state, {
-                toSync: _.map(toSync, s => {
-                    const val = Object.assign({}, s)
-                    if (action.uuid == s.uuid) {
-                        val.state = 'Sand';
-                    }
-                    return val;
-                }),
-            });
+            return Object.assign({}, state, {toSync: changeState(toSync, action.uuid, 'Sent')});
         case 'UNSYNC':
-            return Object.assign({}, state, {
-                toSync: _.map(toSync, s => {
-                    const val = Object.assign({}, s)
-                    if (action.uuid == s.uuid) {
-                        val.state = 'toSend';
-                    }
-                    return val;
-                }),
-            });
+            return Object.assign({}, state, {toSync: changeState(toSync, action.uuid, 'toSend')});
         case 'SYNCED':
             let _toSync = removeUUid(toSync);
             toSync2computed(_toSync, computed)

@@ -68,7 +68,7 @@ test('current2Sync current new data', () => {
             {
                 model: 'Test',
                 dataId: '1',
-                newData: true,
+                type: 'CREATE',
                 data: {
                     name: 'Name',
                     title: 'Title',
@@ -107,7 +107,7 @@ test('current2Sync current old data', () => {
             {
                 model: 'Test',
                 dataId: '1',
-                newData: false,
+                type: 'UPDATE',
                 data: {
                     name: 'Name',
                     title: 'Title',
@@ -153,7 +153,7 @@ test('current2Sync current with two different current', () => {
             {
                 model: 'Test',
                 dataId: '1',
-                newData: true,
+                type: 'CREATE',
                 data: {
                     name: 'Name',
                     title: 'Title',
@@ -168,7 +168,7 @@ test('current2Sync current with two different current', () => {
             {
                 model: 'Test',
                 dataId: '2',
-                newData: false,
+                type: 'UPDATE',
                 data: {
                     name: 'Name2',
                     title: 'Title2',
@@ -211,7 +211,7 @@ test('current2Sync current multi data with new', () => {
             {
                 model: 'Test',
                 dataId: '1',
-                newData: false,
+                type: 'UPDATE',
                 data: {
                     name: 'Name 1',
                     title: 'Title 1',
@@ -220,7 +220,7 @@ test('current2Sync current multi data with new', () => {
             {
                 model: 'Test',
                 dataId: 'new-2',
-                newData: true,
+                type: 'CREATE',
                 data: {
                     name: 'Name 2',
                     title: 'Title 2',
@@ -260,7 +260,7 @@ test('current2Sync current multi data with new with different Model', () => {
             {
                 model: 'Test',
                 dataId: '1',
-                newData: false,
+                type: 'UPDATE',
                 data: {
                     name: 'Name 1',
                     title: 'Title 1',
@@ -269,7 +269,7 @@ test('current2Sync current multi data with new with different Model', () => {
             {
                 model: 'Test2',
                 dataId: 'new-2',
-                newData: true,
+                type: 'CREATE',
                 data: {
                     name: 'Name 2',
                     title: 'Title 2',
@@ -289,7 +289,7 @@ test('toSync2computed simple', () => {
                     {
                         model: 'Test',
                         dataId: '1',
-                        newData: false,
+                        type: 'UPDATE',
                         data: {
                             name: 'Name 1',
                             title: 'Title 1',
@@ -320,7 +320,7 @@ test('toSync2computed double', () => {
                     {
                         model: 'Test',
                         dataId: '1',
-                        newData: false,
+                        type: 'UPDATE',
                         data: {
                             name: 'Name 1',
                             title: 'Title 1',
@@ -329,7 +329,7 @@ test('toSync2computed double', () => {
                     {
                         model: 'Test',
                         dataId: '2',
-                        newData: true,
+                        type: 'CREATE',
                         data: {
                             name: 'Name 2',
                             title: 'Title 2',
@@ -364,7 +364,7 @@ test('toSync2computed double with different model', () => {
                     {
                         model: 'Test',
                         dataId: '1',
-                        newData: false,
+                        type: 'UPDATE',
                         data: {
                             name: 'Name 1',
                             title: 'Title 1',
@@ -373,7 +373,7 @@ test('toSync2computed double with different model', () => {
                     {
                         model: 'Test2',
                         dataId: '2',
-                        newData: true,
+                        type: 'CREATE',
                         data: {
                             name: 'Name 2',
                             title: 'Title 2',
@@ -423,7 +423,7 @@ test('ON_SAVE', () => {
                     {
                         model: 'Test',
                         dataId: '2',
-                        newData: true,
+                        type: 'CREATE',
                         data: {
                             name: 'Name 2',
                             title: 'Title 2',
@@ -458,7 +458,7 @@ test('ON_SAVE', () => {
                     {
                         model: 'Test',
                         dataId: '2',
-                        newData: true,
+                        type: 'CREATE',
                         data: {
                             name: 'Name 2',
                             title: 'Title 2',
@@ -473,7 +473,7 @@ test('ON_SAVE', () => {
                     {
                         model: 'Test',
                         dataId: '1',
-                        newData: false,
+                        type: 'UPDATE',
                         data: {
                             name: 'Name 1',
                             title: 'Title 1',
@@ -482,7 +482,7 @@ test('ON_SAVE', () => {
                     {
                         model: 'Test2',
                         dataId: 'new-2',
-                        newData: true,
+                        type: 'CREATE',
                         data: {
                             name: 'Name 2',
                             title: 'Title 2',
