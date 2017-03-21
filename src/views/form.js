@@ -82,7 +82,8 @@ export class Form extends Base {
      * call by delete button
     **/
     removeEntry () {
-        console.log('todo', 'removeEntry');
+        this.props.onDelete([this.state.id]);
+        this.returnPreviousView();
     }
     /**
      * call by save button

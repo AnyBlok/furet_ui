@@ -65,7 +65,7 @@ export class Multi extends Base {
      * Action call when the remove button is clicked
     **/
     removeEntry () {
-        console.log('todo', 'removeEntry');
+        this.props.onDelete(this.state.selectedIds);
     }
     /**
      * Render the button near search box

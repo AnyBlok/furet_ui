@@ -25,7 +25,7 @@ export const current2Sync = (current, toSync, uuid, model, dataId, newData) => {
         newSync.data.push({
             model,
             dataId,
-            newData,
+            type: newData ? 'CREATE' : 'UPDATE',
             data: current[model][dataId],
         });
     } catch (e) {};
@@ -38,7 +38,7 @@ export const current2Sync = (current, toSync, uuid, model, dataId, newData) => {
                 newSync.data.push({
                     model: modelName,
                     dataId: id,
-                    newData: (new RegExp('^new-.*')).test(id),
+                    newData: (new RegExp('^new-.*')).test(id) ? 'CREATE' : 'UPDATE',
                     data: current[modelName][id],
                 });
             }

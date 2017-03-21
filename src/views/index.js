@@ -164,6 +164,15 @@ export const getView = (viewType, viewId, params) => {
                 });
                 dispatch({type: 'TO_SEND'});
             },
+            onDelete: (dataIds, newData) => {
+                dispatch({
+                    type: 'ON_DELETE', 
+                    dataIds, 
+                    model: params.model,
+                    uuid: uuid(),
+                });
+                dispatch({type: 'TO_SEND'});
+            },
         });
     };
     return (
