@@ -8,7 +8,7 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import chai from 'chai';
-import reducer, {defaultState, current2Sync, toSync2computed, changeState, removeUuid} from '../../reducers/change';
+import reducer, {defaultState, current2Sync, toSync2computed, changeState, removeUuid, remove2Sync} from '../../reducers/change';
 
 test('get init value', () => {
     chai.expect(reducer(defaultState, {type: 'UNKNOWN_FOR_TEST'})).to.deep.equal(defaultState);
@@ -913,6 +913,50 @@ test('SYNCED', () => {
                 '1': {
                     name: 'Name 2',
                 },
+            },
+        },
+    });
+})
+test('remove2Sync', () => {
+    const toSync = [];
+    remove2Sync(toSync, 'uuid', 'Test', ['1', '2', '3']);
+    chai.expect(toSync.length).to.equal(1)
+    chai.expect(toSync).to.deep.equal([
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataIds: ['1', '2', '3'],
+                    type: 'DELETE',
+                },
+            ],
+        },
+    ])
+});
+test('ON_DELETE', () => {
+    const toSync = [];
+    const result = reducer({current: {}, computed: {}, toSync}, {type: 'ON_DELETE', uuid: 'uuid', model: 'Test', dataIds: ['1', '2']});
+    chai.expect(result).to.deep.equal({
+        current: {},
+        toSync: [
+            {
+                uuid: 'uuid',
+                state: 'toSend',
+                data: [
+                    {
+                        model: 'Test',
+                        dataIds: ['1', '2'],
+                        type: 'DELETE',
+                    },
+                ],
+            },
+        ],
+        computed: {
+            'Test': {
+                '1': 'DELETED',
+                '2': 'DELETED',
             },
         },
     });
