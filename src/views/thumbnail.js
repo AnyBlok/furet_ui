@@ -78,13 +78,18 @@ export class Thumbnail extends Multi {
      * Render one thumbnail
     **/
     renderThumbNail (thumbnailId) {
+        if (this.props.computed && this.props.computed[thumbnailId] == 'DELETED') return null;
         if (this.props.template) {
             return (
-                <Card 
-                    onClick={() => this.onEntrySelect(thumbnailId)}
+                <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+                    key={thumbnailId}
                 >
-                    {this.renderTemplate(this.props.template, thumbnailId)}
-                </Card>
+                    <Card 
+                        onClick={() => this.onEntrySelect(thumbnailId)}
+                    >
+                        {this.renderTemplate(this.props.template, thumbnailId)}
+                    </Card>
+                </div>
             );
         }
         return null;
@@ -95,11 +100,7 @@ export class Thumbnail extends Multi {
                 {this.renderSearchBar()}
                 <div className="row">
                     {_.map(this.props.ids || [], id => (
-                        <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-                            key={id}
-                        >
-                            {this.renderThumbNail(id)}
-                        </div>
+                        this.renderThumbNail(id)
                     ))}
                 </div>
             </div>

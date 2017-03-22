@@ -49,12 +49,37 @@ export const current2Sync = (current, toSync, uuid, model, dataId, newData) => {
     }
 }
 
+export const remove2Sync = (toSync, uuid, model, dataIds) => {
+    if (dataIds.length == 0) return;
+    toSync.push({
+        uuid,
+        state: 'toSend',
+        data: [
+            {
+                model,
+                dataIds,
+                type: 'DELETE',
+            }
+        ],
+    });
+}
+
 export const toSync2computed = (toSync, computed) => {
     _.each(toSync, ts => {
         _.each(ts.data, data => {
             if (computed[data.model] == undefined) computed[data.model] = {};
-            if (computed[data.model][data.dataId] == undefined) computed[data.model][data.dataId] = {};
-            Object.assign(computed[data.model][data.dataId], data.data);
+            switch (data.type) {
+                case 'CREATE':
+                case 'UPDATE':
+                    if (computed[data.model][data.dataId] == undefined) computed[data.model][data.dataId] = {};
+                    Object.assign(computed[data.model][data.dataId], data.data);
+                    break;
+                case 'DELETE':
+                    _.each(data.dataIds, dId => {
+                        computed[data.model][dId] = 'DELETED';
+                    });
+                    break;
+            }
         });
     });
 }
@@ -89,6 +114,10 @@ export const change = (state = defaultState, action) => {
             return Object.assign({}, state, {current: {}});
         case 'ON_SAVE':
             current2Sync(current, toSync, action.uuid, action.model, action.dataId, action.newData);
+            toSync2computed(toSync, computed)
+            return Object.assign({}, state, {current: {}, toSync, computed});
+        case 'ON_DELETE':
+            remove2Sync(toSync, action.uuid, action.model, action.dataIds);
             toSync2computed(toSync, computed)
             return Object.assign({}, state, {current: {}, toSync, computed});
         case 'SYNC':
