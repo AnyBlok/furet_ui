@@ -120,3 +120,13 @@ Return the action:
 * action
 * Main View of the Action
 * ...
+
+``/furetui/data/update``
+------------------------
+
+Update, Create or Delete datas.
+
+The api must return:
+
+* The updated data
+* ...
