@@ -52,7 +52,7 @@ export const send2ServerCall = store => {
         if (!toSync) return;
         if (toSync.state != 'toSend') return
         dispatch({type: 'SYNC', uuid: toSync.uuid});
-        json_post('/data/update', {data: toSync.data}, {
+        json_post('/data/update', toSync.data, {
             onSuccess: (results) => {
                 dispatch({type: 'SYNCED', uuid: toSync.uuid});
                 dispatchAll(dispatch, results);

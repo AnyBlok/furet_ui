@@ -1,98 +1,55 @@
 # -*- coding: utf-8 -*-
-from wsgiref.simple_server import make_server
-from pprint import pprint
-from simplejson import dumps
+from bottle import route, run, static_file, redirect, response, request
+from simplejson import dumps, loads
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, DateTime, Float, Text, Time, Boolean, or_
+from sqlalchemy.orm import sessionmaker
+from datetime import datetime, time
 
 
-def readFile(_file, environ):
-    block_size = 500
-    if _file[0] == '/':
-        _file = _file[1:]
-    fp = open(_file, 'r')
-    if 'wsgi.file_wrapper' in environ:
-        return environ['wsgi.file_wrapper'](fp, block_size)
-    else:
-        return iter(lambda: fp.read(block_size), '')
+engine = create_engine('postgresql+psycopg2:///furetui', echo=True)
+Base = declarative_base(bind=engine)
 
 
-def getData(viewId):
-    return [
-        {
-            'type': 'UPDATE_DATA',
-            'model': 'Todo',
-            'data': {
-                '1': {
-                    'id': '1',
-                    'name': "todo 1",
-                    'creation_date': '2017-02-20T01:02:04-00:00',
-                    'state': 'new',
-                    'number': 1.2345678,
-                    'url': 'http://furet-ui.readthedocs.io',
-                    'uuid': 'uuid---',
-                    'password': 'password',
-                    'color': '#36c',
-                    'text': '<div><p><em>Plop</em></p></div>',
-                    'bool': True,
-                    'time': '01:02:03',
-                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
-                },
-                '2': {
-                    'id': '2',
-                    'name': "todo 2",
-                    'creation_date': '2017-02-20T01:02:04-00:00',
-                    'state': 'started',
-                    'number': 1.2345678,
-                    'url': 'http://furet-ui.readthedocs.io',
-                    'uuid': 'uuid---',
-                    'password': 'password',
-                    'color': '#36c',
-                    'text': '<div><p><em>Plop</em></p></div>',
-                    'bool': True,
-                    'time': '01:02:03',
-                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
-                },
-                '3': {
-                    'id': '3',
-                    'name': "todo 3",
-                    'creation_date': '2017-02-20T01:02:04-00:00',
-                    'state': 'done',
-                    'number': 1.2345678,
-                    'url': 'http://furet-ui.readthedocs.io',
-                    'uuid': 'uuid---',
-                    'password': 'password',
-                    'color': '#36c',
-                    'text': '<div><p><em>Plop</em></p></div>',
-                    'bool': False,
-                    'time': '01:02:03',
-                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
-                },
-                '4': {
-                    'id': '4',
-                    'name': "todo 4",
-                    'creation_date': '2017-02-20T01:02:04-00:00',
-                    'state': 'done',
-                    'number': 1.2345678,
-                    'url': 'http://furet-ui.readthedocs.io',
-                    'uuid': 'uuid---',
-                    'password': 'password',
-                    'color': '#36c',
-                    'text': '<div><p><em>Plop</em></p><p>Other line</p></div>',
-                    'bool': False,
-                    'time': '01:02:03',
-                    'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
-                },
-            },
-        },
-        {
-            'type': 'UPDATE_VIEW',
-            'viewId': viewId,
-            'ids': ['1', '2', "4"],
-            'id': viewId,
-        },
-    ]
+class Test(Base):
+    __tablename__ = 'test'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    creation_date = Column(DateTime)
+    state = Column(String)
+    number = Column(Float)
+    url = Column(String)
+    uuid = Column(String)
+    password = Column(String)
+    color = Column(String)
+    text = Column(Text)
+    bool = Column(Boolean)
+    time = Column(Time)
+    json = Column(Text)
 
 
-def getInitRequiredData():
+Base.metadata.create_all()
+Session = sessionmaker(bind=engine)
+MODELS = {
+    'Test': Test,
+}
+
+
+def json_serial(obj):
+    if isinstance(obj, (datetime, time)):
+        serial = obj.isoformat()
+        return serial
+
+    raise TypeError(repr(obj) + " is not JSON serializable")
+
+
+def superDumps(data):
+    return dumps(data, default=json_serial)
+
+
+def _getInitRequiredData():
     data = [
         {
             'type': 'UPDATE_RIGHT_MENU',
@@ -121,10 +78,10 @@ def getInitRequiredData():
             'type': 'CLEAR_LEFT_MENU',
         },
     ]
-    return dumps(data)
+    return superDumps(data)
 
 
-def getInitOptionnalData():
+def _getInitOptionnalData():
     data = [
         {
             'type': 'UPDATE_LOCALES',
@@ -199,93 +156,87 @@ def getInitOptionnalData():
             'locale': 'fr-FR',
         },
     ]
-    return dumps(data)
+    return superDumps(data)
 
 
-def getMenu(label, spaceId):
-    return [
+def getAction1():
+    res = [
         {
-            'label': 'Menu ' + label + ' 1 : ' + spaceId,
-            'image': {'type': 'font-icon', 'value': 'fa-user'},
+            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
             'actionId': '1',
-            'custom_view': '',
-            'id': label + '1',
-            'submenus': [],
-        },
-        {
-            'label': 'Menu ' + label + ' 2 : ' + spaceId,
-            'image': {'type': '', 'value': ''},
-            'actionId': '',
-            'custom_view': 'Login',
-            'id': label + '3',
-            'submenus': [],
-        },
-        {
-            'label': 'Menu ' + label + ' 2 : ' + spaceId,
-            'image': {'type': '', 'value': ''},
-            'actionId': '',
-            'custom_view': '',
-            'id': label + '4',
-            'submenus': [
+            'label': 'Action : 1',
+            'viewId': '1',
+            'views': [
                 {
-                    'label': 'Menu ' + label + ' 1 : ' + spaceId,
-                    'image': {'type': 'font-icon', 'value': 'fa-user'},
-                    'actionId': '2',
-                    'custom_view': '',
-                    'id': label + '41',
-                    'submenus': [],
+                    'viewId': '1',
+                    'type': 'List',
                 },
                 {
-                    'label': 'Menu ' + label + ' 2 : ' + spaceId,
-                    'image': {'type': '', 'value': ''},
-                    'actionId': '',
-                    'custom_view': 'Login',
-                    'id': label + '43',
-                    'submenus': [
-                        {
-                            'label': 'Menu ' + label + ' 1 : ' + spaceId,
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'actionId': '3',
-                            'custom_view': '',
-                            'id': label + '431',
-                            'submenus': [],
-                        },
-                        {
-                            'label': 'Menu ' + label + ' 2 : ' + spaceId,
-                            'image': {'type': '', 'value': ''},
-                            'actionId': '',
-                            'custom_view': 'Login',
-                            'id': label + '433',
-                            'submenus': [],
-                        },
-                    ],
+                    'viewId': '2',
+                    'type': 'Thumbnail',
+                },
+                {
+                    'viewId': '3',
+                    'type': 'Form',
+                },
+                {
+                    'viewId': '4',
+                    'type': 'Calendar',
+                },
+                {
+                    'viewId': '5',
+                    'type': 'Kanban',
+                },
+                {
+                    'viewId': '6',
+                    'type': 'Graph',
+                },
+                {
+                    'viewId': '7',
+                    'type': 'Gantt',
                 },
             ],
-        },
+            'model': 'Test',
+        }
     ]
+    res.append(getView1())
+    return res
+
+
+def getAction(actionId):
+    if actionId == '1':
+        return getAction1()
+
+    raise Exception('Unknown action %r' % actionId)
+
+
+def getSpace1():
+    space = [{
+        'type': 'UPDATE_SPACE',
+        'spaceId': '1',
+        'left_menu': [],
+        'menuId': None,
+        'right_menu': [],
+        'actionId': '1',
+        'viewId': None,
+        'custom_view': '',
+    }]
+    space.extend(getAction1())
+    return space
 
 
 def getSpace(spaceId):
-    left_menu = getMenu('left', spaceId) if spaceId not in ('1', '2') else []
-    right_menu = getMenu('right', spaceId) if spaceId not in ('1', '3') else []
-    menuId = 'left431' if left_menu else ''
-    actionId = '1' if spaceId != '4' else ''
-    viewId = ''
-    custom_view = 'Login' if spaceId == '4' else ''
+    if spaceId == '1':
+        return getSpace1()
+
+    raise Exception('Unknown space %r' % spaceId)
+
+
+def getView1():
     return {
-        'type': 'UPDATE_SPACE',
-        'spaceId': spaceId,
-        'left_menu': left_menu,
-        'menuId': menuId,
-        'right_menu': right_menu,
-        'actionId': actionId,
-        'viewId': viewId,
-        'custom_view': custom_view,
-    }
-
-
-def getViewList(state):
-    state.update({
+        'type': 'UPDATE_VIEW',
+        'viewId': '1',
+        'label': 'View : 1',
         'creatable': True,
         'deletable': True,
         'selectable': True,
@@ -361,11 +312,16 @@ def getViewList(state):
                 'buttonId': '2',
             },
         ],
-    })
+        'fields': ["id", "name", "state", "creation_date", "number",
+                   "color", "text", "time", "json"],
+    }
 
 
-def getViewThumbnail(state):
-    state.update({
+def getView2():
+    return {
+        'type': 'UPDATE_VIEW',
+        'viewId': '2',
+        'label': 'View : 2',
         'creatable': True,
         'deletable': True,
         'onSelect': '3',
@@ -389,7 +345,12 @@ def getViewThumbnail(state):
                     <field name="name" widget="String" label="Label"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State"></field>
+                    <field
+                        name="state"
+                        widget="Selection"
+                        selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]'
+                        label="State">
+                    </field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="creation_date" widget="DateTime" label="Creation date"></field>
@@ -429,11 +390,18 @@ def getViewThumbnail(state):
                 'buttonId': '1',
             },
         ],
-    })
+        'fields': [
+            "id", "name", "state", "creation_date", "number", "url",
+            "uuid", "password", "color", "text", "bool", "time", "json",
+        ],
+    }
 
 
-def getViewForm(state):
-    state.update({
+def getView3():
+    return {
+        'type': 'UPDATE_VIEW',
+        'viewId': 3,
+        'label': 'View : 3',
         'creatable': True,
         'deletable': True,
         'editable': True,
@@ -450,10 +418,21 @@ def getViewForm(state):
                     <field name="json" widget="Json" label="JSON" required="1"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="state" widget="Selection" selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]' label="State" required="1"></field>
+                    <field
+                        name="state"
+                        widget="Selection"
+                        selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]'
+                        label="State"
+                        required="1">
+                    </field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="creation_date" widget="DateTime" label="Creation date" required="1"></field>
+                    <field
+                        name="creation_date"
+                        widget="DateTime"
+                        label="Creation date"
+                        required="1">
+                    </field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="number" widget="Float" label="Number" required="1"></field>
@@ -487,66 +466,29 @@ def getViewForm(state):
                 'buttonId': '1',
             },
         ],
-    })
+        'fields': [
+            "id", "name", "json", "state", "creation_date", "number",
+            "url", "uuid", "password", "color", "text", "bool", "time",
+        ],
+    }
 
 
 def getView(viewId):
-    res = {
-        'type': 'UPDATE_VIEW',
-        'viewId': viewId,
-        'label': 'View : ' + viewId,
-    }
     if viewId == '1':
-        getViewList(res)
-    if viewId == '2':
-        getViewThumbnail(res)
-    if viewId == '3':
-        getViewForm(res)
+        view = getView1()
+    elif viewId == '2':
+        view = getView2()
+    elif viewId == '3':
+        view = getView3()
+    else:
+        raise Exception("Unknown view %r" % viewId)
 
-    return res
-
-
-def getAction(actionId):
-    return {
-        'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
-        'actionId': actionId,
-        'label': 'Action : ' + actionId,
-        'viewId': '2',
-        'views': [
-            {
-                'viewId': '1',
-                'type': 'List',
-            },
-            {
-                'viewId': '2',
-                'type': 'Thumbnail',
-            },
-            {
-                'viewId': '3',
-                'type': 'Form',
-            },
-            {
-                'viewId': '4',
-                'type': 'Calendar',
-            },
-            {
-                'viewId': '5',
-                'type': 'Kanban',
-            },
-            {
-                'viewId': '6',
-                'type': 'Graph',
-            },
-            {
-                'viewId': '7',
-                'type': 'Gantt',
-            },
-        ],
-        'model': 'Todo',
-    }
+    return view
 
 
+@route('/furetui/client/login', method='POST')
 def getLoginData():
+    response.set_header('Content-Type', 'application/json')
     data = [
         {
             'type': 'UPDATE_GLOBAL',
@@ -594,169 +536,263 @@ def getLoginData():
                             'type': 'space',
                             'id': '1',
                         },
-                        {
-                            'label': 'Space 2',
-                            'description': '',
-                            'image': {'type': '', 'value': ''},
-                            'type': 'space',
-                            'id': '2',
-                        },
-                        {
-                            'label': 'Space 3',
-                            'description': '',
-                            'image': {'type': '', 'value': ''},
-                            'type': 'space',
-                            'id': '3',
-                        },
-                        {
-                            'label': 'Space 4',
-                            'description': '',
-                            'image': {'type': '', 'value': ''},
-                            'type': 'space',
-                            'id': '4',
-                        },
-                        {
-                            'label': 'Space 5',
-                            'description': '',
-                            'image': {'type': '', 'value': ''},
-                            'type': 'space',
-                            'id': '5',
-                        },
-                        {
-                            'label': 'Space 6',
-                            'description': '',
-                            'image': {'type': '', 'value': ''},
-                            'type': 'space',
-                            'id': '6',
-                        },
-                    ],
-                },
-                {
-                    'label': 'Space groupe 2',
-                    'image': {'type': '', 'value': ''},
-                    'id': 2,
-                    'values': [
-                        {
-                            'label': 'Space 7',
-                            'description': '',
-                            'image': {'type': '', 'value': ''},
-                            'type': 'space',
-                            'id': '7',
-                        },
-                        {
-                            'label': 'Space 8',
-                            'description': '',
-                            'image': {'type': '', 'value': ''},
-                            'type': 'space',
-                            'id': '8',
-                        },
+                        # {
+                        #     'label': 'Space 2',
+                        #     'description': '',
+                        #     'image': {'type': '', 'value': ''},
+                        #     'type': 'space',
+                        #     'id': '2',
+                        # },
                     ],
                 },
             ],
         },
     ]
-    data.append(getSpace('1'))
-    data.append(getAction('1'))
-    return dumps(data)
+    data.extend(getSpace1())
+    return superDumps(data)
 
 
-def application(environ, start_response):
-    if environ['PATH_INFO'] == '/':
-        response_body = readFile('index.html', environ)
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/html'),
-        ]
-    elif environ['PATH_INFO'].endswith('.js'):
-        response_body = readFile(environ['PATH_INFO'], environ)
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/javascript'),
-        ]
-    elif environ['PATH_INFO'] == '/furetui/init/required/data':
-        response_body = getInitRequiredData()
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/json'),
-            ('Content-Length', str(len(response_body)))
-        ]
-    elif environ['PATH_INFO'] == '/furetui/init/optionnal/data':
-        response_body = getInitOptionnalData()
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/json'),
-            ('Content-Length', str(len(response_body)))
-        ]
-    elif environ['PATH_INFO'] == '/furetui/client/login':
-        response_body = getLoginData()
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/json'),
-            ('Content-Length', str(len(response_body)))
-        ]
-    elif environ['PATH_INFO'] == '/furetui/client/logout':
-        response_body = getInitRequiredData()
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/json'),
-            ('Content-Length', str(len(response_body)))
-        ]
-    elif environ['PATH_INFO'].split('/')[2] == 'space':
-        response_body = dumps([getSpace(environ['PATH_INFO'].split('/')[3])])
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/json'),
-            ('Content-Length', str(len(response_body)))
-        ]
-    elif environ['PATH_INFO'].split('/')[2] == 'action':
-        response_body = dumps([getAction(environ['PATH_INFO'].split('/')[3])])
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/json'),
-            ('Content-Length', str(len(response_body)))
-        ]
-    elif environ['PATH_INFO'] == '/furetui/list/get':
-        data = []
-        data.append(getView('1'))
-        data.extend(getData('1'))
-        response_body = dumps(data)
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/json'),
-            ('Content-Length', str(len(response_body)))
-        ]
-    elif environ['PATH_INFO'] == '/furetui/thumbnail/get':
-        data = []
-        data.append(getView('2'))
-        data.extend(getData('2'))
-        response_body = dumps(data)
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/json'),
-            ('Content-Length', str(len(response_body)))
-        ]
-    elif environ['PATH_INFO'] == '/furetui/form/get':
-        data = []
-        data.append(getView('3'))
-        data.extend(getData('3'))
-        response_body = dumps(data)
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/json'),
-            ('Content-Length', str(len(response_body)))
-        ]
-    else:
-        pprint(environ)
-        response_body = 'Request method: %s' % environ['REQUEST_METHOD']
-        status = '200 OK'
-        response_headers = [
-            ('Content-Type', 'text/plain'),
-            ('Content-Length', str(len(response_body)))
-        ]
+def getIdsFromFilter(model, filters):
+    ids = []
+    try:
+        session = Session()
+        Model = MODELS[model]
+        query = session.query(Model)
+        for k, v in filters.items():
+            if isinstance(getattr(Model, k).property.columns[0].type, String):
+                query = query.filter(or_(*[getattr(Model, k).ilike('%{}%'.format(x)) for x in v]))
+            else:
+                query = query.filter(getattr(Model, k).in_(v))
 
-    start_response(status, response_headers)
-    return response_body
+        ids = [x.id for x in query.all()]
+    except AttributeError:
+        pass
+    finally:
+        session.rollback()
+        session.close()
+    return ids
 
 
-httpd = make_server('localhost', 8080, application)
-httpd.serve_forever()
+def getData(model, ids, fields):
+    if not ids:
+        return []
+
+    res = []
+    try:
+        session = Session()
+        Model = MODELS[model]
+        query = session.query(Model)
+        query = query.filter(Model.id.in_(ids))
+        res.append({
+            'type': 'UPDATE_DATA',
+            'model': model,
+            'data': {
+                x.id: {y: getattr(x, y) for y in fields}
+                for x in query.all()
+            },
+        })
+    except:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+
+    return res
+
+
+@route('/furetui/space/<spaceId>', method='POST')
+def getSpaceInformation(spaceId=None):
+    response.set_header('Content-Type', 'application/json')
+    if spaceId is None:
+        return superDumps([])
+
+    return superDumps(getSpace(spaceId))
+
+
+@route('/furetui/action/<actionId>', method='POST')
+def getActionInformation(actionId=None):
+    response.set_header('Content-Type', 'application/json')
+    if actionId is None:
+        return superDumps([])
+
+    return superDumps(getAction(actionId))
+
+
+@route('/furetui/view/<viewId>', method='POST')
+def getViewInformation(viewId=None):
+    response.set_header('Content-Type', 'application/json')
+    if viewId is None:
+        return superDumps([])
+
+    return superDumps([getView(viewId)])
+
+
+def getMultiView():
+    data = loads(request.body.read())
+    ids = getIdsFromFilter(data['model'], data['filter'])
+    fields = data.get('fields')
+    if fields is None:
+        view = getView(data['viewId'])
+        fields = view['fields']
+
+    _data = getData(data['model'], ids, fields)
+    _data.append({
+        'type': 'UPDATE_VIEW',
+        'viewId': data['viewId'],
+        'ids': ids,
+    })
+    return superDumps(_data)
+
+
+@route('/furetui/list/get', method='POST')
+def getListView():
+    response.set_header('Content-Type', 'application/json')
+    return getMultiView()
+
+
+@route('/furetui/thumbnail/get', method='POST')
+def getThumbnailView():
+    response.set_header('Content-Type', 'application/json')
+    return getMultiView()
+
+
+@route('/furetui/form/get', method='POST')
+def getFormView():
+    response.set_header('Content-Type', 'application/json')
+    data = loads(request.body.read())
+    fields = data.get('fields')
+    if fields is None:
+        view = getView(data['viewId'])
+        fields = view['fields']
+
+    if data['new']:
+        return superDumps([])
+
+    return superDumps(getData(data['model'], [data['id']], fields))
+
+
+@route('/furetui/init/required/data', method='POST')
+def getInitRequiredData():
+    response.set_header('Content-Type', 'application/json')
+    return _getInitRequiredData()
+
+
+@route('/furetui/client/logout', method='POST')
+def getLogout():
+    response.set_header('Content-Type', 'application/json')
+    return _getInitRequiredData()
+
+
+@route('/furetui/init/optionnal/data', method='POST')
+def getInitOptionnalData():
+    response.set_header('Content-Type', 'application/json')
+    return _getInitOptionnalData()
+
+
+@route('/furetui/data/update', method='POST')
+def updateData():
+    response.set_header('Content-Type', 'application/json')
+    data = []
+    try:
+        session = Session()
+        for data in loads(request.body.read()):
+            Model = MODELS[data['model']]
+            if data['type'] == 'CREATE':
+                session.add(Model(**data['data']))
+            elif data['type'] == 'UPDATE':
+                session.query(Model).filter(Model.id == data['dataId']).update(data['data'])
+            elif data['type'] == 'DELETE':
+                session.query(Model).filter(Model.id.in_(data['dataIds'])).delete(synchronize_session=False)
+            else:
+                raise Exception('Unknown data update type %r' % data)
+        session.commit()
+        # update data
+    except:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+
+    return data
+
+
+@route('/')
+def index():
+    redirect('index.html')
+
+
+@route('/<filepath:path>')
+def server_static(filepath):
+    return static_file(filepath, root='./')
+
+
+session = Session()
+if session.query(Test).count() == 0:
+    session.add(
+        Test(**dict({
+            'name': "todo 1",
+            'creation_date': datetime.now(),
+            'state': 'new',
+            'number': 1.2345678,
+            'url': 'http://furet-ui.readthedocs.io',
+            'uuid': 'uuid---',
+            'password': 'password',
+            'color': '#36c',
+            'text': '<div><p><em>Plop</em></p></div>',
+            'bool': True,
+            'time': time(1, 2, 3),
+            'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
+        }))
+    )
+    session.add(
+        Test(**dict({
+            'name': "todo 2",
+            'creation_date': datetime.now(),
+            'state': 'started',
+            'number': 1.2345678,
+            'url': 'http://furet-ui.readthedocs.io',
+            'uuid': 'uuid---',
+            'password': 'password',
+            'color': '#36c',
+            'text': '<div><p><em>Plop</em></p></div>',
+            'bool': True,
+            'time': time(1, 2, 3),
+            'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
+        }))
+    )
+    session.add(
+        Test(**dict({
+            'name': "todo 3",
+            'creation_date': datetime.now(),
+            'state': 'done',
+            'number': 1.2345678,
+            'url': 'http://furet-ui.readthedocs.io',
+            'uuid': 'uuid---',
+            'password': 'password',
+            'color': '#36c',
+            'text': '<div><p><em>Plop</em></p></div>',
+            'bool': False,
+            'time': time(1, 2, 3),
+            'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
+        }))
+    )
+    session.add(
+        Test(**dict({
+            'name': "todo 4",
+            'creation_date': datetime.now(),
+            'state': 'done',
+            'number': 1.2345678,
+            'url': 'http://furet-ui.readthedocs.io',
+            'uuid': 'uuid---',
+            'password': 'password',
+            'color': '#36c',
+            'text': '<div><p><em>Plop</em></p><p>Other line</p></div>',
+            'bool': False,
+            'time': time(1, 2, 3),
+            'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
+        }))
+    )
+    session.commit()
+
+session.close()
+run(host='localhost', port=8080, debug=True)

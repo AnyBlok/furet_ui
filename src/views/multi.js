@@ -27,20 +27,24 @@ import {getNewID} from './index';
 export class Multi extends Base {
     constructor (props) {
         super(props);
+        const search = {};
+        _.each(props.search || [], s => {
+            if (s.default) search[s.key] = [s.default];
+        });
         this.state = {
             selectedIds: [],
             change: {},
-            search: {},
+            search: _.keys(search).length != 0 ? search : null,
             searchText: '',
         };
     }
     componentWillReceiveProps(nextProps) {
-        const search = Object.assign({}, this.state.search);
-        if (_.keys(search).length == 0) {
-            _.each(this.props.search || [], s => {
+        if (this.state.search == null) {
+            const search = {};
+            _.each(nextProps.search || [], s => {
                 if (s.default) search[s.key] = [s.default];
             });
-            this.setState({search});
+            this.updateSearchQuery(search);
         }
     }
     /**
@@ -148,8 +152,10 @@ export class Multi extends Base {
      * Update chip componnents
     **/
     updateSearchQuery (search) {
-        console.log('updateSearchQuery', this.state.search);
-        this.setState({search});
+        const self = this;
+        this.setState({search}, () => {
+            self.call_server();
+        });
     }
     /**
      * Change view when an entry has selected
@@ -193,7 +199,7 @@ export class Multi extends Base {
     renderSearchBar () {
         const tags = [],
               choices=[];
-        _.each(this.state.search, (values, key) => {
+        _.each(this.state.search || {}, (values, key) => {
             const label = _.find(this.props.search, s => (s.key == key)).label;
             tags.push(
                 <li key={key}>
