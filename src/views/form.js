@@ -48,6 +48,8 @@ export class Form extends Base {
                 model: this.props.model,
                 id: this.state.id,
                 new: this.state.new,
+                viewId: this.props.viewId,
+                fields: this.props.fields,
             },
             {
                 onSuccess: (results) => {
@@ -71,6 +73,7 @@ export class Form extends Base {
     returnPreviousView() {
         const viewId = (this.props.params && this.props.params.returnView) || this.props.onSelect;
         if (viewId) {
+            this.getView(viewId);
             this.props.dispatch({
                 type: 'UPDATE_ACTION_SELECT_VIEW',
                 actionId: this.props.actionId,

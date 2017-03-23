@@ -66,6 +66,8 @@ export class List extends Multi {
             {
                 model: this.props.model,
                 filter: this.state.search,
+                fields: this.props.fields,
+                viewId: this.props.viewId,
             },
             {
                 onSuccess: (results) => {

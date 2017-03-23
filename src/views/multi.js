@@ -48,6 +48,7 @@ export class Multi extends Base {
     **/
     addNewEntry () {
         if (this.props.onSelect) {
+            this.getView(this.props.onSelect);
             this.props.dispatch({
                 type: 'UPDATE_ACTION_SELECT_VIEW',
                 actionId: this.props.actionId,
@@ -155,6 +156,7 @@ export class Multi extends Base {
     **/
     onEntrySelect(id) {
         if (this.props.onSelect) {
+            this.getView(this.props.onSelect);
             this.props.dispatch({
                 type: 'UPDATE_ACTION_SELECT_VIEW',
                 actionId: this.props.actionId,
