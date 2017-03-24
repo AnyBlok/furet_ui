@@ -87,8 +87,8 @@ export class List extends Multi {
      * render line
     **/
     renderLine (lineId) {
-        if (this.props.computed[lineId] == 'DELETED') return null;
-        if (this.props.data[lineId] == undefined) return null;
+        if (this.props.computed && this.props.computed[lineId] == 'DELETED') return null;
+        if (this.props.data && this.props.data[lineId] == undefined) return null;
         const data = Object.assign(
             {}, 
             this.props.data[lineId], 
@@ -96,6 +96,7 @@ export class List extends Multi {
             this.props.change[lineId]
               ),
               selected = this.state.selectedIds.indexOf(lineId) != -1;
+
         return (
             <TableRow 
                 key={lineId}
