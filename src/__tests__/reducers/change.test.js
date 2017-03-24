@@ -57,9 +57,10 @@ test('current2Sync current new data', () => {
           uuid = 'uuid',
           model = 'Test',
           dataId = '1',
-          newData = true;
+          newData = true,
+          fields = ['name', 'title', 'id'];
 
-    current2Sync(current, toSync, uuid, model, dataId, newData);
+    current2Sync(current, toSync, uuid, model, dataId, newData, fields);
     chai.expect(toSync.length).to.equal(1);
     const expected = {
         uuid,
@@ -69,6 +70,7 @@ test('current2Sync current new data', () => {
                 model: 'Test',
                 dataId: '1',
                 type: 'CREATE',
+                fields,
                 data: {
                     name: 'Name',
                     title: 'Title',
@@ -78,12 +80,13 @@ test('current2Sync current new data', () => {
     }
     chai.expect(toSync[0]).to.deep.equal(expected);
 
-    current2Sync(current, toSync, uuid, model, dataId, newData);
+    current2Sync(current, toSync, uuid, model, dataId, newData, fields);
     chai.expect(toSync.length).to.equal(2);
     chai.expect(toSync[0]).to.deep.equal(expected);
     chai.expect(toSync[1]).to.deep.equal(expected);
 });
 test('current2Sync current old data', () => {
+    const fields = ['name', 'title', 'id'];
     const current = {
                 'Test': {
                     '1': {
@@ -98,7 +101,7 @@ test('current2Sync current old data', () => {
           dataId = '1',
           newData = false;
 
-    current2Sync(current, toSync, uuid, model, dataId, newData);
+    current2Sync(current, toSync, uuid, model, dataId, newData, fields);
     chai.expect(toSync.length).to.equal(1);
     const expected = {
         uuid,
@@ -108,6 +111,7 @@ test('current2Sync current old data', () => {
                 model: 'Test',
                 dataId: '1',
                 type: 'UPDATE',
+                fields,
                 data: {
                     name: 'Name',
                     title: 'Title',
@@ -117,12 +121,13 @@ test('current2Sync current old data', () => {
     }
     chai.expect(toSync[0]).to.deep.equal(expected);
 
-    current2Sync(current, toSync, uuid, model, dataId, newData);
+    current2Sync(current, toSync, uuid, model, dataId, newData, fields);
     chai.expect(toSync.length).to.equal(2);
     chai.expect(toSync[0]).to.deep.equal(expected);
     chai.expect(toSync[1]).to.deep.equal(expected);
 });
 test('current2Sync current with two different current', () => {
+    const fields = ['name', 'title', 'id'];
     const current1 = {
                 'Test': {
                     '1': {
@@ -144,7 +149,7 @@ test('current2Sync current with two different current', () => {
           model = 'Test',
           dataId = '1';
 
-    current2Sync(current1, toSync, uuid, model, dataId, true);
+    current2Sync(current1, toSync, uuid, model, dataId, true, fields);
     chai.expect(toSync.length).to.equal(1);
     const expected1 = {
         uuid,
@@ -154,6 +159,7 @@ test('current2Sync current with two different current', () => {
                 model: 'Test',
                 dataId: '1',
                 type: 'CREATE',
+                fields,
                 data: {
                     name: 'Name',
                     title: 'Title',
@@ -169,6 +175,7 @@ test('current2Sync current with two different current', () => {
                 model: 'Test',
                 dataId: '2',
                 type: 'UPDATE',
+                fields,
                 data: {
                     name: 'Name2',
                     title: 'Title2',
@@ -178,12 +185,13 @@ test('current2Sync current with two different current', () => {
     };
     chai.expect(toSync[0]).to.deep.equal(expected1);
 
-    current2Sync(current2, toSync, uuid, model, '2', false);
+    current2Sync(current2, toSync, uuid, model, '2', false, fields);
     chai.expect(toSync.length).to.equal(2);
     chai.expect(toSync[0]).to.deep.equal(expected1);
     chai.expect(toSync[1]).to.deep.equal(expected2);
 });
 test('current2Sync current multi data with new', () => {
+    const fields = ['name', 'title', 'id'];
     const current = {
                 'Test': {
                     '1': {
@@ -193,6 +201,7 @@ test('current2Sync current multi data with new', () => {
                     'new-2': {
                         name: 'Name 2',
                         title: 'Title 2',
+                        __fields: fields,
                     },
                 },
           },
@@ -202,7 +211,7 @@ test('current2Sync current multi data with new', () => {
           dataId = '1',
           newData = false;
 
-    current2Sync(current, toSync, uuid, model, dataId, newData);
+    current2Sync(current, toSync, uuid, model, dataId, newData, fields);
     chai.expect(toSync.length).to.equal(1);
     const expected = {
         uuid,
@@ -212,6 +221,7 @@ test('current2Sync current multi data with new', () => {
                 model: 'Test',
                 dataId: '1',
                 type: 'UPDATE',
+                fields,
                 data: {
                     name: 'Name 1',
                     title: 'Title 1',
@@ -221,6 +231,7 @@ test('current2Sync current multi data with new', () => {
                 model: 'Test',
                 dataId: 'new-2',
                 type: 'CREATE',
+                fields,
                 data: {
                     name: 'Name 2',
                     title: 'Title 2',
@@ -231,6 +242,7 @@ test('current2Sync current multi data with new', () => {
     chai.expect(toSync[0]).to.deep.equal(expected);
 });
 test('current2Sync current multi data with new with different Model', () => {
+    const fields = ['name', 'title', 'id'];
     const current = {
                 'Test': {
                     '1': {
@@ -242,6 +254,7 @@ test('current2Sync current multi data with new with different Model', () => {
                     'new-2': {
                         name: 'Name 2',
                         title: 'Title 2',
+                        __fields: fields,
                     },
                 },
           },
@@ -251,7 +264,7 @@ test('current2Sync current multi data with new with different Model', () => {
           dataId = '1',
           newData = false;
 
-    current2Sync(current, toSync, uuid, model, dataId, newData);
+    current2Sync(current, toSync, uuid, model, dataId, newData, fields);
     chai.expect(toSync.length).to.equal(1);
     const expected = {
         uuid,
@@ -261,6 +274,7 @@ test('current2Sync current multi data with new with different Model', () => {
                 model: 'Test',
                 dataId: '1',
                 type: 'UPDATE',
+                fields,
                 data: {
                     name: 'Name 1',
                     title: 'Title 1',
@@ -270,6 +284,7 @@ test('current2Sync current multi data with new with different Model', () => {
                 model: 'Test2',
                 dataId: 'new-2',
                 type: 'CREATE',
+                fields,
                 data: {
                     name: 'Name 2',
                     title: 'Title 2',
@@ -401,6 +416,7 @@ test('toSync2computed double with different model', () => {
     chai.expect(computed).to.deep.equal(expected);
 });
 test('ON_SAVE', () => {
+    const fields = ['name', 'title', 'id'];
     const current = {
                 'Test': {
                     '1': {
@@ -412,6 +428,7 @@ test('ON_SAVE', () => {
                     'new-2': {
                         name: 'Name 2',
                         title: 'Title 2',
+                        __fields: fields,
                     },
                 },
           },
@@ -424,6 +441,7 @@ test('ON_SAVE', () => {
                         model: 'Test',
                         dataId: '2',
                         type: 'CREATE',
+                        fields,
                         data: {
                             name: 'Name 2',
                             title: 'Title 2',
@@ -445,7 +463,8 @@ test('ON_SAVE', () => {
               uuid: 'uuid',
               model: 'Test',
               dataId: '1',
-              newData: false
+              newData: false,
+              fields,
           };
     const result = reducer({current, toSync, computed}, action);
     const expected = {
@@ -459,6 +478,7 @@ test('ON_SAVE', () => {
                         model: 'Test',
                         dataId: '2',
                         type: 'CREATE',
+                        fields,
                         data: {
                             name: 'Name 2',
                             title: 'Title 2',
@@ -474,6 +494,7 @@ test('ON_SAVE', () => {
                         model: 'Test',
                         dataId: '1',
                         type: 'UPDATE',
+                        fields,
                         data: {
                             name: 'Name 1',
                             title: 'Title 1',
@@ -483,6 +504,7 @@ test('ON_SAVE', () => {
                         model: 'Test2',
                         dataId: 'new-2',
                         type: 'CREATE',
+                        fields,
                         data: {
                             name: 'Name 2',
                             title: 'Title 2',
