@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from bottle import route, run, static_file, redirect, response, request
+from bottle import route, run, static_file, response, request
 from simplejson import dumps, loads
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -573,6 +573,20 @@ def getIdsFromFilter(model, filters):
     return ids
 
 
+def _getData(session, model, ids, fields):
+    Model = MODELS[model]
+    query = session.query(Model)
+    query = query.filter(Model.id.in_(ids))
+    return {
+        'type': 'UPDATE_DATA',
+        'model': model,
+        'data': {
+            x.id: {y: getattr(x, y) for y in fields}
+            for x in query.all()
+        },
+    }
+
+
 def getData(model, ids, fields):
     if not ids:
         return []
@@ -580,17 +594,7 @@ def getData(model, ids, fields):
     res = []
     try:
         session = Session()
-        Model = MODELS[model]
-        query = session.query(Model)
-        query = query.filter(Model.id.in_(ids))
-        res.append({
-            'type': 'UPDATE_DATA',
-            'model': model,
-            'data': {
-                x.id: {y: getattr(x, y) for y in fields}
-                for x in query.all()
-            },
-        })
+        res.append(_getData(session, model, ids, fields))
     except:
         session.rollback()
         raise
@@ -692,33 +696,55 @@ def getInitOptionnalData():
 @route('/furetui/data/update', method='POST')
 def updateData():
     response.set_header('Content-Type', 'application/json')
-    data = []
+    _data = []
+    toUpdate = []
+    toDelete = {}
+
     try:
         session = Session()
         for data in loads(request.body.read()):
             Model = MODELS[data['model']]
             if data['type'] == 'CREATE':
-                session.add(Model(**data['data']))
+                obj = Model(**data['data'])
+                session.add(obj)
+                toUpdate.append((data['model'], data['fields'], obj))
             elif data['type'] == 'UPDATE':
-                session.query(Model).filter(Model.id == data['dataId']).update(data['data'])
+                query = session.query(Model).filter(Model.id == data['dataId'])
+                toUpdate.append((data['model'], data['fields'], query.one()))
+                query.update(data['data'])
             elif data['type'] == 'DELETE':
-                session.query(Model).filter(Model.id.in_(data['dataIds'])).delete(synchronize_session=False)
+                query = session.query(Model).filter(Model.id.in_(data['dataIds']))
+                query.delete(synchronize_session='fetch')
+                if data['model'] not in toDelete:
+                    toDelete[data['model']] = data['dataIds']
+                else:
+                    toDelete[data['model']].extend(data['dataIds'])
             else:
                 raise Exception('Unknown data update type %r' % data)
+
         session.commit()
-        # update data
+        for model, fields, obj in toUpdate:
+            _data.append(_getData(session, model, [obj.id], fields))
+
+        if toDelete:
+            _data.append({
+                'type': 'DELETE_DATA',
+                'data': toDelete,
+            })
+
     except:
+        _data = []
         session.rollback()
         raise
     finally:
         session.close()
 
-    return data
+    return superDumps(_data)
 
 
 @route('/')
 def index():
-    redirect('index.html')
+    return static_file('index.html', root='./')
 
 
 @route('/<filepath:path>')

@@ -88,6 +88,7 @@ export class List extends Multi {
     **/
     renderLine (lineId) {
         if (this.props.computed[lineId] == 'DELETED') return null;
+        if (this.props.data[lineId] == undefined) return null;
         const data = Object.assign(
             {}, 
             this.props.data[lineId], 

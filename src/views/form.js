@@ -92,7 +92,7 @@ export class Form extends Base {
      * call by save button
     **/
     saveEntry () {
-        this.props.onSave(this.state.id, this.state.new);
+        this.props.onSave(this.state.id, this.state.new, this.props.fields);
         this.setState({readonly: true, new: false});
     }
     componentWillReceiveProps(nextProps) {

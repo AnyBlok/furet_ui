@@ -14,7 +14,7 @@ export const defaultState = {
     computed: {},
 }
 
-export const current2Sync = (current, toSync, uuid, model, dataId, newData) => {
+export const current2Sync = (current, toSync, uuid, model, dataId, newData, fields) => {
     const newSync = {
         uuid,
         state: 'toSend',
@@ -26,6 +26,7 @@ export const current2Sync = (current, toSync, uuid, model, dataId, newData) => {
             model,
             dataId,
             type: newData ? 'CREATE' : 'UPDATE',
+            fields,
             data: current[model][dataId],
         });
     } catch (e) {};
@@ -35,10 +36,13 @@ export const current2Sync = (current, toSync, uuid, model, dataId, newData) => {
             if (modelName == model && dataId == id) {
                 // do nothing, because already done
             } else {
+                const _fields = current[modelName][id].__fields;
+                delete current[modelName][id].__fields;
                 newSync.data.push({
                     model: modelName,
                     dataId: id,
                     type: (new RegExp('^new-.*')).test(id) ? 'CREATE' : 'UPDATE',
+                    fields: _fields,
                     data: current[modelName][id],
                 });
             }
@@ -113,7 +117,7 @@ export const change = (state = defaultState, action) => {
         case 'CLEAR_CHANGE':
             return Object.assign({}, state, {current: {}});
         case 'ON_SAVE':
-            current2Sync(current, toSync, action.uuid, action.model, action.dataId, action.newData);
+            current2Sync(current, toSync, action.uuid, action.model, action.dataId, action.newData, action.fields);
             toSync2computed(toSync, computed)
             return Object.assign({}, state, {current: {}, toSync, computed});
         case 'ON_DELETE':

@@ -154,13 +154,14 @@ export const getView = (viewType, viewId, params) => {
             clearChange: () => {
                 dispatch({type: 'CLEAR_CHANGE'});
             },
-            onSave: (dataId, newData) => {
+            onSave: (dataId, newData, fields) => {
                 dispatch({
                     type: 'ON_SAVE', 
                     newData, 
                     dataId, 
                     model: params.model,
                     uuid: uuid(),
+                    fields,
                 });
                 dispatch({type: 'TO_SEND'});
             },
