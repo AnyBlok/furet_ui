@@ -179,7 +179,12 @@ Render a react template, the template come from serveur and stock in the redux s
 Field
 -----
 
-Each field must be defined by views type. The list views are:
+Each field must be defined by views type. 
+
+Simple
+~~~~~~
+
+The list are:
 
 * BigInteger
 * Boolean
@@ -202,12 +207,20 @@ Each field must be defined by views type. The list views are:
 * URL
 * UUID
 
+Relation ship
+~~~~~~~~~~~~~
+
+Relation ship are particular field which link two model.
+
+The list are:
+
+* 
+
 ::
 
     import {getField} from './fields';
 
     getField(viewType (string), fieldType (string), params (object), value)
-
 
 Plugin
 ------
