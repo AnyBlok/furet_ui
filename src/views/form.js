@@ -22,6 +22,7 @@ import IconButton from 'material-ui/IconButton';
 import {blue500, red500} from 'material-ui/styles/colors';
 import DropdownMenu from './dropdown';
 import translate from 'counterpart';
+import {getNewID} from './index';
 
 /**
  * Add Icon for Form view
@@ -37,14 +38,18 @@ plugin.set(['views', 'icon'], {Form: (props) => {
 export class Form extends Base {
     constructor(props) {
         super(props);
-        this.state = {change: {}, readonly: true, id: null};
+        const id = props.params && props.params.id || null;
+        this.state = {readonly: true, id, new: props.params && props.params.new || false};
     }
-    call_server (id) {
+    call_server () {
         this.json_post(
             '/form/get', 
             {
                 model: this.props.model,
-                id: (id != undefined) ? id : this.state.id,
+                id: this.state.id,
+                new: this.state.new,
+                viewId: this.props.viewId,
+                fields: this.props.fields,
             },
             {
                 onSuccess: (results) => {
@@ -57,8 +62,10 @@ export class Form extends Base {
      * call by create action
     **/
     addNewEntry () {
-        this.setState({readonly: false, id: null});
-        this.call_server(null);
+        const id = getNewID(this.props.model);
+        this.setState({readonly: false, id, new: true}, () => {
+            this.call_server(id);
+        });
     }
     /**
      * Close the current view and route to previous view
@@ -66,6 +73,7 @@ export class Form extends Base {
     returnPreviousView() {
         const viewId = (this.props.params && this.props.params.returnView) || this.props.onSelect;
         if (viewId) {
+            this.getView(viewId);
             this.props.dispatch({
                 type: 'UPDATE_ACTION_SELECT_VIEW',
                 actionId: this.props.actionId,
@@ -77,27 +85,23 @@ export class Form extends Base {
      * call by delete button
     **/
     removeEntry () {
-        console.log('todo', 'removeEntry');
+        this.props.onDelete([this.state.id]);
+        this.returnPreviousView();
     }
     /**
      * call by save button
     **/
     saveEntry () {
-        console.log('todo', 'saveEntry');
-        this.setState({readonly: true});
+        this.props.onSave(this.state.id, this.state.new, this.props.fields);
+        this.setState({readonly: true, new: false});
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.params) {
+        if (nextProps.params && (nextProps.params.new || !this.state.new)) {
             const state = {}
             if (nextProps.params.readonly != undefined) state.readonly = nextProps.params.readonly;
             if (nextProps.params.id != undefined) state.id = nextProps.params.id;
             this.setState(state);
         }
-    }
-    onChange(field, value) {
-        const change = Object.assign({}, this.state.change);
-        change[field] = value;
-        this.setState({change})
     }
     /**
      * Render the template of the form view
@@ -105,19 +109,28 @@ export class Form extends Base {
     renderTemplate (template) {
         if (!template) return null;
         const self = this;
+        const data = Object.assign(
+            {}, 
+            self.props.data && self.props.data[self.state.id],
+            self.props.computed && self.props.computed[self.state.id],
+            self.props.change && self.props.change[self.state.id]
+        );
         const processingInstructions = [
             {
                 shouldProcessNode: function(node) {
                     return node.name === 'field';
                 },
                 processNode: function(node, children) {
-                    const data = self.props.data[self.state.id] || {},
-                          change = self.state.change;
                     return self.getField(
                         'Form', 
                         node.attribs.widget, 
-                        Object.assign(node.attribs, {readonly: self.state.readonly, onChange: self.onChange.bind(self)}),
-                        change[node.attribs.name] != undefined ? change[node.attribs.name] : data[node.attribs.name]
+                        Object.assign(node.attribs, {
+                            readonly: self.state.readonly, 
+                            onChange: (fieldname, newValue) => {
+                                self.props.onChange(self.state.id, fieldname, newValue);
+                            }
+                        }),
+                        data[node.attribs.name] || null
                     );
                 }
             }, 
@@ -202,7 +215,14 @@ export class Form extends Base {
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
                         <IconButton
-                            onClick={() => this.setState({readonly: true, change: {}})}
+                            onClick={() => {
+                                this.props.clearChange();
+                                if (this.state.new) {
+                                    this.returnPreviousView();
+                                } else {
+                                    this.setState({readonly: true});
+                                }
+                            }}
                             tooltip={translate('furetUI.views.common.cancel', {fallback: 'Cancel'})}
                             iconStyle={{
                                 width: 36,

@@ -66,6 +66,8 @@ export class List extends Multi {
             {
                 model: this.props.model,
                 filter: this.state.search,
+                fields: this.props.fields,
+                viewId: this.props.viewId,
             },
             {
                 onSuccess: (results) => {
@@ -85,9 +87,16 @@ export class List extends Multi {
      * render line
     **/
     renderLine (lineId) {
-        const data = this.props.data[lineId] || {},
-              change = this.state.change,
+        if (this.props.computed && this.props.computed[lineId] == 'DELETED') return null;
+        if (this.props.data && this.props.data[lineId] == undefined) return null;
+        const data = Object.assign(
+            {}, 
+            this.props.data[lineId], 
+            this.props.computed[lineId], 
+            this.props.change[lineId]
+              ),
               selected = this.state.selectedIds.indexOf(lineId) != -1;
+
         return (
             <TableRow 
                 key={lineId}
@@ -115,7 +124,7 @@ export class List extends Multi {
                                 'List', 
                                 header.type, 
                                 header,
-                                change[header.name] || data[header.name]
+                                data[header.name]
                             )}
                         </div>
                     </TableRowColumn>

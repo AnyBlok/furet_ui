@@ -47,6 +47,13 @@ export default class extends React.Component {
             _template, this.isValidNode.bind(this), processingInstructions
         );
     }
+    getView (viewId) {
+        json_post('/view/' + viewId, {}, {
+            onSuccess: (results) => {
+                this.props.dispatchAll(results)
+            }
+        });
+    }
     call_server () {}
     componentDidMount () {
         this.call_server();

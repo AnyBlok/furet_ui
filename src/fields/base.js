@@ -39,7 +39,11 @@ class Base extends React.Component {
             className: 'form-group',
         }
     }
+    getNullValue () {
+        return '';
+    }
     getValue () {
+        if (this.props.value == null) return this.getNullValue();
         return this.props.value;
     }
     updateThisData () {

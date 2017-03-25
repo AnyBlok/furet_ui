@@ -9,55 +9,24 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import renderer from 'react-test-renderer';
-import sinon from 'sinon';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import chai from 'chai';
-import {createStore, combineReducers} from 'redux';
-import {Provider} from 'react-redux';
-import reducers from '../../reducers';
-import {updateGlobal} from '../../testcase';
 import {getField} from '../../fields';
 import plugin from '../../plugin';
 
 test('Render Unknown field', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
     const Unknown = plugin.get(['field', 'Unknown']);
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                <Unknown value="Test"/>
-            </MuiThemeProvider>
-        </Provider>
-    );
+    const component = renderer.create(<Unknown value="Test"/>);
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 test('getField with unknown view', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Unknown', 'String', {}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
-    );
+    const component = renderer.create(getField('Unknown', 'String', {}, 'Test'));
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 test('getField with unknown field', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('List', 'Unknown', {}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
-    );
+    const component = renderer.create(getField('List', 'Unknown', {}, 'Test'));
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });

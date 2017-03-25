@@ -9,68 +9,46 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import renderer from 'react-test-renderer';
-import sinon from 'sinon';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import chai from 'chai';
-import {createStore, combineReducers} from 'redux';
-import {Provider} from 'react-redux';
-import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
 import {getField} from '../../fields';
 
 const selections = '[["Test", "New"]]'
 
 test('getField for List', () => {
-    const store = createStore(combineReducers(reducers));
-    updateGlobal();
-    const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('List', 'Selection', {selections}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
-    );
+    const component = renderer.create(getField('List', 'Selection', {selections}, 'Test'));
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 test('getField for Thumbnail', () => {
-    const store = createStore(combineReducers(reducers));
     updateGlobal();
     const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Thumbnail', 'Selection', {selections}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
+        <MuiThemeProvider>
+            {getField('Thumbnail', 'Selection', {selections}, 'Test')}
+        </MuiThemeProvider>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 test('getField for Form', () => {
-    const store = createStore(combineReducers(reducers));
     updateGlobal();
     const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Form', 'Selection', {selections}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
+        <MuiThemeProvider>
+            {getField('Form', 'Selection', {selections}, 'Test')}
+        </MuiThemeProvider>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 test('getField for Form readonly', () => {
-    const store = createStore(combineReducers(reducers));
     updateGlobal();
     const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Form', 'Selection', {readonly: true, label: 'Test', selections}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
+        <MuiThemeProvider>
+            {getField('Form', 'Selection', {readonly: true, label: 'Test', selections}, 'Test')}
+        </MuiThemeProvider>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -78,28 +56,22 @@ test('getField for Form readonly', () => {
 
 
 test('getField for Form required', () => {
-    const store = createStore(combineReducers(reducers));
     updateGlobal();
     const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Form', 'Selection', {required: '1', label: 'Test', selections}, 'Test')}
-            </MuiThemeProvider>
-        </Provider>
+        <MuiThemeProvider>
+            {getField('Form', 'Selection', {required: '1', label: 'Test', selections}, 'Test')}
+        </MuiThemeProvider>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 test('getField for Form required with empty value', () => {
-    const store = createStore(combineReducers(reducers));
     updateGlobal();
     const component = renderer.create(
-        <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Form', 'Selection', {required: '1', label: 'Test', selections}, '')}
-            </MuiThemeProvider>
-        </Provider>
+        <MuiThemeProvider>
+            {getField('Form', 'Selection', {required: '1', label: 'Test', selections}, '')}
+        </MuiThemeProvider>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

@@ -18,6 +18,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import Chip from 'material-ui/Chip';
 import DropdownMenu from './dropdown';
 import translate from 'counterpart';
+import {getNewID} from './index';
 
 
 /**
@@ -26,20 +27,24 @@ import translate from 'counterpart';
 export class Multi extends Base {
     constructor (props) {
         super(props);
+        const search = {};
+        _.each(props.search || [], s => {
+            if (s.default) search[s.key] = [s.default];
+        });
         this.state = {
             selectedIds: [],
             change: {},
-            search: {},
+            search: _.keys(search).length != 0 ? search : null,
             searchText: '',
         };
     }
     componentWillReceiveProps(nextProps) {
-        const search = Object.assign({}, this.state.search);
-        if (_.keys(search).length == 0) {
-            _.each(this.props.search || [], s => {
+        if (this.state.search == null) {
+            const search = {};
+            _.each(nextProps.search || [], s => {
                 if (s.default) search[s.key] = [s.default];
             });
-            this.setState({search});
+            this.updateSearchQuery(search);
         }
     }
     /**
@@ -47,11 +52,17 @@ export class Multi extends Base {
     **/
     addNewEntry () {
         if (this.props.onSelect) {
+            this.getView(this.props.onSelect);
             this.props.dispatch({
                 type: 'UPDATE_ACTION_SELECT_VIEW',
                 actionId: this.props.actionId,
                 viewId: this.props.onSelect,
-                params: {id: null, readonly: false, returnView: this.props.viewId},
+                params: {
+                    id: getNewID(this.props.model), 
+                    readonly: false, 
+                    returnView: this.props.viewId,
+                    new: true,
+                },
             })
         }
     }
@@ -59,7 +70,7 @@ export class Multi extends Base {
      * Action call when the remove button is clicked
     **/
     removeEntry () {
-        console.log('todo', 'removeEntry');
+        this.props.onDelete(this.state.selectedIds);
     }
     /**
      * Render the button near search box
@@ -141,14 +152,17 @@ export class Multi extends Base {
      * Update chip componnents
     **/
     updateSearchQuery (search) {
-        console.log('updateSearchQuery', this.state.search);
-        this.setState({search});
+        const self = this;
+        this.setState({search}, () => {
+            self.call_server();
+        });
     }
     /**
      * Change view when an entry has selected
     **/
     onEntrySelect(id) {
         if (this.props.onSelect) {
+            this.getView(this.props.onSelect);
             this.props.dispatch({
                 type: 'UPDATE_ACTION_SELECT_VIEW',
                 actionId: this.props.actionId,
@@ -185,7 +199,7 @@ export class Multi extends Base {
     renderSearchBar () {
         const tags = [],
               choices=[];
-        _.each(this.state.search, (values, key) => {
+        _.each(this.state.search || {}, (values, key) => {
             const label = _.find(this.props.search, s => (s.key == key)).label;
             tags.push(
                 <li key={key}>

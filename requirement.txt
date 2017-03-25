@@ -1,0 +1,6 @@
+sqlalchemy
+psycopg2
+bottle
+Faker
+simplejson
+bson

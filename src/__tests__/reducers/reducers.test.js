@@ -16,7 +16,7 @@ test('Test dispatch in reducers', () => {
     const store = createStore(combineReducers(reducers));
     dispatchAll(store.dispatch, [
         {type: 'UPDATE_SPACE', spaceId: '1', actionId: '1'},
-        {type: 'UPDATE_MULTI_DATA', model: 'Model', data: [{id: '1', other: 'Test'}]},
+        {type: 'UPDATE_DATA', model: 'Model', data: {'1': {id: '1', other: 'Test'}}},
     ]);
     const state = store.getState();
     chai.expect(state.data).to.deep.equal({'Model': {'1': {id: '1', other: 'Test'}}});

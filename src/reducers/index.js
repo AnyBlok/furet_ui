@@ -17,9 +17,11 @@ import {action_manager} from './action_manager';
 import actions from './actions';
 import views from './views';
 import data from './data';
+import change from './change';
 import translate from 'counterpart';
 import * as moment from 'moment';
 import 'moment';
+import {json_post} from '../server-call';
 
 
 export const dispatchAll = (dispatch, datas) => {
@@ -41,6 +43,42 @@ export const dispatchAll = (dispatch, datas) => {
     });
 }
 
+export const send2ServerCall = store => {
+    const {getState, dispatch} = store;
+    let toSync = getState().change.toSync;
+
+    const _send2ServerCall = () => {
+        toSync = getState().change.toSync[0];
+        if (!toSync) return;
+        if (toSync.state != 'toSend') return
+        dispatch({type: 'SYNC', uuid: toSync.uuid});
+        json_post('/data/update', toSync.data, {
+            onSuccess: (results) => {
+                dispatch({type: 'SYNCED', uuid: toSync.uuid});
+                dispatchAll(dispatch, results);
+                _send2ServerCall();
+            },
+            onError: (err, resp) => {
+                dispatch({type: 'UNSYNC', uuid: toSync.uuid});
+                setTimeout(_send2ServerCall, 60000);  // wait 1 mn and try again
+            },
+        })
+    }
+
+    if (toSync.length == 1 && toSync[0].state == 'toSend') {
+        _send2ServerCall();
+        return true;
+    }
+    return false;
+}
+
+export const send2Server = store => next => action => {
+    if (action.type == 'TO_SEND') {
+        send2ServerCall(store)
+    }
+    return next(action);
+}
+
 export default {
     global,
     client,
@@ -51,4 +89,5 @@ export default {
     actions,
     views,
     data,
+    change,
 }

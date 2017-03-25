@@ -14,17 +14,18 @@ import translate from 'counterpart';
 
 export class JsonList extends BaseList {
     getValue () {
+        const value = super.getValue();
         if (this.props.value)
             try {
-                return JSON.stringify(JSON.parse(this.props.value),null,2); 
+                return JSON.stringify(JSON.parse(value), null, 2);
             } catch (e) {};
-        return this.props.value;
+        return value;
     }
     getInputProps () {
         const props = super.getInputProps();
         delete props.className;
         delete props.value;
-        props.style = {width: '100%', paddind: 2, backgroundColor: 'white'};
+        props.style = {width: '100%', padding: 2, backgroundColor: 'white'};
         return props;
     }
     getInput () {
@@ -34,17 +35,18 @@ export class JsonList extends BaseList {
 }
 export class JsonThumbnail extends BaseThumbnail {
     getValue () {
+        const value = super.getValue();
         if (this.props.value)
             try {
-                return JSON.stringify(JSON.parse(this.props.value),null,2); 
+                return JSON.stringify(JSON.parse(value), null, 2);
             } catch (e) {};
-        return this.props.value;
+        return value;
     }
     getInputProps () {
         const props = super.getInputProps();
         delete props.className;
         delete props.value;
-        props.style = {width: '100%', paddind: 2, backgroundColor: 'white'};
+        props.style = {width: '100%', padding: 2, backgroundColor: 'white'};
         return props;
     }
     getInput () {
@@ -54,15 +56,16 @@ export class JsonThumbnail extends BaseThumbnail {
 }
 export class JsonForm extends BaseForm {
     getValue () {
+        const value = super.getValue();
         if (this.props.value)
             try {
-                return JSON.stringify(JSON.parse(this.props.value),null,2); 
+                return JSON.stringify(JSON.parse(value), null, 2);
             } catch (e) {};
-        return this.props.value;
+        return value;
     }
     updateThisData () {
         super.updateThisData();
-        if (!this.error) {
+        if (!this.props.readonly && !this.error) {
             try {
                 JSON.parse(this.value);
             } catch (e) {
@@ -81,8 +84,8 @@ export class JsonForm extends BaseForm {
     getInputPropsRW () {
         const props = this.getInputProps();
         delete props.className;
-        props.style = {width: '100%', height: '100%'};
-        props.rows = this.value.split('\n').length;
+        props.style = {width: '100%', height: '100%', resize: 'none'};
+        props.rows = this.value && this.value.split('\n').length;
         return props;
     }
     getInput () {

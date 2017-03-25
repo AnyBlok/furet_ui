@@ -61,7 +61,9 @@ export class ColorForm extends BaseForm {
         };
     }
     getValue () {
-        return this.state.color || this.props.value;
+        const value = this.state.color || this.props.value;
+        if (value == null) return this.getNullValue();
+        return value;
     }
     getPicker () {
         switch (this.props.picker) {

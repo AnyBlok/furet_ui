@@ -64,6 +64,9 @@ class BooleanBase extends React.Component {
         this.getPropsIcon(props);
         return props;
     }
+    getNullValue () {
+        return false;
+    }
     render () {
         const props = this.getProps();
         return <Checkbox {...props} />

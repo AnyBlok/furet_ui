@@ -60,6 +60,9 @@ AnyBlok is tested using `Travis <https://travis-ci.org/AnyBlok/furet_ui>`_
 Run the mock server fron the project::
 
     npm run build
+    virtualenv develop
+    source develop/bin/activate
+    pip install -r requirement.txt
     python server.py
 
 

@@ -20,4 +20,6 @@ Welcome to FuretUI's documentation!
 
    FRONT.rst
    API.rst
+   server.rst
+   reducer.rst
    LICENSE.rst

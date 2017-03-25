@@ -19,6 +19,7 @@ import plugin from '../plugin';
 import IconButton from 'material-ui/IconButton';
 import AlertWarning from 'material-ui/svg-icons/alert/warning';
 import translate from 'counterpart';
+import uuid from 'uuid/v1';
 
 /**
  * Unknown view, use if no view found
@@ -72,7 +73,6 @@ export const getClientView = (viewName) => {
     const mapStateToProps = (state) => {
         return {
             viewName,
-            global_state: state.global,
             client_state: state.client[viewName],
         };
     }
@@ -129,23 +129,67 @@ export const getView = (viewType, viewId, params) => {
     let view = plugin.get(['views', 'type', viewType]);
     if (!view) view = plugin.get(['views', 'Unknown']);
     const mapStateToProps = (state) => {
-        const data = params.model ? state.data[params.model] : {};
+        const change = params.model ? state.change.current[params.model] || {}: {};
+        const data = params.model ? state.data[params.model] || {}: {};
+        const computed = params.model ? state.change.computed[params.model] || {} : {};
         return Object.assign(
-            {viewType, viewId, data}, 
+            {viewType, viewId, data, change, computed}, 
             state.views[viewId], 
             params
         );
     }
+    const _mapDispatchToProps = (dispatch) => {
+        const res = mapDispatchToProps(dispatch);
+        return Object.assign({}, res, {
+            onChange: (dataId, fieldname, newValue) => {
+                dispatch({
+                    type: 'ON_CHANGE',
+                    model: params.model,
+                    dataId,
+                    fieldname,
+                    newValue,
+                });
+            },
+            clearChange: () => {
+                dispatch({type: 'CLEAR_CHANGE'});
+            },
+            onSave: (dataId, newData, fields) => {
+                dispatch({
+                    type: 'ON_SAVE', 
+                    newData, 
+                    dataId, 
+                    model: params.model,
+                    uuid: uuid(),
+                    fields,
+                });
+                dispatch({type: 'TO_SEND'});
+            },
+            onDelete: (dataIds, newData) => {
+                dispatch({
+                    type: 'ON_DELETE', 
+                    dataIds, 
+                    model: params.model,
+                    uuid: uuid(),
+                });
+                dispatch({type: 'TO_SEND'});
+            },
+        });
+    };
     return (
         <div style={{margin: 20}}>
-            {React.createElement(connect(mapStateToProps, mapDispatchToProps)(view), {key: 'client-' + viewType + '-' + viewId})}
+            {React.createElement(connect(mapStateToProps, _mapDispatchToProps)(view), {key: 'client-' + viewType + '-' + viewId})}
         </div>
     );
 };
+
+export const getNewID = (model) => {
+    return 'new-' + model + '-' + uuid();
+}
 
 export default {
     getClientView,
     getViewIcon,
     getView,
     Unknown,
+    getNewID,
 }

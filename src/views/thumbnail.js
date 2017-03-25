@@ -32,6 +32,8 @@ export class Thumbnail extends Multi {
             {
                 model: this.props.model,
                 filter: this.state.search,
+                fields: this.props.fields,
+                viewId: this.props.viewId,
             },
             {
                 onSuccess: (results) => {
@@ -51,13 +53,16 @@ export class Thumbnail extends Multi {
                     return node.name === 'field';
                 },
                 processNode: function(node, children) {
-                    const data = self.props.data[thumbnailId] || {},
-                          change = self.state.change;
+                    const data = Object.assign(
+                        {}, 
+                        self.props.data && self.props.data[thumbnailId],
+                        self.props.computed && self.props.computed[thumbnailId],
+                        self.props.change[thumbnailId]);
                     return self.getField(
                         'Thumbnail', 
                         node.attribs.widget, 
                         node.attribs, 
-                        change[node.attribs.name] || data[node.attribs.name]
+                        data[node.attribs.name]
                     );
                 }
             }, 
@@ -75,13 +80,18 @@ export class Thumbnail extends Multi {
      * Render one thumbnail
     **/
     renderThumbNail (thumbnailId) {
+        if (this.props.computed && this.props.computed[thumbnailId] == 'DELETED') return null;
         if (this.props.template) {
             return (
-                <Card 
-                    onClick={() => this.onEntrySelect(thumbnailId)}
+                <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+                    key={thumbnailId}
                 >
-                    {this.renderTemplate(this.props.template, thumbnailId)}
-                </Card>
+                    <Card 
+                        onClick={() => this.onEntrySelect(thumbnailId)}
+                    >
+                        {this.renderTemplate(this.props.template, thumbnailId)}
+                    </Card>
+                </div>
             );
         }
         return null;
@@ -92,11 +102,7 @@ export class Thumbnail extends Multi {
                 {this.renderSearchBar()}
                 <div className="row">
                     {_.map(this.props.ids || [], id => (
-                        <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-                            key={id}
-                        >
-                            {this.renderThumbNail(id)}
-                        </div>
+                        this.renderThumbNail(id)
                     ))}
                 </div>
             </div>

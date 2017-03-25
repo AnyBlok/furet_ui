@@ -11,21 +11,22 @@ import _ from 'underscore';
 export const defaultState = {}
 
 export const data = (state = defaultState, action) => {
-    const value = Object.assign({}, action);
     const values = Object.assign({}, state);
-    delete value.type;
     switch (action.type) {
         case 'UPDATE_DATA':
-            delete value.model;
             if (values[action.model] == undefined) values[action.model] = {};
-            if (values[action.model][action.id] == undefined) values[action.model][action.id] = {};
-            Object.assign(values[action.model][action.id], value);
+            else values[action.model] = Object.assign({}, values[action.model]);
+            Object.assign(values[action.model], action.data);
             return values;
-        case 'UPDATE_MULTI_DATA':
-            if (values[action.model] == undefined) values[action.model] = {};
-            _.each(action.data, data => {
-                if (values[action.model][data.id] == undefined) values[action.model][data.id] = {};
-                Object.assign(values[action.model][data.id], data);
+        case 'DELETE_DATA':
+            _.each(_.keys(values), model => {
+                if (action.data[model] != undefined) {
+                    values[model] = Object.assign({}, values[model]);
+                    _.each(action.data[model], dataId => {
+                        if (values[model][dataId] != undefined) delete values[model][dataId];
+                        if (_.keys(values[model]).length == 0) delete values[model];
+                    });
+                }
             });
             return values;
         case 'CLEAR_DATA':
@@ -36,4 +37,3 @@ export const data = (state = defaultState, action) => {
 }
 
 export default data;
-

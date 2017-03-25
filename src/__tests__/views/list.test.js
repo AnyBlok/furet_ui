@@ -40,14 +40,13 @@ test('getViewIcon with List view', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
-
 test('Render List view selectable', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
     let component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getView('List', '1', {ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']})}
+                {getView('List', '1', {model: 'Todo', ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']})}
             </MuiThemeProvider>
         </Provider>
     );
@@ -80,62 +79,63 @@ test('Render List view selectable', () => {
             'buttonId': '2',
         }],
     });
+    expect(tree).toMatchSnapshot();
     store.dispatch({
-        'type': 'UPDATE_MULTI_DATA',
+        'type': 'UPDATE_DATA',
         'model': 'Todo',
-        'data': [
-            {
+        'data': {
+            '1': {
                 'id': '1',
                 'name': "todo 1",
             },
-            {
+            '2': {
                 'id': '2',
                 'name': "todo 2",
             },
-            {
+            '3': {
                 'id': '3',
                 'name': "todo 3",
             },
-            {
+            '4': {
                 'id': '4',
                 'name': "todo 4",
             },
-            {
+            '5': {
                 'id': '5',
                 'name': "todo 5",
             },
-            {
+            '6': {
                 'id': '6',
                 'name': "todo 6",
             },
-            {
+            '7': {
                 'id': '7',
                 'name': "todo 7",
             },
-            {
+            '8': {
                 'id': '8',
                 'name': "todo 8",
             },
-            {
+            '9': {
                 'id': '9',
                 'name': "todo 9",
             },
-            {
+            '10': {
                 'id': '10',
                 'name': "todo 10",
             },
-        ],
+        },
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
-
 test('Render List view selectable without button', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
     let component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getView('List', '1', {ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']})}
+                {getView('List', '1', {model: 'Todo', ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']})}
             </MuiThemeProvider>
         </Provider>
     );
@@ -155,51 +155,53 @@ test('Render List view selectable without button', () => {
             'label': 'Label',
         }],
     });
+    expect(tree).toMatchSnapshot();
     store.dispatch({
         'type': 'UPDATE_MULTI_DATA',
         'model': 'Todo',
-        'data': [
-            {
+        'data': {
+            '1': {
                 'id': '1',
                 'name': "todo 1",
             },
-            {
+            '2': {
                 'id': '2',
                 'name': "todo 2",
             },
-            {
+            '3': {
                 'id': '3',
                 'name': "todo 3",
             },
-            {
+            '4': {
                 'id': '4',
                 'name': "todo 4",
             },
-            {
+            '5': {
                 'id': '5',
                 'name': "todo 5",
             },
-            {
+            '6': {
                 'id': '6',
                 'name': "todo 6",
             },
-            {
+            '7': {
                 'id': '7',
                 'name': "todo 7",
             },
-            {
+            '8': {
                 'id': '8',
                 'name': "todo 8",
             },
-            {
+            '9': {
                 'id': '9',
                 'name': "todo 9",
             },
-            {
+            '10': {
                 'id': '10',
                 'name': "todo 10",
             },
-        ],
+        },
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
