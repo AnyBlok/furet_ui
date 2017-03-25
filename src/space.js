@@ -181,7 +181,6 @@ SpaceCpt.propTypes = {
 
 const mapStateToProps = (state, props) => {
     return {
-        global_state: state.global,
         space_state: state.spaces[String(props.spaceId)],
     };
 }

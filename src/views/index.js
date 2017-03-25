@@ -73,7 +73,6 @@ export const getClientView = (viewName) => {
     const mapStateToProps = (state) => {
         return {
             viewName,
-            global_state: state.global,
             client_state: state.client[viewName],
         };
     }
