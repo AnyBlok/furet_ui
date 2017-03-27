@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from bottle import route, run, static_file, response, request
 from simplejson import dumps, loads
-from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, DateTime, Float, Text, Time, Boolean, or_
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import (
+    create_engine, Column, Integer, String, DateTime, Float, Text, Time,
+    Boolean, or_, ForeignKey, Table
+)
+from sqlalchemy.orm import relationship, sessionmaker
 from datetime import datetime, time
 
 
@@ -29,11 +31,112 @@ class Test(Base):
     time = Column(Time)
     json = Column(Text)
 
+    def read(self, fields):
+        return [{
+            'type': 'UPDATE_DATA',
+            'model': 'Test',
+            'data': {self.id: {y: getattr(self, y) for y in fields}},
+        }]
+
+
+association_table = Table(
+    'association', Base.metadata,
+    Column('customer_id', Integer, ForeignKey('customer.id')),
+    Column('category_id', Integer, ForeignKey('category.id'))
+)
+
+
+class Category(Base):
+    __tablename__ = 'category'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    customers = relationship(
+        "Customer", secondary=association_table, back_populates="categories")
+
+    def read(self, fields):
+        res = [{
+            'type': 'UPDATE_DATA',
+            'model': 'Category',
+            'data': {self.id: {}},
+        }]
+        for field in fields:
+            if isinstance(field, (list, tuple)):
+                field, subfield = field
+                for entry in getattr(self, field):
+                    res.extend(entry.read([subfield]))
+
+            res[0]['data'][self.id][field] = getattr(self, field)
+
+        return res
+
+
+class Customer(Base):
+    __tablename__ = 'customer'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    email = Column(String)
+    addresses = relationship("Address", back_populates='customer')
+    categories = relationship(
+        "Category", secondary=association_table, back_populates="customers")
+
+    def read(self, fields):
+        res = [{
+            'type': 'UPDATE_DATA',
+            'model': 'Customer',
+            'data': {self.id: {}},
+        }]
+        for field in fields:
+            if isinstance(field, (list, tuple)):
+                field, subfield = field
+                for entry in getattr(self, field):
+                    res.extend(entry.read([subfield]))
+            if field in ('categories', 'addresses'):
+                res[0]['data'][self.id][field] = [x.id for x in getattr(self, field)]
+            else:
+                res[0]['data'][self.id][field] = getattr(self, field)
+
+        return res
+
+
+class Address(Base):
+    __tablename__ = 'address'
+
+    id = Column(Integer, primary_key=True)
+    street = Column(String)
+    zip = Column(String)
+    city = Column(String)
+    customer_id = Column(Integer, ForeignKey('customer.id'))
+    customer = relationship("Customer", back_populates="addresses")
+
+    def read(self, fields):
+        res = [{
+            'type': 'UPDATE_DATA',
+            'model': 'Address',
+            'data': {self.id: {}},
+        }]
+        for field in fields:
+            if isinstance(field, (list, tuple)):
+                field, subfield = field
+                entry = getattr(self, field)
+                res.extend(entry.read([subfield]))
+
+            if field == 'customer':
+                res[0]['data'][self.id][field] = self.customer.id
+            else:
+                res[0]['data'][self.id][field] = getattr(self, field)
+
+        return res
+
 
 Base.metadata.create_all()
 Session = sessionmaker(bind=engine)
 MODELS = {
     'Test': Test,
+    'Customer': Customer,
+    'Address': Address,
+    'Category': Category,
 }
 
 
@@ -203,9 +306,87 @@ def getAction1():
     return res
 
 
+def getAction2():
+    res = [
+        {
+            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'actionId': '2',
+            'label': 'Customer',
+            'viewId': '8',
+            'views': [
+                {
+                    'viewId': '8',
+                    'type': 'List',
+                },
+                {
+                    'viewId': '9',
+                    'type': 'Form',
+                },
+            ],
+            'model': 'Customer',
+        }
+    ]
+    res.append(getView8())
+    return res
+
+
+def getAction3():
+    res = [
+        {
+            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'actionId': '3',
+            'label': 'Category',
+            'viewId': '10',
+            'views': [
+                {
+                    'viewId': '10',
+                    'type': 'List',
+                },
+                {
+                    'viewId': '11',
+                    'type': 'Form',
+                },
+            ],
+            'model': 'Category',
+        }
+    ]
+    res.append(getView10())
+    return res
+
+
+def getAction4():
+    res = [
+        {
+            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'actionId': '4',
+            'label': 'Address',
+            'viewId': '12',
+            'views': [
+                {
+                    'viewId': '12',
+                    'type': 'List',
+                },
+                {
+                    'viewId': '13',
+                    'type': 'Form',
+                },
+            ],
+            'model': 'Address',
+        }
+    ]
+    res.append(getView12())
+    return res
+
+
 def getAction(actionId):
     if actionId == '1':
         return getAction1()
+    elif actionId == '2':
+        return getAction2()
+    elif actionId == '3':
+        return getAction3()
+    elif actionId == '4':
+        return getAction4()
 
     raise Exception('Unknown action %r' % actionId)
 
@@ -225,9 +406,56 @@ def getSpace1():
     return space
 
 
+def getSpace2():
+    space = [{
+        'type': 'UPDATE_SPACE',
+        'spaceId': '2',
+        'left_menu': [
+            {
+                'label': 'Customer',
+                'image': {'type': 'font-icon', 'value': 'fa-user'},
+                'actionId': '2',
+                'id': '1',
+                'submenus': [],
+            },
+            {
+                'label': 'Setting',
+                'image': {'type': 'font-icon', 'value': 'fa-user'},
+                'actionId': '',
+                'id': '2',
+                'submenus': [
+                    {
+                        'label': 'Category',
+                        'image': {'type': '', 'value': ''},
+                        'actionId': '3',
+                        'id': '3',
+                        'submenus': [],
+                    },
+                    {
+                        'label': 'Address',
+                        'image': {'type': '', 'value': ''},
+                        'actionId': '4',
+                        'id': '4',
+                        'submenus': [],
+                    },
+                ],
+            },
+        ],
+        'menuId': '3',
+        'right_menu': [],
+        'actionId': '3',
+        'viewId': None,
+        'custom_view': '',
+    }]
+    space.extend(getAction3())
+    return space
+
+
 def getSpace(spaceId):
     if spaceId == '1':
         return getSpace1()
+    elif spaceId == '2':
+        return getSpace2()
 
     raise Exception('Unknown space %r' % spaceId)
 
@@ -473,6 +701,218 @@ def getView3():
     }
 
 
+def getView8():
+    return {
+        'type': 'UPDATE_VIEW',
+        'viewId': '8',
+        'label': 'Customers',
+        'creatable': True,
+        'deletable': True,
+        'selectable': False,
+        'onSelect': '9',
+        'headers': [
+            {
+                'name': 'name',
+                'type': 'String',
+                'label': 'Name',
+            },
+            {
+                'name': 'addresses',
+                'type': 'One2Many',
+                'label': 'Addresses',
+            },
+            {
+                'name': 'categories',
+                'type': 'Many2Many',
+                'label': 'Categories',
+                'field': 'name',
+            },
+        ],
+        'search': [
+        ],
+        'buttons': [
+        ],
+        'onSelect_buttons': [
+        ],
+        'fields': ["name", "addresses", ["categories", "name"]],
+    }
+
+
+def getView9():
+    return {
+        'type': 'UPDATE_VIEW',
+        'viewId': '9',
+        'label': 'Customer',
+        'creatable': True,
+        'deletable': True,
+        'editable': True,
+        'onClose': '8',
+        'template': '''
+            <div className="row">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="name" widget="String" label="Name" required="1"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="email" widget="String" label="E-mail" required="1"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field
+                        name="addresses"
+                        widget="One2Many"
+                        label="Addresses"
+                    >
+                    </field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field
+                        name="categories"
+                        widget="Many2ManyCheckBox"
+                        label="Categories"
+                        field="name"
+                    >
+                    </field>
+                </div>
+            </div>
+        ''',
+        'buttons': [],
+        'fields': ["name", "email", "addresses", ["categories", "name"]],
+    }
+
+
+def getView10():
+    return {
+        'type': 'UPDATE_VIEW',
+        'viewId': '10',
+        'label': 'Categories',
+        'creatable': True,
+        'deletable': True,
+        'selectable': False,
+        'onSelect': '11',
+        'headers': [
+            {
+                'name': 'name',
+                'type': 'String',
+                'label': 'Name',
+            },
+        ],
+        'search': [
+        ],
+        'buttons': [
+        ],
+        'onSelect_buttons': [
+        ],
+        'fields': ["name"],
+    }
+
+
+def getView11():
+    return {
+        'type': 'UPDATE_VIEW',
+        'viewId': '11',
+        'label': 'Category',
+        'creatable': True,
+        'deletable': True,
+        'editable': True,
+        'onClose': '10',
+        'template': '''
+            <div className="row">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="name" widget="String" label="Name" required="1"></field>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <field
+                        name="customers"
+                        widget="Many2Many"
+                        label="Customers"
+                        field="name"
+                    >
+                    </field>
+                </div>
+            </div>
+        ''',
+        'buttons': [],
+        'fields': ["name", ["customers", "name"]],
+    }
+
+
+def getView12():
+    return {
+        'type': 'UPDATE_VIEW',
+        'viewId': '12',
+        'label': 'Addresses',
+        'creatable': True,
+        'deletable': True,
+        'selectable': False,
+        'onSelect': '13',
+        'headers': [
+            {
+                'name': 'customer',
+                'type': 'Many2One',
+                'label': 'Customer',
+                'field': 'name',
+            },
+            {
+                'name': 'street',
+                'type': 'String',
+                'label': 'Street',
+            },
+            {
+                'name': 'zip',
+                'type': 'String',
+                'label': 'zip',
+            },
+            {
+                'name': 'city',
+                'type': 'String',
+                'label': 'City',
+            },
+        ],
+        'search': [
+        ],
+        'buttons': [
+        ],
+        'onSelect_buttons': [
+        ],
+        'fields': [["customer", 'name'], "street", "zip", "city"],
+    }
+
+
+def getView13():
+    return {
+        'type': 'UPDATE_VIEW',
+        'viewId': '13',
+        'label': 'Category',
+        'creatable': True,
+        'deletable': True,
+        'editable': True,
+        'onClose': '12',
+        'template': '''
+            <div className="row">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field
+                        name="customer"
+                        widget="Many2one"
+                        label="Customer"
+                        field="name'
+                        required="1">
+                    </field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="street" widget="String" label="Street" required="1"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="zip" widget="String" label="Zip" required="1"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="city" widget="String" label="City" required="1"></field>
+                </div>
+            </div>
+        ''',
+        'buttons': [],
+        'fields': ["name", ["customers", "name"]],
+    }
+
+
 def getView(viewId):
     if viewId == '1':
         view = getView1()
@@ -480,6 +920,18 @@ def getView(viewId):
         view = getView2()
     elif viewId == '3':
         view = getView3()
+    elif viewId == '8':
+        view = getView8()
+    elif viewId == '9':
+        view = getView9()
+    elif viewId == '10':
+        view = getView10()
+    elif viewId == '11':
+        view = getView11()
+    elif viewId == '12':
+        view = getView12()
+    elif viewId == '13':
+        view = getView13()
     else:
         raise Exception("Unknown view %r" % viewId)
 
@@ -536,13 +988,13 @@ def getLoginData():
                             'type': 'space',
                             'id': '1',
                         },
-                        # {
-                        #     'label': 'Space 2',
-                        #     'description': '',
-                        #     'image': {'type': '', 'value': ''},
-                        #     'type': 'space',
-                        #     'id': '2',
-                        # },
+                        {
+                            'label': 'Customer',
+                            'description': 'Manager customer, address and category',
+                            'image': {'type': 'font-icon', 'value': 'fa-user'},
+                            'type': 'space',
+                            'id': '2',
+                        },
                     ],
                 },
             ],
@@ -558,11 +1010,13 @@ def getIdsFromFilter(model, filters):
         session = Session()
         Model = MODELS[model]
         query = session.query(Model)
-        for k, v in filters.items():
-            if isinstance(getattr(Model, k).property.columns[0].type, String):
-                query = query.filter(or_(*[getattr(Model, k).ilike('%{}%'.format(x)) for x in v]))
-            else:
-                query = query.filter(getattr(Model, k).in_(v))
+        if filters:
+            for k, v in filters.items():
+                if isinstance(getattr(Model, k).property.columns[0].type, String):
+                    query = query.filter(
+                        or_(*[getattr(Model, k).ilike('%{}%'.format(x)) for x in v]))
+                else:
+                    query = query.filter(getattr(Model, k).in_(v))
 
         ids = [x.id for x in query.all()]
     except AttributeError:
@@ -570,6 +1024,7 @@ def getIdsFromFilter(model, filters):
     finally:
         session.rollback()
         session.close()
+
     return ids
 
 
@@ -577,14 +1032,12 @@ def _getData(session, model, ids, fields):
     Model = MODELS[model]
     query = session.query(Model)
     query = query.filter(Model.id.in_(ids))
-    return {
-        'type': 'UPDATE_DATA',
-        'model': model,
-        'data': {
-            x.id: {y: getattr(x, y) for y in fields}
-            for x in query.all()
-        },
-    }
+    res = []
+    for entry in query.all():
+        res.extend(entry.read(fields))
+
+    # merge same model
+    return res
 
 
 def getData(model, ids, fields):
@@ -594,7 +1047,7 @@ def getData(model, ids, fields):
     res = []
     try:
         session = Session()
-        res.append(_getData(session, model, ids, fields))
+        res.extend(_getData(session, model, ids, fields))
     except:
         session.rollback()
         raise
@@ -724,7 +1177,7 @@ def updateData():
 
         session.commit()
         for model, fields, obj in toUpdate:
-            _data.append(_getData(session, model, [obj.id], fields))
+            _data.extend(_getData(session, model, [obj.id], fields))
 
         if toDelete:
             _data.append({
@@ -818,6 +1271,25 @@ if session.query(Test).count() == 0:
             'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
         }))
     )
+    session.commit()
+
+if session.query(Category).count() == 0:
+    session.add(Category(name="Categ 1"))
+    session.add(Category(name="Categ 2"))
+    session.add(Category(name="Categ 3"))
+    session.add(Category(name="Categ 4"))
+    session.add(Category(name="Categ 4"))
+    session.add(Category(name="Categ 6"))
+    session.add(Category(name="Categ 7"))
+    session.commit()
+
+if session.query(Customer).count() == 0:
+    customer = Customer(name="JS Suzanne", email="jssuzanne@anybox.fr")
+    categories = session.query(Category).all()
+    customer.categories = categories
+    session.add(customer)
+    session.add(Address(street="Anybox", zip="75007", city="Paris", customer=customer))
+    session.add(Address(street="Some where", zip="76000", city="Rouen", customer=customer))
     session.commit()
 
 session.close()
