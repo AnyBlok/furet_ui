@@ -64,6 +64,16 @@ Add new action in the breadcrumb::
         actionId: ``action id``,
     });
 
+UPDATE_ACTION_MANAGER_REMOVE_FROM_ACTION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Remove action ids since the given action id::
+
+    dispatch({
+        type: 'UPDATE_ACTION_MANAGER_REMOVE_FROM_ACTION',
+        action: ``action id``
+    });
+
 RESET_ACTION_MANAGER
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -182,6 +192,18 @@ Record all the change in the data::
             },
             ....
         },
+        currents: {
+            ``action id``: {
+                ``Model name``: {
+                    ``data id``: {
+                        ``data``
+                    },
+                    ...
+                },
+                ....
+            },
+            ....
+        },
     }
 
 
@@ -285,6 +307,35 @@ Remove the entry from toSync and recompute the computed entry::
 .. note::
 
     call by the middleware after sync the data, if the server is available
+
+ADD_CURRENTS
+~~~~~~~~~~~~
+
+Save the current unsaved in the currents data, use for breadcrumb::
+
+    dispatch({
+        type: 'ADD_CURRENTS',
+        actionId: ``id of the action which has the current unsaved``
+    });
+
+.. note::
+
+    after this command the current unsaved will be empty
+
+REVERT_CHANGE
+~~~~~~~~~~~~~
+
+Revert the current unsaved by the value in currents in function of actionId. The 
+currents will be clean in function of actionId and actionIds::
+
+    dispatch({
+        type: 'REVERT_CHANGE',
+        actionId: ``id of action to get``,
+        actionIds: [
+            ``id of action to clean``,
+        ]
+    });
+
 
 client
 ------

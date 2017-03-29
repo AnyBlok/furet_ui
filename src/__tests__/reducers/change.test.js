@@ -983,3 +983,251 @@ test('ON_DELETE', () => {
         },
     });
 })
+
+test('ADD_CURRENTS 1', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {},
+          toSync = [],
+          computed = {},
+          action = {
+              type: 'ADD_CURRENTS',
+              actionId: '1',
+          };
+    const result = reducer({current, toSync, computed, currents}, action);
+    const expected = {
+        current: {},
+        toSync: [],
+        computed: {},
+        currents: { 
+            '1': {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+            }, 
+        },
+    };
+    chai.expect(result).to.deep.equal(expected);
+});
+
+test('ADD_CURRENTS 2', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {},
+          toSync = [],
+          computed = {};
+    const result = reducer({current, toSync, computed, currents}, {type: 'ADD_CURRENTS', actionId: '1'});
+    const expected = {
+        current: {},
+        toSync: [],
+        computed: {},
+        currents: { 
+            '1': {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+            }, 
+        },
+    };
+    chai.expect(result).to.deep.equal(expected);
+    const expected2 = {
+        current: {},
+        toSync: [],
+        computed: {},
+        currents: { 
+            '1': {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+            }, 
+            '2': {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+            }, 
+        },
+    };
+    const result2 = reducer({current, toSync, computed, currents: result.currents}, 
+                            {type: 'ADD_CURRENTS', actionId: '2'});
+    chai.expect(result2).to.deep.equal(expected2);
+});
+test('REVERT_CHANGE 1', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {
+            '1': {
+                'Test': {
+                    '2': {
+                        name: 'Name 2',
+                        title: 'Title 2',
+                    },
+                },
+            },
+          },
+          toSync = [],
+          computed = {};
+    const result = reducer({current, toSync, computed, currents}, 
+                           {type: 'REVERT_CHANGE', actionId: '1', actionIds: []});
+    const expected = {
+        current: {
+            'Test': {
+                '2': {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            },
+        },
+        toSync: [],
+        computed: {},
+        currents: {},
+    };
+    chai.expect(result).to.deep.equal(expected);
+});
+test('REVERT_CHANGE 2', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {
+            '1': {
+                'Test': {
+                    '2': {
+                        name: 'Name 2',
+                        title: 'Title 2',
+                    },
+                },
+            },
+            '2': {
+                'Test': {
+                    '3': {
+                        name: 'Name 3',
+                        title: 'Title 3',
+                    },
+                },
+            },
+          },
+          toSync = [],
+          computed = {};
+    const result = reducer({current, toSync, computed, currents}, 
+                           {type: 'REVERT_CHANGE', actionId: '1', actionIds: []});
+    const expected = {
+        current: {
+            'Test': {
+                '2': {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            },
+        },
+        toSync: [],
+        computed: {},
+        currents: {
+            '2': {
+                'Test': {
+                    '3': {
+                        name: 'Name 3',
+                        title: 'Title 3',
+                    },
+                },
+            },
+        },
+    };
+    chai.expect(result).to.deep.equal(expected);
+});
+test('REVERT_CHANGE 3', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {
+            '1': {
+                'Test': {
+                    '2': {
+                        name: 'Name 2',
+                        title: 'Title 2',
+                    },
+                },
+            },
+            '2': {
+                'Test': {
+                    '3': {
+                        name: 'Name 3',
+                        title: 'Title 3',
+                    },
+                },
+            },
+            '3': {
+                'Test': {
+                    '4': {
+                        name: 'Name 4',
+                        title: 'Title 4',
+                    },
+                },
+            },
+          },
+          toSync = [],
+          computed = {};
+    const result = reducer({current, toSync, computed, currents}, 
+                           {type: 'REVERT_CHANGE', actionId: '1', actionIds: [3]});
+    const expected = {
+        current: {
+            'Test': {
+                '2': {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            },
+        },
+        toSync: [],
+        computed: {},
+        currents: {
+            '2': {
+                'Test': {
+                    '3': {
+                        name: 'Name 3',
+                        title: 'Title 3',
+                    },
+                },
+            },
+        },
+    };
+    chai.expect(result).to.deep.equal(expected);
+});

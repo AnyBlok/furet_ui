@@ -12,6 +12,7 @@ export const defaultState = {
     current: {},
     toSync: [],
     computed: {},
+    currents: {},
 }
 
 export const current2Sync = (current, toSync, uuid, model, dataId, newData, fields) => {
@@ -105,7 +106,8 @@ export const changeState = (toSync, uuid, state) => {
 export const change = (state = defaultState, action) => {
     const current = Object.assign({}, state.current),
           toSync = state.toSync.slice(0),
-          computed = {};
+          computed = {},
+          currents = Object.assign({}, state.currents);
     switch (action.type) {
         case 'ON_CHANGE':
             if (current[action.model] == undefined) current[action.model] = {};
@@ -132,6 +134,18 @@ export const change = (state = defaultState, action) => {
             let _toSync = removeUuid(toSync, action.uuid);
             toSync2computed(_toSync, computed)
             return Object.assign({}, state, {toSync: _toSync, computed});
+        case 'ADD_CURRENTS':
+            const c = {};
+            c[action.actionId] = current;
+            Object.assign(currents, c);
+            return Object.assign({}, state, {current: {}, currents});
+        case 'REVERT_CHANGE':
+            const prev_current = currents[action.actionId];
+            delete currents[action.actionId];
+            _.each(action.actionIds, actionId => {
+                delete currents[actionId];
+            });
+            return Object.assign({}, state, {current: prev_current, currents});
         default:
             return state
     }
