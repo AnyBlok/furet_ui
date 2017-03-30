@@ -13,7 +13,6 @@ import {getField} from '../../fields';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {updateGlobal} from '../../testcase';
 updateGlobal();
 
@@ -21,11 +20,9 @@ test('getField for List', () => {
     const store = createStore(combineReducers(reducers));
     const component = renderer.create(
         <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('List', 'One2Many', 
-                          {model: 'Test', field: 'name'}, 
-                          ['1', '2', '3'])}
-            </MuiThemeProvider>
+            {getField('List', 'One2Many', 
+                      {model: 'Test', field: 'name'}, 
+                      ['1', '2', '3'])}
         </Provider>
     )
     let tree = component.toJSON();
@@ -52,11 +49,9 @@ test('getField for Thumbnail', () => {
     const store = createStore(combineReducers(reducers));
     const component = renderer.create(
         <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Thumbnail', 'One2Many',
-                          {model: 'Test', field: 'name'}, 
-                          ['1', '2', '3'])}
-            </MuiThemeProvider>
+            {getField('Thumbnail', 'One2Many',
+                      {model: 'Test', field: 'name'}, 
+                      ['1', '2', '3'])}
         </Provider>
     )
     let tree = component.toJSON();
@@ -83,11 +78,9 @@ test('getField for Thumbnail', () => {
     const store = createStore(combineReducers(reducers));
     const component = renderer.create(
         <Provider store={store}>
-            <MuiThemeProvider>
-                {getField('Thumbnail', 'One2Many',
-                          {model: 'Test', field: 'name', label: 'Test'}, 
-                          ['1', '2', '3'])}
-            </MuiThemeProvider>
+            {getField('Thumbnail', 'One2Many',
+                      {model: 'Test', field: 'name', label: 'Test'}, 
+                      ['1', '2', '3'])}
         </Provider>
     )
     let tree = component.toJSON();
