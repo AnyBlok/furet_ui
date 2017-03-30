@@ -24,6 +24,7 @@ import './color';
 import './text';
 import './boolean';
 import './json';
+import './x2one';
 
 /**
  * Unknown field, used only if the wanted field is not available

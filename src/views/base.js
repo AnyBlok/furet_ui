@@ -35,6 +35,7 @@ export default class extends React.Component {
      * Render a field for the view
     **/
     getField(viewType, fieldType, attribs, value) {
+        attribs.currentActionId = this.props.actionId;
         return getField(viewType, fieldType, attribs, value);
     }
     /**

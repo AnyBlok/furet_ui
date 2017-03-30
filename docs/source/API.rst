@@ -214,7 +214,7 @@ Relation ship are particular field which link two model.
 
 The list are:
 
-* 
+* Many2One
 
 ::
 

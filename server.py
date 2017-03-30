@@ -38,6 +38,10 @@ class Test(Base):
             'data': {self.id: {y: getattr(self, y) for y in fields}},
         }]
 
+    def update(self, val):
+        for k, v in val.items():
+            setattr(self, k, v)
+
 
 association_table = Table(
     'association', Base.metadata,
@@ -66,9 +70,16 @@ class Category(Base):
                 for entry in getattr(self, field):
                     res.extend(entry.read([subfield]))
 
-            res[0]['data'][self.id][field] = getattr(self, field)
+                res[0]['data'][self.id][field] = [x.id for x in getattr(self, field)]
+
+            else:
+                res[0]['data'][self.id][field] = getattr(self, field)
 
         return res
+
+    def update(self, val):
+        for k, v in val.items():
+            setattr(self, k, v)
 
 
 class Customer(Base):
@@ -85,7 +96,7 @@ class Customer(Base):
         res = [{
             'type': 'UPDATE_DATA',
             'model': 'Customer',
-            'data': {self.id: {}},
+            'data': {str(self.id): {}},
         }]
         for field in fields:
             if isinstance(field, (list, tuple)):
@@ -93,11 +104,15 @@ class Customer(Base):
                 for entry in getattr(self, field):
                     res.extend(entry.read([subfield]))
             if field in ('categories', 'addresses'):
-                res[0]['data'][self.id][field] = [x.id for x in getattr(self, field)]
+                res[0]['data'][str(self.id)][field] = [x.id for x in getattr(self, field)]
             else:
-                res[0]['data'][self.id][field] = getattr(self, field)
+                res[0]['data'][str(self.id)][field] = getattr(self, field)
 
         return res
+
+    def update(self, val):
+        for k, v in val.items():
+            setattr(self, k, v)
 
 
 class Address(Base):
@@ -123,11 +138,18 @@ class Address(Base):
                 res.extend(entry.read([subfield]))
 
             if field == 'customer':
-                res[0]['data'][self.id][field] = self.customer.id
+                res[0]['data'][self.id][field] = str(self.customer.id)
             else:
                 res[0]['data'][self.id][field] = getattr(self, field)
 
         return res
+
+    def update(self, val):
+        for k, v in val.items():
+            if k == 'customer':
+                setattr(self, 'customer_id', int(v))
+            else:
+                setattr(self, k, v)
 
 
 Base.metadata.create_all()
@@ -378,6 +400,26 @@ def getAction4():
     return res
 
 
+def getAction5():
+    res = [
+        {
+            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'actionId': '5',
+            'label': 'Customer',
+            'viewId': '9',
+            'views': [
+                {
+                    'viewId': '9',
+                    'type': 'Form',
+                },
+            ],
+            'model': 'Customer',
+        }
+    ]
+    res.append(getView9())
+    return res
+
+
 def getAction(actionId):
     if actionId == '1':
         return getAction1()
@@ -387,6 +429,8 @@ def getAction(actionId):
         return getAction3()
     elif actionId == '4':
         return getAction4()
+    elif actionId == '5':
+        return getAction5()
 
     raise Exception('Unknown action %r' % actionId)
 
@@ -441,13 +485,13 @@ def getSpace2():
                 ],
             },
         ],
-        'menuId': '3',
+        'menuId': '4',
         'right_menu': [],
-        'actionId': '3',
+        'actionId': '4',
         'viewId': None,
         'custom_view': '',
     }]
-    space.extend(getAction3())
+    space.extend(getAction4())
     return space
 
 
@@ -566,9 +610,6 @@ def getView2():
         ],
         'template': '''
             <div className="row">
-                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <field name="id" widget="Integer" label="ID"></field>
-                </div>
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                     <field name="name" widget="String" label="Label"></field>
                 </div>
@@ -849,7 +890,9 @@ def getView12():
                 'name': 'customer',
                 'type': 'Many2One',
                 'label': 'Customer',
+                'model': 'Customer',
                 'field': 'name',
+                'actionId': '5',
             },
             {
                 'name': 'street',
@@ -887,29 +930,36 @@ def getView13():
         'editable': True,
         'onClose': '12',
         'template': '''
-            <div className="row">
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field
-                        name="customer"
-                        widget="Many2one"
-                        label="Customer"
-                        field="name'
-                        required="1">
-                    </field>
+            <div>
+                <div className="row">
+                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <field
+                            name="customer"
+                            widget="Many2One"
+                            label="Customer"
+                            model="Customer"
+                            field="name"
+                            limit="10"
+                            actionId="5"
+                            required="1">
+                        </field>
+                    </div>
+                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <field name="street" widget="String" label="Street" required="1"></field>
+                    </div>
+                <div className="row">
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="street" widget="String" label="Street" required="1"></field>
-                </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="zip" widget="String" label="Zip" required="1"></field>
-                </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="city" widget="String" label="City" required="1"></field>
+                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <field name="zip" widget="String" label="Zip" required="1"></field>
+                    </div>
+                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <field name="city" widget="String" label="City" required="1"></field>
+                    </div>
                 </div>
             </div>
         ''',
         'buttons': [],
-        'fields': ["name", ["customers", "name"]],
+        'fields': ["street", "zip", "city", ["customer", "name"]],
     }
 
 
@@ -944,7 +994,7 @@ def getLoginData():
     data = [
         {
             'type': 'UPDATE_GLOBAL',
-            'spaceId': '1',
+            'spaceId': '2',
         },
         {
             'type': 'UPDATE_RIGHT_MENU',
@@ -1000,7 +1050,7 @@ def getLoginData():
             ],
         },
     ]
-    data.extend(getSpace1())
+    data.extend(getSpace2())
     return superDumps(data)
 
 
@@ -1066,6 +1116,13 @@ def getSpaceInformation(spaceId=None):
     return superDumps(getSpace(spaceId))
 
 
+@route('/furetui/field/x2one/open', method='POST')
+def getM2OAction():
+    response.set_header('Content-Type', 'application/json')
+    data = loads(request.body.read())
+    return superDumps(getAction(data['actionId']))
+
+
 @route('/furetui/action/<actionId>', method='POST')
 def getActionInformation(actionId=None):
     response.set_header('Content-Type', 'application/json')
@@ -1098,6 +1155,32 @@ def getMultiView():
         'viewId': data['viewId'],
         'ids': ids,
     })
+    return superDumps(_data)
+
+
+@route('/furetui/field/x2one/search', method='POST')
+def getM2OSearch():
+    response.set_header('Content-Type', 'application/json')
+    data = loads(request.body.read())
+    _data = []
+    try:
+        session = Session()
+        Model = MODELS[data['model']]
+        query = session.query(Model)
+        if data['value']:
+            query = query.filter(getattr(Model, data['field']).ilike('%{}%'.format(data['value'])))
+
+        if data['limit']:
+            query = query.limit(int(data['limit']))
+
+        ids = [x.id for x in query.all()]
+        _data = _getData(session, data['model'], ids, [data['field']])
+    except:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+
     return superDumps(_data)
 
 
@@ -1162,9 +1245,10 @@ def updateData():
                 session.add(obj)
                 toUpdate.append((data['model'], data['fields'], obj))
             elif data['type'] == 'UPDATE':
-                query = session.query(Model).filter(Model.id == data['dataId'])
-                toUpdate.append((data['model'], data['fields'], query.one()))
-                query.update(data['data'])
+                query = session.query(Model).filter(Model.id == int(data['dataId']))
+                obj = query.one()
+                toUpdate.append((data['model'], data['fields'], obj))
+                obj.update(data['data'])
             elif data['type'] == 'DELETE':
                 query = session.query(Model).filter(Model.id.in_(data['dataIds']))
                 query.delete(synchronize_session='fetch')
@@ -1195,14 +1279,20 @@ def updateData():
     return superDumps(_data)
 
 
+def getFile(filename):
+    response = static_file(filename, root='./')
+    response.set_header("Cache-Control", "public, max-age=604800")
+    return response
+
+
 @route('/')
 def index():
-    return static_file('index.html', root='./')
+    return getFile('index.html')
 
 
 @route('/<filepath:path>')
 def server_static(filepath):
-    return static_file(filepath, root='./')
+    return getFile(filepath)
 
 
 session = Session()
@@ -1293,4 +1383,4 @@ if session.query(Customer).count() == 0:
     session.commit()
 
 session.close()
-run(host='localhost', port=8080, debug=True)
+run(host='localhost', port=8080, debug=True, reloader=True)

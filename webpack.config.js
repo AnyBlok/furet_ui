@@ -42,11 +42,31 @@ module.exports = {
                 loader: require.resolve('json-loader')
             },
             {
-                test: /(\.scss|\.css)$/,
-                loaders: [
-                    require.resolve('style-loader'),
-                    require.resolve('css-loader') + '?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-                ]
+                test: /(\.global\.css$|react-select.css)/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                ],
+            },
+            {
+                test: /^((?!\.global|react-select).)*\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            importLoaders: 1,
+                            sourceMap: true,
+                        },
+                    },
+                ],
             },
             { 
                 test: /(\.js|\.jsx)$/, 

@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getField for Form 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Many2One-field-name-"
+    style={Object {}}
+  >
+     
+  </label>
+  <div
+    className="input-group"
+  >
+    <div>
+      Select component
+    </div>
+    <span
+      className="input-group-addon"
+    >
+      <i
+        className="fa fa-external-link fa-lg"
+        onClick={[Function]}
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`getField for Form readonly 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Many2One-field-name-"
+    style={Object {}}
+  >
+    Test
+  </label>
+  <div
+    className="input-group"
+  >
+    <div>
+      Select component
+    </div>
+    <span
+      className="input-group-addon"
+    >
+      <i
+        className="fa fa-external-link fa-lg"
+        onClick={[Function]}
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`getField for Form required 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Many2One-field-name-"
+    style={
+      Object {
+        "color": "#3f51b5",
+      }
+    }
+  >
+    Test
+  </label>
+  <div
+    className="input-group"
+  >
+    <div>
+      Select component
+    </div>
+    <span
+      className="input-group-addon"
+    >
+      <i
+        className="fa fa-external-link fa-lg"
+        onClick={[Function]}
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`getField for Form required with empty value 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Form-field_type-Many2One-field-name-"
+    style={
+      Object {
+        "color": "#3f51b5",
+      }
+    }
+  >
+    Test
+  </label>
+  <div>
+    Select component
+  </div>
+  <div>
+    <span
+      style={
+        Object {
+          "color": "#f44336",
+        }
+      }
+    >
+      This field is required
+    </span>
+  </div>
+</div>
+`;
+
+exports[`getField for List 1`] = `
+<div>
+  <a
+    onClick={[Function]}
+  >
+    
+  </a>
+</div>
+`;
+
+exports[`getField for Thumbnail 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-Many2One-field-name-"
+  >
+     
+  </label>
+  <div>
+    <a
+      onClick={[Function]}
+    >
+      
+    </a>
+  </div>
+</div>
+`;
+
+exports[`getField for Thumbnail 2`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-Many2One-field-name-"
+  >
+    Test
+  </label>
+  <div>
+    <a
+      onClick={[Function]}
+    >
+      
+    </a>
+  </div>
+</div>
+`;
