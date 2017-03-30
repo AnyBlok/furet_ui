@@ -39,7 +39,7 @@ class Many2ManyLinkObj extends React.Component {
 }
 
 
-const mapStateToProps = (state, props) => {
+export const mapStateToProps = (state, props) => {
     const data = props.model ? state.data[props.model] || {}: {};
     const computed = props.model ? state.change.computed[props.model] || {} : {};
     let values = [];

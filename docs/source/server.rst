@@ -146,7 +146,7 @@ return:
 * model data for the value
 * ...
 
-``/furetui/field/x2one/search``
+``/furetui/field/x2x/search``
 -----------------------------
 
 Call to get available value for the x2One field:

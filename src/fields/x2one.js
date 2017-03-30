@@ -99,7 +99,7 @@ class X2OObj extends React.Component {
         this.props.onChange(value);
     }
     callServer (inputValue) {
-        json_post('/field/x2one/search', {
+        json_post('/field/x2x/search', {
                 model: this.props.model,
                 field: this.props.field,
                 limit: this.props.limit,

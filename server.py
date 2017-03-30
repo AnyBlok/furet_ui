@@ -38,7 +38,7 @@ class Test(Base):
             'data': {self.id: {y: getattr(self, y) for y in fields}},
         }]
 
-    def update(self, val):
+    def update(self, session, val):
         for k, v in val.items():
             setattr(self, k, v)
 
@@ -62,7 +62,7 @@ class Category(Base):
         res = [{
             'type': 'UPDATE_DATA',
             'model': 'Category',
-            'data': {self.id: {}},
+            'data': {str(self.id): {}},
         }]
         for field in fields:
             if isinstance(field, (list, tuple)):
@@ -70,14 +70,14 @@ class Category(Base):
                 for entry in getattr(self, field):
                     res.extend(entry.read([subfield]))
 
-                res[0]['data'][self.id][field] = [x.id for x in getattr(self, field)]
+                res[0]['data'][str(self.id)][field] = [str(x.id) for x in getattr(self, field)]
 
             else:
-                res[0]['data'][self.id][field] = getattr(self, field)
+                res[0]['data'][str(self.id)][field] = getattr(self, field)
 
         return res
 
-    def update(self, val):
+    def update(self, session, val):
         for k, v in val.items():
             setattr(self, k, v)
 
@@ -104,15 +104,20 @@ class Customer(Base):
                 for entry in getattr(self, field):
                     res.extend(entry.read([subfield]))
             if field in ('categories', 'addresses'):
-                res[0]['data'][str(self.id)][field] = [x.id for x in getattr(self, field)]
+                res[0]['data'][str(self.id)][field] = [str(x.id) for x in getattr(self, field)]
             else:
                 res[0]['data'][str(self.id)][field] = getattr(self, field)
 
         return res
 
-    def update(self, val):
+    def update(self, session, val):
         for k, v in val.items():
-            setattr(self, k, v)
+            if k == 'categories':
+                categories = session.query(Category).filter(
+                    Category.id.in_([int(x) for x in v])).all()
+                self.categories = categories
+            else:
+                setattr(self, k, v)
 
 
 class Address(Base):
@@ -144,7 +149,7 @@ class Address(Base):
 
         return res
 
-    def update(self, val):
+    def update(self, session, val):
         for k, v in val.items():
             if k == 'customer':
                 setattr(self, 'customer_id', int(v))
@@ -832,7 +837,9 @@ def getView9():
                         name="categories"
                         widget="Many2ManyCheckBox"
                         label="Categories"
+                        model="Category"
                         field="name"
+                        checkbox_class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
                     >
                     </field>
                 </div>
@@ -1181,7 +1188,7 @@ def getMultiView():
     return superDumps(_data)
 
 
-@route('/furetui/field/x2one/search', method='POST')
+@route('/furetui/field/x2x/search', method='POST')
 def getM2OSearch():
     response.set_header('Content-Type', 'application/json')
     data = loads(request.body.read())
@@ -1271,7 +1278,7 @@ def updateData():
                 query = session.query(Model).filter(Model.id == int(data['dataId']))
                 obj = query.one()
                 toUpdate.append((data['model'], data['fields'], obj))
-                obj.update(data['data'])
+                obj.update(session, data['data'])
             elif data['type'] == 'DELETE':
                 query = session.query(Model).filter(Model.id.in_(data['dataIds']))
                 query.delete(synchronize_session='fetch')
