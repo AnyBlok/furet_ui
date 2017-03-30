@@ -12,6 +12,7 @@ import plugin from '../plugin';
 import {connect} from 'react-redux'
 import {BaseList, BaseThumbnail, BaseForm} from './base';
 import Select from 'react-select';
+import translate from 'counterpart';
 import {dispatchAll} from '../reducers';
 import {json_post} from '../server-call';
 import _ from 'underscore'
@@ -125,6 +126,8 @@ class X2OObj extends React.Component {
                 onChange={this.onChange.bind(this)}
                 onInputChange={this.onInputChange.bind(this)}
                 onOpen={this.onOpen.bind(this)}
+                noResultsText={translate('furetUI.fields.x2one.no-found', 
+                                         {fallback: 'No results found'})}
             />
         );
     }

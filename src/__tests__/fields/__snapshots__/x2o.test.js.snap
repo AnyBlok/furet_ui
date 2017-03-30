@@ -15,6 +15,7 @@ exports[`getField for Form 1`] = `
   >
     <div
       disabled={undefined}
+      noResultsText="No results found"
       onChange={[Function]}
       onInputChange={[Function]}
       onOpen={[Function]}
@@ -48,6 +49,7 @@ exports[`getField for Form 2`] = `
   >
     <div
       disabled={undefined}
+      noResultsText="No results found"
       onChange={[Function]}
       onInputChange={[Function]}
       onOpen={[Function]}
@@ -88,6 +90,7 @@ exports[`getField for Form readonly 1`] = `
   >
     <div
       disabled={true}
+      noResultsText="No results found"
       onChange={[Function]}
       onInputChange={[Function]}
       onOpen={[Function]}
@@ -121,6 +124,7 @@ exports[`getField for Form readonly 2`] = `
   >
     <div
       disabled={true}
+      noResultsText="No results found"
       onChange={[Function]}
       onInputChange={[Function]}
       onOpen={[Function]}
@@ -165,6 +169,7 @@ exports[`getField for Form required 1`] = `
   >
     <div
       disabled={undefined}
+      noResultsText="No results found"
       onChange={[Function]}
       onInputChange={[Function]}
       onOpen={[Function]}
@@ -202,6 +207,7 @@ exports[`getField for Form required 2`] = `
   >
     <div
       disabled={undefined}
+      noResultsText="No results found"
       onChange={[Function]}
       onInputChange={[Function]}
       onOpen={[Function]}
@@ -243,6 +249,7 @@ exports[`getField for Form required with empty value 1`] = `
   </label>
   <div
     disabled={undefined}
+    noResultsText="No results found"
     onChange={[Function]}
     onInputChange={[Function]}
     onOpen={[Function]}
@@ -279,6 +286,7 @@ exports[`getField for Form required with empty value 2`] = `
   </label>
   <div
     disabled={undefined}
+    noResultsText="No results found"
     onChange={[Function]}
     onInputChange={[Function]}
     onOpen={[Function]}

@@ -276,6 +276,12 @@ def _getInitOptionnalData():
                             'json': {
                                 'invalid': 'Format JSON invalide',
                             },
+                            'many2many-tags': {
+                                'no-found': 'Aucune donnée trouvée',
+                            },
+                            'x2one': {
+                                'no-found': 'Aucune donnée trouvée',
+                            },
                         },
                     },
                 },
