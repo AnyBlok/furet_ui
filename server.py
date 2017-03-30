@@ -617,7 +617,6 @@ def getView2():
         'viewId': '2',
         'label': 'View : 2',
         'creatable': True,
-        'deletable': True,
         'onSelect': '3',
         'search': [
             {

@@ -157,7 +157,7 @@ test('Render List view selectable without button', () => {
     });
     expect(tree).toMatchSnapshot();
     store.dispatch({
-        'type': 'UPDATE_MULTI_DATA',
+        'type': 'UPDATE_DATA',
         'model': 'Todo',
         'data': {
             '1': {
