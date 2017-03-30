@@ -304,13 +304,13 @@ exports[`getField for Form 1`] = `
                       28
                     </td>
                     <td
-                      className="day today"
+                      className="day"
                       onClick={[Function]}
                     >
                       29
                     </td>
                     <td
-                      className="day"
+                      className="day today"
                       onClick={[Function]}
                     >
                       30
@@ -745,13 +745,13 @@ exports[`getField for Form required 1`] = `
                       28
                     </td>
                     <td
-                      className="day today"
+                      className="day"
                       onClick={[Function]}
                     >
                       29
                     </td>
                     <td
-                      className="day"
+                      className="day today"
                       onClick={[Function]}
                     >
                       30
