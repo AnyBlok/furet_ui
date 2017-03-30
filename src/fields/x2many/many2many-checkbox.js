@@ -13,6 +13,7 @@ import {connect} from 'react-redux'
 import {BaseForm} from '../base';
 import {dispatchAll} from '../../reducers';
 import {json_post} from '../../server-call';
+import _ from 'underscore';
 
 class M2MObj extends React.Component {
     onChange (event, id) {
@@ -47,6 +48,7 @@ class M2MObj extends React.Component {
                         <span>
                             <input type="checkbox" 
                                    checked={value.checked}
+                                   disabled={this.props.disabled}
                                    onChange={(event) => this.onChange(event, value.value)}
                             />
                             {value.label}
