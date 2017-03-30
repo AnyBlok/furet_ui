@@ -219,6 +219,7 @@ The list are:
 * Many2Many (List, Thumbnail)
 * Many2ManyCheckBox (Form)
 * Many2ManyTags (Form)
+* One2Many
 
 ::
 

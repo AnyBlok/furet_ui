@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getField for List 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+      }
+    }
+  >
+    <div>
+      <a
+        onClick={[Function]}
+      >
+        1
+      </a>
+      <span>
+        ,
+      </span>
+    </div>
+    <div>
+      <a
+        onClick={[Function]}
+      >
+        2
+      </a>
+      <span>
+        ,
+      </span>
+    </div>
+    <div>
+      <a
+        onClick={[Function]}
+      >
+        3
+      </a>
+      <span>
+        ,
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for List 2`] = `
+<div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+      }
+    }
+  >
+    <div>
+      <a
+        onClick={[Function]}
+      >
+        todo 1
+      </a>
+      <span>
+        ,
+      </span>
+    </div>
+    <div>
+      <a
+        onClick={[Function]}
+      >
+        todo 2
+      </a>
+      <span>
+        ,
+      </span>
+    </div>
+    <div>
+      <a
+        onClick={[Function]}
+      >
+        todo 3
+      </a>
+      <span>
+        ,
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for Thumbnail 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-One2Many-field-name-"
+  >
+     
+  </label>
+  <div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          1
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          2
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          3
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for Thumbnail 2`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-One2Many-field-name-"
+  >
+     
+  </label>
+  <div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          todo 1
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          todo 2
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          todo 3
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for Thumbnail 3`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-One2Many-field-name-"
+  >
+    Test
+  </label>
+  <div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          1
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          2
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          3
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for Thumbnail 4`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-One2Many-field-name-"
+  >
+    Test
+  </label>
+  <div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          todo 1
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          todo 2
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+      <div>
+        <a
+          onClick={[Function]}
+        >
+          todo 3
+        </a>
+        <span>
+          ,
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -2,6 +2,7 @@
 from bottle import route, run, static_file, response, request
 from simplejson import dumps, loads
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import (
     create_engine, Column, Integer, String, DateTime, Float, Text, Time,
     Boolean, or_, ForeignKey, Table
@@ -134,6 +135,10 @@ class Address(Base):
     city = Column(String)
     customer_id = Column(Integer, ForeignKey('customer.id'))
     customer = relationship("Customer", back_populates="addresses")
+
+    @hybrid_property
+    def complete_name(self):
+        return "%s %s %s" % (self.street, self.zip, self.city)
 
     def read(self, fields):
         res = [{
@@ -456,6 +461,26 @@ def getAction6():
     return res
 
 
+def getAction7():
+    res = [
+        {
+            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'actionId': '7',
+            'label': 'Address',
+            'viewId': '13',
+            'views': [
+                {
+                    'viewId': '13',
+                    'type': 'Form',
+                },
+            ],
+            'model': 'Address',
+        }
+    ]
+    res.append(getView13())
+    return res
+
+
 def getAction(actionId):
     if actionId == '1':
         return getAction1()
@@ -469,6 +494,8 @@ def getAction(actionId):
         return getAction5()
     elif actionId == '6':
         return getAction6()
+    elif actionId == '7':
+        return getAction7()
 
     raise Exception('Unknown action %r' % actionId)
 
@@ -523,13 +550,13 @@ def getSpace2():
                 ],
             },
         ],
-        'menuId': '3',
+        'menuId': '1',
         'right_menu': [],
-        'actionId': '3',
+        'actionId': '2',
         'viewId': None,
         'custom_view': '',
     }]
-    space.extend(getAction3())
+    space.extend(getAction2())
     return space
 
 
@@ -798,6 +825,9 @@ def getView8():
                 'name': 'addresses',
                 'type': 'One2Many',
                 'label': 'Addresses',
+                'model': 'Address',
+                'field': 'complete_name',
+                'actionId': '7',
             },
             {
                 'name': 'categories',
@@ -814,7 +844,7 @@ def getView8():
         ],
         'onSelect_buttons': [
         ],
-        'fields': ["name", "addresses", ["categories", "name"]],
+        'fields': ["name", ["addresses", "complete_name"], ["categories", "name"]],
     }
 
 
