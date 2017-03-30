@@ -81,6 +81,59 @@ test('Render Action Manager with default value from redux store with actionId', 
     expect(tree).toMatchSnapshot();
 });
 
+test('Render Action Manager with default value from redux store with actionId and actionIds', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+
+    const actions = require('../action'),
+          ActionManager = actions.ActionManager;
+    const component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                <ActionManager actionId="1"/>
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    store.dispatch({
+        'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+        'actionId': '1',
+        'label': 'Action : 1',
+        'viewId': '2',
+        'views': [
+            {
+                'viewId': '2',
+                'type': 'Thumbnail',
+            },
+        ],
+        'model': 'Todo',
+    });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    store.dispatch({
+        'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION',
+        'actionId': '2',
+    });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    store.dispatch({
+        'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+        'actionId': '2',
+        'label': 'Action : 2',
+        'viewId': '3',
+        'views': [
+            {
+                'viewId': '3',
+                'type': 'Thumbnail',
+            },
+        ],
+        'model': 'Todo',
+    });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
 test('Render Action with default value from redux store', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
