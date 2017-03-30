@@ -79,7 +79,12 @@ class Category(Base):
 
     def update(self, session, val):
         for k, v in val.items():
-            setattr(self, k, v)
+            if k == 'customers':
+                customers = session.query(Customer).filter(
+                    Customer.id.in_([int(x) for x in v])).all()
+                self.customers = customers
+            else:
+                setattr(self, k, v)
 
 
 class Customer(Base):
@@ -518,13 +523,13 @@ def getSpace2():
                 ],
             },
         ],
-        'menuId': '2',
+        'menuId': '3',
         'right_menu': [],
-        'actionId': '2',
+        'actionId': '3',
         'viewId': None,
         'custom_view': '',
     }]
-    space.extend(getAction2())
+    space.extend(getAction3())
     return space
 
 
@@ -899,8 +904,9 @@ def getView11():
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <field
                         name="customers"
-                        widget="Many2Many"
+                        widget="Many2ManyTags"
                         label="Customers"
+                        model="Customer"
                         field="name"
                     >
                     </field>
@@ -1206,7 +1212,7 @@ def getM2OSearch():
         if data['value']:
             query = query.filter(getattr(Model, data['field']).ilike('%{}%'.format(data['value'])))
 
-        if data['limit']:
+        if data.get('limit'):
             query = query.limit(int(data['limit']))
 
         ids = [x.id for x in query.all()]

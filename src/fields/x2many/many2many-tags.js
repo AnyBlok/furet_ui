@@ -11,54 +11,55 @@ import React from 'react';
 import plugin from '../../plugin';
 import {connect} from 'react-redux'
 import {BaseForm} from '../base';
+import Select from 'react-select';
 import {dispatchAll} from '../../reducers';
 import {json_post} from '../../server-call';
 import _ from 'underscore';
+import translate from 'counterpart';
 
 class M2MObj extends React.Component {
-    onChange (event, id) {
-        const values = (this.props.value || []).slice(0);
-        const index = values.indexOf(id);
-        if (event.target.checked) {
-            if (index == -1) values.push(id);
-        } else {
-            if (index != -1) values.splice(index, 1);
+    onChange (val) {
+        let value = null;
+        if (Array.isArray(val)) {
+            value = _.map(val, v => v.value);
         }
-        this.props.onChange(values);
+        this.props.onChange(value);
     }
-    componentDidMount () {
+    callServer (inputValue) {
         json_post('/field/x2x/search', {
                 model: this.props.model,
                 field: this.props.field,
-                limit: null,
-                value: '',
+                limit: this.props.limit,
+                value: inputValue,
             }, {
             onSuccess: (results) => {
                 this.props.dispatchAll(results)
             }
         });
     }
+    onInputChange (inputValue) {
+        this.callServer(inputValue);
+    }
+    onOpen () {
+        this.callServer(null);
+    }
     render () {
         return (
-            <div className="row">
-                {_.map(this.props.display_values, value => (
-                    <div key={"M2M-" + this.props.model + '-' + value.value}
-                         className={this.props.checkbox_class || ''}
-                    >
-                        <span>
-                            <input type="checkbox" 
-                                   checked={value.checked}
-                                   disabled={this.props.disabled}
-                                   onChange={(event) => this.onChange(event, value.value)}
-                            />
-                            {value.label}
-                        </span>
-                    </div>
-                ))}
-            </div>
+            <Select
+                disabled={this.props.disabled}
+                value={this.props.value}
+                options={this.props.options}
+                onChange={this.onChange.bind(this)}
+                onInputChange={this.onInputChange.bind(this)}
+                onOpen={this.onOpen.bind(this)}
+                multi={true}
+                noResultsText={translate('furetUI.fields.many2many-tags.no-found', 
+                                         {fallback: 'No results found'})}
+            />
         );
     }
 }
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -67,21 +68,16 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export const mapStateToProps = (state, props) => {
+const mapStateToProps = (state, props) => {
     const data = props.model ? state.data[props.model] || {}: {};
     const computed = props.model ? state.change.computed[props.model] || {} : {};
-    let values = [];
-    let computed_data = Object.assign({}, data, computed);
-    _.each(_.keys(computed_data), value => {
-        let label = value;
-        if (computed_data[value][props.field]) {
-            label = computed_data[value][props.field];
-        }
-        const checked = props.value.indexOf(value) != -1;
-        values.push({value, label, checked});
+    const computed_data = Object.assign({}, data, computed);
+    const options = [];
+    _.each(_.keys(computed_data), id => {
+        options.push({value: id, label: computed_data[id][props.field] || ''});
     });
     return {
-        display_values: values,
+        options,
     }
 }
 
@@ -95,7 +91,7 @@ export class M2MCheckBoxForm extends BaseForm {
         props.type = 'text';
         props.model = this.props.model;
         props.field = this.props.field;
-        props.checkbox_class = this.props.checkbox_class;
+        props.limit = this.props.limit
         props.onChange = (e) => this.props.onChange(this.props.name, e);
         return props;
     }
@@ -105,7 +101,7 @@ export class M2MCheckBoxForm extends BaseForm {
     }
 }
 
-plugin.set(['field', 'Form'], {'Many2ManyCheckBox': M2MCheckBoxForm});
+plugin.set(['field', 'Form'], {'Many2ManyTags': M2MCheckBoxForm});
 
 export default {
     M2MCheckBoxForm,

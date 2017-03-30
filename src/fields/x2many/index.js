@@ -9,3 +9,4 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import './many2many';
 import './many2many-checkbox';
+import './many2many-tags';
