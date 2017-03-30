@@ -220,6 +220,9 @@ export class X2OForm extends BaseForm {
 plugin.set(['field', 'List'], {'Many2One': X2OList});
 plugin.set(['field', 'Thumbnail'], {'Many2One': X2OThumbnail});
 plugin.set(['field', 'Form'], {'Many2One': X2OForm});
+plugin.set(['field', 'List'], {'One2One': X2OList});
+plugin.set(['field', 'Thumbnail'], {'One2One': X2OThumbnail});
+plugin.set(['field', 'Form'], {'One2One': X2OForm});
 
 export default {
     X2OList,
