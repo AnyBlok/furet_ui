@@ -29,11 +29,11 @@ class X2OLinkObj extends React.Component {
 }
 
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
     return {
         dispatchAll: (data) => (dispatchAll(dispatch, data)),
         addInBreadCrumb: (currentActionId, model, newActionId, value) => {
-            json_post('/field/x2one/open', {
+            json_post('/field/x2x/open', {
                     model,
                     actionId: newActionId,
                     value,
@@ -185,7 +185,7 @@ export class X2OThumbnail extends BaseThumbnail {
         delete props.className;
         props.model = this.props.model;
         props.field = this.props.field;
-        props.actionId = this.props.actionId;
+        props.actionId = this.props.actionId || this.props.actionid; // somme html attribute's name can be lower by the parser
         props.currentActionId = this.props.currentActionId;
         return props;
     }

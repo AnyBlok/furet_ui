@@ -420,6 +420,26 @@ def getAction5():
     return res
 
 
+def getAction6():
+    res = [
+        {
+            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'actionId': '6',
+            'label': 'Category',
+            'viewId': '11',
+            'views': [
+                {
+                    'viewId': '11',
+                    'type': 'Form',
+                },
+            ],
+            'model': 'Category',
+        }
+    ]
+    res.append(getView11())
+    return res
+
+
 def getAction(actionId):
     if actionId == '1':
         return getAction1()
@@ -431,6 +451,8 @@ def getAction(actionId):
         return getAction4()
     elif actionId == '5':
         return getAction5()
+    elif actionId == '6':
+        return getAction6()
 
     raise Exception('Unknown action %r' % actionId)
 
@@ -485,13 +507,13 @@ def getSpace2():
                 ],
             },
         ],
-        'menuId': '4',
+        'menuId': '2',
         'right_menu': [],
-        'actionId': '4',
+        'actionId': '2',
         'viewId': None,
         'custom_view': '',
     }]
-    space.extend(getAction4())
+    space.extend(getAction2())
     return space
 
 
@@ -766,7 +788,9 @@ def getView8():
                 'name': 'categories',
                 'type': 'Many2Many',
                 'label': 'Categories',
+                'model': 'Category',
                 'field': 'name',
+                'actionId': '6',
             },
         ],
         'search': [
@@ -1116,7 +1140,7 @@ def getSpaceInformation(spaceId=None):
     return superDumps(getSpace(spaceId))
 
 
-@route('/furetui/field/x2one/open', method='POST')
+@route('/furetui/field/x2x/open', method='POST')
 def getM2OAction():
     response.set_header('Content-Type', 'application/json')
     data = loads(request.body.read())

@@ -1,0 +1,1471 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getField for List 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+      }
+    }
+  >
+    <div
+      className={undefined}
+      disabled={undefined}
+      href={undefined}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "MozBoxSizing": "border-box",
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgb(224, 224, 224)",
+          "border": 10,
+          "borderRadius": 16,
+          "boxShadow": null,
+          "boxSizing": "border-box",
+          "cursor": "default",
+          "display": Array [
+            "-webkit-box",
+            "-moz-box",
+            "-ms-flexbox",
+            "-webkit-flex",
+            "flex",
+          ],
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": "inherit",
+          "fontWeight": "inherit",
+          "margin": 4,
+          "muiPrepared": true,
+          "outline": "none",
+          "padding": 0,
+          "position": "relative",
+          "textDecoration": "none",
+          "verticalAlign": null,
+          "whiteSpace": "nowrap",
+          "width": Array [
+            "-webkit-fit-content",
+            "-moz-fit-content",
+            "fit-content",
+          ],
+          "zIndex": 1,
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        style={
+          Object {
+            "MozUserSelect": "none",
+            "WebkitUserSelect": "none",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeight": "32px",
+            "msUserSelect": "none",
+            "muiPrepared": true,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "userSelect": "none",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        1
+      </span>
+    </div>
+    <div
+      className={undefined}
+      disabled={undefined}
+      href={undefined}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "MozBoxSizing": "border-box",
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgb(224, 224, 224)",
+          "border": 10,
+          "borderRadius": 16,
+          "boxShadow": null,
+          "boxSizing": "border-box",
+          "cursor": "default",
+          "display": Array [
+            "-webkit-box",
+            "-moz-box",
+            "-ms-flexbox",
+            "-webkit-flex",
+            "flex",
+          ],
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": "inherit",
+          "fontWeight": "inherit",
+          "margin": 4,
+          "muiPrepared": true,
+          "outline": "none",
+          "padding": 0,
+          "position": "relative",
+          "textDecoration": "none",
+          "verticalAlign": null,
+          "whiteSpace": "nowrap",
+          "width": Array [
+            "-webkit-fit-content",
+            "-moz-fit-content",
+            "fit-content",
+          ],
+          "zIndex": 1,
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        style={
+          Object {
+            "MozUserSelect": "none",
+            "WebkitUserSelect": "none",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeight": "32px",
+            "msUserSelect": "none",
+            "muiPrepared": true,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "userSelect": "none",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        2
+      </span>
+    </div>
+    <div
+      className={undefined}
+      disabled={undefined}
+      href={undefined}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "MozBoxSizing": "border-box",
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgb(224, 224, 224)",
+          "border": 10,
+          "borderRadius": 16,
+          "boxShadow": null,
+          "boxSizing": "border-box",
+          "cursor": "default",
+          "display": Array [
+            "-webkit-box",
+            "-moz-box",
+            "-ms-flexbox",
+            "-webkit-flex",
+            "flex",
+          ],
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": "inherit",
+          "fontWeight": "inherit",
+          "margin": 4,
+          "muiPrepared": true,
+          "outline": "none",
+          "padding": 0,
+          "position": "relative",
+          "textDecoration": "none",
+          "verticalAlign": null,
+          "whiteSpace": "nowrap",
+          "width": Array [
+            "-webkit-fit-content",
+            "-moz-fit-content",
+            "fit-content",
+          ],
+          "zIndex": 1,
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        style={
+          Object {
+            "MozUserSelect": "none",
+            "WebkitUserSelect": "none",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeight": "32px",
+            "msUserSelect": "none",
+            "muiPrepared": true,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "userSelect": "none",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        3
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for List 2`] = `
+<div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+      }
+    }
+  >
+    <div
+      className={undefined}
+      disabled={undefined}
+      href={undefined}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "MozBoxSizing": "border-box",
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgb(224, 224, 224)",
+          "border": 10,
+          "borderRadius": 16,
+          "boxShadow": null,
+          "boxSizing": "border-box",
+          "cursor": "default",
+          "display": Array [
+            "-webkit-box",
+            "-moz-box",
+            "-ms-flexbox",
+            "-webkit-flex",
+            "flex",
+          ],
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": "inherit",
+          "fontWeight": "inherit",
+          "margin": 4,
+          "muiPrepared": true,
+          "outline": "none",
+          "padding": 0,
+          "position": "relative",
+          "textDecoration": "none",
+          "verticalAlign": null,
+          "whiteSpace": "nowrap",
+          "width": Array [
+            "-webkit-fit-content",
+            "-moz-fit-content",
+            "fit-content",
+          ],
+          "zIndex": 1,
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        style={
+          Object {
+            "MozUserSelect": "none",
+            "WebkitUserSelect": "none",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeight": "32px",
+            "msUserSelect": "none",
+            "muiPrepared": true,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "userSelect": "none",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        todo 1
+      </span>
+    </div>
+    <div
+      className={undefined}
+      disabled={undefined}
+      href={undefined}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "MozBoxSizing": "border-box",
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgb(224, 224, 224)",
+          "border": 10,
+          "borderRadius": 16,
+          "boxShadow": null,
+          "boxSizing": "border-box",
+          "cursor": "default",
+          "display": Array [
+            "-webkit-box",
+            "-moz-box",
+            "-ms-flexbox",
+            "-webkit-flex",
+            "flex",
+          ],
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": "inherit",
+          "fontWeight": "inherit",
+          "margin": 4,
+          "muiPrepared": true,
+          "outline": "none",
+          "padding": 0,
+          "position": "relative",
+          "textDecoration": "none",
+          "verticalAlign": null,
+          "whiteSpace": "nowrap",
+          "width": Array [
+            "-webkit-fit-content",
+            "-moz-fit-content",
+            "fit-content",
+          ],
+          "zIndex": 1,
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        style={
+          Object {
+            "MozUserSelect": "none",
+            "WebkitUserSelect": "none",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeight": "32px",
+            "msUserSelect": "none",
+            "muiPrepared": true,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "userSelect": "none",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        todo 2
+      </span>
+    </div>
+    <div
+      className={undefined}
+      disabled={undefined}
+      href={undefined}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      onTouchTap={[Function]}
+      style={
+        Object {
+          "MozBoxSizing": "border-box",
+          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+          "backgroundColor": "rgb(224, 224, 224)",
+          "border": 10,
+          "borderRadius": 16,
+          "boxShadow": null,
+          "boxSizing": "border-box",
+          "cursor": "default",
+          "display": Array [
+            "-webkit-box",
+            "-moz-box",
+            "-ms-flexbox",
+            "-webkit-flex",
+            "flex",
+          ],
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": "inherit",
+          "fontWeight": "inherit",
+          "margin": 4,
+          "muiPrepared": true,
+          "outline": "none",
+          "padding": 0,
+          "position": "relative",
+          "textDecoration": "none",
+          "verticalAlign": null,
+          "whiteSpace": "nowrap",
+          "width": Array [
+            "-webkit-fit-content",
+            "-moz-fit-content",
+            "fit-content",
+          ],
+          "zIndex": 1,
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        style={
+          Object {
+            "MozUserSelect": "none",
+            "WebkitUserSelect": "none",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeight": "32px",
+            "msUserSelect": "none",
+            "muiPrepared": true,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "userSelect": "none",
+            "whiteSpace": "nowrap",
+          }
+        }
+      >
+        todo 3
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for Thumbnail 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-Many2Many-field-name-"
+  >
+     
+  </label>
+  <div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          1
+        </span>
+      </div>
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          2
+        </span>
+      </div>
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          3
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for Thumbnail 2`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-Many2Many-field-name-"
+  >
+     
+  </label>
+  <div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          todo 1
+        </span>
+      </div>
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          todo 2
+        </span>
+      </div>
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          todo 3
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for Thumbnail 3`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-Many2Many-field-name-"
+  >
+    Test
+  </label>
+  <div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          1
+        </span>
+      </div>
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          2
+        </span>
+      </div>
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          3
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`getField for Thumbnail 4`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="view-type-Thumbnail-field_type-Many2Many-field-name-"
+  >
+    Test
+  </label>
+  <div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          todo 1
+        </span>
+      </div>
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          todo 2
+        </span>
+      </div>
+      <div
+        className={undefined}
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        style={
+          Object {
+            "MozBoxSizing": "border-box",
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "backgroundColor": "rgb(224, 224, 224)",
+            "border": 10,
+            "borderRadius": 16,
+            "boxShadow": null,
+            "boxSizing": "border-box",
+            "cursor": "default",
+            "display": Array [
+              "-webkit-box",
+              "-moz-box",
+              "-ms-flexbox",
+              "-webkit-flex",
+              "flex",
+            ],
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "margin": 4,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "verticalAlign": null,
+            "whiteSpace": "nowrap",
+            "width": Array [
+              "-webkit-fit-content",
+              "-moz-fit-content",
+              "fit-content",
+            ],
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitUserSelect": "none",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": "32px",
+              "msUserSelect": "none",
+              "muiPrepared": true,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "userSelect": "none",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          todo 3
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

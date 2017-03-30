@@ -131,14 +131,14 @@ The api must return:
 * The updated data
 * ...
 
-``/furetui/field/x2one/open``
+``/furetui/field/x2x/open``
 -----------------------------
 
-Call to get the information of a new action to display the x2One, the current parameter:
+Call to get the information of a new action to display the relation ship in the breadcrum, the current parameter:
 
-* model: model of the x2One
+* model: model of the relation ship
 * actionId: action id, if the action is defined
-* value: id of the x2One
+* value: id of the relation ship
 
 return:
 

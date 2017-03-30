@@ -216,6 +216,9 @@ The list are:
 
 * Many2One
 * One2One
+* Many2Many:
+    - List
+    - Thumbnail
 
 ::
 
