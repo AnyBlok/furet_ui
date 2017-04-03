@@ -32,6 +32,10 @@ class Test(Base):
     time = Column(Time)
     json = Column(Text)
 
+    @classmethod
+    def insert(cls, **kwargs):
+        return cls(**kwargs)
+
     def read(self, fields):
         return [{
             'type': 'UPDATE_DATA',
@@ -87,6 +91,14 @@ class Category(Base):
             else:
                 setattr(self, k, v)
 
+    @classmethod
+    def insert(cls, **kwargs):
+        if 'customers' in kwargs:
+            customers = session.query(Customer).filter(
+                Customer.id.in_([int(x) for x in kwargs['customers']])).all()
+            kwargs['customers'] = customers
+        return cls(**kwargs)
+
 
 class Customer(Base):
     __tablename__ = 'customer'
@@ -122,8 +134,21 @@ class Customer(Base):
                 categories = session.query(Category).filter(
                     Category.id.in_([int(x) for x in v])).all()
                 self.categories = categories
+            elif k == 'addresses':
+                pass
             else:
                 setattr(self, k, v)
+
+    @classmethod
+    def insert(cls, **kwargs):
+        if 'categories' in kwargs:
+            categories = session.query(Category).filter(
+                Category.id.in_([int(x) for x in kwargs['categories']])).all()
+            kwargs['categories'] = categories
+        if 'addresses' in kwargs:
+            del kwargs['addresses']
+
+        return cls(**kwargs)
 
 
 class Address(Base):
@@ -165,6 +190,12 @@ class Address(Base):
                 setattr(self, 'customer_id', int(v))
             else:
                 setattr(self, k, v)
+
+    @classmethod
+    def insert(cls, **kwargs):
+        kwargs['customer_id'] = int(kwargs['customer'])
+        del kwargs['customer']
+        return cls(**kwargs)
 
 
 Base.metadata.create_all()
@@ -870,6 +901,8 @@ def getView9():
                         name="addresses"
                         widget="One2Many"
                         label="Addresses"
+                        model="Address"
+                        actionId="4"
                     >
                     </field>
                 </div>
@@ -1313,7 +1346,7 @@ def updateData():
         for data in loads(request.body.read()):
             Model = MODELS[data['model']]
             if data['type'] == 'CREATE':
-                obj = Model(**data['data'])
+                obj = Model.insert(**data['data'])
                 session.add(obj)
                 toUpdate.append((data['model'], data['fields'], obj))
             elif data['type'] == 'UPDATE':

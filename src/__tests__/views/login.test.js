@@ -14,7 +14,7 @@ import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
-import Login from '../../views/clients/login';
+import {getClientView} from '../../views';
 
 jest.mock('../../server-call')
 
@@ -24,7 +24,7 @@ test('Render Login', () => {
     const component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                <Login/>
+                {getClientView('Login')}
             </MuiThemeProvider>
         </Provider>
     );

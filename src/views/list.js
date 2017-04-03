@@ -88,6 +88,7 @@ export class List extends Multi {
     **/
     renderLine (lineId) {
         if (this.props.computed && this.props.computed[lineId] == 'DELETED') return null;
+        if (this.props.change && this.props.change[lineId] == 'DELETED') return null;
         if (this.props.data && this.props.data[lineId] == undefined) return null;
         const data = Object.assign(
             {}, 
@@ -96,7 +97,6 @@ export class List extends Multi {
             this.props.change[lineId]
               ),
               selected = this.state.selectedIds.indexOf(lineId) != -1;
-
         return (
             <TableRow 
                 key={lineId}
@@ -133,6 +133,9 @@ export class List extends Multi {
         );
     }
     render () {
+        let ids = [];
+        if (this.props.dataIds) ids = this.props.dataIds;
+        else if (this.props.ids) ids = this.props.ids;
         return (
             <div>
                 {this.renderSearchBar()}
@@ -165,7 +168,7 @@ export class List extends Multi {
                         stripedRows={true}
                         deselectOnClickaway={false}
                     >
-                        {_.map(this.props.ids || [], id => {
+                        {_.map(ids, id => {
                             return this.renderLine(id);
                         })}
                     </TableBodyExtended>

@@ -164,7 +164,7 @@ export const getView = (viewType, viewId, params) => {
                 });
                 dispatch({type: 'TO_SEND'});
             },
-            onDelete: (dataIds, newData) => {
+            onDelete: (dataIds) => {
                 dispatch({
                     type: 'ON_DELETE', 
                     dataIds, 
@@ -173,11 +173,58 @@ export const getView = (viewType, viewId, params) => {
                 });
                 dispatch({type: 'TO_SEND'});
             },
+            changeView: (cause, actionId, viewId, params) => {
+                dispatch({
+                    type: 'UPDATE_ACTION_SELECT_VIEW',
+                    actionId,
+                    viewId,
+                    params,
+                })
+            },
+        });
+    };
+    const _mapDispatchToProps2 = (dispatch) => {
+        const res = mapDispatchToProps(dispatch);
+        return Object.assign({}, res, {
+            onChange: (dataId, fieldname, newValue, fields) => {
+                dispatch({
+                    type: 'ON_CHANGE',
+                    model: params.model,
+                    dataId,
+                    fieldname,
+                    newValue,
+                    fields,
+                });
+            },
+            onDelete: (dataIds) => {
+                dispatch({
+                    type: 'ON_CHANGE_DELETE', 
+                    dataIds, 
+                    model: params.model,
+                });
+            },
+            changeView: (cause, actionId, viewId, params) => {
+                switch (cause) {
+                    case 'onEntrySelect':
+                    case 'addNewEntry':
+                        params.readonly = false;
+                        break;
+                }
+                dispatch({
+                    type: 'UPDATE_ACTION_SELECT_VIEW',
+                    actionId,
+                    viewId,
+                    params,
+                })
+            },
         });
     };
     return (
         <div style={{margin: 20}}>
-            {React.createElement(connect(mapStateToProps, _mapDispatchToProps)(view), {key: 'client-' + viewType + '-' + viewId})}
+            {React.createElement(
+                connect(mapStateToProps, params.dataId ? _mapDispatchToProps2 : _mapDispatchToProps)(view),
+                {key: 'client-' + viewType + '-' + viewId}
+            )}
         </div>
     );
 };

@@ -19,6 +19,7 @@ import Chip from 'material-ui/Chip';
 import DropdownMenu from './dropdown';
 import translate from 'counterpart';
 import {getNewID} from './index';
+import _ from 'underscore';
 
 
 /**
@@ -53,17 +54,14 @@ export class Multi extends Base {
     addNewEntry () {
         if (this.props.onSelect) {
             this.getView(this.props.onSelect);
-            this.props.dispatch({
-                type: 'UPDATE_ACTION_SELECT_VIEW',
-                actionId: this.props.actionId,
-                viewId: this.props.onSelect,
-                params: {
+            this.props.changeView(
+                'addNewEntry', this.props.actionId, this.props.onSelect, {
                     id: getNewID(this.props.model), 
                     readonly: false, 
                     returnView: this.props.viewId,
                     new: true,
-                },
-            })
+                }
+            );
         }
     }
     /**
@@ -98,7 +96,7 @@ export class Multi extends Base {
                         </IconButton>
                     </div>
                 }
-                { this.state.selectedIds.length != 0 && this.props.deletable &&
+                { this.state.selectedIds.length != 0 && this.props.deletabe &&
                     <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2"
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
@@ -118,7 +116,7 @@ export class Multi extends Base {
                         </IconButton>
                     </div>
                 }
-                { (this.props.buttons || []).length != 0 && 
+                { (this.props.buttons || []).length != 0 && !this.props.parentModel && 
                     <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"
                          style={{paddingLeft: 10, paddingRight: 0}}
                     >
@@ -128,7 +126,7 @@ export class Multi extends Base {
                         />
                     </div>
                 }
-                { this.state.selectedIds.length != 0 && this.props.onSelect_buttons &&
+                { this.state.selectedIds.length != 0 && this.props.onSelect_buttons && !this.props.parentModel && 
                     <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
@@ -163,12 +161,12 @@ export class Multi extends Base {
     onEntrySelect(id) {
         if (this.props.onSelect) {
             this.getView(this.props.onSelect);
-            this.props.dispatch({
-                type: 'UPDATE_ACTION_SELECT_VIEW',
-                actionId: this.props.actionId,
-                viewId: this.props.onSelect,
-                params: {id, returnView: this.props.viewId},
-            })
+            this.props.changeView(
+                'onEntrySelect', this.props.actionId, this.props.onSelect, {
+                    id, 
+                    returnView: this.props.viewId,
+                }
+            );
         }
     }
     /**
@@ -212,40 +210,43 @@ export class Multi extends Base {
         _.each(this.props.search || [], s => {
             choices.push({text: s.label + ' : ' + this.state.searchText, value: s.key});
         });
+
         return (
             <div className="row">
                 <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3">
-                    {this.renderSearchBarButton()}
+                    {!this.props.parentReadonly && this.renderSearchBarButton()}
                 </div>
                 <div className="col-xs-12 col-sm-4 col-md-4 col-lg-6">
-                    <ul className="list-inline"
-                        style={{
-                            border: '2px solid gray',
-                            WebkitBorderRadius: '10px',
-                            MozBorderRadius: '10px',
-                            borderRadius: '10px'
-                        }}
-                    >
-                        <li>
-                            <ul className="list-inline">
-                                {tags}
-                            </ul>
-                        </li>
-                        <li>
-                            <AutoComplete
-                                id='searchText'
-                                filter={AutoComplete.caseInsensitiveFilter}
-                                onNewRequest={this.onNewRequest.bind(this)}
-                                onUpdateInput={this.onUpdateInput.bind(this)}
-                                dataSource={choices}
-                                searchText={this.state.searchText}
-                                fullWidth={true}
-                            />
-                        </li>
-                    </ul>
+                    { !this.props.parentModel && 
+                     <ul className="list-inline"
+                         style={{
+                             border: '2px solid gray',
+                             WebkitBorderRadius: '10px',
+                             MozBorderRadius: '10px',
+                             borderRadius: '10px'
+                         }}
+                     >
+                         <li>
+                             <ul className="list-inline">
+                                 {tags}
+                             </ul>
+                         </li>
+                         <li>
+                             <AutoComplete
+                                 id='searchText'
+                                 filter={AutoComplete.caseInsensitiveFilter}
+                                 onNewRequest={this.onNewRequest.bind(this)}
+                                 onUpdateInput={this.onUpdateInput.bind(this)}
+                                 dataSource={choices}
+                                 searchText={this.state.searchText}
+                                 fullWidth={true}
+                             />
+                         </li>
+                     </ul>
+                    }
                 </div>
                 <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3">
-                    {this.props.selector}
+                    { !this.props.parentModel && this.props.selector}
                 </div>
             </div>
         );

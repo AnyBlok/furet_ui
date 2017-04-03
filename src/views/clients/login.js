@@ -13,7 +13,6 @@ import plugin from '../../plugin';
 import RaisedButton from 'material-ui/RaisedButton';
 import translate from 'counterpart';
 
-
 class Login extends Client {
     getData2Send () {
         return {};

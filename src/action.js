@@ -79,6 +79,11 @@ class ActionCpt extends React.Component {
                                     model: this.props.model, 
                                     params: this.props.params,
                                     actionId: this.props.actionId,
+                                    dataId: this.props.dataId,
+                                    dataIds: this.props.dataIds,
+                                    fieldName: this.props.fieldName,
+                                    parentModel: this.props.parentModel,
+                                    parentReadonly: this.props.parentReadonly,
                                 });
         return null;
     }

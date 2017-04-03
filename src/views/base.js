@@ -36,6 +36,7 @@ export default class extends React.Component {
     **/
     getField(viewType, fieldType, attribs, value) {
         attribs.currentActionId = this.props.actionId;
+        attribs.currentModel = this.props.model;
         return getField(viewType, fieldType, attribs, value);
     }
     /**

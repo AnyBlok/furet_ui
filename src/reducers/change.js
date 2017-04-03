@@ -37,15 +37,24 @@ export const current2Sync = (current, toSync, uuid, model, dataId, newData, fiel
             if (modelName == model && dataId == id) {
                 // do nothing, because already done
             } else {
-                const _fields = current[modelName][id].__fields;
-                delete current[modelName][id].__fields;
-                newSync.data.push({
-                    model: modelName,
-                    dataId: id,
-                    type: (new RegExp('^new-.*')).test(id) ? 'CREATE' : 'UPDATE',
-                    fields: _fields,
-                    data: current[modelName][id],
-                });
+                const data = current[modelName][id];
+                if (data == 'DELETED'){
+                    newSync.data.push({
+                        model: modelName,
+                        dataIds: [id],
+                        type: 'DELETE',
+                    });
+                }else {
+                    const _fields = current[modelName][id].__fields;
+                    delete current[modelName][id].__fields;
+                    newSync.data.push({
+                        model: modelName,
+                        dataId: id,
+                        type: (new RegExp('^new-.*')).test(id) ? 'CREATE' : 'UPDATE',
+                        fields: _fields,
+                        data,
+                    });
+                }
             }
         });
     });
@@ -115,6 +124,16 @@ export const change = (state = defaultState, action) => {
             if (current[action.model][action.dataId] == undefined) current[action.model][action.dataId] = {};
             else current[action.model][action.dataId] = Object.assign({}, current[action.model][action.dataId]);
             current[action.model][action.dataId][action.fieldname] = action.newValue;
+            if (action.fields) {
+                current[action.model][action.dataId]['__fields'] = action.fields;
+            }
+            return Object.assign({}, state, {current});
+        case 'ON_CHANGE_DELETE':
+            if (current[action.model] == undefined) current[action.model] = {};
+            else current[action.model] = Object.assign({}, current[action.model]);
+            _.each(action.dataIds, dataId => {
+                current[action.model][dataId] = 'DELETED'
+            });
             return Object.assign({}, state, {current});
         case 'CLEAR_CHANGE':
             return Object.assign({}, state, {current: {}});

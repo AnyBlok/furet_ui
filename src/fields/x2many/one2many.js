@@ -14,6 +14,8 @@ import {BaseList, BaseThumbnail, BaseForm} from '../base';
 import Chip from 'material-ui/Chip';
 import _ from 'underscore';
 import {mapDispatchToProps} from '../x2one';
+import {Action} from '../../action';
+import {json_post} from '../../server-call';
 
 
 class One2ManyLinkObj extends React.Component {
@@ -101,10 +103,67 @@ export class One2ManyThumbnail extends BaseThumbnail {
     }
 }
 
+class One2ManyCpt extends React.Component {
+    componentDidMount () {
+        json_post('/field/x2x/open', {
+                model: this.props.model,
+                actionId: this.props.actionId,
+                value: this.props.value,
+            }, {
+            onSuccess: (results) => {
+                this.props.dispatchAll(results)
+            }
+        });
+    }
+    render () {
+        const action = this.props.action_data[this.props.actionId] || {};
+        return (
+            <Action
+                actionId={this.props.actionId}
+                dataId={this.props.dataId}
+                dataIds={this.props.value}
+                views={action ? action.views : []}
+                viewId={action ? action.viewId : ''}
+                model={this.props.model}
+                fieldName={this.props.fieldName}
+                parentModel={this.props.parentModel}
+                parentReadonly={this.props.parentReadonly}
+            />
+        );
+    }
+}
+
+const mapStateToProps2 = (state) => {
+    return state.action_manager;
+}
+
+const One2Many = connect(mapStateToProps2, mapDispatchToProps)(One2ManyCpt);
+
+export class One2ManyForm extends BaseForm {
+    getInputProps () {
+        const props = super.getInputProps();
+        delete props.className;
+        props.model = this.props.model
+        props.actionId = this.props.actionId || this.props.actionid;
+        props.currentActionId = this.props.currentActionId;
+        props.dataId = this.props.dataId;
+        props.fieldName = this.props.name;
+        props.parentModel = this.props.currentModel;
+        props.parentReadonly = this.props.readonly;
+        return props;
+    }
+    getInput () {
+        const props = this.getInputProps();
+        return <One2Many {...props} />
+    }
+}
+
 plugin.set(['field', 'List'], {'One2Many': One2ManyList});
 plugin.set(['field', 'Thumbnail'], {'One2Many': One2ManyThumbnail});
+plugin.set(['field', 'Form'], {'One2Many': One2ManyForm});
 
 export default {
     One2ManyList,
     One2ManyThumbnail,
+    One2ManyForm,
 }
