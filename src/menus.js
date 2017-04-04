@@ -76,6 +76,7 @@ class BaseMenu extends React.Component {
                 });
                 break;
         }
+        this.props.dispatch({type: 'CLEAR_ALL_CHANGES'});
         this.handleClose();
     }
     render() {

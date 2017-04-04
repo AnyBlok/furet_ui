@@ -81,6 +81,9 @@ class SpaceCpt extends React.Component {
                         {
                             type: 'RESET_ACTION_MANAGER'
                         },
+                        {
+                            type: 'CLEAR_ALL_CHANGES'
+                        },
                     ]);
                 }
             }
