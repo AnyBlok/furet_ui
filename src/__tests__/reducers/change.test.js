@@ -13,24 +13,60 @@ import reducer, {defaultState, current2Sync, toSync2computed, changeState, remov
 test('get init value', () => {
     chai.expect(reducer(defaultState, {type: 'UNKNOWN_FOR_TEST'})).to.deep.equal(defaultState);
 });
-test('multi action 1', () => {
+test('on change 1', () => {
     const expected = Object.assign({}, defaultState, {current: {'Model': {'1': {title: 'Test'}}}});
     chai.expect(reducer(
         defaultState, 
         {type: 'ON_CHANGE', model: 'Model', dataId: '1', fieldname: 'title', newValue: 'Test'}
     )).to.deep.equal(expected);
 });
-test('multi action 2', () => {
+test('on change 2', () => {
     const expected = Object.assign({}, defaultState, {current: {'Model': {'1': {title: 'Test', other: 'Test'}}}});
     chai.expect(reducer(
         Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}}),
         {type: 'ON_CHANGE', model: 'Model', dataId: '1', fieldname: 'title', newValue: 'Test'}
     )).to.deep.equal(expected);
 });
-test('get clear all', () => {
+test('on change 3', () => {
+    const fields = ['title', 'other', 'test'];
+    const expected = Object.assign({}, defaultState, {current: {'Model': {'1': {title: 'Test', other: 'Test', __fields: fields}}}});
+    chai.expect(reducer(
+        Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}}),
+        {type: 'ON_CHANGE', model: 'Model', dataId: '1', fieldname: 'title', newValue: 'Test', fields}
+    )).to.deep.equal(expected);
+});
+test('on change delete 1', () => {
+    const fields = ['title', 'other', 'test'];
+    const expected = Object.assign({}, defaultState, {current: {'Model': {'1': 'DELETED'}}});
+    chai.expect(reducer(
+        defaultState,
+        {type: 'ON_CHANGE_DELETE', model: 'Model', dataIds: ['1']}
+    )).to.deep.equal(expected);
+});
+test('on change delete 2', () => {
+    const expected = Object.assign({}, defaultState, {current: {'Model': {'1': 'DELETED'}}});
+    chai.expect(reducer(
+        Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}}),
+        {type: 'ON_CHANGE_DELETE', model: 'Model', dataIds: ['1']}
+    )).to.deep.equal(expected);
+});
+test('on change delete 3', () => {
+    const expected = Object.assign({}, defaultState, {current: {'Model': {'1': 'DELETED', '2': {other: 'Test'}, '3': 'DELETED', '4': 'DELETED'}}});
+    const result = reducer(
+        Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}, '2': {other: 'Test'}, '3': {other: 'Test'}, '4': 'DELETED'}}}),
+        {type: 'ON_CHANGE_DELETE', model: 'Model', dataIds: ['1', '3']});
+    chai.expect(result).to.deep.equal(expected);
+});
+test('get clear current', () => {
     chai.expect(reducer(
         Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}}),
         {type: 'CLEAR_CHANGE'}
+    )).to.deep.equal(defaultState);
+});
+test('get all clear current', () => {
+    chai.expect(reducer(
+        Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}, currents: {'ActionId': {'Model': {'2': {title: 'Test'}}}}}),
+        {type: 'CLEAR_ALL_CHANGES'}
     )).to.deep.equal(defaultState);
 });
 test('current2Sync empty', () => {
@@ -84,6 +120,48 @@ test('current2Sync current new data', () => {
     chai.expect(toSync.length).to.equal(2);
     chai.expect(toSync[0]).to.deep.equal(expected);
     chai.expect(toSync[1]).to.deep.equal(expected);
+});
+test('current2Sync current deleted data', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name',
+                        title: 'Title',
+                    },
+                    '2': 'DELETED'
+                },
+          },
+          toSync = [],
+          uuid = 'uuid',
+          model = 'Test',
+          dataId = '1',
+          newData = true,
+          fields = ['name', 'title', 'id'];
+
+    current2Sync(current, toSync, uuid, model, dataId, newData, fields);
+    chai.expect(toSync.length).to.equal(1);
+    const expected = {
+        uuid,
+        state: 'toSend',
+        data: [
+            { 
+                model: 'Test',
+                dataId: '1',
+                type: 'CREATE',
+                fields,
+                data: { 
+                    name: 'Name', 
+                    title: 'Title' 
+                }, 
+            },
+            {
+                model: 'Test',
+                dataIds: ['2'],
+                type: 'DELETE',
+            },
+        ],
+    }
+    chai.expect(toSync[0]).to.deep.equal(expected);
 });
 test('current2Sync current old data', () => {
     const fields = ['name', 'title', 'id'];

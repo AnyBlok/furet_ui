@@ -81,6 +81,7 @@ test('Render List view selectable', () => {
             'buttonId': '2',
         }],
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     store.dispatch({
         'type': 'UPDATE_DATA',
@@ -157,6 +158,7 @@ test('Render List view selectable without button', () => {
             'label': 'Label',
         }],
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     store.dispatch({
         'type': 'UPDATE_DATA',
