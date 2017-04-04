@@ -22,7 +22,7 @@ import IconButton from 'material-ui/IconButton';
 import {blue500, red500} from 'material-ui/styles/colors';
 import DropdownMenu from './dropdown';
 import translate from 'counterpart';
-import {getNewID} from './index';
+import {getNewID} from '../view';
 
 /**
  * Add Icon for Form view

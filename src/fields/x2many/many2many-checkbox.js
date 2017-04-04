@@ -92,7 +92,6 @@ const M2M = connect(mapStateToProps, mapDispatchToProps)(M2MObj);
 export class M2MCheckBoxForm extends BaseForm {
     getInputProps () {
         const props = super.getInputProps();
-        props.type = 'text';
         props.model = this.props.model;
         props.field = this.props.field;
         props.checkbox_class = this.props.checkbox_class;

@@ -18,7 +18,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import Chip from 'material-ui/Chip';
 import DropdownMenu from './dropdown';
 import translate from 'counterpart';
-import {getNewID} from './index';
+import {getNewID} from '../view';
 import _ from 'underscore';
 
 
