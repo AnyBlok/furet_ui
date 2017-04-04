@@ -54,14 +54,16 @@ export class Multi extends Base {
     addNewEntry () {
         if (this.props.onSelect) {
             this.getView(this.props.onSelect);
+            const newId = getNewID(this.props.model);
             this.props.changeView(
                 'addNewEntry', this.props.actionId, this.props.onSelect, {
-                    id: getNewID(this.props.model), 
+                    id: newId, 
                     readonly: false, 
                     returnView: this.props.viewId,
                     new: true,
                 }
             );
+            this.props.onNew(newId);
         }
     }
     /**

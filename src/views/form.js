@@ -66,6 +66,7 @@ export class Form extends Base {
         this.setState({readonly: false, id, new: true}, () => {
             this.call_server(id);
         });
+        this.props.onNew(id);
     }
     /**
      * Close the current view and route to previous view

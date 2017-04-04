@@ -1355,7 +1355,12 @@ def updateData():
                 toUpdate.append((data['model'], data['fields'], obj))
                 obj.update(session, data['data'])
             elif data['type'] == 'DELETE':
-                query = session.query(Model).filter(Model.id.in_(data['dataIds']))
+                dataIds = []
+                for dataId in data['dataIds']:
+                    if not isinstance(dataId, str):
+                        dataIds.append(dataId)
+
+                query = session.query(Model).filter(Model.id.in_(dataIds))
                 query.delete(synchronize_session='fetch')
                 if data['model'] not in toDelete:
                     toDelete[data['model']] = data['dataIds']

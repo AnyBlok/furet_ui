@@ -105,6 +105,7 @@ export const getView = (viewType, viewId, params) => {
             clearChange: () => {
                 dispatch({type: 'CLEAR_CHANGE'});
             },
+            onNew: () => {},
             onSave: (dataId, newData, fields) => {
                 dispatch({
                     type: 'ON_SAVE', 
@@ -138,6 +139,17 @@ export const getView = (viewType, viewId, params) => {
     const _mapDispatchToProps2 = (dispatch) => {
         const res = mapDispatchToProps(dispatch);
         return Object.assign({}, res, {
+            onNew: (newId) => {
+                const newValue = params.dataIds ? params.dataIds.slice(0) : [];
+                newValue.push(newId);
+                dispatch({
+                    type: 'ON_CHANGE',
+                    model: params.parentModel,
+                    dataId: params.dataId,
+                    fieldname: params.fieldName,
+                    newValue,
+                });
+            },
             onChange: (dataId, fieldname, newValue, fields) => {
                 dispatch({
                     type: 'ON_CHANGE',
