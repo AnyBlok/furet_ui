@@ -17,7 +17,9 @@ import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
-import {getView, getViewIcon} from '../../views';
+import '../../fields'
+import '../../views'
+import {getView, getViewIcon} from '../../view';
 
 jest.mock('material-ui/internal/Tooltip', () => {
     return () => {return null};

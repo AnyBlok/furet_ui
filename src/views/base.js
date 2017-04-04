@@ -11,7 +11,7 @@ import React from 'react';
 import {json_post} from '../server-call';
 import {Parser, ProcessNodeDefinitions} from 'html-to-react';
 import plugin from '../plugin';
-import {getField} from '../fields';
+import {getField} from '../field';
 
 export const processNodeDefinitions = new ProcessNodeDefinitions(React);
 

@@ -10,7 +10,8 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import React from 'react';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {getField} from '../../fields';
+import '../../fields'
+import {getField} from '../../field';
 
 jest.mock('material-ui/internal/EnhancedSwitch', () => {
     return () => {return <div />};

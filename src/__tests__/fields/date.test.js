@@ -9,7 +9,8 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {getField} from '../../fields';
+import '../../fields'
+import {getField} from '../../field';
 
 test('getField for List', () => {
     const component = renderer.create(getField('List', 'Date', {}, '2017-03-01'));

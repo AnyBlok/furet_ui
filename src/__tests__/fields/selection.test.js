@@ -11,7 +11,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {updateGlobal} from '../../testcase';
-import {getField} from '../../fields';
+import '../../fields'
+import {getField} from '../../field';
 
 const selections = '[["Test", "New"]]'
 

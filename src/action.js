@@ -14,7 +14,7 @@ import {connect} from 'react-redux'
 import FlatButton from 'material-ui/FlatButton';
 import plugin from './plugin';
 import {green500} from 'material-ui/styles/colors';
-import {getViewIcon, getView} from './views';
+import {getViewIcon, getView} from './view';
 import {json_post} from './server-call';
 
 

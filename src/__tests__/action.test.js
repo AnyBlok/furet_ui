@@ -16,6 +16,8 @@ import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../reducers';
 import {updateGlobal} from '../testcase';
+import '../views';
+import '../fields';
 
 jest.mock('../server-call')
 

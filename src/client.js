@@ -21,6 +21,7 @@ import {dispatchAll} from './reducers';
 import reducers, {send2Server} from './reducers';
 import plugin from './plugin';
 import './views';
+import './fields';
 import App from './app';
 
 plugin.set([], {initData: (store) => {

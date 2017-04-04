@@ -9,7 +9,8 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {getField} from '../../fields';
+import '../../fields'
+import {getField} from '../../field';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';

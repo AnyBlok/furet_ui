@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var PROD = JSON.parse(process.env.PROD_ENV || '0');
+var path = require('path');
 
 const plugins = [
     new webpack.ProvidePlugin({   
@@ -21,7 +22,7 @@ if (PROD) {
 module.exports = {
     entry: ['bootstrap-loader', "./src/client"],
     output: {
-        path: "./build",
+        path: path.resolve(__dirname,"./build"),
         filename: PROD ? 'bundle.min.js' : 'bundle.js'
     },
     resolve: {
