@@ -153,9 +153,7 @@ Record all the change in the data::
     change: {
         current: {
             ``Model name``: {
-                ``data id``: {
-                    ``data``
-                },
+                ``data id``: [ 'DELETED' || { ``data`` } ],
                 ...
             },
             ....
@@ -195,9 +193,7 @@ Record all the change in the data::
         currents: {
             ``action id``: {
                 ``Model name``: {
-                    ``data id``: {
-                        ``data``
-                    },
+                    ``data id``: [ 'DELETED' || { ``data`` } ],
                     ...
                 },
                 ....
@@ -210,6 +206,7 @@ Record all the change in the data::
 * **current**: is the current unsaved change
 * **toSync**: The saved change to sync
 * **computed**: The saved change merged, waiting the sync and used by Furet UI, offline mode
+* **currents**: unsaveed change for another action
 
 ON_CHANGE
 ~~~~~~~~~
@@ -222,7 +219,24 @@ Modify current unsaved change::
         dataId: ``data id``,
         fieldname: ``name of the field``,
         newValue: ``new value to save``,
+        fields: ``field to read by the server, only for one2many fields``,
     });
+
+
+ON_CHANGE_DELETE
+~~~~~~~~~~~~~~~~
+
+Mark an id for a model as 'DELETED'::
+
+    dispatch({
+        type:'ON_CHANGE_DELETE',
+        model: ``model's name``,
+        dataIds: [
+            ``data id to mark as DELETED``
+            ...
+        ],
+    });
+
 
 CLEAR_CHANGE
 ~~~~~~~~~~~~
@@ -230,6 +244,15 @@ CLEAR_CHANGE
 Reset the current unsaved change::
 
     dispatch({type: 'CLEAR_CHANGE'})
+
+
+CLEAR_ALL_CHANGES
+~~~~~~~~~~~~~~~~~
+
+Clear all current and currents::
+
+    dispatch({type: 'CLEAR_ALL_CHANGES'})
+
 
 ON_SAVE
 ~~~~~~~

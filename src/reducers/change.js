@@ -137,6 +137,8 @@ export const change = (state = defaultState, action) => {
             return Object.assign({}, state, {current});
         case 'CLEAR_CHANGE':
             return Object.assign({}, state, {current: {}});
+        case 'CLEAR_ALL_CHANGES':
+            return Object.assign({}, state, {current: {}, currents: {}});
         case 'ON_SAVE':
             current2Sync(current, toSync, action.uuid, action.model, action.dataId, action.newData, action.fields);
             toSync2computed(toSync, computed)
