@@ -65,6 +65,13 @@ export class Form extends Base {
         const id = getNewID(this.props.model);
         this.setState({readonly: false, id, new: true}, () => {
             this.call_server(id);
+            this.props.changeView(
+                'addNewEntry', this.props.actionId, this.props.viewId, {
+                    id,
+                    returnView: this.props.params && this.props.params.returnView,
+                    readonly: false,
+                    new: true,
+                });
         });
         this.props.onNew(id);
     }
@@ -92,10 +99,18 @@ export class Form extends Base {
     **/
     saveEntry () {
         this.props.onSave(this.state.id, this.state.new, this.props.fields);
-        this.setState({readonly: true, new: false});
+        this.setState({readonly: true, new: false}, () => {
+            this.props.changeView(
+                'saveEntry', this.props.actionId, this.props.viewId, {
+                    id: this.state.id,
+                    returnView: this.props.params && this.props.params.returnView,
+                    readonly: true,
+                    new: false,
+                });
+        });
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.params && (nextProps.params.new || !this.state.new)) {
+        if (nextProps.params && (nextProps.params.new || !this.state.new || nextProps.params.id != this.state.id)) {
             const state = {}
             if (nextProps.params.readonly != undefined) state.readonly = nextProps.params.readonly;
             if (nextProps.params.id != undefined) state.id = nextProps.params.id;

@@ -167,6 +167,9 @@ export const change = (state = defaultState, action) => {
                 delete currents[actionId];
             });
             return Object.assign({}, state, {current: prev_current, currents});
+        case 'UPDATE_NEW_ID':
+            console.log('change', action)
+            return state;
         default:
             return state
     }

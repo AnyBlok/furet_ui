@@ -126,6 +126,7 @@ the data is save in dict::
         }
     }
 
+
 UPDATE_ACTION_SELECT_VIEW
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -136,6 +137,29 @@ Update the dict, called by::
         actionId: ``action id``,
         ``params``
     });
+
+
+UPDATE_NEW_ID
+~~~~~~~~~~~~~
+
+Replace the **id** entry in params. Use in the case of create, the tempory id must
+be replaced by the real id::
+
+    dispatch({
+        type: 'UPDATE_NEW_ID',
+        data: [
+            {
+                oldId: ``id to replace``,
+                newId: ``new id``,
+            },
+            ...
+        ]
+    });
+
+
+.. warning::
+
+    the key 'UPDATE_NEW_ID' is use in to reducer action and change.
 
 
 CLEAR_ACTION

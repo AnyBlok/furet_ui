@@ -33,8 +33,8 @@ class Test(Base):
     json = Column(Text)
 
     @classmethod
-    def insert(cls, **kwargs):
-        return cls(**kwargs)
+    def insert(cls, data, mapping):
+        return cls(**data)
 
     def read(self, fields):
         return [{
@@ -43,7 +43,7 @@ class Test(Base):
             'data': {self.id: {y: getattr(self, y) for y in fields}},
         }]
 
-    def update(self, session, val):
+    def update(self, session, val, mapping):
         for k, v in val.items():
             setattr(self, k, v)
 
@@ -82,22 +82,35 @@ class Category(Base):
 
         return res
 
-    def update(self, session, val):
+    def update(self, session, val, mapping):
         for k, v in val.items():
             if k == 'customers':
-                customers = session.query(Customer).filter(
-                    Customer.id.in_([int(x) for x in v])).all()
+                customers = []
+                for dataId in v:
+                    if dataId in mapping:
+                        customers.append(mapping[dataId])
+                    else:
+                        customers.append(session.query(Customer).filter(
+                            Customer.id == int(dataId)).one())
+
                 self.customers = customers
             else:
                 setattr(self, k, v)
 
     @classmethod
-    def insert(cls, **kwargs):
-        if 'customers' in kwargs:
-            customers = session.query(Customer).filter(
-                Customer.id.in_([int(x) for x in kwargs['customers']])).all()
-            kwargs['customers'] = customers
-        return cls(**kwargs)
+    def insert(cls, data, mapping):
+        if 'customers' in data:
+            customers = []
+            for dataId in data['customers']:
+                if dataId in mapping:
+                    customers.append(mapping[dataId])
+                else:
+                    customers.append(session.query(Customer).filter(
+                        Customer.id == int(dataId)).one())
+
+            data['customers'] = customers
+
+        return cls(**data)
 
 
 class Customer(Base):
@@ -128,11 +141,17 @@ class Customer(Base):
 
         return res
 
-    def update(self, session, val):
+    def update(self, session, val, mapping):
         for k, v in val.items():
             if k == 'categories':
-                categories = session.query(Category).filter(
-                    Category.id.in_([int(x) for x in v])).all()
+                categories = []
+                for dataId in v:
+                    if dataId in mapping:
+                        categories.append(mapping[dataId])
+                    else:
+                        categories.append(session.query(Customer).filter(
+                            Customer.id == int(dataId)).one())
+
                 self.categories = categories
             elif k == 'addresses':
                 pass
@@ -140,15 +159,21 @@ class Customer(Base):
                 setattr(self, k, v)
 
     @classmethod
-    def insert(cls, **kwargs):
-        if 'categories' in kwargs:
-            categories = session.query(Category).filter(
-                Category.id.in_([int(x) for x in kwargs['categories']])).all()
-            kwargs['categories'] = categories
-        if 'addresses' in kwargs:
-            del kwargs['addresses']
+    def insert(cls, data, mapping):
+        if 'categories' in data:
+            categories = []
+            for dataId in data['categories']:
+                if dataId in mapping:
+                    categories.append(mapping[dataId])
+                else:
+                    categories.append(session.query(Category).filter(
+                        Category.id == int(dataId)).one())
 
-        return cls(**kwargs)
+            data['categories'] = categories
+        if 'addresses' in data:
+            del data['addresses']
+
+        return cls(**data)
 
 
 class Address(Base):
@@ -184,18 +209,26 @@ class Address(Base):
 
         return res
 
-    def update(self, session, val):
+    def update(self, session, val, mapping):
         for k, v in val.items():
             if k == 'customer':
-                setattr(self, 'customer_id', int(v))
+                if v in mapping:
+                    self.customer = mapping[v]
+                else:
+                    self.customer_id = int(v)
             else:
                 setattr(self, k, v)
 
     @classmethod
-    def insert(cls, **kwargs):
-        kwargs['customer_id'] = int(kwargs['customer'])
-        del kwargs['customer']
-        return cls(**kwargs)
+    def insert(cls, data, mapping):
+        customer = data['customer']
+        if customer in mapping:
+            data['customer'] = mapping[customer]
+        else:
+            data['customer_id'] = int(customer)
+            del data['customer']
+
+        return cls(**data)
 
 
 Base.metadata.create_all()
@@ -1340,20 +1373,22 @@ def updateData():
     _data = []
     toUpdate = []
     toDelete = {}
+    toCreate = {}
 
     try:
         session = Session()
         for data in loads(request.body.read()):
             Model = MODELS[data['model']]
             if data['type'] == 'CREATE':
-                obj = Model.insert(**data['data'])
+                obj = Model.insert(data['data'], toCreate)
                 session.add(obj)
                 toUpdate.append((data['model'], data['fields'], obj))
+                toCreate[data['dataId']] = obj
             elif data['type'] == 'UPDATE':
                 query = session.query(Model).filter(Model.id == int(data['dataId']))
                 obj = query.one()
                 toUpdate.append((data['model'], data['fields'], obj))
-                obj.update(session, data['data'])
+                obj.update(session, data['data'], toCreate)
             elif data['type'] == 'DELETE':
                 dataIds = []
                 for dataId in data['dataIds']:
@@ -1379,6 +1414,12 @@ def updateData():
                 'data': toDelete,
             })
 
+        if toCreate:
+            _data.append({
+                'type': 'UPDATE_NEW_ID',
+                'data': [{'oldId': x, 'newId': y.id} for x, y in toCreate.items()],
+            })
+
     except:
         _data = []
         session.rollback()
@@ -1386,6 +1427,7 @@ def updateData():
     finally:
         session.close()
 
+    print(_data)
     return superDumps(_data)
 
 
