@@ -112,6 +112,48 @@ export const changeState = (toSync, uuid, state) => {
     });
 }
 
+export const updateCurrent = (current, data) => {
+    const current2 = Object.assign({}, current);
+    _.each(_.keys(current2), model => {
+        current[model] = Object.assign({}, current[model])
+        _.each(_.keys(current2[model]), dataId => {
+            let _data = Object.assign({}, current2[model][dataId]);
+            _.each(_.keys(_data), fieldname => {
+                if (_data[fieldname] == data.oldId) _data[fieldname] = data.newId;
+            });
+            if (dataId == data.oldId) {
+                current[model][data.newId] = _data;
+                delete current[model][data.oldId];
+            } else {
+                current[model][dataId] = _data;
+            }
+        });
+    });
+}
+
+export const updateCurrents = (currents, data) => {
+    _.each(_.keys(currents), actionId => {
+        updateCurrent(currents[actionId], data);
+    });
+}
+
+export const update2Sync = (toSync, data) => {
+    _.each(toSync, toS => {
+        _.each(toS.data, _data => {
+            if (_data.dataId == data.oldId) _data.dataId = data.newId;
+            if (_data.dataIds) {
+                _data.dataIds = _.map(_data.dataIds, dataId => {
+                    if (dataId == data.oldId) return data.newId;
+                    return dataId;
+                });
+            }
+            _.each(_.keys(_data.data), fieldname => {
+                if (_data.data[fieldname] == data.oldId) _data.data[fieldname] = data.newId;
+            });
+        });
+    });
+}
+
 export const change = (state = defaultState, action) => {
     const current = Object.assign({}, state.current),
           toSync = state.toSync.slice(0),
@@ -168,8 +210,13 @@ export const change = (state = defaultState, action) => {
             });
             return Object.assign({}, state, {current: prev_current, currents});
         case 'UPDATE_NEW_ID':
-            console.log('change', action)
-            return state;
+            _.each(action.data, data => {
+                updateCurrent(current, data);
+                updateCurrents(currents, data);
+                update2Sync(toSync, data);
+            });
+            toSync2computed(toSync, computed)
+            return {current, toSync, computed, currents};
         default:
             return state
     }

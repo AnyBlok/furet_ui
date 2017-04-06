@@ -156,12 +156,6 @@ be replaced by the real id::
         ]
     });
 
-
-.. warning::
-
-    the key 'UPDATE_NEW_ID' is use in to reducer action and change.
-
-
 CLEAR_ACTION
 ~~~~~~~~~~~~
 
@@ -382,6 +376,34 @@ currents will be clean in function of actionId and actionIds::
             ``id of action to clean``,
         ]
     });
+
+
+UPDATE_NEW_ID
+~~~~~~~~~~~~~
+
+Replace the **id** entry in:
+
+* current: ``data id`` or value for a fieldname,
+* currents: ``data id`` or value for a fieldname,
+* toSync: **dataId**, **dataIds** or value for a fieldname,
+
+The goal is to replace a created object tempory id by the real id::
+
+    dispatch({
+        type: 'UPDATE_NEW_ID',
+        data: [
+            {
+                oldId: ``id to replace``,
+                newId: ``new id``,
+            },
+            ...
+        ]
+    });
+
+
+.. warning::
+
+    the key 'UPDATE_NEW_ID' is use in to reducer action and change.
 
 
 client
