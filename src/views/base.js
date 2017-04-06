@@ -11,7 +11,7 @@ import React from 'react';
 import {json_post} from '../server-call';
 import {Parser, ProcessNodeDefinitions} from 'html-to-react';
 import plugin from '../plugin';
-import {getField} from '../fields';
+import {getField} from '../field';
 
 export const processNodeDefinitions = new ProcessNodeDefinitions(React);
 
@@ -35,6 +35,8 @@ export default class extends React.Component {
      * Render a field for the view
     **/
     getField(viewType, fieldType, attribs, value) {
+        attribs.currentActionId = this.props.actionId;
+        attribs.currentModel = this.props.model;
         return getField(viewType, fieldType, attribs, value);
     }
     /**

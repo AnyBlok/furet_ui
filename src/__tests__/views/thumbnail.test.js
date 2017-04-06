@@ -17,7 +17,9 @@ import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
-import {getView, getViewIcon} from '../../views';
+import '../../fields'
+import '../../views'
+import {getView, getViewIcon} from '../../view';
 
 jest.mock('material-ui/internal/Tooltip', () => {
     return () => {return null};
@@ -44,7 +46,7 @@ test('Render Thumbnail view', () => {
     let component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getView('Thumbnail', '1', {ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']})}
+                {getView('Thumbnail', '1', {model: 'Todo', ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']})}
             </MuiThemeProvider>
         </Provider>
     );
@@ -68,52 +70,55 @@ test('Render Thumbnail view', () => {
             'buttonId': '1',
         }],
     });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
     store.dispatch({
-        'type': 'UPDATE_MULTI_DATA',
+        'type': 'UPDATE_DATA',
         'model': 'Todo',
-        'data': [
-            {
+        'data': {
+            '1': {
                 'id': '1',
                 'name': "todo 1",
             },
-            {
+            '2': {
                 'id': '2',
                 'name': "todo 2",
             },
-            {
+            '3': {
                 'id': '3',
                 'name': "todo 3",
             },
-            {
+            '4': {
                 'id': '4',
                 'name': "todo 4",
             },
-            {
+            '5': {
                 'id': '5',
                 'name': "todo 5",
             },
-            {
+            '6': {
                 'id': '6',
                 'name': "todo 6",
             },
-            {
+            '7': {
                 'id': '7',
                 'name': "todo 7",
             },
-            {
+            '8': {
                 'id': '8',
                 'name': "todo 8",
             },
-            {
+            '9': {
                 'id': '9',
                 'name': "todo 9",
             },
-            {
+            '10': {
                 'id': '10',
                 'name': "todo 10",
             },
-        ],
+        },
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
 
@@ -123,7 +128,10 @@ test('Render Thumbnail view without button', () => {
     let component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getView('Thumbnail', '1', {ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']})}
+                {getView('Thumbnail', '1', {model: 'Todo', 
+                                            ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                                            creatable: false,
+                                            })}
             </MuiThemeProvider>
         </Provider>
     );
@@ -138,51 +146,54 @@ test('Render Thumbnail view without button', () => {
         'onSelect': '2',
         'template': '<div><field name="name" widget="String" label="Label"></field></div>',
     });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
     store.dispatch({
-        'type': 'UPDATE_MULTI_DATA',
+        'type': 'UPDATE_DATA',
         'model': 'Todo',
-        'data': [
-            {
+        'data': {
+            '1': {
                 'id': '1',
                 'name': "todo 1",
             },
-            {
+            '2': {
                 'id': '2',
                 'name': "todo 2",
             },
-            {
+            '3': {
                 'id': '3',
                 'name': "todo 3",
             },
-            {
+            '4': {
                 'id': '4',
                 'name': "todo 4",
             },
-            {
+            '5': {
                 'id': '5',
                 'name': "todo 5",
             },
-            {
+            '6': {
                 'id': '6',
                 'name': "todo 6",
             },
-            {
+            '7': {
                 'id': '7',
                 'name': "todo 7",
             },
-            {
+            '8': {
                 'id': '8',
                 'name': "todo 8",
             },
-            {
+            '9': {
                 'id': '9',
                 'name': "todo 9",
             },
-            {
+            '10': {
                 'id': '10',
                 'name': "todo 10",
             },
-        ],
+        },
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });

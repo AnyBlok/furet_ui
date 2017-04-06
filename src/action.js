@@ -14,7 +14,7 @@ import {connect} from 'react-redux'
 import FlatButton from 'material-ui/FlatButton';
 import plugin from './plugin';
 import {green500} from 'material-ui/styles/colors';
-import {getViewIcon, getView} from './views';
+import {getViewIcon, getView} from './view';
 import {json_post} from './server-call';
 
 
@@ -70,7 +70,7 @@ class ActionCpt extends React.Component {
             </ul>
         );
     }
-    renderView () {
+    render () {
         const selector = this.renderSelector();
         const view = _.find(this.props.views || [], view => (view.viewId == this.props.viewId));
         if (view) return getView(view.type, view.viewId, 
@@ -79,19 +79,13 @@ class ActionCpt extends React.Component {
                                     model: this.props.model, 
                                     params: this.props.params,
                                     actionId: this.props.actionId,
+                                    dataId: this.props.dataId,
+                                    dataIds: this.props.dataIds,
+                                    fieldName: this.props.fieldName,
+                                    parentModel: this.props.parentModel,
+                                    parentReadonly: this.props.parentReadonly,
                                 });
         return null;
-    }
-    render () {
-        const style = {};
-        if (this.props.disabled) {
-            style.display = 'none';
-        }
-        return (
-            <div style={style}>
-                {this.renderView()}
-            </div>
-        );
     }
 }
 
@@ -135,16 +129,15 @@ class ActionManagerCpt extends React.Component {
      *
      * return one Action componant
     **/
-    renderAction(actionId, order, disabled) {
-        const action = this.props.action_data[actionId];
+    renderAction(actionId) {
+        const action = this.props.action_data[actionId] || {};
         return (
             <Action 
-                key={'action-' + actionId + '-' + order}
+                key={'action-' + actionId}
                 actionId={actionId} 
                 views={action ? action.views : []}
                 viewId={action ? action.viewId : ''}
                 model={action ? action.model : ''}
-                disabled={disabled}
             />
         );
     }
@@ -157,25 +150,58 @@ class ActionManagerCpt extends React.Component {
     getEntryPointApp () {
         const res = [];
         if ((this.props.actions || []).length != 0) {
+            const size = this.props.actions.length - 1;
+            res.push(this.renderAction(this.props.actions[size]));
         } else {
-            res.push(this.renderAction(this.props.actionId, 0, false));
+            res.push(this.renderAction(this.props.actionId));
         }
         return res;
     }
     /**
-     * Display the breadcrum
+     * Display one element
+     *
+     * Display button
+     *
+    **/
+    getBreadcrumbElement(actionId, actionIds) {
+        const action = this.props.action_data[actionId];
+        return (
+            <FlatButton 
+                key={'breadcrumb-action-' + actionId}
+                label={action ? action.label : actionId}
+                onClick={() => {
+                    this.props.dispatch({type: 'REVERT_CHANGE', actionId, actionIds})
+                    if (actionId == this.props.actionId) {
+                        this.props.dispatch({type: 'RESET_ACTION_MANAGER'});
+                    } else {
+                        this.props.dispatch({type: 'UPDATE_ACTION_MANAGER_REMOVE_FROM_ACTION', actionId})
+                    }
+                }}
+                disabled={actionIds.length == 0}
+            />
+        )
+    }
+    /**
+     * Display the breadcrumb
      *
      * List the actions, the last is disabled because it is always the displayed action
      *
     **/
     getBreadcrumb () {
-        const action = this.props.action_data[this.props.actionId];
-        return (
-            <FlatButton 
-                label={action ? action.label : this.props.actionId}
-                disabled={true}
-            />
-        )
+        const res = [];
+        if ((this.props.actions || []).length != 0) {
+            let actionId = this.props.actionId,
+                actionIds = this.props.actions;
+            res.push(this.getBreadcrumbElement(actionId, actionIds));
+            while (actionIds.length != 0) {
+                actionId = actionIds[0];
+                actionIds = actionIds.slice(1) || [];
+                res.push(this.getBreadcrumbElement(actionId, actionIds));
+            }
+        } else {
+            res.push(this.getBreadcrumbElement(this.props.actionId, []));
+        }
+        return res;
     }
     render () {
         return (

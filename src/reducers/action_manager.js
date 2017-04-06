@@ -20,6 +20,13 @@ export const action_manager = (state = defaultState, action) => {
             const actions = state.actions.slice(0);
             actions.push(action.actionId);
             return Object.assign({}, state, {actions});
+        case 'UPDATE_ACTION_MANAGER_REMOVE_FROM_ACTION':
+            const index = state.actions.indexOf(action.actionId) ;
+            let newactions = []
+            if (index != 0) {
+                newactions = state.actions.slice(0, index);
+            }
+            return Object.assign({}, state, {actions: newactions});
         case 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA':
             delete value.actionId;
             const action_data = Object.assign({}, state.action_data);

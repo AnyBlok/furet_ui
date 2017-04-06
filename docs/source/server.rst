@@ -130,3 +130,33 @@ The api must return:
 
 * The updated data
 * ...
+
+``/furetui/field/x2x/open``
+-----------------------------
+
+Call to get the information of a new action to display the relation ship in the breadcrum, the current parameter:
+
+* model: model of the relation ship
+* actionId: action id, if the action is defined
+* value: id of the relation ship
+
+return:
+
+* Action data
+* model data for the value
+* ...
+
+``/furetui/field/x2x/search``
+-----------------------------
+
+Call to get available value for the x2One field:
+
+* model: model of the x2One
+* field: field name in the model to display
+* limit: number of data to get
+* value: text from the input to filter the data
+
+return:
+
+* model data filtered by the value
+* ...

@@ -16,7 +16,10 @@ export const data = (state = defaultState, action) => {
         case 'UPDATE_DATA':
             if (values[action.model] == undefined) values[action.model] = {};
             else values[action.model] = Object.assign({}, values[action.model]);
-            Object.assign(values[action.model], action.data);
+            _.each(_.keys(action.data), dataId => {
+                if (values[action.model][dataId] == undefined) values[action.model][dataId] = {};
+                Object.assign(values[action.model][dataId], action.data[dataId]);
+            });
             return values;
         case 'DELETE_DATA':
             _.each(_.keys(values), model => {

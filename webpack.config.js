@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var PROD = JSON.parse(process.env.PROD_ENV || '0');
+var path = require('path');
 
 const plugins = [
     new webpack.ProvidePlugin({   
@@ -21,7 +22,7 @@ if (PROD) {
 module.exports = {
     entry: ['bootstrap-loader', "./src/client"],
     output: {
-        path: "./build",
+        path: path.resolve(__dirname,"./build"),
         filename: PROD ? 'bundle.min.js' : 'bundle.js'
     },
     resolve: {
@@ -42,11 +43,31 @@ module.exports = {
                 loader: require.resolve('json-loader')
             },
             {
-                test: /(\.scss|\.css)$/,
-                loaders: [
-                    require.resolve('style-loader'),
-                    require.resolve('css-loader') + '?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-                ]
+                test: /(\.global\.css$|react-select.css)/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                ],
+            },
+            {
+                test: /^((?!\.global|react-select).)*\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            importLoaders: 1,
+                            sourceMap: true,
+                        },
+                    },
+                ],
             },
             { 
                 test: /(\.js|\.jsx)$/, 

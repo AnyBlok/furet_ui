@@ -11,7 +11,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import {RightMenu, LeftMenu} from './menus';
 import AppBar from 'material-ui/AppBar';
-import {getClientView} from './views';
+import {getClientView} from './view';
 import Space from './space';
 
 

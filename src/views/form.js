@@ -22,7 +22,7 @@ import IconButton from 'material-ui/IconButton';
 import {blue500, red500} from 'material-ui/styles/colors';
 import DropdownMenu from './dropdown';
 import translate from 'counterpart';
-import {getNewID} from './index';
+import {getNewID} from '../view';
 
 /**
  * Add Icon for Form view
@@ -65,7 +65,15 @@ export class Form extends Base {
         const id = getNewID(this.props.model);
         this.setState({readonly: false, id, new: true}, () => {
             this.call_server(id);
+            this.props.changeView(
+                'addNewEntry', this.props.actionId, this.props.viewId, {
+                    id,
+                    returnView: this.props.params && this.props.params.returnView,
+                    readonly: false,
+                    new: true,
+                });
         });
+        this.props.onNew(id);
     }
     /**
      * Close the current view and route to previous view
@@ -74,11 +82,9 @@ export class Form extends Base {
         const viewId = (this.props.params && this.props.params.returnView) || this.props.onSelect;
         if (viewId) {
             this.getView(viewId);
-            this.props.dispatch({
-                type: 'UPDATE_ACTION_SELECT_VIEW',
-                actionId: this.props.actionId,
-                viewId,
-            })
+            this.props.changeView(
+                'returnPreviousView', this.props.actionId, viewId, {}
+            );
         }
     }
     /**
@@ -93,10 +99,18 @@ export class Form extends Base {
     **/
     saveEntry () {
         this.props.onSave(this.state.id, this.state.new, this.props.fields);
-        this.setState({readonly: true, new: false});
+        this.setState({readonly: true, new: false}, () => {
+            this.props.changeView(
+                'saveEntry', this.props.actionId, this.props.viewId, {
+                    id: this.state.id,
+                    returnView: this.props.params && this.props.params.returnView,
+                    readonly: true,
+                    new: false,
+                });
+        });
     }
     componentWillReceiveProps(nextProps) {
-        if (nextProps.params && (nextProps.params.new || !this.state.new)) {
+        if (nextProps.params && (nextProps.params.new || !this.state.new || nextProps.params.id != this.state.id)) {
             const state = {}
             if (nextProps.params.readonly != undefined) state.readonly = nextProps.params.readonly;
             if (nextProps.params.id != undefined) state.id = nextProps.params.id;
@@ -125,9 +139,10 @@ export class Form extends Base {
                         'Form', 
                         node.attribs.widget, 
                         Object.assign(node.attribs, {
-                            readonly: self.state.readonly, 
+                            readonly: self.state.readonly || self.props.parentReadonly, 
+                            dataId: self.state.id,
                             onChange: (fieldname, newValue) => {
-                                self.props.onChange(self.state.id, fieldname, newValue);
+                                self.props.onChange(self.state.id, fieldname, newValue, self.props.fields);
                             }
                         }),
                         data[node.attribs.name] || null
@@ -150,7 +165,7 @@ export class Form extends Base {
     renderButton () {
         return (
             <div className="row">
-                { !this.state.readonly &&
+                { !this.state.readonly && !this.props.parentModel && 
                     <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
@@ -170,7 +185,7 @@ export class Form extends Base {
                         </IconButton>
                     </div>
                 }
-                { this.props.creatable && this.state.readonly &&
+                { ((this.props.creatable && this.state.readonly) || this.props.parentModel) && !this.props.parentReadonly &&
                     <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
@@ -210,7 +225,7 @@ export class Form extends Base {
                         </IconButton>
                     </div>
                 }
-                { !this.state.readonly &&
+                { !this.state.readonly && !this.props.parentModel &&
                     <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
@@ -237,7 +252,7 @@ export class Form extends Base {
                         </IconButton>
                     </div>
                 }
-                { this.props.deletable && this.state.readonly &&
+                { ((this.props.deletable && this.state.readonly) || this.props.parentModel) && !this.props.parentReadonly &&
                     <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
@@ -257,7 +272,7 @@ export class Form extends Base {
                         </IconButton>
                     </div>
                 }
-                { this.state.readonly &&
+                { (this.state.readonly || this.props.parentModel) && 
                     <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
                          style={{paddingLeft: 0, paddingRight: 0}}
                     >
@@ -277,7 +292,7 @@ export class Form extends Base {
                         </IconButton>
                     </div>
                 }
-                { (this.props.buttons || []).length != 0 && 
+                { (this.props.buttons || []).length != 0 &&  !this.props.parentModel && 
                     <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <DropdownMenu 
                             label={translate('furetUI.views.common.actions', {fallback: 'Actions'})}

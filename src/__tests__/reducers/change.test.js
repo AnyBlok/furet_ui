@@ -8,29 +8,65 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import chai from 'chai';
-import reducer, {defaultState, current2Sync, toSync2computed, changeState, removeUuid, remove2Sync} from '../../reducers/change';
+import reducer, {defaultState, current2Sync, toSync2computed, changeState, removeUuid, remove2Sync, updateCurrent, updateCurrents, update2Sync} from '../../reducers/change';
 
 test('get init value', () => {
     chai.expect(reducer(defaultState, {type: 'UNKNOWN_FOR_TEST'})).to.deep.equal(defaultState);
 });
-test('multi action 1', () => {
+test('on change 1', () => {
     const expected = Object.assign({}, defaultState, {current: {'Model': {'1': {title: 'Test'}}}});
     chai.expect(reducer(
         defaultState, 
         {type: 'ON_CHANGE', model: 'Model', dataId: '1', fieldname: 'title', newValue: 'Test'}
     )).to.deep.equal(expected);
 });
-test('multi action 2', () => {
+test('on change 2', () => {
     const expected = Object.assign({}, defaultState, {current: {'Model': {'1': {title: 'Test', other: 'Test'}}}});
     chai.expect(reducer(
         Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}}),
         {type: 'ON_CHANGE', model: 'Model', dataId: '1', fieldname: 'title', newValue: 'Test'}
     )).to.deep.equal(expected);
 });
-test('get clear all', () => {
+test('on change 3', () => {
+    const fields = ['title', 'other', 'test'];
+    const expected = Object.assign({}, defaultState, {current: {'Model': {'1': {title: 'Test', other: 'Test', __fields: fields}}}});
+    chai.expect(reducer(
+        Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}}),
+        {type: 'ON_CHANGE', model: 'Model', dataId: '1', fieldname: 'title', newValue: 'Test', fields}
+    )).to.deep.equal(expected);
+});
+test('on change delete 1', () => {
+    const fields = ['title', 'other', 'test'];
+    const expected = Object.assign({}, defaultState, {current: {'Model': {'1': 'DELETED'}}});
+    chai.expect(reducer(
+        defaultState,
+        {type: 'ON_CHANGE_DELETE', model: 'Model', dataIds: ['1']}
+    )).to.deep.equal(expected);
+});
+test('on change delete 2', () => {
+    const expected = Object.assign({}, defaultState, {current: {'Model': {'1': 'DELETED'}}});
+    chai.expect(reducer(
+        Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}}),
+        {type: 'ON_CHANGE_DELETE', model: 'Model', dataIds: ['1']}
+    )).to.deep.equal(expected);
+});
+test('on change delete 3', () => {
+    const expected = Object.assign({}, defaultState, {current: {'Model': {'1': 'DELETED', '2': {other: 'Test'}, '3': 'DELETED', '4': 'DELETED'}}});
+    const result = reducer(
+        Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}, '2': {other: 'Test'}, '3': {other: 'Test'}, '4': 'DELETED'}}}),
+        {type: 'ON_CHANGE_DELETE', model: 'Model', dataIds: ['1', '3']});
+    chai.expect(result).to.deep.equal(expected);
+});
+test('get clear current', () => {
     chai.expect(reducer(
         Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}}),
         {type: 'CLEAR_CHANGE'}
+    )).to.deep.equal(defaultState);
+});
+test('get all clear current', () => {
+    chai.expect(reducer(
+        Object.assign({}, defaultState, {current: {'Model': {'1': {other: 'Test'}}}, currents: {'ActionId': {'Model': {'2': {title: 'Test'}}}}}),
+        {type: 'CLEAR_ALL_CHANGES'}
     )).to.deep.equal(defaultState);
 });
 test('current2Sync empty', () => {
@@ -84,6 +120,48 @@ test('current2Sync current new data', () => {
     chai.expect(toSync.length).to.equal(2);
     chai.expect(toSync[0]).to.deep.equal(expected);
     chai.expect(toSync[1]).to.deep.equal(expected);
+});
+test('current2Sync current deleted data', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name',
+                        title: 'Title',
+                    },
+                    '2': 'DELETED'
+                },
+          },
+          toSync = [],
+          uuid = 'uuid',
+          model = 'Test',
+          dataId = '1',
+          newData = true,
+          fields = ['name', 'title', 'id'];
+
+    current2Sync(current, toSync, uuid, model, dataId, newData, fields);
+    chai.expect(toSync.length).to.equal(1);
+    const expected = {
+        uuid,
+        state: 'toSend',
+        data: [
+            { 
+                model: 'Test',
+                dataId: '1',
+                type: 'CREATE',
+                fields,
+                data: { 
+                    name: 'Name', 
+                    title: 'Title' 
+                }, 
+            },
+            {
+                model: 'Test',
+                dataIds: ['2'],
+                type: 'DELETE',
+            },
+        ],
+    }
+    chai.expect(toSync[0]).to.deep.equal(expected);
 });
 test('current2Sync current old data', () => {
     const fields = ['name', 'title', 'id'];
@@ -983,3 +1061,800 @@ test('ON_DELETE', () => {
         },
     });
 })
+
+test('ADD_CURRENTS 1', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {},
+          toSync = [],
+          computed = {},
+          action = {
+              type: 'ADD_CURRENTS',
+              actionId: '1',
+          };
+    const result = reducer({current, toSync, computed, currents}, action);
+    const expected = {
+        current: {},
+        toSync: [],
+        computed: {},
+        currents: { 
+            '1': {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+            }, 
+        },
+    };
+    chai.expect(result).to.deep.equal(expected);
+});
+
+test('ADD_CURRENTS 2', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {},
+          toSync = [],
+          computed = {};
+    const result = reducer({current, toSync, computed, currents}, {type: 'ADD_CURRENTS', actionId: '1'});
+    const expected = {
+        current: {},
+        toSync: [],
+        computed: {},
+        currents: { 
+            '1': {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+            }, 
+        },
+    };
+    chai.expect(result).to.deep.equal(expected);
+    const expected2 = {
+        current: {},
+        toSync: [],
+        computed: {},
+        currents: { 
+            '1': {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+            }, 
+            '2': {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+            }, 
+        },
+    };
+    const result2 = reducer({current, toSync, computed, currents: result.currents}, 
+                            {type: 'ADD_CURRENTS', actionId: '2'});
+    chai.expect(result2).to.deep.equal(expected2);
+});
+test('REVERT_CHANGE 1', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {
+            '1': {
+                'Test': {
+                    '2': {
+                        name: 'Name 2',
+                        title: 'Title 2',
+                    },
+                },
+            },
+          },
+          toSync = [],
+          computed = {};
+    const result = reducer({current, toSync, computed, currents}, 
+                           {type: 'REVERT_CHANGE', actionId: '1', actionIds: []});
+    const expected = {
+        current: {
+            'Test': {
+                '2': {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            },
+        },
+        toSync: [],
+        computed: {},
+        currents: {},
+    };
+    chai.expect(result).to.deep.equal(expected);
+});
+test('REVERT_CHANGE 2', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {
+            '1': {
+                'Test': {
+                    '2': {
+                        name: 'Name 2',
+                        title: 'Title 2',
+                    },
+                },
+            },
+            '2': {
+                'Test': {
+                    '3': {
+                        name: 'Name 3',
+                        title: 'Title 3',
+                    },
+                },
+            },
+          },
+          toSync = [],
+          computed = {};
+    const result = reducer({current, toSync, computed, currents}, 
+                           {type: 'REVERT_CHANGE', actionId: '1', actionIds: []});
+    const expected = {
+        current: {
+            'Test': {
+                '2': {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            },
+        },
+        toSync: [],
+        computed: {},
+        currents: {
+            '2': {
+                'Test': {
+                    '3': {
+                        name: 'Name 3',
+                        title: 'Title 3',
+                    },
+                },
+            },
+        },
+    };
+    chai.expect(result).to.deep.equal(expected);
+});
+test('REVERT_CHANGE 3', () => {
+    const current = {
+                'Test': {
+                    '1': {
+                        name: 'Name 1',
+                        title: 'Title 1',
+                    },
+                },
+          },
+          currents = {
+            '1': {
+                'Test': {
+                    '2': {
+                        name: 'Name 2',
+                        title: 'Title 2',
+                    },
+                },
+            },
+            '2': {
+                'Test': {
+                    '3': {
+                        name: 'Name 3',
+                        title: 'Title 3',
+                    },
+                },
+            },
+            '3': {
+                'Test': {
+                    '4': {
+                        name: 'Name 4',
+                        title: 'Title 4',
+                    },
+                },
+            },
+          },
+          toSync = [],
+          computed = {};
+    const result = reducer({current, toSync, computed, currents}, 
+                           {type: 'REVERT_CHANGE', actionId: '1', actionIds: [3]});
+    const expected = {
+        current: {
+            'Test': {
+                '2': {
+                    name: 'Name 2',
+                    title: 'Title 2',
+                },
+            },
+        },
+        toSync: [],
+        computed: {},
+        currents: {
+            '2': {
+                'Test': {
+                    '3': {
+                        name: 'Name 3',
+                        title: 'Title 3',
+                    },
+                },
+            },
+        },
+    };
+    chai.expect(result).to.deep.equal(expected);
+});
+test('UPDATE_NEW_ID', () => {
+    const fields = ['title', 'other', 'test'];
+    const current = {
+        'Test': {
+            'oldId1': {
+                m2o: 'oldId2',
+            },
+        },
+    };
+    const currents = {
+        'action1': {
+            'Test': {
+                'oldId1': {
+                    m2o: 'oldId2',
+                },
+            },
+        }
+    };
+    const toSync = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataIds: ['oldId1', 'oldId2'],
+                    type: 'DELETE',
+                },
+                {
+                    model: 'Test',
+                    dataId: 'oldId3',
+                    type: 'CREATE',
+                    fields,
+                    data: {
+                        m2o: 'oldId2',
+                    },
+                },
+            ],
+        },
+    ];
+    const expected = {
+        current: {
+            'Test': {
+                'newId1': {
+                    m2o: 'newId2',
+                },
+            },
+        },
+        currents: {
+            'action1': {
+                'Test': {
+                    'newId1': {
+                        m2o: 'newId2',
+                    },
+                },
+            },
+        },
+        toSync: [
+            {
+                uuid: 'uuid',
+                state: 'toSend',
+                data: [
+                    {
+                        model: 'Test',
+                        dataIds: ['newId1', 'newId2'],
+                        type: 'DELETE',
+                    },
+                    {
+                        model: 'Test',
+                        dataId: 'oldId3',
+                        type: 'CREATE',
+                        fields,
+                        data: {
+                            m2o: 'newId2',
+                        },
+                    },
+                ],
+            },
+        ],
+        computed: {
+            'Test': {
+                newId1: 'DELETED',
+                newId2: 'DELETED',
+                oldId3: {
+                    m2o: 'newId2',
+                },
+            },
+        },
+    };
+    const action = {
+        type: 'UPDATE_NEW_ID',
+        data: [
+            {
+                oldId: 'oldId1',
+                newId: 'newId1',
+            },
+            {
+                oldId: 'oldId2',
+                newId: 'newId2',
+            },
+        ],
+    };
+    const result = reducer({current, toSync, currents}, action);
+    chai.expect(result).to.deep.equal(expected);
+});
+test('updateCurrent data id', () => {
+    const current = {
+        'Test': {
+            'oldId1': {
+                test: 'oldId3',
+            },
+            'oldId2': {
+                test: 'oldId2',
+            }
+        },
+    };
+    const expected = {
+        'Test': {
+            'newId1': {
+                test: 'oldId3',
+            },
+            'oldId2': {
+                test: 'oldId2',
+            }
+        },
+    };
+    const data = {
+        oldId: 'oldId1',
+        newId: 'newId1',
+    };
+    updateCurrent(current, data);
+    chai.expect(current).to.deep.equal(expected);
+});
+test('updateCurrent data id and m2o id', () => {
+    const current = {
+        'Test': {
+            'oldId1': {
+                test: 'oldId3',
+            },
+            'oldId2': {
+                test: 'oldId2',
+            }
+        },
+    };
+    const expected = {
+        'Test': {
+            'oldId1': {
+                test: 'oldId3',
+            },
+            'newId2': {
+                test: 'newId2',
+            }
+        },
+    };
+    const data = {
+        oldId: 'oldId2',
+        newId: 'newId2',
+    };
+    updateCurrent(current, data);
+    chai.expect(current).to.deep.equal(expected);
+});
+test('updateCurrent m2o id', () => {
+    const current = {
+        'Test': {
+            'oldId1': {
+                test: 'oldId3',
+            },
+            'oldId2': {
+                test: 'oldId2',
+            }
+        },
+    };
+    const expected = {
+        'Test': {
+            'oldId1': {
+                test: 'newId3',
+            },
+            'oldId2': {
+                test: 'oldId2',
+            }
+        },
+    };
+    const data = {
+        oldId: 'oldId3',
+        newId: 'newId3',
+    };
+    updateCurrent(current, data);
+    chai.expect(current).to.deep.equal(expected);
+});
+test('updateCurrents data id', () => {
+    const currents = {
+        'action1': {
+            'Test': {
+                'oldId1': {
+                    test: 'oldId3',
+                },
+                'oldId2': {
+                    test: 'oldId2',
+                },
+            },
+        },
+    };
+    const expected = {
+        'action1': {
+            'Test': {
+                'newId1': {
+                    test: 'oldId3',
+                },
+                'oldId2': {
+                    test: 'oldId2',
+                },
+            },
+        },
+    };
+    const data = {
+        oldId: 'oldId1',
+        newId: 'newId1',
+    };
+    updateCurrents(currents, data);
+    chai.expect(currents).to.deep.equal(expected);
+});
+test('updateCurrents data id and m2o id', () => {
+    const currents = {
+        'action1': {
+            'Test': {
+                'oldId1': {
+                    test: 'oldId3',
+                },
+                'oldId2': {
+                    test: 'oldId2',
+                },
+            },
+        },
+    };
+    const expected = {
+        'action1': {
+            'Test': {
+                'oldId1': {
+                    test: 'oldId3',
+                },
+                'newId2': {
+                    test: 'newId2',
+                },
+            },
+        },
+    };
+    const data = {
+        oldId: 'oldId2',
+        newId: 'newId2',
+    };
+    updateCurrents(currents, data);
+    chai.expect(currents).to.deep.equal(expected);
+});
+test('updateCurrents m2o id', () => {
+    const currents = {
+        'action1': {
+            'Test': {
+                'oldId1': {
+                    test: 'oldId3',
+                },
+                'oldId2': {
+                    test: 'oldId2',
+                },
+            },
+        },
+    };
+    const expected = {
+        'action1': {
+            'Test': {
+                'oldId1': {
+                    test: 'newId3',
+                },
+                'oldId2': {
+                    test: 'oldId2',
+                },
+            },
+        },
+    };
+    const data = {
+        oldId: 'oldId3',
+        newId: 'newId3',
+    };
+    updateCurrents(currents, data);
+    chai.expect(currents).to.deep.equal(expected);
+});
+test('update2Sync data id', () => {
+    const toSync = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: 'oldId1',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId2',
+                    },
+                },
+                {
+                    model: 'Test',
+                    dataIds: ['oldId3'],
+                    type: 'DELETE',
+                },
+                {
+                    model: 'Test',
+                    dataId: 'oldId4',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId4',
+                    },
+                },
+            ],
+        },
+    ];
+    const expected = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: 'newId1',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId2',
+                    },
+                },
+                {
+                    model: 'Test',
+                    dataIds: ['oldId3'],
+                    type: 'DELETE',
+                },
+                {
+                    model: 'Test',
+                    dataId: 'oldId4',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId4',
+                    },
+                },
+            ],
+        },
+    ];
+    const data = {
+        oldId: 'oldId1',
+        newId: 'newId1',
+    };
+    update2Sync(toSync, data);
+    chai.expect(toSync).to.deep.equal(expected);
+});
+test('updateCurrents m2o id', () => {
+    const toSync = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: 'oldId1',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId2',
+                    },
+                },
+                {
+                    model: 'Test',
+                    dataIds: ['oldId3'],
+                    type: 'DELETE',
+                },
+                {
+                    model: 'Test',
+                    dataId: 'oldId4',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId4',
+                    },
+                },
+            ],
+        },
+    ];
+    const expected = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: 'oldId1',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'newId2',
+                    },
+                },
+                {
+                    model: 'Test',
+                    dataIds: ['oldId3'],
+                    type: 'DELETE',
+                },
+                {
+                    model: 'Test',
+                    dataId: 'oldId4',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId4',
+                    },
+                },
+            ],
+        },
+    ];
+    const data = {
+        oldId: 'oldId2',
+        newId: 'newId2',
+    };
+    update2Sync(toSync, data);
+    chai.expect(toSync).to.deep.equal(expected);
+});
+test('updateCurrents data ids', () => {
+    const toSync = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: 'oldId1',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId2',
+                    },
+                },
+                {
+                    model: 'Test',
+                    dataIds: ['oldId3'],
+                    type: 'DELETE',
+                },
+                {
+                    model: 'Test',
+                    dataId: 'oldId4',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId4',
+                    },
+                },
+            ],
+        },
+    ];
+    const expected = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: 'oldId1',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId2',
+                    },
+                },
+                {
+                    model: 'Test',
+                    dataIds: ['newId3'],
+                    type: 'DELETE',
+                },
+                {
+                    model: 'Test',
+                    dataId: 'oldId4',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId4',
+                    },
+                },
+            ],
+        },
+    ];
+    const data = {
+        oldId: 'oldId3',
+        newId: 'newId3',
+    };
+    update2Sync(toSync, data);
+    chai.expect(toSync).to.deep.equal(expected);
+});
+test('updateCurrents data id and m2o id', () => {
+    const toSync = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: 'oldId1',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId2',
+                    },
+                },
+                {
+                    model: 'Test',
+                    dataIds: ['oldId3'],
+                    type: 'DELETE',
+                },
+                {
+                    model: 'Test',
+                    dataId: 'oldId4',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId4',
+                    },
+                },
+            ],
+        },
+    ];
+    const expected = [
+        {
+            uuid: 'uuid',
+            state: 'toSend',
+            data: [
+                {
+                    model: 'Test',
+                    dataId: 'oldId1',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'oldId2',
+                    },
+                },
+                {
+                    model: 'Test',
+                    dataIds: ['oldId3'],
+                    type: 'DELETE',
+                },
+                {
+                    model: 'Test',
+                    dataId: 'newId4',
+                    type: 'CREATE',
+                    data: {
+                        m2o: 'newId4',
+                    },
+                },
+            ],
+        },
+    ];
+    const data = {
+        oldId: 'oldId4',
+        newId: 'newId4',
+    };
+    update2Sync(toSync, data);
+    chai.expect(toSync).to.deep.equal(expected);
+});

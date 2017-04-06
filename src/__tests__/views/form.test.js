@@ -17,13 +17,14 @@ import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
-import {getView, getViewIcon} from '../../views';
+import '../../fields'
+import '../../views'
+import {getView, getViewIcon} from '../../view';
 
 jest.mock('material-ui/internal/Tooltip', () => {
     return () => {return null};
 });
 jest.mock('../../server-call')
-
 test('getViewIcon with Form view', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
@@ -37,14 +38,13 @@ test('getViewIcon with Form view', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
-
 test('Render Form view readonly', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
     let component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getView('Form', '1', {id: '1'})}
+                {getView('Form', '1', {model: 'Test', params: {id: '1'}})}
             </MuiThemeProvider>
         </Provider>
     );
@@ -64,24 +64,28 @@ test('Render Form view readonly', () => {
             'buttonId': '1',
         }],
     });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
     store.dispatch({
-        'type': 'UPDATE_MULTI_DATA',
-        'model': 'Todo',
-        'data': [{
-            'id': '1',
-            'name': "todo 1",
-        }],
+        'type': 'UPDATE_DATA',
+        'model': 'Test',
+        'data': {
+            '1': {
+                'id': '1',
+                'name': "todo 1",
+            },
+        },
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
-
 test('Render Form view readwrite', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
     let component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getView('Form', '1', {id: '1', readonly: false})}
+                {getView('Form', '1', {model: 'Test', params: {id: '1', readonly: false}})}
             </MuiThemeProvider>
         </Provider>
     );
@@ -101,24 +105,28 @@ test('Render Form view readwrite', () => {
             'buttonId': '1',
         }],
     });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
     store.dispatch({
-        'type': 'UPDATE_MULTI_DATA',
-        'model': 'Todo',
-        'data': [{
-            'id': '1',
-            'name': "todo 1",
-        }],
+        'type': 'UPDATE_DATA',
+        'model': 'Test',
+        'data': {
+            '1': {
+                'id': '1',
+                'name': "todo 1",
+            },
+        },
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
-
 test('Render Form view without button', () => {
     const store = createStore(combineReducers(reducers));
     updateGlobal();
     let component = renderer.create(
         <Provider store={store}>
             <MuiThemeProvider>
-                {getView('Form', '1', {id: '1', readonly: false})}
+                {getView('Form', '1', {model: 'Test', params: {id: '1'}, creatable: false, editable: false, deletable: false})}
             </MuiThemeProvider>
         </Provider>
     );
@@ -134,13 +142,18 @@ test('Render Form view without button', () => {
         'onClose': '2',
         'template': '<div><field name="name" widget="String" label="Label"></field></div>',
     });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
     store.dispatch({
-        'type': 'UPDATE_MULTI_DATA',
-        'model': 'Todo',
-        'data': [{
-            'id': '1',
-            'name': "todo 1",
-        }],
+        'type': 'UPDATE_DATA',
+        'model': 'Test',
+        'data': {
+            '1': {
+                'id': '1',
+                'name': "todo 1",
+            },
+        },
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });

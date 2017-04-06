@@ -21,7 +21,7 @@ test('multi action 1', () => {
     )).to.deep.equal(expected);
 });
 test('multi action 2', () => {
-    const expected = Object.assign({}, defaultState, {'Model': {'1': {id: '1', other: 'Test'}}});
+    const expected = Object.assign({}, defaultState, {'Model': {'1': {id: '1', other: 'Test', title: 'Test'}}});
     chai.expect(reducer(
         Object.assign({}, defaultState, {'Model': {'1': {id: '1', title: 'Test'}}}),
         {type: 'UPDATE_DATA', model: 'Model', data: {'1': {id: '1', other: 'Test'}}}

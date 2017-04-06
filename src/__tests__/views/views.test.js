@@ -17,7 +17,9 @@ import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
-import {Unknown, getClientView, getViewIcon, getView} from '../../views';
+import '../../fields'
+import {Unknown} from '../../views';
+import {getClientView, getViewIcon, getView} from '../../view';
 import plugin from '../../plugin';
 
 test('Render Unknown View with viewName', () => {

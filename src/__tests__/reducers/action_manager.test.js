@@ -60,3 +60,36 @@ test('get clear all', () => {
         {type: 'CLEAR_ACTION_MANAGER'}
     )).to.deep.equal(defaultState);
 });
+
+test('remove action 1', () => {
+    const actions = [1],
+          action_data = {},
+          action = {type: 'UPDATE_ACTION_MANAGER_REMOVE_FROM_ACTION', actionId: 1},
+          expected = {actions: [], action_data};
+    const result = reducer({actions, action_data}, action)
+    chai.expect(result).to.deep.equal(expected);
+});
+test('remove action 2', () => {
+    const actions = [1, 2, 3],
+          action_data = {},
+          action = {type: 'UPDATE_ACTION_MANAGER_REMOVE_FROM_ACTION', actionId: 3},
+          expected = {actions: [1, 2], action_data};
+    const result = reducer({actions, action_data}, action)
+    chai.expect(result).to.deep.equal(expected);
+});
+test('remove action 3', () => {
+    const actions = [1, 2, 3],
+          action_data = {},
+          action = {type: 'UPDATE_ACTION_MANAGER_REMOVE_FROM_ACTION', actionId: 2},
+          expected = {actions: [1], action_data};
+    const result = reducer({actions, action_data}, action)
+    chai.expect(result).to.deep.equal(expected);
+});
+test('remove action 4', () => {
+    const actions = [1, 2, 3],
+          action_data = {},
+          action = {type: 'UPDATE_ACTION_MANAGER_REMOVE_FROM_ACTION', actionId: 1},
+          expected = {actions: [], action_data};
+    const result = reducer({actions, action_data}, action)
+    chai.expect(result).to.deep.equal(expected);
+});

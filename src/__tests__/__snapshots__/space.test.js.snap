@@ -176,9 +176,6 @@ exports[`Render Space with default value from redux store with spaceId 1`] = `
         }
       />
     </div>
-    <div
-      style={Object {}}
-    />
   </div>
 </div>
 `;

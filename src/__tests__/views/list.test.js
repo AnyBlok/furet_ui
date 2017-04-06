@@ -17,7 +17,9 @@ import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
-import {getView, getViewIcon} from '../../views';
+import '../../fields'
+import '../../views'
+import {getView, getViewIcon} from '../../view';
 
 jest.mock('material-ui/internal/Tooltip', () => {
     return () => {return null};
@@ -79,6 +81,7 @@ test('Render List view selectable', () => {
             'buttonId': '2',
         }],
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     store.dispatch({
         'type': 'UPDATE_DATA',
@@ -155,9 +158,10 @@ test('Render List view selectable without button', () => {
             'label': 'Label',
         }],
     });
+    tree = component.toJSON();
     expect(tree).toMatchSnapshot();
     store.dispatch({
-        'type': 'UPDATE_MULTI_DATA',
+        'type': 'UPDATE_DATA',
         'model': 'Todo',
         'data': {
             '1': {

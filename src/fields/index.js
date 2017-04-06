@@ -24,6 +24,8 @@ import './color';
 import './text';
 import './boolean';
 import './json';
+import './x2one';
+import './x2many';
 
 /**
  * Unknown field, used only if the wanted field is not available
@@ -31,20 +33,3 @@ import './json';
 plugin.set(['field'], {Unknown: (props) => {
     return <div>{props.value}</div>
 }});
-
-/**
- * return the component for viewType and fieldType
-**/
-export const getField = (viewType, fieldType, attribs, value) => {
-    let field = plugin.get(['field', viewType, fieldType]);
-    if (!field) {
-        field = plugin.get(['field', 'Unknown']);
-        console.log('getField', viewType, fieldType, attribs, value)
-    }
-    const id = 'view-type-' + viewType + '-field_type-' + fieldType + '-field-name-' + (attribs.name || '');
-    return React.createElement(field, Object.assign({id}, attribs, {value}));
-}
-
-export default {
-    getField,
-}

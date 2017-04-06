@@ -12,6 +12,7 @@ export const defaultState = {
     current: {},
     toSync: [],
     computed: {},
+    currents: {},
 }
 
 export const current2Sync = (current, toSync, uuid, model, dataId, newData, fields) => {
@@ -36,15 +37,24 @@ export const current2Sync = (current, toSync, uuid, model, dataId, newData, fiel
             if (modelName == model && dataId == id) {
                 // do nothing, because already done
             } else {
-                const _fields = current[modelName][id].__fields;
-                delete current[modelName][id].__fields;
-                newSync.data.push({
-                    model: modelName,
-                    dataId: id,
-                    type: (new RegExp('^new-.*')).test(id) ? 'CREATE' : 'UPDATE',
-                    fields: _fields,
-                    data: current[modelName][id],
-                });
+                const data = current[modelName][id];
+                if (data == 'DELETED'){
+                    newSync.data.push({
+                        model: modelName,
+                        dataIds: [id],
+                        type: 'DELETE',
+                    });
+                }else {
+                    const _fields = current[modelName][id].__fields;
+                    delete current[modelName][id].__fields;
+                    newSync.data.push({
+                        model: modelName,
+                        dataId: id,
+                        type: (new RegExp('^new-.*')).test(id) ? 'CREATE' : 'UPDATE',
+                        fields: _fields,
+                        data,
+                    });
+                }
             }
         });
     });
@@ -102,10 +112,53 @@ export const changeState = (toSync, uuid, state) => {
     });
 }
 
+export const updateCurrent = (current, data) => {
+    const current2 = Object.assign({}, current);
+    _.each(_.keys(current2), model => {
+        current[model] = Object.assign({}, current[model])
+        _.each(_.keys(current2[model]), dataId => {
+            let _data = Object.assign({}, current2[model][dataId]);
+            _.each(_.keys(_data), fieldname => {
+                if (_data[fieldname] == data.oldId) _data[fieldname] = data.newId;
+            });
+            if (dataId == data.oldId) {
+                current[model][data.newId] = _data;
+                delete current[model][data.oldId];
+            } else {
+                current[model][dataId] = _data;
+            }
+        });
+    });
+}
+
+export const updateCurrents = (currents, data) => {
+    _.each(_.keys(currents), actionId => {
+        updateCurrent(currents[actionId], data);
+    });
+}
+
+export const update2Sync = (toSync, data) => {
+    _.each(toSync, toS => {
+        _.each(toS.data, _data => {
+            if (_data.dataId == data.oldId) _data.dataId = data.newId;
+            if (_data.dataIds) {
+                _data.dataIds = _.map(_data.dataIds, dataId => {
+                    if (dataId == data.oldId) return data.newId;
+                    return dataId;
+                });
+            }
+            _.each(_.keys(_data.data), fieldname => {
+                if (_data.data[fieldname] == data.oldId) _data.data[fieldname] = data.newId;
+            });
+        });
+    });
+}
+
 export const change = (state = defaultState, action) => {
     const current = Object.assign({}, state.current),
           toSync = state.toSync.slice(0),
-          computed = {};
+          computed = {},
+          currents = Object.assign({}, state.currents);
     switch (action.type) {
         case 'ON_CHANGE':
             if (current[action.model] == undefined) current[action.model] = {};
@@ -113,9 +166,21 @@ export const change = (state = defaultState, action) => {
             if (current[action.model][action.dataId] == undefined) current[action.model][action.dataId] = {};
             else current[action.model][action.dataId] = Object.assign({}, current[action.model][action.dataId]);
             current[action.model][action.dataId][action.fieldname] = action.newValue;
+            if (action.fields) {
+                current[action.model][action.dataId]['__fields'] = action.fields;
+            }
+            return Object.assign({}, state, {current});
+        case 'ON_CHANGE_DELETE':
+            if (current[action.model] == undefined) current[action.model] = {};
+            else current[action.model] = Object.assign({}, current[action.model]);
+            _.each(action.dataIds, dataId => {
+                current[action.model][dataId] = 'DELETED'
+            });
             return Object.assign({}, state, {current});
         case 'CLEAR_CHANGE':
             return Object.assign({}, state, {current: {}});
+        case 'CLEAR_ALL_CHANGES':
+            return Object.assign({}, state, {current: {}, currents: {}});
         case 'ON_SAVE':
             current2Sync(current, toSync, action.uuid, action.model, action.dataId, action.newData, action.fields);
             toSync2computed(toSync, computed)
@@ -132,6 +197,26 @@ export const change = (state = defaultState, action) => {
             let _toSync = removeUuid(toSync, action.uuid);
             toSync2computed(_toSync, computed)
             return Object.assign({}, state, {toSync: _toSync, computed});
+        case 'ADD_CURRENTS':
+            const c = {};
+            c[action.actionId] = current;
+            Object.assign(currents, c);
+            return Object.assign({}, state, {current: {}, currents});
+        case 'REVERT_CHANGE':
+            const prev_current = currents[action.actionId];
+            delete currents[action.actionId];
+            _.each(action.actionIds, actionId => {
+                delete currents[actionId];
+            });
+            return Object.assign({}, state, {current: prev_current, currents});
+        case 'UPDATE_NEW_ID':
+            _.each(action.data, data => {
+                updateCurrent(current, data);
+                updateCurrents(currents, data);
+                update2Sync(toSync, data);
+            });
+            toSync2computed(toSync, computed)
+            return {current, toSync, computed, currents};
         default:
             return state
     }
