@@ -332,6 +332,7 @@ def _getInitOptionnalData():
                         'fields': {
                             'common': {
                                 'required': 'Ce champs est requis',
+                                'no-found': 'Aucune donnée trouvée',
                             },
                             'date': {
                                 'invalid': 'Date invalide',
@@ -349,12 +350,6 @@ def _getInitOptionnalData():
                             },
                             'json': {
                                 'invalid': 'Format JSON invalide',
-                            },
-                            'many2many-tags': {
-                                'no-found': 'Aucune donnée trouvée',
-                            },
-                            'x2one': {
-                                'no-found': 'Aucune donnée trouvée',
                             },
                         },
                     },
@@ -824,15 +819,15 @@ def getView3():
                     </field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="number" widget="Float" label="Number" required="1"></field>
+                </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field
                         name="creation_date"
                         widget="DateTime"
                         label="Creation date"
                         required="1">
                     </field>
-                </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="number" widget="Float" label="Number" required="1"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="url" widget="URL" label="URL" required="1"></field>
@@ -1132,7 +1127,7 @@ def getLoginData():
     data = [
         {
             'type': 'UPDATE_GLOBAL',
-            'spaceId': '2',
+            'spaceId': '1',
         },
         {
             'type': 'UPDATE_RIGHT_MENU',
@@ -1188,7 +1183,7 @@ def getLoginData():
             ],
         },
     ]
-    data.extend(getSpace2())
+    data.extend(getSpace1())
     return superDumps(data)
 
 

@@ -53,7 +53,7 @@ class M2MObj extends React.Component {
                 onInputChange={this.onInputChange.bind(this)}
                 onOpen={this.onOpen.bind(this)}
                 multi={true}
-                noResultsText={translate('furetUI.fields.many2many-tags.no-found', 
+                noResultsText={translate('furetUI.fields.common.no-found', 
                                          {fallback: 'No results found'})}
             />
         );
