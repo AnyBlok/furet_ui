@@ -16,6 +16,10 @@ import {getField} from '../../field';
 
 const selections = '[["Test", "New"]]'
 
+jest.mock('react-select', () => {
+    return (props) => {return <div {...props}></div>}
+})
+
 test('getField for List', () => {
     const component = renderer.create(getField('List', 'Selection', {selections}, 'Test'));
     let tree = component.toJSON();

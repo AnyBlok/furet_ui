@@ -10,30 +10,21 @@ exports[`getField for Form 1`] = `
   >
      
   </label>
-  <div>
-    <input
-      className="form-control"
-      disabled={true}
-      id="view-type-Form-field_type-Selection-field-name-"
-      onChange={[Function]}
-      onTouchTap={[Function]}
-      style={
+  <div
+    disabled={undefined}
+    id="view-type-Form-field_type-Selection-field-name-"
+    noResultsText="No results found"
+    onChange={[Function]}
+    options={
+      Array [
         Object {
-          "backgroundColor": "white",
-          "cursor": "pointer",
-        }
-      }
-      type="text"
-      value="New"
-    />
-    <div
-      style={
-        Object {
-          "display": "none",
-        }
-      }
-    />
-  </div>
+          "label": "New",
+          "value": "Test",
+        },
+      ]
+    }
+    value="Test"
+  />
 </div>
 `;
 
@@ -47,23 +38,21 @@ exports[`getField for Form readonly 1`] = `
   >
     Test
   </label>
-  <div>
-    <input
-      className="form-control"
-      disabled={true}
-      id="view-type-Form-field_type-Selection-field-name-"
-      onChange={[Function]}
-      type="text"
-      value="New"
-    />
-    <div
-      style={
+  <div
+    disabled={true}
+    id="view-type-Form-field_type-Selection-field-name-"
+    noResultsText="No results found"
+    onChange={[Function]}
+    options={
+      Array [
         Object {
-          "display": "none",
-        }
-      }
-    />
-  </div>
+          "label": "New",
+          "value": "Test",
+        },
+      ]
+    }
+    value="Test"
+  />
 </div>
 `;
 
@@ -81,30 +70,21 @@ exports[`getField for Form required 1`] = `
   >
     Test
   </label>
-  <div>
-    <input
-      className="form-control"
-      disabled={true}
-      id="view-type-Form-field_type-Selection-field-name-"
-      onChange={[Function]}
-      onTouchTap={[Function]}
-      style={
+  <div
+    disabled={undefined}
+    id="view-type-Form-field_type-Selection-field-name-"
+    noResultsText="No results found"
+    onChange={[Function]}
+    options={
+      Array [
         Object {
-          "backgroundColor": "white",
-          "cursor": "pointer",
-        }
-      }
-      type="text"
-      value="New"
-    />
-    <div
-      style={
-        Object {
-          "display": "none",
-        }
-      }
-    />
-  </div>
+          "label": "New",
+          "value": "Test",
+        },
+      ]
+    }
+    value="Test"
+  />
 </div>
 `;
 
@@ -122,30 +102,21 @@ exports[`getField for Form required with empty value 1`] = `
   >
     Test
   </label>
-  <div>
-    <input
-      className="form-control"
-      disabled={true}
-      id="view-type-Form-field_type-Selection-field-name-"
-      onChange={[Function]}
-      onTouchTap={[Function]}
-      style={
+  <div
+    disabled={undefined}
+    id="view-type-Form-field_type-Selection-field-name-"
+    noResultsText="No results found"
+    onChange={[Function]}
+    options={
+      Array [
         Object {
-          "backgroundColor": "white",
-          "cursor": "pointer",
-        }
-      }
-      type="text"
-      value=" --- "
-    />
-    <div
-      style={
-        Object {
-          "display": "none",
-        }
-      }
-    />
-  </div>
+          "label": "New",
+          "value": "Test",
+        },
+      ]
+    }
+    value=""
+  />
   <div>
     <span
       style={

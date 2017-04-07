@@ -10,9 +10,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import React from 'react';
 import plugin from '../plugin';
 import {BaseList, BaseThumbnail, BaseForm} from './base';
-import Popover from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
+import Select from 'react-select';
 import translate from 'counterpart';
 
 export class SelectionList extends BaseList {
@@ -32,70 +30,25 @@ export class SelectionThumbnail extends BaseThumbnail {
     }
 }
 export class SelectionForm extends BaseForm {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false,
-        };
-    }
-    getValue () {
-        const selections = {}
-        _.each(JSON.parse(this.props.selections || '[]'), s => {
-            selections[s[0]] = s[1];
-        })
-        return selections[this.props.value] || ' --- ';
+    onChange (val) {
+        let value = null;
+        if (Array.isArray(val)) {
+            // to nothing because the value is removed
+        } else if (val) {
+            value = val.value;
+        }
+        this.props.onChange(this.props.name, value);
     }
     getInputProps () {
         const props = super.getInputProps();
-        props.type = 'text';
-        props.disabled = true;
-        if (!this.props.readonly) {
-            props.onTouchTap = this.handleTouchTap.bind(this);
-            props.style = {cursor: 'pointer', backgroundColor: 'white'};
-        }
+        delete props.className;
+        props.options = _.map(JSON.parse(this.props.selections || '[]'), s => ({value: s[0], label: s[1]}));
+        props.noResultsText = translate('furetUI.fields.common.no-found', {fallback: 'No results found'});
         return props;
     }
-    handleTouchTap (event) {
-        event.preventDefault();
-        this.setState({open: true, anchorEl: event.currentTarget});
-    }
-    handleRequestClose () {
-        this.setState({open: false});
-    }
-    updateThisData () {
-        super.updateThisData();
-        if (this.required && !this.props.readonly && this.value == ' --- ') {
-            this.error = translate('furetUI.fields.common.required', 
-                                   {fallback: 'This field is required'});
-        }
-    }
     getInput () {
-        return (
-            <div>
-                {super.getInput()}
-                <Popover
-                    open={this.state.open}
-                    anchorEl={this.state.anchorEl}
-                    anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-                    targetOrigin={{horizontal: 'left', vertical: 'top'}}
-                    onRequestClose={this.handleRequestClose.bind(this)}
-                >
-                    <Menu>
-                        {_.map(JSON.parse(this.props.selections || '[]'), s => (
-                            <MenuItem 
-                                key={s[0]} 
-                                value={s[0]} 
-                                primaryText={s[1]} 
-                                onClick={() => {
-                                    this.props.onChange(this.props.name, s[0]);
-                                    this.setState({open: false});
-                                }}
-                            />
-                        ))}
-                    </Menu>
-                </Popover>
-            </div>
-        );
+        const props = this.getInputProps();
+        return <Select {...props} onChange={this.onChange.bind(this)}/>
     }
 }
 
