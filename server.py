@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import (
     create_engine, Column, Integer, String, DateTime, Float, Text, Time,
-    Boolean, or_, ForeignKey, Table
+    Boolean, or_, ForeignKey, Table, LargeBinary
 )
 from sqlalchemy.orm import relationship, sessionmaker
 from datetime import datetime, time
@@ -31,6 +31,9 @@ class Test(Base):
     bool = Column(Boolean)
     time = Column(Time)
     json = Column(Text)
+    file = Column(LargeBinary)
+    filename = Column(String)
+    filesize = Column(Integer)
 
     @classmethod
     def insert(cls, data, mapping):
@@ -680,16 +683,18 @@ def getView1():
                 'label': 'Time',
             },
             {
-                'name': 'json',
-                'type': 'Json',
-                'label': 'Json',
+                'name': 'file',
+                'type': 'LargeBinary',
+                'label': 'File',
+                'filename': 'filename',
+                'filesize': 'filesize',
             },
         ],
         'search': [
             {
                 'key': 'name',
                 'label': 'Label',
-                "default": 'test',
+                "default": 'todo',
             },
             {
                 'key': 'creation_date',
@@ -709,7 +714,7 @@ def getView1():
             },
         ],
         'fields': ["id", "name", "state", "creation_date", "number",
-                   "color", "text", "time", "json"],
+                   "color", "text", "time", "file", 'filename', 'filesize'],
     }
 
 
@@ -724,7 +729,7 @@ def getView2():
             {
                 'key': 'name',
                 'label': 'Label',
-                "default": 'test',
+                "default": 'todo',
             },
             {
                 'key': 'creation_date',
@@ -772,7 +777,13 @@ def getView2():
                     <field name="time" widget="Time" label="Time"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="json" widget="Json" label="JSON" required="1"></field>
+                    <field name="file"
+                           widget="LargeBinary"
+                           label="File"
+                           filename="filename"
+                           filesize="filesize"
+                    >
+                    </field>
                 </div>
             </div>
         ''',
@@ -784,7 +795,8 @@ def getView2():
         ],
         'fields': [
             "id", "name", "state", "creation_date", "number", "url",
-            "uuid", "password", "color", "text", "bool", "time", "json",
+            "uuid", "password", "color", "text", "bool", "time", 'json', "file",
+            "filename", "filesize",
         ],
     }
 
@@ -850,6 +862,16 @@ def getView3():
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="time" widget="Time" label="Time"></field>
                 </div>
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <field name="file"
+                           widget="LargeBinary"
+                           label="File"
+                           filename="filename"
+                           filesize="filesize"
+                           required="1"
+                    >
+                    </field>
+                </div>
             </div>
         ''',
         'buttons': [
@@ -861,6 +883,7 @@ def getView3():
         'fields': [
             "id", "name", "json", "state", "creation_date", "number",
             "url", "uuid", "password", "color", "text", "bool", "time",
+            'file', 'filename', 'filesize',
         ],
     }
 

@@ -26,6 +26,7 @@ import './boolean';
 import './json';
 import './x2one';
 import './x2many';
+import './largebinary';
 
 /**
  * Unknown field, used only if the wanted field is not available
