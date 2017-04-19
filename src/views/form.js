@@ -145,7 +145,7 @@ export class Form extends Base {
                                 self.props.onChange(self.state.id, fieldname, newValue, self.props.fields);
                             }
                         }),
-                        data[node.attribs.name] || null
+                        data
                     );
                 }
             }, 

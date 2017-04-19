@@ -46,22 +46,22 @@ export class Thumbnail extends Multi {
     **/
     renderTemplate (template, thumbnailId) {
         const self = this;
+        const data = Object.assign(
+            {}, 
+            self.props.data && self.props.data[thumbnailId],
+            self.props.computed && self.props.computed[thumbnailId],
+            self.props.change[thumbnailId]);
         const processingInstructions = [
             {
                 shouldProcessNode: function(node) {
                     return node.name === 'field';
                 },
                 processNode: function(node, children) {
-                    const data = Object.assign(
-                        {}, 
-                        self.props.data && self.props.data[thumbnailId],
-                        self.props.computed && self.props.computed[thumbnailId],
-                        self.props.change[thumbnailId]);
                     return self.getField(
                         'Thumbnail', 
                         node.attribs.widget, 
                         node.attribs, 
-                        data[node.attribs.name]
+                        data
                     );
                 }
             }, 

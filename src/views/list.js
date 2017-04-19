@@ -124,7 +124,7 @@ export class List extends Multi {
                                 'List', 
                                 header.type, 
                                 header,
-                                data[header.name]
+                                data
                             )}
                         </div>
                     </TableRowColumn>

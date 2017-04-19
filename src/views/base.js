@@ -34,10 +34,11 @@ export default class extends React.Component {
     /**
      * Render a field for the view
     **/
-    getField(viewType, fieldType, attribs, value) {
+    getField(viewType, fieldType, attribs, data) {
         attribs.currentActionId = this.props.actionId;
         attribs.currentModel = this.props.model;
-        return getField(viewType, fieldType, attribs, value);
+        attribs.data = data;
+        return getField(viewType, fieldType, attribs, data[attribs.name] || null);
     }
     /**
      * Render template html2react for template come from the server
