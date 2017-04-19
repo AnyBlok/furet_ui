@@ -11,7 +11,6 @@ import React from 'react';
 import Multi from './multi';
 import plugin from '../plugin';
 import NavigationApps from 'material-ui/svg-icons/navigation/apps';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
 import {processNodeDefinitions} from './base';
 
 /**
@@ -86,11 +85,12 @@ export class Thumbnail extends Multi {
                 <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
                     key={thumbnailId}
                 >
-                    <Card 
+                    <div 
+                        className="thumbnail"
                         onClick={() => this.onEntrySelect(thumbnailId)}
                     >
                         {this.renderTemplate(this.props.template, thumbnailId)}
-                    </Card>
+                    </div>
                 </div>
             );
         }
