@@ -195,6 +195,8 @@ The list are:
 * Float
 * Integer
 * JSON
+* LargeBinary
+* LargeBinaryPreview
 * Password
 * Selection
 * Sequence
