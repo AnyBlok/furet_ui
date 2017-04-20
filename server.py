@@ -684,7 +684,7 @@ def getView1():
             },
             {
                 'name': 'file',
-                'type': 'LargeBinary',
+                'type': 'LargeBinaryPreview',
                 'label': 'File',
                 'filename': 'filename',
                 'filesize': 'filesize',
@@ -778,7 +778,7 @@ def getView2():
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="file"
-                           widget="LargeBinary"
+                           widget="LargeBinaryPreview"
                            label="File"
                            filename="filename"
                            filesize="filesize"
@@ -864,7 +864,7 @@ def getView3():
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="file"
-                           widget="LargeBinary"
+                           widget="LargeBinaryPreview"
                            label="File"
                            filename="filename"
                            filesize="filesize"

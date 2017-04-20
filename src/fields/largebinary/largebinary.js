@@ -11,6 +11,7 @@ import React from 'react';
 import plugin from '../../plugin';
 import {BaseList, BaseThumbnail, BaseForm} from '../base';
 import translate from 'counterpart';
+import {upLoad} from './index';
 
 const fileName = (filename, filesize) => {
     if (filename) {
@@ -64,17 +65,7 @@ export class LargeBinaryThumbnail extends BaseThumbnail {
 }
 export class LargeBinaryForm extends BaseForm {
     onUpload (event) {
-        const self = this,
-              file = event.target.files[0];
-        if (file) {
-            const FR= new FileReader();
-            FR.onload = function(e) {
-                self.props.onChange(self.props.name, e.target.result);
-                if (self.props.filename) self.props.onChange(self.props.filename, file.name);
-                if (self.props.filesize) self.props.onChange(self.props.filesize, file.size);
-            };
-            FR.readAsDataURL(file);
-        }
+        upLoad(event, this);
     }
     getInputProps () {
         const props = super.getInputProps();
