@@ -1445,7 +1445,6 @@ def updateData():
     finally:
         session.close()
 
-    print(_data)
     return superDumps(_data)
 
 

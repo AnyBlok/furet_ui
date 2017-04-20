@@ -64,7 +64,15 @@ exports[`getField for Form 1`] = `
             />
           </div>
         </li>
-        <li />
+        <li>
+          <a
+            onClick={[Function]}
+          >
+            <i
+              className="fa fa-trash fa-lg"
+            />
+          </a>
+        </li>
         <li>
           <a
             download=""
@@ -255,7 +263,15 @@ exports[`getField for Form required 1`] = `
             />
           </div>
         </li>
-        <li />
+        <li>
+          <a
+            onClick={[Function]}
+          >
+            <i
+              className="fa fa-trash fa-lg"
+            />
+          </a>
+        </li>
         <li>
           <a
             download=""
@@ -388,7 +404,15 @@ exports[`getField for Form with filename 1`] = `
             />
           </div>
         </li>
-        <li />
+        <li>
+          <a
+            onClick={[Function]}
+          >
+            <i
+              className="fa fa-trash fa-lg"
+            />
+          </a>
+        </li>
         <li>
           <a
             download=""
@@ -506,7 +530,15 @@ exports[`getField for Form with filename 3 1`] = `
             />
           </div>
         </li>
-        <li />
+        <li>
+          <a
+            onClick={[Function]}
+          >
+            <i
+              className="fa fa-trash fa-lg"
+            />
+          </a>
+        </li>
         <li>
           <a
             download="File name"

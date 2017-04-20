@@ -46,16 +46,30 @@ exports[`getField for Form 1`] = `
       value=""
     />
     
-    <a
+    <div
       className="input-group-addon"
-      download=""
-      href="Test"
-      target="_blank"
     >
-      <i
-        className="fa fa-download fa-lg"
-      />
-    </a>
+      <a
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-trash fa-lg"
+        />
+      </a>
+    </div>
+    <div
+      className="input-group-addon"
+    >
+      <a
+        download=""
+        href="Test"
+        target="_blank"
+      >
+        <i
+          className="fa fa-download fa-lg"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -107,6 +121,7 @@ exports[`getField for Form 2 1`] = `
     />
     
     
+    
   </div>
 </div>
 `;
@@ -132,16 +147,19 @@ exports[`getField for Form readonly 1`] = `
       value=""
     />
     
-    <a
+    <div
       className="input-group-addon"
-      download=""
-      href="Test"
-      target="_blank"
     >
-      <i
-        className="fa fa-download fa-lg"
-      />
-    </a>
+      <a
+        download=""
+        href="Test"
+        target="_blank"
+      >
+        <i
+          className="fa fa-download fa-lg"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -215,16 +233,30 @@ exports[`getField for Form required 1`] = `
       value=""
     />
     
-    <a
+    <div
       className="input-group-addon"
-      download=""
-      href="Test"
-      target="_blank"
     >
-      <i
-        className="fa fa-download fa-lg"
-      />
-    </a>
+      <a
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-trash fa-lg"
+        />
+      </a>
+    </div>
+    <div
+      className="input-group-addon"
+    >
+      <a
+        download=""
+        href="Test"
+        target="_blank"
+      >
+        <i
+          className="fa fa-download fa-lg"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -278,6 +310,7 @@ exports[`getField for Form required with empty value 1`] = `
       type="text"
       value=""
     />
+    
     
     
   </div>
@@ -341,16 +374,30 @@ exports[`getField for Form with filename 1`] = `
       value=""
     />
     
-    <a
+    <div
       className="input-group-addon"
-      download=""
-      href="Test"
-      target="_blank"
     >
-      <i
-        className="fa fa-download fa-lg"
-      />
-    </a>
+      <a
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-trash fa-lg"
+        />
+      </a>
+    </div>
+    <div
+      className="input-group-addon"
+    >
+      <a
+        download=""
+        href="Test"
+        target="_blank"
+      >
+        <i
+          className="fa fa-download fa-lg"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -400,6 +447,7 @@ exports[`getField for Form with filename 2 1`] = `
       type="text"
       value=""
     />
+    
     
     
   </div>
@@ -452,16 +500,30 @@ exports[`getField for Form with filename 3 1`] = `
       value="File name"
     />
     
-    <a
+    <div
       className="input-group-addon"
-      download="File name"
-      href="Test"
-      target="_blank"
     >
-      <i
-        className="fa fa-download fa-lg"
-      />
-    </a>
+      <a
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-trash fa-lg"
+        />
+      </a>
+    </div>
+    <div
+      className="input-group-addon"
+    >
+      <a
+        download="File name"
+        href="Test"
+        target="_blank"
+      >
+        <i
+          className="fa fa-download fa-lg"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -511,6 +573,7 @@ exports[`getField for Form with filename 4 1`] = `
       type="text"
       value="File name"
     />
+    
     
     
   </div>
@@ -567,16 +630,30 @@ exports[`getField for Form with filename and filesize 1`] = `
     >
       1234
     </span>
-    <a
+    <div
       className="input-group-addon"
-      download="File name"
-      href="Test"
-      target="_blank"
     >
-      <i
-        className="fa fa-download fa-lg"
-      />
-    </a>
+      <a
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-trash fa-lg"
+        />
+      </a>
+    </div>
+    <div
+      className="input-group-addon"
+    >
+      <a
+        download="File name"
+        href="Test"
+        target="_blank"
+      >
+        <i
+          className="fa fa-download fa-lg"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -632,6 +709,7 @@ exports[`getField for Form with filename and filesize 2 1`] = `
       1234
     </span>
     
+    
   </div>
 </div>
 `;
@@ -661,16 +739,19 @@ exports[`getField for Form with filename and filesize and readonly 1`] = `
     >
       1234
     </span>
-    <a
+    <div
       className="input-group-addon"
-      download="File name"
-      href="Test"
-      target="_blank"
     >
-      <i
-        className="fa fa-download fa-lg"
-      />
-    </a>
+      <a
+        download="File name"
+        href="Test"
+        target="_blank"
+      >
+        <i
+          className="fa fa-download fa-lg"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -740,16 +821,30 @@ exports[`getField for Form with filesize 1`] = `
       value=""
     />
     
-    <a
+    <div
       className="input-group-addon"
-      download=""
-      href="Test"
-      target="_blank"
     >
-      <i
-        className="fa fa-download fa-lg"
-      />
-    </a>
+      <a
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-trash fa-lg"
+        />
+      </a>
+    </div>
+    <div
+      className="input-group-addon"
+    >
+      <a
+        download=""
+        href="Test"
+        target="_blank"
+      >
+        <i
+          className="fa fa-download fa-lg"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -799,6 +894,7 @@ exports[`getField for Form with filesize 2 1`] = `
       type="text"
       value=""
     />
+    
     
     
   </div>
@@ -855,16 +951,30 @@ exports[`getField for Form with filesize 3 1`] = `
     >
       1234
     </span>
-    <a
+    <div
       className="input-group-addon"
-      download=""
-      href="Test"
-      target="_blank"
     >
-      <i
-        className="fa fa-download fa-lg"
-      />
-    </a>
+      <a
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-trash fa-lg"
+        />
+      </a>
+    </div>
+    <div
+      className="input-group-addon"
+    >
+      <a
+        download=""
+        href="Test"
+        target="_blank"
+      >
+        <i
+          className="fa fa-download fa-lg"
+        />
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -919,6 +1029,7 @@ exports[`getField for Form with filesize 4 1`] = `
     >
       1234
     </span>
+    
     
   </div>
 </div>

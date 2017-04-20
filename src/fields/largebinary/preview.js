@@ -124,6 +124,14 @@ export class LargeBinaryPreviewForm extends BaseForm {
                         }
                         {this.value && !props.disabled &&
                          <li>
+                            <a onClick={() => {
+                                   this.props.onChange(this.props.name, null);
+                                   if (this.props.filename) this.props.onChange(this.props.filename, null);
+                                   if (this.props.filesize) this.props.onChange(this.props.filesize, null);
+                               }}
+                            >
+                                <i className='fa fa-trash fa-lg' />
+                            </a>
                          </li>
                         }
                         {this.value &&

@@ -118,14 +118,27 @@ export class LargeBinaryForm extends BaseForm {
                     {filesize}
                  </span>
                 }
+                {this.value && !props.disabled &&
+                 <div className="input-group-addon">
+                     <a onClick={() => {
+                            this.props.onChange(this.props.name, null);
+                            if (this.props.filename) this.props.onChange(this.props.filename, null);
+                            if (this.props.filesize) this.props.onChange(this.props.filesize, null);
+                        }}
+                     >
+                         <i className='fa fa-trash fa-lg' />
+                     </a>
+                 </div>
+                }
                 {this.value &&
-                 <a href={this.value}
-                    className="input-group-addon"
-                    download={filename || ''}
-                    target={"_blank"}
-                 >
-                     <i className='fa fa-download fa-lg' />
-                 </a>
+                 <div className="input-group-addon">
+                     <a href={this.value}
+                        download={filename || ''}
+                        target={"_blank"}
+                     >
+                         <i className='fa fa-download fa-lg' />
+                     </a>
+                 </div>
                 }
             </div>
         )
