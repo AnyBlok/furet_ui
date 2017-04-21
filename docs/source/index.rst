@@ -23,3 +23,4 @@ Welcome to FuretUI's documentation!
    server.rst
    reducer.rst
    LICENSE.rst
+   template.rst
