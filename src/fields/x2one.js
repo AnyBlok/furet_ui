@@ -126,7 +126,7 @@ class X2OObj extends React.Component {
                 onChange={this.onChange.bind(this)}
                 onInputChange={this.onInputChange.bind(this)}
                 onOpen={this.onOpen.bind(this)}
-                noResultsText={translate('furetUI.fields.x2one.no-found', 
+                noResultsText={translate('furetUI.fields.common.no-found', 
                                          {fallback: 'No results found'})}
             />
         );

@@ -360,7 +360,7 @@ exports[`getField for Form 1`] = `
                       6
                     </td>
                     <td
-                      className="day new today"
+                      className="day new"
                       onClick={[Function]}
                     >
                       7
@@ -801,7 +801,7 @@ exports[`getField for Form required 1`] = `
                       6
                     </td>
                     <td
-                      className="day new today"
+                      className="day new"
                       onClick={[Function]}
                     >
                       7

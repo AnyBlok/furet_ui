@@ -149,6 +149,15 @@ export const getView = (viewType, viewId, params) => {
                     fieldname: params.fieldName,
                     newValue,
                 });
+                if (params.many2oneField) {
+                    dispatch({
+                        type: 'ON_CHANGE',
+                        model: params.model,
+                        dataId: newId,
+                        fieldname: params.many2oneField,
+                        newValue: params.dataId,
+                    });
+                }
             },
             onChange: (dataId, fieldname, newValue, fields) => {
                 dispatch({

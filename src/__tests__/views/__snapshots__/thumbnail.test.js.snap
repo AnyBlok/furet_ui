@@ -662,46 +662,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -711,46 +687,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -760,46 +712,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -809,46 +737,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -858,46 +762,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -907,46 +787,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -956,46 +812,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -1005,46 +837,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -1054,46 +862,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -1103,46 +887,22 @@ exports[`Render Thumbnail view 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -1650,46 +1410,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 1
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 1
+                </span>
               </div>
             </div>
           </div>
@@ -1699,46 +1435,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 2
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 2
+                </span>
               </div>
             </div>
           </div>
@@ -1748,46 +1460,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 3
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 3
+                </span>
               </div>
             </div>
           </div>
@@ -1797,46 +1485,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 4
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 4
+                </span>
               </div>
             </div>
           </div>
@@ -1846,46 +1510,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 5
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 5
+                </span>
               </div>
             </div>
           </div>
@@ -1895,46 +1535,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 6
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 6
+                </span>
               </div>
             </div>
           </div>
@@ -1944,46 +1560,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 7
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 7
+                </span>
               </div>
             </div>
           </div>
@@ -1993,46 +1585,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 8
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 8
+                </span>
               </div>
             </div>
           </div>
@@ -2042,46 +1610,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 9
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 9
+                </span>
               </div>
             </div>
           </div>
@@ -2091,46 +1635,22 @@ exports[`Render Thumbnail view 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 10
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 10
+                </span>
               </div>
             </div>
           </div>
@@ -2471,46 +1991,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -2520,46 +2016,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -2569,46 +2041,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -2618,46 +2066,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -2667,46 +2091,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -2716,46 +2116,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -2765,46 +2141,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -2814,46 +2166,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -2863,46 +2191,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -2912,46 +2216,22 @@ exports[`Render Thumbnail view without button 2`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  
+                </span>
               </div>
             </div>
           </div>
@@ -3127,46 +2407,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 1
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 1
+                </span>
               </div>
             </div>
           </div>
@@ -3176,46 +2432,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 2
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 2
+                </span>
               </div>
             </div>
           </div>
@@ -3225,46 +2457,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 3
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 3
+                </span>
               </div>
             </div>
           </div>
@@ -3274,46 +2482,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 4
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 4
+                </span>
               </div>
             </div>
           </div>
@@ -3323,46 +2507,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 5
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 5
+                </span>
               </div>
             </div>
           </div>
@@ -3372,46 +2532,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 6
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 6
+                </span>
               </div>
             </div>
           </div>
@@ -3421,46 +2557,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 7
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 7
+                </span>
               </div>
             </div>
           </div>
@@ -3470,46 +2582,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 8
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 8
+                </span>
               </div>
             </div>
           </div>
@@ -3519,46 +2607,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 9
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 9
+                </span>
               </div>
             </div>
           </div>
@@ -3568,46 +2632,22 @@ exports[`Render Thumbnail view without button 3`] = `
         className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
       >
         <div
+          className="thumbnail"
           onClick={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                     0 1px 4px rgba(0, 0, 0, 0.12)",
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontFamily": "Roboto, sans-serif",
-              "muiPrepared": true,
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "zIndex": 1,
-            }
-          }
         >
-          <div
-            style={
-              Object {
-                "paddingBottom": 0,
-              }
-            }
-          >
-            <div>
-              <div
-                className="form-group"
+          <div>
+            <div
+              className="form-group"
+            >
+              <label
+                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
               >
-                <label
-                  htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-                >
-                  Label
-                </label>
-                <div>
-                  <span>
-                    todo 10
-                  </span>
-                </div>
+                Label
+              </label>
+              <div>
+                <span>
+                  todo 10
+                </span>
               </div>
             </div>
           </div>
