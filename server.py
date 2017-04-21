@@ -954,6 +954,7 @@ def getView9():
                         label="Addresses"
                         model="Address"
                         actionId="4"
+                        many2oneField="customer"
                     >
                     </field>
                 </div>

@@ -84,6 +84,7 @@ class ActionCpt extends React.Component {
                                     fieldName: this.props.fieldName,
                                     parentModel: this.props.parentModel,
                                     parentReadonly: this.props.parentReadonly,
+                                    many2oneField: this.props.many2oneField,
                                 });
         return null;
     }

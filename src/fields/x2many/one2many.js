@@ -128,6 +128,7 @@ class One2ManyCpt extends React.Component {
                 fieldName={this.props.fieldName}
                 parentModel={this.props.parentModel}
                 parentReadonly={this.props.parentReadonly}
+                many2oneField={this.props.many2oneField}
             />
         );
     }
@@ -150,6 +151,7 @@ export class One2ManyForm extends BaseForm {
         props.fieldName = this.props.name;
         props.parentModel = this.props.currentModel;
         props.parentReadonly = this.props.readonly;
+        props.many2oneField = this.props.many2oneField || this.props.many2onefield;
         return props;
     }
     getInput () {
