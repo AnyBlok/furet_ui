@@ -67,10 +67,21 @@ export default class extends React.Component {
         const self = this;
         const processingInstructions = [
             {
-                shouldProcessNode: function(node) {
+                shouldProcessNode: (node) => {
+                    if (node.attribs && node.attribs.visible) {
+                        return !self.renderSafeEval(node.attribs.visible, data);
+                    }
+                    return false;
+                },
+                processNode: (node, children) => {
+                    return null;
+                }
+            },
+            {
+                shouldProcessNode: (node) => {
                     return node.name === 'field';
                 },
-                processNode: function(node, children) {
+                processNode: (node, children) => {
                     return self.getField(
                         viewType, 
                         node.attribs.widget, 
@@ -86,7 +97,7 @@ export default class extends React.Component {
             }, 
             {
                 // Anything else
-                shouldProcessNode: function(node) {
+                shouldProcessNode: (node) => {
                     return true;
                 },
                 processNode: processNodeDefinitions.processDefaultNode
