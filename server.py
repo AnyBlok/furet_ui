@@ -813,13 +813,13 @@ def getView3():
         'template': '''
             <div className="row">
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <field name="id" widget="Integer" label="ID" required="1"></field>
+                    <field name="id" widget="Integer" label="ID" required="1" readonly="true"></field>
                 </div>
                 <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                     <field name="name" widget="String" label="Label" required="1"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="json" widget="Json" label="JSON" required="1"></field>
+                    <field name="json" widget="Json" label="JSON" required="1" readonly="1"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field
@@ -827,6 +827,7 @@ def getView3():
                         widget="Selection"
                         selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]'
                         label="State"
+                        readonly="fields.name == fields.id"
                         required="1">
                     </field>
                 </div>
@@ -838,6 +839,7 @@ def getView3():
                         name="creation_date"
                         widget="DateTime"
                         label="Creation date"
+                        readonly="!fields.name"
                         required="1">
                     </field>
                 </div>

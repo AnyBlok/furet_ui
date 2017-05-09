@@ -14,7 +14,8 @@ import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import reducers from '../../reducers';
 import {updateGlobal} from '../../testcase';
-import BaseView from '../../views/base';
+import BaseView, {renderSafeEval} from '../../views/base';
+import chai from 'chai';
 
 jest.mock('../../server-call')
 
@@ -30,4 +31,23 @@ test('Render Base View', () => {
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+});
+
+test('Check renderSafeEval undefined', () => {
+    chai.expect(renderSafeEval(undefined, {})).to.equal(false);
+});
+test('Check renderSafeEval true', () => {
+    chai.expect(renderSafeEval('true', {})).to.equal(true);
+});
+test('Check renderSafeEval 1', () => {
+    chai.expect(renderSafeEval('1', {})).to.equal(true);
+});
+test('Check renderSafeEval fields.b == 1', () => {
+    chai.expect(renderSafeEval('fields.b == 1', {b: 1})).to.equal(true);
+});
+test('Check renderSafeEval fields.b != 1', () => {
+    chai.expect(renderSafeEval('fields.b != 1', {b: 1})).to.equal(false);
+});
+test('Check renderSafeEval toDate(fields.b) != now', () => {
+    chai.expect(renderSafeEval('toDate(fields.b) != now', {b: '2017-05-09T07:04:49'})).to.equal(true);
 });

@@ -1645,7 +1645,7 @@ exports[`Render Form view readwrite 2`] = `
           </label>
           <input
             className="form-control"
-            disabled={undefined}
+            disabled={false}
             id="view-type-Form-field_type-String-field-name-name"
             onChange={[Function]}
             type="text"
@@ -2003,7 +2003,7 @@ exports[`Render Form view readwrite 3`] = `
           </label>
           <input
             className="form-control"
-            disabled={undefined}
+            disabled={false}
             id="view-type-Form-field_type-String-field-name-name"
             onChange={[Function]}
             type="text"

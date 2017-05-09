@@ -14,6 +14,12 @@ import plugin from '../plugin';
 import {getField} from '../field';
 
 const processNodeDefinitions = new ProcessNodeDefinitions(React);
+export const renderSafeEval = (condition, fields) => {
+    const now = Date.now(),
+          toDate = (v) => {return new Date(v)};
+    if (!condition) return false;
+    return eval(condition) ? true : false;
+}
 
 
 /**
@@ -43,6 +49,9 @@ export default class extends React.Component {
     /**
      * Render template html2react for template come from the server
     **/
+    renderSafeEval (condition, fields) {
+        return renderSafeEval(condition, fields);
+    }
     renderGetReadonly (attribs, data) {
         return true;
     }
