@@ -52,8 +52,11 @@ export default class extends React.Component {
     renderSafeEval (condition, fields) {
         return renderSafeEval(condition, fields);
     }
-    renderGetReadonly (attribs, data) {
+    renderGetReadonly (condition, data) {
         return true;
+    }
+    renderGetRequired (condition, data) {
+        return false;
     }
     renderGetOnchange () {
         return (fieldname, newValue) => {}
@@ -73,7 +76,8 @@ export default class extends React.Component {
                         node.attribs.widget, 
                         Object.assign(node.attribs, {
                             dataId,
-                            readonly: self.renderGetReadonly(node.attribs, data),
+                            readonly: self.renderGetReadonly(node.attribs && node.attribs.readonly, data),
+                            required: self.renderGetRequired(node.attribs && node.attribs.required, data),
                             onChange: self.renderGetOnchange(),
                         }),
                         data

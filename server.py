@@ -844,7 +844,7 @@ def getView3():
                     </field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="url" widget="URL" label="URL" required="1"></field>
+                    <field name="url" widget="URL" label="URL" required="fields.name"></field>
                 </div>
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <field name="uuid" widget="UUID" label="UUID"></field>

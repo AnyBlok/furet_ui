@@ -119,8 +119,11 @@ export class Form extends Base {
     /**
      * Render the template of the form view
     **/
-    renderGetReadonly (attribs, data) {
-        return this.state.readonly || this.props.parentReadonly || this.renderSafeEval(attribs.readonly, data);
+    renderGetReadonly (condition, data) {
+        return this.state.readonly || this.props.parentReadonly || this.renderSafeEval(condition, data);
+    }
+    renderGetRequired (condition, data) {
+        return this.renderSafeEval(condition, data);
     }
     renderGetOnchange () {
         const self = this;

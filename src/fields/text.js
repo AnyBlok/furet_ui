@@ -71,7 +71,7 @@ export class TextForm extends BaseForm {
     }
     updateThisData () {
         super.updateThisData();
-        if (this.required && !this.props.readonly && this.value == '<p><br></p>') {
+        if (this.props.required && !this.props.readonly && this.value == '<p><br></p>') {
             this.error = translate('furetUI.fields.common.required', 
                                    {fallback: 'This field is required'});
         }

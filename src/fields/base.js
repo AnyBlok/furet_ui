@@ -48,9 +48,8 @@ class Base extends React.Component {
     }
     updateThisData () {
         this.value = this.getValue();
-        this.required = Boolean(eval(this.props.required));
         this.error = ''
-        if (this.required && !this.props.readonly && !this.value) {
+        if (this.props.required && !this.props.readonly && !this.value) {
             this.error = translate('furetUI.fields.common.required', 
                                    {fallback: 'This field is required'});
         }
@@ -110,7 +109,7 @@ export class BaseForm extends Base {
     getLabelProps () {
         const props = super.getLabelProps();
         props.style = {}
-        if (this.required) props.style.color = indigo500;
+        if (this.props.required) props.style.color = indigo500;
         return props;
     }
     getInputProps () {

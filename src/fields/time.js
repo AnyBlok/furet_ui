@@ -34,7 +34,7 @@ class TimeForm extends BaseForm {
     }
     updateThisData () {
         super.updateThisData()
-        if (this.required && !this.props.readonly && (this.value == 'Invalid date' || this.props.value == 'Invalid date')) {
+        if (this.props.required && !this.props.readonly && (this.value == 'Invalid date' || this.props.value == 'Invalid date')) {
             this.error = translate('furetUI.fields.time.invalid', 
                                    {fallback: 'Invalid time'});
         }
