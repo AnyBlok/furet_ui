@@ -12,7 +12,6 @@ import Base from './base';
 import plugin from '../plugin';
 import EditorInsertDriveFile from 'material-ui/svg-icons/editor/insert-drive-file';
 import EditorModeEdit from 'material-ui/svg-icons/editor/mode-edit';
-import {processNodeDefinitions} from './base';
 import ActionNoteAdd from 'material-ui/svg-icons/action/note-add';
 import ActionDeleteForever from 'material-ui/svg-icons/action/delete-forever';
 import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
@@ -120,44 +119,24 @@ export class Form extends Base {
     /**
      * Render the template of the form view
     **/
+    renderGetReadonly (attribs, data) {
+        return this.state.readonly || this.props.parentReadonly;
+    }
+    renderGetOnchange () {
+        const self = this;
+        return (fieldname, newValue) => {
+            self.props.onChange(self.state.id, fieldname, newValue, self.props.fields);
+        }
+    }
     renderTemplate (template) {
         if (!template) return null;
-        const self = this;
         const data = Object.assign(
             {}, 
-            self.props.data && self.props.data[self.state.id],
-            self.props.computed && self.props.computed[self.state.id],
-            self.props.change && self.props.change[self.state.id]
+            this.props.data && this.props.data[this.state.id],
+            this.props.computed && this.props.computed[this.state.id],
+            this.props.change && this.props.change[this.state.id]
         );
-        const processingInstructions = [
-            {
-                shouldProcessNode: function(node) {
-                    return node.name === 'field';
-                },
-                processNode: function(node, children) {
-                    return self.getField(
-                        'Form', 
-                        node.attribs.widget, 
-                        Object.assign(node.attribs, {
-                            readonly: self.state.readonly || self.props.parentReadonly, 
-                            dataId: self.state.id,
-                            onChange: (fieldname, newValue) => {
-                                self.props.onChange(self.state.id, fieldname, newValue, self.props.fields);
-                            }
-                        }),
-                        data
-                    );
-                }
-            }, 
-            {
-                // Anything else
-                shouldProcessNode: function(node) {
-                    return true;
-                },
-                processNode: processNodeDefinitions.processDefaultNode
-            }
-        ];
-        return super.renderTemplate(template, processingInstructions);
+        return super.renderTemplate(template, 'Form', data, this.state.id);
     }
     /**
      * Render the buttons

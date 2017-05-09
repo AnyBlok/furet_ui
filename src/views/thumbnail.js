@@ -11,7 +11,6 @@ import React from 'react';
 import Multi from './multi';
 import plugin from '../plugin';
 import NavigationApps from 'material-ui/svg-icons/navigation/apps';
-import {processNodeDefinitions} from './base';
 
 /**
  * Add Icon for Thumbnail view
@@ -45,35 +44,12 @@ export class Thumbnail extends Multi {
      * Render the template for one thumbnail
     **/
     renderTemplate (template, thumbnailId) {
-        const self = this;
         const data = Object.assign(
             {}, 
-            self.props.data && self.props.data[thumbnailId],
-            self.props.computed && self.props.computed[thumbnailId],
-            self.props.change[thumbnailId]);
-        const processingInstructions = [
-            {
-                shouldProcessNode: function(node) {
-                    return node.name === 'field';
-                },
-                processNode: function(node, children) {
-                    return self.getField(
-                        'Thumbnail', 
-                        node.attribs.widget, 
-                        node.attribs, 
-                        data
-                    );
-                }
-            }, 
-            {
-                // Anything else
-                shouldProcessNode: function(node) {
-                    return true;
-                },
-                processNode: processNodeDefinitions.processDefaultNode
-            }
-        ];
-        return super.renderTemplate(template, processingInstructions);
+            this.props.data && this.props.data[thumbnailId],
+            this.props.computed && this.props.computed[thumbnailId],
+            this.props.change[thumbnailId]);
+        return super.renderTemplate(template, 'Thumbnail', data, thumbnailId);
     }
     /**
      * Render one thumbnail

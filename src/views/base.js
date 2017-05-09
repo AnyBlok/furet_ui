@@ -13,7 +13,7 @@ import {Parser, ProcessNodeDefinitions} from 'html-to-react';
 import plugin from '../plugin';
 import {getField} from '../field';
 
-export const processNodeDefinitions = new ProcessNodeDefinitions(React);
+const processNodeDefinitions = new ProcessNodeDefinitions(React);
 
 
 /**
@@ -43,9 +43,42 @@ export default class extends React.Component {
     /**
      * Render template html2react for template come from the server
     **/
-    renderTemplate (template, processingInstructions) {
+    renderGetReadonly (attribs, data) {
+        return true;
+    }
+    renderGetOnchange () {
+        return (fieldname, newValue) => {}
+    }
+    renderTemplate (template, viewType, data, dataId) {
         const htmlToReactParser = new Parser();
         const _template = template.replace(/(\r\n|\n|\r)/gmi,"").trim();
+        const self = this;
+        const processingInstructions = [
+            {
+                shouldProcessNode: function(node) {
+                    return node.name === 'field';
+                },
+                processNode: function(node, children) {
+                    return self.getField(
+                        viewType, 
+                        node.attribs.widget, 
+                        Object.assign(node.attribs, {
+                            dataId,
+                            readonly: self.renderGetReadonly(node.attribs, data),
+                            onChange: self.renderGetOnchange(),
+                        }),
+                        data
+                    );
+                }
+            }, 
+            {
+                // Anything else
+                shouldProcessNode: function(node) {
+                    return true;
+                },
+                processNode: processNodeDefinitions.processDefaultNode
+            }
+        ];
         return htmlToReactParser.parseWithInstructions(
             _template, this.isValidNode.bind(this), processingInstructions
         );
