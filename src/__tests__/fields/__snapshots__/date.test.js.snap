@@ -998,13 +998,13 @@ exports[`getField for Form required with empty value 1`] = `
                       8
                     </td>
                     <td
-                      className="day active today"
+                      className="day"
                       onClick={[Function]}
                     >
                       9
                     </td>
                     <td
-                      className="day"
+                      className="day active today"
                       onClick={[Function]}
                     >
                       10

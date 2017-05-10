@@ -157,3 +157,54 @@ test('Render Form view without button', () => {
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
+test('Render Form view readonly, required and visible attributes', () => {
+    const store = createStore(combineReducers(reducers));
+    updateGlobal();
+    let component = renderer.create(
+        <Provider store={store}>
+            <MuiThemeProvider>
+                {getView('Form', '1', {model: 'Test', params: {id: '1', readonly: false}})}
+            </MuiThemeProvider>
+        </Provider>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    store.dispatch({
+        'type': 'UPDATE_VIEW',
+        'viewId': '1',
+        'label': 'View 1',
+        'creatable': true,
+        'deletable': true,
+        'editable': true,
+        'onClose': '2',
+        'template': [
+            '<div>',
+                '<field name="name" widget="String" label="Name"></field>',
+                '<field name="label" widget="String" label="Label" readonly="fields.name"></field>',
+                '<field name="label2" widget="String" label="Label2" required="fields.name"></field>',
+                '<field name="label3" widget="String" label="Label3" visible="fields.name"></field>',
+                '<div visible="fields.name">',
+                    '<field name="label4" widget="String" label="Label4"></field>',
+                '</div>',
+            '</div>'
+        ].join(''),
+        'buttons': [{
+            'label': 'Make a call',
+            'buttonId': '1',
+        }],
+    });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    store.dispatch({
+        'type': 'UPDATE_DATA',
+        'model': 'Test',
+        'data': {
+            '1': {
+                'id': '1',
+                'name': "todo 1",
+            },
+        },
+    });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
