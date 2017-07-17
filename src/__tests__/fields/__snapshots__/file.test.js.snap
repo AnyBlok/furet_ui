@@ -1,0 +1,339 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`File Form component Render 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render invisible condition is false 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`File Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`File Form component Render invisible is false 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render label 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render mode readonly by config 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"></span></p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"></span></p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render mode readonly conditional param 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"></span></p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"></span></p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render mode readonly param 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"></span></p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"></span></p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render mode readonly with filename 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt="The filename"></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"></span></p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="The filename" title="The filename" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"></span></p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render mode readonly with width 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:200px;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"></span></p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"></span></p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render required 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render required conditionnal 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render required without value 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="" alt=""></figure></div> <p class="help is-danger">this field is required</p></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"></span></p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"></span></p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render tooltip left 1`] = `
+<div data-server-rendered="true"><span data-label="The left tooltip" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render tooltip up 1`] = `
+<div data-server-rendered="true"><span data-label="The tooltip" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render with accept 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" accept="images/*" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render with filename 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="new" alt="The filename"></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="The filename" title="The filename" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render with width 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:200px;"><figure class="image"><img src="new" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"><a href="new" download="" title="" target="_blank" class="button"><span class="icon is-small"><i class="fa fa-download"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span></a>
+            </span>
+        </p>
+    </div>
+</div>
+`;
+
+exports[`File Form component Render without data 1`] = `
+<div data-server-rendered="true"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><figure class="image"><img src="" alt=""></figure></div> <!----></div></span>
+    <div class="field has-addons">
+        <p class="control"><span data-label="Upload" class="tooltip is-primary is-top is-medium"><a class="button"><input type="file" style="display:none;"> <span class="icon is-small"><i class="fa fa-upload"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Download" class="tooltip is-primary is-top is-medium"></span></p>
+        <p class="control"><span data-label="Delete" class="tooltip is-primary is-top is-medium"></span></p>
+    </div>
+</div>
+`;
+
+exports[`File Thumbnail component Render 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><a href="new" download="" title="" target="_blank"><figure class="image"><img src="new" alt=""></figure></a></div> <!----></div></span>`;
+
+exports[`File Thumbnail component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><a href="new" download="" title="" target="_blank"><figure class="image"><img src="new" alt=""></figure></a></div> <!----></div></span>`;
+
+exports[`File Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`File Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`File Thumbnail component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><a href="new" download="" title="" target="_blank"><figure class="image"><img src="new" alt=""></figure></a></div> <!----></div></span>`;
+
+exports[`File Thumbnail component Render label 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="field" style="max-width:undefined;"><a href="new" download="" title="" target="_blank"><figure class="image"><img src="new" alt=""></figure></a></div> <!----></div></span>`;
+
+exports[`File Thumbnail component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><a href="new" download="" title="" target="_blank"><figure class="image"><img src="new" alt=""></figure></a></div> <!----></div></span>`;
+
+exports[`File Thumbnail component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><a href="new" download="" title="" target="_blank"><figure class="image"><img src="new" alt=""></figure></a></div> <!----></div></span>`;
+
+exports[`File Thumbnail component Render with filename 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><a href="new" download="The file name" title="The file name" target="_blank"><figure class="image"><img src="new" alt="The file name"></figure></a></div> <!----></div></span>`;
+
+exports[`File Thumbnail component Render with width 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:200px;"><a href="new" download="" title="" target="_blank"><figure class="image"><img src="new" alt=""></figure></a></div> <!----></div></span>`;
+
+exports[`File Thumbnail component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <div class="field" style="max-width:undefined;"><a href="" download="" title="" target="_blank"><figure class="image"><img src="" alt=""></figure></a></div> <!----></div></span>`;
+
+exports[`File list component Render invisible condition is false 1`] = `
+<a href="new" download="" title="" target="_blank" data-server-rendered="true">
+    <div style="max-width:undefined;">
+        <figure class="image"><img src="new" alt=""></figure>
+    </div>
+</a>
+`;
+
+exports[`File list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`File list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`File list component Render invisible is false 1`] = `
+<a href="new" download="" title="" target="_blank" data-server-rendered="true">
+    <div style="max-width:undefined;">
+        <figure class="image"><img src="new" alt=""></figure>
+    </div>
+</a>
+`;
+
+exports[`File list component Render with data 1`] = `
+<a href="new" download="" title="" target="_blank" data-server-rendered="true">
+    <div style="max-width:undefined;">
+        <figure class="image"><img src="new" alt=""></figure>
+    </div>
+</a>
+`;
+
+exports[`File list component Render with filename 1`] = `
+<a href="new" download="The file name" title="The file name" target="_blank" data-server-rendered="true">
+    <div style="max-width:undefined;">
+        <figure class="image"><img src="new" alt="The file name"></figure>
+    </div>
+</a>
+`;
+
+exports[`File list component Render with width 1`] = `
+<a href="new" download="" title="" target="_blank" data-server-rendered="true">
+    <div style="max-width:200px;">
+        <figure class="image"><img src="new" alt=""></figure>
+    </div>
+</a>
+`;
+
+exports[`File list component Render without data 1`] = `
+<a href="" download="" title="" target="_blank" data-server-rendered="true">
+    <div style="max-width:undefined;">
+        <figure class="image"><img src="" alt=""></figure>
+    </div>
+</a>
+`;

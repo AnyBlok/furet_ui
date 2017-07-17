@@ -1,1914 +1,247 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getField for Form 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
+exports[`One2Many Form component Render 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div><nav class="level"><div class="level-left"><div class="field has-addons"><p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span><span>Create</span></a>
+</p>
+<!---->
 </div>
-`;
-
-exports[`getField for Form 2`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div
-    style={
-      Object {
-        "margin": 20,
-      }
-    }
-  >
-    <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        >
-          <div
-            className="row"
-          />
-        </div>
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "height": "auto",
-            "muiPrepared": true,
-            "overflow": "auto",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "muiPrepared": true,
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <thead
-              className={undefined}
-              style={
-                Object {
-                  "borderBottom": "1px solid #e0e0e0",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <th
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "color": "#9e9e9e",
-                      "cursor": "not-allowed",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "height": 56,
-                      "muiPrepared": true,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "position": "relative",
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                      "width": 24,
-                    }
-                  }
-                >
-                  <div />
-                </th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div
-          style={
-            Object {
-              "height": "inherit",
-              "muiPrepared": true,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <tbody
-              className={undefined}
-              style={
-                Object {
-                  "height": "inherit",
-                  "muiPrepared": true,
-                }
-              }
-            />
-          </table>
-        </div>
-      </div>
+</div>
+<div class="level-right">
+    <div class="field has-addons">
+        <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+            </span>
+        </p>
+        <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+            </span>
+        </p>
+        <!---->
     </div>
-  </div>
 </div>
-`;
-
-exports[`getField for Form 3`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div
-    style={
-      Object {
-        "margin": 20,
-      }
-    }
-  >
-    <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        >
-          <div
-            className="row"
-          />
-        </div>
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "height": "auto",
-            "muiPrepared": true,
-            "overflow": "auto",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "muiPrepared": true,
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <thead
-              className={undefined}
-              style={
-                Object {
-                  "borderBottom": "1px solid #e0e0e0",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <th
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "color": "#9e9e9e",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "height": 56,
-                      "muiPrepared": true,
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "position": "relative",
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Label
-                </th>
-              </tr>
+</nav>
+<div class="b-table">
+    <!---->
+    <div class="table-wrapper">
+        <table class="table is-narrow has-mobile-cards">
+            <thead>
+                <tr>
+                    <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                </tr>
             </thead>
-          </table>
-        </div>
-        <div
-          style={
-            Object {
-              "height": "inherit",
-              "muiPrepared": true,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <tbody
-              className={undefined}
-              style={
-                Object {
-                  "height": "inherit",
-                  "muiPrepared": true,
-                }
-              }
-            />
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`getField for Form 4`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div
-    style={
-      Object {
-        "margin": 20,
-      }
-    }
-  >
-    <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        >
-          <div
-            className="row"
-          />
-        </div>
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "height": "auto",
-            "muiPrepared": true,
-            "overflow": "auto",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "muiPrepared": true,
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <thead
-              className={undefined}
-              style={
-                Object {
-                  "borderBottom": "1px solid #e0e0e0",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <th
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "color": "#9e9e9e",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "height": 56,
-                      "muiPrepared": true,
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "position": "relative",
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Label
-                </th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div
-          style={
-            Object {
-              "height": "inherit",
-              "muiPrepared": true,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <tbody
-              className={undefined}
-              style={
-                Object {
-                  "height": "inherit",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "minHeight": 32,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <td
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  selected={false}
-                  style={
-                    Object {
-                      "backgroundColor": "rgba(127, 221, 233, 0.4)",
-                      "fontSize": 13,
-                      "height": 32,
-                      "muiPrepared": true,
-                      "overflow": "hidden",
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  <div
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "minHeight": 32,
-                        "paddingTop": 8,
-                      }
-                    }
-                  >
-                    <div>
-                      <span>
-                        todo 1
-                      </span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": false,
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "minHeight": 32,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <td
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  selected={false}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "fontSize": 13,
-                      "height": 32,
-                      "muiPrepared": true,
-                      "overflow": "hidden",
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  <div
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "minHeight": 32,
-                        "paddingTop": 8,
-                      }
-                    }
-                  >
-                    <div>
-                      <span>
-                        todo 3
-                      </span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
+            <tbody>
+                <tr>
+                    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                    <td data-label="ID" class="has-text-right"><span><span></span></span>
+                    </td>
+                    <td data-label="Label"><span><span>Test</span></span>
+                    </td>
+                    <td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+                        </span>
+                    </td>
+                    <td data-label="State"><span><span> --- </span></span>
+                    </td>
+                </tr>
             </tbody>
-          </table>
-        </div>
-      </div>
+        </table>
     </div>
-  </div>
+    <div class="level">
+        <div class="level-left">
+            <!---->
+        </div>
+        <div class="level-right">
+            <div class="level-item">
+                <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                    <ul class="pagination-list">
+                        <!---->
+                        <!---->
+                        <li><a class="pagination-link is-current">
+                1
+            </a></li>
+                        <!---->
+                        <!---->
+                    </ul>
+                    <!---->
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+</div>
+</div>
+<!---->
+</div>
+</span>
 `;
 
-exports[`getField for Form empty 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-</div>
+exports[`One2Many Form component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Form empty 2`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div
-    style={
-      Object {
-        "margin": 20,
-      }
-    }
-  >
-    <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        >
-          <div
-            className="row"
-          />
-        </div>
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "height": "auto",
-            "muiPrepared": true,
-            "overflow": "auto",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "muiPrepared": true,
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <thead
-              className={undefined}
-              style={
-                Object {
-                  "borderBottom": "1px solid #e0e0e0",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <th
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "color": "#9e9e9e",
-                      "cursor": "not-allowed",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "height": 56,
-                      "muiPrepared": true,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "position": "relative",
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                      "width": 24,
-                    }
-                  }
-                >
-                  <div />
-                </th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div
-          style={
-            Object {
-              "height": "inherit",
-              "muiPrepared": true,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <tbody
-              className={undefined}
-              style={
-                Object {
-                  "height": "inherit",
-                  "muiPrepared": true,
-                }
-              }
-            />
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`One2Many Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`One2Many Form component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Form empty 3`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div
-    style={
-      Object {
-        "margin": 20,
-      }
-    }
-  >
-    <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        >
-          <div
-            className="row"
-          />
-        </div>
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "height": "auto",
-            "muiPrepared": true,
-            "overflow": "auto",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "muiPrepared": true,
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <thead
-              className={undefined}
-              style={
-                Object {
-                  "borderBottom": "1px solid #e0e0e0",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <th
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "color": "#9e9e9e",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "height": 56,
-                      "muiPrepared": true,
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "position": "relative",
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Label
-                </th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div
-          style={
-            Object {
-              "height": "inherit",
-              "muiPrepared": true,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <tbody
-              className={undefined}
-              style={
-                Object {
-                  "height": "inherit",
-                  "muiPrepared": true,
-                }
-              }
-            />
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Form empty 4`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div
-    style={
-      Object {
-        "margin": 20,
-      }
-    }
-  >
-    <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        >
-          <div
-            className="row"
-          />
-        </div>
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "height": "auto",
-            "muiPrepared": true,
-            "overflow": "auto",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "muiPrepared": true,
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <thead
-              className={undefined}
-              style={
-                Object {
-                  "borderBottom": "1px solid #e0e0e0",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <th
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "color": "#9e9e9e",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "height": 56,
-                      "muiPrepared": true,
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "position": "relative",
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Label
-                </th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div
-          style={
-            Object {
-              "height": "inherit",
-              "muiPrepared": true,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <tbody
-              className={undefined}
-              style={
-                Object {
-                  "height": "inherit",
-                  "muiPrepared": true,
-                }
-              }
-            />
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render mode readonly by config 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Form readonly 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-</div>
+exports[`One2Many Form component Render mode readonly conditional param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Form readonly 2`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div
-    style={
-      Object {
-        "margin": 20,
-      }
-    }
-  >
-    <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "height": "auto",
-            "muiPrepared": true,
-            "overflow": "auto",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "muiPrepared": true,
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <thead
-              className={undefined}
-              style={
-                Object {
-                  "borderBottom": "1px solid #e0e0e0",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <th
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "color": "#9e9e9e",
-                      "cursor": "not-allowed",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "height": 56,
-                      "muiPrepared": true,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "position": "relative",
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                      "width": 24,
-                    }
-                  }
-                >
-                  <div />
-                </th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div
-          style={
-            Object {
-              "height": "inherit",
-              "muiPrepared": true,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <tbody
-              className={undefined}
-              style={
-                Object {
-                  "height": "inherit",
-                  "muiPrepared": true,
-                }
-              }
-            />
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render mode readonly param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Form readonly 3`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div
-    style={
-      Object {
-        "margin": 20,
-      }
-    }
-  >
-    <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "height": "auto",
-            "muiPrepared": true,
-            "overflow": "auto",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "muiPrepared": true,
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <thead
-              className={undefined}
-              style={
-                Object {
-                  "borderBottom": "1px solid #e0e0e0",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <th
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "color": "#9e9e9e",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "height": 56,
-                      "muiPrepared": true,
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "position": "relative",
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Label
-                </th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div
-          style={
-            Object {
-              "height": "inherit",
-              "muiPrepared": true,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <tbody
-              className={undefined}
-              style={
-                Object {
-                  "height": "inherit",
-                  "muiPrepared": true,
-                }
-              }
-            />
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render required 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Form readonly 4`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-One2Many-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div
-    style={
-      Object {
-        "margin": 20,
-      }
-    }
-  >
-    <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-        />
-        <div
-          className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-        />
-      </div>
-      <div
-        style={
-          Object {
-            "height": "auto",
-            "muiPrepared": true,
-            "overflow": "auto",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "muiPrepared": true,
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <thead
-              className={undefined}
-              style={
-                Object {
-                  "borderBottom": "1px solid #e0e0e0",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <th
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "color": "#9e9e9e",
-                      "fontSize": 12,
-                      "fontWeight": "normal",
-                      "height": 56,
-                      "muiPrepared": true,
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "position": "relative",
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  Label
-                </th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div
-          style={
-            Object {
-              "height": "inherit",
-              "muiPrepared": true,
-              "overflowX": "hidden",
-              "overflowY": "auto",
-            }
-          }
-        >
-          <table
-            className={undefined}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderCollapse": "collapse",
-                "borderSpacing": 0,
-                "fontFamily": "Roboto, sans-serif",
-                "tableLayout": "fixed",
-                "width": "100%",
-              }
-            }
-          >
-            <tbody
-              className={undefined}
-              style={
-                Object {
-                  "height": "inherit",
-                  "muiPrepared": true,
-                }
-              }
-            >
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": "1px solid #e0e0e0",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "minHeight": 32,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <td
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  selected={false}
-                  style={
-                    Object {
-                      "backgroundColor": "rgba(127, 221, 233, 0.4)",
-                      "fontSize": 13,
-                      "height": 32,
-                      "muiPrepared": true,
-                      "overflow": "hidden",
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  <div
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "minHeight": 32,
-                        "paddingTop": 8,
-                      }
-                    }
-                  >
-                    <div>
-                      <span>
-                        todo 1
-                      </span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                className={undefined}
-                style={
-                  Object {
-                    "borderBottom": false,
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "height": 48,
-                    "minHeight": 32,
-                    "muiPrepared": true,
-                  }
-                }
-              >
-                <td
-                  className={undefined}
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  selected={false}
-                  style={
-                    Object {
-                      "backgroundColor": "inherit",
-                      "fontSize": 13,
-                      "height": 32,
-                      "muiPrepared": true,
-                      "overflow": "hidden",
-                      "padding": 0,
-                      "paddingLeft": 24,
-                      "paddingRight": 24,
-                      "textAlign": "left",
-                      "textOverflow": "ellipsis",
-                      "whiteSpace": "nowrap",
-                    }
-                  }
-                >
-                  <div
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "minHeight": 32,
-                        "paddingTop": 8,
-                      }
-                    }
-                  >
-                    <div>
-                      <span>
-                        todo 3
-                      </span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render required conditionnal 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for List 1`] = `
-<div>
-  <div
-    style={
-      Object {
-        "display": "flex",
-        "flexWrap": "wrap",
-      }
-    }
-  >
-    <div>
-      <a
-        onClick={[Function]}
-      >
-        1
-      </a>
-      <span>
-        ,
-      </span>
-    </div>
-    <div>
-      <a
-        onClick={[Function]}
-      >
-        2
-      </a>
-      <span>
-        ,
-      </span>
-    </div>
-    <div>
-      <a
-        onClick={[Function]}
-      >
-        3
-      </a>
-      <span>
-        ,
-      </span>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render required without value 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <p class="help is-danger">this field is required</p></div></span>
 `;
 
-exports[`getField for List 2`] = `
-<div>
-  <div
-    style={
-      Object {
-        "display": "flex",
-        "flexWrap": "wrap",
-      }
-    }
-  >
-    <div>
-      <a
-        onClick={[Function]}
-      >
-        todo 1
-      </a>
-      <span>
-        ,
-      </span>
-    </div>
-    <div>
-      <a
-        onClick={[Function]}
-      >
-        todo 2
-      </a>
-      <span>
-        ,
-      </span>
-    </div>
-    <div>
-      <a
-        onClick={[Function]}
-      >
-        todo 3
-      </a>
-      <span>
-        ,
-      </span>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Thumbnail 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-One2Many-field-name-"
-  >
-     
-  </label>
-  <div>
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-        }
-      }
-    >
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          1
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          2
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          3
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Thumbnail 2`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-One2Many-field-name-"
-  >
-     
-  </label>
-  <div>
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-        }
-      }
-    >
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          todo 1
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          todo 2
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          todo 3
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render without data 1 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Thumbnail 3`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-One2Many-field-name-"
-  >
-    Test
-  </label>
-  <div>
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-        }
-      }
-    >
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          1
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          2
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          3
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`One2Many Form component Render without data 2 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+                    Report this message to the administrator
+                </h2></section></div></div> <!----></div></span>
 `;
 
-exports[`getField for Thumbnail 4`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-One2Many-field-name-"
-  >
-    Test
-  </label>
-  <div>
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-        }
-      }
-    >
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          todo 1
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          todo 2
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-      <div>
-        <a
-          onClick={[Function]}
-        >
-          todo 3
-        </a>
-        <span>
-          ,
-        </span>
-      </div>
-    </div>
-  </div>
+exports[`One2Many Thumbnail component Render 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
 </div>
+</span>
 `;
+
+exports[`One2Many Thumbnail component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`One2Many Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`One2Many Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`One2Many Thumbnail component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`One2Many Thumbnail component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <span class="tag"><a>Test
+                    </a></span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`One2Many Thumbnail component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`One2Many Thumbnail component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`One2Many Thumbnail component Render with fieldcolor 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag" style="border:4px solid #123456;"><a>Test
+                    </a></span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`One2Many Thumbnail component Render without data 1 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
+
+exports[`One2Many Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
+
+exports[`One2Many list component Render fieldcolor 1`] = `
+<div data-server-rendered="true"><span class="tag" style="border:4px solid #123456;"><a>Test
+                </a></span></div>
+`;
+
+exports[`One2Many list component Render invisible condition is false 1`] = `
+<div data-server-rendered="true"><span class="tag"><a>Test
+                </a></span></div>
+`;
+
+exports[`One2Many list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`One2Many list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`One2Many list component Render invisible is false 1`] = `
+<div data-server-rendered="true"><span class="tag"><a>Test
+                </a></span></div>
+`;
+
+exports[`One2Many list component Render with data 1`] = `
+<div data-server-rendered="true"><span class="tag"><a>Test
+                </a></span></div>
+`;
+
+exports[`One2Many list component Render without data 1 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`One2Many list component Render without data 2 1`] = `<div data-server-rendered="true"></div>`;

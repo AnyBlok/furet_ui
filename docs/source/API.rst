@@ -20,17 +20,8 @@ Render the application, need the providers for theme and redux storage
 
 ::
 
-    import App from './app':
-    
-    <Provider store={store}>
-        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <App />
-        </MuiThemeProvider>
-    </Provider>
+    <furet-ui />
 
-..warning::
-
-    All the component under App need to be under the provider.
 
 Right and Left Menu
 -------------------
@@ -41,60 +32,23 @@ It is a Modal menu. It is a thumbnail render, the thumbnail can be filtered by a
 
 ::
 
-    import {LeftMenu, RightMenu} from './menus'
-
-    <LeftMenu />
-    <RightMenu />
+    <furet-ui-appbar-left-menu />
+    <furet-ui-appbar-right-menu />
 
 Space
 -----
 
 A space is an environnement for a specific behavior. Each space can defined menus, actions, views
 
-::
-
-    import Space from './space';
-
-    <Space spaceId={spaceId (string, required)} />
-
-
-ActionManager
--------------
-
-Display left / rigth menu from space and add breadcrum.
-
-|action_manager|
-
-The breadcrum is a set of current actions
-
-This composant is connected at Redux with the state ``action_manager``.
+|space|
 
 ::
 
-    import {ActionManager} from './action';
-
-    <ActionManager 
-        actionId={actionId (string, required)} 
-        left_menu={left_menu (icon button or icon menu or icon drawer)}
-        rigth_menu={rigth_menu (icon button or icon menu or icon drawer)}
-    />
-
-
-Action
-------
-
-Render one action and on view
-
-::
-
-    import {Action} from './action';
-
-    <Action
-        actionId={actionId (string, required)}
-        model={model (string)}
-        viewId={viewId (string)}
-        views={[{actionId (string, required), viewId (string, required)}, ...]}
-        disabled={disabled (boolean)}
+    <furet-ui-space 
+        v-bind:spaceId="..." 
+        v-bind:menuId="..." 
+        v-bind:actionId="..." 
+        v-bind:viewId="..." 
     />
 
 
@@ -103,16 +57,11 @@ Picture
 
 Render a picture, the picture can be come from:
 
-* svg-icon: Material design icon
 * font-icon: font-awesome class
 
 ::
 
-    import {Picture} from './picture';
-
-    <Picture type="font-icon" value="fa-user" iconSize="fa-3x" />
-    or
-    <Picture type="svg-icon" value="ActionAndroid" style={{height: 48, width: 48}} />
+    <furet-ui-picture type="font-icon" value="fa-user" />
 
 Views
 -----
@@ -126,12 +75,6 @@ The view type can be:
 
 All the view are present in the plugin system of FuretUI.
 
-the methods:
-
-* getClientView(viewName): return the custom view component
-* getViewIcon(type, onClick): return the icon of the view to add it in the selector
-* getView(type, viewId, params): return the standard view
-
 Unknown
 ~~~~~~~
 
@@ -144,11 +87,6 @@ Render a list of data
 
 |list_view|
 
-::
-
-    import {getView} from './views':
-
-    getView('List', viewId (string), {ids: [dataId (string)]})
 
 
 Form
@@ -158,12 +96,6 @@ Render a react template, the template come from serveur and stock in the redux s
 
 |form_view|
 
-::
-
-    import {getView} from './views':
-
-    getView('Form', viewId (string), {id: dataId (string), readonly: readonly (boolean)})
-
 
 Thumbnail
 ~~~~~~~~~
@@ -172,11 +104,6 @@ Render a react template, the template come from serveur and stock in the redux s
 
 |thumbnail_view|
 
-::
-
-    import {getView} from './views':
-
-    getView('Thumbnail', viewId (string), {ids: [dataId (string)]})
 
 Field
 -----
@@ -188,28 +115,20 @@ Simple
 
 The list are:
 
-* BigInteger
 * Boolean
 * Color
 * Date
 * DateTime
-* Decimal
 * Float
 * Integer
 * JSON
-* LargeBinary
-* LargeBinaryPreview
+* File
 * Password
 * Selection
-* Sequence
-* SmallInteger
 * String
 * Text
 * Time
-* uString
-* uText
 * URL
-* UUID
 
 Relation ship
 ~~~~~~~~~~~~~
@@ -219,17 +138,13 @@ Relation ship are particular field which link two model.
 The list are:
 
 * Many2One
-* One2One
-* Many2Many (List, Thumbnail)
-* Many2ManyCheckBox (Form)
-* Many2ManyTags (Form)
+* Many2Many 
+    - List, 
+    - Thumbnail
+    - Form
+        * checkbox
+        * tags
 * One2Many
-
-::
-
-    import {getField} from './fields';
-
-    getField(viewType (string), fieldType (string), params (object), value)
 
 Plugin
 ------
@@ -241,20 +156,20 @@ are used and can be overwrite easily to change the behavior.
 
     import plugin from './plugin';
 
-    const func = (props) => {return <span>'Hello'</span>}
+    const func = (props) => {...}
     plugin(['path', 'to', 'save', 'in', 'plugin'], {Hello: func});
 
     plugin.get(['path', 'to', 'save', 'in', 'plugin', 'Hello']);
 
 
+.. |app| image:: _static/api/app.png
+    :alt: App
+
 .. |dialog| image:: _static/api/dialog.png
     :alt: Dialog
 
-.. |action_manager| image:: _static/api/action_manager.png
-    :alt: Action manager
-
-.. |app| image:: _static/api/app.png
-    :alt: App
+.. |space| image:: _static/api/space.png
+    :alt: Space
 
 .. |form_view| image:: _static/api/form_view.png
     :alt: Form view

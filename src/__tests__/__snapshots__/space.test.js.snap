@@ -1,183 +1,475 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Space with default value from redux store 1`] = `
-<div
-  className="container"
->
-  <h1>
-    <i
-      className="fa fa-spinner fa-spin fa-lg fa-fw"
-    />
-    Loading ...
-  </h1>
-</div>
-`;
-
-exports[`Render Space with default value from redux store with custom client 1`] = `
-<div
-  className="container"
->
-  <h1>
-    <i
-      className="fa fa-spinner fa-spin fa-lg fa-fw"
-    />
-    Loading ...
-  </h1>
-</div>
-`;
-
-exports[`Render Space with default value from redux store with spaceId 1`] = `
-<div>
-  <div>
-    <div
-      className={undefined}
-      style={
-        Object {
-          "MozBoxSizing": "border-box",
-          "WebkitBoxPack": "justify",
-          "WebkitJustifyContent": "space-between",
-          "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-          "backgroundColor": "rgb(232, 232, 232)",
-          "boxSizing": "border-box",
-          "display": Array [
-            "-webkit-box",
-            "-moz-box",
-            "-ms-flexbox",
-            "-webkit-flex",
-            "flex",
-          ],
-          "height": 56,
-          "justifyContent": "space-between",
-          "msFlexPack": "justify",
-          "muiPrepared": true,
-          "padding": "0px 24px",
-        }
-      }
-    >
-      <div
-        className={undefined}
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxPack": "justify",
-            "WebkitJustifyContent": "space-between",
-            "alignItems": "center",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "justifyContent": "space-between",
-            "marginLeft": -24,
-            "marginRight": undefined,
-            "msFlexAlign": "center",
-            "msFlexPack": "justify",
-            "muiPrepared": true,
-            "position": "relative",
-          }
-        }
-      >
-        <button
-          disabled={true}
-          href={undefined}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onTouchStart={[Function]}
-          onTouchTap={[Function]}
-          style={
-            Object {
-              "MozBoxSizing": "border-box",
-              "MozUserSelect": "none",
-              "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-              "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "WebkitUserSelect": "none",
-              "backgroundColor": "rgba(0, 0, 0, 0)",
-              "border": 10,
-              "borderRadius": 2,
-              "boxSizing": "border-box",
-              "color": "rgba(0, 0, 0, 0.3)",
-              "cursor": "default",
-              "display": "inline-block",
-              "fontFamily": "Roboto, sans-serif",
-              "fontSize": "inherit",
-              "fontWeight": "inherit",
-              "height": 36,
-              "lineHeight": "36px",
-              "margin": "10px 24px",
-              "minWidth": 88,
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "outline": "none",
-              "overflow": "hidden",
-              "padding": 0,
-              "position": "relative",
-              "textAlign": "center",
-              "textDecoration": "none",
-              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-              "userSelect": "none",
-              "verticalAlign": null,
-              "zIndex": 1,
-            }
-          }
-          tabIndex={-1}
-          type="button"
-        >
-          <span
-            style={
-              Object {
-                "fontSize": 14,
-                "fontWeight": 500,
-                "letterSpacing": 0,
-                "muiPrepared": true,
-                "paddingLeft": 16,
-                "paddingRight": 16,
-                "position": "relative",
-                "textTransform": "uppercase",
-                "verticalAlign": "middle",
-              }
-            }
-          >
-            1
-          </span>
-        </button>
-      </div>
-      <div
-        className={undefined}
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxPack": "justify",
-            "WebkitJustifyContent": "space-between",
-            "alignItems": "center",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "justifyContent": "space-between",
-            "marginLeft": undefined,
-            "marginRight": undefined,
-            "msFlexAlign": "center",
-            "msFlexPack": "justify",
-            "muiPrepared": true,
-            "position": "relative",
-          }
-        }
-      />
+exports[`Space component Render 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <!---->
+                <!---->
+            </div>
+        </nav>
+        <!---->
     </div>
-  </div>
+    <!---->
 </div>
 `;
 
-exports[`Render Space with default value from redux store with spaceId with menu 1`] = `null`;
+exports[`Space component Render breadscrumb 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Space component Render breadscrumb 2`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li><a>
+                                        Action 2
+                                    </a></li>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Space component Render breadscrumb 3`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li><a>
+                                        Action 2
+                                    </a></li>
+                        <li><a>
+                                        Action 3
+                                    </a></li>
+                        <li><a>
+                                        Action 4
+                                    </a></li>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Space component Render breadscrumb 4`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li><a>
+                                        Action 2
+                                    </a></li>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <div class="columns is-gapless" style="margin-top:5px;">
+            <!---->
+            <div class="column" style="padding-left:10px;padding-right:10px;">
+                <nav class="nav" style="background-color:inherit;">
+                    <div class="nav-left">
+                        <!---->
+                        <nav class="breadcrumb">
+                            <ul>
+                                <li><a>
+                                        Action 2
+                                    </a></li>
+                                <li class="is-active"><a></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="nav-right">
+                        <!---->
+                        <!---->
+                    </div>
+                </nav>
+                <!---->
+            </div>
+            <!---->
+        </div>
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Space component Render display left menu (close) 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left"><a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a>
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Space component Render display left menu (open) 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <div class="column is-one-quarter is-half-mobile">
+        <aside class="menu" style="padding:5px;">
+            <ul class="menu-list">
+                <li>
+                    <!---->
+                    <!----><a class="is-active"><span class="icon"><i class="fa fa-user"></i></span>
+                    Customer
+                </a></li>
+                <li><span><span class="icon"><i class="fa fa-user"></i></span> Setting
+                    </span>
+                    <ul class="menu-list">
+                        <li>
+                            <!---->
+                            <!---->
+                            <a>
+                                <!---->
+                                Category
+                            </a>
+                        </li>
+                        <li>
+                            <!---->
+                            <!---->
+                            <a>
+                                <!---->
+                                Address
+                            </a>
+                        </li>
+                    </ul>
+                    <!---->
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left"><a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a>
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Space component Render display right menu (close) 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div> <a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a></div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Space component Render display right menu (open) 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div> <a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a></div>
+        </nav>
+        <!---->
+    </div>
+    <div class="column is-one-quarter is-half-mobile">
+        <aside class="menu" style="padding:5px;">
+            <ul class="menu-list">
+                <li>
+                    <!---->
+                    <!----><a class="is-active"><span class="icon"><i class="fa fa-user"></i></span>
+                    Customer
+                </a></li>
+                <li><span><span class="icon"><i class="fa fa-user"></i></span> Setting
+                    </span>
+                    <ul class="menu-list">
+                        <li>
+                            <!---->
+                            <!---->
+                            <a>
+                                <!---->
+                                Category
+                            </a>
+                        </li>
+                        <li>
+                            <!---->
+                            <!---->
+                            <a>
+                                <!---->
+                                Address
+                            </a>
+                        </li>
+                    </ul>
+                    <!---->
+                </li>
+            </ul>
+        </aside>
+    </div>
+</div>
+`;
+
+exports[`SpaceMenu component Render 1`] = `<ul data-server-rendered="true" class="menu-list"></ul>`;
+
+exports[`SpaceMenu component Render with submenu 1`] = `
+<ul data-server-rendered="true" class="menu-list">
+    <li>
+        <!---->
+        <!----><a class="is-active"><span class="icon"><i class="fa fa-user"></i></span>
+                    Customer
+                </a></li>
+    <li><span><span class="icon"><i class="fa fa-user"></i></span> Setting
+        </span>
+        <ul class="menu-list">
+            <li>
+                <!---->
+                <!---->
+                <a>
+                    <!---->
+                    Category
+                </a>
+            </li>
+            <li>
+                <!---->
+                <!---->
+                <a>
+                    <!---->
+                    Address
+                </a>
+            </li>
+        </ul>
+        <!---->
+    </li>
+</ul>
+`;
+
+exports[`SpaceMenu component Render with submenu other selected menu 1`] = `
+<ul data-server-rendered="true" class="menu-list">
+    <li>
+        <!---->
+        <!----><a><span class="icon"><i class="fa fa-user"></i></span>
+                    Customer
+                </a></li>
+    <li><span><span class="icon"><i class="fa fa-user"></i></span> Setting
+        </span>
+        <ul class="menu-list">
+            <li>
+                <!---->
+                <!---->
+                <a class="is-active">
+                    <!---->
+                    Category
+                </a>
+            </li>
+            <li>
+                <!---->
+                <!---->
+                <a>
+                    <!---->
+                    Address
+                </a>
+            </li>
+        </ul>
+        <!---->
+    </li>
+</ul>
+`;
+
+exports[`View Selector component Render 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <!---->
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`View Selector component Render unclickable selected 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <!---->
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;

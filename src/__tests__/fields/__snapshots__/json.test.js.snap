@@ -1,223 +1,143 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getField for Form 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Json-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <textarea
-    disabled={undefined}
-    id="view-type-Form-field_type-Json-field-name-"
-    onChange={[Function]}
-    rows={12}
-    style={
-      Object {
-        "height": "100%",
-        "resize": "none",
-        "width": "100%",
-      }
-    }
-    value="{
-    \\"a\\": {
-      \\"b\\": [
-        {
-          \\"c\\": \\"d\\"
-        },
-        {
-          \\"e\\": \\"f\\"
-        }
-      ]
-    }
-  }"
-  />
-</div>
+exports[`Json Form component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea rows="1" value="{
+  &quot;a&quot;: &quot;b&quot;
+}" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <!----></div></span>
 `;
 
-exports[`getField for Form readonly 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Json-field-name-"
-    style={Object {}}
-  >
-    Test
-  </label>
-  <pre
-    disabled={true}
-    id="view-type-Form-field_type-Json-field-name-"
-    onChange={[Function]}
-    style={
-      Object {
-        "paddind": 2,
-        "width": "100%",
-      }
-    }
-  >
-    {
-      "a": {
-        "b": [
-          {
-            "c": "d"
-          },
-          {
-            "e": "f"
-          }
-        ]
-      }
-    }
-  </pre>
-</div>
+exports[`Json Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Json Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Json Form component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea rows="1" value="{
+  &quot;a&quot;: &quot;b&quot;
+}" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <!----></div></span>
 `;
 
-exports[`getField for Form required 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Json-field-name-"
-    style={
-      Object {
-        "color": "#3f51b5",
-      }
-    }
-  >
-    Test
-  </label>
-  <textarea
-    disabled={undefined}
-    id="view-type-Form-field_type-Json-field-name-"
-    onChange={[Function]}
-    rows={12}
-    style={
-      Object {
-        "height": "100%",
-        "resize": "none",
-        "width": "100%",
-      }
-    }
-    value="{
-    \\"a\\": {
-      \\"b\\": [
-        {
-          \\"c\\": \\"d\\"
-        },
-        {
-          \\"e\\": \\"f\\"
-        }
-      ]
-    }
-  }"
-  />
-</div>
+exports[`Json Form component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <textarea rows="1" value="{
+  &quot;a&quot;: &quot;b&quot;
+}" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <!----></div></span>
 `;
 
-exports[`getField for Form required with empty value 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Json-field-name-"
-    style={
-      Object {
-        "color": "#3f51b5",
-      }
-    }
-  >
-    Test
-  </label>
-  <textarea
-    disabled={undefined}
-    id="view-type-Form-field_type-Json-field-name-"
-    onChange={[Function]}
-    rows=""
-    style={
-      Object {
-        "height": "100%",
-        "resize": "none",
-        "width": "100%",
-      }
-    }
-    value=""
-  />
-  <div>
-    <span
-      style={
-        Object {
-          "color": "#f44336",
-        }
-      }
-    >
-      This field is required
-    </span>
-  </div>
-</div>
+exports[`Json Form component Render mode readonly by config 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre> <!----></div></span>
 `;
 
-exports[`getField for List 1`] = `
-<div>
-  <pre
-    id="view-type-List-field_type-Json-field-name-"
-    style={
-      Object {
-        "backgroundColor": "white",
-        "padding": 2,
-        "width": "100%",
-      }
-    }
-  >
-    {
-      "a": {
-        "b": [
-          {
-            "c": "d"
-          },
-          {
-            "e": "f"
-          }
-        ]
-      }
-    }
-  </pre>
-</div>
+exports[`Json Form component Render mode readonly conditional param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre> <!----></div></span>
 `;
 
-exports[`getField for Thumbnail 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-Json-field-name-"
-  >
-     
-  </label>
-  <pre
-    id="view-type-Thumbnail-field_type-Json-field-name-"
-    style={
-      Object {
-        "backgroundColor": "white",
-        "padding": 2,
-        "width": "100%",
-      }
-    }
-  >
-    {
-      "a": {
-        "b": [
-          {
-            "c": "d"
-          },
-          {
-            "e": "f"
-          }
-        ]
-      }
-    }
-  </pre>
-</div>
+exports[`Json Form component Render mode readonly param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre> <!----></div></span>
 `;
+
+exports[`Json Form component Render placeholder 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea placeholder="The placeholder" rows="1" value="" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <p class="help is-danger">Invalid JSON format</p></div></span>`;
+
+exports[`Json Form component Render required 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea rows="1" value="{
+  &quot;a&quot;: &quot;b&quot;
+}" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <!----></div></span>
+`;
+
+exports[`Json Form component Render required conditionnal 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea rows="1" value="{
+  &quot;a&quot;: &quot;b&quot;
+}" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <!----></div></span>
+`;
+
+exports[`Json Form component Render required without value 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea rows="1" value="" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <p class="help is-danger">Invalid JSON format</p></div></span>`;
+
+exports[`Json Form component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea rows="1" value="{
+  &quot;a&quot;: &quot;b&quot;
+}" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <!----></div></span>
+`;
+
+exports[`Json Form component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea rows="1" value="{
+  &quot;a&quot;: &quot;b&quot;
+}" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <!----></div></span>
+`;
+
+exports[`Json Form component Render with data 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea rows="1" value="{
+  &quot;a&quot;: &quot;b&quot;
+}" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <!----></div></span>
+`;
+
+exports[`Json Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <textarea rows="1" value="" class="textarea" style="width:100%;height:100%;resize:none;"></textarea> <p class="help is-danger">Invalid JSON format</p></div></span>`;
+
+exports[`Json Thumbnail component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre> <!----></div></span>
+`;
+
+exports[`Json Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Json Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Json Thumbnail component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre> <!----></div></span>
+`;
+
+exports[`Json Thumbnail component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <pre style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre> <!----></div></span>
+`;
+
+exports[`Json Thumbnail component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre> <!----></div></span>
+`;
+
+exports[`Json Thumbnail component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre> <!----></div></span>
+`;
+
+exports[`Json Thumbnail component Render with data 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre> <!----></div></span>
+`;
+
+exports[`Json Thumbnail component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;"></pre> <!----></div></span>`;
+
+exports[`Json list component Render invisible condition is false 1`] = `
+<pre data-server-rendered="true" style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre>
+`;
+
+exports[`Json list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`Json list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`Json list component Render invisible is false 1`] = `
+<pre data-server-rendered="true" style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre>
+`;
+
+exports[`Json list component Render with data 1`] = `
+<pre data-server-rendered="true" style="width:100%;padding:2;background-color:white;">{
+  &quot;a&quot;: &quot;b&quot;
+}</pre>
+`;
+
+exports[`Json list component Render without data 1`] = `<pre data-server-rendered="true" style="width:100%;padding:2;background-color:white;"></pre>`;

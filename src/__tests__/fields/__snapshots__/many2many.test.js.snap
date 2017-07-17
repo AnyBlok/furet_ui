@@ -1,1471 +1,636 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getField for List 1`] = `
-<div>
-  <div
-    style={
-      Object {
-        "display": "flex",
-        "flexWrap": "wrap",
-      }
-    }
-  >
-    <div
-      className={undefined}
-      disabled={undefined}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      onTouchTap={[Function]}
-      style={
-        Object {
-          "MozBoxSizing": "border-box",
-          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-          "backgroundColor": "rgb(224, 224, 224)",
-          "border": 10,
-          "borderRadius": 16,
-          "boxShadow": null,
-          "boxSizing": "border-box",
-          "cursor": "default",
-          "display": Array [
-            "-webkit-box",
-            "-moz-box",
-            "-ms-flexbox",
-            "-webkit-flex",
-            "flex",
-          ],
-          "fontFamily": "Roboto, sans-serif",
-          "fontSize": "inherit",
-          "fontWeight": "inherit",
-          "margin": 4,
-          "muiPrepared": true,
-          "outline": "none",
-          "padding": 0,
-          "position": "relative",
-          "textDecoration": "none",
-          "verticalAlign": null,
-          "whiteSpace": "nowrap",
-          "width": Array [
-            "-webkit-fit-content",
-            "-moz-fit-content",
-            "fit-content",
-          ],
-          "zIndex": 1,
-        }
-      }
-      tabIndex={0}
-    >
-      <span
-        style={
-          Object {
-            "MozUserSelect": "none",
-            "WebkitUserSelect": "none",
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontSize": 14,
-            "fontWeight": 400,
-            "lineHeight": "32px",
-            "msUserSelect": "none",
-            "muiPrepared": true,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "userSelect": "none",
-            "whiteSpace": "nowrap",
-          }
-        }
-      >
-        1
-      </span>
-    </div>
-    <div
-      className={undefined}
-      disabled={undefined}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      onTouchTap={[Function]}
-      style={
-        Object {
-          "MozBoxSizing": "border-box",
-          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-          "backgroundColor": "rgb(224, 224, 224)",
-          "border": 10,
-          "borderRadius": 16,
-          "boxShadow": null,
-          "boxSizing": "border-box",
-          "cursor": "default",
-          "display": Array [
-            "-webkit-box",
-            "-moz-box",
-            "-ms-flexbox",
-            "-webkit-flex",
-            "flex",
-          ],
-          "fontFamily": "Roboto, sans-serif",
-          "fontSize": "inherit",
-          "fontWeight": "inherit",
-          "margin": 4,
-          "muiPrepared": true,
-          "outline": "none",
-          "padding": 0,
-          "position": "relative",
-          "textDecoration": "none",
-          "verticalAlign": null,
-          "whiteSpace": "nowrap",
-          "width": Array [
-            "-webkit-fit-content",
-            "-moz-fit-content",
-            "fit-content",
-          ],
-          "zIndex": 1,
-        }
-      }
-      tabIndex={0}
-    >
-      <span
-        style={
-          Object {
-            "MozUserSelect": "none",
-            "WebkitUserSelect": "none",
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontSize": 14,
-            "fontWeight": 400,
-            "lineHeight": "32px",
-            "msUserSelect": "none",
-            "muiPrepared": true,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "userSelect": "none",
-            "whiteSpace": "nowrap",
-          }
-        }
-      >
-        2
-      </span>
-    </div>
-    <div
-      className={undefined}
-      disabled={undefined}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      onTouchTap={[Function]}
-      style={
-        Object {
-          "MozBoxSizing": "border-box",
-          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-          "backgroundColor": "rgb(224, 224, 224)",
-          "border": 10,
-          "borderRadius": 16,
-          "boxShadow": null,
-          "boxSizing": "border-box",
-          "cursor": "default",
-          "display": Array [
-            "-webkit-box",
-            "-moz-box",
-            "-ms-flexbox",
-            "-webkit-flex",
-            "flex",
-          ],
-          "fontFamily": "Roboto, sans-serif",
-          "fontSize": "inherit",
-          "fontWeight": "inherit",
-          "margin": 4,
-          "muiPrepared": true,
-          "outline": "none",
-          "padding": 0,
-          "position": "relative",
-          "textDecoration": "none",
-          "verticalAlign": null,
-          "whiteSpace": "nowrap",
-          "width": Array [
-            "-webkit-fit-content",
-            "-moz-fit-content",
-            "fit-content",
-          ],
-          "zIndex": 1,
-        }
-      }
-      tabIndex={0}
-    >
-      <span
-        style={
-          Object {
-            "MozUserSelect": "none",
-            "WebkitUserSelect": "none",
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontSize": 14,
-            "fontWeight": 400,
-            "lineHeight": "32px",
-            "msUserSelect": "none",
-            "muiPrepared": true,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "userSelect": "none",
-            "whiteSpace": "nowrap",
-          }
-        }
-      >
-        3
-      </span>
-    </div>
-  </div>
+exports[`Many2Many Thumbnail component Render 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for List 2`] = `
-<div>
-  <div
-    style={
-      Object {
-        "display": "flex",
-        "flexWrap": "wrap",
-      }
-    }
-  >
-    <div
-      className={undefined}
-      disabled={undefined}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      onTouchTap={[Function]}
-      style={
-        Object {
-          "MozBoxSizing": "border-box",
-          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-          "backgroundColor": "rgb(224, 224, 224)",
-          "border": 10,
-          "borderRadius": 16,
-          "boxShadow": null,
-          "boxSizing": "border-box",
-          "cursor": "default",
-          "display": Array [
-            "-webkit-box",
-            "-moz-box",
-            "-ms-flexbox",
-            "-webkit-flex",
-            "flex",
-          ],
-          "fontFamily": "Roboto, sans-serif",
-          "fontSize": "inherit",
-          "fontWeight": "inherit",
-          "margin": 4,
-          "muiPrepared": true,
-          "outline": "none",
-          "padding": 0,
-          "position": "relative",
-          "textDecoration": "none",
-          "verticalAlign": null,
-          "whiteSpace": "nowrap",
-          "width": Array [
-            "-webkit-fit-content",
-            "-moz-fit-content",
-            "fit-content",
-          ],
-          "zIndex": 1,
-        }
-      }
-      tabIndex={0}
-    >
-      <span
-        style={
-          Object {
-            "MozUserSelect": "none",
-            "WebkitUserSelect": "none",
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontSize": 14,
-            "fontWeight": 400,
-            "lineHeight": "32px",
-            "msUserSelect": "none",
-            "muiPrepared": true,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "userSelect": "none",
-            "whiteSpace": "nowrap",
-          }
-        }
-      >
-        todo 1
-      </span>
-    </div>
-    <div
-      className={undefined}
-      disabled={undefined}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      onTouchTap={[Function]}
-      style={
-        Object {
-          "MozBoxSizing": "border-box",
-          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-          "backgroundColor": "rgb(224, 224, 224)",
-          "border": 10,
-          "borderRadius": 16,
-          "boxShadow": null,
-          "boxSizing": "border-box",
-          "cursor": "default",
-          "display": Array [
-            "-webkit-box",
-            "-moz-box",
-            "-ms-flexbox",
-            "-webkit-flex",
-            "flex",
-          ],
-          "fontFamily": "Roboto, sans-serif",
-          "fontSize": "inherit",
-          "fontWeight": "inherit",
-          "margin": 4,
-          "muiPrepared": true,
-          "outline": "none",
-          "padding": 0,
-          "position": "relative",
-          "textDecoration": "none",
-          "verticalAlign": null,
-          "whiteSpace": "nowrap",
-          "width": Array [
-            "-webkit-fit-content",
-            "-moz-fit-content",
-            "fit-content",
-          ],
-          "zIndex": 1,
-        }
-      }
-      tabIndex={0}
-    >
-      <span
-        style={
-          Object {
-            "MozUserSelect": "none",
-            "WebkitUserSelect": "none",
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontSize": 14,
-            "fontWeight": 400,
-            "lineHeight": "32px",
-            "msUserSelect": "none",
-            "muiPrepared": true,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "userSelect": "none",
-            "whiteSpace": "nowrap",
-          }
-        }
-      >
-        todo 2
-      </span>
-    </div>
-    <div
-      className={undefined}
-      disabled={undefined}
-      href={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      onTouchTap={[Function]}
-      style={
-        Object {
-          "MozBoxSizing": "border-box",
-          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-          "backgroundColor": "rgb(224, 224, 224)",
-          "border": 10,
-          "borderRadius": 16,
-          "boxShadow": null,
-          "boxSizing": "border-box",
-          "cursor": "default",
-          "display": Array [
-            "-webkit-box",
-            "-moz-box",
-            "-ms-flexbox",
-            "-webkit-flex",
-            "flex",
-          ],
-          "fontFamily": "Roboto, sans-serif",
-          "fontSize": "inherit",
-          "fontWeight": "inherit",
-          "margin": 4,
-          "muiPrepared": true,
-          "outline": "none",
-          "padding": 0,
-          "position": "relative",
-          "textDecoration": "none",
-          "verticalAlign": null,
-          "whiteSpace": "nowrap",
-          "width": Array [
-            "-webkit-fit-content",
-            "-moz-fit-content",
-            "fit-content",
-          ],
-          "zIndex": 1,
-        }
-      }
-      tabIndex={0}
-    >
-      <span
-        style={
-          Object {
-            "MozUserSelect": "none",
-            "WebkitUserSelect": "none",
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontSize": 14,
-            "fontWeight": 400,
-            "lineHeight": "32px",
-            "msUserSelect": "none",
-            "muiPrepared": true,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "userSelect": "none",
-            "whiteSpace": "nowrap",
-          }
-        }
-      >
-        todo 3
-      </span>
-    </div>
-  </div>
+exports[`Many2Many Thumbnail component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Thumbnail 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-Many2Many-field-name-"
-  >
-     
-  </label>
-  <div>
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-        }
-      }
-    >
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          1
-        </span>
-      </div>
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          2
-        </span>
-      </div>
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          3
-        </span>
-      </div>
-    </div>
-  </div>
+exports[`Many2Many Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Many2Many Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Many2Many Thumbnail component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Thumbnail 2`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-Many2Many-field-name-"
-  >
-     
-  </label>
-  <div>
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-        }
-      }
-    >
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          todo 1
-        </span>
-      </div>
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          todo 2
-        </span>
-      </div>
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          todo 3
-        </span>
-      </div>
-    </div>
-  </div>
+exports[`Many2Many Thumbnail component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <span class="tag"><a>Test
+                    </a></span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Thumbnail 3`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-Many2Many-field-name-"
-  >
-    Test
-  </label>
-  <div>
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-        }
-      }
-    >
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          1
-        </span>
-      </div>
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          2
-        </span>
-      </div>
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          3
-        </span>
-      </div>
-    </div>
-  </div>
+exports[`Many2Many Thumbnail component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Thumbnail 4`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-Many2Many-field-name-"
-  >
-    Test
-  </label>
-  <div>
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "flexWrap": "wrap",
-        }
-      }
-    >
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          todo 1
-        </span>
-      </div>
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          todo 2
-        </span>
-      </div>
-      <div
-        className={undefined}
-        disabled={undefined}
-        href={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onTouchTap={[Function]}
-        style={
-          Object {
-            "MozBoxSizing": "border-box",
-            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(224, 224, 224)",
-            "border": 10,
-            "borderRadius": 16,
-            "boxShadow": null,
-            "boxSizing": "border-box",
-            "cursor": "default",
-            "display": Array [
-              "-webkit-box",
-              "-moz-box",
-              "-ms-flexbox",
-              "-webkit-flex",
-              "flex",
-            ],
-            "fontFamily": "Roboto, sans-serif",
-            "fontSize": "inherit",
-            "fontWeight": "inherit",
-            "margin": 4,
-            "muiPrepared": true,
-            "outline": "none",
-            "padding": 0,
-            "position": "relative",
-            "textDecoration": "none",
-            "verticalAlign": null,
-            "whiteSpace": "nowrap",
-            "width": Array [
-              "-webkit-fit-content",
-              "-moz-fit-content",
-              "fit-content",
-            ],
-            "zIndex": 1,
-          }
-        }
-        tabIndex={0}
-      >
-        <span
-          style={
-            Object {
-              "MozUserSelect": "none",
-              "WebkitUserSelect": "none",
-              "color": "rgba(0, 0, 0, 0.87)",
-              "fontSize": 14,
-              "fontWeight": 400,
-              "lineHeight": "32px",
-              "msUserSelect": "none",
-              "muiPrepared": true,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "userSelect": "none",
-              "whiteSpace": "nowrap",
-            }
-          }
-        >
-          todo 3
-        </span>
-      </div>
-    </div>
-  </div>
+exports[`Many2Many Thumbnail component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+                    </a></span>
+<!---->
 </div>
+</span>
+`;
+
+exports[`Many2Many Thumbnail component Render with fieldcolor 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag" style="border:4px solid #123456;"><a>Test
+                    </a></span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2Many Thumbnail component Render without data 1 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
+
+exports[`Many2Many Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
+
+exports[`Many2Many list component Render fieldcolor 1`] = `
+<div data-server-rendered="true"><span class="tag" style="border:4px solid #123456;"><a>Test
+                </a></span></div>
+`;
+
+exports[`Many2Many list component Render invisible condition is false 1`] = `
+<div data-server-rendered="true"><span class="tag"><a>Test
+                </a></span></div>
+`;
+
+exports[`Many2Many list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`Many2Many list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`Many2Many list component Render invisible is false 1`] = `
+<div data-server-rendered="true"><span class="tag"><a>Test
+                </a></span></div>
+`;
+
+exports[`Many2Many list component Render with data 1`] = `
+<div data-server-rendered="true"><span class="tag"><a>Test
+                </a></span></div>
+`;
+
+exports[`Many2Many list component Render without data 1 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Many2Many list component Render without data 2 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Many2ManyCheckbox Form component Render 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render fieldcolor 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="width:100%;height:5px;background-color:#123456;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Many2ManyCheckbox Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Many2ManyCheckbox Form component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render mode readonly by config 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render mode readonly conditional param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render mode readonly param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render required 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render required conditionnal 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render required without value 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<p class="help is-danger">this field is required</p>
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render without data 1 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span><span class="control-label">
+                            Test
+                            <div style="display:none;"></div></span></label>
+</div>
+<div id="2" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 2
+                            <div style="display:none;"></div></span></label></div>
+<div id="3" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                            Test 3
+                            <div style="display:none;"></div></span></label></div>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyCheckbox Form component Render without data 2 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"></div> <!----></div></span>`;
+
+exports[`Many2ManyTags Form component Render 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
+        <!---->
+        <!---->
+        <!---->
+    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render icon 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control has-icons-left is-clearfix"><input type="text" autocomplete="off" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<!---->
+<!---->
+</div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></li>
+<!---->
+</ul>
+</span>
+</div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
+        <!---->
+        <!---->
+        <!---->
+    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Many2ManyTags Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Many2ManyTags Form component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
+        <!---->
+        <!---->
+        <!---->
+    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
+        <!---->
+        <!---->
+        <!---->
+    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render mode readonly by config 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <!----></span>
+<!---->
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render mode readonly conditional param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <!----></span>
+<!---->
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render mode readonly param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <!----></span>
+<!---->
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render placeholder 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control is-clearfix"><input type="text" placeholder="The placeholder" autocomplete="off" value="" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></li>
+<!---->
+</ul>
+</span>
+</div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render required 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="" class="input is-info">
+        <!----><span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+        <!---->
+    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render required conditionnal 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="" class="input is-info">
+        <!----><span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+        <!---->
+    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render required without value 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
+<!---->
+</div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></li>
+<!---->
+</ul>
+</span>
+</div>
+</p>
+</div>
+<p class="help is-danger">this field is required</p>
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
+        <!---->
+        <!---->
+        <!---->
+    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
+        <!---->
+        <!---->
+        <!---->
+    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render with fieldcolor 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag" style="border:4px solid #123456;"><a>Test
+                    </a></span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render with filtering selection available 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
+        <!---->
+        <!---->
+        <!---->
+    </div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b> <b></b>2<b></b></span></li>
+    <!---->
+    </ul>
+    </span>
+</div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render with filtering selection available 2 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control is-clearfix"><input type="text" autocomplete="off" value="Test 3" class="input">
+        <!---->
+        <!---->
+        <!---->
+    </div> <span class="box" style="display:none;"><ul><li class="option"><span>Test 2</span></li>
+    <li class="option"><span><b>Test 3</b></span></li>
+    <!---->
+    </ul>
+    </span>
+</div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render with selection available 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+                            </a> <button class="delete is-small"></button></span>
+<div class="autocomplete control">
+    <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
+        <!---->
+        <!---->
+        <!---->
+    </div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b> <b></b>2<b></b></span></li>
+    <li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b> <b></b>3<b></b></span></li>
+    <!---->
+    </ul>
+    </span>
+</div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render without data 1 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></li>
+<!---->
+</ul>
+</span>
+</div>
+</p>
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Many2ManyTags Form component Render without data 2 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+</p>
+</div>
+<!---->
+</div>
+</span>
 `;

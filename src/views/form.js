@@ -7,303 +7,394 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import Base from './base';
+import Vue from 'vue';
 import plugin from '../plugin';
-import EditorInsertDriveFile from 'material-ui/svg-icons/editor/insert-drive-file';
-import EditorModeEdit from 'material-ui/svg-icons/editor/mode-edit';
-import ActionNoteAdd from 'material-ui/svg-icons/action/note-add';
-import ActionDeleteForever from 'material-ui/svg-icons/action/delete-forever';
-import NavigationArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
-import NavigationCancel from 'material-ui/svg-icons/navigation/cancel';
-import ContentSave from 'material-ui/svg-icons/content/save';
-import IconButton from 'material-ui/IconButton';
-import {blue500, red500} from 'material-ui/styles/colors';
-import DropdownMenu from './dropdown';
-import translate from 'counterpart';
+import {dispatchAll} from '../store';
+import {json_post, json_post_dispatch_all} from '../server-call';
 import {getNewID} from '../view';
+import _ from 'underscore';
 
 /**
  * Add Icon for Form view
 **/
-plugin.set(['views', 'icon'], {Form: (props) => {
-    return <EditorInsertDriveFile />;
-}});
+export const FormViewIcon = Vue.component('furet-ui-form-view-icon', {
+    template: '<i class="fa fa-file-o"></i>',
+});
 
-/**
- * Form view
- *
-**/
-export class Form extends Base {
-    constructor(props) {
-        super(props);
-        const id = props.params && props.params.id || null;
-        this.state = {readonly: true, id, new: props.params && props.params.new || false};
+plugin.set(['views', 'icon'], {Form: 'furet-ui-form-view-icon'})
+
+export const addNewDataId = (obj) => {
+    obj.$router.push({
+        name: obj.menuId ? 'space_menu_action_view_dataId' : 'space_action_view_dataId',
+        params: {
+            spaceId: obj.spaceId,
+            menuId: obj.menuId,
+            actionId: obj.actionId,
+            viewId: obj.viewId,
+            dataId: getNewID(obj.view.model),
+            mode: 'new',
+        }
+    });
+};
+export const openModeDataId = (obj) => {
+    obj.$router.push({
+        name: obj.menuId ? 'space_menu_action_view_dataId' : 'space_action_view_dataId',
+        params: {
+            spaceId: obj.spaceId,
+            menuId: obj.menuId,
+            actionId: obj.actionId,
+            viewId: obj.viewId,
+            dataId: obj.dataId,
+            mode: 'readwrite',
+        }
+    });
+};
+export const closeModeDataId = (obj) => {
+    if (obj.view.onClose) {
+        obj.$router.push({
+            name: obj.menuId ? 'space_menu_action_view' : 'space_action_view',
+            params: {
+                spaceId: obj.spaceId,
+                menuId: obj.menuId,
+                actionId: obj.actionId,
+                viewId: obj.view.onClose,
+            }
+        });
     }
-    call_server () {
-        this.json_post(
-            '/form/get', 
-            {
-                model: this.props.model,
-                id: this.state.id,
-                new: this.state.new,
-                viewId: this.props.viewId,
-                fields: this.props.fields,
-            },
-            {
-                onSuccess: (results) => {
-                    this.props.dispatchAll(results);
+};
+export const cancelModeDataId = (obj) => {
+    obj.$store.commit('CLEAR_CHANGE');
+    if (obj.mode == 'new') {
+        closeModeDataId(obj)
+    } else {
+        obj.$router.push({
+            name: obj.menuId ? 'space_menu_action_view_dataId' : 'space_action_view_dataId',
+            params: {
+                spaceId: obj.spaceId,
+                menuId: obj.menuId,
+                actionId: obj.actionId,
+                viewId: obj.viewId,
+                dataId: obj.dataId,
+                mode: 'readonly',
+            }
+        });
+    }
+};
+
+export const FormView = Vue.component('furet-ui-form-view', {
+    props: ['spaceId', 'menuId', 'actionId','viewId', 'view', 'dataId', 'mode', 'data', 'change'],
+    template: `
+        <div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <p class="control" v-if="mode == 'readonly' && view && view.creatable">
+                            <a  class="button"
+                                v-on:click="addNew"
+                            >
+                                <span class="icon is-small">
+                                    <i class="fa fa-plus"></i>
+                                </span>
+                                <span>{{$t('views.common.create')}}</span>
+                            </a>
+                        </p>
+                        <p class="control" v-if="mode == 'readonly' && view && view.editable">
+                            <a  class="button"
+                                v-on:click="openMode"
+                            >
+                                <span class="icon is-small">
+                                    <i class="fa fa-pencil"></i>
+                                </span>
+                                <span>{{$t('views.common.edit')}}</span>
+                            </a>
+                        </p>
+                        <p class="control" v-if="mode == 'readonly' && view && view.deletable">
+                            <a  class="button"
+                                v-on:click="deleteData"
+                            >
+                                <span class="icon is-small">
+                                    <i class="fa fa-trash"></i>
+                                </span>
+                                <span>{{$t('views.common.delete')}}</span>
+                            </a>
+                        </p>
+                        <p class="control" v-if="mode == 'readonly'">
+                            <a  class="button"
+                                v-on:click="closeMode"
+                            >
+                                <span class="icon is-small">
+                                    <i class="fa fa-times"></i>
+                                </span>
+                                <span>{{$t('views.common.close')}}</span>
+                            </a>
+                        </p>
+                        <p class="control" v-if="mode != 'readonly'">
+                            <a  class="button"
+                                v-on:click="saveData"
+                            >
+                                <span class="icon is-small">
+                                    <i class="fa fa-floppy-o"></i>
+                                </span>
+                                <span>{{$t('views.common.save')}}</span>
+                            </a>
+                        </p>
+                        <p class="control" v-if="mode != 'readonly'">
+                            <a  class="button"
+                                v-on:click="cancelMode"
+                            >
+                                <span class="icon is-small">
+                                    <i class="fa fa-times"></i>
+                                </span>
+                                <span v-if="mode == 'new'">{{$t('views.common.close')}}</span>
+                                <span v-if="mode == 'readwrite'">{{$t('views.common.cancel')}}</span>
+                            </a>
+                        </p>
+                        <p class="control" 
+                            v-if="view && (view.buttons || []).length >0"
+                        >
+                            <b-dropdown>
+                                <button class="button" slot="trigger">
+                                    <span>{{$t('views.common.actions')}}</span>
+                                    <span class="icon is-small">
+                                        <i class="fa fa-caret-down"></i>
+                                    </span>
+                                </button>
+                                <b-dropdown-option 
+                                    v-for="button in view.buttons"
+                                    v-bind:value="button.buttonId"
+                                    v-bind:key="button.buttonId"
+                                    v-on:change="selectAction(button.buttonId)"
+                                >
+                                    {{button.label}}
+                                </b-dropdown-option>
+                            </b-dropdown>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+            <section 
+                class="box"
+                v-bind:style="{'margin-bottom': '20px'}"
+            >
+                <component v-bind:is="form_card" v-bind:config="config"/>
+            </section>
+        </div>
+    `,
+    created: function () {
+        if (this.view) this.getData();
+    },
+    computed: {
+        config () {
+            return {
+                data: this.data,
+                view: this.view,
+                spaceId: this.spaceId,
+                menuId: this.menuId,
+                actionId: this.actionId,
+                viewId: this.viewId,
+                dataId: this.dataId,
+                mode: this.mode,
+                store_key: 'UPDATE_CHANGE',
+            }
+        },
+        form_card () {
+            if (this.view) {
+                return {
+                    template: this.view.template,
+                    props: ['config'],
+                };
+            }
+            return {
+                template: '<div></div>'
+            };
+        },
+    },
+    methods: {
+        getData () {
+            json_post_dispatch_all('/data/read/' + this.dataId, {model: this.view.model, new: this.mode == 'new', fields: this.view.fields, viewId: this.viewId});
+        },
+        addNew () {
+            addNewDataId(this);
+        },
+        openMode () {
+            openModeDataId(this);
+        },
+        closeMode () {
+            closeModeDataId(this);
+        },
+        cancelMode () {
+            cancelModeDataId(this);
+        },
+        deleteData () {
+            json_post_dispatch_all('/data/delete', {model: this.view.model, dataIds: [this.dataId], path: {spaceId: this.spaceId, menuId: this.menuId, actionId: this.actionId, viewId: this.view.onClose}});
+        },
+        saveData () {
+            const changes = Object.assign({}, this.$store.state.data.changes)
+            if (changes[this.view.model] && changes[this.view.model][this.dataId]) delete changes[this.view.model][this.dataId];
+            json_post(
+                this.mode == 'new' ? '/data/create' : '/data/update', 
+                {
+                    model: this.view.model,
+                    dataId: this.dataId,
+                    data: this.change,
+                    changes,
+                    fields: this.view.fields,
+                    path: {
+                        spaceId: this.spaceId,
+                        menuId: this.menuId,
+                        actionId: this.actionId,
+                        viewId: this.viewId,
+                    },
                 },
-            },
-        );
-    }
-    /**
-     * call by create action
-    **/
-    addNewEntry () {
-        const id = getNewID(this.props.model);
-        this.setState({readonly: false, id, new: true}, () => {
-            this.call_server(id);
-            this.props.changeView(
-                'addNewEntry', this.props.actionId, this.props.viewId, {
-                    id,
-                    returnView: this.props.params && this.props.params.returnView,
-                    readonly: false,
-                    new: true,
-                });
-        });
-        this.props.onNew(id);
-    }
-    /**
-     * Close the current view and route to previous view
-    **/
-    returnPreviousView() {
-        const viewId = (this.props.params && this.props.params.returnView) || this.props.onSelect;
-        if (viewId) {
-            this.getView(viewId);
-            this.props.changeView(
-                'returnPreviousView', this.props.actionId, viewId, {}
-            );
+                {
+                    onSuccess: (result) => {
+                        dispatchAll(result)
+                        this.$store.commit('CLEAR_CHANGE');
+                    },
+                }
+            )
         }
     }
-    /**
-     * call by delete button
-    **/
-    removeEntry () {
-        this.props.onDelete([this.state.id]);
-        this.returnPreviousView();
-    }
-    /**
-     * call by save button
-    **/
-    saveEntry () {
-        this.props.onSave(this.state.id, this.state.new, this.props.fields);
-        this.setState({readonly: true, new: false}, () => {
-            this.props.changeView(
-                'saveEntry', this.props.actionId, this.props.viewId, {
-                    id: this.state.id,
-                    returnView: this.props.params && this.props.params.returnView,
-                    readonly: true,
-                    new: false,
-                });
-        });
-    }
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.params && (nextProps.params.new || !this.state.new || nextProps.params.id != this.state.id)) {
-            const state = {}
-            if (nextProps.params.readonly != undefined) state.readonly = nextProps.params.readonly;
-            if (nextProps.params.id != undefined) state.id = nextProps.params.id;
-            this.setState(state);
-        }
-    }
-    /**
-     * Render the template of the form view
-    **/
-    renderGetReadonly (condition, data) {
-        return this.state.readonly || this.props.parentReadonly || this.renderSafeEval(condition, data);
-    }
-    renderGetRequired (condition, data) {
-        return this.renderSafeEval(condition, data);
-    }
-    renderGetOnchange () {
-        const self = this;
-        return (fieldname, newValue) => {
-            self.props.onChange(self.state.id, fieldname, newValue, self.props.fields);
-        }
-    }
-    renderTemplate (template) {
-        if (!template) return null;
-        const data = Object.assign(
-            {}, 
-            this.props.data && this.props.data[this.state.id],
-            this.props.computed && this.props.computed[this.state.id],
-            this.props.change && this.props.change[this.state.id]
-        );
-        return super.renderTemplate(template, 'Form', data, this.state.id);
-    }
-    /**
-     * Render the buttons
-    **/
-    renderButton () {
-        return (
-            <div className="row">
-                { !this.state.readonly && !this.props.parentModel && 
-                    <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-                         style={{paddingLeft: 0, paddingRight: 0}}
-                    >
-                        <IconButton
-                            onClick={this.saveEntry.bind(this)}
-                            tooltip={translate('furetUI.views.common.save', {fallback: 'Save'})}
-                            iconStyle={{
-                                width: 36,
-                                height: 36,
-                            }}
-                            style={{
-                                width: 48,
-                                height: 48,
-                            }}
-                        >
-                            <ContentSave color={blue500} />
-                        </IconButton>
-                    </div>
-                }
-                { ((this.props.creatable && this.state.readonly) || this.props.parentModel) && !this.props.parentReadonly &&
-                    <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-                         style={{paddingLeft: 0, paddingRight: 0}}
-                    >
-                        <IconButton
-                            onClick={this.addNewEntry.bind(this)}
-                            tooltip={translate('furetUI.views.common.create', {fallback: 'Create'})}
-                            iconStyle={{
-                                width: 36,
-                                height: 36,
-                            }}
-                            style={{
-                                width: 48,
-                                height: 48,
-                            }}
-                        >
-                            <ActionNoteAdd color={blue500} />
-                        </IconButton>
-                    </div>
-                }
-                { this.props.editable && this.state.readonly &&
-                    <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-                         style={{paddingLeft: 0, paddingRight: 0}}
-                    >
-                        <IconButton
-                            onClick={() => this.setState({readonly: false})}
-                            tooltip={translate('furetUI.views.common.edit', {fallback: 'Edit'})}
-                            iconStyle={{
-                                width: 36,
-                                height: 36,
-                            }}
-                            style={{
-                                width: 48,
-                                height: 48,
-                            }}
-                        >
-                            <EditorModeEdit color={blue500} />
-                        </IconButton>
-                    </div>
-                }
-                { !this.state.readonly && !this.props.parentModel &&
-                    <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-                         style={{paddingLeft: 0, paddingRight: 0}}
-                    >
-                        <IconButton
-                            onClick={() => {
-                                this.props.clearChange();
-                                if (this.state.new) {
-                                    this.returnPreviousView();
-                                } else {
-                                    this.setState({readonly: true});
-                                }
-                            }}
-                            tooltip={translate('furetUI.views.common.cancel', {fallback: 'Cancel'})}
-                            iconStyle={{
-                                width: 36,
-                                height: 36,
-                            }}
-                            style={{
-                                width: 48,
-                                height: 48,
-                            }}
-                        >
-                            <NavigationCancel color={red500} />
-                        </IconButton>
-                    </div>
-                }
-                { ((this.props.deletable && this.state.readonly) || this.props.parentModel) && !this.props.parentReadonly &&
-                    <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-                         style={{paddingLeft: 0, paddingRight: 0}}
-                    >
-                        <IconButton
-                            onClick={this.removeEntry.bind(this)}
-                            tooltip={translate('furetUI.views.common.delete', {fallback: 'Delete'})}
-                            iconStyle={{
-                                width: 36,
-                                height: 36,
-                            }}
-                            style={{
-                                width: 48,
-                                height: 48,
-                            }}
-                        >
-                            <ActionDeleteForever color={red500} />
-                        </IconButton>
-                    </div>
-                }
-                { (this.state.readonly || this.props.parentModel) && 
-                    <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-                         style={{paddingLeft: 0, paddingRight: 0}}
-                    >
-                        <IconButton
-                            onClick={this.returnPreviousView.bind(this)}
-                            tooltip={translate('furetUI.views.common.close', {fallback: 'Close'})}
-                            iconStyle={{
-                                width: 36,
-                                height: 36,
-                            }}
-                            style={{
-                                width: 48,
-                                height: 48,
-                            }}
-                        >
-                            <NavigationArrowBack />
-                        </IconButton>
-                    </div>
-                }
-                { (this.props.buttons || []).length != 0 &&  !this.props.parentModel && 
-                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <DropdownMenu 
-                            label={translate('furetUI.views.common.actions', {fallback: 'Actions'})}
-                            menus={this.props.buttons} 
-                        />
-                    </div>
-                }
-            </div>
-        )
-    }
-    render () {
-        return (
-            <div>
-                <div className="row">
-                    <div className="col-xs-12 col-sm-8 col-md-8 col-lg-9">
-                        {this.renderButton()}
-                    </div>
-                    <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3">
-                        {this.state.readonly && this.props.selector}
-                    </div>
-                </div>
-                <div className="row">
-                    {this.renderTemplate(this.props.template)}
-                </div>
-            </div>
-        )
-    }
+});
+
+plugin.set(['views', 'type'], {Form: 'furet-ui-form-view'});
+
+export const addNewX2MDataId = (obj) => {
+    const newId = getNewID(obj.view.model)
+    const dataIds = obj.dataIds.slice(0);
+    dataIds.push(newId);
+    const values = {dataId: newId};
+    if (obj.x2oField != undefined) values[obj.x2oField] = obj.x2oFieldId;
+    obj.updateValueX2M(newId, values, true);
+    obj.$emit('updateDataIds', dataIds);
+    obj.$emit('changeView', obj.viewId, newId);
+};
+export const deleteDataX2MDataId = (obj) => {
+    const dataIds = obj.dataIds.slice(0);
+    const index = dataIds.indexOf(obj.dataId);
+    dataIds.splice(index, 1);
+    obj.$emit('updateDataIds', dataIds);
+    obj.$store.commit('UPDATE_CHANGE_X2M_DELETE', {
+        model: obj.view.model,
+        dataIds: [obj.dataId],
+    });
+    if (obj.view.onClose) obj.$emit('changeView', obj.view.onClose);
+    else obj.$emit('changeView', obj.viewId, dataIds.length ? dataIds[0] : null);
 }
+export const updateValueX2M = (obj, dataId, values, create) => {
+    if (create) obj.$store.commit('CREATE_CHANGE_X2M', {model: obj.view.model, dataId});
+    _.each(_.keys(values), fieldname => {
+        obj.$store.commit('UPDATE_CHANGE_X2M', {
+            model: obj.view.model,
+            dataId,
+            fieldname,
+            value: values[fieldname],
+        });
+    });
+};
 
-plugin.set(['views', 'type'], {Form})
+export const X2MFormView = Vue.component('furet-ui-x2m-form-view', {
+    props: ['model', 'views', 'viewId', 'view', 'dataIds', 'dataId', 'data', 'change', 'isReadonly', 'x2oField', 'x2oFieldId'],
+    template: `
+        <div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <p class="control" v-if="!isReadonly && view && view.creatable">
+                            <a  class="button"
+                                v-on:click="addNew"
+                            >
+                                <span class="icon is-small">
+                                    <i class="fa fa-plus"></i>
+                                </span>
+                                <span>{{$t('views.common.create')}}</span>
+                            </a>
+                        </p>
+                        <p class="control" v-if="!isReadonly && view && view.deletable">
+                            <a  class="button"
+                                v-on:click="deleteData"
+                            >
+                                <span class="icon is-small">
+                                    <i class="fa fa-trash"></i>
+                                </span>
+                                <span>{{$t('views.common.delete')}}</span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a  class="button"
+                                v-on:click="closeMode"
+                            >
+                                <span class="icon is-small">
+                                    <i class="fa fa-times"></i>
+                                </span>
+                                <span>{{$t('views.common.close')}}</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <furet-ui-view-selector
+                        v-bind:views="views"
+                        v-bind:viewId="viewId"
+                        v-on:changeView="changeView"
+                    />
+                </div>
+            </nav>
+            <section 
+                class="box"
+                v-bind:style="{'margin-bottom': '10px'}"
+            >
+                <component v-bind:is="form_card" v-bind:config="config"/>
+            </section>
+        </div>
+    `,
+    created: function () {
+        const changes = this.$store.state.data.changes.new || {};
+        const newIds = _.keys(changes[this.model] || {});
+        json_post_dispatch_all('/list/x2m/get', {model: this.model, fields: this.view.fields, dataIds: _.filter(this.dataIds, dataId => newIds.indexOf(dataId) == -1)});
+    },
+    computed: {
+        config () {
+            return {
+                data: this.data,
+                view: this.view,
+                viewId: this.viewId,
+                dataId: this.dataId,
+                mode: this.isReadonly ? 'readonly' : 'readwrite',
+                store_key: 'UPDATE_CHANGE_X2M',
+            }
+        },
+        form_card () {
+            if (this.view) {
+                return {
+                    template: this.view.template,
+                    props: ['config'],
+                };
+            }
+            return {
+                template: '<div></div>'
+            };
+        },
+    },
+    methods: {
+        addNew () {
+            addNewX2MDataId(this);
+        },
+        closeMode () {
+            if (this.view.onClose) {
+                this.$emit('changeView', this.view.onClose);
+            }
+        },
+        deleteData () {
+            deleteDataX2MDataId(this);
+        },
+        changeView(viewId) {
+            this.$emit('changeView', viewId);
+        },
+        updateValueX2M(dataId, values, create) {
+            updateValueX2M(this, dataId, values, create);
+        },
+    }
+});
 
-export default Form
+plugin.set(['views', 'x2m-type'], {Form: 'furet-ui-x2m-form-view'});

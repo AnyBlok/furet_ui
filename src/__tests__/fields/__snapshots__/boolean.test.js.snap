@@ -1,37 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getField for Form 1`] = `<div />`;
+exports[`Boolean Form component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form icon favorite 1`] = `<div />`;
+exports[`Boolean Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
 
-exports[`getField for Form icon favorite with false 1`] = `<div />`;
+exports[`Boolean Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
-exports[`getField for Form icon location 1`] = `<div />`;
+exports[`Boolean Form component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form icon location with false 1`] = `<div />`;
+exports[`Boolean Form component Render is False 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form icon mic 1`] = `<div />`;
+exports[`Boolean Form component Render is True 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form icon mic with false 1`] = `<div />`;
+exports[`Boolean Form component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                The label
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form icon star 1`] = `<div />`;
+exports[`Boolean Form component Render mode readonly by config 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form icon star with false 1`] = `<div />`;
+exports[`Boolean Form component Render mode readonly conditional param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form icon visibility 1`] = `<div />`;
+exports[`Boolean Form component Render mode readonly param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form icon visibility with false 1`] = `<div />`;
+exports[`Boolean Form component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form labelPosition left 1`] = `<div />`;
+exports[`Boolean Form component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form readonly 1`] = `<div />`;
+exports[`Boolean Thumbnail component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Form with false 1`] = `<div />`;
+exports[`Boolean Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
 
-exports[`getField for List 1`] = `<div />`;
+exports[`Boolean Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
-exports[`getField for List with false 1`] = `<div />`;
+exports[`Boolean Thumbnail component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Thumbnail 1`] = `<div />`;
+exports[`Boolean Thumbnail component Render is False 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                
+            </span></label>
+</span>
+`;
 
-exports[`getField for Thumbnail with false 1`] = `<div />`;
+exports[`Boolean Thumbnail component Render is True 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                
+            </span></label>
+</span>
+`;
+
+exports[`Boolean Thumbnail component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                The label
+            </span></label>
+</span>
+`;
+
+exports[`Boolean Thumbnail component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                
+            </span></label>
+</span>
+`;
+
+exports[`Boolean Thumbnail component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+                
+            </span></label>
+</span>
+`;
+
+exports[`Boolean list component Render invisible condition is false 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>`;
+
+exports[`Boolean list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`Boolean list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+
+exports[`Boolean list component Render invisible is false 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>`;
+
+exports[`Boolean list component Render is False 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>`;
+
+exports[`Boolean list component Render is True 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>`;
+
+exports[`Boolean list component Render without data 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>`;

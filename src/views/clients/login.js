@@ -7,41 +7,26 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import Client from '../client';
+import Vue from 'vue';
 import plugin from '../../plugin';
-import RaisedButton from 'material-ui/RaisedButton';
-import translate from 'counterpart';
+import {json_post_dispatch_all} from '../../server-call';
 
-class Login extends Client {
-    getData2Send () {
-        return {};
-    }
-    onCallServer () {
-        const data = this.getData2Send();
-        this.json_post('/client/login', data, {
-            onSuccess: (result) => {
-                this.props.dispatchAll(result);
-            },
-        });
-    }
-    render () {
-        return (
-            <div className="container">
-                <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-                    <RaisedButton 
-                        ref="button"
-                        style={{marginTop: 100}}
-                        label={translate('furetUI.views.clients.login.button', {fallback: 'Login'})}
-                        fullWidth={true} 
-                        primary={true}
-                        onClick={this.onCallServer.bind(this)}
-                    /> 
+export const Login = Vue.component('furet-ui-custom-view-login', {
+    template: `
+        <section class="section">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <a class="button is-primary" v-on:click="onCallServer">
+                        {{ $t('views.clients.login.button') }}
+                    </a>
                 </div>
             </div>
-        );
-    }
-}
+        </section>`,
+    methods: {
+        onCallServer () {
+            json_post_dispatch_all('/client/login', {});
+        }
+    },
+});
 
-plugin.set(['views', 'type', 'client'], {Login});
-export default Login;
+plugin.set(['views', 'type', 'client'], {Login: {vue: 'furet-ui-custom-view-login'}});

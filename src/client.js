@@ -7,27 +7,30 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import ReactDOM from 'react-dom';
-require("font-awesome-loader");
-import 'react-select/dist/react-select.css';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import {getMuiTheme, MuiThemeProvider} from 'material-ui/styles';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
-import {Provider} from 'react-redux';
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import Vue from 'vue';
+import Buefy from 'buefy';
+import 'bulma/css/bulma.css'
+import 'buefy/lib/buefy.css';
+import './client.css';
+import { sync } from 'vuex-router-sync';
+import "font-awesome-loader";
 import {json_post} from './server-call';
-import {dispatchAll} from './reducers';
-import reducers, {send2Server} from './reducers';
 import plugin from './plugin';
+import {i18n} from './i18n';
 import './views';
 import './fields';
-import App from './app';
+import './app';
 
-plugin.set([], {initData: (store) => {
+Vue.use(Buefy, {defaultIconPack: 'fa',});
+
+import {store, dispatchAll} from './store';
+import router from './routes';
+sync(store, router)  // use vue-router with vuex
+
+plugin.set([], {initData: (router, store) => {
     json_post('/init/required/data', {}, {
         onSuccess: (result) => {
-            dispatchAll(store.dispatch, result);
+            dispatchAll(result);
         },
         onError: (error, response) => {
             console.error('call initial required data', error || response.body)
@@ -35,7 +38,7 @@ plugin.set([], {initData: (store) => {
         onComplete: (error, response) => {
             json_post('/init/optionnal/data', {}, {
                 onSuccess: (result) => {
-                    dispatchAll(store.dispatch, result);
+                    dispatchAll(result);
                 },
                 onError: (error, response) => {
                     console.error('call initial optional data', error || response.body)
@@ -45,30 +48,18 @@ plugin.set([], {initData: (store) => {
     });
 }});
 
-injectTapEventPlugin();
-const store = createStore(
-    combineReducers(reducers), 
-    applyMiddleware(send2Server)
-);
-
-class FuretUI extends React.Component {
-    componentDidMount () {
+const FuretUI = new Vue({
+    el: '#furet-ui-app',
+    template: '<furet-ui></furet-ui>',
+    store,
+    router,
+    i18n,
+    created: () => {
         const initData = plugin.get(['initData']);
-        if (initData) initData(store);
-    }
-    render () {
-        return (
-            <Provider store={store}>
-                <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-                    <App />
-                </MuiThemeProvider>
-            </Provider>
-        );
-    }
-}
+        if (initData) initData(router, store);
+    },
+})
 
-window.FuretUI = FuretUI;
-window.React = React;
-window.ReactDOM = ReactDOM;
 window.plugin = plugin;
+window.FuretUI = FuretUI;
 export default FuretUI;

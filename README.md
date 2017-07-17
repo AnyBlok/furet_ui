@@ -9,7 +9,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 -->
 # furet_ui
 
-Furet UI is generic client on top of ``Reactjs`` and ``material-ui``. 
+Furet UI is generic client on top of ``buefy`` with ``vuejs`` and ``bulma``. 
 Lite and generic based an specific API.
 
 Furet UI is released under the terms of the `Mozilla Public License`.

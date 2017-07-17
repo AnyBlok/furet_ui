@@ -7,193 +7,198 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import {dispatchAll} from './reducers';
-import {connect} from 'react-redux';
-import {ActionManager} from './action';
-import {getClientView} from './views';
-import IconButton from 'material-ui/IconButton';
-import IconMenu from 'material-ui/svg-icons/navigation/menu';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
-import Divider from 'material-ui/Divider';
-import {List, ListItem} from 'material-ui/List';
-import Picture from './picture';
-import {green500} from 'material-ui/styles/colors';
-import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
+import Vue from 'vue';
+import {dispatchAll} from './store';
 import {json_post} from './server-call';
-import translate from 'counterpart';
-import Loading from './loading';
+import _ from 'underscore';
+import './picture';
 
-/**
- * Render a specific space
- *
- * @spaceId: (string, required) id of the space to render
- *
-**/
-class SpaceCpt extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            left_menu: false,
-            right_menu: false,
-        }
-    }
-    /**
-     * transform menus definition to one component
-     *
-     * @menus: array of object, definition of the structure
-     * @menuId: current menu rendered
-     *
-    **/
-    renderMenu (menus, menuId) {
-        const res = [];
-        let has_menu = false;
-        _.each(menus, menu => {
-            const props = {};
-            if ((menu.submenus || []).length != 0) {
-                const submenu = this.renderMenu(menu.submenus, menuId);
-                props.initiallyOpen=submenu.has_menu;
-                props.nestedItems=submenu.menus;
-                if (submenu.has_menu) has_menu = true;
-            }
-            if (menu.id == menuId) {
-                has_menu = true;
-                props.style = {color: green500};
-            }
-            if (menu.actionId || menu.custom_view) {
-                props.onClick = () => {
-                    if (menu.actionId) {
-                        json_post('/action/' + menu.actionId, {}, {
-                            onSuccess: (results) => {
-                                this.props.dispatchAll(results)
-                            }
-                        });
-                    }
-                    this.props.dispatchAll([
-                        {
-                            type: 'UPDATE_SPACE',
-                            spaceId: this.props.spaceId,
-                            menuId: menu.id,
-                            actionId: menu.actionId || '',
-                            custom_view: menu.custom_view || '',
-                        },
-                        {
-                            type: 'RESET_ACTION_MANAGER'
-                        },
-                        {
-                            type: 'CLEAR_ALL_CHANGES'
-                        },
-                    ]);
-                }
-            }
-            res.push(
-                <ListItem
-                    key={'menu-' + menu.id}
-                    primaryText={menu.label}
-                    leftIcon={<Picture {...menu.image} />}
-                    {...props}
-                />
-            );
-        });
-        return {menus: res, has_menu};
-    }
-    /**
-     * Render A Drawer
-     *
-     * @menus: array of object, definition of the structure
-     * @state: key in the state to indicate if it is right_menu or left_menu
-     * @menuId: current menu rendered
-     *
-    **/
-    renderDrawer(menus, state, menuId) {
-        if ((menus || []).length == 0) return null;
-        return (
-            <div>
-                <IconButton
-                    onClick={() => {
-                        const val = {};
-                        val[state] = true;
-                        this.setState(val);
-                    }}
-                    iconStyle={{width: 40, height: 40}}
-                >
-                    <IconMenu/>
-                </IconButton>
-                <Drawer
-                    openSecondary={state == 'right_menu'}
-                    open={this.state[state]}
-                >
-                    <MenuItem onClick={() => {
-                        const val = {};
-                        val[state] = false;
-                        this.setState(val);
-                    }}
-                    >
-                        {translate('furetUI.space.close', {fallback: 'Close'})}
-                    </MenuItem>
-                    <Divider />
-                    <List>
-                        {this.renderMenu(menus, menuId).menus}
-                    </List>
-                </Drawer>
-            </div>
-        );
-    }
-    /**
-     * Render children in function of redux storage
-    **/
-    getEntryPointApp () {
-        const res = [],
-              space_state = this.props.space_state,
-              left_menu = this.renderDrawer(space_state.left_menu, 'left_menu', space_state.menuId),
-              right_menu = this.renderDrawer(space_state.right_menu, 'right_menu', space_state.menuId);
-        if (this.props.space_state.actionId) {
-            res.push(
-                <ActionManager
-                    key={this.props.space_state.actionId}
-                    actionId={this.props.space_state.actionId}
-                    left_menu={left_menu}
-                    right_menu={right_menu}
-                />
-            );
-        } else if (this.props.space_state.custom_view) {
-            res.push(
-                <Toolbar key={"toolbar-space-" + this.props.spaceId}>
-                    <ToolbarGroup firstChild={true}>
-                        {left_menu}
-                    </ToolbarGroup>
-                    <ToolbarGroup>
-                        {right_menu}
-                    </ToolbarGroup>
-                </Toolbar>
-            );
-            res.push(getClientView(this.props.space_state.custom_view));
-        }
-        return res;
-    }
-    render () {
-        if (!this.props.space_state) return <Loading />
-        return (<div>{this.getEntryPointApp()}</div>);
-    }
-}
-
-SpaceCpt.propTypes = {
-    spaceId: React.PropTypes.string.isRequired,
+export const changeView = (router, store, spaceId, menuId, actionId, viewId) => {
+    store.commit('CLEAR_CHANGE');
+    router.push({
+        name: menuId ? 'space_menu_action_view' : 'space_action_view',
+        params: {spaceId, menuId, actionId, viewId}
+    });
 };
-
-const mapStateToProps = (state, props) => {
-    return {
-        space_state: state.spaces[String(props.spaceId)],
-    };
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        dispatchAll: (data) => (dispatchAll(dispatch, data)),
-        dispatch: dispatch,
+export const onClickBreadScrumb = (router, store, action) => {
+    store.commit('REMOVE_FROM_BREADSCRUMB', {position: action.position});
+    store.commit('REPLACE_CHANGE', {changes: action.changes});
+    router.push({path: action.path});
+};
+export const onClickMenu = (router, spaceId, menu) => {
+    if (menu.actionId) {
+        router.push({
+            name: 'space_menu_action',
+            params: {
+                spaceId: spaceId,
+                menuId: menu.id,
+                actionId: menu.actionId,
+            },
+        });
     }
+    dispatchAll([
+        {type: 'CLEAR_BREADSCRUMB'},
+        {type: 'CLEAR_CHANGE'},
+    ]);
 }
 
-export const Space = connect(mapStateToProps, mapDispatchToProps)(SpaceCpt);
-export default Space;
+export const ViewSelector = Vue.component('furet-ui-view-selector', {
+    props: ['views', 'viewId'],
+    template: `
+        <div class="field has-addons" v-if="views.length > 0">
+            <p class="control" 
+                v-for="view in views"
+                v-if="!view.unclickable || view.viewId == viewId"
+            >
+                <b-tooltip v-bind:label="view.type" position="is-left" type="is-info">
+                    <a class="button" 
+                        v-on:click.stop="changeView(view.viewId)"
+                        v-bind:disabled="view.viewId == viewId"
+                        v-bind:class="[view.viewId == viewId ? 'is-primary': '']"
+                    >
+                        <span class="icon is-small">
+                            <furet-ui-view-icon v-bind:type="view.type" />
+                        </span>
+                    </a>
+                </b-tooltip>
+            </p>
+        </div>
+    `,
+    methods: {
+        changeView (viewId) {
+            this.$emit('changeView', viewId);
+        },
+    },
+});
+
+export const SpaceMenu = Vue.component('furet-ui-space-menu', {
+    template: `
+        <ul class="menu-list">
+            <li v-for="menu in menus">
+                <span v-if="(menu.submenus || []).length != 0">
+                    <furet-ui-picture 
+                        v-bind:type="menu.image.type"
+                        v-bind:value="menu.image.value"
+                    />
+                    {{menu.label}}
+                </span>
+                <furet-ui-space-menu 
+                    v-if="(menu.submenus || []).length != 0"
+                    v-bind:menus="menu.submenus || []"
+                    v-bind:menuId="menuId"
+                    v-bind:spaceId="spaceId"
+                />
+                <a v-if="menu.actionId || menu.custom_view"
+                   v-on:click="onClickMenu(menu)"
+                   v-bind:class="[menu.id == menuId ? 'is-active' : '']"
+                >
+                    <furet-ui-picture 
+                        v-bind:type="menu.image.type"
+                        v-bind:value="menu.image.value"
+                    />
+                    {{menu.label}}
+                </a>
+            </li>
+        </ul>`,
+    props: ['menus', 'menuId', 'spaceId'],
+    methods: {
+        onClickMenu (menu) {
+            onClickMenu(this.$router, this.spaceId, menu);
+        }
+    }
+});
+
+export const Space = Vue.component('furet-ui-space', {
+    template: `
+        <div 
+            class="columns is-gapless"
+            v-bind:style="{marginTop: '5px'}"
+        >
+            <div v-if="isOpenLeft && left_menu.length > 0" class="column is-one-quarter is-half-mobile">
+                <aside class="menu" v-bind:style="{padding: '5px'}">
+                    <furet-ui-space-menu 
+                        v-bind:menus="left_menu" 
+                        v-bind:menuId="menuId" 
+                        v-bind:spaceId="spaceId"
+                    />
+                </aside>
+            </div>
+            <div class="column" v-bind:style="{paddingLeft: '10px', paddingRight: '10px'}">
+                <nav class="nav" v-bind:style="{backgroundColor: 'inherit'}">
+                    <div class="nav-left">
+                        <a class="button" v-on:click="isOpenLeft = !isOpenLeft" v-if="left_menu.length > 0">
+                            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <nav class="breadcrumb">
+                            <ul>
+                                <li v-for="a in actions">
+                                    <a v-on:click="onClickBreadScrumb(a)">
+                                        {{a.label}}
+                                    </a>
+                                </li>
+                                <li class="is-active"><a>{{action.label}}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="nav-right">
+                        <furet-ui-view-selector
+                            v-bind:views="action.views"
+                            v-bind:viewId="viewId"
+                            v-on:changeView="changeView"
+                        />
+                        <a class="button" v-on:click="isOpenRight = !isOpenRight" v-if="right_menu.length > 0">
+                            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </nav>
+                <router-view></router-view>
+            </div>
+            <div v-if="isOpenRight && right_menu.length > 0" class="column is-one-quarter is-half-mobile">
+                <aside class="menu" v-bind:style="{padding: '5px'}">
+                    <furet-ui-space-menu 
+                        v-bind:menus="right_menu" 
+                        v-bind:menuId="menuId" 
+                        v-bind:spaceId="spaceId"
+                    />
+                </aside>
+            </div>
+        </div>`,
+    props: ['spaceId', 'menuId', 'actionId', 'viewId', 'defaultOpenLeft', 'defaultOpenRight'],
+    data () {
+        return {
+            isOpenLeft: this.defaultOpenLeft || false,
+            isOpenRight: this.defaultOpenRight ||  false,
+        }
+    },
+    computed: {
+        space_state () {
+            return this.$store.state.data.spaces[String(this.spaceId)];
+        },
+        left_menu () {
+            return this.space_state && this.space_state.left_menu || [];
+        },
+        right_menu () {
+            return this.space_state && this.space_state.right_menu || [];
+        },
+        actions () {
+            return this.$store.state.global.breadscrumbs || [];
+        },
+        action () {
+            if (this.actionId) {
+                const action = this.$store.state.data.actions[String(this.actionId)];
+                if (action) {
+                    return {label: action.label, views: action.views};
+                }
+           }
+           return {label: '', views: []};
+        }
+    },
+    methods: {
+        changeView (viewId) {
+            changeView(this.$router, this.$store, this.spaceId, this.menuId, this.actionId, viewId);
+        },
+        onClickBreadScrumb (action) {
+            onClickBreadScrumb(this.$router, this.$store, action);
+        },
+    },
+});
