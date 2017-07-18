@@ -7,57 +7,95 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import plugin from '../plugin';
-import {BaseList, BaseThumbnail, BaseForm} from './base';
-import Select from 'react-select';
-import translate from 'counterpart';
+import Vue from 'vue';
+import {FormMixin, ThumbnailMixin, ListMixin} from './common';
+import _ from 'underscore';
 
-export class SelectionList extends BaseList {
-    getValue () {
-        if ((this.props.selections || {})[this.props.value])
-            return this.props.selections[this.props.value];
-        return ' --- ';
-    }
-}
-export class SelectionThumbnail extends BaseThumbnail {
-    getValue () {
-        const selections = {}
-        _.each(JSON.parse(this.props.selections || '[]'), s => {
-            selections[s[0]] = s[1];
-        })
-        return selections[this.props.value] || ' --- ';
-    }
-}
-export class SelectionForm extends BaseForm {
-    onChange (val) {
-        let value = null;
-        if (Array.isArray(val)) {
-            // to nothing because the value is removed
-        } else if (val) {
-            value = val.value;
-        }
-        this.props.onChange(this.props.name, value);
-    }
-    getInputProps () {
-        const props = super.getInputProps();
-        delete props.className;
-        props.options = _.map(JSON.parse(this.props.selections || '[]'), s => ({value: s[0], label: s[1]}));
-        props.noResultsText = translate('furetUI.fields.common.no-found', {fallback: 'No results found'});
-        return props;
-    }
-    getInput () {
-        const props = this.getInputProps();
-        return <Select {...props} onChange={this.onChange.bind(this)}/>
-    }
-}
+export const FieldListSelection = Vue.component('furet-ui-list-field-selection', {
+    mixins: [ListMixin],
+    computed: {
+        value () {
+            const selections = this.header.selections || {};
+            const value = this.row[this.header.name] || '';
+            if (selections[value] == undefined) return ' --- ';
+            return selections[value];
+        },
+    },
+})
 
-plugin.set(['field', 'List'], {'Selection': SelectionList});
-plugin.set(['field', 'Thumbnail'], {'Selection': SelectionThumbnail});
-plugin.set(['field', 'Form'], {'Selection': SelectionForm});
+export const FieldThumbnailSelection = Vue.component('furet-ui-thumbnail-field-selection', {
+    props: ['selections'],
+    mixins: [ThumbnailMixin],
+    template: `
+        <div v-if="this.isInvisible" />
+        <b-tooltip 
+            v-bind:label="getTooltip" 
+            v-bind:position="tooltipPosition"
+            v-else
+        >
+            <b-field 
+                v-bind:label="this.label"
+                v-bind:style="{'width': 'inherit'}"
+            >
+                <span> {{value}} </span>
+            </b-field>
+        </b-tooltip>`,
+    computed: {
+        value () {
+            const selections = this.selections || {};
+            const value = this.data && this.data[this.name] || '';
+            if (selections[value] == undefined) return ' --- ';
+            return selections[value];
+        },
+    },
+})
 
-export default {
-    SelectionList,
-    SelectionThumbnail,
-    SelectionForm,
-}
+export const FieldFormSelection = Vue.component('furet-ui-form-field-selection', {
+    props: ['placeholder', 'icon', 'selections'],
+    mixins: [FormMixin],
+    template: `
+        <div v-if="this.isInvisible" />
+        <b-tooltip 
+            v-bind:label="getTooltip" 
+            v-bind:position="tooltipPosition"
+            v-bind:style="{'width': '100%'}"
+            v-else
+        >
+            <b-field 
+                v-bind:label="this.label"
+                v-bind:type="getType"
+                v-bind:message="getMessage"
+                v-bind:style="{'width': 'inherit'}"
+            >
+                <span v-if="isReadonly"> {{value}} </span>
+                <b-select 
+                    v-else 
+                    v-bind:placeholder="placeholder"
+                    icon-pack="fa"
+                    v-bind:icon="icon"
+                    v-model="data"
+                    expanded
+                    v-on:change="updateValue"
+                >
+                    <option 
+                        v-for="option in getSelections"
+                        v-bind:key="option.value"
+                        v-bind:value="option.value"
+                    >
+                        {{ option.label }}
+                    </option>
+                </b-select>
+            </b-field>
+        </b-tooltip>`,
+    computed: {
+        value () {
+            const selections = this.selections || {};
+            const value = this.config && this.config.data && this.config.data[this.name] || '';
+            if (selections[value] == undefined) return ' --- ';
+            return selections[value];
+        },
+        getSelections () {
+            return _.map(this.selections, (label, value) => ({value, label}));
+        },
+    },
+})

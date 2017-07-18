@@ -7,103 +7,140 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import plugin from '../plugin';
-import {BaseList, BaseThumbnail, BaseForm} from './base';
-import translate from 'counterpart';
+import Vue from 'vue';
+import {FormMixin, ThumbnailMixin, ListMixin} from './common';
 
-export class JsonList extends BaseList {
-    getValue () {
-        const value = super.getValue();
-        if (this.props.value)
-            try {
-                return JSON.stringify(JSON.parse(value), null, 2);
-            } catch (e) {};
-        return value;
-    }
-    getInputProps () {
-        const props = super.getInputProps();
-        delete props.className;
-        delete props.value;
-        props.style = {width: '100%', padding: 2, backgroundColor: 'white'};
-        return props;
-    }
-    getInput () {
-        const props = this.getInputProps();
-        return <pre {...props} >{this.value}</pre>
-    }
+const format = (value) => {
+    if (value)
+        try {
+            return JSON.stringify(JSON.parse(value), null, 2);
+        } catch (e) {};
+    return value;
 }
-export class JsonThumbnail extends BaseThumbnail {
-    getValue () {
-        const value = super.getValue();
-        if (this.props.value)
-            try {
-                return JSON.stringify(JSON.parse(value), null, 2);
-            } catch (e) {};
-        return value;
+
+
+export const FieldListJson = Vue.component('furet-ui-list-field-json', {
+    mixins: [ListMixin],
+    template: `
+        <div>
+            <span v-if="isInvisible" />
+            <pre 
+                v-else
+                v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+            >{{value}}</pre>
+        </div>`,
+    computed: {
+        value () {
+            return format(this.row[this.header.name] || '');
+        },
     }
-    getInputProps () {
-        const props = super.getInputProps();
-        delete props.className;
-        delete props.value;
-        props.style = {width: '100%', padding: 2, backgroundColor: 'white'};
-        return props;
+})
+
+export const FieldThumbnailJson = Vue.component('furet-ui-thumbnail-field-json', {
+    mixins: [ThumbnailMixin],
+    template: `
+        <div v-if="this.isInvisible" />
+        <b-tooltip 
+            v-bind:label="getTooltip" 
+            v-bind:position="tooltipPosition"
+            v-else
+        >
+            <b-field 
+                v-bind:label="this.label"
+                v-bind:style="{'width': 'inherit'}"
+            >
+                <pre
+                    v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+                >{{value}}</pre>
+            </b-field>
+        </b-tooltip>`,
+    computed: {
+        value () {
+            return format(this.data && this.data[this.name] || '');
+        },
     }
-    getInput () {
-        const props = this.getInputProps();
-        return <pre {...props} >{this.value}</pre>
-    }
-}
-export class JsonForm extends BaseForm {
-    getValue () {
-        const value = super.getValue();
-        if (this.props.value)
-            try {
-                return JSON.stringify(JSON.parse(value), null, 2);
-            } catch (e) {};
-        return value;
-    }
-    updateThisData () {
-        super.updateThisData();
-        if (!this.props.readonly && !this.error) {
-            try {
-                JSON.parse(this.value);
-            } catch (e) {
-                this.error = translate('furetUI.fields.json.invalid', 
-                                       {fallback: 'JSON format invalid'});
+})
+
+export const FieldFormJson = Vue.component('furet-ui-form-field-json', {
+    props: ['placeholder'],
+    mixins: [FormMixin],
+    template: `
+        <div v-if="this.isInvisible" />
+        <b-tooltip 
+            v-bind:label="getTooltip" 
+            v-bind:position="tooltipPosition"
+            v-bind:style="{'width': '100%'}"
+            v-else
+        >
+            <b-field 
+                v-bind:label="this.label"
+                v-bind:type="getType"
+                v-bind:message="getMessage"
+                v-bind:style="{'width': 'inherit'}"
+            >
+                <pre v-if="isReadonly"
+                    v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+                >{{data}}</pre>
+                <textarea 
+                    v-else 
+                    class="textarea"
+                    v-bind:value="data" 
+                    v-on:change="updateValue"
+                    v-bind:placeholder="placeholder"
+                    v-bind:rows="getNbRow"
+                    v-bind:style="{width: '100%', height: '100%', resize: 'none'}"
+                />
+            </b-field>
+        </b-tooltip>`,
+    computed: {
+        data () {
+            return format(this.config && this.config.data && this.config.data[this.name] || '');
+        },
+        getNbRow () {
+            const value = this.config && this.config.data && this.config.data[this.name] || '';
+            return value.split('\n').length;
+        },
+        isJsonInvalid () {
+            if (!this.isReadonly) {
+                const value = this.config && this.config.data && this.config.data[this.name] || '';
+                try {
+                    JSON.parse(value)
+                } catch (e) {
+                    return true;
+                }
             }
+            return false;
+        },
+        getType () {
+            if (this.isRequired) {
+                if (this.data) {
+                    if (this.isJsonInvalid) return 'is-danger';
+                    return 'is-info';
+                }
+                return 'is-danger';
+            }
+            if (this.isJsonInvalid) return 'is-danger';
+            return '';
+        },
+        getMessage () {
+            if (this.isRequired) {
+                if (!this.data) {
+                    if (this.isJsonInvalid) return this.$i18n.t('fields.json.invalid');
+                    return this.$i18n.t('fields.common.required');
+                }
+            }
+            if (this.isJsonInvalid) return this.$i18n.t('fields.json.invalid');
+            return ''
+        },
+    },
+    methods: {
+        updateValue (e) {
+            this.$store.commit(this.config.store_key, {
+                model: this.config.view.model,
+                dataId: this.config.dataId,
+                fieldname: this.name,
+                value: e.target.value,
+            })
         }
-    }
-    getInputPropsRO () {
-        const props = this.getInputProps();
-        delete props.className;
-        delete props.value;
-        props.style = {width: '100%', paddind: 2};
-        return props;
-    }
-    getInputPropsRW () {
-        const props = this.getInputProps();
-        delete props.className;
-        props.style = {width: '100%', height: '100%', resize: 'none'};
-        props.rows = this.value && this.value.split('\n').length;
-        return props;
-    }
-    getInput () {
-        if (this.props.readonly) {
-            const props = this.getInputPropsRO();
-            return <pre {...props} >{this.value}</pre>
-        }
-        const props = this.getInputPropsRW();
-        return <textarea {...props} />
-    }
-}
-
-plugin.set(['field', 'List'], {'Json': JsonList});
-plugin.set(['field', 'Thumbnail'], {'Json': JsonThumbnail});
-plugin.set(['field', 'Form'], {'Json': JsonForm});
-
-export default {
-    JsonList,
-    JsonThumbnail,
-    JsonForm,
-}
+    },
+})

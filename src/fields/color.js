@@ -7,130 +7,90 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import plugin from '../plugin';
-import { GithubPicker, SketchPicker } from 'react-color';
-import {BaseList, BaseThumbnail, BaseForm} from './base';
+import Vue from 'vue';
+import {FormMixin, ThumbnailMixin, ListMixin} from './common';
 
-export class ColorList extends BaseList {
-    getInput () {
-        return (
-            <div>
-                <div style={{
-                    height: 20, 
-                    width: 20, 
-                    backgroundColor: this.value || 'white',
-                    border: '1px solid black',
-                    display: 'inline-block',
-                    marginRight: 10,
-                }}/>
-                {super.getInput()}
-            </div>
-        );
-    }
-}
+export const FieldListColor = Vue.component('furet-ui-list-field-color', {
+    mixins: [ListMixin],
+    template: `
+        <div>
+            <span v-if="isInvisible" />
+            <b-input 
+                v-else-if="value"
+                type="color"
+                v-bind:value="value" 
+                disabled
+            />
+            <span v-else />
+        </div>`,
+})
 
-export class ColorThumbnail extends BaseThumbnail {
-    getInput () {
-        return (
-            <div>
-                <div style={{
-                    height: 20, 
-                    width: 20, 
-                    backgroundColor: this.value || 'white',
-                    border: '1px solid black',
-                    display: 'inline-block',
-                    marginRight: 10,
-                }}/>
-                <div style={{
-                    display: 'inline-block',
-                }}>
-                    {super.getInput()}
-                </div>
-            </div>
-        );
-    }
-}
+export const FieldThumbnailColor = Vue.component('furet-ui-thumbnail-field-color', {
+    mixins: [ThumbnailMixin],
+    template: `
+        <div v-if="this.isInvisible" />
+        <b-tooltip 
+            v-else
+            v-bind:label="getTooltip" 
+            v-bind:position="tooltipPosition"
+            v-bind:style="{'width': '100%'}"
+        >
+            <b-field 
+                v-bind:label="this.label"
+                v-bind:style="{'width': 'inherit'}"
+            >
+                <b-input 
+                    v-if="value"
+                    type="color"
+                    v-bind:value="value" 
+                    disabled
+                />
+            </b-field>
+        </b-tooltip>`,
+})
 
-export class ColorForm extends BaseForm {
-    constructor (props) {
-        super(props);
-        this.state = {
-            open: false,
-            color: null,
-        };
-    }
-    getValue () {
-        const value = this.state.color || this.props.value;
-        if (value == null) return this.getNullValue();
-        return value;
-    }
-    getPicker () {
-        switch (this.props.picker) {
-            case 'github':
-                return (
-                    <GithubPicker 
-                        onChange={(c) => {
-                            this.props.onChange(this.props.name, c.hex)}}
-                    />
-                );
-            default:
-                return (
-                    <SketchPicker 
-                        color={this.value}
-                        onChange={(c) => {this.setState({color: c.hex})}}
-                    />
-                );
-        }
-    }
-    handleToggle () {
-        if (!this.props.readonly) {
-            if (this.state.open && this.state.color) {
-                this.props.onChange(this.props.name, this.state.color);
-                this.setState({color: null});
-            }
-            this.setState({open: !this.state.open})
-        }
-    }
-    getInputProps () {
-        const props = super.getInputProps();
-        props.type = 'text';
-        props.maxLength = "7";
-        return props;
-    }
-    getInput () {
-        return (
-            <div className="input-group">
-                <span className="input-group-addon">
-                    <div 
-                        onClick={this.handleToggle.bind(this)}
-                        style={{
-                        height: 20, 
-                        width: 20, 
-                        backgroundColor: this.value || 'white',
-                        border: '1px solid black',
-                    }}/>
-                    {this.state.open && 
-                        <div style={{position: 'absolute', 
-                                     zIndex: 10000, 
-                                     marginTop: 10}}
+export const FieldFormColor = Vue.component('furet-ui-form-field-color', {
+    props: ['icon', 'placeholder'],
+    mixins: [FormMixin],
+    template: `
+        <div v-if="this.isInvisible" />
+        <b-tooltip 
+            v-bind:label="getTooltip" 
+            v-bind:position="tooltipPosition"
+            v-bind:style="{'width': '100%'}"
+            v-else
+        >
+            <b-field 
+                v-bind:label="this.label"
+                v-bind:type="getType"
+                v-bind:message="getMessage"
+                v-bind:style="{'width': 'inherit'}"
+            >
+                <div 
+                    class="field has-addons" 
+                >
+                    <p class="control is-expanded">
+                        <b-input 
+                            v-if="data || !isReadonly"
+                            type="color"
+                            v-bind:value="data" 
+                            v-on:change="updateValue"
+                            v-bind:disabled="isReadonly"
                         >
-                            {this.getPicker()}
-                        </div>
-                    }
-                </span>
-                {super.getInput()}
-            </div>
-        );
-    }
-}
-
-plugin.set(['field', 'List'], {'Color': ColorList});
-plugin.set(['field', 'Thumbnail'], {'Color': ColorThumbnail});
-plugin.set(['field', 'Form'], {'Color': ColorForm});
-
-export default {
-    ColorList,
-    ColorThumbnail,
-    ColorForm,
-}
+                        </b-input>
+                    </p>
+                    <p class="control is-expanded">
+                        <b-input 
+                            v-if="!isReadonly"
+                            v-bind:value="data" 
+                            v-on:change="updateValue"
+                            v-bind:placeholder="placeholder"
+                            icon-pack="fa"
+                            v-bind:icon="icon"
+                            pattern="#[A-Fa-f1-9]{6}"
+                        />
+                    </p>
+                </div>
+            </b-field>
+        </b-tooltip>`,
+})

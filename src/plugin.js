@@ -11,7 +11,6 @@ class Plugin {
     constructor () {
         this.plugs = {};
     }
-
     set (paths=[], obj) {
         const recPlugs = (plugs, _paths) => {
             if (_paths.length == 0) {
@@ -23,13 +22,11 @@ class Plugin {
         };
         recPlugs(this.plugs, paths)
     }
-
     get (paths=[]) {
         const recPlugs = (plugs, _paths) => {
             if (_paths.length == 1) {
                 return plugs[_paths[0]];
             } else {
-                // if (! plugs[_paths[0]]) raise;
                 return recPlugs(plugs[_paths[0]] || {}, _paths.slice(1))
             }
         };

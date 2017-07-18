@@ -7,180 +7,145 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import { connect } from 'react-redux'
-import {dispatchAll} from './reducers';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Vue from 'vue';
+import './picture';
 import _ from 'underscore';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
-import Picture from './picture';
+import {dispatchAll} from './store';
 import {json_post} from './server-call';
-import translate from 'counterpart';
+        
+export const selectCard = (type, router, store, card) => {
+    const key = 'UPDATE_' + (type || '').toUpperCase() + '_MENU';
+    switch (card.type) {
+        case 'client':
+            router.push({name: 'custom_view', params: {viewName: card.id}}); 
+            break;
+        case 'space':
+            router.push({name: 'space', params: {spaceId: card.id}});
+            store.commit(key, {
+                value: {
+                    label: card.label,
+                    image: card.image,
+                },
+            });
+            break;
+    }
+    store.commit('CLEAR_BREADSCRUMB');
+    store.commit('CLEAR_CHANGE');
+}
 
-/**
- * Render a Dialog box, with thumbnail menu and search box to filter thumbnail
- *
- * the props come from redx store
- *
- * and the click on a thumbnail change the redux store
- *
-**/
-class BaseMenu extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false,
-            searchText: '',
-        };
-    }
-    /**
-     * Open the Dialog box
-    **/
-    handleOpen () {
-        this.setState({open: true});
-    };
-    /**
-     * Close the Dialog box
-    **/
-    handleClose () {
-        this.setState({open: false});
-    };
-    /**
-     * Update the redux store when a card is selected
-     *
-    **/
-    selectCard (card) {
-        switch (card.type) {
-            case 'client':
-                this.props.dispatch({
-                    type: 'UPDATE_GLOBAL',
-                    custom_view: card.id,
-                });
-                break;
-            case 'space':
-                json_post('/space/' + card.id, {}, {
-                    onSuccess: (results) => {
-                        this.props.dispatchAll(results)
-                    }
-                });
-                this.props.dispatch({
-                    type: 'UPDATE_GLOBAL',
-                    spaceId: card.id,
-                });
-                this.props.dispatch_menu({
-                    value: {
-                        label: card.label,
-                        image: card.image,
-                    },
-                });
-                break;
-        }
-        this.props.dispatch({type: 'CLEAR_ALL_CHANGES'});
-        this.handleClose();
-    }
-    render() {
-        if (!this.props.value.label) return null;
-        const actions = [
-            <FlatButton
-                label={translate('furetUI.menus.close', {fallback: 'Close'})}
-                primary={true}
-                onTouchTap={this.handleClose.bind(this)}
-            />,
-        ];
-        const re = new RegExp(this.state.searchText, 'i');
-        return (
-            <div>
-                <FlatButton label={this.props.value.label} 
-                            icon={<Picture {...this.props.value.image} style={{height:48, width: 48}} iconSize='fa-3x'/>}
-                            onTouchTap={this.handleOpen.bind(this)}
+export const Menu = Vue.component('furet-ui-appbar-menu', {
+    template: `
+        <a class="nav-item" v-if="hasValue">
+            <a class="button" v-on:click="isModalActive = true; searchText = ''">
+                <furet-ui-picture 
+                    v-bind:type="value.image.type" 
+                    v-bind:value="value.image.value" 
                 />
-                <Dialog
-                    actions={actions}
-                    modal={false}
-                    open={this.state.open}
-                    onRequestClose={this.handleClose.bind(this)}
-                    autoScrollBodyContent={true}
-                    contentStyle={{width: '95%', maxWidth: 'none'}}
-                    title={
-                        <div className="input-group">
-                            <span className="input-group-addon">
-                                <i className="glyphicon glyphicon-search"></i>
-                            </span>
-                            <input 
-                                type="text" 
-                                className="form-control" 
-                                placeholder={translate('furetUI.menus.search', {fallback: 'Search ...'})}
-                                value={this.state.searchText}
-                                onChange={(e) => {this.setState({searchText: e.target.value})}}
-                            />
-                        </div>
-                    }
-                >
-                    {_.map(this.props.values, group => (
-                        <fieldset
-                            key={group.id}
-                        >
-                            <legend style={{color: 'gray'}}><Picture {...group.image} iconSize='fa-lg'/>{group.label}</legend>
-                            <div className="row">
-                                {_.map(group.values || [], card => {
-                                    const test_label = re.test(card.label),
-                                          test_description = re.test(card.description);
-                                    if (test_label || test_description)
-                                        return (
-                                            <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-                                                 key={card.id}
-                                            >
-                                                <Card 
-                                                    onClick={() => {this.selectCard(card)}}
-                                                    style={{minHeight: 120, marginBottom: 10}}
-                                                >
-                                                    <CardHeader
-                                                        title={card.label}
-                                                        subtitle={card.description}
-                                                        avatar={<Picture {...card.image} style={{height: 48, width: 48}} iconSize='fa-3x'/>}
+                <span> {{ value.label }} </span>
+            </a>
+            <b-modal :active.sync="isModalActive">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <b-field  position="is-centered">
+                            <b-input
+                                type="search"
+                                icon-pack="fa"
+                                icon="search"
+                                v-bind:placeholder="$t('menus.search')"
+                                v-model="searchText">
+                            </b-input>
+                        </b-field>
+                    </header>
+                    <div 
+                        class="modal-card-body"
+                        v-bind:style="{color: '#363636', padding: '5px'}"
+                    >
+                        <div v-for="group in groups">
+                            <legend>
+                                <furet-ui-picture
+                                    v-bind:type="group.image.type"
+                                    v-bind:value="group.image.value"
+                                />
+                                {{ group.label }}
+                            </legend>
+                            <div class="columns is-multiline is-mobile">
+                                <div class="column is-12-mobile is-half-tablet is-half-desktop"
+                                    v-for="card in group.values">
+                                        <article 
+                                            class="box media" 
+                                            v-on:click.stop="selectCard(card)"
+                                            v-bind:style="{padding: '5px'}"
+                                        >
+                                            <div class="media-left">
+                                                <figure class="image is-32x32">
+                                                    <furet-ui-picture
+                                                        v-bind:type="card.image.type"
+                                                        v-bind:value="card.image.value"
                                                     />
-                                                </Card>
+                                                </figure>
                                             </div>
-                                        );
-                                    return null;
-                                })}
+                                            <div class="media-content">
+                                                <div >
+                                                    <strong>{{card.label}}</strong>
+                                                    <br />
+                                                    <small v-bind:style="{whiteSpace: 'pre-wrap'}">{{card.description}}</small>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
                             </div>
-                        </fieldset>
-                    ))}
-                </Dialog>
-            </div>
-        );
-    }
-}
-
-const getComponent = (key) => {
-    const mapStateToProps = (state) => {
-        const _state = state[key + 'menu'];
+                        </div>
+                    </div>
+                    <footer class="modal-card-foot">
+                        <a 
+                            v-on:click="isModalActive = false"
+                            v-bind:style="{color: '#363636'}"
+                        >{{$t('menus.close')}}</a>
+                    </footer>
+                </div>
+            </b-modal>
+        </a>`,
+    props: ['type', 'unittest_active', 'unittest_search'],
+    data () {
         return {
-            key,
-            value: _state.value,
-            values: _state.values,
-            url: 'appbar/' + key + '/dialog',
+            isModalActive: this.unittest_active || false, 
+            searchText: this.unittest_search || '',
+        };
+    },
+    computed: {
+        value () {
+            return this.$store.state[this.type + 'menu'].value;
+        },
+        hasValue () {
+            const value = this.$store.state[this.type + 'menu'].value,
+                  hasImage = _.keys(value.image || {}).length > 0,
+                  hasLabel = value.label.length > 0;
+            return hasImage && hasLabel;
+        },
+        groups () {
+            const groups = [],
+                  re = new RegExp(this.searchText, 'ig');
+            _.each(this.$store.state[this.type + 'menu'].values, g => {
+                const cards = _.filter(g.values, c => (re.test(c.label) || re.test(c.description)))
+                if (cards.length) groups.push(Object.assign({}, g, {values: cards}));
+            });
+            return groups;
+        },
+    },
+    methods: {
+        selectCard (card) {
+            selectCard(this.type, this.$router, this.$store, card);
+            this.isModalActive = false;
         }
     }
-    
-    const mapDispatchToProps = (dispatch, props) => {
-        return {
-            dispatchAll: (data) => (dispatchAll(dispatch, data)),
-            dispatch: dispatch,
-            dispatch_menu: (obj) => {
-                dispatch(Object.assign({type: 'UPDATE_' + key.toUpperCase() + '_MENU'}, obj));
-            },
-        }
-    }
-    return connect(mapStateToProps, mapDispatchToProps)(BaseMenu);
-}
+});
 
-export const RightMenu = getComponent('right');
-export const LeftMenu = getComponent('left');
+export const LeftMenu = Vue.component('furet-ui-appbar-left-menu', {
+    template: '<furet-ui-appbar-menu type="left"/>',
+});
 
-export default {
-    RightMenu,
-    LeftMenu,
-}
+export const RightMenu = Vue.component('furet-ui-appbar-right-menu', {
+    template: '<furet-ui-appbar-menu type="right"/>',
+});

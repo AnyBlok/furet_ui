@@ -1,129 +1,148 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getField for Form 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-String-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <input
-    className="form-control"
-    disabled={undefined}
-    id="view-type-Form-field_type-String-field-name-"
-    onChange={[Function]}
-    type="text"
-    value="Test"
-  />
+exports[`String Form component Render 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`String Form component Render icon 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<!---->
+<!---->
 </div>
+<!---->
+</div>
+</span>
 `;
 
-exports[`getField for Form readonly 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-String-field-name-"
-    style={Object {}}
-  >
-    Test
-  </label>
-  <input
-    className="form-control"
-    disabled={true}
-    id="view-type-Form-field_type-String-field-name-"
-    onChange={[Function]}
-    type="text"
-    value="Test"
-  />
+exports[`String Form component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`String Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`String Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`String Form component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`String Form component Render label 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-clearfix"><input type="text" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`String Form component Render maxlenght (KO) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" maxlength="4" autocomplete="on" value="password" class="input"> <!----> <!----> <small class="help counter">8 / 4</small></div> <!----></div></span>`;
+
+exports[`String Form component Render maxlenght (OK) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" maxlength="64" autocomplete="on" value="password" class="input"> <!----> <!----> <small class="help counter">8 / 64</small></div> <!----></div></span>`;
+
+exports[`String Form component Render mode readonly by config 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Form required 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-String-field-name-"
-    style={
-      Object {
-        "color": "#3f51b5",
-      }
-    }
-  >
-    Test
-  </label>
-  <input
-    className="form-control"
-    disabled={undefined}
-    id="view-type-Form-field_type-String-field-name-"
-    onChange={[Function]}
-    type="text"
-    value="Test"
-  />
+exports[`String Form component Render mode readonly conditional param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Form required with empty value 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-String-field-name-"
-    style={
-      Object {
-        "color": "#3f51b5",
-      }
-    }
-  >
-    Test
-  </label>
-  <input
-    className="form-control"
-    disabled={undefined}
-    id="view-type-Form-field_type-String-field-name-"
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
-  <div>
-    <span
-      style={
-        Object {
-          "color": "#f44336",
-        }
-      }
-    >
-      This field is required
-    </span>
-  </div>
+exports[`String Form component Render mode readonly param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for List 1`] = `
-<div>
-  <span>
-    Test
-  </span>
+exports[`String Form component Render placeholder 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" placeholder="The placeholder" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`String Form component Render required 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="text" autocomplete="on" value="#123456" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<!---->
 </div>
+<!---->
+</div>
+</span>
 `;
 
-exports[`getField for Thumbnail 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-String-field-name-"
-  >
-     
-  </label>
-  <div>
-    <span>
-      Test
-    </span>
-  </div>
+exports[`String Form component Render required conditionnal 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="text" autocomplete="on" value="#123456" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<!---->
 </div>
+<!---->
+</div>
+</span>
 `;
+
+exports[`String Form component Render required without value 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right"><input type="text" autocomplete="on" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
+<!---->
+</div>
+<p class="help is-danger">this field is required</p>
+</div>
+</span>
+`;
+
+exports[`String Form component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`String Form component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`String Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`String Thumbnail component Render 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`String Thumbnail component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`String Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`String Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`String Thumbnail component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`String Thumbnail component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <span> #123456 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`String Thumbnail component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`String Thumbnail component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`String Thumbnail component Render without data 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span>  </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`String list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><span>#123456</span></div>`;
+
+exports[`String list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
+
+exports[`String list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
+
+exports[`String list component Render invisible is false 1`] = `<div data-server-rendered="true"><span>#123456</span></div>`;
+
+exports[`String list component Render with data 1`] = `<div data-server-rendered="true"><span>#123456</span></div>`;
+
+exports[`String list component Render without data 1`] = `<div data-server-rendered="true"><span></span></div>`;

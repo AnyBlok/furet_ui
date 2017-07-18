@@ -2,13 +2,12 @@
 from bottle import route, run, static_file, response, request
 from simplejson import dumps, loads
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import (
     create_engine, Column, Integer, String, DateTime, Float, Text, Time,
-    Boolean, or_, ForeignKey, Table, LargeBinary
+    Boolean, or_, ForeignKey, Table, LargeBinary, Date
 )
 from sqlalchemy.orm import relationship, sessionmaker
-from datetime import datetime, time
+from datetime import datetime, time, date
 
 
 engine = create_engine('postgresql+psycopg2:///furetui', echo=True)
@@ -21,6 +20,7 @@ class Test(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     creation_date = Column(DateTime)
+    creation_date2 = Column(Date)
     state = Column(String)
     number = Column(Float)
     url = Column(String)
@@ -36,8 +36,10 @@ class Test(Base):
     filesize = Column(Integer)
 
     @classmethod
-    def insert(cls, data, mapping):
-        return cls(**data)
+    def insert(cls, session, data, changes):
+        obj = cls(**data)
+        session.add(obj)
+        return obj
 
     def read(self, fields):
         return [{
@@ -46,7 +48,7 @@ class Test(Base):
             'data': {self.id: {y: getattr(self, y) for y in fields}},
         }]
 
-    def update(self, session, val, mapping):
+    def update(self, session, val, changes):
         for k, v in val.items():
             setattr(self, k, v)
 
@@ -63,6 +65,7 @@ class Category(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    color = Column(String)
     customers = relationship(
         "Customer", secondary=association_table, back_populates="categories")
 
@@ -74,46 +77,46 @@ class Category(Base):
         }]
         for field in fields:
             if isinstance(field, (list, tuple)):
-                field, subfield = field
-                for entry in getattr(self, field):
-                    res.extend(entry.read([subfield]))
+                if field[0] == 'customers':
+                    field, subfield = field
+                    for entry in getattr(self, field):
+                        res.extend(entry.read([subfield]))
 
-                res[0]['data'][str(self.id)][field] = [str(x.id) for x in getattr(self, field)]
+                    res[0]['data'][str(self.id)][field] = [str(x.id) for x in getattr(self, field)]
+                else:
+                    for f in field:
+                        res[0]['data'][str(self.id)][f] = getattr(self, f)
 
             else:
                 res[0]['data'][str(self.id)][field] = getattr(self, field)
 
         return res
 
-    def update(self, session, val, mapping):
+    def update(self, session, val, changes):
         for k, v in val.items():
             if k == 'customers':
                 customers = []
                 for dataId in v:
-                    if dataId in mapping:
-                        customers.append(mapping[dataId])
-                    else:
-                        customers.append(session.query(Customer).filter(
-                            Customer.id == int(dataId)).one())
+                    customers.append(session.query(Customer).filter(
+                        Customer.id == int(dataId)).one())
 
                 self.customers = customers
             else:
                 setattr(self, k, v)
 
     @classmethod
-    def insert(cls, data, mapping):
+    def insert(cls, session, data, changes):
         if 'customers' in data:
             customers = []
             for dataId in data['customers']:
-                if dataId in mapping:
-                    customers.append(mapping[dataId])
-                else:
-                    customers.append(session.query(Customer).filter(
-                        Customer.id == int(dataId)).one())
+                customers.append(session.query(Customer).filter(
+                    Customer.id == int(dataId)).one())
 
             data['customers'] = customers
 
-        return cls(**data)
+        obj = cls(**data)
+        session.add(obj)
+        return obj
 
 
 class Customer(Base):
@@ -122,6 +125,7 @@ class Customer(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     email = Column(String)
+    color = Column(String)
     addresses = relationship("Address", back_populates='customer')
     categories = relationship(
         "Category", secondary=association_table, back_populates="customers")
@@ -134,49 +138,77 @@ class Customer(Base):
         }]
         for field in fields:
             if isinstance(field, (list, tuple)):
-                field, subfield = field
-                for entry in getattr(self, field):
-                    res.extend(entry.read([subfield]))
-            if field in ('categories', 'addresses'):
-                res[0]['data'][str(self.id)][field] = [str(x.id) for x in getattr(self, field)]
+                if field[0] in ('categories', 'addresses'):
+                    field, subfield = field
+                    for entry in getattr(self, field):
+                        res.extend(entry.read([subfield]))
+
+                    res[0]['data'][str(self.id)][field] = [str(x.id) for x in getattr(self, field)]
+                else:
+                    for f in field:
+                        res[0]['data'][str(self.id)][f] = getattr(self, f)
+
             else:
-                res[0]['data'][str(self.id)][field] = getattr(self, field)
+                if field in ('categories', 'addresses'):
+                    res[0]['data'][str(self.id)][field] = [str(x.id) for x in getattr(self, field)]
+                else:
+                    res[0]['data'][str(self.id)][field] = getattr(self, field)
 
         return res
 
-    def update(self, session, val, mapping):
+    def update(self, session, val, changes):
+        newAddresses = []
+        if 'new' in changes and 'Address' in changes['new']:
+            newAddresses = [x for x in changes['new']['Address']]
+
         for k, v in val.items():
             if k == 'categories':
                 categories = []
                 for dataId in v:
-                    if dataId in mapping:
-                        categories.append(mapping[dataId])
-                    else:
-                        categories.append(session.query(Customer).filter(
-                            Customer.id == int(dataId)).one())
+                    categories.append(session.query(Category).filter(
+                        Category.id == int(dataId)).one())
 
                 self.categories = categories
             elif k == 'addresses':
-                pass
+                for dataId in v:
+                    if dataId in newAddresses:
+                        data = changes['new']['Address'][dataId]
+                        del data['dataId']
+                        obj = Address.insert(session, data, changes)
+                        session.add(obj)
             else:
                 setattr(self, k, v)
 
     @classmethod
-    def insert(cls, data, mapping):
+    def insert(cls, session, data, changes):
+        addresses = []
         if 'categories' in data:
             categories = []
             for dataId in data['categories']:
-                if dataId in mapping:
-                    categories.append(mapping[dataId])
-                else:
-                    categories.append(session.query(Category).filter(
-                        Category.id == int(dataId)).one())
+                categories.append(session.query(Category).filter(
+                    Category.id == int(dataId)).one())
 
             data['categories'] = categories
         if 'addresses' in data:
+            addresses = data['addresses']
             del data['addresses']
 
-        return cls(**data)
+        obj = cls(**data)
+        session.add(obj)
+        newAddresses = []
+        if 'new' in changes and 'Address' in changes['new']:
+            newAddresses = [x for x in changes['new']['Address']]
+
+        for dataId in addresses:
+            if dataId in newAddresses:
+                _data = changes['new']['Address'][dataId]
+                del _data['dataId']
+                del _data['customer']
+                _obj = Address.insert(session, _data, changes)
+                _obj.customer = obj
+                session.add(_obj)
+
+        return obj
 
 
 class Address(Base):
@@ -189,10 +221,6 @@ class Address(Base):
     customer_id = Column(Integer, ForeignKey('customer.id'))
     customer = relationship("Customer", back_populates="addresses")
 
-    @hybrid_property
-    def complete_name(self):
-        return "%s %s %s" % (self.street, self.zip, self.city)
-
     def read(self, fields):
         res = [{
             'type': 'UPDATE_DATA',
@@ -201,37 +229,40 @@ class Address(Base):
         }]
         for field in fields:
             if isinstance(field, (list, tuple)):
-                field, subfield = field
-                entry = getattr(self, field)
-                res.extend(entry.read([subfield]))
+                if field[0] == 'customer':
+                    field, subfield = field
+                    entry = getattr(self, field)
+                    res.extend(entry.read([subfield]))
+                    res[0]['data'][self.id][field] = str(self.customer.id)
+                else:
+                    for f in field:
+                        res[0]['data'][self.id][f] = getattr(self, f)
 
-            if field == 'customer':
-                res[0]['data'][self.id][field] = str(self.customer.id)
             else:
-                res[0]['data'][self.id][field] = getattr(self, field)
+                if field == 'customer':
+                    res[0]['data'][self.id][field] = str(self.customer.id)
+                else:
+                    res[0]['data'][self.id][field] = getattr(self, field)
 
         return res
 
-    def update(self, session, val, mapping):
+    def update(self, session, val, changes):
         for k, v in val.items():
             if k == 'customer':
-                if v in mapping:
-                    self.customer = mapping[v]
-                else:
-                    self.customer_id = int(v)
+                self.customer_id = int(v)
             else:
                 setattr(self, k, v)
 
     @classmethod
-    def insert(cls, data, mapping):
-        customer = data['customer']
-        if customer in mapping:
-            data['customer'] = mapping[customer]
-        else:
+    def insert(cls, session, data, changes):
+        if 'customer' in data:
+            customer = data['customer']
             data['customer_id'] = int(customer)
             del data['customer']
 
-        return cls(**data)
+        obj = cls(**data)
+        session.add(obj)
+        return obj
 
 
 Base.metadata.create_all()
@@ -245,7 +276,7 @@ MODELS = {
 
 
 def json_serial(obj):
-    if isinstance(obj, (datetime, time)):
+    if isinstance(obj, (datetime, time, date)):
         serial = obj.isoformat()
         return serial
 
@@ -267,7 +298,7 @@ def _getInitRequiredData():
             'values': [
                 {
                     'label': 'Login',
-                    'image': {'type': 'svg-icon', 'value': 'ActionAndroid'},
+                    'image': {'type': 'font-icon', 'value': 'fa-user'},
                     'id': 'login',
                     'values': [
                         {
@@ -295,25 +326,14 @@ def _getInitOptionnalData():
             'locales': [
                 {
                     'locale': 'fr-FR',
-                    'counterpart': {
-                        'formats': {
-                            'date': {
-                                'default': '%d/%m/%Y',
-                            },
-                            'datetime': {
-                                'default': '%d/%m/%Y %H:%M:%S %z',
-                            },
-                        },
+                    'messages': {
                         'menus': {
                             'close': 'Fermer',
                             'search': 'Filtrer par ...',
                         },
-                        'space': {
-                            'close': 'Fermer',
-                        },
                         'views': {
                             'unknown': {
-                                'title': 'Le vue "%(name)s" est inconnue',
+                                'title': 'La vue "{name}" est inconnue',
                                 'message': "Veuillez contacter l'administrateur",
                             },
                             'common': {
@@ -337,22 +357,13 @@ def _getInitOptionnalData():
                                 'required': 'Ce champs est requis',
                                 'no-found': 'Aucune donnée trouvée',
                             },
-                            'date': {
-                                'invalid': 'Date invalide',
-                                'format': 'DD/MM/YYYY',
-                            },
-                            'time': {
-                                'invalid': 'Heure invalide',
-                            },
-                            'datetime': {
-                                'invalid': 'Date et heure invalide',
-                                'format': 'DD/MM/YYYY HH:mm:ss Z',
-                            },
-                            'url': {
-                                'invalid': 'URL invalide',
-                            },
                             'json': {
                                 'invalid': 'Format JSON invalide',
+                            },
+                            'file': {
+                                'upload': u'Sélectioner',
+                                'download': u'Télécharger',
+                                'delete': u'Supprimer',
                             },
                         },
                     },
@@ -370,10 +381,9 @@ def _getInitOptionnalData():
 def getAction1():
     res = [
         {
-            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'type': 'UPDATE_ACTION',
             'actionId': '1',
             'label': 'Action : 1',
-            'viewId': '1',
             'views': [
                 {
                     'viewId': '1',
@@ -386,6 +396,7 @@ def getAction1():
                 {
                     'viewId': '3',
                     'type': 'Form',
+                    'unclickable': True,
                 },
                 {
                     'viewId': '4',
@@ -404,20 +415,17 @@ def getAction1():
                     'type': 'Gantt',
                 },
             ],
-            'model': 'Test',
         }
     ]
-    res.append(getView1())
-    return res
+    return res, {'viewId': '1'}
 
 
 def getAction2():
     res = [
         {
-            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'type': 'UPDATE_ACTION',
             'actionId': '2',
             'label': 'Customer',
-            'viewId': '8',
             'views': [
                 {
                     'viewId': '8',
@@ -426,22 +434,20 @@ def getAction2():
                 {
                     'viewId': '9',
                     'type': 'Form',
+                    'unclickable': True,
                 },
             ],
-            'model': 'Customer',
         }
     ]
-    res.append(getView8())
-    return res
+    return res, {'viewId': '8'}
 
 
 def getAction3():
     res = [
         {
-            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'type': 'UPDATE_ACTION',
             'actionId': '3',
             'label': 'Category',
-            'viewId': '10',
             'views': [
                 {
                     'viewId': '10',
@@ -450,22 +456,20 @@ def getAction3():
                 {
                     'viewId': '11',
                     'type': 'Form',
+                    'unclickable': True,
                 },
             ],
-            'model': 'Category',
         }
     ]
-    res.append(getView10())
-    return res
+    return res, {'viewId': '10'}
 
 
 def getAction4():
     res = [
         {
-            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'type': 'UPDATE_ACTION',
             'actionId': '4',
             'label': 'Address',
-            'viewId': '12',
             'views': [
                 {
                     'viewId': '12',
@@ -474,73 +478,68 @@ def getAction4():
                 {
                     'viewId': '13',
                     'type': 'Form',
+                    'unclickable': True,
                 },
             ],
-            'model': 'Address',
         }
     ]
-    res.append(getView12())
-    return res
+    return res, {'viewId': '12'}
 
 
 def getAction5():
     res = [
         {
-            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'type': 'UPDATE_ACTION',
             'actionId': '5',
             'label': 'Customer',
-            'viewId': '9',
             'views': [
                 {
                     'viewId': '9',
                     'type': 'Form',
+                    'unclickable': True,
                 },
             ],
-            'model': 'Customer',
         }
     ]
-    res.append(getView9())
-    return res
+    return res, {'viewId': '9'}
 
 
 def getAction6():
     res = [
         {
-            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'type': 'UPDATE_ACTION',
             'actionId': '6',
             'label': 'Category',
-            'viewId': '11',
             'views': [
                 {
                     'viewId': '11',
                     'type': 'Form',
+                    'unclickable': True,
                 },
             ],
             'model': 'Category',
         }
     ]
-    res.append(getView11())
-    return res
+    return res, {'viewId': '11'}
 
 
 def getAction7():
     res = [
         {
-            'type': 'UPDATE_ACTION_MANAGER_ADD_ACTION_DATA',
+            'type': 'UPDATE_ACTION',
             'actionId': '7',
             'label': 'Address',
-            'viewId': '13',
             'views': [
                 {
                     'viewId': '13',
                     'type': 'Form',
+                    'unclickable': True,
                 },
             ],
             'model': 'Address',
         }
     ]
-    res.append(getView13())
-    return res
+    return res, {'viewId': '13'}
 
 
 def getAction(actionId):
@@ -567,14 +566,9 @@ def getSpace1():
         'type': 'UPDATE_SPACE',
         'spaceId': '1',
         'left_menu': [],
-        'menuId': None,
         'right_menu': [],
-        'actionId': '1',
-        'viewId': None,
-        'custom_view': '',
     }]
-    space.extend(getAction1())
-    return space
+    return space, {'actionId': '1', 'viewId': '1'}
 
 
 def getSpace2():
@@ -612,14 +606,9 @@ def getSpace2():
                 ],
             },
         ],
-        'menuId': '1',
         'right_menu': [],
-        'actionId': '2',
-        'viewId': None,
-        'custom_view': '',
     }]
-    space.extend(getAction2())
-    return space
+    return space, {'menuId': '1', 'actionId': '2', 'viewId': '8'}
 
 
 def getSpace(spaceId):
@@ -635,70 +624,71 @@ def getView1():
     return {
         'type': 'UPDATE_VIEW',
         'viewId': '1',
+        'viewType': 'List',
         'label': 'View : 1',
         'creatable': True,
         'deletable': True,
         'selectable': True,
         'onSelect': '3',
+        'model': 'Test',
         'headers': [
             {
                 'name': 'id',
-                'type': 'Integer',
                 'label': 'ID',
+                'numeric': True,
+                'component': 'furet-ui-list-field-integer',
             },
             {
                 'name': 'name',
-                'type': 'String',
                 'label': 'Label',
+                'sortable': True,
+                'component': 'furet-ui-list-field-string',
+            },
+            {
+                'name': 'bool',
+                'label': 'Boolean',
+                'component': 'furet-ui-list-field-boolean',
             },
             {
                 'name': 'state',
-                'type': 'Selection',
                 'label': 'State',
                 'selections': {'new': 'New', 'started': 'Started', 'done': 'Done'},
-            },
-            {
-                'name': 'creation_date',
-                'type': 'DateTime',
-                'label': 'Creation date',
-            },
-            {
-                'name': 'number',
-                'type': 'Float',
-                'label': 'Number',
-            },
-            {
-                'name': 'color',
-                'type': 'Color',
-                'label': 'Color',
+                'component': 'furet-ui-list-field-selection',
             },
             {
                 'name': 'text',
-                'type': 'Text',
                 'label': 'Text',
+                'component': 'furet-ui-list-field-text',
             },
             {
-                'name': 'time',
-                'type': 'Time',
-                'label': 'Time',
+                'name': 'creation_date',
+                'label': 'Date time',
+                'component': 'furet-ui-list-field-datetime',
+            },
+            {
+                'name': 'password',
+                'label': 'Password',
+                'component': 'furet-ui-list-field-password',
             },
             {
                 'name': 'file',
-                'type': 'LargeBinaryPreview',
                 'label': 'File',
                 'filename': 'filename',
                 'filesize': 'filesize',
+                'component': 'furet-ui-list-field-file',
+                'width': '200px',
             },
         ],
         'search': [
             {
                 'key': 'name',
                 'label': 'Label',
-                "default": 'todo',
+                'type': 'search',
             },
             {
                 'key': 'creation_date',
                 'label': 'Creation date',
+                'type': 'search',
             },
         ],
         'buttons': [
@@ -713,8 +703,9 @@ def getView1():
                 'buttonId': '2',
             },
         ],
-        'fields': ["id", "name", "state", "creation_date", "number",
-                   "color", "text", "time", "file", 'filename', 'filesize'],
+        'fields': ["id", "name", "state", "creation_date", "number", "bool",
+                   "color", "text", "time", "file", 'filename', 'filesize',
+                   "password", 'url', 'json'],
     }
 
 
@@ -722,68 +713,119 @@ def getView2():
     return {
         'type': 'UPDATE_VIEW',
         'viewId': '2',
+        'viewType': 'Thumbnail',
         'label': 'View : 2',
         'creatable': True,
         'onSelect': '3',
+        'model': 'Test',
+        'border_fieldcolor':
+        "fields.state == 'new' ? 'blue' : (fields.state == 'done' ? 'green' : null)",
+        'background_fieldcolor': 'fields.color',
         'search': [
             {
                 'key': 'name',
                 'label': 'Label',
-                "default": 'todo',
+                'type': 'search',
             },
             {
                 'key': 'creation_date',
                 'label': 'Creation date',
+                'type': 'search',
             },
         ],
         'template': '''
-            <div className="row">
-                <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <field name="name" widget="String" label="Label"></field>
+            <div class="columns is-multiline is-mobile">
+                <div class="column is-4">
+                    <furet-ui-thumbnail-field-boolean
+                        v-bind:data="card"
+                        name="bool"
+                        label="Boolean"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field
+                <div class="column is-8">
+                    <furet-ui-thumbnail-field-string
+                        v-bind:data="card"
+                        name="name"
+                        label="Label"
+                    />
+                </div>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-selection
+                        v-bind:data="card"
                         name="state"
-                        widget="Selection"
-                        selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]'
-                        label="State">
-                    </field>
+                        label="State"
+                        v-bind:selections="{'new': 'New', 'started': 'Started', 'done': 'Done'}"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="creation_date" widget="DateTime" label="Creation date"></field>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-date
+                        v-bind:data="card"
+                        name="creation_date2"
+                        label="Creation date2"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="number" widget="Float" label="Number"></field>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-float
+                        v-bind:data="card"
+                        name="number"
+                        label="Number"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="url" widget="URL" label="URL" required="1"></field>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-url
+                        v-bind:data="card"
+                        name="url"
+                        label="URL"
+                        required="1"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="uuid" widget="UUID" label="UUID"></field>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-password
+                        v-bind:data="card"
+                        name="password"
+                        label="Password"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="password" widget="Password" label="Password"></field>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-color
+                        v-bind:data="card"
+                        name="color"
+                        label="Color"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="color" widget="Color" label="Color"></field>
+                <furet-ui-thumbnail-group
+                    v-bind:data="card"
+                    invisible="!fields.color"
+                    class="column is-6"
+                >
+                    <furet-ui-thumbnail-field-text
+                        v-bind:data="card"
+                        name="text"
+                        label="Text"
+                    />
+                </furet-ui-thumbnail-group>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-time
+                        v-bind:data="card"
+                        name="time"
+                        label="Time"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="text" widget="Text" label="Text"></field>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-file
+                        v-bind:data="card"
+                        name="file"
+                        label="File"
+                        filename="filename"
+                        filesize="filesize"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="bool" widget="Boolean" label="Boolean"></field>
-                </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="time" widget="Time" label="Time"></field>
-                </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="file"
-                           widget="LargeBinaryPreview"
-                           label="File"
-                           filename="filename"
-                           filesize="filesize"
-                    >
-                    </field>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-json
+                        v-bind:data="card"
+                        name="json"
+                        label="Json"
+                    />
                 </div>
             </div>
         ''',
@@ -794,7 +836,7 @@ def getView2():
             },
         ],
         'fields': [
-            "id", "name", "state", "creation_date", "number", "url",
+            "id", "name", "state", "creation_date2", "number", "url",
             "uuid", "password", "color", "text", "bool", "time", 'json', "file",
             "filename", "filesize",
         ],
@@ -805,72 +847,126 @@ def getView3():
     return {
         'type': 'UPDATE_VIEW',
         'viewId': 3,
+        'viewType': 'Form',
         'label': 'View : 3',
         'creatable': True,
         'deletable': True,
         'editable': True,
         'onClose': '1',
+        'model': 'Test',
         'template': '''
-            <div className="row">
-                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <field name="id" widget="Integer" label="ID" required="1"></field>
+            <div class="columns is-multiline is-mobile">
+                <div class="column is-4">
+                    <furet-ui-form-field-integer
+                        v-bind:config="config"
+                        name="id"
+                        label="ID"
+                        required="1"
+                        readonly="1"
+                    />
                 </div>
-                <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <field name="name" widget="String" label="Label" required="1"></field>
+                <div class="column is-8">
+                    <furet-ui-form-field-string
+                        v-bind:config="config"
+                        required="fields.number"
+                        tooltip="Plop"
+                        name="name"
+                        label="Label"
+                        icon="envelope"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="json" widget="Json" label="JSON" required="1"></field>
-                </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field
+                <div class="column is-6">
+                    <furet-ui-form-field-selection
+                        v-bind:config="config"
                         name="state"
-                        widget="Selection"
-                        selections='[["new", "New"], ["started", "Started"], ["done", "Done"]]'
                         label="State"
-                        required="1">
-                    </field>
+                        v-bind:selections="{'new': 'New', 'started': 'Started', 'done': 'Done'}"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="number" widget="Float" label="Number" required="1"></field>
-                </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field
+                <div class="column is-6">
+                    <furet-ui-form-field-datetime
+                        v-bind:config="config"
                         name="creation_date"
-                        widget="DateTime"
                         label="Creation date"
-                        required="1">
-                    </field>
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="url" widget="URL" label="URL" required="1"></field>
+                <div class="column is-6">
+                    <furet-ui-form-field-date
+                        v-bind:config="config"
+                        name="creation_date2"
+                        label="Creation date2"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="uuid" widget="UUID" label="UUID"></field>
+                <div class="column is-6">
+                    <furet-ui-form-field-float
+                        v-bind:config="config"
+                        name="number"
+                        label="Number"
+                        max="2"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="password" widget="Password" label="Password" required="1"></field>
+                <div class="column is-6">
+                    <furet-ui-form-field-url
+                        v-bind:config="config"
+                        name="url"
+                        label="URL"
+                        required="1"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="color" widget="Color" label="Color" required="1"></field>
+                <div class="column is-6">
+                    <furet-ui-form-field-password
+                        v-bind:config="config"
+                        name="password"
+                        label="Password"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="text" widget="Text" label="Text" required="1"></field>
+                <div class="column is-6">
+                    <furet-ui-form-field-color
+                        v-bind:config="config"
+                        name="color"
+                        label="Color"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="bool" widget="Boolean" label="Boolean"></field>
+                <furet-ui-form-group
+                    v-bind:config="config"
+                    invisible="!fields.color"
+                    class="column is-6 titietgrosminet"
+                >
+                    <furet-ui-form-field-text
+                        v-bind:config="config"
+                        name="text"
+                        label="Text"
+                    />
+                </furet-ui-form-group>
+                <div class="column is-6">
+                    <furet-ui-form-field-boolean
+                        v-bind:config="config"
+                        name="bool"
+                        label="Boolean"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="time" widget="Time" label="Time"></field>
+                <div class="column is-6">
+                    <furet-ui-form-field-time
+                        v-bind:config="config"
+                        name="time"
+                        label="Time"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="file"
-                           widget="LargeBinaryPreview"
-                           label="File"
-                           filename="filename"
-                           filesize="filesize"
-                           required="1"
-                    >
-                    </field>
+                <div class="column is-6">
+                    <furet-ui-form-field-file
+                        v-bind:config="config"
+                        name="file"
+                        label="File"
+                        filename="filename"
+                        filesize="filesize"
+                    />
+                </div>
+                <div class="column is-6">
+                    <furet-ui-form-field-json
+                        v-bind:config="config"
+                        name="json"
+                        label="JSON"
+                    />
                 </div>
             </div>
         ''',
@@ -881,9 +977,9 @@ def getView3():
             },
         ],
         'fields': [
-            "id", "name", "json", "state", "creation_date", "number",
+            "id", "name", "json", "state", "creation_date2", "number",
             "url", "uuid", "password", "color", "text", "bool", "time",
-            'file', 'filename', 'filesize',
+            'file', 'filename', 'filesize', "creation_date",
         ],
     }
 
@@ -892,32 +988,40 @@ def getView8():
     return {
         'type': 'UPDATE_VIEW',
         'viewId': '8',
+        'viewType': 'List',
         'label': 'Customers',
         'creatable': True,
         'deletable': True,
         'selectable': False,
         'onSelect': '9',
+        'model': 'Customer',
         'headers': [
             {
                 'name': 'name',
-                'type': 'String',
-                'label': 'Name',
+                'label': 'name',
+                'component': 'furet-ui-list-field-string',
+            },
+            {
+                'name': 'color',
+                'label': 'Color',
+                'component': 'furet-ui-list-field-color',
             },
             {
                 'name': 'addresses',
-                'type': 'One2Many',
                 'label': 'Addresses',
                 'model': 'Address',
-                'field': 'complete_name',
+                'display': "fields.street + ' ' + fields.zip + ' ' + fields.city",
                 'actionId': '7',
+                'component': 'furet-ui-list-field-one2many',
             },
             {
                 'name': 'categories',
-                'type': 'Many2Many',
                 'label': 'Categories',
                 'model': 'Category',
-                'field': 'name',
+                'display': 'fields.name',
+                'fieldcolor': 'color',
                 'actionId': '6',
+                'component': 'furet-ui-list-field-many2many',
             },
         ],
         'search': [
@@ -926,7 +1030,11 @@ def getView8():
         ],
         'onSelect_buttons': [
         ],
-        'fields': ["name", ["addresses", "complete_name"], ["categories", "name"]],
+        'fields': [
+            "name", "color",
+            ["addresses", ["street", "zip", "city"]],
+            ["categories", ["name", "color"]],
+        ],
     }
 
 
@@ -934,45 +1042,68 @@ def getView9():
     return {
         'type': 'UPDATE_VIEW',
         'viewId': '9',
+        'viewType': 'Form',
         'label': 'Customer',
         'creatable': True,
         'deletable': True,
         'editable': True,
         'onClose': '8',
+        'model': 'Customer',
         'template': '''
-            <div className="row">
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="name" widget="String" label="Name" required="1"></field>
+            <div class="columns is-mobile is-multiline">
+                <div class="column is-4">
+                    <furet-ui-form-field-string
+                        v-bind:config="config"
+                        required="1"
+                        name="name"
+                        label="Name"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="email" widget="String" label="E-mail" required="1"></field>
+                <div class="column is-4">
+                    <furet-ui-form-field-string
+                        v-bind:config="config"
+                        required="1"
+                        name="email"
+                        label="E-mail"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field
+                <div class="column is-4">
+                    <furet-ui-form-field-color
+                        v-bind:config="config"
+                        name="color"
+                        label="Color"
+                    />
+                </div>
+                <div class="column is-6">
+                    <furet-ui-form-field-one2many
+                        v-bind:config="config"
                         name="addresses"
-                        widget="One2Many"
                         label="Addresses"
                         model="Address"
-                        actionId="4"
-                        many2oneField="customer"
-                    >
-                    </field>
+                        x2oField="customer"
+                        v-bind:views="[
+                            {'viewId': '12', 'type': 'List'},
+                            {'viewId': '14', 'type': 'Thumbnail'},
+                            {'viewId': '13', 'type': 'Form', 'unclickable': 1}
+                        ]"
+                    />
                 </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field
+                <div class="column is-6">
+                    <furet-ui-form-field-many2many-checkbox
+                        v-bind:config="config"
                         name="categories"
-                        widget="Many2ManyCheckBox"
                         label="Categories"
                         model="Category"
-                        field="name"
-                        checkbox_class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-                    >
-                    </field>
+                        display="fields.name"
+                        fieldcolor="color"
+                        v-bind:fields="['name', 'color']"
+                        checkbox_class="is-half-tablet is-one-quarter-desktop"
+                    />
                 </div>
             </div>
         ''',
         'buttons': [],
-        'fields': ["name", "email", "addresses", ["categories", "name"]],
+        'fields': ["name", "email", "color", "addresses", "categories"],
     }
 
 
@@ -980,16 +1111,23 @@ def getView10():
     return {
         'type': 'UPDATE_VIEW',
         'viewId': '10',
+        'viewType': 'List',
         'label': 'Categories',
         'creatable': True,
         'deletable': True,
         'selectable': False,
         'onSelect': '11',
+        'model': 'Category',
         'headers': [
             {
                 'name': 'name',
-                'type': 'String',
                 'label': 'Name',
+                'component': 'furet-ui-list-field-string',
+            },
+            {
+                'name': 'color',
+                'label': 'Color',
+                'component': 'furet-ui-list-field-color',
             },
         ],
         'search': [
@@ -998,7 +1136,7 @@ def getView10():
         ],
         'onSelect_buttons': [
         ],
-        'fields': ["name"],
+        'fields': ["name", "color"],
     }
 
 
@@ -1006,30 +1144,49 @@ def getView11():
     return {
         'type': 'UPDATE_VIEW',
         'viewId': '11',
+        'viewType': 'Form',
         'label': 'Category',
         'creatable': True,
         'deletable': True,
         'editable': True,
         'onClose': '10',
+        'model': 'Category',
         'template': '''
-            <div className="row">
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <field name="name" widget="String" label="Name" required="1"></field>
+            <div class="columns is-mobile is-multiline">
+                <div class="column is-8">
+                    <furet-ui-form-field-string
+                        v-bind:config="config"
+                        required="1"
+                        name="name"
+                        label="Name"
+                        maxlength="64"
+                    />
                 </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <field
+                <div class="column is-4">
+                    <furet-ui-form-field-color
+                        v-bind:config="config"
+                        name="color"
+                        label="Color"
+                    />
+                </div>
+                <div class="column is-12">
+                    <furet-ui-form-field-many2many-tags
+                        v-bind:config="config"
                         name="customers"
-                        widget="Many2ManyTags"
                         label="Customers"
                         model="Customer"
-                        field="name"
-                    >
-                    </field>
+                        v-bind:fields="['name', 'color']"
+                        display="fields.name"
+                        fieldcolor="color"
+                        actionId="5"
+                        required="1"
+                        mode="readwrite"
+                    />
                 </div>
             </div>
         ''',
         'buttons': [],
-        'fields': ["name", ["customers", "name"]],
+        'fields': ["name", "color", ["customers", ["name", "color"]]],
     }
 
 
@@ -1037,43 +1194,68 @@ def getView12():
     return {
         'type': 'UPDATE_VIEW',
         'viewId': '12',
+        'viewType': 'List',
         'label': 'Addresses',
         'creatable': True,
         'deletable': True,
         'selectable': False,
         'onSelect': '13',
+        'model': 'Address',
         'headers': [
             {
                 'name': 'customer',
-                'type': 'Many2One',
                 'label': 'Customer',
                 'model': 'Customer',
-                'field': 'name',
+                'display': "'super : ' + fields.name",
                 'actionId': '5',
+                'menuId': "1",
+                'component': 'furet-ui-list-field-many2one',
             },
             {
                 'name': 'street',
-                'type': 'String',
                 'label': 'Street',
+                'component': 'furet-ui-list-field-string',
             },
             {
                 'name': 'zip',
-                'type': 'String',
                 'label': 'zip',
+                'component': 'furet-ui-list-field-string',
             },
             {
                 'name': 'city',
-                'type': 'String',
                 'label': 'City',
+                'component': 'furet-ui-list-field-string',
             },
         ],
         'search': [
+            {
+                'key': 'customer.name',
+                'label': 'Customer',
+                'model': 'Customer',
+                'fieldname': 'name',
+                'type': 'search',
+            },
+            {
+                'key': 'city',
+                'label': 'City',
+                'type': 'search',
+            },
+            {
+                'key': 'zip',
+                'label': 'Zip',
+                'type': 'search',
+            },
+            {
+                'key': 'street',
+                'label': 'Street',
+                'type': 'search',
+            },
         ],
         'buttons': [
         ],
         'onSelect_buttons': [
         ],
-        'fields': [["customer", 'name'], "street", "zip", "city"],
+        'fields': [["customer", ['name']], "street", "zip", "city"],
     }
 
 
@@ -1081,42 +1263,124 @@ def getView13():
     return {
         'type': 'UPDATE_VIEW',
         'viewId': '13',
-        'label': 'Category',
+        'viewType': 'Form',
+        'label': 'Address',
         'creatable': True,
         'deletable': True,
         'editable': True,
         'onClose': '12',
+        'model': 'Address',
         'template': '''
             <div>
-                <div className="row">
-                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <field
+                <div class="columns">
+                    <div class="column">
+                        <furet-ui-form-field-many2one
+                            v-bind:config="config"
                             name="customer"
-                            widget="Many2One"
                             label="Customer"
                             model="Customer"
-                            field="name"
+                            display="fields.name"
+                            v-bind:fields="['name']"
                             limit="10"
                             actionId="5"
-                            required="1">
-                        </field>
+                            menuId="1"
+                            required="1"
+                            mode="readwrite"
+                        />
                     </div>
-                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <field name="street" widget="String" label="Street" required="1"></field>
+                    <div class="column">
+                        <furet-ui-form-field-string
+                            v-bind:config="config"
+                            required="1"
+                            name="street"
+                            label="Street"
+                        />
                     </div>
-                <div className="row">
                 </div>
-                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <field name="zip" widget="String" label="Zip" required="1"></field>
+                <div class="columns">
+                    <div class="column">
+                        <furet-ui-form-field-string
+                            v-bind:config="config"
+                            required="1"
+                            name="zip"
+                            label="Zip"
+                        />
                     </div>
-                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <field name="city" widget="String" label="City" required="1"></field>
+                    <div class="column">
+                        <furet-ui-form-field-string
+                            v-bind:config="config"
+                            required="1"
+                            name="city"
+                            label="City"
+                        />
                     </div>
                 </div>
             </div>
         ''',
         'buttons': [],
-        'fields': ["street", "zip", "city", ["customer", "name"]],
+        'fields': ["street", "zip", "city", ["customer", ["name"]]],
+    }
+
+
+def getView14():
+    return {
+        'type': 'UPDATE_VIEW',
+        'viewId': '14',
+        'viewType': 'Thumbnail',
+        'label': 'Address',
+        'creatable': True,
+        'onSelect': '13',
+        'model': 'Address',
+        'column_size': 'is-12-mobile is-one-half-tablet is-one-third-desktop',
+        'template': '''
+            <div>
+                <div class="columns">
+                    <div class="column">
+                        <furet-ui-thumbnail-field-many2one
+                            v-bind:data="card"
+                            name="customer"
+                            label="Customer"
+                            model="Customer"
+                            display="fields.name"
+                            v-bind:fields="['name']"
+                            limit="10"
+                            actionId="5"
+                            menuId="1"
+                            required="1"
+                            mode="readwrite"
+                        />
+                    </div>
+                    <div class="column">
+                        <furet-ui-thumbnail-field-string
+                            v-bind:data="card"
+                            required="1"
+                            name="street"
+                            label="Street"
+                        />
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <furet-ui-thumbnail-field-string
+                            v-bind:data="card"
+                            required="1"
+                            name="zip"
+                            label="Zip"
+                        />
+                    </div>
+                    <div class="column">
+                        <furet-ui-thumbnail-field-string
+                            v-bind:data="card"
+                            required="1"
+                            name="city"
+                            label="City"
+                        />
+                    </div>
+                </div>
+            </div>
+        ''',
+        'buttons': [],
+        'fields': ["street", "zip", "city", ["customer", ["name"]]],
     }
 
 
@@ -1139,6 +1403,8 @@ def getView(viewId):
         view = getView12()
     elif viewId == '13':
         view = getView13()
+    elif viewId == '14':
+        view = getView14()
     else:
         raise Exception("Unknown view %r" % viewId)
 
@@ -1149,10 +1415,6 @@ def getView(viewId):
 def getLoginData():
     response.set_header('Content-Type', 'application/json')
     data = [
-        {
-            'type': 'UPDATE_GLOBAL',
-            'spaceId': '1',
-        },
         {
             'type': 'UPDATE_RIGHT_MENU',
             'value': {
@@ -1206,9 +1468,27 @@ def getLoginData():
                 },
             ],
         },
+        {
+            'type': 'UPDATE_ROUTE',
+            'path': '/space/1/menu/1/action/1/view/1',
+        },
     ]
-    data.extend(getSpace1())
     return superDumps(data)
+
+
+def _rec_filter(query, Model, keys, searchText):
+    field = getattr(Model, keys[0])
+    if len(keys) == 1:
+        if isinstance(searchText, list):
+            query = query.filter(or_(*[field.ilike('%' + st + '%')
+                                       for st in searchText]))
+        else:
+            query = query.filter(field.ilike('%' + searchText + '%'))
+    else:
+        query = query.join(field)
+        query = _rec_filter(query, field.property.mapper.class_, keys[1:], searchText)
+
+    return query
 
 
 def getIdsFromFilter(model, filters):
@@ -1218,16 +1498,12 @@ def getIdsFromFilter(model, filters):
         Model = MODELS[model]
         query = session.query(Model)
         if filters:
-            for k, v in filters.items():
-                if isinstance(getattr(Model, k).property.columns[0].type, String):
-                    query = query.filter(
-                        or_(*[getattr(Model, k).ilike('%{}%'.format(x)) for x in v]))
-                else:
-                    query = query.filter(getattr(Model, k).in_(v))
+            for f in filters:
+                query = _rec_filter(query, Model, f['key'].split('.'), f['value'])
 
         ids = [x.id for x in query.all()]
-    except AttributeError:
-        pass
+    except AttributeError as e:
+        print(str(e))
     finally:
         session.rollback()
         session.close()
@@ -1270,14 +1546,44 @@ def getSpaceInformation(spaceId=None):
     if spaceId is None:
         return superDumps([])
 
-    return superDumps(getSpace(spaceId))
+    data = loads(request.body.read())
+
+    res, default = getSpace(spaceId)
+    path = ['', 'space', spaceId]
+    if data.get('menuId'):
+        path.extend(['menu', data['menuId']])
+    elif default.get('menuId'):
+        path.extend(['menu', default['menuId']])
+    if data.get('actionId'):
+        path.extend(['action', data['actionId']])
+    elif default.get('actionId'):
+        path.extend(['action', default['actionId']])
+    if data.get('viewId'):
+        path.extend(['view', data['viewId']])
+    elif default.get('viewId'):
+        path.extend(['view', default['viewId']])
+    if data.get('dataId'):
+        path.extend(['data', data['dataId']])
+    if data.get('mode'):
+        path.extend(['mode', data['mode']])
+
+    res.append({
+        'type': 'UPDATE_ROUTE',
+        'path': '/'.join(path),
+    })
+
+    return superDumps(res)
 
 
-@route('/furetui/field/x2x/open', method='POST')
-def getM2OAction():
+@route('/furetui/field/x2m/get/views', method='POST')
+def getx2MViews():
     response.set_header('Content-Type', 'application/json')
     data = loads(request.body.read())
-    return superDumps(getAction(data['actionId']))
+    res = []
+    for viewId in data['viewIds']:
+        res.append(getView(viewId))
+
+    return superDumps(res)
 
 
 @route('/furetui/action/<actionId>', method='POST')
@@ -1285,8 +1591,28 @@ def getActionInformation(actionId=None):
     response.set_header('Content-Type', 'application/json')
     if actionId is None:
         return superDumps([])
+    data = loads(request.body.read())
+    res, default = getAction(actionId)
+    path = ['', 'space', data['spaceId']]
+    if data.get('menuId'):
+        path.extend(['menu', data['menuId']])
 
-    return superDumps(getAction(actionId))
+    path.extend(['action', actionId])
+    if data.get('viewId'):
+        path.extend(['view', data['viewId']])
+    elif default.get('viewId'):
+        path.extend(['view', default['viewId']])
+    if data.get('dataId'):
+        path.extend(['data', data['dataId']])
+    if data.get('mode'):
+        path.extend(['mode', data['mode']])
+
+    res.append({
+        'type': 'UPDATE_ROUTE',
+        'path': '/'.join(path),
+    })
+
+    return superDumps(res)
 
 
 @route('/furetui/view/<viewId>', method='POST')
@@ -1298,63 +1624,33 @@ def getViewInformation(viewId=None):
     return superDumps([getView(viewId)])
 
 
-def getMultiView():
-    data = loads(request.body.read())
-    ids = getIdsFromFilter(data['model'], data['filter'])
-    fields = data.get('fields')
-    if fields is None:
-        view = getView(data['viewId'])
-        fields = view['fields']
-
-    _data = getData(data['model'], ids, fields)
-    _data.append({
-        'type': 'UPDATE_VIEW',
-        'viewId': data['viewId'],
-        'ids': ids,
-    })
-    return superDumps(_data)
-
-
 @route('/furetui/field/x2x/search', method='POST')
 def getM2OSearch():
     response.set_header('Content-Type', 'application/json')
     data = loads(request.body.read())
     _data = []
+    ids = []
     try:
         session = Session()
         Model = MODELS[data['model']]
         query = session.query(Model)
-        if data['value']:
-            query = query.filter(getattr(Model, data['field']).ilike('%{}%'.format(data['value'])))
-
-        if data.get('limit'):
-            query = query.limit(int(data['limit']))
+        if data.get('value'):
+            query = query.filter(or_(*[getattr(Model, field).ilike('%{}%'.format(data['value']))
+                                       for field in data['fields']]))
 
         ids = [x.id for x in query.all()]
-        _data = _getData(session, data['model'], ids, [data['field']])
+        _data = _getData(session, data['model'], ids, data['fields'])
     except:
         session.rollback()
         raise
     finally:
         session.close()
 
-    return superDumps(_data)
+    return superDumps({'ids': ids, 'data': _data})
 
 
-@route('/furetui/list/get', method='POST')
-def getListView():
-    response.set_header('Content-Type', 'application/json')
-    return getMultiView()
-
-
-@route('/furetui/thumbnail/get', method='POST')
-def getThumbnailView():
-    response.set_header('Content-Type', 'application/json')
-    return getMultiView()
-
-
-@route('/furetui/form/get', method='POST')
-def getFormView():
+@route('/furetui/list/x2m/get', method='POST')
+def getListX2MView():
     response.set_header('Content-Type', 'application/json')
     data = loads(request.body.read())
     fields = data.get('fields')
@@ -1362,10 +1658,8 @@ def getFormView():
         view = getView(data['viewId'])
         fields = view['fields']
 
-    if data['new']:
-        return superDumps([])
-
-    return superDumps(getData(data['model'], [data['id']], fields))
+    _data = getData(data['model'], data['dataIds'], fields)
+    return superDumps(_data)
 
 
 @route('/furetui/init/required/data', method='POST')
@@ -1386,63 +1680,189 @@ def getInitOptionnalData():
     return _getInitOptionnalData()
 
 
+def updateChanges(session, changes):
+    for model in changes:
+        if model == 'new':
+            continue
+
+        Model = MODELS[model]
+        for dataId in changes[model]:
+            query = session.query(Model)
+            query = query.filter(Model.id == int(dataId))
+            if changes[model][dataId] == 'DELETED':
+                query.delete(synchronize_session='fetch')
+            else:
+                obj = query.one()
+                obj.update(session, changes[model][dataId], changes)
+
+
+@route('/furetui/data/create', method='POST')
+def createData():
+    response.set_header('Content-Type', 'application/json')
+    _data = []
+    session = Session()
+    try:
+        data = loads(request.body.read())
+        Model = MODELS[data['model']]
+        obj = Model.insert(session, data['data'], data['changes'])
+        updateChanges(session, data['changes'])
+        session.commit()
+        _data.extend(_getData(session, data['model'], [obj.id], data['fields']))
+        path = ['', 'space', data['path']['spaceId']]
+        if data['path'].get('menuId'):
+            path.extend(['menu', data['path']['menuId']])
+        path.extend(['action', data['path']['actionId']])
+        path.extend(['view', data['path']['viewId']])
+        path.extend(['data', str(obj.id)])
+        path.extend(['mode', 'readonly'])
+        _data.append({
+            'type': 'UPDATE_ROUTE',
+            'path': '/'.join(path),
+        })
+    except Exception as e:
+        print(str(e))
+        _data = []
+        session.rollback()
+    finally:
+        session.close()
+
+    return superDumps(_data)
+
+
+@route('/furetui/data/read', method='POST')
+def getMultiView():
+    response.set_header('Content-Type', 'application/json')
+    data = loads(request.body.read())
+    ids = getIdsFromFilter(data['model'], data['filter'])
+    fields = data.get('fields')
+    if fields is None:
+        view = getView(data['viewId'])
+        fields = view['fields']
+
+    _data = getData(data['model'], ids, fields)
+    _data.append({
+        'type': 'UPDATE_VIEW',
+        'viewId': data['viewId'],
+        'dataIds': ids,
+    })
+    return superDumps(_data)
+
+
+@route('/furetui/data/read/<dataId>', method='POST')
+def getFormView(dataId):
+    response.set_header('Content-Type', 'application/json')
+    data = loads(request.body.read())
+    fields = data.get('fields')
+    if fields is None:
+        view = getView(data['viewId'])
+        fields = view['fields']
+
+    if data['new'] or dataId is None:
+        return superDumps([])
+
+    return superDumps(getData(data['model'], [dataId], fields))
+
+
 @route('/furetui/data/update', method='POST')
 def updateData():
     response.set_header('Content-Type', 'application/json')
     _data = []
-    toUpdate = []
-    toDelete = {}
-    toCreate = {}
-
+    session = Session()
     try:
-        session = Session()
-        for data in loads(request.body.read()):
-            Model = MODELS[data['model']]
-            if data['type'] == 'CREATE':
-                obj = Model.insert(data['data'], toCreate)
-                session.add(obj)
-                toUpdate.append((data['model'], data['fields'], obj))
-                toCreate[data['dataId']] = obj
-            elif data['type'] == 'UPDATE':
-                query = session.query(Model).filter(Model.id == int(data['dataId']))
-                obj = query.one()
-                toUpdate.append((data['model'], data['fields'], obj))
-                obj.update(session, data['data'], toCreate)
-            elif data['type'] == 'DELETE':
-                dataIds = []
-                for dataId in data['dataIds']:
-                    if not isinstance(dataId, str):
-                        dataIds.append(dataId)
-
-                query = session.query(Model).filter(Model.id.in_(dataIds))
-                query.delete(synchronize_session='fetch')
-                if data['model'] not in toDelete:
-                    toDelete[data['model']] = data['dataIds']
-                else:
-                    toDelete[data['model']].extend(data['dataIds'])
-            else:
-                raise Exception('Unknown data update type %r' % data)
-
+        data = loads(request.body.read())
+        Model = MODELS[data['model']]
+        query = session.query(Model).filter(Model.id == int(data['dataId']))
+        obj = query.one()
+        obj.update(session, data['data'], data['changes'])
+        updateChanges(session, data['changes'])
         session.commit()
-        for model, fields, obj in toUpdate:
-            _data.extend(_getData(session, model, [obj.id], fields))
-
-        if toDelete:
-            _data.append({
-                'type': 'DELETE_DATA',
-                'data': toDelete,
-            })
-
-        if toCreate:
-            _data.append({
-                'type': 'UPDATE_NEW_ID',
-                'data': [{'oldId': x, 'newId': y.id} for x, y in toCreate.items()],
-            })
-
-    except:
+        _data.extend(_getData(session, data['model'], [obj.id], data['fields']))
+        path = ['', 'space', data['path']['spaceId']]
+        if data['path'].get('menuId'):
+            path.extend(['menu', data['path']['menuId']])
+        path.extend(['action', data['path']['actionId']])
+        path.extend(['view', data['path']['viewId']])
+        path.extend(['data', data['dataId']])
+        path.extend(['mode', 'readonly'])
+        _data.append({
+            'type': 'UPDATE_ROUTE',
+            'path': '/'.join(path),
+        })
+    except Exception as e:
+        print(str(e))
         _data = []
         session.rollback()
-        raise
+    finally:
+        session.close()
+
+    return superDumps(_data)
+
+
+@route('/furetui/data/delete', method='POST')
+def deleteData():
+    response.set_header('Content-Type', 'application/json')
+    session = Session()
+    _data = []
+    try:
+        data = loads(request.body.read())
+        Model = MODELS[data['model']]
+        query = session.query(Model)
+        query = query.filter(Model.id.in_([int(x) for x in data['dataIds']]))
+        query.delete(synchronize_session='fetch')
+        session.commit()
+        _data.append({
+            'type': 'DELETE_DATA',
+            'model': data['model'],
+            'dataIds': data['dataIds'],
+        })
+
+        if data.get('path'):
+            path = ['', 'space', data['path']['spaceId']]
+            if data['path'].get('menuId'):
+                path.extend(['menu', data['path']['menuId']])
+            path.extend(['action', data['path']['actionId']])
+            path.extend(['view', data['path']['viewId']])
+            _data.append({
+                'type': 'UPDATE_ROUTE',
+                'path': '/'.join(path),
+            })
+    except Exception as e:
+        print(str(e))
+        _data = []
+        session.rollback()
+    finally:
+        session.close()
+
+    return superDumps(_data)
+
+
+@route('/furetui/data/search', method='POST')
+def searchData():
+    response.set_header('Content-Type', 'application/json')
+    session = Session()
+    _data = []
+    try:
+        data = loads(request.body.read())
+        for search in data['search']:
+            if search.get('type') == 'search':
+                try:
+                    Model = MODELS[search.get('model', data['model'])]
+                    fieldname = search.get('fieldname', search['key'])
+                    query = session.query(Model).filter(
+                        getattr(Model, fieldname).ilike('%' + data['value'] + '%'))
+                    if query.count():
+                        search['label'] += ' : ' + data['value']
+                        search['value'] = data['value']
+                        _data.append(search)
+                except:
+                    pass
+            elif search.get('type') == 'filter':
+                _data.append(search)
+
+    except Exception as e:
+        print(str(e))
+        _data = []
+        session.rollback()
     finally:
         session.close()
 
@@ -1471,13 +1891,14 @@ if session.query(Test).count() == 0:
         Test(**dict({
             'name': "todo 1",
             'creation_date': datetime.now(),
+            'creation_date2': date.today(),
             'state': 'new',
             'number': 1.2345678,
             'url': 'http://furet-ui.readthedocs.io',
             'uuid': 'uuid---',
             'password': 'password',
-            'color': '#36c',
-            'text': '<div><p><em>Plop</em></p></div>',
+            'color': '#3366cc',
+            'text': '<p><em>Plop</em></p>',
             'bool': True,
             'time': time(1, 2, 3),
             'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
@@ -1493,7 +1914,7 @@ if session.query(Test).count() == 0:
             'uuid': 'uuid---',
             'password': 'password',
             'color': '#36c',
-            'text': '<div><p><em>Plop</em></p></div>',
+            'text': '<p><em>Plop</em></p>',
             'bool': True,
             'time': time(1, 2, 3),
             'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
@@ -1509,7 +1930,7 @@ if session.query(Test).count() == 0:
             'uuid': 'uuid---',
             'password': 'password',
             'color': '#36c',
-            'text': '<div><p><em>Plop</em></p></div>',
+            'text': '<p><em>Plop</em></p>',
             'bool': False,
             'time': time(1, 2, 3),
             'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
@@ -1525,7 +1946,7 @@ if session.query(Test).count() == 0:
             'uuid': 'uuid---',
             'password': 'password',
             'color': '#36c',
-            'text': '<div><p><em>Plop</em></p><p>Other line</p></div>',
+            'text': '<p><em>Plop</em></p><p>Other line</p>',
             'bool': False,
             'time': time(1, 2, 3),
             'json': '{"a": {"b": [{"c": "d"}, {"e": "f"}]}}'
@@ -1534,9 +1955,9 @@ if session.query(Test).count() == 0:
     session.commit()
 
 if session.query(Category).count() == 0:
-    session.add(Category(name="Categ 1"))
-    session.add(Category(name="Categ 2"))
-    session.add(Category(name="Categ 3"))
+    session.add(Category(name="Categ 1", color="#ff0000"))
+    session.add(Category(name="Categ 2", color="#00ff00"))
+    session.add(Category(name="Categ 3", color="#0000ff"))
     session.add(Category(name="Categ 4"))
     session.add(Category(name="Categ 4"))
     session.add(Category(name="Categ 6"))
@@ -1544,7 +1965,7 @@ if session.query(Category).count() == 0:
     session.commit()
 
 if session.query(Customer).count() == 0:
-    customer = Customer(name="JS Suzanne", email="jssuzanne@anybox.fr")
+    customer = Customer(name="JS Suzanne", email="jssuzanne@anybox.fr", color="#00FF00")
     categories = session.query(Category).all()
     customer.categories = categories
     session.add(customer)

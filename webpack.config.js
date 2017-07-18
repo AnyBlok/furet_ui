@@ -17,16 +17,26 @@ if (PROD) {
             compress: { warnings: false }
         })
     )
+    plugins.push(
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        })
+    )
 }
 
 module.exports = {
-    entry: ['bootstrap-loader', "./src/client"],
+    entry: ["./src/client"],
     output: {
         path: path.resolve(__dirname,"./build"),
         filename: PROD ? 'bundle.min.js' : 'bundle.js'
     },
     resolve: {
-        extensions: ['*', '.jsx', '.scss', '.js', '.json']
+        extensions: ['*', '.scss', '.js', '.json'],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        }
     },
     module: {
         loaders: [
@@ -43,7 +53,7 @@ module.exports = {
                 loader: require.resolve('json-loader')
             },
             {
-                test: /(\.global\.css$|react-select.css)/,
+                test: /\.css$/,
                 use: [
                     {
                         loader: 'style-loader',
@@ -54,26 +64,28 @@ module.exports = {
                 ],
             },
             {
-                test: /^((?!\.global|react-select).)*\.css$/,
-                use: [
+                test: /\.s(c|a)ss$/,
+                loaders: [
                     {
-                        loader: 'style-loader',
+                        loader: "style-loader", 
                     },
                     {
-                        loader: 'css-loader',
+                        loader: "css-loader",
                         options: {
                             modules: true,
-                            importLoaders: 1,
-                            sourceMap: true,
+                            importLoaders: 2,
                         },
                     },
-                ],
+                    {
+                        loader: "sass-loader",
+                    }, 
+                ]
             },
             { 
-                test: /(\.js|\.jsx)$/, 
+                test: /\.js$/, 
                 exclude: /node_modules/,
                 loader: require.resolve('babel-loader'),
-                query: { presets: ['es2015', 'react'] }
+                query: { presets: ['es2015'] }
             }
         ]
     },

@@ -7,192 +7,470 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import renderer from 'react-test-renderer';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import '../../fields'
-import {getField} from '../../field';
+import Vue from 'vue';
+import Vuex from 'vuex';
+import Buefy from 'buefy';
+Vue.use(Buefy, {defaultIconPack: 'fa',});
+import {store} from '../../store';
+import {router} from '../../routes';
+import {i18n} from '../../i18n';
+import {FieldListBoolean, FieldThumbnailBoolean, FieldFormBoolean} from '../../fields/boolean'
 
-jest.mock('material-ui/internal/EnhancedSwitch', () => {
-    return () => {return <div />};
+describe('Boolean list component', () => {
+    const renderer = require('vue-server-renderer').createRenderer();
+    beforeEach(() => {
+        store.dispatch('UNITEST_CLEAR');
+    });
+    it('Render is True', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldListBoolean, {props: {
+                row: {fieldname: true},
+                header: {name: 'fieldname'},
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render is False', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldListBoolean, {props: {
+                row: {fieldname: false},
+                header: {name: 'fieldname'},
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render without data', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldListBoolean, {props: {
+                row: {},
+                header: {name: 'fieldname'},
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible is True', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldListBoolean, {props: {
+                row: {fieldname: false},
+                header: {name: 'fieldname', invisible: true},
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible is false', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldListBoolean, {props: {
+                row: {fieldname: false},
+                header: {name: 'fieldname', invisible: false},
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible condition is true', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldListBoolean, {props: {
+                row: {fieldname: false, invisible: true},
+                header: {name: 'fieldname', invisible: 'fields.invisible'},
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible condition is false', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldListBoolean, {props: {
+                row: {fieldname: false, invisible: false},
+                header: {name: 'fieldname', invisible: 'fields.invisible'},
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
 });
 
-test('getField for List', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('List', 'Boolean', {}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+describe('Boolean Thumbnail component', () => {
+    const renderer = require('vue-server-renderer').createRenderer();
+    beforeEach(() => {
+        store.dispatch('UNITEST_CLEAR');
+    });
+    it('Render is True', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldThumbnailBoolean, {props: {
+                data: {fieldname: true},
+                name: 'fieldname',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render is False', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldThumbnailBoolean, {props: {
+                data: {fieldname: true},
+                name: 'fieldname',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible is True', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldThumbnailBoolean, {props: {
+                data: {fieldname: true},
+                name: 'fieldname',
+                invisible: true,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible is false', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldThumbnailBoolean, {props: {
+                data: {fieldname: true},
+                name: 'fieldname',
+                invisible: false,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible condition is true', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldThumbnailBoolean, {props: {
+                data: {fieldname: true, invisible: true},
+                name: 'fieldname',
+                invisible: 'fields.invisible',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible condition is false', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldThumbnailBoolean, {props: {
+                data: {fieldname: true, invisible: false},
+                name: 'fieldname',
+                invisible: 'fields.invisible',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render label', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldThumbnailBoolean, {props: {
+                data: {fieldname: true},
+                name: 'fieldname',
+                label: 'The label',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render tooltip up', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldThumbnailBoolean, {props: {
+                data: {fieldname: true},
+                name: 'fieldname',
+                tooltip: 'The tooltip',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render tooltip left', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldThumbnailBoolean, {props: {
+                data: {fieldname: true},
+                name: 'fieldname',
+                tooltip: 'The left tooltip',
+                tooltip_position: 'is-left',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
 });
 
-test('getField for Thumbnail', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Thumbnail', 'Boolean', {}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form readonly', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {readonly: true, label: 'Test'}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form labelPosition left', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {labelPosition: 'left', label: 'Test'}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon favorite', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'favorite', label: 'Test'}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon visibility', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'visibility', label: 'Test'}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon location', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'location', label: 'Test'}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon mic', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'mic', label: 'Test'}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon star', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'star', label: 'Test'}, true)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for List with false', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('List', 'Boolean', {}, false)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Thumbnail with false', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Thumbnail', 'Boolean', {}, false)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form with false', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {}, false)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon favorite with false', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'favorite', label: 'Test'}, false)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon visibility with false', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'visibility', label: 'Test'}, false)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon location with false', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'location', label: 'Test'}, false)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon mic with false', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'mic', label: 'Test'}, false)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-});
-
-test('getField for Form icon star with false', () => {
-    const component = renderer.create(
-        <MuiThemeProvider>
-            {getField('Form', 'Boolean', {icon: 'star', label: 'Test'}, false)}
-        </MuiThemeProvider>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+describe('Boolean Form component', () => {
+    const renderer = require('vue-server-renderer').createRenderer();
+    beforeEach(() => {
+        store.dispatch('UNITEST_CLEAR');
+    });
+    it('Render is True', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true}},
+                name: 'fieldname',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render is False', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true}},
+                name: 'fieldname',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible is True', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true}},
+                name: 'fieldname',
+                invisible: true,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible is false', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true}},
+                name: 'fieldname',
+                invisible: false,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible condition is true', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true, invisible: true}},
+                name: 'fieldname',
+                invisible: 'fields.invisible',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible condition is false', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true, invisible: false}},
+                name: 'fieldname',
+                invisible: 'fields.invisible',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render label', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true}},
+                name: 'fieldname',
+                label: 'The label',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render tooltip up', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true}},
+                name: 'fieldname',
+                tooltip: 'The tooltip',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render tooltip left', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true}},
+                name: 'fieldname',
+                tooltip: 'The left tooltip',
+                tooltip_position: 'is-left',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render mode readonly by config', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true}, mode: 'readonly'},
+                name: 'fieldname',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render mode readonly param', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true}},
+                name: 'fieldname',
+                readonly: true,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render mode readonly conditional param', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormBoolean, {props: {
+                config: {data: {fieldname: true, readonly: 1}},
+                name: 'fieldname',
+                readonly: 'fields.readonly',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
 });

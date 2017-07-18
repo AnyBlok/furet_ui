@@ -1,0 +1,1088 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Route component Render App with custom view login 1`] = `
+<section data-server-rendered="true" class="section">
+    <div class="columns is-mobile">
+        <div class="column is-half is-offset-one-quarter"><a class="button is-primary">
+                        Log in
+                    </a></div>
+    </div>
+</section>
+`;
+
+exports[`Route component Render App with custom view login 2`] = `
+<div data-server-rendered="true" style="margin-bottom:20px;">
+    <section class="section box">
+        <h1 class="title">The wanted view &quot;Other&quot; is unknown</h1>
+        <h2 class="subtitle">
+            Report this message to the administrator
+        </h2>
+    </section>
+</div>
+`;
+
+exports[`Route component Render App with default path 1`] = `<!---->`;
+
+exports[`Route component Render App with space 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <!---->
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space 2`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <!---->
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space and action 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space and action 2`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space and action and custome view 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <section class="section">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter"><a class="button is-primary">
+                        Log in
+                    </a></div>
+            </div>
+        </section>
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space and action and view 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                </div>
+                <div class="level-right">
+                    <!---->
+                </div>
+            </nav>
+            <div class="b-table">
+                <!---->
+                <div class="table-wrapper">
+                    <table class="table is-narrow has-mobile-cards">
+                        <thead>
+                            <tr>
+                                <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                                <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
+                </span>
+                </td>
+                <td data-label="Label"><span><div><span>Label</span></div>
+            </span>
+            </td>
+            <td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+                </span>
+            </td>
+            <td data-label="State"><span><div><span>New</span></div>
+        </span>
+        </td>
+        </tr>
+        <tr>
+            <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+            <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
+    </span>
+    </td>
+    <td data-label="Label"><span><div><span>Label 2</span></div>
+</span>
+</td>
+<td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    </span>
+</td>
+<td data-label="State"><span><div><span>Done</span></div>
+    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="level">
+    <div class="level-left">
+        <!---->
+    </div>
+    <div class="level-right">
+        <div class="level-item">
+            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                <ul class="pagination-list">
+                    <!---->
+                    <!---->
+                    <li><a class="pagination-link is-current">
+                1
+            </a></li>
+                    <!---->
+                    <!---->
+                </ul>
+                <!---->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!---->
+</div>
+`;
+
+exports[`Route component Render App with space and action and view 2`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <div style="margin-bottom:20px;">
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                        <!---->
+                    </div>
+                </div>
+                <div class="level-right">
+                    <div class="field has-addons">
+                        <p class="control"><a class="button"><i class="fa fa-search"></i></a></p>
+                        <p class="control">
+                            <div debounce="250" class="dropdown v-select searchable" style="background-color:white;">
+                                <div class="dropdown-toggle"> <input type="search" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
+                                    <div class="spinner" style="display:none;">Loading...</div>
+                                </div>
+                                <!---->
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+            <div class="columns is-multiline is-mobile">
+                <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+                    <article class="box">
+                        <div class="columns is-multiline is-mobile">
+                            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                                <span class="control-label">
+                Boolean
+            </span></label>
+                                </span>
+                            </div>
+                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
+                                <!---->
+                            </div>
+                            </span>
+                        </div>
+                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                            <!---->
+                        </div>
+                        </span>
+                </div>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                    <!---->
+                </div>
+                </span>
+            </div>
+        </div>
+        </article>
+    </div>
+    <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+        <article class="box">
+            <div class="columns is-multiline is-mobile">
+                <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                    </span>
+                </div>
+                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                    <!---->
+                </div>
+                </span>
+            </div>
+            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> Done </span>
+                <!---->
+            </div>
+            </span>
+    </div>
+    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+        <!---->
+    </div>
+    </span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+<!---->
+</div>
+`;
+
+exports[`Route component Render App with space and action and view 3`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Form" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-file-o"></i></span></a>
+                        </span>
+                    </p>
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-floppy-o"></i></span> <span>Save</span></a></p>
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <span>Close</span> <!----></a></p>
+                        <!---->
+                    </div>
+                </div>
+            </nav>
+            <section class="box" style="margin-bottom:20px;">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+                    <!---->
+                    <!---->
+                </div>
+                <!---->
+        </div>
+        </span>
+    </div>
+    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+        <!---->
+    </div>
+    <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Bool
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!---->
+</div>
+`;
+
+exports[`Route component Render App with space and action and view 4`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Form" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-file-o"></i></span></a>
+                        </span>
+                    </p>
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-floppy-o"></i></span> <span>Save</span></a></p>
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <span>Close</span> <!----></a></p>
+                        <!---->
+                    </div>
+                </div>
+            </nav>
+            <section class="box" style="margin-bottom:20px;">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label 2" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+                    <!---->
+                    <!---->
+                </div>
+                <!---->
+        </div>
+        </span>
+    </div>
+    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+        <!---->
+    </div>
+    <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Bool
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!---->
+</div>
+`;
+
+exports[`Route component Render App with space and menu 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <!---->
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space and menu 2`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <!---->
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space and menu and action 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space and menu and action 2`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <!---->
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space and menu and action and custome view 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <section class="section">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter"><a class="button is-primary">
+                        Log in
+                    </a></div>
+            </div>
+        </section>
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`Route component Render App with space and menu and action and view 1`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                </div>
+                <div class="level-right">
+                    <!---->
+                </div>
+            </nav>
+            <div class="b-table">
+                <!---->
+                <div class="table-wrapper">
+                    <table class="table is-narrow has-mobile-cards">
+                        <thead>
+                            <tr>
+                                <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                                <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
+                </span>
+                </td>
+                <td data-label="Label"><span><div><span>Label</span></div>
+            </span>
+            </td>
+            <td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+                </span>
+            </td>
+            <td data-label="State"><span><div><span>New</span></div>
+        </span>
+        </td>
+        </tr>
+        <tr>
+            <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+            <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
+    </span>
+    </td>
+    <td data-label="Label"><span><div><span>Label 2</span></div>
+</span>
+</td>
+<td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    </span>
+</td>
+<td data-label="State"><span><div><span>Done</span></div>
+    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="level">
+    <div class="level-left">
+        <!---->
+    </div>
+    <div class="level-right">
+        <div class="level-item">
+            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                <ul class="pagination-list">
+                    <!---->
+                    <!---->
+                    <li><a class="pagination-link is-current">
+                1
+            </a></li>
+                    <!---->
+                    <!---->
+                </ul>
+                <!---->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!---->
+</div>
+`;
+
+exports[`Route component Render App with space and menu and action and view 2`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <div style="margin-bottom:20px;">
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                        <!---->
+                    </div>
+                </div>
+                <div class="level-right">
+                    <div class="field has-addons">
+                        <p class="control"><a class="button"><i class="fa fa-search"></i></a></p>
+                        <p class="control">
+                            <div debounce="250" class="dropdown v-select searchable" style="background-color:white;">
+                                <div class="dropdown-toggle"> <input type="search" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
+                                    <div class="spinner" style="display:none;">Loading...</div>
+                                </div>
+                                <!---->
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+            <div class="columns is-multiline is-mobile">
+                <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+                    <article class="box">
+                        <div class="columns is-multiline is-mobile">
+                            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                                <span class="control-label">
+                Boolean
+            </span></label>
+                                </span>
+                            </div>
+                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
+                                <!---->
+                            </div>
+                            </span>
+                        </div>
+                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                            <!---->
+                        </div>
+                        </span>
+                </div>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                    <!---->
+                </div>
+                </span>
+            </div>
+        </div>
+        </article>
+    </div>
+    <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+        <article class="box">
+            <div class="columns is-multiline is-mobile">
+                <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                    </span>
+                </div>
+                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                    <!---->
+                </div>
+                </span>
+            </div>
+            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> Done </span>
+                <!---->
+            </div>
+            </span>
+    </div>
+    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+        <!---->
+    </div>
+    </span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+<!---->
+</div>
+`;
+
+exports[`Route component Render App with space and menu and action and view 3`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Form" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-file-o"></i></span></a>
+                        </span>
+                    </p>
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-floppy-o"></i></span> <span>Save</span></a></p>
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <span>Close</span> <!----></a></p>
+                        <!---->
+                    </div>
+                </div>
+            </nav>
+            <section class="box" style="margin-bottom:20px;">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+                    <!---->
+                    <!---->
+                </div>
+                <!---->
+        </div>
+        </span>
+    </div>
+    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+        <!---->
+    </div>
+    <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Bool
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!---->
+</div>
+`;
+
+exports[`Route component Render App with space and menu and action and view 4`] = `
+<div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
+    <!---->
+    <div class="column" style="padding-left:10px;padding-right:10px;">
+        <nav class="nav" style="background-color:inherit;">
+            <div class="nav-left">
+                <!---->
+                <nav class="breadcrumb">
+                    <ul>
+                        <li class="is-active"><a>Action : 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <div class="field has-addons">
+                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                        </span>
+                    </p>
+                    <p class="control"><span data-label="Form" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-file-o"></i></span></a>
+                        </span>
+                    </p>
+                </div>
+                <!---->
+            </div>
+        </nav>
+        <div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-floppy-o"></i></span> <span>Save</span></a></p>
+                        <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <span>Close</span> <!----></a></p>
+                        <!---->
+                    </div>
+                </div>
+            </nav>
+            <section class="box" style="margin-bottom:20px;">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label 2" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+                    <!---->
+                    <!---->
+                </div>
+                <!---->
+        </div>
+        </span>
+    </div>
+    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+        <!---->
+    </div>
+    <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Bool
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!---->
+</div>
+`;

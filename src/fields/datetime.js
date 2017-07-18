@@ -7,75 +7,95 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import React from 'react';
-import plugin from '../plugin';
-import translate from 'counterpart';
-import {BaseList, BaseThumbnail, BaseForm} from './base';
-import DateTimeField from 'react-bootstrap-datetimepicker-seconds';
+import Vue from 'vue';
+import {FormMixin, ThumbnailMixin, ListMixin} from './common';
+import {i18n} from '../i18n';
+import moment from 'moment';
 
-export class DateTimeList extends BaseList {
-    getValue () {
-        if (this.props.value) {
-            const date = new Date(Date.parse(this.props.value));
-            return translate.localize(date, {type: 'datetime', scope: 'furetUI'});
-        }
-        return null;
-    }
-}
-export class DateTimeThumbnail extends BaseThumbnail {
-    getValue () {
-        if (this.props.value) {
-            const date = new Date(Date.parse(this.props.value));
-            return translate.localize(date, {type: 'datetime', scope: 'furetUI'});
-        }
-        return null;
-    }
-}
 
-class DateTimeForm extends BaseForm {
-    getValue () {
-        if (this.props.value) {
-            const date = new Date(Date.parse(this.props.value));
-            return translate.localize(date, {type: 'datetime', scope: 'furetUI'});
-        }
-        return '';
+export const FieldListDateTime = Vue.component('furet-ui-list-field-datetime', {
+    mixins: [ListMixin],
+    computed: {
+        value () {
+            moment.locale(i18n.locale);
+            const value = this.row[this.header.name];
+            if (value) return moment(value).format('LLL');
+            return '';
+        },
     }
-    getInputPropsRW () {
-        const props = this.getInputProps();
-        delete props.value;
-        delete props.className;
-        props.inputFormat = translate('furetUI.fields.datetime.format', {fallback: 'YYYY-MM-DDTHH:mm:ssZ'});
-        if (this.value) {
-            props.format = 'YYYY-MM-DDTHH:mm:ssZ';
-            props.dateTime = this.props.value;
-        } else {
-            props.defaultText = '';
-        }
-        props.onChange = (e) => {this.props.onChange(this.props.name, e)}
-        return props;
-    }
-    updateThisData () {
-        super.updateThisData()
-        if (this.required && !this.props.readonly && (this.value == 'Invalid date' || this.props.value == 'Invalid date')) {
-            this.error = translate('furetUI.fields.datetime.invalid', 
-                                   {fallback: 'Invalid date'});
-        }
-    }
-    getInput () {
-        if (this.props.readonly) {
-            return super.getInput();
-        }
-        const props = this.getInputPropsRW()
-        return <DateTimeField {...props}/>
-    }
-}
+})
 
-plugin.set(['field', 'List'], {'DateTime': DateTimeList});
-plugin.set(['field', 'Thumbnail'], {'DateTime': DateTimeThumbnail});
-plugin.set(['field', 'Form'], {'DateTime': DateTimeForm});
+export const FieldThumbnailDateTime = Vue.component('furet-ui-thumbnail-field-datetime', {
+    mixins: [ThumbnailMixin],
+    template: `
+        <div v-if="this.isInvisible" />
+        <b-tooltip 
+            v-bind:label="getTooltip" 
+            v-bind:position="tooltipPosition"
+            v-else
+        >
+            <b-field 
+                v-bind:label="this.label"
+                v-bind:style="{'width': 'inherit'}"
+            >
+                <span> {{value}} </span>
+            </b-field>
+        </b-tooltip>`,
+    computed: {
+        value () {
+            moment.locale(i18n.locale);
+            const value = this.data && this.data[this.name];
+            if (value) return moment(value).format('LLL');
+            return '';
+        },
+    }
+})
 
-export default {
-    DateTimeList,
-    DateTimeThumbnail,
-    DateTimeForm,
-}
+export const FieldFormDateTime = Vue.component('furet-ui-form-field-datetime', {
+    props: ['icon', 'min', 'max'],
+    mixins: [FormMixin],
+    template: `
+        <div v-if="this.isInvisible" />
+        <b-tooltip 
+            v-bind:label="getTooltip" 
+            v-bind:position="tooltipPosition"
+            v-bind:style="{'width': '100%'}"
+            v-else
+        >
+            <b-field 
+                v-bind:label="this.label"
+                v-bind:type="getType"
+                v-bind:message="getMessage"
+                v-bind:style="{'width': 'inherit'}"
+            >
+                <span v-if="isReadonly"> {{value}} </span>
+                <b-input 
+                    v-else 
+                    type="datetime-local"
+                    v-bind:value="data" 
+                    v-on:change="updateValue"
+                    icon-pack="fa"
+                    v-bind:icon="icon"
+                    v-bind:min="min"
+                    v-bind:max="max"
+                >
+                </b-input>
+            </b-field>
+        </b-tooltip>`,
+    computed: {
+        value () {
+            moment.locale(i18n.locale);
+            const value = this.config && this.config.data && this.config.data[this.name];
+            if (value) return moment(value).format('LLL');
+            return '';
+        },
+        data () {
+            const value = this.config && this.config.data && this.config.data[this.name];
+            if (value) {
+                const date = new Date(Date.parse(value)).toISOString();
+                return date.replace(/\.[0-9]{3}/, '').replace(/Z/, '');
+            }
+            return '';
+        }
+    }
+})

@@ -1,2740 +1,1237 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Thumbnail view 1`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      >
-        <div
-          className="row"
-        />
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-      >
-        <ul
-          className="list-inline"
-          style={
-            Object {
-              "MozBorderRadius": "10px",
-              "WebkitBorderRadius": "10px",
-              "border": "2px solid gray",
-              "borderRadius": "10px",
-            }
-          }
-        >
-          <li>
-            <ul
-              className="list-inline"
-            />
-          </li>
-          <li>
-            <div
-              style={
-                Object {
-                  "display": "inline-block",
-                  "muiPrepared": true,
-                  "position": "relative",
-                  "width": "100%",
-                }
-              }
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "transparent",
-                    "cursor": "auto",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "fontSize": 16,
-                    "height": 48,
-                    "lineHeight": "24px",
-                    "muiPrepared": true,
-                    "position": "relative",
-                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "width": "100%",
-                  }
-                }
-              >
-                <input
-                  autoComplete="off"
-                  disabled={false}
-                  id="searchText"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  style={
-                    Object {
-                      "MozAppearance": "textfield",
-                      "WebkitAppearance": "textfield",
-                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                      "appearance": "textfield",
-                      "backgroundColor": "rgba(0,0,0,0)",
-                      "border": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "cursor": "inherit",
-                      "font": "inherit",
-                      "height": "100%",
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "width": "100%",
-                    }
-                  }
-                  type="text"
-                  value=""
-                />
-                <div>
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "borderBottom": "solid 1px",
-                        "borderColor": "#e0e0e0",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "WebkitTransform": "scaleX(0)",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "borderBottom": "solid 2px",
-                        "borderColor": "#00bcd4",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "msTransform": "scaleX(0)",
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "transform": "scaleX(0)",
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    />
-  </div>
-</div>
-`;
+exports[`furet-ui-thumbnail-group component Render invisible 1`] = `<!---->`;
 
-exports[`Render Thumbnail view 2`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-2 col-sm-2 col-md-2 col-lg-2"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#2196f3",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-4 col-sm-4 col-md-4 col-lg-4"
-            style={
-              Object {
-                "paddingLeft": 10,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <div
-              testHandleRequestClose={[Function]}
-              testHandleTouchTap={[Function]}
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "MozBoxSizing": "border-box",
-                    "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                    "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "#ffffff",
-                    "borderRadius": 2,
-                    "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                           0 1px 4px rgba(0, 0, 0, 0.12)",
-                    "boxSizing": "border-box",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "marginTop": 10,
-                    "minWidth": "100%",
-                    "muiPrepared": true,
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  }
-                }
-              >
-                <button
-                  disabled={false}
-                  href={undefined}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  onTouchTap={[Function]}
-                  style={
-                    Object {
-                      "MozBoxSizing": "border-box",
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "backgroundColor": "#ffffff",
-                      "border": 10,
-                      "borderRadius": 2,
-                      "boxSizing": "border-box",
-                      "cursor": "pointer",
-                      "display": "inline-block",
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": "inherit",
-                      "fontWeight": "inherit",
-                      "height": 36,
-                      "lineHeight": "36px",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textAlign": "center",
-                      "textDecoration": "none",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "verticalAlign": null,
-                      "width": "100%",
-                      "zIndex": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "backgroundColor": false,
-                          "borderRadius": 2,
-                          "height": 36,
-                          "muiPrepared": true,
-                          "top": 0,
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "MozUserSelect": "none",
-                            "WebkitUserSelect": "none",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "fontSize": 14,
-                            "fontWeight": 500,
-                            "letterSpacing": 0,
-                            "margin": 0,
-                            "msUserSelect": "none",
-                            "muiPrepared": true,
-                            "opacity": 1,
-                            "paddingLeft": 16,
-                            "paddingRight": 16,
-                            "position": "relative",
-                            "textTransform": "uppercase",
-                            "userSelect": "none",
-                          }
-                        }
-                      >
-                        Actions
-                      </span>
+exports[`furet-ui-thumbnail-group component Render visible 1`] = `<div data-server-rendered="true"><span>Test</span></div>`;
+
+exports[`furet-ui-thumbnail-view component Render with data 1 1`] = `
+<div data-server-rendered="true" style="margin-bottom:20px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <!---->
+            </div>
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+            <article class="box">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
                     </div>
-                  </div>
-                </button>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-      >
-        <ul
-          className="list-inline"
-          style={
-            Object {
-              "MozBorderRadius": "10px",
-              "WebkitBorderRadius": "10px",
-              "border": "2px solid gray",
-              "borderRadius": "10px",
-            }
-          }
-        >
-          <li>
-            <ul
-              className="list-inline"
-            >
-              <li>
-                <div
-                  className={undefined}
-                  disabled={undefined}
-                  href={undefined}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  onTouchTap={[Function]}
-                  style={
-                    Object {
-                      "MozBoxSizing": "border-box",
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "backgroundColor": "rgb(224, 224, 224)",
-                      "border": 10,
-                      "borderRadius": 16,
-                      "boxShadow": null,
-                      "boxSizing": "border-box",
-                      "cursor": "default",
-                      "display": Array [
-                        "-webkit-box",
-                        "-moz-box",
-                        "-ms-flexbox",
-                        "-webkit-flex",
-                        "flex",
-                      ],
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": "inherit",
-                      "fontWeight": "inherit",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textDecoration": "none",
-                      "verticalAlign": null,
-                      "whiteSpace": "nowrap",
-                      "width": Array [
-                        "-webkit-fit-content",
-                        "-moz-fit-content",
-                        "fit-content",
-                      ],
-                      "zIndex": 1,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <span
-                    style={
-                      Object {
-                        "MozUserSelect": "none",
-                        "WebkitUserSelect": "none",
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontSize": 14,
-                        "fontWeight": 400,
-                        "lineHeight": "32px",
-                        "msUserSelect": "none",
-                        "muiPrepared": true,
-                        "paddingLeft": 12,
-                        "paddingRight": 12,
-                        "userSelect": "none",
-                        "whiteSpace": "nowrap",
-                      }
-                    }
-                  >
-                    Label : test
-                  </span>
-                  <svg
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                    onTouchTap={[Function]}
-                    style={
-                      Object {
-                        "MozUserSelect": "none",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "WebkitUserSelect": "none",
-                        "color": "rgba(0, 0, 0, 0.26)",
-                        "cursor": "pointer",
-                        "display": "inline-block",
-                        "fill": "rgba(0, 0, 0, 0.26)",
-                        "height": 24,
-                        "margin": "4px 4px 0px -8px",
-                        "msUserSelect": "none",
-                        "muiPrepared": true,
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "userSelect": "none",
-                        "width": 24,
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
-                    />
-                  </svg>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div
-              style={
-                Object {
-                  "display": "inline-block",
-                  "muiPrepared": true,
-                  "position": "relative",
-                  "width": "100%",
-                }
-              }
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "transparent",
-                    "cursor": "auto",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "fontSize": 16,
-                    "height": 48,
-                    "lineHeight": "24px",
-                    "muiPrepared": true,
-                    "position": "relative",
-                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "width": "100%",
-                  }
-                }
-              >
-                <input
-                  autoComplete="off"
-                  disabled={false}
-                  id="searchText"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  style={
-                    Object {
-                      "MozAppearance": "textfield",
-                      "WebkitAppearance": "textfield",
-                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                      "appearance": "textfield",
-                      "backgroundColor": "rgba(0,0,0,0)",
-                      "border": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "cursor": "inherit",
-                      "font": "inherit",
-                      "height": "100%",
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "width": "100%",
-                    }
-                  }
-                  type="text"
-                  value=""
-                />
-                <div>
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "borderBottom": "solid 1px",
-                        "borderColor": "#e0e0e0",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "WebkitTransform": "scaleX(0)",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "borderBottom": "solid 2px",
-                        "borderColor": "#00bcd4",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "msTransform": "scaleX(0)",
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "transform": "scaleX(0)",
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Render Thumbnail view 3`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-2 col-sm-2 col-md-2 col-lg-2"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#2196f3",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-4 col-sm-4 col-md-4 col-lg-4"
-            style={
-              Object {
-                "paddingLeft": 10,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <div
-              testHandleRequestClose={[Function]}
-              testHandleTouchTap={[Function]}
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "MozBoxSizing": "border-box",
-                    "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                    "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "#ffffff",
-                    "borderRadius": 2,
-                    "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                           0 1px 4px rgba(0, 0, 0, 0.12)",
-                    "boxSizing": "border-box",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "marginTop": 10,
-                    "minWidth": "100%",
-                    "muiPrepared": true,
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  }
-                }
-              >
-                <button
-                  disabled={false}
-                  href={undefined}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  onTouchTap={[Function]}
-                  style={
-                    Object {
-                      "MozBoxSizing": "border-box",
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "backgroundColor": "#ffffff",
-                      "border": 10,
-                      "borderRadius": 2,
-                      "boxSizing": "border-box",
-                      "cursor": "pointer",
-                      "display": "inline-block",
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": "inherit",
-                      "fontWeight": "inherit",
-                      "height": 36,
-                      "lineHeight": "36px",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textAlign": "center",
-                      "textDecoration": "none",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "verticalAlign": null,
-                      "width": "100%",
-                      "zIndex": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "backgroundColor": false,
-                          "borderRadius": 2,
-                          "height": 36,
-                          "muiPrepared": true,
-                          "top": 0,
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "MozUserSelect": "none",
-                            "WebkitUserSelect": "none",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "fontSize": 14,
-                            "fontWeight": 500,
-                            "letterSpacing": 0,
-                            "margin": 0,
-                            "msUserSelect": "none",
-                            "muiPrepared": true,
-                            "opacity": 1,
-                            "paddingLeft": 16,
-                            "paddingRight": 16,
-                            "position": "relative",
-                            "textTransform": "uppercase",
-                            "userSelect": "none",
-                          }
-                        }
-                      >
-                        Actions
-                      </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                        <!---->
                     </div>
-                  </div>
-                </button>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-      >
-        <ul
-          className="list-inline"
-          style={
-            Object {
-              "MozBorderRadius": "10px",
-              "WebkitBorderRadius": "10px",
-              "border": "2px solid gray",
-              "borderRadius": "10px",
-            }
-          }
-        >
-          <li>
-            <ul
-              className="list-inline"
-            >
-              <li>
-                <div
-                  className={undefined}
-                  disabled={undefined}
-                  href={undefined}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  onTouchTap={[Function]}
-                  style={
-                    Object {
-                      "MozBoxSizing": "border-box",
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "backgroundColor": "rgb(224, 224, 224)",
-                      "border": 10,
-                      "borderRadius": 16,
-                      "boxShadow": null,
-                      "boxSizing": "border-box",
-                      "cursor": "default",
-                      "display": Array [
-                        "-webkit-box",
-                        "-moz-box",
-                        "-ms-flexbox",
-                        "-webkit-flex",
-                        "flex",
-                      ],
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": "inherit",
-                      "fontWeight": "inherit",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textDecoration": "none",
-                      "verticalAlign": null,
-                      "whiteSpace": "nowrap",
-                      "width": Array [
-                        "-webkit-fit-content",
-                        "-moz-fit-content",
-                        "fit-content",
-                      ],
-                      "zIndex": 1,
-                    }
-                  }
-                  tabIndex={0}
-                >
-                  <span
-                    style={
-                      Object {
-                        "MozUserSelect": "none",
-                        "WebkitUserSelect": "none",
-                        "color": "rgba(0, 0, 0, 0.87)",
-                        "fontSize": 14,
-                        "fontWeight": 400,
-                        "lineHeight": "32px",
-                        "msUserSelect": "none",
-                        "muiPrepared": true,
-                        "paddingLeft": 12,
-                        "paddingRight": 12,
-                        "userSelect": "none",
-                        "whiteSpace": "nowrap",
-                      }
-                    }
-                  >
-                    Label : test
-                  </span>
-                  <svg
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                    onTouchTap={[Function]}
-                    style={
-                      Object {
-                        "MozUserSelect": "none",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "WebkitUserSelect": "none",
-                        "color": "rgba(0, 0, 0, 0.26)",
-                        "cursor": "pointer",
-                        "display": "inline-block",
-                        "fill": "rgba(0, 0, 0, 0.26)",
-                        "height": 24,
-                        "margin": "4px 4px 0px -8px",
-                        "msUserSelect": "none",
-                        "muiPrepared": true,
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "userSelect": "none",
-                        "width": 24,
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
-                    />
-                  </svg>
+                    </span>
                 </div>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div
-              style={
-                Object {
-                  "display": "inline-block",
-                  "muiPrepared": true,
-                  "position": "relative",
-                  "width": "100%",
-                }
-              }
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "transparent",
-                    "cursor": "auto",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "fontSize": 16,
-                    "height": 48,
-                    "lineHeight": "24px",
-                    "muiPrepared": true,
-                    "position": "relative",
-                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "width": "100%",
-                  }
-                }
-              >
-                <input
-                  autoComplete="off"
-                  disabled={false}
-                  id="searchText"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  style={
-                    Object {
-                      "MozAppearance": "textfield",
-                      "WebkitAppearance": "textfield",
-                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                      "appearance": "textfield",
-                      "backgroundColor": "rgba(0,0,0,0)",
-                      "border": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "cursor": "inherit",
-                      "font": "inherit",
-                      "height": "100%",
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "width": "100%",
-                    }
-                  }
-                  type="text"
-                  value=""
-                />
-                <div>
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "borderBottom": "solid 1px",
-                        "borderColor": "#e0e0e0",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "WebkitTransform": "scaleX(0)",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "borderBottom": "solid 2px",
-                        "borderColor": "#00bcd4",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "msTransform": "scaleX(0)",
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "transform": "scaleX(0)",
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "width": "100%",
-                      }
-                    }
-                  />
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+                    <!---->
                 </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+            <!---->
+        </div>
+        </span>
     </div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 1
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
                 </span>
-              </div>
             </div>
-          </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                <!---->
+            </div>
+            </span>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 2
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
                 </span>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 3
-                </span>
-              </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                <!---->
             </div>
-          </div>
+            </span>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 4
-                </span>
-              </div>
-            </div>
-          </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+            <!---->
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 5
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 6
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 7
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 8
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 9
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 10
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
 </div>
 `;
 
-exports[`Render Thumbnail view without button 1`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      >
-        <div
-          className="row"
-        />
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-      >
-        <ul
-          className="list-inline"
-          style={
-            Object {
-              "MozBorderRadius": "10px",
-              "WebkitBorderRadius": "10px",
-              "border": "2px solid gray",
-              "borderRadius": "10px",
-            }
-          }
-        >
-          <li>
-            <ul
-              className="list-inline"
-            />
-          </li>
-          <li>
-            <div
-              style={
-                Object {
-                  "display": "inline-block",
-                  "muiPrepared": true,
-                  "position": "relative",
-                  "width": "100%",
-                }
-              }
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "transparent",
-                    "cursor": "auto",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "fontSize": 16,
-                    "height": 48,
-                    "lineHeight": "24px",
-                    "muiPrepared": true,
-                    "position": "relative",
-                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "width": "100%",
-                  }
-                }
-              >
-                <input
-                  autoComplete="off"
-                  disabled={false}
-                  id="searchText"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  style={
-                    Object {
-                      "MozAppearance": "textfield",
-                      "WebkitAppearance": "textfield",
-                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                      "appearance": "textfield",
-                      "backgroundColor": "rgba(0,0,0,0)",
-                      "border": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "cursor": "inherit",
-                      "font": "inherit",
-                      "height": "100%",
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "width": "100%",
-                    }
-                  }
-                  type="text"
-                  value=""
-                />
-                <div>
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "borderBottom": "solid 1px",
-                        "borderColor": "#e0e0e0",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "WebkitTransform": "scaleX(0)",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "borderBottom": "solid 2px",
-                        "borderColor": "#00bcd4",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "msTransform": "scaleX(0)",
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "transform": "scaleX(0)",
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
+exports[`furet-ui-thumbnail-view component Render with data 2 1`] = `
+<div data-server-rendered="true" style="margin-bottom:20px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <!---->
             </div>
-          </li>
-        </ul>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+            <article class="box">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
+                        <span
+                            class="control-label">
+                            Boolean
+                            </span>
+                            </label>
+                            </span>
+                    </div>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                    <!---->
+                </div>
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <!---->
+        </div>
+        </span>
     </div>
-    <div
-      className="row"
-    />
-  </div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
 </div>
 `;
 
-exports[`Render Thumbnail view without button 2`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      >
-        <div
-          className="row"
-        />
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-      >
-        <ul
-          className="list-inline"
-          style={
-            Object {
-              "MozBorderRadius": "10px",
-              "WebkitBorderRadius": "10px",
-              "border": "2px solid gray",
-              "borderRadius": "10px",
-            }
-          }
-        >
-          <li>
-            <ul
-              className="list-inline"
-            />
-          </li>
-          <li>
-            <div
-              style={
-                Object {
-                  "display": "inline-block",
-                  "muiPrepared": true,
-                  "position": "relative",
-                  "width": "100%",
-                }
-              }
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "transparent",
-                    "cursor": "auto",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "fontSize": 16,
-                    "height": 48,
-                    "lineHeight": "24px",
-                    "muiPrepared": true,
-                    "position": "relative",
-                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "width": "100%",
-                  }
-                }
-              >
-                <input
-                  autoComplete="off"
-                  disabled={false}
-                  id="searchText"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  style={
-                    Object {
-                      "MozAppearance": "textfield",
-                      "WebkitAppearance": "textfield",
-                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                      "appearance": "textfield",
-                      "backgroundColor": "rgba(0,0,0,0)",
-                      "border": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "cursor": "inherit",
-                      "font": "inherit",
-                      "height": "100%",
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "width": "100%",
-                    }
-                  }
-                  type="text"
-                  value=""
-                />
-                <div>
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "borderBottom": "solid 1px",
-                        "borderColor": "#e0e0e0",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "WebkitTransform": "scaleX(0)",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "borderBottom": "solid 2px",
-                        "borderColor": "#00bcd4",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "msTransform": "scaleX(0)",
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "transform": "scaleX(0)",
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "width": "100%",
-                      }
-                    }
-                  />
+exports[`furet-ui-thumbnail-view component Render with data 3 1`] = `
+<div data-server-rendered="true" style="margin-bottom:20px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <!---->
+            </div>
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+            <article class="box">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
+                    </div>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                        <!---->
+                    </div>
+                    </span>
                 </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                    <!---->
+                </div>
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <!---->
+        </div>
+        </span>
     </div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
                 </span>
-              </div>
             </div>
-          </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <!---->
+            </div>
+            </span>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
                 </span>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+                <!---->
             </div>
-          </div>
+            </span>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
 </div>
 `;
 
-exports[`Render Thumbnail view without button 3`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      >
-        <div
-          className="row"
-        />
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-6"
-      >
-        <ul
-          className="list-inline"
-          style={
-            Object {
-              "MozBorderRadius": "10px",
-              "WebkitBorderRadius": "10px",
-              "border": "2px solid gray",
-              "borderRadius": "10px",
-            }
-          }
-        >
-          <li>
-            <ul
-              className="list-inline"
-            />
-          </li>
-          <li>
-            <div
-              style={
-                Object {
-                  "display": "inline-block",
-                  "muiPrepared": true,
-                  "position": "relative",
-                  "width": "100%",
-                }
-              }
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "transparent",
-                    "cursor": "auto",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "fontSize": 16,
-                    "height": 48,
-                    "lineHeight": "24px",
-                    "muiPrepared": true,
-                    "position": "relative",
-                    "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "width": "100%",
-                  }
-                }
-              >
-                <input
-                  autoComplete="off"
-                  disabled={false}
-                  id="searchText"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  style={
-                    Object {
-                      "MozAppearance": "textfield",
-                      "WebkitAppearance": "textfield",
-                      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                      "appearance": "textfield",
-                      "backgroundColor": "rgba(0,0,0,0)",
-                      "border": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "cursor": "inherit",
-                      "font": "inherit",
-                      "height": "100%",
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "width": "100%",
-                    }
-                  }
-                  type="text"
-                  value=""
-                />
-                <div>
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "borderBottom": "solid 1px",
-                        "borderColor": "#e0e0e0",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <hr
-                    style={
-                      Object {
-                        "MozBoxSizing": "content-box",
-                        "WebkitTransform": "scaleX(0)",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "borderBottom": "solid 2px",
-                        "borderColor": "#00bcd4",
-                        "borderLeft": "none",
-                        "borderRight": "none",
-                        "borderTop": "none",
-                        "bottom": 8,
-                        "boxSizing": "content-box",
-                        "margin": 0,
-                        "msTransform": "scaleX(0)",
-                        "muiPrepared": true,
-                        "position": "absolute",
-                        "transform": "scaleX(0)",
-                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "width": "100%",
-                      }
-                    }
-                  />
+exports[`furet-ui-thumbnail-view component Render with data background fieldcolor 1`] = `
+<div data-server-rendered="true" style="margin-bottom:20px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <!---->
+            </div>
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+            <article class="box" style="background-color:#123456;">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
+                    </div>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                        <!---->
+                    </div>
+                    </span>
                 </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                    <!---->
+                </div>
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <!---->
+        </div>
+        </span>
     </div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 1
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
                 </span>
-              </div>
             </div>
-          </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <!---->
+            </div>
+            </span>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 2
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
                 </span>
-              </div>
             </div>
-          </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+                <!---->
+            </div>
+            </span>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 3
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box" style="background-color:#789ABC;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
                 </span>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 4
-                </span>
-              </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+                <!---->
             </div>
-          </div>
+            </span>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 5
-                </span>
-              </div>
-            </div>
-          </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 6
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 7
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 8
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 9
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div
-          className="thumbnail"
-          onClick={[Function]}
-        >
-          <div>
-            <div
-              className="form-group"
-            >
-              <label
-                htmlFor="view-type-Thumbnail-field_type-String-field-name-name"
-              >
-                Label
-              </label>
-              <div>
-                <span>
-                  todo 10
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 4 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
 </div>
 `;
 
-exports[`getViewIcon with Thumbnail view 1`] = `
-<button
-  disabled={false}
-  href={undefined}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onMouseOut={[Function]}
-  onTouchStart={[Function]}
-  onTouchTap={[Function]}
-  style={
-    Object {
-      "MozBoxSizing": "border-box",
-      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-      "background": "none",
-      "border": 10,
-      "boxSizing": "border-box",
-      "cursor": "pointer",
-      "display": "inline-block",
-      "fontFamily": "Roboto, sans-serif",
-      "fontSize": 0,
-      "fontWeight": "inherit",
-      "height": 36,
-      "margin": 0,
-      "muiPrepared": true,
-      "outline": "none",
-      "overflow": "visible",
-      "padding": 2,
-      "position": "relative",
-      "textDecoration": "none",
-      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-      "verticalAlign": null,
-      "width": 36,
-      "zIndex": 1,
-    }
-  }
-  tabIndex={0}
-  type="button"
->
-  <div
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchStart={[Function]}
-  >
-    <svg
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      style={
-        Object {
-          "MozUserSelect": "none",
-          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-          "WebkitUserSelect": "none",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "display": "inline-block",
-          "fill": "currentColor",
-          "height": 24,
-          "msUserSelect": "none",
-          "muiPrepared": true,
-          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-          "userSelect": "none",
-          "width": 24,
-        }
-      }
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"
-      />
-    </svg>
-    ;
-  </div>
-</button>
+exports[`furet-ui-thumbnail-view component Render with data border fieldcolor 1`] = `
+<div data-server-rendered="true" style="margin-bottom:20px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <!---->
+            </div>
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+            <article class="box" style="border:3px solid #123456;">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
+                    </div>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                    <!---->
+                </div>
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <!---->
+        </div>
+        </span>
+    </div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box" style="border:3px solid #789ABC;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 4 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+`;
+
+exports[`furet-ui-thumbnail-view component Render without data 1`] = `
+<div data-server-rendered="true" style="margin-bottom:20px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <!---->
+                <!---->
+            </div>
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile"></div>
+</div>
+`;
+
+exports[`furet-ui-x2m-thumbnail-view component Render with data 1 1`] = `
+<div data-server-rendered="true" style="margin-bottom:10px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile"></div>
+</div>
+`;
+
+exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
+<div data-server-rendered="true" style="margin-bottom:10px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+            <article class="box">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
+                        <span
+                            class="control-label">
+                            Boolean
+                            </span>
+                            </label>
+                            </span>
+                    </div>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                    <!---->
+                </div>
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <!---->
+        </div>
+        </span>
+    </div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+`;
+
+exports[`furet-ui-x2m-thumbnail-view component Render with data 2 2`] = `
+<div data-server-rendered="true" style="margin-bottom:10px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+            <article class="box">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
+                    </div>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                    <!---->
+                </div>
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <!---->
+        </div>
+        </span>
+    </div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+`;
+
+exports[`furet-ui-x2m-thumbnail-view component Render with data background fieldcolor 1`] = `
+<div data-server-rendered="true" style="margin-bottom:10px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+            <article class="box" style="background-color:#123456;">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
+                    </div>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                    <!---->
+                </div>
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <!---->
+        </div>
+        </span>
+    </div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box" style="background-color:#789ABC;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 4 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+`;
+
+exports[`furet-ui-x2m-thumbnail-view component Render with data border fieldcolor 1`] = `
+<div data-server-rendered="true" style="margin-bottom:10px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+            <article class="box" style="border:3px solid #123456;">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
+                    </div>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                    <!---->
+                </div>
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <!---->
+        </div>
+        </span>
+    </div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box" style="border:3px solid #789ABC;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 4 </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+`;
+
+exports[`furet-ui-x2m-thumbnail-view component Render without data 1 1`] = `
+<div data-server-rendered="true" style="margin-bottom:10px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile"></div>
+</div>
+`;
+
+exports[`furet-ui-x2m-thumbnail-view component Render without data 2 1`] = `
+<div data-server-rendered="true" style="margin-bottom:10px;">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <div class="columns is-multiline is-mobile">
+        <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+            <article class="box">
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
+                    </div>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                        <!---->
+                    </div>
+                    </span>
+                </div>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+                    <!---->
+                </div>
+                </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+            <!---->
+        </div>
+        </span>
+    </div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
+    <article class="box">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+            <!---->
+        </div>
+        </span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+    <!---->
+</div>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
 `;

@@ -8,16 +8,11 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import plugin from '../../plugin';
-import {json_post} from '../../server-call';
+import {json_post_dispatch_all} from '../../server-call';
 
-const Logout = (props) => {
-    json_post('/client/logout', {}, {
-        onSuccess: (result) => {
-            props.dispatchAll(result);
-        },
-    })
-    return null
+export const Logout = ({router}) => {
+    router.push('/');
+    json_post_dispatch_all('/client/logout', {});
 };
 
-plugin.set(['views', 'type', 'client'], {Logout});
-export default Logout
+plugin.set(['views', 'type', 'client'], {Logout: {function: Logout}})

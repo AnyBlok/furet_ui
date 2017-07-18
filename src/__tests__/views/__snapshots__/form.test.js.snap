@@ -1,2494 +1,426 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Form view readonly 1`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-8 col-md-8 col-lg-9"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "currentColor",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    />
-  </div>
-</div>
-`;
-
-exports[`Render Form view readonly 2`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-8 col-md-8 col-lg-9"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#2196f3",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#2196f3",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#f44336",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12l1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "currentColor",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-4 col-sm-4 col-md-4 col-lg-4"
-          >
-            <div
-              testHandleRequestClose={[Function]}
-              testHandleTouchTap={[Function]}
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "MozBoxSizing": "border-box",
-                    "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                    "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "#ffffff",
-                    "borderRadius": 2,
-                    "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                           0 1px 4px rgba(0, 0, 0, 0.12)",
-                    "boxSizing": "border-box",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "marginTop": 10,
-                    "minWidth": "100%",
-                    "muiPrepared": true,
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  }
-                }
-              >
-                <button
-                  disabled={false}
-                  href={undefined}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  onTouchTap={[Function]}
-                  style={
-                    Object {
-                      "MozBoxSizing": "border-box",
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "backgroundColor": "#ffffff",
-                      "border": 10,
-                      "borderRadius": 2,
-                      "boxSizing": "border-box",
-                      "cursor": "pointer",
-                      "display": "inline-block",
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": "inherit",
-                      "fontWeight": "inherit",
-                      "height": 36,
-                      "lineHeight": "36px",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textAlign": "center",
-                      "textDecoration": "none",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "verticalAlign": null,
-                      "width": "100%",
-                      "zIndex": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "backgroundColor": false,
-                          "borderRadius": 2,
-                          "height": 36,
-                          "muiPrepared": true,
-                          "top": 0,
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "MozUserSelect": "none",
-                            "WebkitUserSelect": "none",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "fontSize": 14,
-                            "fontWeight": 500,
-                            "letterSpacing": 0,
-                            "margin": 0,
-                            "msUserSelect": "none",
-                            "muiPrepared": true,
-                            "opacity": 1,
-                            "paddingLeft": 16,
-                            "paddingRight": 16,
-                            "position": "relative",
-                            "textTransform": "uppercase",
-                            "userSelect": "none",
-                          }
-                        }
-                      >
-                        Actions
-                      </span>
-                    </div>
-                  </div>
-                </button>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
+exports[`furet-ui-form-view component Render with data 1 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-floppy-o"></i></span> <span>Save</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <!----> <!----></a></p>
+                <!---->
             </div>
-          </div>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    >
-      <div>
-        <div
-          className="form-group"
-        >
-          <label
-            htmlFor="view-type-Form-field_type-String-field-name-name"
-            style={Object {}}
-          >
-            Label
-          </label>
-          <input
-            className="form-control"
-            disabled={true}
-            id="view-type-Form-field_type-String-field-name-name"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Render Form view readonly 3`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-8 col-md-8 col-lg-9"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#2196f3",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#2196f3",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#f44336",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12l1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "currentColor",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-4 col-sm-4 col-md-4 col-lg-4"
-          >
-            <div
-              testHandleRequestClose={[Function]}
-              testHandleTouchTap={[Function]}
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "MozBoxSizing": "border-box",
-                    "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                    "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "#ffffff",
-                    "borderRadius": 2,
-                    "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                           0 1px 4px rgba(0, 0, 0, 0.12)",
-                    "boxSizing": "border-box",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "marginTop": 10,
-                    "minWidth": "100%",
-                    "muiPrepared": true,
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  }
-                }
-              >
-                <button
-                  disabled={false}
-                  href={undefined}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  onTouchTap={[Function]}
-                  style={
-                    Object {
-                      "MozBoxSizing": "border-box",
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "backgroundColor": "#ffffff",
-                      "border": 10,
-                      "borderRadius": 2,
-                      "boxSizing": "border-box",
-                      "cursor": "pointer",
-                      "display": "inline-block",
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": "inherit",
-                      "fontWeight": "inherit",
-                      "height": 36,
-                      "lineHeight": "36px",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textAlign": "center",
-                      "textDecoration": "none",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "verticalAlign": null,
-                      "width": "100%",
-                      "zIndex": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "backgroundColor": false,
-                          "borderRadius": 2,
-                          "height": 36,
-                          "muiPrepared": true,
-                          "top": 0,
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "MozUserSelect": "none",
-                            "WebkitUserSelect": "none",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "fontSize": 14,
-                            "fontWeight": 500,
-                            "letterSpacing": 0,
-                            "margin": 0,
-                            "msUserSelect": "none",
-                            "muiPrepared": true,
-                            "opacity": 1,
-                            "paddingLeft": 16,
-                            "paddingRight": 16,
-                            "position": "relative",
-                            "textTransform": "uppercase",
-                            "userSelect": "none",
-                          }
-                        }
-                      >
-                        Actions
-                      </span>
-                    </div>
-                  </div>
-                </button>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
+    </nav>
+    <section class="box" style="margin-bottom:20px;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+                <p class="help is-danger">this field is required</p>
             </div>
-          </div>
+            </span>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    >
-      <div>
-        <div
-          className="form-group"
-        >
-          <label
-            htmlFor="view-type-Form-field_type-String-field-name-name"
-            style={Object {}}
-          >
-            Label
-          </label>
-          <input
-            className="form-control"
-            disabled={true}
-            id="view-type-Form-field_type-String-field-name-name"
-            onChange={[Function]}
-            type="text"
-            value="todo 1"
-          />
+        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+            <!---->
+            <!---->
         </div>
-      </div>
-    </div>
-  </div>
+        <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+    <!---->
+</div>
+<!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
 </div>
 `;
 
-exports[`Render Form view readwrite 1`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-8 col-md-8 col-lg-9"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "currentColor",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    />
-  </div>
-</div>
-`;
-
-exports[`Render Form view readwrite 2`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-8 col-md-8 col-lg-9"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#2196f3",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#f44336",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-4 col-sm-4 col-md-4 col-lg-4"
-          >
-            <div
-              testHandleRequestClose={[Function]}
-              testHandleTouchTap={[Function]}
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "MozBoxSizing": "border-box",
-                    "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                    "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "#ffffff",
-                    "borderRadius": 2,
-                    "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                           0 1px 4px rgba(0, 0, 0, 0.12)",
-                    "boxSizing": "border-box",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "marginTop": 10,
-                    "minWidth": "100%",
-                    "muiPrepared": true,
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  }
-                }
-              >
-                <button
-                  disabled={false}
-                  href={undefined}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  onTouchTap={[Function]}
-                  style={
-                    Object {
-                      "MozBoxSizing": "border-box",
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "backgroundColor": "#ffffff",
-                      "border": 10,
-                      "borderRadius": 2,
-                      "boxSizing": "border-box",
-                      "cursor": "pointer",
-                      "display": "inline-block",
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": "inherit",
-                      "fontWeight": "inherit",
-                      "height": 36,
-                      "lineHeight": "36px",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textAlign": "center",
-                      "textDecoration": "none",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "verticalAlign": null,
-                      "width": "100%",
-                      "zIndex": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "backgroundColor": false,
-                          "borderRadius": 2,
-                          "height": 36,
-                          "muiPrepared": true,
-                          "top": 0,
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "MozUserSelect": "none",
-                            "WebkitUserSelect": "none",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "fontSize": 14,
-                            "fontWeight": 500,
-                            "letterSpacing": 0,
-                            "margin": 0,
-                            "msUserSelect": "none",
-                            "muiPrepared": true,
-                            "opacity": 1,
-                            "paddingLeft": 16,
-                            "paddingRight": 16,
-                            "position": "relative",
-                            "textTransform": "uppercase",
-                            "userSelect": "none",
-                          }
-                        }
-                      >
-                        Actions
-                      </span>
-                    </div>
-                  </div>
-                </button>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
+exports[`furet-ui-form-view component Render with data 2 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-floppy-o"></i></span> <span>Save</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <!----> <!----></a></p>
+                <!---->
             </div>
-          </div>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    >
-      <div>
-        <div
-          className="form-group"
-        >
-          <label
-            htmlFor="view-type-Form-field_type-String-field-name-name"
-            style={Object {}}
-          >
-            Label
-          </label>
-          <input
-            className="form-control"
-            disabled={undefined}
-            id="view-type-Form-field_type-String-field-name-name"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Render Form view readwrite 3`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-8 col-md-8 col-lg-9"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#2196f3",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "#f44336",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-          <div
-            className="col-xs-4 col-sm-4 col-md-4 col-lg-4"
-          >
-            <div
-              testHandleRequestClose={[Function]}
-              testHandleTouchTap={[Function]}
-            >
-              <div
-                className={undefined}
-                style={
-                  Object {
-                    "MozBoxSizing": "border-box",
-                    "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-                    "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "backgroundColor": "#ffffff",
-                    "borderRadius": 2,
-                    "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-                           0 1px 4px rgba(0, 0, 0, 0.12)",
-                    "boxSizing": "border-box",
-                    "color": "rgba(0, 0, 0, 0.87)",
-                    "display": "inline-block",
-                    "fontFamily": "Roboto, sans-serif",
-                    "marginTop": 10,
-                    "minWidth": "100%",
-                    "muiPrepared": true,
-                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  }
-                }
-              >
-                <button
-                  disabled={false}
-                  href={undefined}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  onTouchTap={[Function]}
-                  style={
-                    Object {
-                      "MozBoxSizing": "border-box",
-                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "backgroundColor": "#ffffff",
-                      "border": 10,
-                      "borderRadius": 2,
-                      "boxSizing": "border-box",
-                      "cursor": "pointer",
-                      "display": "inline-block",
-                      "fontFamily": "Roboto, sans-serif",
-                      "fontSize": "inherit",
-                      "fontWeight": "inherit",
-                      "height": 36,
-                      "lineHeight": "36px",
-                      "margin": 0,
-                      "muiPrepared": true,
-                      "outline": "none",
-                      "padding": 0,
-                      "position": "relative",
-                      "textAlign": "center",
-                      "textDecoration": "none",
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "verticalAlign": null,
-                      "width": "100%",
-                      "zIndex": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  type="button"
-                >
-                  <div
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    <div
-                      style={
-                        Object {
-                          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "backgroundColor": false,
-                          "borderRadius": 2,
-                          "height": 36,
-                          "muiPrepared": true,
-                          "top": 0,
-                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "MozUserSelect": "none",
-                            "WebkitUserSelect": "none",
-                            "color": "rgba(0, 0, 0, 0.87)",
-                            "fontSize": 14,
-                            "fontWeight": 500,
-                            "letterSpacing": 0,
-                            "margin": 0,
-                            "msUserSelect": "none",
-                            "muiPrepared": true,
-                            "opacity": 1,
-                            "paddingLeft": 16,
-                            "paddingRight": 16,
-                            "position": "relative",
-                            "textTransform": "uppercase",
-                            "userSelect": "none",
-                          }
-                        }
-                      >
-                        Actions
-                      </span>
-                    </div>
-                  </div>
-                </button>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-              />
+    </nav>
+    <section class="box" style="margin-bottom:20px;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                <!---->
             </div>
-          </div>
+            </span>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    >
-      <div>
-        <div
-          className="form-group"
-        >
-          <label
-            htmlFor="view-type-Form-field_type-String-field-name-name"
-            style={Object {}}
-          >
-            Label
-          </label>
-          <input
-            className="form-control"
-            disabled={undefined}
-            id="view-type-Form-field_type-String-field-name-name"
-            onChange={[Function]}
-            type="text"
-            value="todo 1"
-          />
+        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label 1" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+            <!---->
+            <!---->
         </div>
-      </div>
-    </div>
-  </div>
+        <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+    <!---->
+</div>
+<!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
 </div>
 `;
 
-exports[`Render Form view without button 1`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-8 col-md-8 col-lg-9"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "currentColor",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
+exports[`furet-ui-form-view component Render with data 3 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-floppy-o"></i></span> <span>Save</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <!----> <!----></a></p>
+                <!---->
+            </div>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    />
-  </div>
+    </nav>
+    <section class="box" style="margin-bottom:20px;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label 1" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+            <!---->
+            <!---->
+        </div>
+        <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+    <!---->
+</div>
+<!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
 </div>
 `;
 
-exports[`Render Form view without button 2`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-8 col-md-8 col-lg-9"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "currentColor",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
+exports[`furet-ui-form-view component Render without data 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-floppy-o"></i></span> <span>Save</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <!----> <!----></a></p>
+                <!---->
+            </div>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    >
-      <div>
-        <div
-          className="form-group"
-        >
-          <label
-            htmlFor="view-type-Form-field_type-String-field-name-name"
-            style={Object {}}
-          >
-            Label
-          </label>
-          <input
-            className="form-control"
-            disabled={true}
-            id="view-type-Form-field_type-String-field-name-name"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-  </div>
+    </nav>
+    <section class="box" style="margin-bottom:20px;">
+        <div config="[object Object]"></div>
+    </section>
 </div>
 `;
 
-exports[`Render Form view without button 3`] = `
-<div
-  style={
-    Object {
-      "margin": 20,
-    }
-  }
->
-  <div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-xs-12 col-sm-8 col-md-8 col-lg-9"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-1 col-sm-1 col-md-1 col-lg-1"
-            style={
-              Object {
-                "paddingLeft": 0,
-                "paddingRight": 0,
-              }
-            }
-          >
-            <button
-              disabled={false}
-              href={undefined}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOut={[Function]}
-              onTouchStart={[Function]}
-              onTouchTap={[Function]}
-              style={
-                Object {
-                  "MozBoxSizing": "border-box",
-                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                  "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "background": "none",
-                  "border": 10,
-                  "boxSizing": "border-box",
-                  "cursor": "pointer",
-                  "display": "inline-block",
-                  "fontFamily": "Roboto, sans-serif",
-                  "fontSize": 0,
-                  "fontWeight": "inherit",
-                  "height": 48,
-                  "margin": 0,
-                  "muiPrepared": true,
-                  "outline": "none",
-                  "overflow": "visible",
-                  "padding": 12,
-                  "position": "relative",
-                  "textDecoration": "none",
-                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                  "verticalAlign": null,
-                  "width": 48,
-                  "zIndex": 1,
-                }
-              }
-              tabIndex={0}
-              type="button"
-            >
-              <div
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-              >
-                <svg
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
-                      "color": "rgba(0, 0, 0, 0.87)",
-                      "display": "inline-block",
-                      "fill": "currentColor",
-                      "height": 36,
-                      "msUserSelect": "none",
-                      "muiPrepared": true,
-                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "userSelect": "none",
-                      "width": 36,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
+exports[`furet-ui-thumbnail-group component Render invisible 1`] = `<!---->`;
+
+exports[`furet-ui-thumbnail-group component Render visible 1`] = `<div data-server-rendered="true"><span>Test</span></div>`;
+
+exports[`furet-ui-x2m-form-view component Render with data 1 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span> <span>Delete</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <span>Close</span></a></p>
+            </div>
         </div>
-      </div>
-      <div
-        className="col-xs-12 col-sm-4 col-md-4 col-lg-3"
-      />
-    </div>
-    <div
-      className="row"
-    >
-      <div>
-        <div
-          className="form-group"
-        >
-          <label
-            htmlFor="view-type-Form-field_type-String-field-name-name"
-            style={Object {}}
-          >
-            Label
-          </label>
-          <input
-            className="form-control"
-            disabled={true}
-            id="view-type-Form-field_type-String-field-name-name"
-            onChange={[Function]}
-            type="text"
-            value="todo 1"
-          />
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </nav>
+    <section class="box" style="margin-bottom:10px;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label 1" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+            <!---->
+            <!---->
+        </div>
+        <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+    <!---->
+</div>
+<!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
 </div>
 `;
 
-exports[`getViewIcon with Form view 1`] = `
-<button
-  disabled={false}
-  href={undefined}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onMouseOut={[Function]}
-  onTouchStart={[Function]}
-  onTouchTap={[Function]}
-  style={
-    Object {
-      "MozBoxSizing": "border-box",
-      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-      "background": "none",
-      "border": 10,
-      "boxSizing": "border-box",
-      "cursor": "pointer",
-      "display": "inline-block",
-      "fontFamily": "Roboto, sans-serif",
-      "fontSize": 0,
-      "fontWeight": "inherit",
-      "height": 36,
-      "margin": 0,
-      "muiPrepared": true,
-      "outline": "none",
-      "overflow": "visible",
-      "padding": 2,
-      "position": "relative",
-      "textDecoration": "none",
-      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-      "verticalAlign": null,
-      "width": 36,
-      "zIndex": 1,
-    }
-  }
-  tabIndex={0}
-  type="button"
->
-  <div
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchStart={[Function]}
-  >
-    <svg
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      style={
-        Object {
-          "MozUserSelect": "none",
-          "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-          "WebkitUserSelect": "none",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "display": "inline-block",
-          "fill": "currentColor",
-          "height": 24,
-          "msUserSelect": "none",
-          "muiPrepared": true,
-          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-          "userSelect": "none",
-          "width": 24,
-        }
-      }
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"
-      />
-    </svg>
-    ;
-  </div>
-</button>
+exports[`furet-ui-x2m-form-view component Render with data 2 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span> <span>Delete</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <span>Close</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <section class="box" style="margin-bottom:10px;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label 1" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+            <!---->
+            <!---->
+        </div>
+        <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+    <!---->
+</div>
+<!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
+</div>
+`;
+
+exports[`furet-ui-x2m-form-view component Render without data 1 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span> <span>Delete</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <span>Close</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <section class="box" style="margin-bottom:10px;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+                <p class="help is-danger">this field is required</p>
+            </div>
+            </span>
+        </div>
+        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+            <!---->
+            <!---->
+        </div>
+        <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+    <!---->
+</div>
+<!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
+</div>
+`;
+
+exports[`furet-ui-x2m-form-view component Render without data 2 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-trash"></i></span> <span>Delete</span></a></p>
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-times"></i></span> <span>Close</span></a></p>
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <section class="box" style="margin-bottom:10px;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+                <p class="help is-danger">this field is required</p>
+            </div>
+            </span>
+        </div>
+        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+            <!---->
+            <!---->
+        </div>
+        <!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+                        New
+                    </option><option value="started">
+                        Started
+                    </option><option value="done">
+                        Done
+                    </option></select></span>
+    <!---->
+</div>
+<!---->
+</div>
+</span>
+</div>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+                Boolean
+            </span></label>
+    </span>
+</div>
+</div>
+</section>
+</div>
 `;

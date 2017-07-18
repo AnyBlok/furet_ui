@@ -1,440 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getField for Form 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Time-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div>
-    <span />
-    <div
-      className=""
-      style={
-        Object {
-          "display": "block",
-          "left": -9999,
-          "position": "absolute",
-          "zIndex": "9999 !important",
-        }
-      }
-    >
-      <ul
-        className="list-unstyled"
-      >
-        <li>
-          <div
-            className="timepicker"
-          >
-            <div
-              className="timepicker-picker"
-            >
-              <table
-                className="table-condensed"
-              >
-                <tbody>
-                  <tr>
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-up"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-up"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-up"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        className="timepicker-hour"
-                        onClick={[Function]}
-                      >
-                        1
-                      </span>
-                    </td>
-                    <td
-                      className="separator"
-                    >
-                      :
-                    </td>
-                    <td>
-                      <span
-                        className="timepicker-minute"
-                        onClick={[Function]}
-                      >
-                        02
-                      </span>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <span
-                        className="timepicker-second"
-                        onClick={[Function]}
-                      >
-                        03
-                      </span>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <button
-                        className="btn btn-primary"
-                        onClick={[Function]}
-                        type="button"
-                      >
-                        AM
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-down"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-down"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-down"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div
-      className="input-group date "
-    >
-      <input
-        className="form-control"
-        onChange={[Function]}
-        type="text"
-        value="01:02:03"
-      />
-      <span
-        className="input-group-addon"
-        onBlur={undefined}
-        onClick={[Function]}
-      >
-        <span
-          className="glyphicon glyphicon-time"
-        />
-      </span>
-    </div>
-  </div>
+exports[`Time Form component Render icon 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-left is-clearfix"><input type="time" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<!---->
+<!---->
 </div>
+<!---->
+</div>
+</span>
 `;
 
-exports[`getField for Form readonly 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Time-field-name-"
-    style={Object {}}
-  >
-    2017-03-01
-  </label>
-  <input
-    className="form-control"
-    disabled={true}
-    id="view-type-Form-field_type-Time-field-name-"
-    onChange={[Function]}
-    value="01:02:03"
-  />
+exports[`Time Form component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Time Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Time Form component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render label 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render max (ko) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" min="01:01:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render max (ok) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" max="01:03:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render min (ko) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" min="01:03:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render min (ok) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" min="01:01:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render mode readonly by config 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Form required 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Time-field-name-"
-    style={
-      Object {
-        "color": "#3f51b5",
-      }
-    }
-  >
-    2017-03-01
-  </label>
-  <div>
-    <span />
-    <div
-      className=""
-      style={
-        Object {
-          "display": "block",
-          "left": -9999,
-          "position": "absolute",
-          "zIndex": "9999 !important",
-        }
-      }
-    >
-      <ul
-        className="list-unstyled"
-      >
-        <li>
-          <div
-            className="timepicker"
-          >
-            <div
-              className="timepicker-picker"
-            >
-              <table
-                className="table-condensed"
-              >
-                <tbody>
-                  <tr>
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-up"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-up"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-up"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                  </tr>
-                  <tr>
-                    <td>
-                      <span
-                        className="timepicker-hour"
-                        onClick={[Function]}
-                      >
-                        1
-                      </span>
-                    </td>
-                    <td
-                      className="separator"
-                    >
-                      :
-                    </td>
-                    <td>
-                      <span
-                        className="timepicker-minute"
-                        onClick={[Function]}
-                      >
-                        02
-                      </span>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <span
-                        className="timepicker-second"
-                        onClick={[Function]}
-                      >
-                        03
-                      </span>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <button
-                        className="btn btn-primary"
-                        onClick={[Function]}
-                        type="button"
-                      >
-                        AM
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-down"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-down"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                    <td>
-                      <a
-                        className="btn"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="glyphicon glyphicon-chevron-down"
-                        />
-                      </a>
-                    </td>
-                    <td
-                      className="separator"
-                    />
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div
-      className="input-group date "
-    >
-      <input
-        className="form-control"
-        onChange={[Function]}
-        type="text"
-        value="01:02:03"
-      />
-      <span
-        className="input-group-addon"
-        onBlur={undefined}
-        onClick={[Function]}
-      >
-        <span
-          className="glyphicon glyphicon-time"
-        />
-      </span>
-    </div>
-  </div>
+exports[`Time Form component Render mode readonly conditional param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for List 1`] = `
-<div>
-  <span>
-    01:02:03
-  </span>
+exports[`Time Form component Render mode readonly param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Thumbnail 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-Time-field-name-"
-  >
-     
-  </label>
-  <div>
-    <span>
-      01:02:03
-    </span>
-  </div>
+exports[`Time Form component Render required 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<!---->
 </div>
+<!---->
+</div>
+</span>
 `;
+
+exports[`Time Form component Render required conditionnal 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<!---->
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Time Form component Render required without value 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right"><input type="time" autocomplete="on" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
+<!---->
+</div>
+<p class="help is-danger">this field is required</p>
+</div>
+</span>
+`;
+
+exports[`Time Form component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render with data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Time Thumbnail component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Time Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Time Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Time Thumbnail component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Time Thumbnail component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <span> 01:02:03 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Time Thumbnail component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Time Thumbnail component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Time Thumbnail component Render with data 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Time Thumbnail component Render without data 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span>  </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Time list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><span>01:02:03</span></div>`;
+
+exports[`Time list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
+
+exports[`Time list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
+
+exports[`Time list component Render invisible is false 1`] = `<div data-server-rendered="true"><span>01:02:03</span></div>`;
+
+exports[`Time list component Render with data 1`] = `<div data-server-rendered="true"><span>01:02:03</span></div>`;
+
+exports[`Time list component Render without data 1`] = `<div data-server-rendered="true"><span></span></div>`;

@@ -1,1271 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getField for Form 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Date-field-name-"
-    style={Object {}}
-  >
-     
-  </label>
-  <div>
-    <span />
-    <div
-      className=""
-      style={
-        Object {
-          "display": "block",
-          "left": -9999,
-          "position": "absolute",
-          "zIndex": "9999 !important",
-        }
-      }
-    >
-      <ul
-        className="list-unstyled"
-      >
-        <li>
-          <div
-            className="datepicker"
-          >
-            <div
-              className="datepicker-days"
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-            >
-              <table
-                className="table-condensed"
-              >
-                <thead>
-                  <tr>
-                    <th
-                      className="prev"
-                      onClick={[Function]}
-                    >
-                      <span
-                        className="glyphicon glyphicon-chevron-left"
-                      />
-                    </th>
-                    <th
-                      className="switch"
-                      colSpan="5"
-                      onClick={[Function]}
-                    >
-                      March
-                       
-                      2017
-                    </th>
-                    <th
-                      className="next"
-                      onClick={[Function]}
-                    >
-                      <span
-                        className="glyphicon glyphicon-chevron-right"
-                      />
-                    </th>
-                  </tr>
-                  <tr>
-                    <th
-                      className="dow"
-                    >
-                      Su
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Mo
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Tu
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      We
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Th
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Fr
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Sa
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      26
-                    </td>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      27
-                    </td>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      28
-                    </td>
-                    <td
-                      className="day active"
-                      onClick={[Function]}
-                    >
-                      1
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      2
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      3
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      4
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      5
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      6
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      7
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      8
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      9
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      10
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      11
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      12
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      13
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      14
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      15
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      16
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      17
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      18
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      19
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      20
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      21
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      22
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      23
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      24
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      25
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      26
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      27
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      28
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      29
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      30
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      31
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      1
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      2
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      3
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      4
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      5
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      6
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      7
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      8
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div
-      className="input-group date "
-    >
-      <input
-        className="form-control"
-        onChange={[Function]}
-        type="text"
-        value="2017-03-01"
-      />
-      <span
-        className="input-group-addon"
-        onBlur={undefined}
-        onClick={[Function]}
-      >
-        <span
-          className="glyphicon glyphicon-calendar"
-        />
-      </span>
-    </div>
-  </div>
+exports[`Date Form component Render icon 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-left is-clearfix"><input type="date" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<!---->
+<!---->
 </div>
+<!---->
+</div>
+</span>
 `;
 
-exports[`getField for Form readonly 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Date-field-name-"
-    style={Object {}}
-  >
-    2017-03-01
-  </label>
-  <input
-    className="form-control"
-    disabled={true}
-    id="view-type-Form-field_type-Date-field-name-"
-    onChange={[Function]}
-    value="missing translation: en.furetUI.formats.date.default"
-  />
+exports[`Date Form component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Date Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Date Form component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render label 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-clearfix"><input type="date" autocomplete="on" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render max (ko) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" min="2017-07-03" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render max (ok) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" max="2017-07-05" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render min (ko) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" min="2017-07-05" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render min (ok) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" min="2017-07-03" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render mode readonly by config 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 </span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Form required 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Date-field-name-"
-    style={
-      Object {
-        "color": "#3f51b5",
-      }
-    }
-  >
-    2017-03-01
-  </label>
-  <div>
-    <span />
-    <div
-      className=""
-      style={
-        Object {
-          "display": "block",
-          "left": -9999,
-          "position": "absolute",
-          "zIndex": "9999 !important",
-        }
-      }
-    >
-      <ul
-        className="list-unstyled"
-      >
-        <li>
-          <div
-            className="datepicker"
-          >
-            <div
-              className="datepicker-days"
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-            >
-              <table
-                className="table-condensed"
-              >
-                <thead>
-                  <tr>
-                    <th
-                      className="prev"
-                      onClick={[Function]}
-                    >
-                      <span
-                        className="glyphicon glyphicon-chevron-left"
-                      />
-                    </th>
-                    <th
-                      className="switch"
-                      colSpan="5"
-                      onClick={[Function]}
-                    >
-                      March
-                       
-                      2017
-                    </th>
-                    <th
-                      className="next"
-                      onClick={[Function]}
-                    >
-                      <span
-                        className="glyphicon glyphicon-chevron-right"
-                      />
-                    </th>
-                  </tr>
-                  <tr>
-                    <th
-                      className="dow"
-                    >
-                      Su
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Mo
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Tu
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      We
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Th
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Fr
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Sa
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      26
-                    </td>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      27
-                    </td>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      28
-                    </td>
-                    <td
-                      className="day active"
-                      onClick={[Function]}
-                    >
-                      1
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      2
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      3
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      4
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      5
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      6
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      7
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      8
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      9
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      10
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      11
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      12
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      13
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      14
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      15
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      16
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      17
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      18
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      19
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      20
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      21
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      22
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      23
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      24
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      25
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      26
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      27
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      28
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      29
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      30
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      31
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      1
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      2
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      3
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      4
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      5
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      6
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      7
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      8
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div
-      className="input-group date "
-    >
-      <input
-        className="form-control"
-        onChange={[Function]}
-        type="text"
-        value="2017-03-01"
-      />
-      <span
-        className="input-group-addon"
-        onBlur={undefined}
-        onClick={[Function]}
-      >
-        <span
-          className="glyphicon glyphicon-calendar"
-        />
-      </span>
-    </div>
-  </div>
+exports[`Date Form component Render mode readonly conditional param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 </span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for Form required with empty value 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Form-field_type-Date-field-name-"
-    style={
-      Object {
-        "color": "#3f51b5",
-      }
-    }
-  >
-    2017-03-01
-  </label>
-  <div>
-    <span />
-    <div
-      className=""
-      style={
-        Object {
-          "display": "block",
-          "left": -9999,
-          "position": "absolute",
-          "zIndex": "9999 !important",
-        }
-      }
-    >
-      <ul
-        className="list-unstyled"
-      >
-        <li>
-          <div
-            className="datepicker"
-          >
-            <div
-              className="datepicker-days"
-              style={
-                Object {
-                  "display": "block",
-                }
-              }
-            >
-              <table
-                className="table-condensed"
-              >
-                <thead>
-                  <tr>
-                    <th
-                      className="prev"
-                      onClick={[Function]}
-                    >
-                      <span
-                        className="glyphicon glyphicon-chevron-left"
-                      />
-                    </th>
-                    <th
-                      className="switch"
-                      colSpan="5"
-                      onClick={[Function]}
-                    >
-                      April
-                       
-                      2017
-                    </th>
-                    <th
-                      className="next"
-                      onClick={[Function]}
-                    >
-                      <span
-                        className="glyphicon glyphicon-chevron-right"
-                      />
-                    </th>
-                  </tr>
-                  <tr>
-                    <th
-                      className="dow"
-                    >
-                      Su
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Mo
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Tu
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      We
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Th
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Fr
-                    </th>
-                    <th
-                      className="dow"
-                    >
-                      Sa
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      26
-                    </td>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      27
-                    </td>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      28
-                    </td>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      29
-                    </td>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      30
-                    </td>
-                    <td
-                      className="day old"
-                      onClick={[Function]}
-                    >
-                      31
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      1
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      2
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      3
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      4
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      5
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      6
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      7
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      8
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      9
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      10
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      11
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      12
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      13
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      14
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      15
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      16
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      17
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      18
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      19
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      20
-                    </td>
-                    <td
-                      className="day active today"
-                      onClick={[Function]}
-                    >
-                      21
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      22
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      23
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      24
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      25
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      26
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      27
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      28
-                    </td>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      29
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="day"
-                      onClick={[Function]}
-                    >
-                      30
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      1
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      2
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      3
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      4
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      5
-                    </td>
-                    <td
-                      className="day new"
-                      onClick={[Function]}
-                    >
-                      6
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div
-      className="input-group date "
-    >
-      <input
-        className="form-control"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-      <span
-        className="input-group-addon"
-        onBlur={undefined}
-        onClick={[Function]}
-      >
-        <span
-          className="glyphicon glyphicon-calendar"
-        />
-      </span>
-    </div>
-  </div>
-  <div>
-    <span
-      style={
-        Object {
-          "color": "#f44336",
-        }
-      }
-    >
-      This field is required
-    </span>
-  </div>
+exports[`Date Form component Render mode readonly param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 </span>
+<!---->
 </div>
+</span>
 `;
 
-exports[`getField for List 1`] = `
-<div>
-  <span>
-    missing translation: en.furetUI.formats.date.default
-  </span>
+exports[`Date Form component Render required 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="date" autocomplete="on" value="2017-07-04" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<!---->
 </div>
+<!---->
+</div>
+</span>
 `;
 
-exports[`getField for Thumbnail 1`] = `
-<div
-  className="form-group"
->
-  <label
-    htmlFor="view-type-Thumbnail-field_type-Date-field-name-"
-  >
-     
-  </label>
-  <div>
-    <span>
-      missing translation: en.furetUI.formats.date.default
-    </span>
-  </div>
+exports[`Date Form component Render required conditionnal 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="date" autocomplete="on" value="2017-07-04" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<!---->
 </div>
+<!---->
+</div>
+</span>
 `;
+
+exports[`Date Form component Render required without value 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right"><input type="date" autocomplete="on" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
+<!---->
+</div>
+<p class="help is-danger">this field is required</p>
+</div>
+</span>
+`;
+
+exports[`Date Form component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render with data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" value="2017-07-04" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="date" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Date Thumbnail component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Date Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Date Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Date Thumbnail component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Date Thumbnail component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <span> July 4, 2017 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Date Thumbnail component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Date Thumbnail component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Date Thumbnail component Render with data 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Date Thumbnail component Render without data 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span>  </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Date list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><span>July 4, 2017</span></div>`;
+
+exports[`Date list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
+
+exports[`Date list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
+
+exports[`Date list component Render invisible is false 1`] = `<div data-server-rendered="true"><span>July 4, 2017</span></div>`;
+
+exports[`Date list component Render with data 1`] = `<div data-server-rendered="true"><span>July 4, 2017</span></div>`;
+
+exports[`Date list component Render without data 1`] = `<div data-server-rendered="true"><span></span></div>`;
