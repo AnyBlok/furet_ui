@@ -75,7 +75,11 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
                 <div v-bind:class="['column', view.column_size || 'is-12-mobile is-one-third-tablet is-one-quarter-desktop']"
                      v-for="card in tableData"
                 >
-                    <article class="box" v-on:click.stop="selectEntry(card)">
+                    <article 
+                        class="box" 
+                        v-on:click.stop="selectEntry(card)"
+                        v-bind:style="getStyle(card)"
+                    >
                         <component v-bind:is="thumbnail_card" v-bind:card="card"/>
                     </article>
                 </div>
@@ -107,6 +111,22 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
                 template: '<div></div>'
             };
         },
+    },
+    methods: {
+        getStyle (card) {
+            const res = {}
+            if (this.view.border_fieldcolor) {
+                if (card[this.view.border_fieldcolor]) {
+                    res.border = '2px solid ' + card[this.view.border_fieldcolor]
+                }
+            }
+            if (this.view.background_fieldcolor) {
+                if (card[this.view.background_fieldcolor]) {
+                    res.backgroundColor = card[this.view.background_fieldcolor]
+                }
+            }
+            return res;
+        }
     },
 });
 
@@ -143,7 +163,11 @@ export const X2MThumbnailView = Vue.component('furet-ui-x2m-thumbnail-view', {
                 <div v-bind:class="['column', view.column_size || 'is-12-mobile is-one-half-tablet is-one-third-desktop']"
                      v-for="card in tableData"
                 >
-                    <article class="box" v-on:click.stop="selectEntry(card)">
+                    <article 
+                        class="box" 
+                        v-on:click.stop="selectEntry(card)"
+                        v-bind:style="getStyle(card)"
+                    >
                         <component v-bind:is="thumbnail_card" v-bind:card="card"/>
                     </article>
                 </div>
@@ -169,6 +193,22 @@ export const X2MThumbnailView = Vue.component('furet-ui-x2m-thumbnail-view', {
                 template: '<div></div>'
             };
         },
+    },
+    methods: {
+        getStyle (card) {
+            const res = {}
+            if (this.view.border_fieldcolor) {
+                if (card[this.view.border_fieldcolor]) {
+                    res.border = '2px solid ' + card[this.view.border_fieldcolor]
+                }
+            }
+            if (this.view.background_fieldcolor) {
+                if (card[this.view.background_fieldcolor]) {
+                    res.backgroundColor = card[this.view.background_fieldcolor]
+                }
+            }
+            return res;
+        }
     },
 });
 

@@ -494,6 +494,8 @@ Thumbnail
     creatable: ``true display the create button``,
     deletable: ``true display the delete button``,
     onSelect: ``view id to use if the line is clicked``,
+    border_fieldcolor: ``name of the field on the model who define the border color of the card``
+    background_fieldcolor: ``name of the field on the model who define the background color of the card``
     search: [
         {
             key: ``key used by the server to filter the data``,

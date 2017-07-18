@@ -718,6 +718,7 @@ def getView2():
         'creatable': True,
         'onSelect': '3',
         'model': 'Test',
+        'background_fieldcolor': 'color',
         'search': [
             {
                 'key': 'name',

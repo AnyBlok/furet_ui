@@ -83,7 +83,7 @@ const view_thumbnail = {
         </div>
     `,
     buttons: [],
-    fields: ["id", "name", "bool", "state"],
+    fields: ["id", "name", "bool", "state", "color"],
 }
 
 const dataIds = ['1', '2', '3'];
@@ -95,6 +95,7 @@ const data = {
         name: 'Label 1',
         state: 'new',
         bool: true,
+        color: '#123456',
     },
     '2': {
         id: 2,
@@ -107,12 +108,14 @@ const data = {
         name: 'Label 3',
         state: 'new',
         bool: true,
+        color: '',
     },
     '4': {
         id: 4,
         name: 'Label 4',
         state: 'new',
         bool: true,
+        color: '#789ABC',
     },
 };
 
@@ -184,6 +187,40 @@ describe('furet-ui-thumbnail-view component', () => {
             render: h => h(ThumbnailView, {props: {
                 view: view_thumbnail,
                 dataIds,
+                data,
+                change,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render with data border fieldcolor', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(ThumbnailView, {props: {
+                view: Object.assign({border_fieldcolor: 'color'}, view_thumbnail),
+                dataIds: ['1', '2', '3', '4'],
+                data,
+                change,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render with data background fieldcolor', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(ThumbnailView, {props: {
+                view: Object.assign({background_fieldcolor: 'color'}, view_thumbnail),
+                dataIds: ['1', '2', '3', '4'],
                 data,
                 change,
             }}),
@@ -276,6 +313,46 @@ describe('furet-ui-x2m-thumbnail-view component', () => {
                 views,
                 viewId: '1',
                 dataIds: dataIds2,
+                model: 'Test',
+                data,
+                change,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render with data border fieldcolor', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(X2MThumbnailView, {props: {
+                view: Object.assign({border_fieldcolor: 'color'}, view_thumbnail),
+                views,
+                viewId: '1',
+                dataIds: ['1', '2', '3', '4'],
+                model: 'Test',
+                data,
+                change,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render with data background fieldcolor', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(X2MThumbnailView, {props: {
+                view: Object.assign({background_fieldcolor: 'color'}, view_thumbnail),
+                views,
+                viewId: '1',
+                dataIds: ['1', '2', '3', '4'],
                 model: 'Test',
                 data,
                 change,
