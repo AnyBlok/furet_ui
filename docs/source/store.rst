@@ -8,8 +8,8 @@
 
 .. contents::
 
-Reducer
-=======
+Store and Flow
+==============
 
 client
 ------
