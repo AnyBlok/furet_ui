@@ -15,12 +15,22 @@
 Welcome to FuretUI's documentation!
 ===================================
 
+
+|app_5|
+
+
 .. toctree::
    :maxdepth: 2
 
    FRONT.rst
+   APP.rst
    API.rst
    store.rst
    server.rst
    LICENSE.rst
    template.rst
+
+
+
+
+.. |app_5| image:: _static/app/app_5.png
