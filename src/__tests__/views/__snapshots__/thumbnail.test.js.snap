@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`furet-ui-thumbnail-group component Render invisible 1`] = `<!---->`;
+
+exports[`furet-ui-thumbnail-group component Render visible 1`] = `<div data-server-rendered="true"><span>Test</span></div>`;
+
 exports[`furet-ui-thumbnail-view component Render with data 1 1`] = `
 <div data-server-rendered="true" style="margin-bottom:20px;">
     <nav class="level">

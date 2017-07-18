@@ -793,13 +793,17 @@ def getView2():
                         label="Color"
                     />
                 </div>
-                <div class="column is-6">
+                <furet-ui-thumbnail-group
+                    v-bind:data="card"
+                    invisible="!fields.color"
+                    class="column is-6"
+                >
                     <furet-ui-thumbnail-field-text
                         v-bind:data="card"
                         name="text"
                         label="Text"
                     />
-                </div>
+                </furet-ui-thumbnail-group>
                 <div class="column is-6">
                     <furet-ui-thumbnail-field-time
                         v-bind:data="card"
@@ -923,13 +927,17 @@ def getView3():
                         label="Color"
                     />
                 </div>
-                <div class="column is-6">
+                <furet-ui-form-group
+                    v-bind:config="config"
+                    invisible="!fields.color"
+                    class="column is-6 titietgrosminet"
+                >
                     <furet-ui-form-field-text
                         v-bind:config="config"
                         name="text"
                         label="Text"
                     />
-                </div>
+                </furet-ui-form-group>
                 <div class="column is-6">
                     <furet-ui-form-field-boolean
                         v-bind:config="config"

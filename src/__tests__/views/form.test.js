@@ -15,7 +15,8 @@ import {store} from '../../store';
 import {router} from '../../routes';
 import {i18n} from '../../i18n';
 import {FormView, addNewDataId, openModeDataId, closeModeDataId, cancelModeDataId,
-        X2MFormView, addNewX2MDataId, updateValueX2M, deleteDataX2MDataId} from '../../views/form';
+        X2MFormView, addNewX2MDataId, updateValueX2M, deleteDataX2MDataId,
+        FormGroup} from '../../views/form';
 import '../../views/search';
 import '../../fields';
 import '../../space';
@@ -551,5 +552,51 @@ describe('furet-ui-x2m-form-view component', () => {
             $store: store,
         }, '1', {'x2oField': 'x2oFieldId'}, true);
         chai.expect(store.state.data.changes.new.Test['1']).to.deep.equal({x2oField: 'x2oFieldId'});
+    });
+});
+
+describe('furet-ui-thumbnail-group component', () => {
+    const renderer = require('vue-server-renderer').createRenderer();
+    beforeEach(() => {
+        store.dispatch('UNITEST_CLEAR');
+        router.push({path: '/'});
+    });
+    it('Render visible', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            template: `
+                <furet-ui-form-group
+                    v-bind:config="{data: {fieldname: false}}"
+                    invisible="fields.fieldname"
+                >
+                    <span>Test</span>
+                </furet-ui-form-group>
+            `,
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            template: `
+                <furet-ui-form-group
+                    v-bind:config="{data: {fieldname: true}}"
+                    invisible="fields.fieldname"
+                >
+                    <span>Test</span>
+                </furet-ui-form-group>
+            `,
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
     });
 });

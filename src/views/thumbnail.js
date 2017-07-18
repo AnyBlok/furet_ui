@@ -12,6 +12,7 @@ import plugin from '../plugin';
 import _ from 'underscore';
 import {ViewMultiMixin} from './common';
 import {X2MViewMultiMixin} from './x2m-common';
+import {safe_eval as field_safe_eval} from '../fields/common';
 
 /**
  * Add Icon for Thumbnail view
@@ -213,3 +214,16 @@ export const X2MThumbnailView = Vue.component('furet-ui-x2m-thumbnail-view', {
 });
 
 plugin.set(['views', 'x2m-type'], {Thumbnail: 'furet-ui-x2m-thumbnail-view'});
+
+export const ThumbnailGroup = Vue.component('furet-ui-thumbnail-group', {
+    props: ['invisible', 'data'],
+    render (h) {
+        if (this.isInvisible) return null;
+        return h('div', {props: this.$props}, this.$slots.default);
+    },
+    computed: {
+        isInvisible () {
+            return field_safe_eval(this.invisible, this.data || {});
+        },
+    },
+});

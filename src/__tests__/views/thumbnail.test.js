@@ -14,7 +14,7 @@ Vue.use(Buefy, {defaultIconPack: 'fa',});
 import {store} from '../../store';
 import {router} from '../../routes';
 import {i18n} from '../../i18n';
-import {ThumbnailView, X2MThumbnailView, updateValueX2M} from '../../views/thumbnail';
+import {ThumbnailView, X2MThumbnailView, updateValueX2M, ThumbnailGroup} from '../../views/thumbnail';
 import '../../views/search';
 import '../../fields';
 import '../../space';
@@ -357,6 +357,52 @@ describe('furet-ui-x2m-thumbnail-view component', () => {
                 data,
                 change,
             }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+});
+
+describe('furet-ui-thumbnail-group component', () => {
+    const renderer = require('vue-server-renderer').createRenderer();
+    beforeEach(() => {
+        store.dispatch('UNITEST_CLEAR');
+        router.push({path: '/'});
+    });
+    it('Render visible', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            template: `
+                <furet-ui-thumbnail-group
+                    v-bind:data="{fieldname: false}"
+                    invisible="fields.fieldname"
+                >
+                    <span>Test</span>
+                </furet-ui-thumbnail-group>
+            `,
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            template: `
+                <furet-ui-thumbnail-group
+                    v-bind:data="{fieldname: true}"
+                    invisible="fields.fieldname"
+                >
+                    <span>Test</span>
+                </furet-ui-thumbnail-group>
+            `,
         });
         renderer.renderToString(vm, (err, str) => {
             expect(str).toMatchSnapshot();

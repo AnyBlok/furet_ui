@@ -12,7 +12,11 @@ import _ from 'underscore';
 export const safe_eval = (condition, fields) => {
     const now = Date.now(),
           toDate = (v) => new Date(v);
-    return eval(condition) ? true : false;
+    let res = false;
+    try {
+        res = eval(condition) ? true : false;
+    } catch (e) {};
+    return res;
 }
 
 

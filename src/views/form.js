@@ -13,6 +13,7 @@ import {dispatchAll} from '../store';
 import {json_post, json_post_dispatch_all} from '../server-call';
 import {getNewID} from '../view';
 import _ from 'underscore';
+import {safe_eval as field_safe_eval} from '../fields/common';
 
 /**
  * Add Icon for Form view
@@ -398,3 +399,16 @@ export const X2MFormView = Vue.component('furet-ui-x2m-form-view', {
 });
 
 plugin.set(['views', 'x2m-type'], {Form: 'furet-ui-x2m-form-view'});
+
+export const FormGroup = Vue.component('furet-ui-form-group', {
+    props: ['invisible', 'config'],
+    render (h) {
+        if (this.isInvisible) return null;
+        return h('div', {props: this.$props}, this.$slots.default);
+    },
+    computed: {
+        isInvisible () {
+            return field_safe_eval(this.invisible, this.config.data || {});
+        },
+    },
+});

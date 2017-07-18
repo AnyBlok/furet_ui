@@ -180,6 +180,10 @@ exports[`furet-ui-form-view component Render without data 1`] = `
 </div>
 `;
 
+exports[`furet-ui-thumbnail-group component Render invisible 1`] = `<!---->`;
+
+exports[`furet-ui-thumbnail-group component Render visible 1`] = `<div data-server-rendered="true"><span>Test</span></div>`;
+
 exports[`furet-ui-x2m-form-view component Render with data 1 1`] = `
 <div data-server-rendered="true">
     <nav class="level">
