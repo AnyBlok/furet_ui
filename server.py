@@ -1255,6 +1255,11 @@ def getView12():
         ],
         'onSelect_buttons': [
         ],
+        'empty': '''
+            <div class="has-text-centered">
+                This table is empty!
+            </div>
+        ''',
         'fields': [["customer", ['name']], "street", "zip", "city"],
     }
 

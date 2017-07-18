@@ -444,6 +444,7 @@ List
     deletable: ``true display the delete button``,
     selectable: ``true display the check box``,
     onSelect: ``view id to use if the line is clicked``,
+    empty: ``html template displayed when no data``,
     headers: [
         {
             name: ``column name``,
