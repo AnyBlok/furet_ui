@@ -12,9 +12,6 @@ import {FormMixin, ThumbnailMixin, ListMixin} from './common';
 
 export const FieldListTime = Vue.component('furet-ui-list-field-time', {
     mixins: [ListMixin],
-    template: `
-        <span v-if="isInvisible" />
-        <span v-else>{{value}}</span>`,
 })
 
 export const FieldThumbnailTime = Vue.component('furet-ui-thumbnail-field-time', {

@@ -33,8 +33,10 @@ const getRemoteValue = (state, model, dataId) => {
 export const FieldListMany2One = Vue.component('furet-ui-list-field-many2one', {
     mixins: [ListMixin, RelationShip],
     template: `
-        <span v-if="isInvisible" />
-        <a v-else v-on:click.stop="onClick">{{value}}</a>`,
+        <div>
+            <span v-if="isInvisible" />
+            <a v-else v-on:click.stop="onClick">{{value}}</a>
+        </div>`,
     computed: {
         value () {
             const value = this.row[this.header.name] || '';

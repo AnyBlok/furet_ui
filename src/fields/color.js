@@ -13,14 +13,16 @@ import {FormMixin, ThumbnailMixin, ListMixin} from './common';
 export const FieldListColor = Vue.component('furet-ui-list-field-color', {
     mixins: [ListMixin],
     template: `
-        <span v-if="isInvisible" />
-        <b-input 
-            v-else-if="value"
-            type="color"
-            v-bind:value="value" 
-            disabled
-        />
-        <span v-else />`,
+        <div>
+            <span v-if="isInvisible" />
+            <b-input 
+                v-else-if="value"
+                type="color"
+                v-bind:value="value" 
+                disabled
+            />
+            <span v-else />
+        </div>`,
 })
 
 export const FieldThumbnailColor = Vue.component('furet-ui-thumbnail-field-color', {

@@ -137,14 +137,14 @@ exports[`DateTime Thumbnail component Render without data 1`] = `
 </span>
 `;
 
-exports[`DateTime list component Render invisible condition is false 1`] = `<span data-server-rendered="true">July 4, 2017 1:02 AM</span>`;
+exports[`DateTime list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><span>July 4, 2017 1:02 AM</span></div>`;
 
-exports[`DateTime list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+exports[`DateTime list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`DateTime list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+exports[`DateTime list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`DateTime list component Render invisible is false 1`] = `<span data-server-rendered="true">July 4, 2017 1:02 AM</span>`;
+exports[`DateTime list component Render invisible is false 1`] = `<div data-server-rendered="true"><span>July 4, 2017 1:02 AM</span></div>`;
 
-exports[`DateTime list component Render with data 1`] = `<span data-server-rendered="true">July 4, 2017 1:02 AM</span>`;
+exports[`DateTime list component Render with data 1`] = `<div data-server-rendered="true"><span>July 4, 2017 1:02 AM</span></div>`;
 
-exports[`DateTime list component Render without data 1`] = `<span data-server-rendered="true"></span>`;
+exports[`DateTime list component Render without data 1`] = `<div data-server-rendered="true"><span></span></div>`;

@@ -14,8 +14,10 @@ import {FormMixin, ThumbnailMixin, ListMixin} from './common';
 export const FieldListUrl = Vue.component('furet-ui-list-field-url', {
     mixins: [ListMixin],
     template: `
-        <span v-if="isInvisible" />
-        <a v-else v-bind:href="value">{{value}}</a>`,
+        <div>
+            <span v-if="isInvisible" />
+            <a v-else v-bind:href="value">{{value}}</a>
+        </div>`,
 })
 
 export const FieldThumbnailUrl = Vue.component('furet-ui-thumbnail-field-url', {

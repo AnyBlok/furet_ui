@@ -135,14 +135,14 @@ exports[`String Thumbnail component Render without data 1`] = `
 </span>
 `;
 
-exports[`String list component Render invisible condition is false 1`] = `<span data-server-rendered="true">#123456</span>`;
+exports[`String list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><span>#123456</span></div>`;
 
-exports[`String list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+exports[`String list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`String list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+exports[`String list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`String list component Render invisible is false 1`] = `<span data-server-rendered="true">#123456</span>`;
+exports[`String list component Render invisible is false 1`] = `<div data-server-rendered="true"><span>#123456</span></div>`;
 
-exports[`String list component Render with data 1`] = `<span data-server-rendered="true">#123456</span>`;
+exports[`String list component Render with data 1`] = `<div data-server-rendered="true"><span>#123456</span></div>`;
 
-exports[`String list component Render without data 1`] = `<span data-server-rendered="true"></span>`;
+exports[`String list component Render without data 1`] = `<div data-server-rendered="true"><span></span></div>`;

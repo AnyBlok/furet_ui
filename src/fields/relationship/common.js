@@ -48,17 +48,19 @@ export const RelationShip = {
 
 export const RelationShipX2MList = {
     template: `
-        <span v-if="isInvisible" />
-        <div v-else>
-            <span 
-                v-for="value in values"
-                class="tag" 
-                v-bind:style="getStyle(value.dataId)"
-            >
-                <a 
-                    v-on:click.stop="onClick(value.dataId)">{{value.label}}
-                </a>
-            </span>
+        <div>
+            <span v-if="isInvisible" />
+            <div v-else>
+                <span 
+                    v-for="value in values"
+                    class="tag" 
+                    v-bind:style="getStyle(value.dataId)"
+                >
+                    <a 
+                        v-on:click.stop="onClick(value.dataId)">{{value.label}}
+                    </a>
+                </span>
+            </div>
         </div>`,
     computed: {
         values () {

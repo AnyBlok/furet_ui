@@ -14,9 +14,6 @@ import _ from 'underscore';
 
 export const FieldListPassword = Vue.component('furet-ui-list-field-password', {
     mixins: [ListMixin],
-    template: `
-        <span v-if="isInvisible" />
-        <span v-else>{{value}}</span>`,
     computed: {
         value () {
             return _.map(this.row[this.header.name] || '', a => '*').join('');

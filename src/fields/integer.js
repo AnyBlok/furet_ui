@@ -12,9 +12,6 @@ import {FormMixin, ThumbnailMixin, ListMixin} from './common';
 
 export const FieldListInteger = Vue.component('furet-ui-list-field-integer', {
     mixins: [ListMixin],
-    template: `
-        <span v-if="isInvisible" />
-        <span v-else>{{value}}</span>`,
 })
 
 export const FieldThumbnailInteger = Vue.component('furet-ui-thumbnail-field-integer', {

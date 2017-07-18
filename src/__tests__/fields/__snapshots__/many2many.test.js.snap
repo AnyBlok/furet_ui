@@ -65,32 +65,48 @@ exports[`Many2Many Thumbnail component Render without data 1 1`] = `<span data-l
 exports[`Many2Many Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
 
 exports[`Many2Many list component Render fieldcolor 1`] = `
-<div data-server-rendered="true"><span class="tag" style="border:4px solid #123456;"><a>Test
-                </a></span></div>
+<div data-server-rendered="true">
+    <div><span class="tag" style="border:4px solid #123456;"><a>Test
+                    </a></span></div>
+</div>
 `;
 
 exports[`Many2Many list component Render invisible condition is false 1`] = `
-<div data-server-rendered="true"><span class="tag"><a>Test
-                </a></span></div>
+<div data-server-rendered="true">
+    <div><span class="tag"><a>Test
+                    </a></span></div>
+</div>
 `;
 
-exports[`Many2Many list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Many2Many list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`Many2Many list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Many2Many list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
 exports[`Many2Many list component Render invisible is false 1`] = `
-<div data-server-rendered="true"><span class="tag"><a>Test
-                </a></span></div>
+<div data-server-rendered="true">
+    <div><span class="tag"><a>Test
+                    </a></span></div>
+</div>
 `;
 
 exports[`Many2Many list component Render with data 1`] = `
-<div data-server-rendered="true"><span class="tag"><a>Test
-                </a></span></div>
+<div data-server-rendered="true">
+    <div><span class="tag"><a>Test
+                    </a></span></div>
+</div>
 `;
 
-exports[`Many2Many list component Render without data 1 1`] = `<div data-server-rendered="true"></div>`;
+exports[`Many2Many list component Render without data 1 1`] = `
+<div data-server-rendered="true">
+    <div></div>
+</div>
+`;
 
-exports[`Many2Many list component Render without data 2 1`] = `<div data-server-rendered="true"></div>`;
+exports[`Many2Many list component Render without data 2 1`] = `
+<div data-server-rendered="true">
+    <div></div>
+</div>
+`;
 
 exports[`Many2ManyCheckbox Form component Render 1`] = `
 <span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">

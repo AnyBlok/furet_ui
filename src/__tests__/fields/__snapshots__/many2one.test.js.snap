@@ -217,16 +217,16 @@ exports[`Many2One Thumbnail component Render without data 1 1`] = `<span data-la
 
 exports[`Many2One Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a></a> <!----></div></span>`;
 
-exports[`Many2One list component Render invisible condition is false 1`] = `<a data-server-rendered="true">Test</a>`;
+exports[`Many2One list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><a>Test</a></div>`;
 
-exports[`Many2One list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Many2One list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`Many2One list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Many2One list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`Many2One list component Render invisible is false 1`] = `<a data-server-rendered="true">Test</a>`;
+exports[`Many2One list component Render invisible is false 1`] = `<div data-server-rendered="true"><a>Test</a></div>`;
 
-exports[`Many2One list component Render with data 1`] = `<a data-server-rendered="true">Test</a>`;
+exports[`Many2One list component Render with data 1`] = `<div data-server-rendered="true"><a>Test</a></div>`;
 
-exports[`Many2One list component Render without data 1 1`] = `<a data-server-rendered="true"></a>`;
+exports[`Many2One list component Render without data 1 1`] = `<div data-server-rendered="true"><a></a></div>`;
 
-exports[`Many2One list component Render without data 2 1`] = `<a data-server-rendered="true"></a>`;
+exports[`Many2One list component Render without data 2 1`] = `<div data-server-rendered="true"><a></a></div>`;

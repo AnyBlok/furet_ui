@@ -22,11 +22,13 @@ const format = (value) => {
 export const FieldListJson = Vue.component('furet-ui-list-field-json', {
     mixins: [ListMixin],
     template: `
-        <span v-if="isInvisible" />
-        <pre 
-            v-else
-            v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
-        >{{value}}</pre>`,
+        <div>
+            <span v-if="isInvisible" />
+            <pre 
+                v-else
+                v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+            >{{value}}</pre>
+        </div>`,
     computed: {
         value () {
             return format(this.row[this.header.name] || '');

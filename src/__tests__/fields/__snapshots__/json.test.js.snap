@@ -119,25 +119,35 @@ exports[`Json Thumbnail component Render with data 1`] = `
 exports[`Json Thumbnail component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <pre style="width:100%;padding:2;background-color:white;"></pre> <!----></div></span>`;
 
 exports[`Json list component Render invisible condition is false 1`] = `
-<pre data-server-rendered="true" style="width:100%;padding:2;background-color:white;">{
+<div data-server-rendered="true">
+    <pre style="width:100%;padding:2;background-color:white;">{
   &quot;a&quot;: &quot;b&quot;
 }</pre>
+</div>
 `;
 
-exports[`Json list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Json list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`Json list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Json list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
 exports[`Json list component Render invisible is false 1`] = `
-<pre data-server-rendered="true" style="width:100%;padding:2;background-color:white;">{
+<div data-server-rendered="true">
+    <pre style="width:100%;padding:2;background-color:white;">{
   &quot;a&quot;: &quot;b&quot;
 }</pre>
+</div>
 `;
 
 exports[`Json list component Render with data 1`] = `
-<pre data-server-rendered="true" style="width:100%;padding:2;background-color:white;">{
+<div data-server-rendered="true">
+    <pre style="width:100%;padding:2;background-color:white;">{
   &quot;a&quot;: &quot;b&quot;
 }</pre>
+</div>
 `;
 
-exports[`Json list component Render without data 1`] = `<pre data-server-rendered="true" style="width:100%;padding:2;background-color:white;"></pre>`;
+exports[`Json list component Render without data 1`] = `
+<div data-server-rendered="true">
+    <pre style="width:100%;padding:2;background-color:white;"></pre>
+</div>
+`;

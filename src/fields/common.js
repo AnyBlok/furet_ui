@@ -16,6 +16,11 @@ export const safe_eval = (condition, fields) => {
 
 export const ListMixin = {
     props: ['row', 'index', 'header'],
+    template: `
+        <div>
+            <span v-if="isInvisible" />
+            <span v-else>{{value}}</span>
+        </div>`,
     computed: {
         value () {
             return this.row[this.header.name] || '';

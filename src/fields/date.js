@@ -15,9 +15,6 @@ import moment from 'moment';
 
 export const FieldListDate = Vue.component('furet-ui-list-field-date', {
     mixins: [ListMixin],
-    template: `
-        <span v-if="isInvisible" />
-        <span v-else>{{value}}</span>`,
     computed: {
         value () {
             moment.locale(i18n.locale);

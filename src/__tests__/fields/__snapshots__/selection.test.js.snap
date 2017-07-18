@@ -235,16 +235,16 @@ exports[`Selection Thumbnail component Render without selection 1`] = `
 </span>
 `;
 
-exports[`Selection list component Render invisible condition is false 1`] = `<span data-server-rendered="true">New</span>`;
+exports[`Selection list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><span>New</span></div>`;
 
-exports[`Selection list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Selection list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`Selection list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Selection list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`Selection list component Render invisible is false 1`] = `<span data-server-rendered="true">New</span>`;
+exports[`Selection list component Render invisible is false 1`] = `<div data-server-rendered="true"><span>New</span></div>`;
 
-exports[`Selection list component Render with data 1`] = `<span data-server-rendered="true">New</span>`;
+exports[`Selection list component Render with data 1`] = `<div data-server-rendered="true"><span>New</span></div>`;
 
-exports[`Selection list component Render without data 1`] = `<span data-server-rendered="true"> --- </span>`;
+exports[`Selection list component Render without data 1`] = `<div data-server-rendered="true"><span> --- </span></div>`;
 
-exports[`Selection list component Render without selections 1`] = `<span data-server-rendered="true"> --- </span>`;
+exports[`Selection list component Render without selections 1`] = `<div data-server-rendered="true"><span> --- </span></div>`;
