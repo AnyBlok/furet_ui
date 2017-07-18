@@ -30,40 +30,43 @@ exports[`One2Many Form component Render 1`] = `
             <tbody>
                 <tr>
                     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
-                    <td data-label="ID" class="has-text-right"><span><span></span></span>
-                    </td>
-                    <td data-label="Label"><span><span>Test</span></span>
-                    </td>
-                    <td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
-                        </span>
-                    </td>
-                    <td data-label="State"><span><span> --- </span></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    <td data-label="ID" class="has-text-right"><span><div><span></span></div>
+    </span>
+    </td>
+    <td data-label="Label"><span><div><span>Test</span></div>
+</span>
+</td>
+<td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+    </span>
+</td>
+<td data-label="State"><span><div><span> --- </span></div>
+    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="level">
+    <div class="level-left">
+        <!---->
     </div>
-    <div class="level">
-        <div class="level-left">
-            <!---->
-        </div>
-        <div class="level-right">
-            <div class="level-item">
-                <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
-                    <ul class="pagination-list">
-                        <!---->
-                        <!---->
-                        <li><a class="pagination-link is-current">
+    <div class="level-right">
+        <div class="level-item">
+            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                <ul class="pagination-list">
+                    <!---->
+                    <!---->
+                    <li><a class="pagination-link is-current">
                 1
             </a></li>
-                        <!---->
-                        <!---->
-                    </ul>
                     <!---->
-                </div>
+                    <!---->
+                </ul>
+                <!---->
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 </div>
@@ -219,29 +222,45 @@ exports[`One2Many Thumbnail component Render without data 1 1`] = `<span data-la
 exports[`One2Many Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
 
 exports[`One2Many list component Render fieldcolor 1`] = `
-<div data-server-rendered="true"><span class="tag" style="border:4px solid #123456;"><a>Test
-                </a></span></div>
+<div data-server-rendered="true">
+    <div><span class="tag" style="border:4px solid #123456;"><a>Test
+                    </a></span></div>
+</div>
 `;
 
 exports[`One2Many list component Render invisible condition is false 1`] = `
-<div data-server-rendered="true"><span class="tag"><a>Test
-                </a></span></div>
+<div data-server-rendered="true">
+    <div><span class="tag"><a>Test
+                    </a></span></div>
+</div>
 `;
 
-exports[`One2Many list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+exports[`One2Many list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`One2Many list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+exports[`One2Many list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
 exports[`One2Many list component Render invisible is false 1`] = `
-<div data-server-rendered="true"><span class="tag"><a>Test
-                </a></span></div>
+<div data-server-rendered="true">
+    <div><span class="tag"><a>Test
+                    </a></span></div>
+</div>
 `;
 
 exports[`One2Many list component Render with data 1`] = `
-<div data-server-rendered="true"><span class="tag"><a>Test
-                </a></span></div>
+<div data-server-rendered="true">
+    <div><span class="tag"><a>Test
+                    </a></span></div>
+</div>
 `;
 
-exports[`One2Many list component Render without data 1 1`] = `<div data-server-rendered="true"></div>`;
+exports[`One2Many list component Render without data 1 1`] = `
+<div data-server-rendered="true">
+    <div></div>
+</div>
+`;
 
-exports[`One2Many list component Render without data 2 1`] = `<div data-server-rendered="true"></div>`;
+exports[`One2Many list component Render without data 2 1`] = `
+<div data-server-rendered="true">
+    <div></div>
+</div>
+`;
