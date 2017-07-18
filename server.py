@@ -718,7 +718,9 @@ def getView2():
         'creatable': True,
         'onSelect': '3',
         'model': 'Test',
-        'background_fieldcolor': 'color',
+        'border_fieldcolor':
+        "fields.state == 'new' ? 'blue' : (fields.state == 'done' ? 'green' : null)",
+        'background_fieldcolor': 'fields.color',
         'search': [
             {
                 'key': 'name',

@@ -202,7 +202,7 @@ describe('furet-ui-thumbnail-view component', () => {
             router,
             i18n,
             render: h => h(ThumbnailView, {props: {
-                view: Object.assign({border_fieldcolor: 'color'}, view_thumbnail),
+                view: Object.assign({border_fieldcolor: 'fields.color'}, view_thumbnail),
                 dataIds: ['1', '2', '3', '4'],
                 data,
                 change,
@@ -219,7 +219,7 @@ describe('furet-ui-thumbnail-view component', () => {
             router,
             i18n,
             render: h => h(ThumbnailView, {props: {
-                view: Object.assign({background_fieldcolor: 'color'}, view_thumbnail),
+                view: Object.assign({background_fieldcolor: 'fields.color'}, view_thumbnail),
                 dataIds: ['1', '2', '3', '4'],
                 data,
                 change,
@@ -329,7 +329,7 @@ describe('furet-ui-x2m-thumbnail-view component', () => {
             router,
             i18n,
             render: h => h(X2MThumbnailView, {props: {
-                view: Object.assign({border_fieldcolor: 'color'}, view_thumbnail),
+                view: Object.assign({border_fieldcolor: 'fields.color'}, view_thumbnail),
                 views,
                 viewId: '1',
                 dataIds: ['1', '2', '3', '4'],
@@ -349,7 +349,7 @@ describe('furet-ui-x2m-thumbnail-view component', () => {
             router,
             i18n,
             render: h => h(X2MThumbnailView, {props: {
-                view: Object.assign({background_fieldcolor: 'color'}, view_thumbnail),
+                view: Object.assign({background_fieldcolor: 'fields.color'}, view_thumbnail),
                 views,
                 viewId: '1',
                 dataIds: ['1', '2', '3', '4'],

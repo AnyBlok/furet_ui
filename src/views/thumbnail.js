@@ -22,6 +22,28 @@ export const ThumbnailViewIcon = Vue.component('furet-ui-thumbnail-view-icon', {
 
 plugin.set(['views', 'icon'], {Thumbnail: 'furet-ui-thumbnail-view-icon'})
 
+export const safe_eval = (condition, fields) => {
+    const now = Date.now(),
+          toDate = (v) => new Date(v);
+    let res = null;
+    try {
+        res = eval(condition);
+    } catch (e) {};
+    return res;
+}
+export const getStyle = (obj, card) => {
+    const res = {}
+    if (obj.view.border_fieldcolor) {
+        const color = safe_eval(obj.view.border_fieldcolor, card);
+        if (color) res.border = '3px solid ' + color;
+    }
+    if (obj.view.background_fieldcolor) {
+        const color = safe_eval(obj.view.background_fieldcolor, card);
+        if (color) res.backgroundColor = color;
+    }
+    return res;
+}
+
 export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
     mixins: [ViewMultiMixin],
     template: `
@@ -114,18 +136,7 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
     },
     methods: {
         getStyle (card) {
-            const res = {}
-            if (this.view.border_fieldcolor) {
-                if (card[this.view.border_fieldcolor]) {
-                    res.border = '2px solid ' + card[this.view.border_fieldcolor]
-                }
-            }
-            if (this.view.background_fieldcolor) {
-                if (card[this.view.background_fieldcolor]) {
-                    res.backgroundColor = card[this.view.background_fieldcolor]
-                }
-            }
-            return res;
+            return getStyle(this, card);
         }
     },
 });
@@ -196,18 +207,7 @@ export const X2MThumbnailView = Vue.component('furet-ui-x2m-thumbnail-view', {
     },
     methods: {
         getStyle (card) {
-            const res = {}
-            if (this.view.border_fieldcolor) {
-                if (card[this.view.border_fieldcolor]) {
-                    res.border = '2px solid ' + card[this.view.border_fieldcolor]
-                }
-            }
-            if (this.view.background_fieldcolor) {
-                if (card[this.view.background_fieldcolor]) {
-                    res.backgroundColor = card[this.view.background_fieldcolor]
-                }
-            }
-            return res;
+            return getStyle(this, card);
         }
     },
 });
