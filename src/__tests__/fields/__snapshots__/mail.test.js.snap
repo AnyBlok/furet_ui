@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mail Form component Render icon 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-left is-clearfix"><input type="email" autocomplete="on" step="1" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<!---->
+<!---->
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Form component Render icon 2`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-left is-clearfix"><input type="email" autocomplete="on" step="1" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<!---->
+<!---->
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Form component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="email" autocomplete="on" step="1" value="2" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Mail Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Mail Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Mail Form component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="email" autocomplete="on" step="1" value="2" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Mail Form component Render label 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-clearfix"><input type="email" autocomplete="on" step="1" value="2" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Mail Form component Render maxlenght (KO) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="email" maxlength="4" autocomplete="on" step="1" value="password" class="input"> <!----> <!----> <small class="help counter">8 / 4</small></div> <!----></div></span>`;
+
+exports[`Mail Form component Render maxlenght (OK) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="email" maxlength="64" autocomplete="on" step="1" value="password" class="input"> <!----> <!----> <small class="help counter">8 / 64</small></div> <!----></div></span>`;
+
+exports[`Mail Form component Render mode readonly by config 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 2 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Form component Render mode readonly conditional param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 2 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Form component Render mode readonly param 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 2 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Form component Render placeholder 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="email" placeholder="The placeholder" autocomplete="on" step="1" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Mail Form component Render required 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="email" autocomplete="on" step="1" value="2" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<!---->
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Form component Render required conditionnal 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="email" autocomplete="on" step="1" value="2" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<!---->
+</div>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Form component Render required without value 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right"><input type="email" autocomplete="on" step="1" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
+<!---->
+</div>
+<p class="help is-danger">this field is required</p>
+</div>
+</span>
+`;
+
+exports[`Mail Form component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="email" autocomplete="on" step="1" value="2" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Mail Form component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="email" autocomplete="on" step="1" value="2" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Mail Form component Render with data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="email" autocomplete="on" step="1" value="2" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Mail Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="email" autocomplete="on" step="1" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+
+exports[`Mail Thumbnail component Render invisible condition is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 2 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Mail Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
+
+exports[`Mail Thumbnail component Render invisible is false 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 2 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Thumbnail component Render label 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <span> 2 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Thumbnail component Render tooltip left 1`] = `
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 2 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Thumbnail component Render tooltip up 1`] = `
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 2 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Thumbnail component Render with data 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 2 </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail Thumbnail component Render without data 1`] = `
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>  </span>
+<!---->
+</div>
+</span>
+`;
+
+exports[`Mail list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><span>2</span></div>`;
+
+exports[`Mail list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
+
+exports[`Mail list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
+
+exports[`Mail list component Render invisible is false 1`] = `<div data-server-rendered="true"><span>2</span></div>`;
+
+exports[`Mail list component Render with data 1`] = `<div data-server-rendered="true"><span>2</span></div>`;
+
+exports[`Mail list component Render without data 1`] = `<div data-server-rendered="true"><span></span></div>`;

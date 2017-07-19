@@ -34,6 +34,7 @@ class Test(Base):
     file = Column(LargeBinary)
     filename = Column(String)
     filesize = Column(Integer)
+    email = Column(String)
 
     @classmethod
     def insert(cls, session, data, changes):
@@ -656,11 +657,6 @@ def getView1():
                 'component': 'furet-ui-list-field-selection',
             },
             {
-                'name': 'text',
-                'label': 'Text',
-                'component': 'furet-ui-list-field-text',
-            },
-            {
                 'name': 'creation_date',
                 'label': 'Date time',
                 'component': 'furet-ui-list-field-datetime',
@@ -671,12 +667,9 @@ def getView1():
                 'component': 'furet-ui-list-field-password',
             },
             {
-                'name': 'file',
-                'label': 'File',
-                'filename': 'filename',
-                'filesize': 'filesize',
-                'component': 'furet-ui-list-field-file',
-                'width': '200px',
+                'name': 'email',
+                'label': 'E-mail',
+                'component': 'furet-ui-list-field-mail',
             },
         ],
         'search': [
@@ -705,7 +698,7 @@ def getView1():
         ],
         'fields': ["id", "name", "state", "creation_date", "number", "bool",
                    "color", "text", "time", "file", 'filename', 'filesize',
-                   "password", 'url', 'json'],
+                   "password", 'url', 'json', 'email'],
     }
 
 
@@ -755,6 +748,13 @@ def getView2():
                         name="state"
                         label="State"
                         v-bind:selections="{'new': 'New', 'started': 'Started', 'done': 'Done'}"
+                    />
+                </div>
+                <div class="column is-6">
+                    <furet-ui-thumbnail-field-mail
+                        v-bind:data="card"
+                        name="email"
+                        label="E-mail"
                     />
                 </div>
                 <div class="column is-6">
@@ -838,7 +838,7 @@ def getView2():
         'fields': [
             "id", "name", "state", "creation_date2", "number", "url",
             "uuid", "password", "color", "text", "bool", "time", 'json', "file",
-            "filename", "filesize",
+            "filename", "filesize", 'email'
         ],
     }
 
@@ -881,6 +881,13 @@ def getView3():
                         name="state"
                         label="State"
                         v-bind:selections="{'new': 'New', 'started': 'Started', 'done': 'Done'}"
+                    />
+                </div>
+                <div class="column is-6">
+                    <furet-ui-form-field-mail
+                        v-bind:config="config"
+                        name="email"
+                        label="E-mail"
                     />
                 </div>
                 <div class="column is-6">
@@ -1918,7 +1925,7 @@ if session.query(Test).count() == 0:
             'url': 'http://furet-ui.readthedocs.io',
             'uuid': 'uuid---',
             'password': 'password',
-            'color': '#36c',
+            'color': '#3366cc',
             'text': '<p><em>Plop</em></p>',
             'bool': True,
             'time': time(1, 2, 3),
@@ -1934,7 +1941,7 @@ if session.query(Test).count() == 0:
             'url': 'http://furet-ui.readthedocs.io',
             'uuid': 'uuid---',
             'password': 'password',
-            'color': '#36c',
+            'color': '#3366cc',
             'text': '<p><em>Plop</em></p>',
             'bool': False,
             'time': time(1, 2, 3),
@@ -1950,7 +1957,7 @@ if session.query(Test).count() == 0:
             'url': 'http://furet-ui.readthedocs.io',
             'uuid': 'uuid---',
             'password': 'password',
-            'color': '#36c',
+            'color': '',
             'text': '<p><em>Plop</em></p><p>Other line</p>',
             'bool': False,
             'time': time(1, 2, 3),
