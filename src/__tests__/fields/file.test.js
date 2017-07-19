@@ -14,7 +14,7 @@ Vue.use(Buefy, {defaultIconPack: 'fa',});
 import {store} from '../../store';
 import {router} from '../../routes';
 import {i18n} from '../../i18n';
-import {FieldListFile, FieldThumbnailFile, FieldFormFile} from '../../fields/file'
+import {FieldListFile, FieldThumbnailFile, FieldFormFile, onClickDelete, updateFile} from '../../fields/file'
 
 describe('File list component', () => {
     const renderer = require('vue-server-renderer').createRenderer();
@@ -647,6 +647,55 @@ describe('File Form component', () => {
         renderer.renderToString(vm, (err, str) => {
             expect(str).toMatchSnapshot();
         });
+    });
+    it('onClickDelete', () => {
+        let count = 0;
+        onClickDelete({
+            filename: 'fieldname',
+            filesize: 'fieldsize',
+            updateValue: (value, field) => {
+                count ++;
+                switch (field) {
+                    case 'fieldname':
+                        expect(value).toBe('');
+                        break;
+                    case 'fieldsize':
+                        expect(value).toBe(0);
+                        break;
+                    default:
+                        expect(value).toBe('');
+                }
+            }
+        });
+        expect(count).toBe(3);
+    });
+    it('updateFile', () => {
+        let count = 0;
+        updateFile(
+            {
+                filename: 'fieldname',
+                filesize: 'fieldsize',
+                updateValue: (value, field) => {
+                    count ++;
+                    switch (field) {
+                        case 'fieldname':
+                            expect(value).toBe('filename');
+                            break;
+                        case 'fieldsize':
+                            expect(value).toBe('filesize');
+                            break;
+                        default:
+                            expect(value).toBe('test');
+                    }
+                }, 
+            },
+            {
+                name: 'filename', 
+                size: 'filesize',
+            }, 
+            'test'
+        );
+        expect(count).toBe(3);
     });
 });
 

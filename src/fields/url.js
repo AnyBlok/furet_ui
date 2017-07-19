@@ -33,12 +33,9 @@ export const FieldThumbnailUrl = Vue.component('furet-ui-thumbnail-field-url', {
                 v-bind:label="this.label"
                 v-bind:style="{'width': 'inherit'}"
             >
-                <a v-bind:href="value" v-on:click.stop="onClick">{{value}}</a>
+                <a v-bind:href="value" v-on:click.stop="() => {}">{{value}}</a>
             </b-field>
         </b-tooltip>`,
-    computed: {
-        onClick: () => {},
-    },
 })
 
 export const FieldFormUrl = Vue.component('furet-ui-form-field-url', {

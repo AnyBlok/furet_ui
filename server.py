@@ -928,10 +928,24 @@ def getView3():
                     />
                 </div>
                 <div class="column is-6">
+                    <furet-ui-form-field-time
+                        v-bind:config="config"
+                        name="time"
+                        label="Time"
+                    />
+                </div>
+                <div class="column is-6">
                     <furet-ui-form-field-color
                         v-bind:config="config"
                         name="color"
                         label="Color"
+                    />
+                </div>
+                <div class="column is-6">
+                    <furet-ui-form-field-boolean
+                        v-bind:config="config"
+                        name="bool"
+                        label="Boolean"
                     />
                 </div>
                 <furet-ui-form-group
@@ -945,20 +959,6 @@ def getView3():
                         label="Text"
                     />
                 </furet-ui-form-group>
-                <div class="column is-6">
-                    <furet-ui-form-field-boolean
-                        v-bind:config="config"
-                        name="bool"
-                        label="Boolean"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-time
-                        v-bind:config="config"
-                        name="time"
-                        label="Time"
-                    />
-                </div>
                 <div class="column is-6">
                     <furet-ui-form-field-file
                         v-bind:config="config"
