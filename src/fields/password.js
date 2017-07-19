@@ -24,20 +24,6 @@ export const FieldListPassword = Vue.component('furet-ui-list-field-password', {
 
 export const FieldThumbnailPassword = Vue.component('furet-ui-thumbnail-field-password', {
     mixins: [ThumbnailMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <span> {{value}} </span>
-            </b-field>
-        </b-tooltip>`,
     computed: {
         value () {
             return _.map(this.data && this.data[this.name] || '', a => '*').join('');

@@ -338,12 +338,12 @@ exports[`Route component Render App with space and action and view 2`] = `
             </span></label>
                                 </span>
                             </div>
-                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
+                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
                                 <!---->
                             </div>
                             </span>
                         </div>
-                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                             <!---->
                         </div>
                         </span>
@@ -364,12 +364,12 @@ exports[`Route component Render App with space and action and view 2`] = `
             </span></label>
                     </span>
                 </div>
-                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                     <!---->
                 </div>
                 </span>
             </div>
-            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> Done </span>
+            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> Done </span>
                 <!---->
             </div>
             </span>
@@ -870,12 +870,12 @@ exports[`Route component Render App with space and menu and action and view 2`] 
             </span></label>
                                 </span>
                             </div>
-                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
+                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
                                 <!---->
                             </div>
                             </span>
                         </div>
-                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                             <!---->
                         </div>
                         </span>
@@ -896,12 +896,12 @@ exports[`Route component Render App with space and menu and action and view 2`] 
             </span></label>
                     </span>
                 </div>
-                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                     <!---->
                 </div>
                 </span>
             </div>
-            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> Done </span>
+            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> Done </span>
                 <!---->
             </div>
             </span>

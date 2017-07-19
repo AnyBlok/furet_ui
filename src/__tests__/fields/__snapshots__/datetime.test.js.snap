@@ -85,7 +85,7 @@ exports[`DateTime Form component Render with data 1`] = `<span data-label="" dat
 exports[`DateTime Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="datetime-local" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
 exports[`DateTime Thumbnail component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
 <!---->
 </div>
 </span>
@@ -96,42 +96,42 @@ exports[`DateTime Thumbnail component Render invisible condition is true 1`] = `
 exports[`DateTime Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`DateTime Thumbnail component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`DateTime Thumbnail component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <span> July 4, 2017 1:02 AM </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <span> July 4, 2017 1:02 AM </span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`DateTime Thumbnail component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`DateTime Thumbnail component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`DateTime Thumbnail component Render with data 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> July 4, 2017 1:02 AM </span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`DateTime Thumbnail component Render without data 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span>  </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>  </span>
 <!---->
 </div>
 </span>

@@ -16,21 +16,6 @@ export const FieldListMail = Vue.component('furet-ui-list-field-mail', {
 
 export const FieldThumbnailMail = Vue.component('furet-ui-thumbnail-field-mail', {
     mixins: [ThumbnailMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-bind:style="{'width': '100%'}"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <span> {{value}} </span>
-            </b-field>
-        </b-tooltip>`,
 })
 
 export const FieldFormMail = Vue.component('furet-ui-form-field-mail', {

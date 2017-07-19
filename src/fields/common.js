@@ -40,6 +40,21 @@ export const ListMixin = {
 
 export const ThumbnailMixin = {
     props: ['name', 'label', 'data', 'invisible', 'tooltip', 'tooltip_position'],
+    template: `
+        <div v-if="this.isInvisible" />
+        <b-tooltip 
+            v-bind:label="getTooltip" 
+            v-bind:position="tooltipPosition"
+            v-bind:style="{'width': '100%'}"
+            v-else
+        >
+            <b-field 
+                v-bind:label="this.label"
+                v-bind:style="{'width': 'inherit'}"
+            >
+                <span> {{value}} </span>
+            </b-field>
+        </b-tooltip>`,
     computed: {
         value () {
             return this.data && this.data[this.name] || '';

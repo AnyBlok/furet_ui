@@ -26,12 +26,12 @@ exports[`furet-ui-thumbnail-view component Render with data 1 1`] = `
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
                     <!---->
                 </div>
                 </span>
@@ -52,12 +52,12 @@ exports[`furet-ui-thumbnail-view component Render with data 1 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
             <!---->
         </div>
         </span>
@@ -78,12 +78,12 @@ exports[`furet-ui-thumbnail-view component Render with data 1 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
             <!---->
         </div>
         </span>
@@ -125,12 +125,12 @@ exports[`furet-ui-thumbnail-view component Render with data 2 1`] = `
                             </label>
                             </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                     <!---->
                 </div>
                 </span>
@@ -151,12 +151,12 @@ exports[`furet-ui-thumbnail-view component Render with data 2 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -177,12 +177,12 @@ exports[`furet-ui-thumbnail-view component Render with data 2 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -221,12 +221,12 @@ exports[`furet-ui-thumbnail-view component Render with data 3 1`] = `
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                     <!---->
                 </div>
                 </span>
@@ -247,12 +247,12 @@ exports[`furet-ui-thumbnail-view component Render with data 3 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -273,12 +273,12 @@ exports[`furet-ui-thumbnail-view component Render with data 3 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -317,12 +317,12 @@ exports[`furet-ui-thumbnail-view component Render with data background fieldcolo
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                     <!---->
                 </div>
                 </span>
@@ -343,12 +343,12 @@ exports[`furet-ui-thumbnail-view component Render with data background fieldcolo
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -369,12 +369,12 @@ exports[`furet-ui-thumbnail-view component Render with data background fieldcolo
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -395,12 +395,12 @@ exports[`furet-ui-thumbnail-view component Render with data background fieldcolo
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -439,12 +439,12 @@ exports[`furet-ui-thumbnail-view component Render with data border fieldcolor 1`
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                     <!---->
                 </div>
                 </span>
@@ -465,12 +465,12 @@ exports[`furet-ui-thumbnail-view component Render with data border fieldcolor 1`
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -491,12 +491,12 @@ exports[`furet-ui-thumbnail-view component Render with data border fieldcolor 1`
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -517,12 +517,12 @@ exports[`furet-ui-thumbnail-view component Render with data border fieldcolor 1`
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -618,12 +618,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
                             </label>
                             </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                     <!---->
                 </div>
                 </span>
@@ -644,12 +644,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -670,12 +670,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -696,12 +696,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
             <!---->
         </div>
         </span>
@@ -750,12 +750,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 2`] = `
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                     <!---->
                 </div>
                 </span>
@@ -776,12 +776,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 2`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -802,12 +802,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 2`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -828,12 +828,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 2`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
             <!---->
         </div>
         </span>
@@ -882,12 +882,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data background field
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                     <!---->
                 </div>
                 </span>
@@ -908,12 +908,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data background field
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -934,12 +934,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data background field
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -960,12 +960,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data background field
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -1014,12 +1014,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data border fieldcolo
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
                     <!---->
                 </div>
                 </span>
@@ -1040,12 +1040,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data border fieldcolo
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -1066,12 +1066,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data border fieldcolo
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -1092,12 +1092,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data border fieldcolo
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
             <!---->
         </div>
         </span>
@@ -1162,12 +1162,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render without data 2 1`] = `
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
                     <!---->
                 </div>
                 </span>
@@ -1188,12 +1188,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render without data 2 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
             <!---->
         </div>
         </span>
@@ -1214,12 +1214,12 @@ exports[`furet-ui-x2m-thumbnail-view component Render without data 2 1`] = `
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
             <!---->
         </div>
         </span>
