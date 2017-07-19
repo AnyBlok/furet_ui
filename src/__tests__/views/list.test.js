@@ -139,6 +139,21 @@ describe('furet-ui-list-view component', () => {
             expect(str).toMatchSnapshot();
         });
     });
+    it('Render without data 2', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(ListView, {props: {
+                view: Object.assign({empty: '<div>Empty</div>'}, view_list),
+                dataIds: [],
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
     it('Render with data 1', () => {
         const vm = new Vue({
             el: document.createElement('div'),
@@ -220,6 +235,22 @@ describe('furet-ui-x2m-list-view component', () => {
                 view: view_list,
                 views,
                 dataIds,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render without data 3', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(X2MListView, {props: {
+                view: Object.assign({empty: '<div>Empty</div>'}, view_list),
+                views,
+                dataIds: [],
             }}),
         });
         renderer.renderToString(vm, (err, str) => {

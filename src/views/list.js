@@ -60,6 +60,9 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
                     />
                 </b-table-column>
             </template>
+            <div slot="empty" v-if="view && view.empty">
+                <div v-html="view.empty" />
+            </div>
         </b-table>
     `,
     data: () => {

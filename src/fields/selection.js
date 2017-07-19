@@ -26,20 +26,6 @@ export const FieldListSelection = Vue.component('furet-ui-list-field-selection',
 export const FieldThumbnailSelection = Vue.component('furet-ui-thumbnail-field-selection', {
     props: ['selections'],
     mixins: [ThumbnailMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <span> {{value}} </span>
-            </b-field>
-        </b-tooltip>`,
     computed: {
         value () {
             const selections = this.selections || {};

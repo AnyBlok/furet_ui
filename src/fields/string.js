@@ -17,20 +17,6 @@ export const FieldListString = Vue.component('furet-ui-list-field-string', {
 
 export const FieldThumbnailString = Vue.component('furet-ui-thumbnail-field-string', {
     mixins: [ThumbnailMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <span> {{value}} </span>
-            </b-field>
-        </b-tooltip>`,
 })
 
 export const FieldFormString = Vue.component('furet-ui-form-field-string', {

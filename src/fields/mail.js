@@ -10,36 +10,16 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import Vue from 'vue';
 import {FormMixin, ThumbnailMixin, ListMixin} from './common';
 
-
-const round = (value, step) => {
-    if (value != undefined) {
-        return Math.round(eval(value) / eval(step || 0.01)) * eval(step || 0.01);
-    }
-    return '';
-}
-
-
-export const FieldListFloat = Vue.component('furet-ui-list-field-float', {
+export const FieldListMail = Vue.component('furet-ui-list-field-mail', {
     mixins: [ListMixin],
-    computed: {
-        value () {
-            return round(this.row[this.header.name], this.header.step);
-        },
-    }
 })
 
-
-export const FieldThumbnailFloat = Vue.component('furet-ui-thumbnail-field-float', {
+export const FieldThumbnailMail = Vue.component('furet-ui-thumbnail-field-mail', {
     mixins: [ThumbnailMixin],
-    computed: {
-        value () {
-            return round(this.data[this.name], this.step);
-        },
-    }
 })
 
-export const FieldFormFloat = Vue.component('furet-ui-form-field-float', {
-    props: ['icon', 'placeholder', 'step', 'min', 'max'],
+export const FieldFormMail = Vue.component('furet-ui-form-field-mail', {
+    props: ['maxlength', 'placeholder', 'icon'],
     mixins: [FormMixin],
     template: `
         <div v-if="this.isInvisible" />
@@ -58,26 +38,16 @@ export const FieldFormFloat = Vue.component('furet-ui-form-field-float', {
                 <span v-if="isReadonly"> {{data}} </span>
                 <b-input 
                     v-else 
-                    type="number"
-                    v-bind:step="getStep"
+                    type="email"
+                    step="1"
                     v-bind:value="data" 
                     v-on:change="updateValue"
+                    v-bind:maxlength="maxlength"
                     v-bind:placeholder="placeholder"
                     icon-pack="fa"
                     v-bind:icon="icon"
-                    v-bind:min="min"
-                    v-bind:max="max"
                 >
                 </b-input>
             </b-field>
         </b-tooltip>`,
-    computed: {
-        getStep () {
-            return this.step || '0.01';
-        },
-        data () {
-            const value = this.config.data && this.config.data[this.name] || '';
-            return round(value, this.step);
-        },
-    },
 })

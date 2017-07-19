@@ -27,20 +27,6 @@ export const FieldListDateTime = Vue.component('furet-ui-list-field-datetime', {
 
 export const FieldThumbnailDateTime = Vue.component('furet-ui-thumbnail-field-datetime', {
     mixins: [ThumbnailMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <span> {{value}} </span>
-            </b-field>
-        </b-tooltip>`,
     computed: {
         value () {
             moment.locale(i18n.locale);

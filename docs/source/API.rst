@@ -121,8 +121,9 @@ The list are:
 * DateTime
 * Float
 * Integer
-* JSON
 * File
+* JSON
+* Mail
 * Password
 * Selection
 * String

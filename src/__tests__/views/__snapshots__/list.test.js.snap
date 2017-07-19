@@ -332,6 +332,65 @@ exports[`furet-ui-list-view component Render without data 1`] = `
 </div>
 `;
 
+exports[`furet-ui-list-view component Render without data 2 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <!---->
+                <!---->
+                <!---->
+            </div>
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <div class="b-table">
+        <!---->
+        <div class="table-wrapper">
+            <table class="table is-narrow has-mobile-cards">
+                <thead>
+                    <tr>
+                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="is-empty">
+                        <td colspan="1">
+                            <div>
+                                <div>
+                                    <div>Empty</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="level">
+            <div class="level-left">
+                <!---->
+            </div>
+            <div class="level-right">
+                <div class="level-item">
+                    <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                        <ul class="pagination-list">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                        </ul>
+                        <!---->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`;
+
 exports[`furet-ui-x2m-list-view component Render with data 1 1`] = `
 <div data-server-rendered="true">
     <nav class="level">
@@ -793,5 +852,73 @@ exports[`furet-ui-x2m-list-view component Render without data 2 1`] = `
     </div>
 </div>
 </div>
+</div>
+`;
+
+exports[`furet-ui-x2m-list-view component Render without data 3 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <!---->
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="field has-addons">
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+                <!---->
+                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <div class="b-table">
+        <!---->
+        <div class="table-wrapper">
+            <table class="table is-narrow has-mobile-cards">
+                <thead>
+                    <tr>
+                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="is-empty">
+                        <td colspan="1">
+                            <div>
+                                <div>
+                                    <div>Empty</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="level">
+            <div class="level-left">
+                <!---->
+            </div>
+            <div class="level-right">
+                <div class="level-item">
+                    <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                        <ul class="pagination-list">
+                            <!---->
+                            <!---->
+                            <!---->
+                            <!---->
+                        </ul>
+                        <!---->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 `;

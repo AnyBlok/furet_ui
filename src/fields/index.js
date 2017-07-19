@@ -22,3 +22,4 @@ import './boolean';
 import './json';
 import './relationship';
 import './file';
+import './mail';

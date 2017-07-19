@@ -85,6 +85,17 @@ export const FieldThumbnailFile = Vue.component('furet-ui-thumbnail-field-file',
     },
 })
 
+export const onClickDelete = (obj) => {
+    obj.updateValue('');
+    if (obj.filename) obj.updateValue('', obj.filename);
+    if (obj.filesize) obj.updateValue(0, obj.filesize);
+};
+export const updateFile = (obj, file, value) => {
+    obj.updateValue(value);
+    if (obj.filename) obj.updateValue(file.name, obj.filename);
+    if (obj.filesize) obj.updateValue(file.size, obj.filesize);
+}
+
 export const FieldFormFile = Vue.component('furet-ui-form-field-file', {
     props: ['filename', 'accept', 'filesize', 'width'],
     mixins: [FormMixin],
@@ -122,7 +133,7 @@ export const FieldFormFile = Vue.component('furet-ui-form-field-file', {
                             <a 
                                 class="button" 
                                 v-if="!isReadonly"
-                                v-on:click="onClickUpload"
+                                v-on:click="() => {this.$refs.fileInput.click()}"
                             >
                                 <input 
                                     v-bind:style="{'display': 'none'}"
@@ -175,30 +186,17 @@ export const FieldFormFile = Vue.component('furet-ui-form-field-file', {
         },
     },
     methods: {
-        onClickUpload () {
-            this.$refs.fileInput.click();
-        },
         onClickDelete () {
-            this.updateValue('');
-            if (this.filename) this.updateValue('', this.filename);
-            if (this.filesize) this.updateValue(0, this.filesize);
+            onClickDelete(this);
         },
         onFileChange (e) {
             const files = e.target.files || e.dataTransfer.files;
-            if (!files.length)
-                return;
-            this.createImage(files[0]);
-        },
-        createImage(file) {
-            const reader = new FileReader(),
-                  self = this;
-
+            if (!files.length) return;
+            const reader = new FileReader(), self = this;
             reader.onload = (e) => {
-                self.updateValue(e.target.result);
-                if (self.filename) this.updateValue(file.name, self.filename);
-                if (self.filesize) this.updateValue(file.size, self.filesize);
+                updateFile(self, files[0], e.target.result);
             };
-            reader.readAsDataURL(file);
+            reader.readAsDataURL(files[0]);
         },
     },
 })

@@ -14,9 +14,9 @@ Vue.use(Buefy, {defaultIconPack: 'fa',});
 import {store} from '../../store';
 import {router} from '../../routes';
 import {i18n} from '../../i18n';
-import {FieldListFile, FieldThumbnailFile, FieldFormFile, onClickDelete, updateFile} from '../../fields/file'
+import {FieldListMail, FieldThumbnailMail, FieldFormMail} from '../../fields/mail'
 
-describe('File list component', () => {
+describe('Mail list component', () => {
     const renderer = require('vue-server-renderer').createRenderer();
     beforeEach(() => {
         store.dispatch('UNITEST_CLEAR');
@@ -27,8 +27,8 @@ describe('File list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListFile, {props: {
-                row: {fieldname: 'new'},
+            render: h => h(FieldListMail, {props: {
+                row: {fieldname: 2},
                 header: {name: 'fieldname'},
             }}),
         });
@@ -42,39 +42,9 @@ describe('File list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListFile, {props: {
+            render: h => h(FieldListMail, {props: {
                 row: {},
                 header: {name: 'fieldname'},
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render with filename', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldListFile, {props: {
-                row: {fieldname: 'new', filename_field: 'The file name'},
-                header: {name: 'fieldname', filename: 'filename_field'},
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render with width', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldListFile, {props: {
-                row: {fieldname: 'new'},
-                header: {name: 'fieldname', width: '200px'},
             }}),
         });
         renderer.renderToString(vm, (err, str) => {
@@ -87,8 +57,8 @@ describe('File list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListFile, {props: {
-                row: {fieldname: 'new'},
+            render: h => h(FieldListMail, {props: {
+                row: {fieldname: 2},
                 header: {name: 'fieldname', invisible: true},
             }}),
         });
@@ -102,8 +72,8 @@ describe('File list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListFile, {props: {
-                row: {fieldname: 'new'},
+            render: h => h(FieldListMail, {props: {
+                row: {fieldname: 2},
                 header: {name: 'fieldname', invisible: false},
             }}),
         });
@@ -117,8 +87,8 @@ describe('File list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListFile, {props: {
-                row: {fieldname: 'new', invisible: true},
+            render: h => h(FieldListMail, {props: {
+                row: {fieldname: 2, invisible: true},
                 header: {name: 'fieldname', invisible: 'fields.invisible'},
             }}),
         });
@@ -132,8 +102,8 @@ describe('File list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListFile, {props: {
-                row: {fieldname: 'new', invisible: false},
+            render: h => h(FieldListMail, {props: {
+                row: {fieldname: 2, invisible: false},
                 header: {name: 'fieldname', invisible: 'fields.invisible'},
             }}),
         });
@@ -143,52 +113,20 @@ describe('File list component', () => {
     });
 });
 
-describe('File Thumbnail component', () => {
+describe('Mail Thumbnail component', () => {
     const renderer = require('vue-server-renderer').createRenderer();
     beforeEach(() => {
         store.dispatch('UNITEST_CLEAR');
     });
-    it('Render', () => {
+    it('Render with data', () => {
         const vm = new Vue({
             el: document.createElement('div'),
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new'},
+            render: h => h(FieldThumbnailMail, {props: {
+                data: {fieldname: 2},
                 name: 'fieldname',
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render with filename', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new', filename_field: 'The file name'},
-                name: 'fieldname',
-                filename: 'filename_field',
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render with width', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new'},
-                name: 'fieldname',
-                width: '200px',
             }}),
         });
         renderer.renderToString(vm, (err, str) => {
@@ -201,7 +139,7 @@ describe('File Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailFile, {props: {
+            render: h => h(FieldThumbnailMail, {props: {
                 data: {},
                 name: 'fieldname',
             }}),
@@ -216,8 +154,8 @@ describe('File Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new'},
+            render: h => h(FieldThumbnailMail, {props: {
+                data: {fieldname: 2},
                 name: 'fieldname',
                 invisible: true,
             }}),
@@ -232,8 +170,8 @@ describe('File Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new'},
+            render: h => h(FieldThumbnailMail, {props: {
+                data: {fieldname: 2},
                 name: 'fieldname',
                 invisible: false,
             }}),
@@ -248,8 +186,8 @@ describe('File Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new', invisible: true},
+            render: h => h(FieldThumbnailMail, {props: {
+                data: {fieldname: 2, invisible: true},
                 name: 'fieldname',
                 invisible: 'fields.invisible',
             }}),
@@ -264,8 +202,8 @@ describe('File Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new', invisible: false},
+            render: h => h(FieldThumbnailMail, {props: {
+                data: {fieldname: 2, invisible: false},
                 name: 'fieldname',
                 invisible: 'fields.invisible',
             }}),
@@ -280,8 +218,8 @@ describe('File Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new'},
+            render: h => h(FieldThumbnailMail, {props: {
+                data: {fieldname: 2},
                 name: 'fieldname',
                 label: 'The label',
             }}),
@@ -296,8 +234,8 @@ describe('File Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new'},
+            render: h => h(FieldThumbnailMail, {props: {
+                data: {fieldname: 2},
                 name: 'fieldname',
                 tooltip: 'The tooltip',
             }}),
@@ -312,8 +250,8 @@ describe('File Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailFile, {props: {
-                data: {fieldname: 'new'},
+            render: h => h(FieldThumbnailMail, {props: {
+                data: {fieldname: 2},
                 name: 'fieldname',
                 tooltip: 'The left tooltip',
                 tooltip_position: 'is-left',
@@ -325,68 +263,20 @@ describe('File Thumbnail component', () => {
     });
 });
 
-describe('File Form component', () => {
+describe('Mail Form component', () => {
     const renderer = require('vue-server-renderer').createRenderer();
     beforeEach(() => {
         store.dispatch('UNITEST_CLEAR');
     });
-    it('Render', () => {
+    it('Render with data', () => {
         const vm = new Vue({
             el: document.createElement('div'),
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2}},
                 name: 'fieldname',
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render with filename', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new', filename_field: 'The filename'}},
-                name: 'fieldname',
-                filename: 'filename_field',
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render with width', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
-                name: 'fieldname',
-                width: '200px',
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render with accept', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
-                name: 'fieldname',
-                accept: 'images/*',
             }}),
         });
         renderer.renderToString(vm, (err, str) => {
@@ -399,7 +289,7 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
+            render: h => h(FieldFormMail, {props: {
                 config: {data: {}},
                 name: 'fieldname',
             }}),
@@ -414,8 +304,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2}},
                 name: 'fieldname',
                 invisible: true,
             }}),
@@ -430,8 +320,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2}},
                 name: 'fieldname',
                 invisible: false,
             }}),
@@ -446,8 +336,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new', invisible: true}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2, invisible: true}},
                 name: 'fieldname',
                 invisible: 'fields.invisible',
             }}),
@@ -462,8 +352,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new', invisible: false}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2, invisible: false}},
                 name: 'fieldname',
                 invisible: 'fields.invisible',
             }}),
@@ -478,8 +368,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2}},
                 name: 'fieldname',
                 label: 'The label',
             }}),
@@ -494,8 +384,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2}},
                 name: 'fieldname',
                 tooltip: 'The tooltip',
             }}),
@@ -510,8 +400,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2}},
                 name: 'fieldname',
                 tooltip: 'The left tooltip',
                 tooltip_position: 'is-left',
@@ -527,41 +417,9 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}, mode: 'readonly'},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2}, mode: 'readonly'},
                 name: 'fieldname',
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render mode readonly with filename', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new', filename_field: 'The filename'}, mode: 'readonly'},
-                name: 'fieldname',
-                filename: 'filename_field',
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render mode readonly with width', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}, mode: 'readonly'},
-                name: 'fieldname',
-                width: '200px',
             }}),
         });
         renderer.renderToString(vm, (err, str) => {
@@ -574,8 +432,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2}},
                 name: 'fieldname',
                 readonly: true,
             }}),
@@ -590,8 +448,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new', readonly: 1}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2, readonly: 1}},
                 name: 'fieldname',
                 readonly: 'fields.readonly',
             }}),
@@ -606,8 +464,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new'}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2}},
                 name: 'fieldname',
                 required: true,
             }}),
@@ -622,8 +480,8 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
-                config: {data: {fieldname: 'new', required: true}},
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 2, required: true}},
                 name: 'fieldname',
                 required: 'fields.required',
             }}),
@@ -638,7 +496,7 @@ describe('File Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormFile, {props: {
+            render: h => h(FieldFormMail, {props: {
                 config: {data: {}},
                 name: 'fieldname',
                 required: true,
@@ -648,54 +506,84 @@ describe('File Form component', () => {
             expect(str).toMatchSnapshot();
         });
     });
-    it('onClickDelete', () => {
-        let count = 0;
-        onClickDelete({
-            filename: 'fieldname',
-            filesize: 'fieldsize',
-            updateValue: (value, field) => {
-                count ++;
-                switch (field) {
-                    case 'fieldname':
-                        expect(value).toBe('');
-                        break;
-                    case 'fieldsize':
-                        expect(value).toBe(0);
-                        break;
-                    default:
-                        expect(value).toBe('');
-                }
-            }
+    it('Render icon', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {}},
+                name: 'fieldname',
+                icon: 'user'
+            }}),
         });
-        expect(count).toBe(3);
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
     });
-    it('updateFile', () => {
-        let count = 0;
-        updateFile(
-            {
-                filename: 'fieldname',
-                filesize: 'fieldsize',
-                updateValue: (value, field) => {
-                    count ++;
-                    switch (field) {
-                        case 'fieldname':
-                            expect(value).toBe('filename');
-                            break;
-                        case 'fieldsize':
-                            expect(value).toBe('filesize');
-                            break;
-                        default:
-                            expect(value).toBe('test');
-                    }
-                }, 
-            },
-            {
-                name: 'filename', 
-                size: 'filesize',
-            }, 
-            'test'
-        );
-        expect(count).toBe(3);
+    it('Render placeholder', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {}},
+                name: 'fieldname',
+                placeholder: 'The placeholder'
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render icon', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {}},
+                name: 'fieldname',
+                icon: 'user',
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render maxlenght (OK)', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 'password'}},
+                name: 'fieldname',
+                maxlength: 64,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render maxlenght (KO)', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(FieldFormMail, {props: {
+                config: {data: {fieldname: 'password'}},
+                name: 'fieldname',
+                maxlength: 4,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
     });
 });
-
