@@ -52,6 +52,16 @@ mode
 
 Called, when the router path is **/**
 
+``/furetui/button/<buttonId>``
+------------------------------
+
+Called, when the button is clicked with params in body:
+
+* viewId
+* model
+* dataIds
+* options
+
 ``/furetui/custom/view/<viewName>``
 -----------------------------------
 

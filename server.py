@@ -945,6 +945,7 @@ def getView3():
                         v-bind:model="model"
                         buttonId="6"
                         v-bind:options="{'test': 'The Test'}"
+                        icon="fa-underline"
                     >Button 6</furet-ui-form-button>
                 </div>
                 <div class="column is-6">
