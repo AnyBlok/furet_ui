@@ -177,7 +177,13 @@ export const FormView = Vue.component('furet-ui-form-view', {
                 class="box"
                 v-bind:style="{'margin-bottom': '20px'}"
             >
-                <component v-bind:is="form_card" v-bind:config="config"/>
+                <component 
+                    v-bind:is="form_card" 
+                    v-bind:config="config"
+                    v-bind:dataId="dataId"
+                    v-bind:viewId="viewId"
+                    v-bind:model="view && view.model"
+                />
             </section>
         </div>
     `,
@@ -202,7 +208,7 @@ export const FormView = Vue.component('furet-ui-form-view', {
             if (this.view) {
                 return {
                     template: this.view.template,
-                    props: ['config'],
+                    props: ['config', 'dataId', 'viewId', 'model'],
                 };
             }
             return {
@@ -350,7 +356,13 @@ export const X2MFormView = Vue.component('furet-ui-x2m-form-view', {
                 class="box"
                 v-bind:style="{'margin-bottom': '10px'}"
             >
-                <component v-bind:is="form_card" v-bind:config="config"/>
+                <component 
+                    v-bind:is="form_card" 
+                    v-bind:config="config"
+                    v-bind:dataId="dataId"
+                    v-bind:viewId="viewId"
+                    v-bind:model="view && view.model"
+                />
             </section>
         </div>
     `,
@@ -374,7 +386,7 @@ export const X2MFormView = Vue.component('furet-ui-x2m-form-view', {
             if (this.view) {
                 return {
                     template: this.view.template,
-                    props: ['config'],
+                    props: ['config', 'dataId', 'viewId', 'model'],
                 };
             }
             return {
@@ -414,6 +426,31 @@ export const FormGroup = Vue.component('furet-ui-form-group', {
     computed: {
         isInvisible () {
             return field_safe_eval(this.invisible, this.config.data || {});
+        },
+    },
+});
+
+export const FormButton = Vue.component('furet-ui-form-button', {
+    props: ['invisible', 'disabled', 'config', 'buttonId', 'label', 'options', 'viewId', 'model', 'dataId'],
+    render (h) {
+        if (this.isInvisible) return null;
+        const props = Object.assign({}, this.$props, {disabled: this.isDisabled})
+        return h('a', {props, 'class': {button: true}, on: {click: this.onClick}}, this.$slots.default);
+    },
+    computed: {
+        isInvisible () {
+            return field_safe_eval(this.invisible, this.config.data || {});
+        },
+        isDisabled () {
+            return field_safe_eval(this.disabled, this.config.data || {});
+        },
+    },
+    methods: {
+        onClick (event) {
+            event.stopPropagation();
+            json_post_dispatch_all(
+                '/button/' + this.buttonId, 
+                {viewId: this.viewId, model: this.model, options: this.options, dataIds: [this.dataId]});
         },
     },
 });

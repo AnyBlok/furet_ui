@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`furet-ui-form-button component Render invisible 1`] = `<!---->`;
+
+exports[`furet-ui-form-button component Render visible 1`] = `<a data-server-rendered="true" class="button"></a>`;
+
 exports[`furet-ui-form-view component Render with data 1 1`] = `
 <div data-server-rendered="true">
     <nav class="level">

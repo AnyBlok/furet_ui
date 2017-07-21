@@ -940,6 +940,9 @@ def getView3():
                 <div class="column is-6">
                     <furet-ui-form-button
                         v-bind:config="config"
+                        v-bind:dataId="dataId"
+                        v-bind:viewId="viewId"
+                        v-bind:model="model"
                         buttonId="6"
                         v-bind:options="{'test': 'The Test'}"
                     >Button 6</furet-ui-form-button>
