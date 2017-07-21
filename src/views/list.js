@@ -150,7 +150,7 @@ export const ListView = Vue.component('furet-ui-list-view', {
                                     v-for="button in view.buttons"
                                     v-bind:value="button.buttonId"
                                     v-bind:key="button.buttonId"
-                                    v-on:change="selectAction(button.buttonId)"
+                                    v-on:click="selectAction(button)"
                                 >
                                     {{button.label}}
                                 </b-dropdown-option>
@@ -170,7 +170,7 @@ export const ListView = Vue.component('furet-ui-list-view', {
                                     v-for="button in view.onSelect_buttons"
                                     v-bind:value="button.buttonId"
                                     v-bind:key="button.buttonId"
-                                    v-on:change="selectMore(button.buttonId)"
+                                    v-on:click="selectMore(button)"
                                 >
                                     {{button.label}}
                                 </b-dropdown-option>
@@ -222,6 +222,12 @@ export const ListView = Vue.component('furet-ui-list-view', {
         },
         updateCheck (checkedRows) {
             this.checkedRows = checkedRows;
+        },
+        selectMore (button) {
+            const dataIds = _.map(this.checkedRows, row => row.__dataId);
+            json_post_dispatch_all(
+                '/button/' + button.buttonId, 
+                {dataIds, viewId: this.viewId, model: this.view.model, options: button.options});
         },
     }
 });

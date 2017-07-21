@@ -794,6 +794,17 @@ def getView2():
                     />
                 </div>
                 <div class="column is-6">
+                    <furet-ui-thumbnail-button
+                        v-bind:data="card"
+                        v-bind:viewId="viewId"
+                        v-bind:model="model"
+                        buttonId="5"
+                        v-bind:options="{'test': 'The Test'}"
+                        disabled="fields.state == 'done'"
+                        class="is-success"
+                    >Button 5</furet-ui-thumbnail-button>
+                </div>
+                <div class="column is-6">
                     <furet-ui-thumbnail-field-selection
                         v-bind:data="card"
                         name="state"
@@ -883,7 +894,7 @@ def getView2():
         'buttons': [
             {
                 'label': 'Make a call',
-                'buttonId': '1',
+                'buttonId': '3',
             },
         ],
         'fields': [
@@ -925,6 +936,13 @@ def getView3():
                         label="Label"
                         icon="envelope"
                     />
+                </div>
+                <div class="column is-6">
+                    <furet-ui-form-button
+                        v-bind:config="config"
+                        buttonId="6"
+                        v-bind:options="{'test': 'The Test'}"
+                    >Button 6</furet-ui-form-button>
                 </div>
                 <div class="column is-6">
                     <furet-ui-form-field-selection
@@ -1031,7 +1049,7 @@ def getView3():
         'buttons': [
             {
                 'label': 'Make a call',
-                'buttonId': '1',
+                'buttonId': '4',
             },
         ],
         'fields': [
@@ -1930,6 +1948,30 @@ def searchData():
         session.close()
 
     return superDumps(_data)
+
+
+@route('/furetui/button/<buttonId>', method='POST')
+def getButton(buttonId):
+    response.set_header("Cache-Control", "public, max-age=604800")
+    data = loads(request.body.read())
+    message = '<ul>'
+    for k, v in data.items():
+        if k == 'options':
+            message += '<li><ul>'
+            message += ''.join(['<li><strong>%s : </strong>%s</li>' % (x, y)
+                                for x, y in v.items()])
+            message += '</ul></li>'
+        else:
+            message += '<li><strong>%s : </strong>%s</li>' % (k, v)
+
+    message += '</ul>'
+    return superDumps([{
+        'type': 'ADD_NOTIFICATION',
+        'process': 'dispatch',
+        'title': 'Click on button %r' % buttonId,
+        'message': message,
+        'duration': 2000,
+    }])
 
 
 def getFile(filename):

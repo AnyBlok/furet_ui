@@ -67,6 +67,11 @@ export const ViewMultiMixin = {
         },
         selectEntry (entry) {
             selectEntryMulti(this, entry);
-        }
+        },
+        selectAction (button) {
+            json_post_dispatch_all(
+                '/button/' + button.buttonId, 
+                {viewId: this.viewId, model: this.view.model, options: button.options});
+        },
     },
 }

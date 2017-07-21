@@ -164,7 +164,7 @@ export const FormView = Vue.component('furet-ui-form-view', {
                                     v-for="button in view.buttons"
                                     v-bind:value="button.buttonId"
                                     v-bind:key="button.buttonId"
-                                    v-on:change="selectAction(button.buttonId)"
+                                    v-on:click="selectAction(button)"
                                 >
                                     {{button.label}}
                                 </b-dropdown-option>
@@ -254,7 +254,12 @@ export const FormView = Vue.component('furet-ui-form-view', {
                     },
                 }
             )
-        }
+        },
+        selectAction (button) {
+            json_post_dispatch_all(
+                '/button/' + button.buttonId, 
+                {viewId: this.viewId, model: this.view.model, options: button.options, dataIds:[this.dataId]});
+        },
     }
 });
 
