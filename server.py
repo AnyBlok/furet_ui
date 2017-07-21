@@ -375,6 +375,48 @@ def _getInitOptionnalData():
             'type': 'SET_LOCALE',
             'locale': 'fr-FR',
         },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add without type',
+            'message': '<div>Sticky</div>',
+        },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add success',
+            'message': '<div>with duration 2 second</div>',
+            'notification_type': 'success',
+            'has_icon': True,
+            'duration': 2000,
+        },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add info',
+            'message': '<div>with duration 4 second</div>',
+            'notification_type': 'info',
+            'has_icon': True,
+            'duration': 4000,
+        },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add warning',
+            'message': '<div>with duration 6 second</div>',
+            'notification_type': 'warning',
+            'has_icon': True,
+            'duration': 6000,
+        },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add error',
+            'message': '<div>with duration 8 second</div>',
+            'notification_type': 'error',
+            'has_icon': True,
+            'duration': 8000,
+        },
     ]
     return superDumps(data)
 

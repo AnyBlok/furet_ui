@@ -11,6 +11,7 @@ import Vue from 'vue';
 import './menus';
 import './view';
 import './space';
+import './notifications';
 
 export const App = Vue.component('furet-ui', {
     template: `
@@ -28,6 +29,7 @@ export const App = Vue.component('furet-ui', {
                         </div>
                     </nav>
             </section>
+            <notifications></notifications>
             <router-view></router-view>
         </div>`,
     computed: {

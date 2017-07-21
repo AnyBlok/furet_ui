@@ -8,13 +8,20 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import _ from 'underscore';
+import uuid from 'uuid/v1';
 
 // initial state
 export const defaultState = {
     title: '',
     modal_custom_view: '',
     breadscrumbs: [],
+    notifications: [],
 };
+export const defaultNotif = {
+    title: '',
+    message: '',
+    has_icon: false,
+}
 
 // getters
 export const getters = {
@@ -22,6 +29,15 @@ export const getters = {
 
 // actions
 export const actions = {
+    'ADD_NOTIFICATION'({commit}, payload) {
+        const id = uuid();
+        const notif = Object.assign({}, defaultNotif, payload, {id});
+        delete notif.process;
+        commit('ADD_NOTIFICATION', notif);
+        if (notif.duration) {
+            setTimeout(() => {commit('REMOVE_NOTIFICATION', {id})}, notif.duration);
+        }
+    },
 };
 
 // mutations
@@ -47,10 +63,20 @@ export const mutations = {
     'CLEAR_BREADSCRUMB'(state, action) {
         state.breadscrumbs = [];
     },
+    'ADD_NOTIFICATION'(state, action) {
+        const notifications = state.notifications.slice(0);
+        notifications.push(action);
+        state.notifications = notifications;
+    },
+    'REMOVE_NOTIFICATION'(state, action) {
+        const notifications = state.notifications.slice(0);
+        state.notifications = _.filter(notifications, n => n.id != action.id);
+    },
     'CLEAR_GLOBAL'(state, action) {
         state.title = '';
         state.modal_custom_view = '';
         state.breadscrumbs = [];
+        state.notifications = [];
     },
 };
 
