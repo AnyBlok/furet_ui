@@ -11,7 +11,6 @@ import plugin from '../../plugin';
 import {json_post_dispatch_all} from '../../server-call';
 
 export const Logout = ({router}) => {
-    router.push('/');
     json_post_dispatch_all('/client/logout', {});
 };
 

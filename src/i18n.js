@@ -40,6 +40,10 @@ export const i18nConf = {
                     login: {
                         button: 'Log in',
                     },
+                    homepage: {
+                        title: 'Welcome to FuretUI',
+                        description: 'The only client for your server',
+                    },
                 },
             },
             fields: {

@@ -18,7 +18,14 @@ exports[`Space component Render 1`] = `
                 <!---->
             </div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!---->
 </div>
@@ -46,7 +53,14 @@ exports[`Space component Render breadscrumb 1`] = `
                 <!---->
             </div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!---->
 </div>
@@ -77,7 +91,14 @@ exports[`Space component Render breadscrumb 2`] = `
                 <!---->
             </div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!---->
 </div>
@@ -114,7 +135,14 @@ exports[`Space component Render breadscrumb 3`] = `
                 <!---->
             </div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!---->
 </div>
@@ -199,7 +227,14 @@ exports[`Space component Render display left menu (close) 1`] = `
                 <!---->
             </div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!---->
 </div>
@@ -262,7 +297,14 @@ exports[`Space component Render display left menu (open) 1`] = `
                 <!---->
             </div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!---->
 </div>
@@ -292,7 +334,14 @@ exports[`Space component Render display right menu (close) 1`] = `
                     <!---->
                 </div> <a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a></div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!---->
 </div>
@@ -322,7 +371,14 @@ exports[`Space component Render display right menu (open) 1`] = `
                     <!---->
                 </div> <a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a></div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <div class="column is-one-quarter is-half-mobile">
         <aside class="menu" style="padding:5px;">
@@ -444,7 +500,14 @@ exports[`View Selector component Render 1`] = `
                 <!---->
             </div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!---->
 </div>
@@ -468,7 +531,14 @@ exports[`View Selector component Render unclickable selected 1`] = `
                 <!---->
             </div>
         </nav>
-        <!---->
+        <section class="section content">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <h1>Welcome to FuretUI</h1>
+                    <p>The only client for your server</p>
+                </div>
+            </div>
+        </section>
     </div>
     <!---->
 </div>

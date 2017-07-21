@@ -288,7 +288,7 @@ def superDumps(data):
     return dumps(data, default=json_serial)
 
 
-def _getInitRequiredData():
+def _getInitRequiredData(tohomepage=False):
     data = [
         {
             'type': 'UPDATE_RIGHT_MENU',
@@ -317,6 +317,11 @@ def _getInitRequiredData():
             'type': 'CLEAR_LEFT_MENU',
         },
     ]
+    if tohomepage:
+        data.append({
+            'type': 'UPDATE_ROUTE',
+            'path': '/',
+        })
     return superDumps(data)
 
 
@@ -350,6 +355,10 @@ def _getInitOptionnalData():
                             'clients': {
                                 'login': {
                                     'button': 'Connexion',
+                                },
+                                'homepage': {
+                                    'title': 'Bienvue sur FuretUI',
+                                    'description': 'Le seul client pour votre server',
                                 },
                             },
                         },
@@ -1725,7 +1734,7 @@ def getInitRequiredData():
 @route('/furetui/client/logout', method='POST')
 def getLogout():
     response.set_header('Content-Type', 'application/json')
-    return _getInitRequiredData()
+    return _getInitRequiredData(tohomepage=True)
 
 
 @route('/furetui/init/optionnal/data', method='POST')
