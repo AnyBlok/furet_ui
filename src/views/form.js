@@ -429,7 +429,7 @@ export const FormGroup = Vue.component('furet-ui-form-group', {
 });
 
 export const FormButton = Vue.component('furet-ui-form-button', {
-    props: ['invisible', 'disabled', 'config', 'buttonId', 'label', 'options', 'viewId', 'model', 'dataId'],
+    props: ['config', 'dataId'],
     mixins: [ButtonMixin],
     computed: {
         isInvisible () {

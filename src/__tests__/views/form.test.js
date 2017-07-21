@@ -617,8 +617,7 @@ describe('furet-ui-form-button component', () => {
                 <furet-ui-form-button
                     v-bind:config="{data: {fieldname: false}}"
                     invisible="fields.fieldname"
-                    label="The label"
-                />
+                >The label</furet-ui-form-button>
             `,
         });
         renderer.renderToString(vm, (err, str) => {
@@ -635,8 +634,24 @@ describe('furet-ui-form-button component', () => {
                 <furet-ui-form-button
                     v-bind:config="{data: {fieldname: true}}"
                     invisible="fields.fieldname"
-                    label="The label"
-                />
+                >The label</furet-ui-form-button>
+            `,
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render icon', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            template: `
+                <furet-ui-form-button
+                    v-bind:config="{data: {fieldname: true}}"
+                    icon="fa-underline"
+                >The label</furet-ui-form-button>
             `,
         });
         renderer.renderToString(vm, (err, str) => {

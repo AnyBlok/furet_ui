@@ -85,11 +85,16 @@ export const GroupMixin = {
 }
 
 export const ButtonMixin = {
-    props: ['invisible', 'disabled', 'buttonId', 'label', 'options', 'viewId', 'model'],
+    props: ['invisible', 'disabled', 'buttonId', 'label', 'options', 'viewId', 'model', 'icon'],
     render (h) {
         if (this.isInvisible) return null;
         const props = Object.assign({}, this.$props, {disabled: this.isDisabled})
-        return h('a', {props, 'class': {button: true}, on: {click: this.onClick}}, this.$slots.default);
+        const children = [];
+        if (this.icon) {
+            children.push(h('span', {'class': 'icon'}, [h('i', {'class': 'fa ' + this.icon})]));
+        }
+        children.push(h('span', this.$slots.default));
+        return h('a', {props, 'class': {button: true}, on: {click: this.onClick}}, children);
     },
     methods: {
         onClick (event) {
