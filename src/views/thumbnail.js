@@ -10,7 +10,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import Vue from 'vue';
 import plugin from '../plugin';
 import _ from 'underscore';
-import {ViewMultiMixin} from './common';
+import {ViewMultiMixin, GroupMixin, ButtonMixin} from './common';
 import {X2MViewMultiMixin} from './x2m-common';
 import {safe_eval as field_safe_eval} from '../fields/common';
 import {json_post_dispatch_all} from '../server-call';
@@ -228,10 +228,7 @@ plugin.set(['views', 'x2m-type'], {Thumbnail: 'furet-ui-x2m-thumbnail-view'});
 
 export const ThumbnailGroup = Vue.component('furet-ui-thumbnail-group', {
     props: ['invisible', 'data'],
-    render (h) {
-        if (this.isInvisible) return null;
-        return h('div', {props: this.$props}, this.$slots.default);
-    },
+    mixins: [GroupMixin],
     computed: {
         isInvisible () {
             return field_safe_eval(this.invisible, this.data || {});
@@ -240,12 +237,8 @@ export const ThumbnailGroup = Vue.component('furet-ui-thumbnail-group', {
 });
 
 export const ThumbnailButton = Vue.component('furet-ui-thumbnail-button', {
-    props: ['invisible', 'disabled', 'data', 'buttonId', 'label', 'options', 'viewId', 'model'],
-    render (h) {
-        if (this.isInvisible) return null;
-        const props = Object.assign({}, this.$props, {disabled: this.isDisabled})
-        return h('a', {props, 'class': {button: true}, on: {click: this.onClick}}, this.$slots.default);
-    },
+    props: ['data'],
+    mixins: [ButtonMixin],
     computed: {
         isInvisible () {
             return field_safe_eval(this.invisible, this.data || {});
@@ -253,13 +246,8 @@ export const ThumbnailButton = Vue.component('furet-ui-thumbnail-button', {
         isDisabled () {
             return field_safe_eval(this.disabled, this.data || {});
         },
-    },
-    methods: {
-        onClick (event) {
-            event.stopPropagation();
-            json_post_dispatch_all(
-                '/button/' + this.buttonId, 
-                {viewId: this.viewId, model: this.model, options: this.options, dataIds: [this.data && this.data.__dataId]});
-        },
+        dataId () {
+            return this.data && this.data.__dataId;
+        }
     },
 });

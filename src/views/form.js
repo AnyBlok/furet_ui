@@ -13,6 +13,7 @@ import {dispatchAll} from '../store';
 import {json_post, json_post_dispatch_all} from '../server-call';
 import {getNewID} from '../view';
 import _ from 'underscore';
+import {GroupMixin, ButtonMixin} from './common';
 import {safe_eval as field_safe_eval} from '../fields/common';
 
 /**
@@ -419,10 +420,7 @@ plugin.set(['views', 'x2m-type'], {Form: 'furet-ui-x2m-form-view'});
 
 export const FormGroup = Vue.component('furet-ui-form-group', {
     props: ['invisible', 'config'],
-    render (h) {
-        if (this.isInvisible) return null;
-        return h('div', {props: this.$props}, this.$slots.default);
-    },
+    mixins: [GroupMixin],
     computed: {
         isInvisible () {
             return field_safe_eval(this.invisible, this.config.data || {});
@@ -432,25 +430,13 @@ export const FormGroup = Vue.component('furet-ui-form-group', {
 
 export const FormButton = Vue.component('furet-ui-form-button', {
     props: ['invisible', 'disabled', 'config', 'buttonId', 'label', 'options', 'viewId', 'model', 'dataId'],
-    render (h) {
-        if (this.isInvisible) return null;
-        const props = Object.assign({}, this.$props, {disabled: this.isDisabled})
-        return h('a', {props, 'class': {button: true}, on: {click: this.onClick}}, this.$slots.default);
-    },
+    mixins: [ButtonMixin],
     computed: {
         isInvisible () {
             return field_safe_eval(this.invisible, this.config.data || {});
         },
         isDisabled () {
             return field_safe_eval(this.disabled, this.config.data || {});
-        },
-    },
-    methods: {
-        onClick (event) {
-            event.stopPropagation();
-            json_post_dispatch_all(
-                '/button/' + this.buttonId, 
-                {viewId: this.viewId, model: this.model, options: this.options, dataIds: [this.dataId]});
         },
     },
 });

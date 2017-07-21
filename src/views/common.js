@@ -75,3 +75,28 @@ export const ViewMultiMixin = {
         },
     },
 }
+
+export const GroupMixin = {
+    props: ['invisible'],
+    render (h) {
+        if (this.isInvisible) return null;
+        return h('div', {props: this.$props}, this.$slots.default);
+    },
+}
+
+export const ButtonMixin = {
+    props: ['invisible', 'disabled', 'buttonId', 'label', 'options', 'viewId', 'model'],
+    render (h) {
+        if (this.isInvisible) return null;
+        const props = Object.assign({}, this.$props, {disabled: this.isDisabled})
+        return h('a', {props, 'class': {button: true}, on: {click: this.onClick}}, this.$slots.default);
+    },
+    methods: {
+        onClick (event) {
+            event.stopPropagation();
+            json_post_dispatch_all(
+                '/button/' + this.buttonId, 
+                {viewId: this.viewId, model: this.model, options: this.options, dataIds: [this.dataId]});
+        },
+    },
+};
