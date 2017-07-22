@@ -860,7 +860,7 @@ def getView2():
                     invisible="!fields.color"
                     class="column is-6"
                 >
-                    <furet-ui-thumbnail-field-text
+                    <furet-ui-thumbnail-field-richtext
                         v-bind:data="card"
                         name="text"
                         label="Text"
@@ -1026,7 +1026,7 @@ def getView3():
                     invisible="!fields.color"
                     class="column is-6 titietgrosminet"
                 >
-                    <furet-ui-form-field-text
+                    <furet-ui-form-field-richtext
                         v-bind:config="config"
                         name="text"
                         label="Text"

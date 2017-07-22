@@ -18,6 +18,7 @@ import './url';
 import './password';
 import './color';
 import './text';
+import './rich-text';
 import './boolean';
 import './json';
 import './relationship';

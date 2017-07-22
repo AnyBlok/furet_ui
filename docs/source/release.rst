@@ -11,10 +11,12 @@
 RELEASE
 =======
 
-latest
-------
+1.1.0 (2017-07-22)
+------------------
 
 * Fix some documentation
+* Rename Text to RichText
+* Add Field Text
 
 
 1.0.0 (2017-07-22)

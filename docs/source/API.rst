@@ -125,6 +125,7 @@ The list are:
 * JSON
 * Mail
 * Password
+* RichText
 * Selection
 * String
 * Text
