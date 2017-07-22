@@ -67,6 +67,41 @@ export const ViewMultiMixin = {
         },
         selectEntry (entry) {
             selectEntryMulti(this, entry);
-        }
+        },
+        selectAction (button) {
+            json_post_dispatch_all(
+                '/button/' + button.buttonId, 
+                {viewId: this.viewId, model: this.view.model, options: button.options});
+        },
     },
 }
+
+export const GroupMixin = {
+    props: ['invisible'],
+    render (h) {
+        if (this.isInvisible) return null;
+        return h('div', {props: this.$props}, this.$slots.default);
+    },
+}
+
+export const ButtonMixin = {
+    props: ['invisible', 'disabled', 'buttonId', 'label', 'options', 'viewId', 'model', 'icon'],
+    render (h) {
+        if (this.isInvisible) return null;
+        const props = Object.assign({}, this.$props, {disabled: this.isDisabled})
+        const children = [];
+        if (this.icon) {
+            children.push(h('span', {'class': 'icon'}, [h('i', {'class': 'fa ' + this.icon})]));
+        }
+        children.push(h('span', this.$slots.default));
+        return h('a', {props, 'class': {button: true}, on: {click: this.onClick}}, children);
+    },
+    methods: {
+        onClick (event) {
+            event.stopPropagation();
+            json_post_dispatch_all(
+                '/button/' + this.buttonId, 
+                {viewId: this.viewId, model: this.model, options: this.options, dataIds: [this.dataId]});
+        },
+    },
+};

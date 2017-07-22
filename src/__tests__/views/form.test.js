@@ -600,3 +600,62 @@ describe('furet-ui-thumbnail-group component', () => {
         });
     });
 });
+
+describe('furet-ui-form-button component', () => {
+    const renderer = require('vue-server-renderer').createRenderer();
+    beforeEach(() => {
+        store.dispatch('UNITEST_CLEAR');
+        router.push({path: '/'});
+    });
+    it('Render visible', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            template: `
+                <furet-ui-form-button
+                    v-bind:config="{data: {fieldname: false}}"
+                    invisible="fields.fieldname"
+                >The label</furet-ui-form-button>
+            `,
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render invisible', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            template: `
+                <furet-ui-form-button
+                    v-bind:config="{data: {fieldname: true}}"
+                    invisible="fields.fieldname"
+                >The label</furet-ui-form-button>
+            `,
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render icon', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            template: `
+                <furet-ui-form-button
+                    v-bind:config="{data: {fieldname: true}}"
+                    icon="fa-underline"
+                >The label</furet-ui-form-button>
+            `,
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+});

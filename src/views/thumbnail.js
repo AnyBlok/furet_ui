@@ -10,9 +10,10 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import Vue from 'vue';
 import plugin from '../plugin';
 import _ from 'underscore';
-import {ViewMultiMixin} from './common';
+import {ViewMultiMixin, GroupMixin, ButtonMixin} from './common';
 import {X2MViewMultiMixin} from './x2m-common';
 import {safe_eval as field_safe_eval} from '../fields/common';
+import {json_post_dispatch_all} from '../server-call';
 
 /**
  * Add Icon for Thumbnail view
@@ -76,7 +77,7 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
                                     v-for="button in view.buttons"
                                     v-bind:value="button.buttonId"
                                     v-bind:key="button.buttonId"
-                                    v-on:change="selectAction(button.buttonId)"
+                                    v-on:click="selectAction(button)"
                                 >
                                     {{button.label}}
                                 </b-dropdown-option>
@@ -103,7 +104,12 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
                         v-on:click.stop="selectEntry(card)"
                         v-bind:style="getStyle(card)"
                     >
-                        <component v-bind:is="thumbnail_card" v-bind:card="card"/>
+                        <component 
+                            v-bind:is="thumbnail_card" 
+                            v-bind:card="card"
+                            v-bind:viewId="viewId"
+                            v-bind:model="view && view.model"
+                        />
                     </article>
                 </div>
             </div>
@@ -127,7 +133,7 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
             if (this.view) {
                 return {
                     template: this.view.template,
-                    props: ['card'],
+                    props: ['card', 'viewId', 'model'],
                 };
             }
             return {
@@ -180,7 +186,12 @@ export const X2MThumbnailView = Vue.component('furet-ui-x2m-thumbnail-view', {
                         v-on:click.stop="selectEntry(card)"
                         v-bind:style="getStyle(card)"
                     >
-                        <component v-bind:is="thumbnail_card" v-bind:card="card"/>
+                        <component 
+                            v-bind:is="thumbnail_card" 
+                            v-bind:card="card"
+                            v-bind:viewId="viewId"
+                            v-bind:model="view && view.model"
+                        />
                     </article>
                 </div>
             </div>
@@ -198,11 +209,11 @@ export const X2MThumbnailView = Vue.component('furet-ui-x2m-thumbnail-view', {
             if (this.view) {
                 return {
                     template: this.view.template,
-                    props: ['card'],
+                    props: ['card', 'viewId', 'model'],
                 };
             }
             return {
-                template: '<div></div>'
+                template: '<div></div>',
             };
         },
     },
@@ -217,13 +228,26 @@ plugin.set(['views', 'x2m-type'], {Thumbnail: 'furet-ui-x2m-thumbnail-view'});
 
 export const ThumbnailGroup = Vue.component('furet-ui-thumbnail-group', {
     props: ['invisible', 'data'],
-    render (h) {
-        if (this.isInvisible) return null;
-        return h('div', {props: this.$props}, this.$slots.default);
-    },
+    mixins: [GroupMixin],
     computed: {
         isInvisible () {
             return field_safe_eval(this.invisible, this.data || {});
         },
+    },
+});
+
+export const ThumbnailButton = Vue.component('furet-ui-thumbnail-button', {
+    props: ['data'],
+    mixins: [ButtonMixin],
+    computed: {
+        isInvisible () {
+            return field_safe_eval(this.invisible, this.data || {});
+        },
+        isDisabled () {
+            return field_safe_eval(this.disabled, this.data || {});
+        },
+        dataId () {
+            return this.data && this.data.__dataId;
+        }
     },
 });

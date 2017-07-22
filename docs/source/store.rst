@@ -190,6 +190,52 @@ Clear all the breadcrumb entries::
         type: 'CLEAR_BREADSCRUMB',
     }
 
+ADD_NOTIFICATION (mutation)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Add new notification in the notification stack::
+
+    {
+        type: 'ADD_NOTIFICATION',
+        process: 'commit',
+        id: ``unique id``
+        title: ``title of the notification``
+        message: ``html template of the message``,
+        has_icon: ``display icon only for notification type success, info, warning or error``,
+        notification_type: [ '' | success | info | warning | error ],
+    }
+
+.. warning:: 
+
+    If you need duration, you must use the action not the mutation
+
+ADD_NOTIFICATION (action)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Add new notification in the notification stack::
+
+    {
+        type: 'ADD_NOTIFICATION',
+        process: 'dispatch',
+        id: ``unique id``
+        title: ``title of the notification``
+        message: ``html template of the message``,
+        has_icon: ``display icon only for notification type success, info, warning or error``,
+        notification_type: [ '' | success | info | warning | error ],
+        duration: ``number of the duration before remove, null for sticky``,
+    }
+
+REMOVE_NOTIFICATION
+~~~~~~~~~~~~~~~~~~~
+
+Remove from notifications stack the notification id::
+
+    {
+        type: 'REMOVE_NOTIFICATION',
+        id: ``id of the notification``,
+    }
+
+
 data
 ----
 

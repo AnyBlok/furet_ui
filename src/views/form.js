@@ -13,6 +13,7 @@ import {dispatchAll} from '../store';
 import {json_post, json_post_dispatch_all} from '../server-call';
 import {getNewID} from '../view';
 import _ from 'underscore';
+import {GroupMixin, ButtonMixin} from './common';
 import {safe_eval as field_safe_eval} from '../fields/common';
 
 /**
@@ -164,7 +165,7 @@ export const FormView = Vue.component('furet-ui-form-view', {
                                     v-for="button in view.buttons"
                                     v-bind:value="button.buttonId"
                                     v-bind:key="button.buttonId"
-                                    v-on:change="selectAction(button.buttonId)"
+                                    v-on:click="selectAction(button)"
                                 >
                                     {{button.label}}
                                 </b-dropdown-option>
@@ -177,7 +178,13 @@ export const FormView = Vue.component('furet-ui-form-view', {
                 class="box"
                 v-bind:style="{'margin-bottom': '20px'}"
             >
-                <component v-bind:is="form_card" v-bind:config="config"/>
+                <component 
+                    v-bind:is="form_card" 
+                    v-bind:config="config"
+                    v-bind:dataId="dataId"
+                    v-bind:viewId="viewId"
+                    v-bind:model="view && view.model"
+                />
             </section>
         </div>
     `,
@@ -202,7 +209,7 @@ export const FormView = Vue.component('furet-ui-form-view', {
             if (this.view) {
                 return {
                     template: this.view.template,
-                    props: ['config'],
+                    props: ['config', 'dataId', 'viewId', 'model'],
                 };
             }
             return {
@@ -254,7 +261,12 @@ export const FormView = Vue.component('furet-ui-form-view', {
                     },
                 }
             )
-        }
+        },
+        selectAction (button) {
+            json_post_dispatch_all(
+                '/button/' + button.buttonId, 
+                {viewId: this.viewId, model: this.view.model, options: button.options, dataIds:[this.dataId]});
+        },
     }
 });
 
@@ -345,7 +357,13 @@ export const X2MFormView = Vue.component('furet-ui-x2m-form-view', {
                 class="box"
                 v-bind:style="{'margin-bottom': '10px'}"
             >
-                <component v-bind:is="form_card" v-bind:config="config"/>
+                <component 
+                    v-bind:is="form_card" 
+                    v-bind:config="config"
+                    v-bind:dataId="dataId"
+                    v-bind:viewId="viewId"
+                    v-bind:model="view && view.model"
+                />
             </section>
         </div>
     `,
@@ -369,7 +387,7 @@ export const X2MFormView = Vue.component('furet-ui-x2m-form-view', {
             if (this.view) {
                 return {
                     template: this.view.template,
-                    props: ['config'],
+                    props: ['config', 'dataId', 'viewId', 'model'],
                 };
             }
             return {
@@ -402,13 +420,23 @@ plugin.set(['views', 'x2m-type'], {Form: 'furet-ui-x2m-form-view'});
 
 export const FormGroup = Vue.component('furet-ui-form-group', {
     props: ['invisible', 'config'],
-    render (h) {
-        if (this.isInvisible) return null;
-        return h('div', {props: this.$props}, this.$slots.default);
-    },
+    mixins: [GroupMixin],
     computed: {
         isInvisible () {
             return field_safe_eval(this.invisible, this.config.data || {});
+        },
+    },
+});
+
+export const FormButton = Vue.component('furet-ui-form-button', {
+    props: ['config', 'dataId'],
+    mixins: [ButtonMixin],
+    computed: {
+        isInvisible () {
+            return field_safe_eval(this.invisible, this.config.data || {});
+        },
+        isDisabled () {
+            return field_safe_eval(this.disabled, this.config.data || {});
         },
     },
 });

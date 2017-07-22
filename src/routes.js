@@ -66,6 +66,17 @@ const View = {
 export const router = new VueRouter({
     routes: [
         {
+            path: '/',
+            name: 'homepage',
+            component: {
+                template: '<furet-ui-homepage />',
+                beforeRouteEnter: (to, from, next) => {
+                    json_post_dispatch_all('/homepage');
+                    next();
+                },
+            },
+        },
+        {
             path: '/custom/view/:viewName',
             name: 'custom_view',
             props: true,

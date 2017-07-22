@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`furet-ui-thumbnail-button component Render icon 1`] = `<a data-server-rendered="true" class="button"><span class="icon"><i class="fa fa-underline"></i></span><span>The label</span></a>`;
+
+exports[`furet-ui-thumbnail-button component Render invisible 1`] = `<!---->`;
+
+exports[`furet-ui-thumbnail-button component Render visible 1`] = `<a data-server-rendered="true" class="button"><span>The label</span></a>`;
+
 exports[`furet-ui-thumbnail-group component Render invisible 1`] = `<!---->`;
 
 exports[`furet-ui-thumbnail-group component Render visible 1`] = `<div data-server-rendered="true"><span>Test</span></div>`;

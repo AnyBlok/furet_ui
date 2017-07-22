@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notifications component notification 1`] = `
+<article data-server-rendered="true" class="message">
+    <header class="message-header">
+        <p>Title 1</p> <button type="button" class="delete"></button></header>
+    <section class="message-body">
+        <div class="media">
+            <!---->
+            <div class="media-content">
+                <div><span>Message 1</span></div>
+            </div>
+        </div>
+    </section>
+</article>
+`;
+
+exports[`Notifications component notification error with icon 1`] = `
+<article data-server-rendered="true" class="message is-danger">
+    <header class="message-header">
+        <p>Title 1</p> <button type="button" class="delete"></button></header>
+    <section class="message-body">
+        <div class="media">
+            <div class="media-left"><span class="icon is-large is-danger"><i class="fa fa-exclamation-circle"></i></span></div>
+            <div class="media-content">
+                <div><span>Message 1</span></div>
+            </div>
+        </div>
+    </section>
+</article>
+`;
+
+exports[`Notifications component notification info with icon 1`] = `
+<article data-server-rendered="true" class="message is-info">
+    <header class="message-header">
+        <p>Title 1</p> <button type="button" class="delete"></button></header>
+    <section class="message-body">
+        <div class="media">
+            <div class="media-left"><span class="icon is-large is-info"><i class="fa fa-info-circle"></i></span></div>
+            <div class="media-content">
+                <div><span>Message 1</span></div>
+            </div>
+        </div>
+    </section>
+</article>
+`;
+
+exports[`Notifications component notification success with icon 1`] = `
+<article data-server-rendered="true" class="message is-success">
+    <header class="message-header">
+        <p>Title 1</p> <button type="button" class="delete"></button></header>
+    <section class="message-body">
+        <div class="media">
+            <div class="media-left"><span class="icon is-large is-success"><i class="fa fa-check-circle"></i></span></div>
+            <div class="media-content">
+                <div><span>Message 1</span></div>
+            </div>
+        </div>
+    </section>
+</article>
+`;
+
+exports[`Notifications component notification warning with icon 1`] = `
+<article data-server-rendered="true" class="message is-warning">
+    <header class="message-header">
+        <p>Title 1</p> <button type="button" class="delete"></button></header>
+    <section class="message-body">
+        <div class="media">
+            <div class="media-left"><span class="icon is-large is-warning"><i class="fa fa-exclamation-triangle"></i></span></div>
+            <div class="media-content">
+                <div><span>Message 1</span></div>
+            </div>
+        </div>
+    </section>
+</article>
+`;
+
+exports[`Notifications component notifications 1`] = `<div data-server-rendered="true" style="position:fixed;right:10px;top:60px;width:400px;z-index:1000;"></div>`;
+
+exports[`Notifications component notifications 2`] = `
+<div data-server-rendered="true" style="position:fixed;right:10px;top:60px;width:400px;z-index:1000;">
+    <article class="message">
+        <header class="message-header">
+            <p>Title 1</p> <button type="button" class="delete"></button></header>
+        <section class="message-body">
+            <div class="media">
+                <!---->
+                <div class="media-content">
+                    <div>Message 1</div>
+                </div>
+            </div>
+        </section>
+    </article>
+</div>
+`;
+
+exports[`Notifications component notifications 3`] = `
+<div data-server-rendered="true" style="position:fixed;right:10px;top:60px;width:400px;z-index:1000;">
+    <article class="message">
+        <header class="message-header">
+            <p>Title 1</p> <button type="button" class="delete"></button></header>
+        <section class="message-body">
+            <div class="media">
+                <!---->
+                <div class="media-content">
+                    <div>Message 1</div>
+                </div>
+            </div>
+        </section>
+    </article>
+    <article class="message">
+        <header class="message-header">
+            <p>Title 2</p> <button type="button" class="delete"></button></header>
+        <section class="message-body">
+            <div class="media">
+                <!---->
+                <div class="media-content">
+                    <div>Message 2</div>
+                </div>
+            </div>
+        </section>
+    </article>
+</div>
+`;

@@ -54,6 +54,10 @@ describe('Route component', () => {
         renderer.renderToString(vm, (err, str) => {
             expect(str).toMatchSnapshot();
         });
+        router.push({path: '/'});
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
     });
     it('Render App with space', () => {
         const vm = new Vue({

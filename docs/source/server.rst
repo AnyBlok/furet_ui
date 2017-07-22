@@ -47,6 +47,21 @@ mode
     The query can be slower than required data because the main data is already present and
     this application may be usable.
 
+``/furetui/homepage``
+---------------------
+
+Called, when the router path is **/**
+
+``/furetui/button/<buttonId>``
+------------------------------
+
+Called, when the button is clicked with params in body:
+
+* viewId
+* model
+* dataIds
+* options
+
 ``/furetui/custom/view/<viewName>``
 -----------------------------------
 

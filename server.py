@@ -288,7 +288,7 @@ def superDumps(data):
     return dumps(data, default=json_serial)
 
 
-def _getInitRequiredData():
+def _getInitRequiredData(tohomepage=False):
     data = [
         {
             'type': 'UPDATE_RIGHT_MENU',
@@ -317,6 +317,11 @@ def _getInitRequiredData():
             'type': 'CLEAR_LEFT_MENU',
         },
     ]
+    if tohomepage:
+        data.append({
+            'type': 'UPDATE_ROUTE',
+            'path': '/',
+        })
     return superDumps(data)
 
 
@@ -351,6 +356,10 @@ def _getInitOptionnalData():
                                 'login': {
                                     'button': 'Connexion',
                                 },
+                                'homepage': {
+                                    'title': 'Bienvue sur FuretUI',
+                                    'description': 'Le seul client pour votre server',
+                                },
                             },
                         },
                         'fields': {
@@ -374,6 +383,48 @@ def _getInitOptionnalData():
         {
             'type': 'SET_LOCALE',
             'locale': 'fr-FR',
+        },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add without type',
+            'message': '<div>Sticky</div>',
+        },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add success',
+            'message': '<div>with duration 2 second</div>',
+            'notification_type': 'success',
+            'has_icon': True,
+            'duration': 2000,
+        },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add info',
+            'message': '<div>with duration 4 second</div>',
+            'notification_type': 'info',
+            'has_icon': True,
+            'duration': 4000,
+        },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add warning',
+            'message': '<div>with duration 6 second</div>',
+            'notification_type': 'warning',
+            'has_icon': True,
+            'duration': 6000,
+        },
+        {
+            'type': 'ADD_NOTIFICATION',
+            'process': 'dispatch',
+            'title': 'Add error',
+            'message': '<div>with duration 8 second</div>',
+            'notification_type': 'error',
+            'has_icon': True,
+            'duration': 8000,
         },
     ]
     return superDumps(data)
@@ -743,6 +794,17 @@ def getView2():
                     />
                 </div>
                 <div class="column is-6">
+                    <furet-ui-thumbnail-button
+                        v-bind:data="card"
+                        v-bind:viewId="viewId"
+                        v-bind:model="model"
+                        buttonId="5"
+                        v-bind:options="{'test': 'The Test'}"
+                        disabled="fields.state == 'done'"
+                        class="is-success"
+                    >Button 5</furet-ui-thumbnail-button>
+                </div>
+                <div class="column is-6">
                     <furet-ui-thumbnail-field-selection
                         v-bind:data="card"
                         name="state"
@@ -832,7 +894,7 @@ def getView2():
         'buttons': [
             {
                 'label': 'Make a call',
-                'buttonId': '1',
+                'buttonId': '3',
             },
         ],
         'fields': [
@@ -874,6 +936,17 @@ def getView3():
                         label="Label"
                         icon="envelope"
                     />
+                </div>
+                <div class="column is-6">
+                    <furet-ui-form-button
+                        v-bind:config="config"
+                        v-bind:dataId="dataId"
+                        v-bind:viewId="viewId"
+                        v-bind:model="model"
+                        buttonId="6"
+                        v-bind:options="{'test': 'The Test'}"
+                        icon="fa-underline"
+                    >Button 6</furet-ui-form-button>
                 </div>
                 <div class="column is-6">
                     <furet-ui-form-field-selection
@@ -980,7 +1053,7 @@ def getView3():
         'buttons': [
             {
                 'label': 'Make a call',
-                'buttonId': '1',
+                'buttonId': '4',
             },
         ],
         'fields': [
@@ -1683,7 +1756,7 @@ def getInitRequiredData():
 @route('/furetui/client/logout', method='POST')
 def getLogout():
     response.set_header('Content-Type', 'application/json')
-    return _getInitRequiredData()
+    return _getInitRequiredData(tohomepage=True)
 
 
 @route('/furetui/init/optionnal/data', method='POST')
@@ -1879,6 +1952,30 @@ def searchData():
         session.close()
 
     return superDumps(_data)
+
+
+@route('/furetui/button/<buttonId>', method='POST')
+def getButton(buttonId):
+    response.set_header("Cache-Control", "public, max-age=604800")
+    data = loads(request.body.read())
+    message = '<ul>'
+    for k, v in data.items():
+        if k == 'options':
+            message += '<li><ul>'
+            message += ''.join(['<li><strong>%s : </strong>%s</li>' % (x, y)
+                                for x, y in v.items()])
+            message += '</ul></li>'
+        else:
+            message += '<li><strong>%s : </strong>%s</li>' % (k, v)
+
+    message += '</ul>'
+    return superDumps([{
+        'type': 'ADD_NOTIFICATION',
+        'process': 'dispatch',
+        'title': 'Click on button %r' % buttonId,
+        'message': message,
+        'duration': 2000,
+    }])
 
 
 def getFile(filename):

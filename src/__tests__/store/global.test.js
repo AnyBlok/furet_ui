@@ -8,9 +8,10 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import chai from 'chai';
-import {defaultState, mutations} from '../../store/modules/global';
+import {defaultState, mutations, actions} from '../../store/modules/global';
+jest.useFakeTimers();
 
-describe('store.state.client', () => {
+describe('store.state.global', () => {
     let state;
     beforeEach(() => {
         state = JSON.parse(JSON.stringify(defaultState));
@@ -24,6 +25,7 @@ describe('store.state.client', () => {
             title: 'Test',
             modal_custom_view: 'A modal custom view',
             breadscrumbs: [],
+            notifications: [],
         }
         mutations.UPDATE_GLOBAL(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -45,6 +47,7 @@ describe('store.state.client', () => {
                     position: 0,
                 },
             ],
+            notifications: [],
         }
         mutations.ADD_IN_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -80,6 +83,7 @@ describe('store.state.client', () => {
                     position: 1,
                 },
             ],
+            notifications: [],
         }
         mutations.ADD_IN_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -100,6 +104,7 @@ describe('store.state.client', () => {
             title: '',
             modal_custom_view: '',
             breadscrumbs: [],
+            notifications: [],
         }
         mutations.REMOVE_FROM_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -144,6 +149,7 @@ describe('store.state.client', () => {
             title: '',
             modal_custom_view: '',
             breadscrumbs: [],
+            notifications: [],
         }
         mutations.REMOVE_FROM_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -201,6 +207,7 @@ describe('store.state.client', () => {
                     position: 1,
                 },
             ],
+            notifications: [],
         }
         mutations.REMOVE_FROM_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -212,6 +219,7 @@ describe('store.state.client', () => {
             title: '',
             modal_custom_view: '',
             breadscrumbs: [],
+            notifications: [],
         }
         mutations.CLEAR_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -230,6 +238,7 @@ describe('store.state.client', () => {
             title: '',
             modal_custom_view: '',
             breadscrumbs: [],
+            notifications: [],
         }
         mutations.CLEAR_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -254,6 +263,7 @@ describe('store.state.client', () => {
             title: '',
             modal_custom_view: '',
             breadscrumbs: [],
+            notifications: [],
         }
         mutations.CLEAR_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -264,6 +274,7 @@ describe('store.state.client', () => {
             title: '',
             modal_custom_view: '',
             breadscrumbs: [],
+            notifications: [],
         }
         mutations.CLEAR_GLOBAL(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -286,8 +297,195 @@ describe('store.state.client', () => {
             title: '',
             modal_custom_view: '',
             breadscrumbs: [],
+            notifications: [],
         }
         mutations.CLEAR_GLOBAL(state, action);
         chai.expect(state).to.deep.equal(expected)
+    });
+    it('ADD_NOTIFICATION 1', () => {
+        state = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [],
+        }
+        const action = {
+            id: 1,
+            title: 'Title 1',
+            message: 'Message 1',
+        };
+        const expected = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [{
+                id: 1,
+                title: 'Title 1',
+                message: 'Message 1',
+            }],
+        }
+        mutations.ADD_NOTIFICATION(state, action);
+        chai.expect(state).to.deep.equal(expected)
+    });
+    it('ADD_NOTIFICATION 2', () => {
+        state = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [{
+                id: 1,
+                title: 'Title 1',
+                message: 'Message 1',
+            }],
+        }
+        const action = {
+            id: 2,
+            title: 'Title 2',
+            message: 'Message 2',
+        };
+        const expected = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [
+                {
+                    id: 1,
+                    title: 'Title 1',
+                    message: 'Message 1',
+                },
+                {
+                    id: 2,
+                    title: 'Title 2',
+                    message: 'Message 2',
+                },
+            ],
+        }
+        mutations.ADD_NOTIFICATION(state, action);
+        chai.expect(state).to.deep.equal(expected)
+    });
+    it('REMOVE_NOTIFICATION 1', () => {
+        state = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [{
+                id: 1,
+                title: 'Title 1',
+                message: 'Message 1',
+            }],
+        }
+        const action = {id: 1};
+        const expected = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [],
+        }
+        mutations.REMOVE_NOTIFICATION(state, action);
+        chai.expect(state).to.deep.equal(expected)
+    });
+    it('REMOVE_NOTIFICATION 2', () => {
+        state = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [
+                {
+                    id: 1,
+                    title: 'Title 1',
+                    message: 'Message 1',
+                },
+                {
+                    id: 2,
+                    title: 'Title 2',
+                    message: 'Message 2',
+                },
+            ],
+        }
+        const action = {
+            id: 2,
+            title: 'Title 2',
+            message: 'Message 2',
+        };
+        const expected = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [
+                {
+                    id: 1,
+                    title: 'Title 1',
+                    message: 'Message 1',
+                },
+            ],
+        }
+        mutations.REMOVE_NOTIFICATION(state, action);
+        chai.expect(state).to.deep.equal(expected)
+    });
+    it('ADD_NOTIFICATION action 1', () => {
+        state = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [],
+        }
+        const action = {
+            process: 'dispatch',
+            title: 'Title 1',
+            message: 'Message 1',
+            has_icon: true,
+        };
+        actions.ADD_NOTIFICATION({commit: (key, a) => {mutations[key](state, a)}}, action)
+        expect(state.notifications.length).toBe(1);
+        expect(state.notifications[0].title).toBe('Title 1');
+        expect(state.notifications[0].message).toBe('Message 1');
+        expect(state.notifications[0].process).toBe(undefined);
+        expect(state.notifications[0].id).toBeDefined();
+        expect(state.notifications[0].has_icon).toBe(true);
+    });
+    it('ADD_NOTIFICATION action 2', () => {
+        state = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [],
+        }
+        const action = {
+            process: 'dispatch',
+        };
+        actions.ADD_NOTIFICATION({commit: (key, a) => {mutations[key](state, a)}}, action)
+        expect(state.notifications.length).toBe(1);
+        expect(state.notifications[0].title).toBe('');
+        expect(state.notifications[0].message).toBe('');
+        expect(state.notifications[0].process).toBe(undefined);
+        expect(state.notifications[0].id).toBeDefined();
+        expect(state.notifications[0].has_icon).toBe(false);
+    });
+    it('ADD_NOTIFICATION action 3 (with duration)', () => {
+        state = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [],
+        }
+        const action = {
+            process: 'dispatch',
+            title: 'Title 1',
+            message: 'Message 1',
+            has_icon: true,
+            duration: 1000,
+        };
+        actions.ADD_NOTIFICATION({commit: (key, a) => {mutations[key](state, a)}}, action)
+        expect(state.notifications.length).toBe(1);
+        expect(state.notifications[0].title).toBe('Title 1');
+        expect(state.notifications[0].message).toBe('Message 1');
+        expect(state.notifications[0].process).toBe(undefined);
+        expect(state.notifications[0].id).toBeDefined();
+        expect(state.notifications[0].has_icon).toBe(true);
+        // change time to forward 1 sec
+        jest.runTimersToTime(1000);
+        expect(setTimeout.mock.calls.length).toBe(1);
+        expect(setTimeout.mock.calls[0][1]).toBe(1000);
+        expect(state.notifications.length).toBe(0);
     });
 });
