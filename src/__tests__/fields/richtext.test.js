@@ -14,7 +14,7 @@ Vue.use(Buefy, {defaultIconPack: 'fa',});
 import {store} from '../../store';
 import {router} from '../../routes';
 import {i18n} from '../../i18n';
-import {FieldListText, FieldThumbnailText, FieldFormText} from '../../fields/text'
+import {FieldListRichText, FieldThumbnailRichText, FieldFormRichText} from '../../fields/rich-text'
 
 describe('String list component', () => {
     const renderer = require('vue-server-renderer').createRenderer();
@@ -27,8 +27,8 @@ describe('String list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListText, {props: {
-                row: {fieldname: 'The text'},
+            render: h => h(FieldListRichText, {props: {
+                row: {fieldname: '<p>The richtext</p>'},
                 header: {name: 'fieldname'},
             }}),
         });
@@ -42,7 +42,7 @@ describe('String list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListText, {props: {
+            render: h => h(FieldListRichText, {props: {
                 row: {},
                 header: {name: 'fieldname'},
             }}),
@@ -57,8 +57,8 @@ describe('String list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListText, {props: {
-                row: {fieldname: 'The text'},
+            render: h => h(FieldListRichText, {props: {
+                row: {fieldname: '<p>The richtext</p>'},
                 header: {name: 'fieldname', invisible: true},
             }}),
         });
@@ -72,8 +72,8 @@ describe('String list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListText, {props: {
-                row: {fieldname: 'The text'},
+            render: h => h(FieldListRichText, {props: {
+                row: {fieldname: '<p>The richtext</p>'},
                 header: {name: 'fieldname', invisible: false},
             }}),
         });
@@ -87,8 +87,8 @@ describe('String list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListText, {props: {
-                row: {fieldname: 'The text', invisible: true},
+            render: h => h(FieldListRichText, {props: {
+                row: {fieldname: '<p>The richtext</p>', invisible: true},
                 header: {name: 'fieldname', invisible: 'fields.invisible'},
             }}),
         });
@@ -102,8 +102,8 @@ describe('String list component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldListText, {props: {
-                row: {fieldname: 'The text', invisible: false},
+            render: h => h(FieldListRichText, {props: {
+                row: {fieldname: '<p>The richtext</p>', invisible: false},
                 header: {name: 'fieldname', invisible: 'fields.invisible'},
             }}),
         });
@@ -124,8 +124,8 @@ describe('String Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailText, {props: {
-                data: {fieldname: 'The text'},
+            render: h => h(FieldThumbnailRichText, {props: {
+                data: {fieldname: '<p>The richtext</p>'},
                 name: 'fieldname',
             }}),
         });
@@ -139,7 +139,7 @@ describe('String Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailText, {props: {
+            render: h => h(FieldThumbnailRichText, {props: {
                 data: {},
                 name: 'fieldname',
             }}),
@@ -154,8 +154,8 @@ describe('String Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailText, {props: {
-                data: {fieldname: 'The text'},
+            render: h => h(FieldThumbnailRichText, {props: {
+                data: {fieldname: '<p>The richtext</p>'},
                 name: 'fieldname',
                 invisible: true,
             }}),
@@ -170,8 +170,8 @@ describe('String Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailText, {props: {
-                data: {fieldname: 'The text'},
+            render: h => h(FieldThumbnailRichText, {props: {
+                data: {fieldname: '<p>The richtext</p>'},
                 name: 'fieldname',
                 invisible: false,
             }}),
@@ -186,8 +186,8 @@ describe('String Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailText, {props: {
-                data: {fieldname: 'The text', invisible: true},
+            render: h => h(FieldThumbnailRichText, {props: {
+                data: {fieldname: '<p>The richtext</p>', invisible: true},
                 name: 'fieldname',
                 invisible: 'fields.invisible',
             }}),
@@ -202,8 +202,8 @@ describe('String Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailText, {props: {
-                data: {fieldname: 'The text', invisible: false},
+            render: h => h(FieldThumbnailRichText, {props: {
+                data: {fieldname: '<p>The richtext</p>', invisible: false},
                 name: 'fieldname',
                 invisible: 'fields.invisible',
             }}),
@@ -218,8 +218,8 @@ describe('String Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailText, {props: {
-                data: {fieldname: 'The text'},
+            render: h => h(FieldThumbnailRichText, {props: {
+                data: {fieldname: '<p>The richtext</p>'},
                 name: 'fieldname',
                 label: 'The label',
             }}),
@@ -234,8 +234,8 @@ describe('String Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailText, {props: {
-                data: {fieldname: 'The text'},
+            render: h => h(FieldThumbnailRichText, {props: {
+                data: {fieldname: '<p>The richtext</p>'},
                 name: 'fieldname',
                 tooltip: 'The tooltip',
             }}),
@@ -250,8 +250,8 @@ describe('String Thumbnail component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldThumbnailText, {props: {
-                data: {fieldname: 'The text'},
+            render: h => h(FieldThumbnailRichText, {props: {
+                data: {fieldname: '<p>The richtext</p>'},
                 name: 'fieldname',
                 tooltip: 'The left tooltip',
                 tooltip_position: 'is-left',
@@ -274,8 +274,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text'}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>'}},
                 name: 'fieldname',
             }}),
         });
@@ -289,7 +289,7 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
+            render: h => h(FieldFormRichText, {props: {
                 config: {data: {}},
                 name: 'fieldname',
             }}),
@@ -304,8 +304,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text'}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>'}},
                 name: 'fieldname',
                 invisible: true,
             }}),
@@ -320,8 +320,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text'}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>'}},
                 name: 'fieldname',
                 invisible: false,
             }}),
@@ -336,8 +336,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text', invisible: true}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>', invisible: true}},
                 name: 'fieldname',
                 invisible: 'fields.invisible',
             }}),
@@ -352,8 +352,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text', invisible: false}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>', invisible: false}},
                 name: 'fieldname',
                 invisible: 'fields.invisible',
             }}),
@@ -368,8 +368,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text'}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>'}},
                 name: 'fieldname',
                 label: 'The label',
             }}),
@@ -384,8 +384,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text'}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>'}},
                 name: 'fieldname',
                 tooltip: 'The tooltip',
             }}),
@@ -400,8 +400,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text'}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>'}},
                 name: 'fieldname',
                 tooltip: 'The left tooltip',
                 tooltip_position: 'is-left',
@@ -417,8 +417,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text'}, mode: 'readonly'},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>'}, mode: 'readonly'},
                 name: 'fieldname',
             }}),
         });
@@ -432,8 +432,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text'}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>'}},
                 name: 'fieldname',
                 readonly: true,
             }}),
@@ -448,8 +448,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text', readonly: 1}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>', readonly: 1}},
                 name: 'fieldname',
                 readonly: 'fields.readonly',
             }}),
@@ -464,8 +464,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text'}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>'}},
                 name: 'fieldname',
                 required: true,
             }}),
@@ -480,8 +480,8 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {fieldname: 'The text', required: true}},
+            render: h => h(FieldFormRichText, {props: {
+                config: {data: {fieldname: '<p>The richtext</p>', required: true}},
                 name: 'fieldname',
                 required: 'fields.required',
             }}),
@@ -496,7 +496,7 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
+            render: h => h(FieldFormRichText, {props: {
                 config: {data: {}},
                 name: 'fieldname',
                 required: true,
@@ -512,26 +512,10 @@ describe('String Form component', () => {
             store,
             router,
             i18n,
-            render: h => h(FieldFormText, {props: {
+            render: h => h(FieldFormRichText, {props: {
                 config: {data: {}},
                 name: 'fieldname',
                 placeholder: 'The placeholder'
-            }}),
-        });
-        renderer.renderToString(vm, (err, str) => {
-            expect(str).toMatchSnapshot();
-        });
-    });
-    it('Render maxlength', () => {
-        const vm = new Vue({
-            el: document.createElement('div'),
-            store,
-            router,
-            i18n,
-            render: h => h(FieldFormText, {props: {
-                config: {data: {}},
-                name: 'fieldname',
-                maxlength: 200,
             }}),
         });
         renderer.renderToString(vm, (err, str) => {

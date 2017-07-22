@@ -27,8 +27,9 @@ Welcome to FuretUI's documentation!
    API.rst
    store.rst
    server.rst
-   LICENSE.rst
    template.rst
+   release.rst
+   LICENSE.rst
 
 
 
