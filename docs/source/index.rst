@@ -16,7 +16,7 @@ Welcome to FuretUI's documentation!
 ===================================
 
 
-|app_5|
+|homepage|
 
 
 .. toctree::
@@ -33,4 +33,4 @@ Welcome to FuretUI's documentation!
 
 
 
-.. |app_5| image:: _static/app/app_5.png
+.. |homepage| image:: _static/homepage.png
