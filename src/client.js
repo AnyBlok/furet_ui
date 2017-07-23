@@ -66,3 +66,4 @@ const createFuretUIClient = (el) => {
 window.createFuretUIClient = createFuretUIClient;
 window.plugin = plugin;
 window.Vue = Vue;
+export default createFuretUIClient;
