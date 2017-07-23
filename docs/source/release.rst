@@ -11,6 +11,12 @@
 RELEASE
 =======
 
+1.2.0 (2017-07-23)
+------------------
+
+* Add two / way instance creation to allowed import oter component
+* Add documention to start client
+
 1.1.0 (2017-07-22)
 ------------------
 

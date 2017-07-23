@@ -234,8 +234,8 @@ the value in body are:
 
     Don't forget to call the mutation to remove the dataIds alse on furetui client
 
-``/furetui/data/call``
-----------------------
+``/furetui/data/search``
+------------------------
 
 Call to remove an existing data
 

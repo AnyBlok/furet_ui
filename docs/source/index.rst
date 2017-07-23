@@ -23,6 +23,7 @@ Welcome to FuretUI's documentation!
    :maxdepth: 2
 
    FRONT.rst
+   howto.rst
    APP.rst
    API.rst
    store.rst
