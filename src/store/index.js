@@ -56,4 +56,5 @@ export const dispatchAll = (datas) => {
     });
 }
 
+window.dispatchAll = dispatchAll
 export default store;

@@ -29,6 +29,9 @@ export const json_post_dispatch_all = (path, params) => {
     })
 }
 
+window.json_post = json_post;
+window.json_post_dispatch_all = json_post_dispatch_all;
+
 export default {
     json_post,
     json_post_dispatch_all,

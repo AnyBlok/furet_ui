@@ -48,18 +48,21 @@ plugin.set([], {initData: (router, store) => {
     });
 }});
 
-const FuretUI = new Vue({
-    el: '#furet-ui-app',
-    template: '<furet-ui></furet-ui>',
-    store,
-    router,
-    i18n,
-    created: () => {
-        const initData = plugin.get(['initData']);
-        if (initData) initData(router, store);
-    },
-})
+const createFuretUIClient = (el) => {
+    const FuretUI = new Vue({
+        el,
+        template: '<furet-ui></furet-ui>',
+        store,
+        router,
+        i18n,
+        created: () => {
+            const initData = plugin.get(['initData']);
+            if (initData) initData(router, store);
+        },
+    })
+    window.FuretUI = FuretUI;
+}
 
+window.createFuretUIClient = createFuretUIClient;
 window.plugin = plugin;
-window.FuretUI = FuretUI;
-export default FuretUI;
+window.Vue = Vue;
