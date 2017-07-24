@@ -11,39 +11,6 @@
 Store and Flow
 ==============
 
-client
-------
-
-Add any information about a custom client::
-
-    store.state.client: {
-        ``custom view name``: {
-            ``params of the custum view``,
-        },
-        ...
-    }
-
-UPDATE_CLIENT
-~~~~~~~~~~~~~
-
-Add params for a custom view::
-
-    {
-        type: 'UPDATE_VIEW_CLIENT',
-        viewName: ``custom view name``,
-        ``params ...``,
-    }
-
-CLEAR_CLIENT
-~~~~~~~~~~~~
-
-Clear all the params::
-
-    {
-        type: 'CLEAR_CLIENT'
-    }
-
-
 leftmenu, rightmenu
 -------------------
 
@@ -261,6 +228,12 @@ Save all the data for furet_ui::
                 ``view params which depend of the type of the view``
             },
         },
+        client: {
+            ``custom view name``: {
+                ``params of the custum view``,
+            },
+            ...
+        },
         data: {
             ``Model name``: {
                 ``data id``: {
@@ -343,6 +316,17 @@ Update the data of one view::
         viewId: ``view id``,
         model: ``model name``,
         ``params of the view``,
+    }
+
+UPDATE_CLIENT
+~~~~~~~~~~~~~
+
+Add params for a custom view::
+
+    {
+        type: 'UPDATE_CLIENT',
+        viewName: ``custom view name``,
+        ``params ...``,
     }
 
 UPDATE_DATA

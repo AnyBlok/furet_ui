@@ -17,6 +17,7 @@ export const defaultSpace = {
 export const defaultState = {
     actions: {},
     views: {},
+    client: {},
     data: {},
     changes: {},
     spaces: {},
@@ -46,6 +47,14 @@ export const mutations = {
         if (views[action.viewId] == undefined) views[action.viewId] = {};
         Object.assign(views[action.viewId], value);
         state.views = views;
+    },
+    'UPDATE_CLIENT'(state, action) {
+        const value = Object.assign({}, action),
+              client = Object.assign({}, state.client);
+        delete value.viewName;
+        if (client[action.viewName] == undefined) client[action.viewName] = {};
+        Object.assign(client[action.viewName], value);
+        state.client = client;
     },
     'UPDATE_DATA'(state, action) {
         const data = Object.assign({}, state.data)
@@ -128,6 +137,7 @@ export const mutations = {
         state.data = {};
         state.changes = {};
         state.spaces = {};
+        state.client = {};
     },
 };
 
