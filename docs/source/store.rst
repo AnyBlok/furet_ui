@@ -584,3 +584,61 @@ Form
 .. note::
 
     For the template see the template page :ref:`template`
+
+``dispatchAll`` method
+----------------------
+
+The ``dispatchAll`` is called by the api and do the dispatch to the store. But 
+some type are not in the store and was computed directly by this method.
+
+UPDATE_LOCALES
+~~~~~~~~~~~~~~
+
+Update translation for one locale::
+
+    {
+        type: 'UPDATE_LOCALES',
+        locales: [
+            {
+                locale: ``the local to modify fr | en | ...``
+                messages: ``object of translation``
+            },
+            ...
+        ]
+    }
+
+SET_LOCALE
+~~~~~~~~~~
+
+Force the current locale of furetui::
+
+    {
+        type: 'SET_LOCALE',
+        locale: ``the local to modify fr | en | ...``
+    }
+
+UPDATE_ROUTE
+~~~~~~~~~~~~
+
+Change the current route in router::
+
+    {
+        type: 'UPDATE_ROUTE',
+        name: ``route name``,
+        params: {
+            ``route param``,
+            ...
+        }
+    }
+
+    or
+
+    {
+        type: 'UPDATE_ROUTE',
+        path: ``path in router``
+    }
+
+RELOAD
+~~~~~~
+
+Reload the furetui client

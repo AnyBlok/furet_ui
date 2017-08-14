@@ -46,6 +46,9 @@ export const dispatchAll = (datas) => {
                     if (data.name) router.push({name: data.name, params: data.params});
                     else if (data.path) router.push({path: data.path});
                     break;
+                case 'RELOAD':
+                    location.reload();
+                    break;
                 default:
                     const type = data.type;
                     delete data.type;
