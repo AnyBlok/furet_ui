@@ -14,12 +14,14 @@ import _ from 'underscore';
 export const FieldListBoolean = Vue.component('furet-ui-list-field-boolean', {
     mixins: [ListMixin],
     template: `
-        <span v-if="isInvisible" />
-        <b-checkbox 
-            v-else
-            v-bind:checked="checked" 
-            disabled
-        />`,
+        <div>
+            <span v-if="isInvisible" />
+            <b-checkbox 
+                v-else
+                v-model="checked"
+                disabled
+            />
+        </div>`,
     computed: {
         checked () {
             return eval(this.value) ? true : false;
@@ -37,7 +39,7 @@ export const FieldThumbnailBoolean = Vue.component('furet-ui-thumbnail-field-boo
             v-else
         >
             <b-checkbox 
-                v-bind:checked="value" 
+                v-model="value" 
                 disabled
             >
                 {{this.label}}
@@ -60,16 +62,21 @@ export const FieldFormBoolean = Vue.component('furet-ui-form-field-boolean', {
             v-else
         >
             <b-checkbox 
-                v-bind:checked="data" 
+                v-model="data" 
                 v-bind:disabled="isReadonly"
             >
                 {{this.label}}
             </b-checkbox>
         </b-tooltip>`,
     computed: {
-        data () {
-            const value = this.config && this.config.data && this.config.data[this.name] || '';
-            return eval(value) ? true : false;
+        data: {
+            get () {
+                const value = this.config && this.config.data && this.config.data[this.name] || '';
+                return eval(value) ? true : false;
+            },
+            set (value) {
+                this.updateValue (value);
+            },
         },
     },
 })
