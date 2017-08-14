@@ -27,25 +27,32 @@ import {store, dispatchAll} from './store';
 import router from './routes';
 sync(store, router)  // use vue-router with vuex
 
-plugin.set([], {initData: (router, store) => {
-    json_post('/init/required/data', {}, {
-        onSuccess: (result) => {
-            dispatchAll(result);
-        },
-        onError: (error, response) => {
-            console.error('call initial required data', error || response.body)
-        },
-        onComplete: (error, response) => {
-            json_post('/init/optionnal/data', {}, {
-                onSuccess: (result) => {
-                    dispatchAll(result);
-                },
-                onError: (error, response) => {
-                    console.error('call initial optional data', error || response.body)
-                },
-            });
-        },
-    });
+plugin.set([], {initData: (route, router, store) => {
+    json_post(
+        '/init/required/data', 
+        {
+            route_name: route.name,
+            route_params: route.params,
+        }, 
+        {
+            onSuccess: (result) => {
+                dispatchAll(result);
+            },
+            onError: (error, response) => {
+                console.error('call initial required data', error || response.body)
+            },
+            onComplete: (error, response) => {
+                json_post('/init/optionnal/data', {}, {
+                    onSuccess: (result) => {
+                        dispatchAll(result);
+                    },
+                    onError: (error, response) => {
+                        console.error('call initial optional data', error || response.body)
+                    },
+                });
+            },
+        }
+    );
 }});
 
 const createFuretUIClient = (el) => {
@@ -55,9 +62,9 @@ const createFuretUIClient = (el) => {
         store,
         router,
         i18n,
-        created: () => {
+        created () {
             const initData = plugin.get(['initData']);
-            if (initData) initData(router, store);
+            if (initData) initData(this.$route, router, store);
         },
     })
     window.FuretUI = FuretUI;
