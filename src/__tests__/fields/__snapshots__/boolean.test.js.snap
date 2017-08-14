@@ -127,16 +127,16 @@ exports[`Boolean Thumbnail component Render tooltip up 1`] = `
 </span>
 `;
 
-exports[`Boolean list component Render invisible condition is false 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>`;
+exports[`Boolean list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></div>`;
 
-exports[`Boolean list component Render invisible condition is true 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Boolean list component Render invisible condition is true 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`Boolean list component Render invisible is True 1`] = `<span data-server-rendered="true"></span>`;
+exports[`Boolean list component Render invisible is True 1`] = `<div data-server-rendered="true"><span></span></div>`;
 
-exports[`Boolean list component Render invisible is false 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>`;
+exports[`Boolean list component Render invisible is false 1`] = `<div data-server-rendered="true"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></div>`;
 
-exports[`Boolean list component Render is False 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>`;
+exports[`Boolean list component Render is False 1`] = `<div data-server-rendered="true"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></div>`;
 
-exports[`Boolean list component Render is True 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>`;
+exports[`Boolean list component Render is True 1`] = `<div data-server-rendered="true"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></div>`;
 
-exports[`Boolean list component Render without data 1`] = `<label disabled="disabled" data-server-rendered="true" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>`;
+exports[`Boolean list component Render without data 1`] = `<div data-server-rendered="true"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></div>`;

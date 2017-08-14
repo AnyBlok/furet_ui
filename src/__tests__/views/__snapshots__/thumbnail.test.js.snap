@@ -25,24 +25,24 @@ exports[`furet-ui-thumbnail-view component Render with data 1 1`] = `
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-            <article class="box">
+            <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
             <!---->
         </div>
         </span>
@@ -51,24 +51,24 @@ exports[`furet-ui-thumbnail-view component Render with data 1 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>
@@ -77,24 +77,24 @@ exports[`furet-ui-thumbnail-view component Render with data 1 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>
@@ -121,7 +121,7 @@ exports[`furet-ui-thumbnail-view component Render with data 2 1`] = `
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-            <article class="box">
+            <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
                         <span
@@ -131,17 +131,17 @@ exports[`furet-ui-thumbnail-view component Render with data 2 1`] = `
                             </label>
                             </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 1</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -150,24 +150,24 @@ exports[`furet-ui-thumbnail-view component Render with data 2 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -176,24 +176,24 @@ exports[`furet-ui-thumbnail-view component Render with data 2 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -220,24 +220,24 @@ exports[`furet-ui-thumbnail-view component Render with data 3 1`] = `
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-            <article class="box">
+            <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 1 bis</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -246,24 +246,24 @@ exports[`furet-ui-thumbnail-view component Render with data 3 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -272,24 +272,24 @@ exports[`furet-ui-thumbnail-view component Render with data 3 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -316,24 +316,24 @@ exports[`furet-ui-thumbnail-view component Render with data background fieldcolo
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-            <article class="box" style="background-color:#123456;">
+            <article class="box content" style="padding:5px;background-color:#123456;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 1 bis</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -342,24 +342,24 @@ exports[`furet-ui-thumbnail-view component Render with data background fieldcolo
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -368,24 +368,24 @@ exports[`furet-ui-thumbnail-view component Render with data background fieldcolo
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -394,24 +394,24 @@ exports[`furet-ui-thumbnail-view component Render with data background fieldcolo
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box" style="background-color:#789ABC;">
+    <article class="box content" style="padding:5px;background-color:#789ABC;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 4</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 4 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>4</span>
     <!---->
 </div>
 </span>
@@ -438,24 +438,24 @@ exports[`furet-ui-thumbnail-view component Render with data border fieldcolor 1`
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-            <article class="box" style="border:3px solid #123456;">
+            <article class="box content" style="padding:5px;border:3px solid #123456;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 1 bis</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -464,24 +464,24 @@ exports[`furet-ui-thumbnail-view component Render with data border fieldcolor 1`
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -490,24 +490,24 @@ exports[`furet-ui-thumbnail-view component Render with data border fieldcolor 1`
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -516,24 +516,24 @@ exports[`furet-ui-thumbnail-view component Render with data border fieldcolor 1`
 </article>
 </div>
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-    <article class="box" style="border:3px solid #789ABC;">
+    <article class="box content" style="padding:5px;border:3px solid #789ABC;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 4</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 4 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>4</span>
     <!---->
 </div>
 </span>
@@ -614,7 +614,7 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-            <article class="box">
+            <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
                         <span
@@ -624,17 +624,17 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
                             </label>
                             </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 1</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -643,24 +643,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -669,24 +669,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -695,24 +695,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>
@@ -749,24 +749,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 2`] = `
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-            <article class="box">
+            <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 1 bis</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -775,24 +775,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 2`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -801,24 +801,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 2`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -827,24 +827,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data 2 2`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>
@@ -881,24 +881,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data background field
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-            <article class="box" style="background-color:#123456;">
+            <article class="box content" style="padding:5px;background-color:#123456;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 1 bis</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -907,24 +907,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data background field
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -933,24 +933,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data background field
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -959,24 +959,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data background field
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box" style="background-color:#789ABC;">
+    <article class="box content" style="padding:5px;background-color:#789ABC;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 4</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 4 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>4</span>
     <!---->
 </div>
 </span>
@@ -1013,24 +1013,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data border fieldcolo
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-            <article class="box" style="border:3px solid #123456;">
+            <article class="box content" style="padding:5px;border:3px solid #123456;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 1 bis </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 1 bis</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -1039,24 +1039,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data border fieldcolo
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -1065,24 +1065,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data border fieldcolo
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 3 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 3 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -1091,24 +1091,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render with data border fieldcolo
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box" style="border:3px solid #789ABC;">
+    <article class="box content" style="padding:5px;border:3px solid #789ABC;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 4 </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 4</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 4 </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>4</span>
     <!---->
 </div>
 </span>
@@ -1161,24 +1161,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render without data 2 1`] = `
     </nav>
     <div class="columns is-multiline is-mobile">
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-            <article class="box">
+            <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
             <!---->
         </div>
         </span>
@@ -1187,24 +1187,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render without data 2 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>
@@ -1213,24 +1213,24 @@ exports[`furet-ui-x2m-thumbnail-view component Render without data 2 1`] = `
 </article>
 </div>
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
-    <article class="box">
+    <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>

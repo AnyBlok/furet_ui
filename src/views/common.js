@@ -85,7 +85,7 @@ export const GroupMixin = {
 }
 
 export const ButtonMixin = {
-    props: ['invisible', 'disabled', 'buttonId', 'label', 'options', 'viewId', 'model', 'icon'],
+    props: ['invisible', 'disabled', 'buttonId', 'options', 'viewId', 'model', 'icon'],
     render (h) {
         if (this.isInvisible) return null;
         const props = Object.assign({}, this.$props, {disabled: this.isDisabled})

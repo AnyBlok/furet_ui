@@ -11,39 +11,6 @@
 Store and Flow
 ==============
 
-client
-------
-
-Add any information about a custom client::
-
-    store.state.client: {
-        ``custom view name``: {
-            ``params of the custum view``,
-        },
-        ...
-    }
-
-UPDATE_CLIENT
-~~~~~~~~~~~~~
-
-Add params for a custom view::
-
-    {
-        type: 'UPDATE_VIEW_CLIENT',
-        viewName: ``custom view name``,
-        ``params ...``,
-    }
-
-CLEAR_CLIENT
-~~~~~~~~~~~~
-
-Clear all the params::
-
-    {
-        type: 'CLEAR_CLIENT'
-    }
-
-
 leftmenu, rightmenu
 -------------------
 
@@ -261,6 +228,12 @@ Save all the data for furet_ui::
                 ``view params which depend of the type of the view``
             },
         },
+        client: {
+            ``custom view name``: {
+                ``params of the custum view``,
+            },
+            ...
+        },
         data: {
             ``Model name``: {
                 ``data id``: {
@@ -343,6 +316,17 @@ Update the data of one view::
         viewId: ``view id``,
         model: ``model name``,
         ``params of the view``,
+    }
+
+UPDATE_CLIENT
+~~~~~~~~~~~~~
+
+Add params for a custom view::
+
+    {
+        type: 'UPDATE_CLIENT',
+        viewName: ``custom view name``,
+        ``params ...``,
     }
 
 UPDATE_DATA
@@ -600,3 +584,61 @@ Form
 .. note::
 
     For the template see the template page :ref:`template`
+
+``dispatchAll`` method
+----------------------
+
+The ``dispatchAll`` is called by the api and do the dispatch to the store. But 
+some type are not in the store and was computed directly by this method.
+
+UPDATE_LOCALES
+~~~~~~~~~~~~~~
+
+Update translation for one locale::
+
+    {
+        type: 'UPDATE_LOCALES',
+        locales: [
+            {
+                locale: ``the local to modify fr | en | ...``
+                messages: ``object of translation``
+            },
+            ...
+        ]
+    }
+
+SET_LOCALE
+~~~~~~~~~~
+
+Force the current locale of furetui::
+
+    {
+        type: 'SET_LOCALE',
+        locale: ``the local to modify fr | en | ...``
+    }
+
+UPDATE_ROUTE
+~~~~~~~~~~~~
+
+Change the current route in router::
+
+    {
+        type: 'UPDATE_ROUTE',
+        name: ``route name``,
+        params: {
+            ``route param``,
+            ...
+        }
+    }
+
+    or
+
+    {
+        type: 'UPDATE_ROUTE',
+        path: ``path in router``
+    }
+
+RELOAD
+~~~~~~
+
+Reload the furetui client

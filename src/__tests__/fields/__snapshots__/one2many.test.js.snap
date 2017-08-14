@@ -36,7 +36,8 @@ exports[`One2Many Form component Render 1`] = `
     <td data-label="Label"><span><div><span>Test</span></div>
 </span>
 </td>
-<td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+<td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+    </div>
     </span>
 </td>
 <td data-label="State"><span><div><span> --- </span></div>

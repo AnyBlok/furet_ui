@@ -91,13 +91,14 @@ describe('store.state.data', () => {
             data: {},
             changes: {},
             spaces: {},
+            client: {},
         }
         mutations.UPDATE_ACTION(state, action);
         chai.expect(state).to.deep.equal(expected)
     });
     it('update existing view', () => {
         state.actions['1'] = {test: 'Test'}
-        chai.expect(state).to.deep.equal({actions: {'1': {test: 'Test'}}, views: {}, data: {}, changes: {}, spaces: {}});
+        chai.expect(state).to.deep.equal({actions: {'1': {test: 'Test'}}, views: {}, data: {}, changes: {}, spaces: {}, client: {}});
         const action = {
             actionId: '1',
             label: 'Action : 1',
@@ -142,6 +143,7 @@ describe('store.state.data', () => {
             data: {},
             changes: {},
             spaces: {},
+            client: {},
         }
         mutations.UPDATE_ACTION(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -231,6 +233,7 @@ describe('store.state.data', () => {
             data: {},
             changes: {},
             spaces: {},
+            client: {},
         }
         mutations.UPDATE_VIEW(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -322,8 +325,9 @@ describe('store.state.data', () => {
             data: {},
             changes: {},
             spaces: {},
+            client: {},
         }
-        chai.expect(state).to.deep.equal({views: {'1': {test: 'Test'}}, actions: {}, data: {}, changes: {}, spaces: {}});
+        chai.expect(state).to.deep.equal({views: {'1': {test: 'Test'}}, actions: {}, data: {}, changes: {}, spaces: {}, client: {}});
         mutations.UPDATE_VIEW(state, action);
         chai.expect(state).to.deep.equal(expected)
     });
@@ -354,6 +358,7 @@ describe('store.state.data', () => {
             },
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -401,6 +406,7 @@ describe('store.state.data', () => {
             },
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -440,6 +446,7 @@ describe('store.state.data', () => {
             },
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -483,6 +490,7 @@ describe('store.state.data', () => {
             },
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -505,6 +513,7 @@ describe('store.state.data', () => {
             data: {Test: {}},
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.DELETE_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -530,6 +539,7 @@ describe('store.state.data', () => {
             data: {Test: {'2': {test: 'Test 2'}}},
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.DELETE_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -555,6 +565,7 @@ describe('store.state.data', () => {
             data: {Test: {}},
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.DELETE_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -570,6 +581,7 @@ describe('store.state.data', () => {
             data: {},
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.DELETE_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -593,6 +605,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_CHANGE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -626,6 +639,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_CHANGE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -657,6 +671,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_CHANGE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -673,6 +688,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.REPLACE_CHANGE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -690,6 +706,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.REPLACE_CHANGE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -702,6 +719,7 @@ describe('store.state.data', () => {
             data: {},
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.CLEAR_CHANGE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -732,6 +750,7 @@ describe('store.state.data', () => {
             data: {},
             changes: {},
             spaces: {},
+            client: {},
         };
         mutations.CLEAR_CHANGE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -754,6 +773,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.CREATE_CHANGE_X2M(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -788,6 +808,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.CREATE_CHANGE_X2M(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -820,6 +841,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.CREATE_CHANGE_X2M(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -843,6 +865,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_CHANGE_X2M(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -876,6 +899,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_CHANGE_X2M(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -911,6 +935,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_CHANGE_X2M(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -930,6 +955,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_CHANGE_X2M_DELETE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -962,6 +988,7 @@ describe('store.state.data', () => {
             },
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_CHANGE_X2M_DELETE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -995,6 +1022,7 @@ describe('store.state.data', () => {
             },
             data: {'Test': {}},
             spaces: {},
+            client: {},
         };
         mutations.UPDATE_CHANGE_X2M_DELETE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -1007,6 +1035,7 @@ describe('store.state.data', () => {
             changes: {},
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.CLEAR_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -1117,6 +1146,7 @@ describe('store.state.data', () => {
             changes: {},
             data: {},
             spaces: {},
+            client: {},
         };
         mutations.CLEAR_DATA(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -1138,6 +1168,7 @@ describe('store.state.data', () => {
                     right_menu: menus,
                 },
             },
+            client: {},
         }
         mutations.UPDATE_SPACE(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -1164,8 +1195,49 @@ describe('store.state.data', () => {
                     right_menu: menus,
                 },
             },
+            client: {},
         }
         mutations.UPDATE_SPACE(state, action);
         chai.expect(state).to.deep.equal(expected)
+    });
+    it('update unexisting view', () => {
+        state = {
+            actions: {},
+            views: {},
+            data: {},
+            changes: {},
+            spaces: {},
+            client: {},
+        }
+        const action = {viewName: 'Test', title: 'Test'};
+        mutations.UPDATE_CLIENT(state, action);
+        chai.expect(state).to.deep.equal({
+            actions: {},
+            views: {},
+            data: {},
+            changes: {},
+            spaces: {},
+            client: {'Test': {title: 'Test'}},
+        })
+    });
+    it('update existing view', () => {
+        state = {
+            actions: {},
+            views: {},
+            data: {},
+            changes: {},
+            spaces: {},
+            client: {'Test': {title: 'Other', name: 'Test'}},
+        }
+        const action = {viewName: 'Test', title: 'Test'};
+        mutations.UPDATE_CLIENT(state, action);
+        chai.expect(state).to.deep.equal({
+            actions: {},
+            views: {},
+            data: {},
+            changes: {},
+            spaces: {},
+            client: {'Test': {title: 'Test', name: 'Test'}},
+        })
     });
 });

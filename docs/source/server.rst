@@ -29,7 +29,12 @@ return list of store mutation. See the store page::
 ``/furetui/init/required/data``
 -------------------------------
 
-First query called by FuretUI. The goal of this query is to initialize the client:
+First query called by FuretUI. The goal of this query is to initialize the client.
+
+The params in body are:
+
+* ``route_name``: an existing route name in route.js
+* ``route_params``: the information linked
 
 .. warning::
 
