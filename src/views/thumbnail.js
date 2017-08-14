@@ -34,7 +34,7 @@ export const safe_eval = (condition, fields) => {
     return res;
 }
 export const getStyle = (obj, card) => {
-    const res = {}
+    const res = {padding: '5px'}
     if (obj.view.border_fieldcolor) {
         const color = safe_eval(obj.view.border_fieldcolor, card);
         if (color) res.border = '3px solid ' + color;
@@ -100,7 +100,7 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
                      v-for="card in tableData"
                 >
                     <article 
-                        class="box" 
+                        class="box content" 
                         v-on:click.stop="selectEntry(card)"
                         v-bind:style="getStyle(card)"
                     >
@@ -182,7 +182,7 @@ export const X2MThumbnailView = Vue.component('furet-ui-x2m-thumbnail-view', {
                      v-for="card in tableData"
                 >
                     <article 
-                        class="box" 
+                        class="box content" 
                         v-on:click.stop="selectEntry(card)"
                         v-bind:style="getStyle(card)"
                     >

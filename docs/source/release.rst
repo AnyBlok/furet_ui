@@ -14,6 +14,7 @@ RELEASE
 * Pass route params when call ``/furetui/init/required/data``
 * Add ``RELOAD`` command in dispatchAll, to reload all furetui
 * FIX Field Boolean 
+* Fix contant in Form / Thumbnail views
 
 1.2.0 (2017-07-23)
 ------------------

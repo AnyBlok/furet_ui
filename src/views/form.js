@@ -175,7 +175,7 @@ export const FormView = Vue.component('furet-ui-form-view', {
                 </div>
             </nav>
             <section 
-                class="box"
+                class="box content"
                 v-bind:style="{'margin-bottom': '20px'}"
             >
                 <component 
@@ -354,7 +354,7 @@ export const X2MFormView = Vue.component('furet-ui-x2m-form-view', {
                 </div>
             </nav>
             <section 
-                class="box"
+                class="box content"
                 v-bind:style="{'margin-bottom': '10px'}"
             >
                 <component 
