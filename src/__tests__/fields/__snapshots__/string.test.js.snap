@@ -83,14 +83,14 @@ exports[`String Form component Render tooltip up 1`] = `<span data-label="The to
 exports[`String Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="text" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
 exports[`String Thumbnail component Render 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>#123456</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`String Thumbnail component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>#123456</span>
 <!---->
 </div>
 </span>
@@ -101,35 +101,35 @@ exports[`String Thumbnail component Render invisible condition is true 1`] = `<d
 exports[`String Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`String Thumbnail component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>#123456</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`String Thumbnail component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <span> #123456 </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <span>#123456</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`String Thumbnail component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>#123456</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`String Thumbnail component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> #123456 </span>
+<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>#123456</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`String Thumbnail component Render without data 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>  </span>
+<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span></span>
 <!---->
 </div>
 </span>

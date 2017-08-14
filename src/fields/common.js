@@ -29,7 +29,9 @@ export const ListMixin = {
         </div>`,
     computed: {
         value () {
-            return this.row[this.header.name] || '';
+            if (this.row[this.header.name] != undefined)
+                return this.row[this.header.name];
+            return '';
         },
         isInvisible () {
             return safe_eval(this.header.invisible, this.row || {});
@@ -52,7 +54,7 @@ export const ThumbnailMixin = {
                 v-bind:label="this.label"
                 v-bind:style="{'width': 'inherit'}"
             >
-                <span> {{value}} </span>
+                <span>{{value}}</span>
             </b-field>
         </b-tooltip>`,
     computed: {

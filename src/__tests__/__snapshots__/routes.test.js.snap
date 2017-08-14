@@ -248,22 +248,24 @@ exports[`Route component Render App with space and action and view 1`] = `
                 <td data-label="Label"><span><div><span>Label</span></div>
             </span>
             </td>
-            <td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
-                </span>
-            </td>
-            <td data-label="State"><span><div><span>New</span></div>
+            <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+        </div>
         </span>
         </td>
-        </tr>
-        <tr>
-            <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
-            <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
+        <td data-label="State"><span><div><span>New</span></div>
     </span>
     </td>
-    <td data-label="Label"><span><div><span>Label 2</span></div>
+    </tr>
+    <tr>
+        <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+        <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
 </span>
 </td>
-<td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+<td data-label="Label"><span><div><span>Label 2</span></div>
+    </span>
+</td>
+<td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    </div>
     </span>
 </td>
 <td data-label="State"><span><div><span>Done</span></div>
@@ -351,24 +353,24 @@ exports[`Route component Render App with space and action and view 2`] = `
             </nav>
             <div class="columns is-multiline is-mobile">
                 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-                    <article class="box">
+                    <article class="box content" style="padding:5px;">
                         <div class="columns is-multiline is-mobile">
                             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                                <span class="control-label">
                 Boolean
             </span></label>
                                 </span>
                             </div>
-                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
+                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                                 <!---->
                             </div>
                             </span>
                         </div>
-                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                             <!---->
                         </div>
                         </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
                     <!---->
                 </div>
                 </span>
@@ -377,24 +379,24 @@ exports[`Route component Render App with space and action and view 2`] = `
         </article>
     </div>
     <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-        <article class="box">
+        <article class="box content" style="padding:5px;">
             <div class="columns is-multiline is-mobile">
                 <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                     </span>
                 </div>
-                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                     <!---->
                 </div>
                 </span>
             </div>
-            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> Done </span>
+            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
                 <!---->
             </div>
             </span>
     </div>
-    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
         <!---->
     </div>
     </span>
@@ -451,7 +453,7 @@ exports[`Route component Render App with space and action and view 3`] = `
                     </div>
                 </div>
             </nav>
-            <section class="box" style="margin-bottom:20px;">
+            <section class="box content" style="margin-bottom:20px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
                         <!---->
@@ -534,7 +536,7 @@ exports[`Route component Render App with space and action and view 4`] = `
                     </div>
                 </div>
             </nav>
-            <section class="box" style="margin-bottom:20px;">
+            <section class="box content" style="margin-bottom:20px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
                         <!---->
@@ -780,22 +782,24 @@ exports[`Route component Render App with space and menu and action and view 1`] 
                 <td data-label="Label"><span><div><span>Label</span></div>
             </span>
             </td>
-            <td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
-                </span>
-            </td>
-            <td data-label="State"><span><div><span>New</span></div>
+            <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+        </div>
         </span>
         </td>
-        </tr>
-        <tr>
-            <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
-            <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
+        <td data-label="State"><span><div><span>New</span></div>
     </span>
     </td>
-    <td data-label="Label"><span><div><span>Label 2</span></div>
+    </tr>
+    <tr>
+        <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+        <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
 </span>
 </td>
-<td data-label="Boolean"><span><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+<td data-label="Label"><span><div><span>Label 2</span></div>
+    </span>
+</td>
+<td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    </div>
     </span>
 </td>
 <td data-label="State"><span><div><span>Done</span></div>
@@ -883,24 +887,24 @@ exports[`Route component Render App with space and menu and action and view 2`] 
             </nav>
             <div class="columns is-multiline is-mobile">
                 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-                    <article class="box">
+                    <article class="box content" style="padding:5px;">
                         <div class="columns is-multiline is-mobile">
                             <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                                <span class="control-label">
                 Boolean
             </span></label>
                                 </span>
                             </div>
-                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
+                            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                                 <!---->
                             </div>
                             </span>
                         </div>
-                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+                        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                             <!---->
                         </div>
                         </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
                     <!---->
                 </div>
                 </span>
@@ -909,24 +913,24 @@ exports[`Route component Render App with space and menu and action and view 2`] 
         </article>
     </div>
     <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-        <article class="box">
+        <article class="box content" style="padding:5px;">
             <div class="columns is-multiline is-mobile">
                 <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                     </span>
                 </div>
-                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label 2 </span>
+                <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                     <!---->
                 </div>
                 </span>
             </div>
-            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> Done </span>
+            <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
                 <!---->
             </div>
             </span>
     </div>
-    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
+    <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
         <!---->
     </div>
     </span>
@@ -983,7 +987,7 @@ exports[`Route component Render App with space and menu and action and view 3`] 
                     </div>
                 </div>
             </nav>
-            <section class="box" style="margin-bottom:20px;">
+            <section class="box content" style="margin-bottom:20px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
                         <!---->
@@ -1066,7 +1070,7 @@ exports[`Route component Render App with space and menu and action and view 4`] 
                     </div>
                 </div>
             </nav>
-            <section class="box" style="margin-bottom:20px;">
+            <section class="box content" style="margin-bottom:20px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 2 </span>
                         <!---->
