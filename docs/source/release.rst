@@ -11,6 +11,9 @@
 RELEASE
 =======
 
+1.3.0 (2017-08-14)
+------------------
+
 * Pass route params when call ``/furetui/init/required/data``
 * Add ``RELOAD`` command in dispatchAll, to reload all furetui
 * FIX Field Boolean 
