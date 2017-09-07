@@ -11,7 +11,6 @@ import _ from 'underscore';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import * as actions from './actions';
-import * as getters from './getters';
 import modules from './modules';
 import {i18n} from '../i18n';
 import {router} from '../routes';
@@ -22,7 +21,6 @@ const debug = process.env.NODE_ENV !== 'production'
 
 export const storeDef = {
     actions,
-    getters,
     modules,
     strict: debug,
 };

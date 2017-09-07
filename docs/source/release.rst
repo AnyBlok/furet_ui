@@ -13,6 +13,8 @@ RELEASE
 
 * FIX Many2One list field have not to display ``undefined`` when the field is
   empty
+* FIX: removed the empty getters, because latest version of vuex fail if the
+  getters methods object is empty
 
 1.3.0 (2017-08-14)
 ------------------
