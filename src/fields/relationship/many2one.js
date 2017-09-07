@@ -40,6 +40,7 @@ export const FieldListMany2One = Vue.component('furet-ui-list-field-many2one', {
     computed: {
         value () {
             const value = this.row[this.header.name] || '';
+            if (value == undefined || value === '') return '';
             const model = this.header.model; 
             return this.format(this.header.display, getRemoteValue(this.$store.state.data, model, value));
         }

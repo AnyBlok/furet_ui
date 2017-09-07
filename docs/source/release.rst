@@ -11,6 +11,9 @@
 RELEASE
 =======
 
+* FIX Many2One list field have not to display ``undefined`` when the field is
+  empty
+
 1.3.0 (2017-08-14)
 ------------------
 
