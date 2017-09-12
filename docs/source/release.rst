@@ -15,6 +15,8 @@ RELEASE
   empty
 * FIX: removed the empty getters, because latest version of vuex fail if the
   getters methods object is empty
+* FIX: in the route of the action, if come from relationship the in the params
+  the entry relationship is ``true``
 
 1.3.0 (2017-08-14)
 ------------------

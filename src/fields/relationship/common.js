@@ -23,6 +23,7 @@ export const addInBreadscrumb = (route, store, options) => {
         menuId: options.menuId,
         dataId: options.dataId,
         mode: options.mode || 'readonly',
+        relationship: true,
     }
     json_post_dispatch_all('/action/' + options.actionId, params);
     store.commit('CLEAR_CHANGE', {});

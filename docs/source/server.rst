@@ -105,6 +105,7 @@ optionnal values in body:
 * viewId
 * dataId
 * mode
+$ relationship (true, false)
 
 ``/furetui/field/x2x/search``
 -----------------------------
