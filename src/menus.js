@@ -43,7 +43,10 @@ export const Menu = Vue.component('furet-ui-appbar-menu', {
                 />
                 <span> {{ value.label }} </span>
             </a>
-            <b-modal :active.sync="isModalActive">
+            <b-modal 
+                v-bind:active.sync="isModalActive"
+                v-bind:canCancel="['escape', 'x', 'outside']"
+            >
                 <div class="modal-background"></div>
                 <div class="modal-card">
                     <header class="modal-card-head">
