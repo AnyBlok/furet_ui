@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Many2One Form component Render 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b>Test</b></span></li>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span><b>Test</b></span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 <p class="control"><a class="button"><i class="fa fa-external-link"></i></a></p>
@@ -15,13 +15,15 @@ exports[`Many2One Form component Render 1`] = `
 `;
 
 exports[`Many2One Form component Render icon 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control has-icons-left is-clearfix"><input type="text" autocomplete="off" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control has-icons-left is-clearfix"><input type="text" autocomplete="off" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
 <!---->
 <!---->
-</div> <span class="box" style="display:none;"><ul><li class="option"><span>Test</span></li>
-<!---->
-</ul>
-</span>
+</div>
+<div class="dropdown-menu" style="display:none;">
+    <div class="dropdown-content"><a class="dropdown-item"><span>Test</span></a>
+        <!---->
+    </div>
+</div>
 </div>
 </p>
 <!---->
@@ -32,10 +34,10 @@ exports[`Many2One Form component Render icon 1`] = `
 `;
 
 exports[`Many2One Form component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b>Test</b></span></li>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span><b>Test</b></span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 <p class="control"><a class="button"><i class="fa fa-external-link"></i></a></p>
@@ -50,10 +52,10 @@ exports[`Many2One Form component Render invisible condition is true 1`] = `<div 
 exports[`Many2One Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`Many2One Form component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b>Test</b></span></li>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span><b>Test</b></span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 <p class="control"><a class="button"><i class="fa fa-external-link"></i></a></p>
@@ -64,10 +66,10 @@ exports[`Many2One Form component Render invisible is false 1`] = `
 `;
 
 exports[`Many2One Form component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b>Test</b></span></li>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span><b>Test</b></span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 <p class="control"><a class="button"><i class="fa fa-external-link"></i></a></p>
@@ -77,17 +79,17 @@ exports[`Many2One Form component Render label 1`] = `
 </span>
 `;
 
-exports[`Many2One Form component Render mode readonly by config 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
+exports[`Many2One Form component Render mode readonly by config 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
 
-exports[`Many2One Form component Render mode readonly conditional param 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
+exports[`Many2One Form component Render mode readonly conditional param 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
 
-exports[`Many2One Form component Render mode readonly param 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
+exports[`Many2One Form component Render mode readonly param 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
 
 exports[`Many2One Form component Render placeholder 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" placeholder="The placeholder" autocomplete="off" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span>Test</span></li>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" placeholder="The placeholder" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span>Test</span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 <!---->
@@ -98,12 +100,14 @@ exports[`Many2One Form component Render placeholder 1`] = `
 `;
 
 exports[`Many2One Form component Render required 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="Test" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="Test" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
 <!---->
-</div> <span class="box" style="display:none;"><ul><li class="option"><span><b>Test</b></span></li>
-<!---->
-</ul>
-</span>
+</div>
+<div class="dropdown-menu" style="display:none;">
+    <div class="dropdown-content"><a class="dropdown-item"><span><b>Test</b></span></a>
+        <!---->
+    </div>
+</div>
 </div>
 </p>
 <p class="control"><a class="button"><i class="fa fa-external-link"></i></a></p>
@@ -114,12 +118,14 @@ exports[`Many2One Form component Render required 1`] = `
 `;
 
 exports[`Many2One Form component Render required conditionnal 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="Test" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="Test" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
 <!---->
-</div> <span class="box" style="display:none;"><ul><li class="option"><span><b>Test</b></span></li>
-<!---->
-</ul>
-</span>
+</div>
+<div class="dropdown-menu" style="display:none;">
+    <div class="dropdown-content"><a class="dropdown-item"><span><b>Test</b></span></a>
+        <!---->
+    </div>
+</div>
 </div>
 </p>
 <p class="control"><a class="button"><i class="fa fa-external-link"></i></a></p>
@@ -130,12 +136,14 @@ exports[`Many2One Form component Render required conditionnal 1`] = `
 `;
 
 exports[`Many2One Form component Render required without value 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
 <!---->
-</div> <span class="box" style="display:none;"><ul><li class="option"><span>Test</span></li>
-<!---->
-</ul>
-</span>
+</div>
+<div class="dropdown-menu" style="display:none;">
+    <div class="dropdown-content"><a class="dropdown-item"><span>Test</span></a>
+        <!---->
+    </div>
+</div>
 </div>
 </p>
 <!---->
@@ -146,10 +154,10 @@ exports[`Many2One Form component Render required without value 1`] = `
 `;
 
 exports[`Many2One Form component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b>Test</b></span></li>
+<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span><b>Test</b></span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 <p class="control"><a class="button"><i class="fa fa-external-link"></i></a></p>
@@ -160,10 +168,10 @@ exports[`Many2One Form component Render tooltip left 1`] = `
 `;
 
 exports[`Many2One Form component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b>Test</b></span></li>
+<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="Test" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span><b>Test</b></span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 <p class="control"><a class="button"><i class="fa fa-external-link"></i></a></p>
@@ -174,10 +182,10 @@ exports[`Many2One Form component Render tooltip up 1`] = `
 `;
 
 exports[`Many2One Form component Render without data 1 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span>Test</span></li>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span>Test</span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 <!---->
@@ -187,35 +195,27 @@ exports[`Many2One Form component Render without data 1 1`] = `
 </span>
 `;
 
-exports[`Many2One Form component Render without data 2 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
-</p>
-<!---->
-</div>
-<!---->
-</div>
-</span>
-`;
+exports[`Many2One Form component Render without data 2 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"> <div class="dropdown-item is-disabled"></div></div></div></div></p> <!----></div> <!----></div></span>`;
 
-exports[`Many2One Thumbnail component Render 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
+exports[`Many2One Thumbnail component Render 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
 
-exports[`Many2One Thumbnail component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
+exports[`Many2One Thumbnail component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
 
 exports[`Many2One Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`Many2One Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
-exports[`Many2One Thumbnail component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
+exports[`Many2One Thumbnail component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
 
-exports[`Many2One Thumbnail component Render label 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <a>Test</a> <!----></div></span>`;
+exports[`Many2One Thumbnail component Render label 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><label class="label">The label</label> <a>Test</a> <!----></div></span>`;
 
-exports[`Many2One Thumbnail component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
+exports[`Many2One Thumbnail component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
 
-exports[`Many2One Thumbnail component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
+exports[`Many2One Thumbnail component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a>Test</a> <!----></div></span>`;
 
-exports[`Many2One Thumbnail component Render without data 1 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a></a> <!----></div></span>`;
+exports[`Many2One Thumbnail component Render without data 1 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a></a> <!----></div></span>`;
 
-exports[`Many2One Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a></a> <!----></div></span>`;
+exports[`Many2One Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a></a> <!----></div></span>`;
 
 exports[`Many2One list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><a>Test</a></div>`;
 

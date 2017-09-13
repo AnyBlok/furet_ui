@@ -44,6 +44,16 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
             v-on:check="updateCheck"
             v-bind:style="{overflowX: 'auto'}"
         >
+             <template scope="props" slot="header">
+                <b-tooltip 
+                    v-bind:active="!!props.column.meta" 
+                    v-bind:label="props.column.meta" 
+                    position="is-bottom"
+                    dashed
+                >
+                    {{ props.column.label }}
+                </b-tooltip>
+            </template>
             <template scope="props">
                 <b-table-column v-for="header in headers"
                     v-bind:key="header.name"
@@ -52,6 +62,7 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
                     v-bind:width="header.width"
                     v-bind:numeric="header.numeric"
                     v-bind:sortable="header.sortable"
+                    v-bind:meta="header.tooltip"
                 >
                     <component 
                         v-bind:is="header.component" 

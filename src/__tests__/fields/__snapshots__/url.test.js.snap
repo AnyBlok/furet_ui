@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`URL Form component Render 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
+exports[`URL Form component Render 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
 
 exports[`URL Form component Render icon 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control has-icons-left is-clearfix"><input type="url" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control has-icons-left is-clearfix"><input type="url" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
 <!---->
 <!---->
 </div>
@@ -15,30 +15,30 @@ exports[`URL Form component Render icon 1`] = `
 </span>
 `;
 
-exports[`URL Form component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
+exports[`URL Form component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
 
 exports[`URL Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`URL Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
-exports[`URL Form component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
+exports[`URL Form component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
 
-exports[`URL Form component Render label 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
+exports[`URL Form component Render label 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
 
-exports[`URL Form component Render maxlenght (KO) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" maxlength="4" autocomplete="on" value="password" class="input"> <!----> <!----> <small class="help counter">8 / 4</small></div></p> <p class="control"><a href="password" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
+exports[`URL Form component Render maxlenght (KO) 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" maxlength="4" value="password" class="input"> <!----> <!----> <small class="help counter">8 / 4</small></div></p> <p class="control"><a href="password" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
 
-exports[`URL Form component Render maxlenght (OK) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" maxlength="64" autocomplete="on" value="password" class="input"> <!----> <!----> <small class="help counter">8 / 64</small></div></p> <p class="control"><a href="password" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
+exports[`URL Form component Render maxlenght (OK) 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" maxlength="64" value="password" class="input"> <!----> <!----> <small class="help counter">8 / 64</small></div></p> <p class="control"><a href="password" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
 
-exports[`URL Form component Render mode readonly by config 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
+exports[`URL Form component Render mode readonly by config 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
 
-exports[`URL Form component Render mode readonly conditional param 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
+exports[`URL Form component Render mode readonly conditional param 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
 
-exports[`URL Form component Render mode readonly param 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
+exports[`URL Form component Render mode readonly param 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
 
-exports[`URL Form component Render placeholder 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" placeholder="The placeholder" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div></p> <!----></div> <!----></div></span>`;
+exports[`URL Form component Render placeholder 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" placeholder="The placeholder" value="" class="input"> <!----> <!----> <!----></div></p> <!----></div> <!----></div></span>`;
 
 exports[`URL Form component Render required 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control has-icons-right is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control has-icons-right is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
 <!---->
 </div>
 </p>
@@ -50,7 +50,7 @@ exports[`URL Form component Render required 1`] = `
 `;
 
 exports[`URL Form component Render required conditionnal 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control has-icons-right is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control has-icons-right is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
 <!---->
 </div>
 </p>
@@ -62,7 +62,7 @@ exports[`URL Form component Render required conditionnal 1`] = `
 `;
 
 exports[`URL Form component Render required without value 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control has-icons-right"><input type="url" autocomplete="on" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control has-icons-right"><input type="url" autocomplete="on" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
 <!---->
 </div>
 </p>
@@ -73,29 +73,29 @@ exports[`URL Form component Render required without value 1`] = `
 </span>
 `;
 
-exports[`URL Form component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
+exports[`URL Form component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
 
-exports[`URL Form component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
+exports[`URL Form component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="#123456" class="input"> <!----> <!----> <!----></div></p> <p class="control"><a href="#123456" class="button"><i class="fa fa-external-link"></i></a></p></div> <!----></div></span>`;
 
-exports[`URL Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div></p> <!----></div> <!----></div></span>`;
+exports[`URL Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><div class="control is-clearfix"><input type="url" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div></p> <!----></div> <!----></div></span>`;
 
-exports[`URL Thumbnail component Render 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
+exports[`URL Thumbnail component Render 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
 
-exports[`URL Thumbnail component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
+exports[`URL Thumbnail component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
 
 exports[`URL Thumbnail component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`URL Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
-exports[`URL Thumbnail component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
+exports[`URL Thumbnail component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
 
-exports[`URL Thumbnail component Render label 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <a href="#123456">#123456</a> <!----></div></span>`;
+exports[`URL Thumbnail component Render label 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><label class="label">The label</label> <a href="#123456">#123456</a> <!----></div></span>`;
 
-exports[`URL Thumbnail component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
+exports[`URL Thumbnail component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
 
-exports[`URL Thumbnail component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
+exports[`URL Thumbnail component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a href="#123456">#123456</a> <!----></div></span>`;
 
-exports[`URL Thumbnail component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <a href=""></a> <!----></div></span>`;
+exports[`URL Thumbnail component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <a href=""></a> <!----></div></span>`;
 
 exports[`URL list component Render invisible condition is false 1`] = `<div data-server-rendered="true"><a href="#123456">#123456</a></div>`;
 

@@ -21,6 +21,7 @@ exports[`furet-ui-list-view component Render with data 1 1`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
@@ -37,7 +38,7 @@ exports[`furet-ui-list-view component Render with data 1 1`] = `
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                    <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="pagination-list">
                             <!---->
                             <!---->
@@ -74,11 +75,13 @@ exports[`furet-ui-list-view component Render with data 2 1`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
@@ -94,7 +97,9 @@ exports[`furet-ui-list-view component Render with data 2 1`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
@@ -110,7 +115,9 @@ exports[`furet-ui-list-view component Render with data 2 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>3</span></div>
         </span>
@@ -126,7 +133,9 @@ exports[`furet-ui-list-view component Render with data 2 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>4</span></div>
         </span>
@@ -142,6 +151,7 @@ exports[`furet-ui-list-view component Render with data 2 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -151,7 +161,7 @@ exports[`furet-ui-list-view component Render with data 2 1`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -191,11 +201,13 @@ exports[`furet-ui-list-view component Render with data 3 1`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
@@ -211,7 +223,9 @@ exports[`furet-ui-list-view component Render with data 3 1`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
@@ -227,7 +241,9 @@ exports[`furet-ui-list-view component Render with data 3 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>3</span></div>
         </span>
@@ -243,7 +259,9 @@ exports[`furet-ui-list-view component Render with data 3 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>4</span></div>
         </span>
@@ -259,6 +277,7 @@ exports[`furet-ui-list-view component Render with data 3 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -268,7 +287,7 @@ exports[`furet-ui-list-view component Render with data 3 1`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -309,6 +328,7 @@ exports[`furet-ui-list-view component Render without data 1`] = `
                 <thead>
                     <tr>
                         <!---->
+                        <!---->
                     </tr>
                 </thead>
                 <tbody>
@@ -324,7 +344,7 @@ exports[`furet-ui-list-view component Render without data 1`] = `
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                    <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="pagination-list">
                             <!---->
                             <!---->
@@ -361,6 +381,7 @@ exports[`furet-ui-list-view component Render without data 2 1`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
@@ -383,7 +404,7 @@ exports[`furet-ui-list-view component Render without data 2 1`] = `
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                    <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="pagination-list">
                             <!---->
                             <!---->
@@ -410,14 +431,14 @@ exports[`furet-ui-x2m-list-view component Render with data 1 1`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
             </div>
@@ -429,6 +450,7 @@ exports[`furet-ui-x2m-list-view component Render with data 1 1`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
@@ -445,7 +467,7 @@ exports[`furet-ui-x2m-list-view component Render with data 1 1`] = `
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                    <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="pagination-list">
                             <!---->
                             <!---->
@@ -472,14 +494,14 @@ exports[`furet-ui-x2m-list-view component Render with data 2 1`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
             </div>
@@ -491,11 +513,13 @@ exports[`furet-ui-x2m-list-view component Render with data 2 1`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
@@ -511,7 +535,9 @@ exports[`furet-ui-x2m-list-view component Render with data 2 1`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
@@ -527,7 +553,9 @@ exports[`furet-ui-x2m-list-view component Render with data 2 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>3</span></div>
         </span>
@@ -543,7 +571,9 @@ exports[`furet-ui-x2m-list-view component Render with data 2 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -559,6 +589,7 @@ exports[`furet-ui-x2m-list-view component Render with data 2 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -568,7 +599,7 @@ exports[`furet-ui-x2m-list-view component Render with data 2 1`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -598,14 +629,14 @@ exports[`furet-ui-x2m-list-view component Render with data 2 2`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
             </div>
@@ -617,11 +648,13 @@ exports[`furet-ui-x2m-list-view component Render with data 2 2`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
@@ -637,7 +670,9 @@ exports[`furet-ui-x2m-list-view component Render with data 2 2`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
@@ -653,7 +688,9 @@ exports[`furet-ui-x2m-list-view component Render with data 2 2`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>3</span></div>
         </span>
@@ -669,7 +706,9 @@ exports[`furet-ui-x2m-list-view component Render with data 2 2`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -685,6 +724,7 @@ exports[`furet-ui-x2m-list-view component Render with data 2 2`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -694,7 +734,7 @@ exports[`furet-ui-x2m-list-view component Render with data 2 2`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -732,6 +772,7 @@ exports[`furet-ui-x2m-list-view component Render without data 1 1`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
@@ -748,7 +789,7 @@ exports[`furet-ui-x2m-list-view component Render without data 1 1`] = `
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                    <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="pagination-list">
                             <!---->
                             <!---->
@@ -775,14 +816,14 @@ exports[`furet-ui-x2m-list-view component Render without data 2 1`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
             </div>
@@ -794,11 +835,13 @@ exports[`furet-ui-x2m-list-view component Render without data 2 1`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -814,7 +857,9 @@ exports[`furet-ui-x2m-list-view component Render without data 2 1`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -830,7 +875,9 @@ exports[`furet-ui-x2m-list-view component Render without data 2 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -846,6 +893,7 @@ exports[`furet-ui-x2m-list-view component Render without data 2 1`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -855,7 +903,7 @@ exports[`furet-ui-x2m-list-view component Render without data 2 1`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -885,14 +933,14 @@ exports[`furet-ui-x2m-list-view component Render without data 3 1`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><!----></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
             </div>
@@ -904,6 +952,7 @@ exports[`furet-ui-x2m-list-view component Render without data 3 1`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
@@ -926,7 +975,7 @@ exports[`furet-ui-x2m-list-view component Render without data 3 1`] = `
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                    <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="pagination-list">
                             <!---->
                             <!---->

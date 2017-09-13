@@ -689,6 +689,7 @@ def getView1():
                 'label': 'ID',
                 'numeric': True,
                 'component': 'furet-ui-list-field-integer',
+                'tooltip': 'The ID of the line',
             },
             {
                 'name': 'name',

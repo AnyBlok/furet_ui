@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Many2Many Thumbnail component Render 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -9,7 +9,7 @@ exports[`Many2Many Thumbnail component Render 1`] = `
 `;
 
 exports[`Many2Many Thumbnail component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -21,7 +21,7 @@ exports[`Many2Many Thumbnail component Render invisible condition is true 1`] = 
 exports[`Many2Many Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`Many2Many Thumbnail component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -29,7 +29,7 @@ exports[`Many2Many Thumbnail component Render invisible is false 1`] = `
 `;
 
 exports[`Many2Many Thumbnail component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><label class="label">The label</label> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -37,7 +37,7 @@ exports[`Many2Many Thumbnail component Render label 1`] = `
 `;
 
 exports[`Many2Many Thumbnail component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -45,7 +45,7 @@ exports[`Many2Many Thumbnail component Render tooltip left 1`] = `
 `;
 
 exports[`Many2Many Thumbnail component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -53,16 +53,16 @@ exports[`Many2Many Thumbnail component Render tooltip up 1`] = `
 `;
 
 exports[`Many2Many Thumbnail component Render with fieldcolor 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag" style="border:4px solid #123456;"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag" style="border:4px solid #123456;"><a>Test
                     </a></span>
 <!---->
 </div>
 </span>
 `;
 
-exports[`Many2Many Thumbnail component Render without data 1 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
+exports[`Many2Many Thumbnail component Render without data 1 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
 
-exports[`Many2Many Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
+exports[`Many2Many Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
 
 exports[`Many2Many list component Render fieldcolor 1`] = `
 <div data-server-rendered="true">
@@ -109,7 +109,7 @@ exports[`Many2Many list component Render without data 2 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -126,7 +126,7 @@ exports[`Many2ManyCheckbox Form component Render 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render fieldcolor 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="width:100%;height:5px;background-color:#123456;"></div></span></label>
 </div>
@@ -143,7 +143,7 @@ exports[`Many2ManyCheckbox Form component Render fieldcolor 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -164,7 +164,7 @@ exports[`Many2ManyCheckbox Form component Render invisible condition is true 1`]
 exports[`Many2ManyCheckbox Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`Many2ManyCheckbox Form component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -181,7 +181,7 @@ exports[`Many2ManyCheckbox Form component Render invisible is false 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -198,7 +198,7 @@ exports[`Many2ManyCheckbox Form component Render label 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render mode readonly by config 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -215,7 +215,7 @@ exports[`Many2ManyCheckbox Form component Render mode readonly by config 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render mode readonly conditional param 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -232,7 +232,7 @@ exports[`Many2ManyCheckbox Form component Render mode readonly conditional param
 `;
 
 exports[`Many2ManyCheckbox Form component Render mode readonly param 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -249,7 +249,7 @@ exports[`Many2ManyCheckbox Form component Render mode readonly param 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render required 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -266,7 +266,7 @@ exports[`Many2ManyCheckbox Form component Render required 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render required conditionnal 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -283,7 +283,7 @@ exports[`Many2ManyCheckbox Form component Render required conditionnal 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render required without value 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -300,7 +300,7 @@ exports[`Many2ManyCheckbox Form component Render required without value 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -317,7 +317,7 @@ exports[`Many2ManyCheckbox Form component Render tooltip left 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
+<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -334,7 +334,7 @@ exports[`Many2ManyCheckbox Form component Render tooltip up 1`] = `
 `;
 
 exports[`Many2ManyCheckbox Form component Render without data 1 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span><span class="control-label">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"><div id="1" class="column"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span><span class="control-label">
                             Test
                             <div style="display:none;"></div></span></label>
 </div>
@@ -350,17 +350,23 @@ exports[`Many2ManyCheckbox Form component Render without data 1 1`] = `
 </span>
 `;
 
-exports[`Many2ManyCheckbox Form component Render without data 2 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"></div> <!----></div></span>`;
+exports[`Many2ManyCheckbox Form component Render without data 2 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="columns is-multiline is-mobile"></div> <!----></div></span>`;
 
 exports[`Many2ManyTags Form component Render 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
         <!---->
         <!---->
         <!---->
-    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content">
+            <div class="dropdown-item is-disabled"></div>
+        </div>
+    </div>
+</div>
 </p>
 </div>
 <!---->
@@ -369,13 +375,15 @@ exports[`Many2ManyTags Form component Render 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render icon 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control has-icons-left is-clearfix"><input type="text" autocomplete="off" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control has-icons-left is-clearfix"><input type="text" autocomplete="off" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
 <!---->
 <!---->
-</div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></li>
-<!---->
-</ul>
-</span>
+</div>
+<div class="dropdown-menu" style="display:none;">
+    <div class="dropdown-content"><a class="dropdown-item"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></a>
+        <!---->
+    </div>
+</div>
 </div>
 </p>
 </div>
@@ -385,14 +393,20 @@ exports[`Many2ManyTags Form component Render icon 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
         <!---->
         <!---->
         <!---->
-    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content">
+            <div class="dropdown-item is-disabled"></div>
+        </div>
+    </div>
+</div>
 </p>
 </div>
 <!---->
@@ -405,14 +419,20 @@ exports[`Many2ManyTags Form component Render invisible condition is true 1`] = `
 exports[`Many2ManyTags Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`Many2ManyTags Form component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
         <!---->
         <!---->
         <!---->
-    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content">
+            <div class="dropdown-item is-disabled"></div>
+        </div>
+    </div>
+</div>
 </p>
 </div>
 <!---->
@@ -421,14 +441,20 @@ exports[`Many2ManyTags Form component Render invisible is false 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
         <!---->
         <!---->
         <!---->
-    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content">
+            <div class="dropdown-item is-disabled"></div>
+        </div>
+    </div>
+</div>
 </p>
 </div>
 <!---->
@@ -437,7 +463,7 @@ exports[`Many2ManyTags Form component Render label 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render mode readonly by config 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <!----></span>
 <!---->
 </p>
@@ -448,7 +474,7 @@ exports[`Many2ManyTags Form component Render mode readonly by config 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render mode readonly conditional param 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <!----></span>
 <!---->
 </p>
@@ -459,7 +485,7 @@ exports[`Many2ManyTags Form component Render mode readonly conditional param 1`]
 `;
 
 exports[`Many2ManyTags Form component Render mode readonly param 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <!----></span>
 <!---->
 </p>
@@ -470,10 +496,10 @@ exports[`Many2ManyTags Form component Render mode readonly param 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render placeholder 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control is-clearfix"><input type="text" placeholder="The placeholder" autocomplete="off" value="" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></li>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" placeholder="The placeholder" value="" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 </div>
@@ -483,13 +509,19 @@ exports[`Many2ManyTags Form component Render placeholder 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render required 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="" class="input is-info">
         <!----><span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
         <!---->
-    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content">
+            <div class="dropdown-item is-disabled"></div>
+        </div>
+    </div>
+</div>
 </p>
 </div>
 <!---->
@@ -498,13 +530,19 @@ exports[`Many2ManyTags Form component Render required 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render required conditionnal 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="" class="input is-info">
         <!----><span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
         <!---->
-    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content">
+            <div class="dropdown-item is-disabled"></div>
+        </div>
+    </div>
+</div>
 </p>
 </div>
 <!---->
@@ -513,12 +551,14 @@ exports[`Many2ManyTags Form component Render required conditionnal 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render required without value 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control has-icons-right is-clearfix"><input type="text" autocomplete="off" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
 <!---->
-</div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></li>
-<!---->
-</ul>
-</span>
+</div>
+<div class="dropdown-menu" style="display:none;">
+    <div class="dropdown-content"><a class="dropdown-item"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></a>
+        <!---->
+    </div>
+</div>
 </div>
 </p>
 </div>
@@ -528,14 +568,20 @@ exports[`Many2ManyTags Form component Render required without value 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
         <!---->
         <!---->
         <!---->
-    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content">
+            <div class="dropdown-item is-disabled"></div>
+        </div>
+    </div>
+</div>
 </p>
 </div>
 <!---->
@@ -544,14 +590,20 @@ exports[`Many2ManyTags Form component Render tooltip left 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
         <!---->
         <!---->
         <!---->
-    </div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content">
+            <div class="dropdown-item is-disabled"></div>
+        </div>
+    </div>
+</div>
 </p>
 </div>
 <!---->
@@ -560,7 +612,7 @@ exports[`Many2ManyTags Form component Render tooltip up 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render with fieldcolor 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag" style="border:4px solid #123456;"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag" style="border:4px solid #123456;"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -568,17 +620,19 @@ exports[`Many2ManyTags Form component Render with fieldcolor 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render with filtering selection available 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
         <!---->
         <!---->
         <!---->
-    </div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b> <b></b>2<b></b></span></li>
-    <!---->
-    </ul>
-    </span>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content"><a class="dropdown-item"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b> <b></b>2<b></b></span></a>
+            <!---->
+        </div>
+    </div>
 </div>
 </p>
 </div>
@@ -588,18 +642,19 @@ exports[`Many2ManyTags Form component Render with filtering selection available 
 `;
 
 exports[`Many2ManyTags Form component Render with filtering selection available 2 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control is-clearfix"><input type="text" autocomplete="off" value="Test 3" class="input">
         <!---->
         <!---->
         <!---->
-    </div> <span class="box" style="display:none;"><ul><li class="option"><span>Test 2</span></li>
-    <li class="option"><span><b>Test 3</b></span></li>
-    <!---->
-    </ul>
-    </span>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content"><a class="dropdown-item"><span>Test 2</span></a><a class="dropdown-item"><span><b>Test 3</b></span></a>
+            <!---->
+        </div>
+    </div>
 </div>
 </p>
 </div>
@@ -609,18 +664,19 @@ exports[`Many2ManyTags Form component Render with filtering selection available 
 `;
 
 exports[`Many2ManyTags Form component Render with selection available 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"><span class="tag"><a>Test
                             </a> <button class="delete is-small"></button></span>
 <div class="autocomplete control">
     <div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input">
         <!---->
         <!---->
         <!---->
-    </div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b> <b></b>2<b></b></span></li>
-    <li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b> <b></b>3<b></b></span></li>
-    <!---->
-    </ul>
-    </span>
+    </div>
+    <div class="dropdown-menu" style="display:none;">
+        <div class="dropdown-content"><a class="dropdown-item"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b> <b></b>2<b></b></span></a><a class="dropdown-item"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b> <b></b>3<b></b></span></a>
+            <!---->
+        </div>
+    </div>
 </div>
 </p>
 </div>
@@ -630,10 +686,10 @@ exports[`Many2ManyTags Form component Render with selection available 1`] = `
 `;
 
 exports[`Many2ManyTags Form component Render without data 1 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul><li class="option"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></li>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"><a class="dropdown-item"><span><b></b>T<b></b>e<b></b>s<b></b>t<b></b></span></a>
 <!---->
-</ul>
-</span>
+</div>
+</div>
 </div>
 </p>
 </div>
@@ -642,11 +698,4 @@ exports[`Many2ManyTags Form component Render without data 1 1`] = `
 </span>
 `;
 
-exports[`Many2ManyTags Form component Render without data 2 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input"> <!----> <!----> <!----></div> <span class="box" style="display:none;"><ul> <!----></ul></span></div>
-</p>
-</div>
-<!---->
-</div>
-</span>
-`;
+exports[`Many2ManyTags Form component Render without data 2 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="field has-addons"><p class="control is-expanded"> <div class="autocomplete control"><div class="control is-clearfix"><input type="text" autocomplete="off" value="" class="input"> <!----> <!----> <!----></div> <div class="dropdown-menu" style="display:none;"><div class="dropdown-content"> <div class="dropdown-item is-disabled"></div></div></div></div></p></div> <!----></div></span>`;

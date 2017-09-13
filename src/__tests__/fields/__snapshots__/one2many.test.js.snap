@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`One2Many Form component Render 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div><nav class="level"><div class="level-left"><div class="field has-addons"><p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span><span>Create</span></a>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div><nav class="level"><div class="level-left"><div class="field has-addons"><p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span><span>Create</span></a>
 </p>
 <!---->
 </div>
 </div>
 <div class="level-right">
     <div class="field has-addons">
-        <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+        <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
             </span>
         </p>
-        <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+        <p class="control"><span data-label="Thumbnail" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
             </span>
         </p>
         <!---->
@@ -24,11 +24,13 @@ exports[`One2Many Form component Render 1`] = `
         <table class="table is-narrow has-mobile-cards">
             <thead>
                 <tr>
+                    <!---->
                     <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <!---->
                     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
     </span>
@@ -44,6 +46,7 @@ exports[`One2Many Form component Render 1`] = `
     </span>
 </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -53,7 +56,7 @@ exports[`One2Many Form component Render 1`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -77,7 +80,7 @@ exports[`One2Many Form component Render 1`] = `
 `;
 
 exports[`One2Many Form component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
@@ -87,79 +90,79 @@ exports[`One2Many Form component Render invisible condition is true 1`] = `<div 
 exports[`One2Many Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`One2Many Form component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render mode readonly by config 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render mode readonly conditional param 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render mode readonly param 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render required 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render required conditionnal 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render required without value 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <p class="help is-danger">this field is required</p></div></span>
 `;
 
 exports[`One2Many Form component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render without data 1 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Form component Render without data 2 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div style="background-color:#f5f5f5;padding:5px;"><div style="margin-bottom:20px;"><section class="section box"><h1 class="title">The wanted view &quot;&quot; is unknown</h1> <h2 class="subtitle">
                     Report this message to the administrator
                 </h2></section></div></div> <!----></div></span>
 `;
 
 exports[`One2Many Thumbnail component Render 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -167,7 +170,7 @@ exports[`One2Many Thumbnail component Render 1`] = `
 `;
 
 exports[`One2Many Thumbnail component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -179,7 +182,7 @@ exports[`One2Many Thumbnail component Render invisible condition is true 1`] = `
 exports[`One2Many Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`One2Many Thumbnail component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -187,7 +190,7 @@ exports[`One2Many Thumbnail component Render invisible is false 1`] = `
 `;
 
 exports[`One2Many Thumbnail component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><label class="label">The label</label> <span class="tag"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><label class="label">The label</label> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -195,7 +198,7 @@ exports[`One2Many Thumbnail component Render label 1`] = `
 `;
 
 exports[`One2Many Thumbnail component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -203,7 +206,7 @@ exports[`One2Many Thumbnail component Render tooltip left 1`] = `
 `;
 
 exports[`One2Many Thumbnail component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
+<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag"><a>Test
                     </a></span>
 <!---->
 </div>
@@ -211,16 +214,16 @@ exports[`One2Many Thumbnail component Render tooltip up 1`] = `
 `;
 
 exports[`One2Many Thumbnail component Render with fieldcolor 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!----> <span class="tag" style="border:4px solid #123456;"><a>Test
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!----> <span class="tag" style="border:4px solid #123456;"><a>Test
                     </a></span>
 <!---->
 </div>
 </span>
 `;
 
-exports[`One2Many Thumbnail component Render without data 1 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
+exports[`One2Many Thumbnail component Render without data 1 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
 
-exports[`One2Many Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
+exports[`One2Many Thumbnail component Render without data 1 2`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip"><div class="field" style="width:inherit;"><!---->  <!----></div></span>`;
 
 exports[`One2Many list component Render fieldcolor 1`] = `
 <div data-server-rendered="true">

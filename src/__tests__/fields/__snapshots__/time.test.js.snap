@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Time Form component Render icon 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-left is-clearfix"><input type="time" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-left is-clearfix"><input type="time" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-user"></i></span>
 <!---->
 <!---->
 </div>
@@ -10,47 +10,47 @@ exports[`Time Form component Render icon 1`] = `
 </span>
 `;
 
-exports[`Time Form component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render invisible condition is false 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
 exports[`Time Form component Render invisible condition is true 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`Time Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
-exports[`Time Form component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render invisible is false 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
-exports[`Time Form component Render label 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render label 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
-exports[`Time Form component Render max (ko) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" min="01:01:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render max (ko) 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" min="01:01:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
-exports[`Time Form component Render max (ok) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" max="01:03:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render max (ok) 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" max="01:03:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
-exports[`Time Form component Render min (ko) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" min="01:03:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render min (ko) 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" min="01:03:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
-exports[`Time Form component Render min (ok) 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" min="01:01:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render min (ok) 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" min="01:01:03" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
 exports[`Time Form component Render mode readonly by config 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`Time Form component Render mode readonly conditional param 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`Time Form component Render mode readonly param 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> 01:02:03 </span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`Time Form component Render required 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
 <!---->
 </div>
 <!---->
@@ -59,7 +59,7 @@ exports[`Time Form component Render required 1`] = `
 `;
 
 exports[`Time Form component Render required conditionnal 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input is-info"> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
 <!---->
 </div>
 <!---->
@@ -68,7 +68,7 @@ exports[`Time Form component Render required conditionnal 1`] = `
 `;
 
 exports[`Time Form component Render required without value 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right"><input type="time" autocomplete="on" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right"><input type="time" autocomplete="on" value="" class="input is-danger"> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
 <!---->
 </div>
 <p class="help is-danger">this field is required</p>
@@ -76,16 +76,16 @@ exports[`Time Form component Render required without value 1`] = `
 </span>
 `;
 
-exports[`Time Form component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render tooltip left 1`] = `<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
-exports[`Time Form component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render tooltip up 1`] = `<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
-exports[`Time Form component Render with data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render with data 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="01:02:03" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
-exports[`Time Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
+exports[`Time Form component Render without data 1`] = `<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><input type="time" autocomplete="on" value="" class="input"> <!----> <!----> <!----></div> <!----></div></span>`;
 
 exports[`Time Thumbnail component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
 <!---->
 </div>
 </span>
@@ -96,42 +96,42 @@ exports[`Time Thumbnail component Render invisible condition is true 1`] = `<div
 exports[`Time Thumbnail component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`Time Thumbnail component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`Time Thumbnail component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <span>01:02:03</span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <span>01:02:03</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`Time Thumbnail component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="tooltip is-primary is-left is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
+<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`Time Thumbnail component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
+<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`Time Thumbnail component Render with data 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>01:02:03</span>
 <!---->
 </div>
 </span>
 `;
 
 exports[`Time Thumbnail component Render without data 1`] = `
-<span data-label="" data-server-rendered="true" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span></span>
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span></span>
 <!---->
 </div>
 </span>

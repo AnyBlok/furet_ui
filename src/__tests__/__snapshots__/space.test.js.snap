@@ -46,7 +46,7 @@ exports[`Space component Render breadscrumb 1`] = `
             </div>
             <div class="nav-right">
                 <div class="field has-addons">
-                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                    <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
                 </div>
@@ -84,7 +84,7 @@ exports[`Space component Render breadscrumb 2`] = `
             </div>
             <div class="nav-right">
                 <div class="field has-addons">
-                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                    <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
                 </div>
@@ -128,7 +128,7 @@ exports[`Space component Render breadscrumb 3`] = `
             </div>
             <div class="nav-right">
                 <div class="field has-addons">
-                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                    <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
                 </div>
@@ -166,7 +166,7 @@ exports[`Space component Render breadscrumb 4`] = `
             </div>
             <div class="nav-right">
                 <div class="field has-addons">
-                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                    <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
                 </div>
@@ -216,10 +216,10 @@ exports[`Space component Render display left menu (close) 1`] = `
             </div>
             <div class="nav-right">
                 <div class="field has-addons">
-                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                    <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
-                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                    <p class="control"><span data-label="Thumbnail" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
                         </span>
                     </p>
                     <!---->
@@ -286,10 +286,10 @@ exports[`Space component Render display left menu (open) 1`] = `
             </div>
             <div class="nav-right">
                 <div class="field has-addons">
-                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                    <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
-                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                    <p class="control"><span data-label="Thumbnail" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
                         </span>
                     </p>
                     <!---->
@@ -325,10 +325,10 @@ exports[`Space component Render display right menu (close) 1`] = `
             </div>
             <div class="nav-right">
                 <div class="field has-addons">
-                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                    <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
-                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                    <p class="control"><span data-label="Thumbnail" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
                         </span>
                     </p>
                     <!---->
@@ -362,10 +362,10 @@ exports[`Space component Render display right menu (open) 1`] = `
             </div>
             <div class="nav-right">
                 <div class="field has-addons">
-                    <p class="control"><span data-label="List" class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
+                    <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
-                    <p class="control"><span data-label="Thumbnail" class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
+                    <p class="control"><span data-label="Thumbnail" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-th"></i></span></a>
                         </span>
                     </p>
                     <!---->

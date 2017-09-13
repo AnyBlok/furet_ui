@@ -18,6 +18,7 @@ RELEASE
 * FIX: in the route of the action, if come from relationship the in the params
   the entry relationship is ``true``
 * IMP: list view add overflow-x when the view is to large
+* IMP: Add tooltip on list header
 
 1.3.0 (2017-08-14)
 ------------------

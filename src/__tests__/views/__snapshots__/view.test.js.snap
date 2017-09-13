@@ -73,12 +73,12 @@ exports[`furet-ui-view component Render with form view 4`] = `
     </nav>
     <section class="box content" style="margin-bottom:20px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
                 <p class="help is-danger">this field is required</p>
             </div>
             </span>
         </div>
-        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+        <div class="column is-8"><span data-label="Plop" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
             <!---->
             <!---->
         </div>
@@ -86,7 +86,7 @@ exports[`furet-ui-view component Render with form view 4`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
                         New
                     </option><option value="started">
                         Started
@@ -99,7 +99,7 @@ exports[`furet-ui-view component Render with form view 4`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -126,12 +126,12 @@ exports[`furet-ui-view component Render with form view 5`] = `
     </nav>
     <section class="box content" style="margin-bottom:20px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+        <div class="column is-8"><span data-label="Plop" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
             <!---->
             <!---->
         </div>
@@ -139,7 +139,7 @@ exports[`furet-ui-view component Render with form view 5`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
                         New
                     </option><option value="started">
                         Started
@@ -152,7 +152,7 @@ exports[`furet-ui-view component Render with form view 5`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -179,12 +179,12 @@ exports[`furet-ui-view component Render with form view 6`] = `
     </nav>
     <section class="box content" style="margin-bottom:20px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+        <div class="column is-8"><span data-label="Plop" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <div class="control has-icons-left is-clearfix"><input type="text" autocomplete="on" value="Label" class="input"> <span class="icon is-left"><i class="fa fa-envelope"></i></span>
             <!---->
             <!---->
         </div>
@@ -192,7 +192,7 @@ exports[`furet-ui-view component Render with form view 6`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
                         New
                     </option><option value="started">
                         Started
@@ -205,7 +205,7 @@ exports[`furet-ui-view component Render with form view 6`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -269,6 +269,7 @@ exports[`furet-ui-view component Render with list view 4`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
@@ -285,7 +286,7 @@ exports[`furet-ui-view component Render with list view 4`] = `
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                    <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="pagination-list">
                             <!---->
                             <!---->
@@ -322,11 +323,13 @@ exports[`furet-ui-view component Render with list view 5`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
@@ -342,7 +345,9 @@ exports[`furet-ui-view component Render with list view 5`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
@@ -358,7 +363,9 @@ exports[`furet-ui-view component Render with list view 5`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>3</span></div>
         </span>
@@ -374,6 +381,7 @@ exports[`furet-ui-view component Render with list view 5`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -383,7 +391,7 @@ exports[`furet-ui-view component Render with list view 5`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -423,11 +431,13 @@ exports[`furet-ui-view component Render with list view 6`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
@@ -443,7 +453,9 @@ exports[`furet-ui-view component Render with list view 6`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
@@ -459,6 +471,7 @@ exports[`furet-ui-view component Render with list view 6`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -468,7 +481,7 @@ exports[`furet-ui-view component Render with list view 6`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -585,7 +598,7 @@ exports[`furet-ui-view component Render with thumbnail view 5`] = `
         <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
                         <span
                             class="control-label">
                             Boolean
@@ -593,17 +606,17 @@ exports[`furet-ui-view component Render with thumbnail view 5`] = `
                             </label>
                             </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
+                    <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
+                <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -614,22 +627,22 @@ exports[`furet-ui-view component Render with thumbnail view 5`] = `
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -640,22 +653,22 @@ exports[`furet-ui-view component Render with thumbnail view 5`] = `
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -694,7 +707,7 @@ exports[`furet-ui-view component Render with thumbnail view 6`] = `
         <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
                         <span
                             class="control-label">
                             Boolean
@@ -702,17 +715,17 @@ exports[`furet-ui-view component Render with thumbnail view 6`] = `
                             </label>
                             </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
+                    <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
+                <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -723,22 +736,22 @@ exports[`furet-ui-view component Render with thumbnail view 6`] = `
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -749,22 +762,22 @@ exports[`furet-ui-view component Render with thumbnail view 6`] = `
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 3</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>3</span>
     <!---->
 </div>
 </span>
@@ -851,16 +864,16 @@ exports[`furet-ui-x2m-view component Render with form view 1 2`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -868,22 +881,22 @@ exports[`furet-ui-x2m-view component Render with form view 1 2`] = `
     </nav>
     <section class="box content" style="margin-bottom:10px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
                 <p class="help is-danger">this field is required</p>
             </div>
             </span>
         </div>
-        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+        <div class="column is-8"><span data-label="Plop" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
     <!---->
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -905,16 +918,16 @@ exports[`furet-ui-x2m-view component Render with form view 1 3`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -922,22 +935,22 @@ exports[`furet-ui-x2m-view component Render with form view 1 3`] = `
     </nav>
     <section class="box content" style="margin-bottom:10px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
+        <div class="column is-8"><span data-label="Plop" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
     <!---->
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -959,16 +972,16 @@ exports[`furet-ui-x2m-view component Render with form view 1 4`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -976,22 +989,22 @@ exports[`furet-ui-x2m-view component Render with form view 1 4`] = `
     </nav>
     <section class="box content" style="margin-bottom:10px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span> 1 </span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
+        <div class="column is-8"><span data-label="Plop" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> Label </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> New </span>
     <!---->
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -1024,16 +1037,16 @@ exports[`furet-ui-x2m-view component Render with form view 2 2`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1041,22 +1054,22 @@ exports[`furet-ui-x2m-view component Render with form view 2 2`] = `
     </nav>
     <section class="box content" style="margin-bottom:10px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
                 <p class="help is-danger">this field is required</p>
             </div>
             </span>
         </div>
-        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+        <div class="column is-8"><span data-label="Plop" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
     <!---->
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -1078,16 +1091,16 @@ exports[`furet-ui-x2m-view component Render with form view 2 3`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1095,22 +1108,22 @@ exports[`furet-ui-x2m-view component Render with form view 2 3`] = `
     </nav>
     <section class="box content" style="margin-bottom:10px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
                 <p class="help is-danger">this field is required</p>
             </div>
             </span>
         </div>
-        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
+        <div class="column is-8"><span data-label="Plop" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>  </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
     <!---->
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -1132,16 +1145,16 @@ exports[`furet-ui-x2m-view component Render with form view 2 4`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1149,22 +1162,22 @@ exports[`furet-ui-x2m-view component Render with form view 2 4`] = `
     </nav>
     <section class="box content" style="margin-bottom:10px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>  </span>
                 <p class="help is-danger">this field is required</p>
             </div>
             </span>
         </div>
-        <div class="column is-8"><span data-label="Plop" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> New id </span>
+        <div class="column is-8"><span data-label="Plop" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span> New id </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>  ---  </span>
     <!---->
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -1193,14 +1206,14 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1212,11 +1225,13 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -1232,7 +1247,9 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -1248,7 +1265,9 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -1264,6 +1283,7 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -1273,7 +1293,7 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -1300,14 +1320,14 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1319,11 +1339,13 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
@@ -1339,7 +1361,9 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
@@ -1355,7 +1379,9 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -1371,6 +1397,7 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -1380,7 +1407,7 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -1407,14 +1434,14 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1426,11 +1453,13 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
@@ -1446,7 +1475,9 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
@@ -1462,7 +1493,9 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -1478,6 +1511,7 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -1487,7 +1521,7 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -1514,14 +1548,14 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1533,11 +1567,13 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
             <table class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
+                        <!---->
                         <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <!---->
                         <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
@@ -1553,7 +1589,9 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
     </span>
 </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
@@ -1569,7 +1607,9 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
         </span>
     </td>
 </tr>
+<!---->
 <tr>
+    <!---->
     <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
@@ -1585,6 +1625,7 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
         </span>
     </td>
 </tr>
+<!---->
 </tbody>
 </table>
 </div>
@@ -1594,7 +1635,7 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
     </div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a class="pagination-previous is-disabled"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a class="pagination-next is-disabled"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
@@ -1643,14 +1684,14 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 2`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1660,22 +1701,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 2`] = `
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
+                    <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
+                <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
             <!---->
         </div>
         </span>
@@ -1686,22 +1727,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 2`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>
@@ -1712,22 +1753,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 2`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>
@@ -1747,14 +1788,14 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 3`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1764,7 +1805,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 3`] = `
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
                         <span
                             class="control-label">
                             Boolean
@@ -1772,17 +1813,17 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 3`] = `
                             </label>
                             </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
+                    <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
+                <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -1793,22 +1834,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 3`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -1819,22 +1860,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 3`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>
@@ -1854,14 +1895,14 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 4`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1871,22 +1912,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 4`] = `
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
+                    <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
+                <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -1897,22 +1938,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 4`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -1923,22 +1964,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 4`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span></span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>
@@ -1958,14 +1999,14 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 5`] = `
         </div>
         <div class="level-right">
             <div class="field has-addons">
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
                 <!---->
-                <p class="control"><span class="tooltip is-info is-left is-medium"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
+                <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-exclamation-triangle"></i></span></a>
                     </span>
                 </p>
             </div>
@@ -1975,22 +2016,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 5`] = `
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
                     </div>
-                    <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
+                    <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                         <!---->
                     </div>
                     </span>
                 </div>
-                <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
+                <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>New</span>
                     <!---->
                 </div>
                 </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
             <!---->
         </div>
         </span>
@@ -2001,22 +2042,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 5`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
     <!---->
 </div>
 </span>
@@ -2027,22 +2068,22 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 5`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="tooltip is-primary is-top is-medium"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
             </div>
-            <div class="column is-8"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>New id</span>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>New id</span>
                 <!---->
             </div>
             </span>
         </div>
-        <div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span> --- </span>
             <!---->
         </div>
         </span>
 </div>
-<div class="column is-6"><span data-label="" class="tooltip is-primary is-top is-medium" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span></span>
     <!---->
 </div>
 </span>

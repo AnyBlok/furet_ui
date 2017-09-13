@@ -22,7 +22,7 @@ exports[`Menu component Render Menu with value from store open 2`] = `
             <header class="modal-card-head">
                 <div class="field has-addons-centered">
                     <!---->
-                    <div class="control has-icons-left is-clearfix"><input type="search" placeholder="Search ..." autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
+                    <div class="control has-icons-left is-clearfix"><input type="search" autocomplete="on" placeholder="Search ..." value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
                         <!---->
                         <!---->
                     </div>
@@ -75,7 +75,7 @@ exports[`Menu component Render Menu with value from store open and filtering 2`]
             <header class="modal-card-head">
                 <div class="field has-addons-centered">
                     <!---->
-                    <div class="control has-icons-left is-clearfix"><input type="search" placeholder="Search ..." autocomplete="on" value="test" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
+                    <div class="control has-icons-left is-clearfix"><input type="search" autocomplete="on" placeholder="Search ..." value="test" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
                         <!---->
                         <!---->
                     </div>
@@ -118,7 +118,7 @@ exports[`Menu component Render Menu with value from store open and select custom
             <header class="modal-card-head">
                 <div class="field has-addons-centered">
                     <!---->
-                    <div class="control has-icons-left is-clearfix"><input type="search" placeholder="Search ..." autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
+                    <div class="control has-icons-left is-clearfix"><input type="search" autocomplete="on" placeholder="Search ..." value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
                         <!---->
                         <!---->
                     </div>
@@ -169,7 +169,7 @@ exports[`Menu component Render Menu with value from store open and select custom
             <header class="modal-card-head">
                 <div class="field has-addons-centered">
                     <!---->
-                    <div class="control has-icons-left is-clearfix"><input type="search" placeholder="Search ..." autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
+                    <div class="control has-icons-left is-clearfix"><input type="search" autocomplete="on" placeholder="Search ..." value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
                         <!---->
                         <!---->
                     </div>
@@ -222,7 +222,7 @@ exports[`Menu component Render Menu with value from store open and select space 
             <header class="modal-card-head">
                 <div class="field has-addons-centered">
                     <!---->
-                    <div class="control has-icons-left is-clearfix"><input type="search" placeholder="Search ..." autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
+                    <div class="control has-icons-left is-clearfix"><input type="search" autocomplete="on" placeholder="Search ..." value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
                         <!---->
                         <!---->
                     </div>
@@ -273,7 +273,7 @@ exports[`Menu component Render Menu with value from store open and select space 
             <header class="modal-card-head">
                 <div class="field has-addons-centered">
                     <!---->
-                    <div class="control has-icons-left is-clearfix"><input type="search" placeholder="Search ..." autocomplete="on" value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
+                    <div class="control has-icons-left is-clearfix"><input type="search" autocomplete="on" placeholder="Search ..." value="" class="input"> <span class="icon is-left"><i class="fa fa-search"></i></span>
                         <!---->
                         <!---->
                     </div>
