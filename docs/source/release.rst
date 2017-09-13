@@ -24,6 +24,7 @@ RELEASE
 * FIX: b-checkbox-option became b-checkbox-item in buefy 0.5.2
 * FIX: checkbox (buefy 0.5.2)
 * FIX: b-modal (buefy 0.5.2)
+* IMP: add colors in list view to overload the class of the tr in table
 
 1.3.0 (2017-08-14)
 ------------------

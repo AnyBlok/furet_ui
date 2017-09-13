@@ -684,6 +684,10 @@ def getView1():
         'onSelect': '3',
         'model': 'Test',
         'default_sort': ['name', 'desc'],
+        'colors': {
+            'purple': 'fields.id == 1',
+            'danger': 'fields.id == 3',
+        },
         'headers': [
             {
                 'name': 'id',

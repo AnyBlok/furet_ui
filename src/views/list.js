@@ -24,6 +24,16 @@ export const ListViewIcon = Vue.component('furet-ui-list-view-icon', {
 
 plugin.set(['views', 'icon'], {List: 'furet-ui-list-view-icon'})
 
+const safe_eval = (condition, fields) => {
+    const now = Date.now(),
+          toDate = (v) => new Date(v);
+    let res = false;
+    try {
+        res = eval(condition) ? true : false;
+    } catch (e) {};
+    return res;
+}
+
 /**
  * List view
  *
@@ -44,6 +54,7 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
             v-on:check="updateCheck"
             v-bind:style="{overflowX: 'auto'}"
             v-bind:default-sort="view && view.default_sort"
+            v-bind:row-class="rowClass"
         >
              <template scope="props" slot="header">
                 <b-tooltip 
@@ -118,6 +129,24 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
         },
         updateCheck (checkedList, row) {
             this.$emit('updateCheck', checkedList);
+        },
+        rowClass (row, index) {
+            const view = this.view;
+            let res = '';
+            if (view && view.colors) {
+                if (view.colors.danger && safe_eval(view.colors.danger, row)) res = 'furetui-list-danger';
+                else if (view.colors.warning && safe_eval(view.colors.warning, row)) res = 'furetui-list-warning';
+                else if (view.colors.success && safe_eval(view.colors.success, row)) res = 'furetui-list-success';
+                else if (view.colors.info && safe_eval(view.colors.info, row)) res = 'furetui-list-info';
+                else if (view.colors.primary && safe_eval(view.colors.danger, row)) res = 'furetui-list-primary';
+                else {
+                    const keys = _.without(_.keys(view.colors), 'danger', 'warning', 'success', 'info', 'primary');
+                    _.each(keys, key => {
+                        if (safe_eval(view.colors[key], row)) res = 'furetui-list-' + key
+                    })
+                }
+            }
+            return res;
         },
     },
 });

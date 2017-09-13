@@ -219,6 +219,23 @@ describe('furet-ui-list-view component', () => {
             expect(str).toMatchSnapshot();
         });
     });
+    it('Render with color', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(ListView, {props: {
+                view: Object.assign({colors: {danger: 'fields.name'}}, view_list),
+                dataIds,
+                data,
+                change,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
 });
 
 describe('furet-ui-x2m-list-view component', () => {
@@ -316,6 +333,26 @@ describe('furet-ui-x2m-list-view component', () => {
             i18n,
             render: h => h(X2MListView, {props: {
                 view: view_list,
+                views,
+                viewId: '1',
+                dataIds: dataIds2,
+                model: 'Test',
+                data,
+                change,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
+    it('Render with color', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(X2MListView, {props: {
+                view: Object.assign({colors: {danger: 'fields.name'}}, view_list),
                 views,
                 viewId: '1',
                 dataIds: dataIds2,
