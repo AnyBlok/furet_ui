@@ -23,8 +23,12 @@ export const FieldListBoolean = Vue.component('furet-ui-list-field-boolean', {
             />
         </div>`,
     computed: {
-        checked () {
-            return eval(this.value) ? true : false;
+        checked: {
+            get () {
+                return eval(this.value) ? true : false;
+            },
+            set (value) {
+            },
         },
     }
 })
