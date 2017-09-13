@@ -697,6 +697,11 @@ def getView1():
                 'component': 'furet-ui-list-field-string',
             },
             {
+                'name': 'number',
+                'label': 'Number',
+                'component': 'furet-ui-list-field-float',
+            },
+            {
                 'name': 'bool',
                 'label': 'Boolean',
                 'component': 'furet-ui-list-field-boolean',
@@ -721,6 +726,46 @@ def getView1():
                 'name': 'email',
                 'label': 'E-mail',
                 'component': 'furet-ui-list-field-mail',
+            },
+            {
+                'name': 'color',
+                'label': 'Color',
+                'component': 'furet-ui-list-field-color',
+            },
+            {
+                'name': 'text',
+                'label': 'Text',
+                'component': 'furet-ui-list-field-richtext',
+            },
+            {
+                'name': 'json',
+                'label': 'JSON',
+                'component': 'furet-ui-list-field-json',
+            },
+            {
+                'name': 'file',
+                'label': 'File',
+                'component': 'furet-ui-list-field-file',
+            },
+            {
+                'name': 'url',
+                'label': 'URL',
+                'component': 'furet-ui-list-field-url',
+            },
+            {
+                'name': 'time',
+                'label': 'Time',
+                'component': 'furet-ui-list-field-time',
+            },
+            {
+                'name': 'filename',
+                'label': 'Filename',
+                'component': 'furet-ui-list-field-string',
+            },
+            {
+                'name': 'filesize',
+                'label': 'Filesize',
+                'component': 'furet-ui-list-field-integer',
             },
         ],
         'search': [

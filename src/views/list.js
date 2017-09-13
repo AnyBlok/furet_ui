@@ -42,6 +42,7 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
             v-bind:checked-rows.sync="checkedRows"
             v-on:dblclick="selectRow"
             v-on:check="updateCheck"
+            v-bind:style="{overflowX: 'auto'}"
         >
             <template scope="props">
                 <b-table-column v-for="header in headers"

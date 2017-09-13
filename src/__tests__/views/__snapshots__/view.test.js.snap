@@ -263,7 +263,7 @@ exports[`furet-ui-view component Render with list view 4`] = `
             <!---->
         </div>
     </nav>
-    <div class="b-table">
+    <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
             <table class="table is-narrow has-mobile-cards">
@@ -316,7 +316,7 @@ exports[`furet-ui-view component Render with list view 5`] = `
             <!---->
         </div>
     </nav>
-    <div class="b-table">
+    <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
             <table class="table is-narrow has-mobile-cards">
@@ -417,7 +417,7 @@ exports[`furet-ui-view component Render with list view 6`] = `
             <!---->
         </div>
     </nav>
-    <div class="b-table">
+    <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
             <table class="table is-narrow has-mobile-cards">
@@ -1206,7 +1206,7 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
             </div>
         </div>
     </nav>
-    <div class="b-table">
+    <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
             <table class="table is-narrow has-mobile-cards">
@@ -1313,7 +1313,7 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
             </div>
         </div>
     </nav>
-    <div class="b-table">
+    <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
             <table class="table is-narrow has-mobile-cards">
@@ -1420,7 +1420,7 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
             </div>
         </div>
     </nav>
-    <div class="b-table">
+    <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
             <table class="table is-narrow has-mobile-cards">
@@ -1527,7 +1527,7 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
             </div>
         </div>
     </nav>
-    <div class="b-table">
+    <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
             <table class="table is-narrow has-mobile-cards">

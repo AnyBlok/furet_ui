@@ -18,7 +18,7 @@ exports[`One2Many Form component Render 1`] = `
     </div>
 </div>
 </nav>
-<div class="b-table">
+<div class="b-table" style="overflow-x:auto;">
     <!---->
     <div class="table-wrapper">
         <table class="table is-narrow has-mobile-cards">

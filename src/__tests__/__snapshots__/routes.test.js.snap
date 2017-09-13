@@ -46,7 +46,7 @@ exports[`Route component Render App with default path 1`] = `
 exports[`Route component Render App with space 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -70,7 +70,7 @@ exports[`Route component Render App with space 1`] = `
 exports[`Route component Render App with space 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -94,7 +94,7 @@ exports[`Route component Render App with space 2`] = `
 exports[`Route component Render App with space and action 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -126,7 +126,7 @@ exports[`Route component Render App with space and action 1`] = `
 exports[`Route component Render App with space and action 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -155,7 +155,7 @@ exports[`Route component Render App with space and action 2`] = `
 exports[`Route component Render App with space and action and custome view 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -193,7 +193,7 @@ exports[`Route component Render App with space and action and custome view 1`] =
 exports[`Route component Render App with space and action and view 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -230,7 +230,7 @@ exports[`Route component Render App with space and action and view 1`] = `
                     <!---->
                 </div>
             </nav>
-            <div class="b-table">
+            <div class="b-table" style="overflow-x:auto;">
                 <!---->
                 <div class="table-wrapper">
                     <table class="table is-narrow has-mobile-cards">
@@ -306,7 +306,7 @@ exports[`Route component Render App with space and action and view 1`] = `
 exports[`Route component Render App with space and action and view 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -414,7 +414,7 @@ exports[`Route component Render App with space and action and view 2`] = `
 exports[`Route component Render App with space and action and view 3`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -497,7 +497,7 @@ exports[`Route component Render App with space and action and view 3`] = `
 exports[`Route component Render App with space and action and view 4`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -580,7 +580,7 @@ exports[`Route component Render App with space and action and view 4`] = `
 exports[`Route component Render App with space and menu 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -604,7 +604,7 @@ exports[`Route component Render App with space and menu 1`] = `
 exports[`Route component Render App with space and menu 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -628,7 +628,7 @@ exports[`Route component Render App with space and menu 2`] = `
 exports[`Route component Render App with space and menu and action 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -660,7 +660,7 @@ exports[`Route component Render App with space and menu and action 1`] = `
 exports[`Route component Render App with space and menu and action 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -689,7 +689,7 @@ exports[`Route component Render App with space and menu and action 2`] = `
 exports[`Route component Render App with space and menu and action and custome view 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -727,7 +727,7 @@ exports[`Route component Render App with space and menu and action and custome v
 exports[`Route component Render App with space and menu and action and view 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -764,7 +764,7 @@ exports[`Route component Render App with space and menu and action and view 1`] 
                     <!---->
                 </div>
             </nav>
-            <div class="b-table">
+            <div class="b-table" style="overflow-x:auto;">
                 <!---->
                 <div class="table-wrapper">
                     <table class="table is-narrow has-mobile-cards">
@@ -840,7 +840,7 @@ exports[`Route component Render App with space and menu and action and view 1`] 
 exports[`Route component Render App with space and menu and action and view 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -948,7 +948,7 @@ exports[`Route component Render App with space and menu and action and view 2`] 
 exports[`Route component Render App with space and menu and action and view 3`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -1031,7 +1031,7 @@ exports[`Route component Render App with space and menu and action and view 3`] 
 exports[`Route component Render App with space and menu and action and view 4`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->

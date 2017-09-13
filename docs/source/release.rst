@@ -17,6 +17,7 @@ RELEASE
   getters methods object is empty
 * FIX: in the route of the action, if come from relationship the in the params
   the entry relationship is ``true``
+* IMP: list view add overflow-x when the view is to large
 
 1.3.0 (2017-08-14)
 ------------------

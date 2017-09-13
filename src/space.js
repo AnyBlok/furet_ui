@@ -123,7 +123,7 @@ export const Space = Vue.component('furet-ui-space', {
                     />
                 </aside>
             </div>
-            <div class="column" v-bind:style="{paddingLeft: '10px', paddingRight: '10px'}">
+            <div v-bind:class="['column', getClassSize]" v-bind:style="{paddingLeft: '10px', paddingRight: '10px'}">
                 <nav class="nav" v-bind:style="{backgroundColor: 'inherit'}">
                     <div class="nav-left">
                         <a class="button" v-on:click="isOpenLeft = !isOpenLeft" v-if="left_menu.length > 0">
@@ -191,6 +191,14 @@ export const Space = Vue.component('furet-ui-space', {
                 }
            }
            return {label: '', views: []};
+        },
+        getClassSize () {
+            const left = this.isOpenLeft && this.left_menu.length,
+                  right = this.isOpenRight && this.right_menu.length;
+
+            if (left && right) return 'is-half';
+            else if (left || right) return 'is-three-quarters';
+            else return 'is-12';
         }
     },
     methods: {

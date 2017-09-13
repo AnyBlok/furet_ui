@@ -3,7 +3,7 @@
 exports[`Space component Render 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -34,7 +34,7 @@ exports[`Space component Render 1`] = `
 exports[`Space component Render breadscrumb 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -69,7 +69,7 @@ exports[`Space component Render breadscrumb 1`] = `
 exports[`Space component Render breadscrumb 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -107,7 +107,7 @@ exports[`Space component Render breadscrumb 2`] = `
 exports[`Space component Render breadscrumb 3`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -151,7 +151,7 @@ exports[`Space component Render breadscrumb 3`] = `
 exports[`Space component Render breadscrumb 4`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -175,7 +175,7 @@ exports[`Space component Render breadscrumb 4`] = `
         </nav>
         <div class="columns is-gapless" style="margin-top:5px;">
             <!---->
-            <div class="column" style="padding-left:10px;padding-right:10px;">
+            <div class="column is-12" style="padding-left:10px;padding-right:10px;">
                 <nav class="nav" style="background-color:inherit;">
                     <div class="nav-left">
                         <!---->
@@ -205,7 +205,7 @@ exports[`Space component Render breadscrumb 4`] = `
 exports[`Space component Render display left menu (close) 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left"><a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a>
                 <nav class="breadcrumb">
@@ -275,7 +275,7 @@ exports[`Space component Render display left menu (open) 1`] = `
             </ul>
         </aside>
     </div>
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-three-quarters" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left"><a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a>
                 <nav class="breadcrumb">
@@ -313,7 +313,7 @@ exports[`Space component Render display left menu (open) 1`] = `
 exports[`Space component Render display right menu (close) 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -350,7 +350,7 @@ exports[`Space component Render display right menu (close) 1`] = `
 exports[`Space component Render display right menu (open) 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-three-quarters" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -485,7 +485,7 @@ exports[`SpaceMenu component Render with submenu other selected menu 1`] = `
 exports[`View Selector component Render 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
@@ -516,7 +516,7 @@ exports[`View Selector component Render 1`] = `
 exports[`View Selector component Render unclickable selected 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column" style="padding-left:10px;padding-right:10px;">
+    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
