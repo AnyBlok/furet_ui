@@ -43,6 +43,7 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
             v-on:dblclick="selectRow"
             v-on:check="updateCheck"
             v-bind:style="{overflowX: 'auto'}"
+            v-bind:default-sort="view && view.default_sort"
         >
              <template scope="props" slot="header">
                 <b-tooltip 
@@ -62,6 +63,7 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
                     v-bind:width="header.width"
                     v-bind:numeric="header.numeric"
                     v-bind:sortable="header.sortable"
+                    v-bind:centered="header.centered"
                     v-bind:meta="header.tooltip"
                 >
                     <component 

@@ -306,6 +306,132 @@ exports[`furet-ui-list-view component Render with data 3 1`] = `
 </div>
 `;
 
+exports[`furet-ui-list-view component Render with sorted data 1`] = `
+<div data-server-rendered="true">
+    <nav class="level">
+        <div class="level-left">
+            <div class="field has-addons">
+                <p class="control"><a class="button"><span class="icon is-small"><i class="fa fa-plus"></i></span> <span>Create</span></a></p>
+                <!---->
+                <!---->
+                <!---->
+            </div>
+        </div>
+        <div class="level-right">
+            <!---->
+        </div>
+    </nav>
+    <div class="b-table" style="overflow-x:auto;">
+        <!---->
+        <div class="table-wrapper">
+            <table class="table is-narrow has-mobile-cards">
+                <thead>
+                    <tr>
+                        <!---->
+                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!---->
+                        <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                        <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
+        </span>
+        </td>
+        <td data-label="Label"><span><div><span>Label 1 bis</span></div>
+    </span>
+    </td>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+</div>
+</span>
+</td>
+<td data-label="State"><span><div><span>New</span></div>
+    </span>
+</td>
+</tr>
+<!---->
+<tr>
+    <!---->
+    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
+        </span>
+    </td>
+    <td data-label="Label"><span><div><span>Label 2</span></div>
+        </span>
+    </td>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+        </div>
+        </span>
+    </td>
+    <td data-label="State"><span><div><span>New</span></div>
+        </span>
+    </td>
+</tr>
+<!---->
+<tr>
+    <!---->
+    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td data-label="ID" class="has-text-right"><span><div><span>3</span></div>
+        </span>
+    </td>
+    <td data-label="Label"><span><div><span>Label 3</span></div>
+        </span>
+    </td>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+        </div>
+        </span>
+    </td>
+    <td data-label="State"><span><div><span>New</span></div>
+        </span>
+    </td>
+</tr>
+<!---->
+<tr>
+    <!---->
+    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td data-label="ID" class="has-text-right"><span><div><span>4</span></div>
+        </span>
+    </td>
+    <td data-label="Label"><span><div><span>Label 4</span></div>
+        </span>
+    </td>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+        </div>
+        </span>
+    </td>
+    <td data-label="State"><span><div><span>New</span></div>
+        </span>
+    </td>
+</tr>
+<!---->
+</tbody>
+</table>
+</div>
+<div class="level">
+    <div class="level-left">
+        <!---->
+    </div>
+    <div class="level-right">
+        <div class="level-item">
+            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                <ul class="pagination-list">
+                    <!---->
+                    <!---->
+                    <li><a class="pagination-link is-current">
+                1
+            </a></li>
+                    <!---->
+                    <!---->
+                </ul>
+                <!---->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+`;
+
 exports[`furet-ui-list-view component Render without data 1`] = `
 <div data-server-rendered="true">
     <nav class="level">

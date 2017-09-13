@@ -683,6 +683,7 @@ def getView1():
         'selectable': True,
         'onSelect': '3',
         'model': 'Test',
+        'default_sort': ['name', 'desc'],
         'headers': [
             {
                 'name': 'id',

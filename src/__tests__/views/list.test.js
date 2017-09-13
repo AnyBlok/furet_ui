@@ -202,6 +202,23 @@ describe('furet-ui-list-view component', () => {
             expect(str).toMatchSnapshot();
         });
     });
+    it('Render with sorted data', () => {
+        const vm = new Vue({
+            el: document.createElement('div'),
+            store,
+            router,
+            i18n,
+            render: h => h(ListView, {props: {
+                view: Object.assign({default_sort: ['name', 'desc']}, view_list),
+                dataIds,
+                data,
+                change,
+            }}),
+        });
+        renderer.renderToString(vm, (err, str) => {
+            expect(str).toMatchSnapshot();
+        });
+    });
 });
 
 describe('furet-ui-x2m-list-view component', () => {
