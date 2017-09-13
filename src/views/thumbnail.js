@@ -73,14 +73,14 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
                                         <i class="fa fa-caret-down"></i>
                                     </span>
                                 </button>
-                                <b-dropdown-option 
+                                <b-dropdown-item 
                                     v-for="button in view.buttons"
                                     v-bind:value="button.buttonId"
                                     v-bind:key="button.buttonId"
                                     v-on:click="selectAction(button)"
                                 >
                                     {{button.label}}
-                                </b-dropdown-option>
+                                </b-dropdown-item>
                             </b-dropdown>
                         </p>
                     </div>

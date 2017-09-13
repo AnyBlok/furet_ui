@@ -21,6 +21,7 @@ RELEASE
 * IMP: Add tooltip on list header
 * IMP: Add centerd option on column properties for list view
 * IMP: Add default sort on list view
+* FIX: b-checkbox-option became b-checkbox-item in buefy 0.5.2
 
 1.3.0 (2017-08-14)
 ------------------

@@ -160,14 +160,14 @@ export const ListView = Vue.component('furet-ui-list-view', {
                                         <i class="fa fa-caret-down"></i>
                                     </span>
                                 </button>
-                                <b-dropdown-option 
+                                <b-dropdown-item 
                                     v-for="button in view.buttons"
                                     v-bind:value="button.buttonId"
                                     v-bind:key="button.buttonId"
                                     v-on:click="selectAction(button)"
                                 >
                                     {{button.label}}
-                                </b-dropdown-option>
+                                </b-dropdown-item>
                             </b-dropdown>
                         </p>
                         <p class="control" 
@@ -180,14 +180,14 @@ export const ListView = Vue.component('furet-ui-list-view', {
                                         <i class="fa fa-caret-down"></i>
                                     </span>
                                 </button>
-                                <b-dropdown-option 
+                                <b-dropdown-item 
                                     v-for="button in view.onSelect_buttons"
                                     v-bind:value="button.buttonId"
                                     v-bind:key="button.buttonId"
                                     v-on:click="selectMore(button)"
                                 >
                                     {{button.label}}
-                                </b-dropdown-option>
+                                </b-dropdown-item>
                             </b-dropdown>
                         </p>
                     </div>
