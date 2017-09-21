@@ -25,6 +25,7 @@ RELEASE
 * FIX: checkbox (buefy 0.5.2)
 * FIX: b-modal (buefy 0.5.2)
 * IMP: add colors in list view to overload the class of the tr in table
+* ADD: Logo drawed by Audrey BRAUN
 
 1.3.0 (2017-08-14)
 ------------------

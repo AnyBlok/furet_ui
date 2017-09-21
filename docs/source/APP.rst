@@ -39,6 +39,9 @@ Some picture
 
 |app_9|
 
+
+|app_9|
+
 .. |app_0| image:: _static/app/app_0.png
 .. |app_1| image:: _static/app/app_1.png
 .. |app_2| image:: _static/app/app_2.png
@@ -49,3 +52,4 @@ Some picture
 .. |app_7| image:: _static/app/app_7.png
 .. |app_8| image:: _static/app/app_8.png
 .. |app_9| image:: _static/app/app_9.png
+.. |app_10| image:: _static/app/app_10.png

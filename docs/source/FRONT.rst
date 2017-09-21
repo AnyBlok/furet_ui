@@ -83,6 +83,7 @@ Contributors
 
 * Jean-Sébastien Suzanne
 * Simon ANDRÉ
+* Audrey BRAUN
 
 Bugs
 ----
