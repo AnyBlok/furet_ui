@@ -29,32 +29,34 @@ exports[`Menu component Render Menu with value from store open 2`] = `
                     <!---->
                 </div>
             </header>
-            <div class="modal-card-body" style="color:#363636;padding:5px;">
+            <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>Login</h1>
+                                <p style="white-space:pre-wrap;">Log in to use the application</p>
+                            </section>
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>test</h1>
+                                <p style="white-space:pre-wrap;"></p>
+                            </section>
                         </article>
                     </div>
                 </div>
-            </div>
+            </section>
+            <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
         </div>
-        <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
     </div> <button class="modal-close is-large"></button></div>
 </a>
 `;
@@ -78,22 +80,23 @@ exports[`Menu component Render Menu with value from store open and filtering 2`]
                     <!---->
                 </div>
             </header>
-            <div class="modal-card-body" style="color:#363636;padding:5px;">
+            <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>test</h1>
+                                <p style="white-space:pre-wrap;"></p>
+                            </section>
                         </article>
                     </div>
                 </div>
-            </div>
+            </section>
+            <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
         </div>
-        <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
     </div> <button class="modal-close is-large"></button></div>
 </a>
 `;
@@ -117,32 +120,34 @@ exports[`Menu component Render Menu with value from store open and select custom
                     <!---->
                 </div>
             </header>
-            <div class="modal-card-body" style="color:#363636;padding:5px;">
+            <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>Login</h1>
+                                <p style="white-space:pre-wrap;">Log in to use the application</p>
+                            </section>
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>test</h1>
+                                <p style="white-space:pre-wrap;"></p>
+                            </section>
                         </article>
                     </div>
                 </div>
-            </div>
+            </section>
+            <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
         </div>
-        <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
     </div> <button class="modal-close is-large"></button></div>
 </a>
 `;
@@ -164,32 +169,34 @@ exports[`Menu component Render Menu with value from store open and select custom
                     <!---->
                 </div>
             </header>
-            <div class="modal-card-body" style="color:#363636;padding:5px;">
+            <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>Login</h1>
+                                <p style="white-space:pre-wrap;">Log in to use the application</p>
+                            </section>
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>test</h1>
+                                <p style="white-space:pre-wrap;"></p>
+                            </section>
                         </article>
                     </div>
                 </div>
-            </div>
+            </section>
+            <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
         </div>
-        <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
     </div> <button class="modal-close is-large"></button></div>
 </a>
 `;
@@ -213,32 +220,34 @@ exports[`Menu component Render Menu with value from store open and select space 
                     <!---->
                 </div>
             </header>
-            <div class="modal-card-body" style="color:#363636;padding:5px;">
+            <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>Login</h1>
+                                <p style="white-space:pre-wrap;">Log in to use the application</p>
+                            </section>
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>test</h1>
+                                <p style="white-space:pre-wrap;"></p>
+                            </section>
                         </article>
                     </div>
                 </div>
-            </div>
+            </section>
+            <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
         </div>
-        <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
     </div> <button class="modal-close is-large"></button></div>
 </a>
 `;
@@ -260,32 +269,34 @@ exports[`Menu component Render Menu with value from store open and select space 
                     <!---->
                 </div>
             </header>
-            <div class="modal-card-body" style="color:#363636;padding:5px;">
+            <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>Login</h1>
+                                <p style="white-space:pre-wrap;">Log in to use the application</p>
+                            </section>
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media" style="padding:5px;">
-                            <div class="media-left">
+                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                            <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                            </div>
-                            <div class="media-content">
-                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                            </div>
+                            </aside>
+                            <section class="media-content">
+                                <h1>test</h1>
+                                <p style="white-space:pre-wrap;"></p>
+                            </section>
                         </article>
                     </div>
                 </div>
-            </div>
+            </section>
+            <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
         </div>
-        <footer class="modal-card-foot"><a style="color:#363636;">Close</a></footer>
     </div> <button class="modal-close is-large"></button></div>
 </a>
 `;

@@ -46,3 +46,9 @@ tr.furetui-list-purple {
 tr.furetui-list-red {
     background:	hsl(348, 100%, 61%) !important;
 }                                 
+
+
+article.furet-ui-space-menu h1 {
+    font-style: oblique;
+    font-weight: bolder;
+}

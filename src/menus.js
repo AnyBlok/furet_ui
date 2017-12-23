@@ -46,6 +46,7 @@ export const Menu = Vue.component('furet-ui-appbar-menu', {
             <b-modal 
                 v-bind:active.sync="isModalActive"
                 v-bind:canCancel="['escape', 'x', 'outside']"
+                v-bind:width="960"
             >
                 <div class="modal-background"></div>
                 <div class="modal-card">
@@ -60,38 +61,36 @@ export const Menu = Vue.component('furet-ui-appbar-menu', {
                             </b-input>
                         </b-field>
                     </header>
-                    <div 
+                    <section 
                         class="modal-card-body"
                         v-bind:style="{color: '#363636', padding: '5px'}"
                     >
                         <div class="columns is-multiline is-mobile">
-                            <div class="column is-12-mobile is-half-tablet is-half-desktop"
-                                v-for="card in cards">
-                                    <article 
-                                        class="box media" 
-                                        v-on:click.stop="selectCard(card)"
-                                        v-bind:style="{padding: '5px'}"
-                                    >
-                                        <div class="media-left">
-                                            <figure class="image is-32x32">
-                                                <furet-ui-picture
-                                                    v-bind:type="card.image.type"
-                                                    v-bind:value="card.image.value"
-                                                />
-                                            </figure>
-                                        </div>
-                                        <div class="media-content">
-                                            <div >
-                                                <strong>{{card.label}}</strong>
-                                                <br />
-                                                <small v-bind:style="{whiteSpace: 'pre-wrap'}">{{card.description}}</small>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
+                            <div 
+                                class="column is-12-mobile is-half-tablet is-half-desktop"
+                                v-for="card in cards"
+                            >
+                                <article 
+                                    class="box media furet-ui-space-menu" 
+                                    v-on:click.stop="selectCard(card)"
+                                    v-bind:style="{padding: '5px'}"
+                                >
+                                    <aside class="media-left">
+                                        <figure class="image is-32x32">
+                                            <furet-ui-picture
+                                                v-bind:type="card.image.type"
+                                                v-bind:value="card.image.value"
+                                            />
+                                        </figure>
+                                    </aside>
+                                    <section class="media-content">
+                                        <h1>{{card.label}}</h1>
+                                        <p v-bind:style="{whiteSpace: 'pre-wrap'}">{{card.description}}</p>
+                                    </section>
+                                </article>
                             </div>
                         </div>
-                    </div>
+                    </section>
                     <footer class="modal-card-foot">
                         <a 
                             v-on:click="isModalActive = false"
