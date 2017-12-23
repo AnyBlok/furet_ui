@@ -16,7 +16,7 @@ import './notifications';
 export const App = Vue.component('furet-ui', {
     template: `
         <div>
-            <section class="hero is-primary">
+            <header class="hero is-primary">
                     <nav class="nav">
                         <div class="nav-left">
                             <furet-ui-appbar-left-menu />
@@ -28,7 +28,7 @@ export const App = Vue.component('furet-ui', {
                             <furet-ui-appbar-right-menu />
                         </div>
                     </nav>
-            </section>
+            </header>
             <notifications></notifications>
             <router-view></router-view>
         </div>`,

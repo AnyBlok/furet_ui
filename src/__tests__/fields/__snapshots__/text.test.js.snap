@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`String Form component Render 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea value="The text" class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
+exports[`String Form component Render 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea class="textarea">The text</textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
 
-exports[`String Form component Render invisible condition is false 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea value="The text" class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
+exports[`String Form component Render invisible condition is false 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea class="textarea">The text</textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
 
 exports[`String Form component Render invisible condition is true 1`] = `
 <div data-server-rendered="true">
@@ -16,11 +16,11 @@ exports[`String Form component Render invisible is True 1`] = `
 </div>
 `;
 
-exports[`String Form component Render invisible is false 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea value="The text" class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
+exports[`String Form component Render invisible is false 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea class="textarea">The text</textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
 
-exports[`String Form component Render label 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-clearfix"><textarea value="The text" class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
+exports[`String Form component Render label 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-clearfix"><textarea class="textarea">The text</textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
 
-exports[`String Form component Render maxlength 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea maxlength="200" value="" class="textarea"></textarea> <!----> <!----> <small class="help counter">0 / 200</small></div> <!----></div></span></div>`;
+exports[`String Form component Render maxlength 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea maxlength="200" class="textarea"></textarea> <!----> <!----> <small class="help counter">0 / 200</small></div> <!----></div></span></div>`;
 
 exports[`String Form component Render mode readonly by config 1`] = `
 <div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span> The text </span>
@@ -46,10 +46,10 @@ exports[`String Form component Render mode readonly param 1`] = `
 </div>
 `;
 
-exports[`String Form component Render placeholder 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea placeholder="The placeholder" value="" class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
+exports[`String Form component Render placeholder 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea placeholder="The placeholder" class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
 
 exports[`String Form component Render required 1`] = `
-<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><textarea value="The text" class="textarea is-info"></textarea> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><textarea class="textarea is-info">The text</textarea> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
     <!---->
 </div>
 <!---->
@@ -59,7 +59,7 @@ exports[`String Form component Render required 1`] = `
 `;
 
 exports[`String Form component Render required conditionnal 1`] = `
-<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><textarea value="The text" class="textarea is-info"></textarea> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
+<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right is-clearfix"><textarea class="textarea is-info">The text</textarea> <!----> <span class="icon is-right is-info"><i class="fa fa-info-circle"></i></span>
     <!---->
 </div>
 <!---->
@@ -69,7 +69,7 @@ exports[`String Form component Render required conditionnal 1`] = `
 `;
 
 exports[`String Form component Render required without value 1`] = `
-<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right"><textarea value="" class="textarea is-danger"></textarea> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
+<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control has-icons-right"><textarea class="textarea is-danger"></textarea> <!----> <span class="icon is-right is-danger"><i class="fa fa-exclamation-circle"></i></span>
     <!---->
 </div>
 <p class="help is-danger">this field is required</p>
@@ -78,11 +78,11 @@ exports[`String Form component Render required without value 1`] = `
 </div>
 `;
 
-exports[`String Form component Render tooltip left 1`] = `<div data-server-rendered="true"><span data-label="The left tooltip" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea value="The text" class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
+exports[`String Form component Render tooltip left 1`] = `<div data-server-rendered="true"><span data-label="The left tooltip" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea class="textarea">The text</textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
 
-exports[`String Form component Render tooltip up 1`] = `<div data-server-rendered="true"><span data-label="The tooltip" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea value="The text" class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
+exports[`String Form component Render tooltip up 1`] = `<div data-server-rendered="true"><span data-label="The tooltip" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea class="textarea">The text</textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
 
-exports[`String Form component Render without data 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea value="" class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
+exports[`String Form component Render without data 1`] = `<div data-server-rendered="true"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-clearfix"><textarea class="textarea"></textarea> <!----> <!----> <!----></div> <!----></div></span></div>`;
 
 exports[`String Thumbnail component Render 1`] = `
 <span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <span>The text</span>

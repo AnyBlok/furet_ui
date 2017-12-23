@@ -99,7 +99,7 @@ exports[`furet-ui-view component Render with form view 4`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -139,7 +139,7 @@ exports[`furet-ui-view component Render with form view 5`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option><option value="started">
                         Started
@@ -152,7 +152,7 @@ exports[`furet-ui-view component Render with form view 5`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -192,7 +192,7 @@ exports[`furet-ui-view component Render with form view 6`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option><option value="started">
                         Started
@@ -205,7 +205,7 @@ exports[`furet-ui-view component Render with form view 6`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -266,11 +266,11 @@ exports[`furet-ui-view component Render with list view 4`] = `
     <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
-            <table class="table is-narrow has-mobile-cards">
+            <table tabindex="0" class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
                         <!---->
-                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
+                        <th class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -278,15 +278,14 @@ exports[`furet-ui-view component Render with list view 4`] = `
                         <td colspan="1"></td>
                     </tr>
                 </tbody>
+                <!---->
             </table>
         </div>
         <div class="level">
-            <div class="level-left">
-                <!---->
-            </div>
+            <div class="level-left"></div>
             <div class="level-right">
                 <div class="level-item">
-                    <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+                    <div class="pagination"><a role="button" href="#" disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a role="button" href="#" disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                         <ul class="pagination-list">
                             <!---->
                             <!---->
@@ -320,24 +319,24 @@ exports[`furet-ui-view component Render with list view 5`] = `
     <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
-            <table class="table is-narrow has-mobile-cards">
+            <table tabindex="0" class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
                         <!---->
-                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                        <th class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <!---->
-                        <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                        <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
         </td>
         <td data-label="Label"><span><div><span>Label</span></div>
     </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
 </div>
 </span>
 </td>
@@ -348,14 +347,14 @@ exports[`furet-ui-view component Render with list view 5`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span>Label 2</span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -366,14 +365,14 @@ exports[`furet-ui-view component Render with list view 5`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>3</span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span>Label 3</span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -383,19 +382,18 @@ exports[`furet-ui-view component Render with list view 5`] = `
 </tr>
 <!---->
 </tbody>
+<!---->
 </table>
 </div>
 <div class="level">
-    <div class="level-left">
-        <!---->
-    </div>
+    <div class="level-left"></div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a role="button" href="#" disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a role="button" href="#" disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
-                    <li><a class="pagination-link is-current">
+                    <li><a role="button" href="#" class="pagination-link is-current">
                 1
             </a></li>
                     <!---->
@@ -428,24 +426,24 @@ exports[`furet-ui-view component Render with list view 6`] = `
     <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
-            <table class="table is-narrow has-mobile-cards">
+            <table tabindex="0" class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
                         <!---->
-                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                        <th class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <!---->
-                        <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                        <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
         </td>
         <td data-label="Label"><span><div><span>Label</span></div>
     </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
 </div>
 </span>
 </td>
@@ -456,14 +454,14 @@ exports[`furet-ui-view component Render with list view 6`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span>Label 2</span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -473,19 +471,18 @@ exports[`furet-ui-view component Render with list view 6`] = `
 </tr>
 <!---->
 </tbody>
+<!---->
 </table>
 </div>
 <div class="level">
-    <div class="level-left">
-        <!---->
-    </div>
+    <div class="level-left"></div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a role="button" href="#" disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a role="button" href="#" disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
-                    <li><a class="pagination-link is-current">
+                    <li><a role="button" href="#" class="pagination-link is-current">
                 1
             </a></li>
                     <!---->
@@ -557,8 +554,8 @@ exports[`furet-ui-view component Render with thumbnail view 4`] = `
             <div class="field has-addons">
                 <p class="control"><a class="button"><i class="fa fa-search"></i></a></p>
                 <p class="control">
-                    <div debounce="250" class="dropdown v-select searchable" style="background-color:white;">
-                        <div class="dropdown-toggle"> <input type="search" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
+                    <div dir="auto" debounce="250" class="dropdown v-select searchable" style="background-color:white;">
+                        <div class="dropdown-toggle clearfix"> <input type="search" autocomplete="false" aria-label="Search for option" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
                             <div class="spinner" style="display:none;">Loading...</div>
                         </div>
                         <!---->
@@ -584,8 +581,8 @@ exports[`furet-ui-view component Render with thumbnail view 5`] = `
             <div class="field has-addons">
                 <p class="control"><a class="button"><i class="fa fa-search"></i></a></p>
                 <p class="control">
-                    <div debounce="250" class="dropdown v-select searchable" style="background-color:white;">
-                        <div class="dropdown-toggle"> <input type="search" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
+                    <div dir="auto" debounce="250" class="dropdown v-select searchable" style="background-color:white;">
+                        <div class="dropdown-toggle clearfix"> <input type="search" autocomplete="false" aria-label="Search for option" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
                             <div class="spinner" style="display:none;">Loading...</div>
                         </div>
                         <!---->
@@ -598,13 +595,10 @@ exports[`furet-ui-view component Render with thumbnail view 5`] = `
         <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
-                        <span
-                            class="control-label">
-                            Boolean
-                            </span>
-                            </label>
-                            </span>
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                        <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
                     </div>
                     <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                         <!---->
@@ -627,7 +621,7 @@ exports[`furet-ui-view component Render with thumbnail view 5`] = `
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -653,7 +647,7 @@ exports[`furet-ui-view component Render with thumbnail view 5`] = `
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -693,8 +687,8 @@ exports[`furet-ui-view component Render with thumbnail view 6`] = `
             <div class="field has-addons">
                 <p class="control"><a class="button"><i class="fa fa-search"></i></a></p>
                 <p class="control">
-                    <div debounce="250" class="dropdown v-select searchable" style="background-color:white;">
-                        <div class="dropdown-toggle"> <input type="search" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
+                    <div dir="auto" debounce="250" class="dropdown v-select searchable" style="background-color:white;">
+                        <div class="dropdown-toggle clearfix"> <input type="search" autocomplete="false" aria-label="Search for option" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
                             <div class="spinner" style="display:none;">Loading...</div>
                         </div>
                         <!---->
@@ -707,13 +701,10 @@ exports[`furet-ui-view component Render with thumbnail view 6`] = `
         <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
-                        <span
-                            class="control-label">
-                            Boolean
-                            </span>
-                            </label>
-                            </span>
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                        <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
                     </div>
                     <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                         <!---->
@@ -736,7 +727,7 @@ exports[`furet-ui-view component Render with thumbnail view 6`] = `
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -762,7 +753,7 @@ exports[`furet-ui-view component Render with thumbnail view 6`] = `
 <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -896,7 +887,7 @@ exports[`furet-ui-x2m-view component Render with form view 1 2`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -950,7 +941,7 @@ exports[`furet-ui-x2m-view component Render with form view 1 3`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -1004,7 +995,7 @@ exports[`furet-ui-x2m-view component Render with form view 1 4`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -1069,7 +1060,7 @@ exports[`furet-ui-x2m-view component Render with form view 2 2`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -1123,7 +1114,7 @@ exports[`furet-ui-x2m-view component Render with form view 2 3`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -1177,7 +1168,7 @@ exports[`furet-ui-x2m-view component Render with form view 2 4`] = `
 </div>
 </span>
 </div>
-<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
                 Bool
             </span></label>
     </span>
@@ -1222,24 +1213,24 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
     <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
-            <table class="table is-narrow has-mobile-cards">
+            <table tabindex="0" class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
                         <!---->
-                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                        <th class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <!---->
-                        <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                        <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
         </td>
         <td data-label="Label"><span><div><span></span></div>
     </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
 </div>
 </span>
 </td>
@@ -1250,14 +1241,14 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span></span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -1268,14 +1259,14 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span></span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -1285,19 +1276,18 @@ exports[`furet-ui-x2m-view component Render with list view 2`] = `
 </tr>
 <!---->
 </tbody>
+<!---->
 </table>
 </div>
 <div class="level">
-    <div class="level-left">
-        <!---->
-    </div>
+    <div class="level-left"></div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a role="button" href="#" disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a role="button" href="#" disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
-                    <li><a class="pagination-link is-current">
+                    <li><a role="button" href="#" class="pagination-link is-current">
                 1
             </a></li>
                     <!---->
@@ -1336,24 +1326,24 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
     <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
-            <table class="table is-narrow has-mobile-cards">
+            <table tabindex="0" class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
                         <!---->
-                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                        <th class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <!---->
-                        <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                        <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
         </td>
         <td data-label="Label"><span><div><span>Label</span></div>
     </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
 </div>
 </span>
 </td>
@@ -1364,14 +1354,14 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span>Label 2</span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -1382,14 +1372,14 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span></span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -1399,19 +1389,18 @@ exports[`furet-ui-x2m-view component Render with list view 3`] = `
 </tr>
 <!---->
 </tbody>
+<!---->
 </table>
 </div>
 <div class="level">
-    <div class="level-left">
-        <!---->
-    </div>
+    <div class="level-left"></div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a role="button" href="#" disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a role="button" href="#" disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
-                    <li><a class="pagination-link is-current">
+                    <li><a role="button" href="#" class="pagination-link is-current">
                 1
             </a></li>
                     <!---->
@@ -1450,24 +1439,24 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
     <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
-            <table class="table is-narrow has-mobile-cards">
+            <table tabindex="0" class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
                         <!---->
-                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                        <th class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <!---->
-                        <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                        <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
         </td>
         <td data-label="Label"><span><div><span>Label</span></div>
     </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
 </div>
 </span>
 </td>
@@ -1478,14 +1467,14 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span>Label 2</span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -1496,14 +1485,14 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span></span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -1513,19 +1502,18 @@ exports[`furet-ui-x2m-view component Render with list view 4`] = `
 </tr>
 <!---->
 </tbody>
+<!---->
 </table>
 </div>
 <div class="level">
-    <div class="level-left">
-        <!---->
-    </div>
+    <div class="level-left"></div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a role="button" href="#" disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a role="button" href="#" disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
-                    <li><a class="pagination-link is-current">
+                    <li><a role="button" href="#" class="pagination-link is-current">
                 1
             </a></li>
                     <!---->
@@ -1564,24 +1552,24 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
     <div class="b-table" style="overflow-x:auto;">
         <!---->
         <div class="table-wrapper">
-            <table class="table is-narrow has-mobile-cards">
+            <table tabindex="0" class="table is-narrow has-mobile-cards">
                 <thead>
                     <tr>
                         <!---->
-                        <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                        <th class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <!---->
-                        <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                        <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                         <td data-label="ID" class="has-text-right"><span><div><span>1</span></div>
         </span>
         </td>
         <td data-label="Label"><span><div><span>Label</span></div>
     </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
 </div>
 </span>
 </td>
@@ -1592,14 +1580,14 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span>Label 2</span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -1610,14 +1598,14 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
 <!---->
 <tr>
     <!---->
-    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
         </span>
     </td>
     <td data-label="Label"><span><div><span>New id</span></div>
         </span>
     </td>
-    <td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
         </div>
         </span>
     </td>
@@ -1627,19 +1615,18 @@ exports[`furet-ui-x2m-view component Render with list view 5`] = `
 </tr>
 <!---->
 </tbody>
+<!---->
 </table>
 </div>
 <div class="level">
-    <div class="level-left">
-        <!---->
-    </div>
+    <div class="level-left"></div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a role="button" href="#" disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a role="button" href="#" disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
-                    <li><a class="pagination-link is-current">
+                    <li><a role="button" href="#" class="pagination-link is-current">
                 1
             </a></li>
                     <!---->
@@ -1701,7 +1688,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 2`] = `
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
@@ -1727,7 +1714,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 2`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -1753,7 +1740,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 2`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -1805,13 +1792,10 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 3`] = `
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>
-                        <span
-                            class="control-label">
-                            Boolean
-                            </span>
-                            </label>
-                            </span>
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                        <span class="control-label">
+                Boolean
+            </span></label>
+                        </span>
                     </div>
                     <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label</span>
                         <!---->
@@ -1834,7 +1818,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 3`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -1860,7 +1844,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 3`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -1912,7 +1896,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 4`] = `
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
@@ -1938,7 +1922,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 4`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -1964,7 +1948,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 4`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -2016,7 +2000,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 5`] = `
         <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
             <article class="box content" style="padding:5px;">
                 <div class="columns is-multiline is-mobile">
-                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
+                    <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label">
                 Boolean
             </span></label>
                         </span>
@@ -2042,7 +2026,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 5`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
                 Boolean
             </span></label>
                 </span>
@@ -2068,7 +2052,7 @@ exports[`furet-ui-x2m-view component Render with thumbnail view 5`] = `
 <div class="column is-12-mobile is-one-half-tablet is-one-third-desktop">
     <article class="box content" style="padding:5px;">
         <div class="columns is-multiline is-mobile">
-            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
                 Boolean
             </span></label>
                 </span>

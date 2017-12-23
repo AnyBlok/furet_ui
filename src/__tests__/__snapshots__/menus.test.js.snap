@@ -30,30 +30,26 @@ exports[`Menu component Render Menu with value from store open 2`] = `
                 </div>
             </header>
             <div class="modal-card-body" style="color:#363636;padding:5px;">
-                <div>
-                    <legend><span class="icon"><i class="fa fa-user"></i></span> Login
-                    </legend>
-                    <div class="columns is-multiline is-mobile">
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                                </div>
-                            </article>
-                        </div>
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -83,20 +79,16 @@ exports[`Menu component Render Menu with value from store open and filtering 2`]
                 </div>
             </header>
             <div class="modal-card-body" style="color:#363636;padding:5px;">
-                <div>
-                    <legend><span class="icon"><i class="fa fa-user"></i></span> Login
-                    </legend>
-                    <div class="columns is-multiline is-mobile">
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                                </div>
-                            </article>
-                        </div>
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -126,30 +118,26 @@ exports[`Menu component Render Menu with value from store open and select custom
                 </div>
             </header>
             <div class="modal-card-body" style="color:#363636;padding:5px;">
-                <div>
-                    <legend><span class="icon"><i class="fa fa-user"></i></span> Login
-                    </legend>
-                    <div class="columns is-multiline is-mobile">
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                                </div>
-                            </article>
-                        </div>
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -177,30 +165,26 @@ exports[`Menu component Render Menu with value from store open and select custom
                 </div>
             </header>
             <div class="modal-card-body" style="color:#363636;padding:5px;">
-                <div>
-                    <legend><span class="icon"><i class="fa fa-user"></i></span> Login
-                    </legend>
-                    <div class="columns is-multiline is-mobile">
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                                </div>
-                            </article>
-                        </div>
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -230,30 +214,26 @@ exports[`Menu component Render Menu with value from store open and select space 
                 </div>
             </header>
             <div class="modal-card-body" style="color:#363636;padding:5px;">
-                <div>
-                    <legend><span class="icon"><i class="fa fa-user"></i></span> Login
-                    </legend>
-                    <div class="columns is-multiline is-mobile">
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                                </div>
-                            </article>
-                        </div>
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -281,30 +261,26 @@ exports[`Menu component Render Menu with value from store open and select space 
                 </div>
             </header>
             <div class="modal-card-body" style="color:#363636;padding:5px;">
-                <div>
-                    <legend><span class="icon"><i class="fa fa-user"></i></span> Login
-                    </legend>
-                    <div class="columns is-multiline is-mobile">
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                            <article class="box media" style="padding:5px;">
-                                <div class="media-left">
-                                    <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
-                                </div>
-                                <div class="media-content">
-                                    <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
-                                </div>
-                            </article>
-                        </div>
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>Login</strong> <br> <small style="white-space:pre-wrap;">Log in to use the application</small></div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="column is-12-mobile is-half-tablet is-half-desktop">
+                        <article class="box media" style="padding:5px;">
+                            <div class="media-left">
+                                <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
+                            </div>
+                            <div class="media-content">
+                                <div><strong>test</strong> <br> <small style="white-space:pre-wrap;"></small></div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>

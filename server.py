@@ -299,17 +299,10 @@ def _getInitRequiredData(tohomepage=False):
             'values': [
                 {
                     'label': 'Login',
+                    'description': 'Log in to use the application',
                     'image': {'type': 'font-icon', 'value': 'fa-user'},
-                    'id': 'login',
-                    'values': [
-                        {
-                            'label': 'Login',
-                            'description': 'Log in to use the application',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                    ],
+                    'type': 'client',
+                    'id': 'Login',
                 },
             ],
         },
@@ -1559,18 +1552,11 @@ def getLoginData():
             },
             'values': [
                 {
-                    'label': 'Login',
+                    'label': 'Logout',
+                    'description': 'Disconnect of the application',
                     'image': {'type': 'font-icon', 'value': 'fa-user'},
-                    'id': 'login',
-                    'values': [
-                        {
-                            'label': 'Logout',
-                            'description': 'Disconnect of the application',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Logout',
-                        },
-                    ],
+                    'type': 'client',
+                    'id': 'Logout',
                 },
             ],
         },
@@ -1582,25 +1568,18 @@ def getLoginData():
             },
             'values': [
                 {
-                    'label': 'Space groupe 1',
+                    'label': 'Space 1',
+                    'description': '',
                     'image': {'type': '', 'value': ''},
-                    'id': 1,
-                    'values': [
-                        {
-                            'label': 'Space 1',
-                            'description': '',
-                            'image': {'type': '', 'value': ''},
-                            'type': 'space',
-                            'id': '1',
-                        },
-                        {
-                            'label': 'Customer',
-                            'description': 'Manager customer, address and category',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'space',
-                            'id': '2',
-                        },
-                    ],
+                    'type': 'space',
+                    'id': '1',
+                },
+                {
+                    'label': 'Customer',
+                    'description': 'Manager customer, address and category',
+                    'image': {'type': 'font-icon', 'value': 'fa-user'},
+                    'type': 'space',
+                    'id': '2',
                 },
             ],
         },

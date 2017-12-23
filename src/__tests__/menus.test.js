@@ -58,24 +58,17 @@ describe('LeftMenu component', () => {
             'values': [
                 {
                     'label': 'Login',
+                    'description': 'Log in to use the application',
                     'image': {'type': 'font-icon', 'value': 'fa-user'},
-                    'id': 'login',
-                    'values': [
-                        {
-                            'label': 'Login',
-                            'description': 'Log in to use the application',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                        {
-                            'label': 'test',
-                            'description': '',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                    ],
+                    'type': 'client',
+                    'id': 'Login',
+                },
+                {
+                    'label': 'test',
+                    'description': '',
+                    'image': {'type': 'font-icon', 'value': 'fa-user'},
+                    'type': 'client',
+                    'id': 'Login',
                 },
             ],
         });
@@ -123,24 +116,17 @@ describe('RightMenu component', () => {
             'values': [
                 {
                     'label': 'Login',
+                    'description': 'Log in to use the application',
                     'image': {'type': 'font-icon', 'value': 'fa-user'},
-                    'id': 'login',
-                    'values': [
-                        {
-                            'label': 'Login',
-                            'description': 'Log in to use the application',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                        {
-                            'label': '',
-                            'description': '',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                    ],
+                    'type': 'client',
+                    'id': 'Login',
+                },
+                {
+                    'label': '',
+                    'description': '',
+                    'image': {'type': 'font-icon', 'value': 'fa-user'},
+                    'type': 'client',
+                    'id': 'Login',
                 },
             ],
         });
@@ -174,24 +160,17 @@ describe('Menu component', () => {
             'values': [
                 {
                     'label': 'Login',
+                    'description': 'Log in to use the application',
                     'image': {'type': 'font-icon', 'value': 'fa-user'},
-                    'id': 'login',
-                    'values': [
-                        {
-                            'label': 'Login',
-                            'description': 'Log in to use the application',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                        {
-                            'label': 'test',
-                            'description': '',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                    ],
+                    'type': 'client',
+                    'id': 'Login',
+                },
+                {
+                    'label': 'test',
+                    'description': '',
+                    'image': {'type': 'font-icon', 'value': 'fa-user'},
+                    'type': 'client',
+                    'id': 'Login',
                 },
             ],
         });
@@ -220,24 +199,17 @@ describe('Menu component', () => {
             'values': [
                 {
                     'label': 'Login',
+                    'description': 'Log in to use the application',
                     'image': {'type': 'font-icon', 'value': 'fa-user'},
-                    'id': 'login',
-                    'values': [
-                        {
-                            'label': 'Login',
-                            'description': 'Log in to use the application',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                        {
-                            'label': 'test',
-                            'description': '',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                    ],
+                    'type': 'client',
+                    'id': 'Login',
+                },
+                {
+                    'label': 'test',
+                    'description': '',
+                    'image': {'type': 'font-icon', 'value': 'fa-user'},
+                    'type': 'client',
+                    'id': 'Login',
                 },
             ],
         });
@@ -266,24 +238,17 @@ describe('Menu component', () => {
             'values': [
                 {
                     'label': 'Login',
+                    'description': 'Log in to use the application',
                     'image': {'type': 'font-icon', 'value': 'fa-user'},
-                    'id': 'login',
-                    'values': [
-                        {
-                            'label': 'Login',
-                            'description': 'Log in to use the application',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                        {
-                            'label': 'test',
-                            'description': '',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                    ],
+                    'type': 'client',
+                    'id': 'Login',
+                },
+                {
+                    'label': 'test',
+                    'description': '',
+                    'image': {'type': 'font-icon', 'value': 'fa-user'},
+                    'type': 'client',
+                    'id': 'Login',
                 },
             ],
         });
@@ -320,24 +285,17 @@ describe('Menu component', () => {
             'values': [
                 {
                     'label': 'Login',
+                    'description': 'Log in to use the application',
                     'image': {'type': 'font-icon', 'value': 'fa-user'},
-                    'id': 'login',
-                    'values': [
-                        {
-                            'label': 'Login',
-                            'description': 'Log in to use the application',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                        {
-                            'label': 'test',
-                            'description': '',
-                            'image': {'type': 'font-icon', 'value': 'fa-user'},
-                            'type': 'client',
-                            'id': 'Login',
-                        },
-                    ],
+                    'type': 'client',
+                    'id': 'Login',
+                },
+                {
+                    'label': 'test',
+                    'description': '',
+                    'image': {'type': 'font-icon', 'value': 'fa-user'},
+                    'type': 'client',
+                    'id': 'Login',
                 },
             ],
         });

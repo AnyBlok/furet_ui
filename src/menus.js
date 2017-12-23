@@ -64,39 +64,30 @@ export const Menu = Vue.component('furet-ui-appbar-menu', {
                         class="modal-card-body"
                         v-bind:style="{color: '#363636', padding: '5px'}"
                     >
-                        <div v-for="group in groups">
-                            <legend>
-                                <furet-ui-picture
-                                    v-bind:type="group.image.type"
-                                    v-bind:value="group.image.value"
-                                />
-                                {{ group.label }}
-                            </legend>
-                            <div class="columns is-multiline is-mobile">
-                                <div class="column is-12-mobile is-half-tablet is-half-desktop"
-                                    v-for="card in group.values">
-                                        <article 
-                                            class="box media" 
-                                            v-on:click.stop="selectCard(card)"
-                                            v-bind:style="{padding: '5px'}"
-                                        >
-                                            <div class="media-left">
-                                                <figure class="image is-32x32">
-                                                    <furet-ui-picture
-                                                        v-bind:type="card.image.type"
-                                                        v-bind:value="card.image.value"
-                                                    />
-                                                </figure>
+                        <div class="columns is-multiline is-mobile">
+                            <div class="column is-12-mobile is-half-tablet is-half-desktop"
+                                v-for="card in cards">
+                                    <article 
+                                        class="box media" 
+                                        v-on:click.stop="selectCard(card)"
+                                        v-bind:style="{padding: '5px'}"
+                                    >
+                                        <div class="media-left">
+                                            <figure class="image is-32x32">
+                                                <furet-ui-picture
+                                                    v-bind:type="card.image.type"
+                                                    v-bind:value="card.image.value"
+                                                />
+                                            </figure>
+                                        </div>
+                                        <div class="media-content">
+                                            <div >
+                                                <strong>{{card.label}}</strong>
+                                                <br />
+                                                <small v-bind:style="{whiteSpace: 'pre-wrap'}">{{card.description}}</small>
                                             </div>
-                                            <div class="media-content">
-                                                <div >
-                                                    <strong>{{card.label}}</strong>
-                                                    <br />
-                                                    <small v-bind:style="{whiteSpace: 'pre-wrap'}">{{card.description}}</small>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
+                                        </div>
+                                    </article>
                                 </div>
                             </div>
                         </div>
@@ -127,14 +118,11 @@ export const Menu = Vue.component('furet-ui-appbar-menu', {
                   hasLabel = value.label.length > 0;
             return hasImage && hasLabel;
         },
-        groups () {
-            const groups = [],
-                  re = new RegExp(this.searchText, 'ig');
-            _.each(this.$store.state[this.type + 'menu'].values, g => {
-                const cards = _.filter(g.values, c => (re.test(c.label) || re.test(c.description)))
-                if (cards.length) groups.push(Object.assign({}, g, {values: cards}));
-            });
-            return groups;
+        cards () {
+            const re = new RegExp(this.searchText, 'ig'),
+                  store = this.$store.state[this.type + 'menu'],
+                  cards = _.filter(store.values, c => (re.test(c.label) || re.test(c.description)));
+            return cards
         },
     },
     methods: {

@@ -2,7 +2,7 @@
 
 exports[`App component Render App with default value from store 1`] = `
 <div data-server-rendered="true">
-    <section class="hero is-primary">
+    <header class="hero is-primary">
         <nav class="nav">
             <div class="nav-left">
                 <!---->
@@ -14,7 +14,7 @@ exports[`App component Render App with default value from store 1`] = `
                 <!---->
             </div>
         </nav>
-    </section>
+    </header>
     <div style="position:fixed;right:10px;top:60px;width:400px;z-index:1000;"></div>
     <!---->
 </div>
@@ -22,7 +22,7 @@ exports[`App component Render App with default value from store 1`] = `
 
 exports[`App component Render App with value from store 1`] = `
 <div data-server-rendered="true">
-    <section class="hero is-primary">
+    <header class="hero is-primary">
         <nav class="nav">
             <div class="nav-left">
                 <!---->
@@ -34,7 +34,7 @@ exports[`App component Render App with value from store 1`] = `
                 <!---->
             </div>
         </nav>
-    </section>
+    </header>
     <div style="position:fixed;right:10px;top:60px;width:400px;z-index:1000;"></div>
     <!---->
 </div>
@@ -42,7 +42,7 @@ exports[`App component Render App with value from store 1`] = `
 
 exports[`App component Render App with value from store 2`] = `
 <div data-server-rendered="true">
-    <section class="hero is-primary">
+    <header class="hero is-primary">
         <nav class="nav">
             <div class="nav-left">
                 <!---->
@@ -54,7 +54,7 @@ exports[`App component Render App with value from store 2`] = `
                 <!---->
             </div>
         </nav>
-    </section>
+    </header>
     <div style="position:fixed;right:10px;top:60px;width:400px;z-index:1000;"></div>
     <!---->
 </div>

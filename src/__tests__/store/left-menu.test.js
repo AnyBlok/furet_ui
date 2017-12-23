@@ -19,25 +19,18 @@ describe('store.state.client', () => {
     };
     const values = [
         {
-            label: 'Space groupe 1',
-            image: {'type': '', 'value': ''},
-            id: 1,
-            values: [
-                {
-                    label: 'Space 1',
-                    description: '',
-                    image: {type: '', value: ''},
-                    type: 'space',
-                    id: '1',
-                },
-                {
-                    label: 'Customer',
-                    description: 'Manager customer, address and category',
-                    image: {type: 'font-icon', value: 'fa-user'},
-                    type: 'space',
-                    id: '2',
-                },
-            ],
+            label: 'Space 1',
+            description: '',
+            image: {type: '', value: ''},
+            type: 'space',
+            id: '1',
+        },
+        {
+            label: 'Customer',
+            description: 'Manager customer, address and category',
+            image: {type: 'font-icon', value: 'fa-user'},
+            type: 'space',
+            id: '2',
         },
     ];
     beforeEach(() => {

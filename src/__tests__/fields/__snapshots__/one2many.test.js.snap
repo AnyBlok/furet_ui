@@ -21,24 +21,24 @@ exports[`One2Many Form component Render 1`] = `
 <div class="b-table" style="overflow-x:auto;">
     <!---->
     <div class="table-wrapper">
-        <table class="table is-narrow has-mobile-cards">
+        <table tabindex="0" class="table is-narrow has-mobile-cards">
             <thead>
                 <tr>
                     <!---->
-                    <th class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
+                    <th class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <!---->
-                    <td class="checkbox-cell"><label tabindex="0" class="checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+                    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
                     <td data-label="ID" class="has-text-right"><span><div><span></span></div>
     </span>
     </td>
     <td data-label="Label"><span><div><span>Test</span></div>
 </span>
 </td>
-<td data-label="Boolean"><span><div><label disabled="disabled" class="checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
+<td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true"> <span class="check"></span> <span class="control-label"></span></label>
     </div>
     </span>
 </td>
@@ -48,19 +48,18 @@ exports[`One2Many Form component Render 1`] = `
 </tr>
 <!---->
 </tbody>
+<!---->
 </table>
 </div>
 <div class="level">
-    <div class="level-left">
-        <!---->
-    </div>
+    <div class="level-left"></div>
     <div class="level-right">
         <div class="level-item">
-            <div class="pagination"><a disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
+            <div class="pagination"><a role="button" href="#" disabled="disabled" class="pagination-previous"><span class="icon"><i class="fa fa-angle-left"></i></span></a> <a role="button" href="#" disabled="disabled" class="pagination-next"><span class="icon"><i class="fa fa-angle-right"></i></span></a>
                 <ul class="pagination-list">
                     <!---->
                     <!---->
-                    <li><a class="pagination-link is-current">
+                    <li><a role="button" href="#" class="pagination-link is-current">
                 1
             </a></li>
                     <!---->

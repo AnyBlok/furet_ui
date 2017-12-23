@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Selection Form component Render 1`] = `
-<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option></select></span>
 <!---->
@@ -21,7 +21,7 @@ exports[`Selection Form component Render icon 1`] = `
 `;
 
 exports[`Selection Form component Render invisible condition is false 1`] = `
-<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option></select></span>
 <!---->
@@ -36,7 +36,7 @@ exports[`Selection Form component Render invisible condition is true 1`] = `<div
 exports[`Selection Form component Render invisible is True 1`] = `<div data-server-rendered="true"></div>`;
 
 exports[`Selection Form component Render invisible is false 1`] = `
-<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option></select></span>
 <!---->
@@ -47,7 +47,7 @@ exports[`Selection Form component Render invisible is false 1`] = `
 `;
 
 exports[`Selection Form component Render label 1`] = `
-<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">The label</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option></select></span>
 <!---->
@@ -92,7 +92,7 @@ exports[`Selection Form component Render placeholder 1`] = `
 `;
 
 exports[`Selection Form component Render required 1`] = `
-<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-info is-fullwidth"><select><!----> <option value="new">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-info is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option></select></span>
 <!---->
@@ -103,7 +103,7 @@ exports[`Selection Form component Render required 1`] = `
 `;
 
 exports[`Selection Form component Render required conditionnal 1`] = `
-<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-info is-fullwidth"><select><!----> <option value="new">
+<span data-label="" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-info is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option></select></span>
 <!---->
@@ -125,7 +125,7 @@ exports[`Selection Form component Render required without value 1`] = `
 `;
 
 exports[`Selection Form component Render tooltip left 1`] = `
-<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<span data-label="The left tooltip" data-server-rendered="true" class="is-primary is-left is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option></select></span>
 <!---->
@@ -136,7 +136,7 @@ exports[`Selection Form component Render tooltip left 1`] = `
 `;
 
 exports[`Selection Form component Render tooltip up 1`] = `
-<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+<span data-label="The tooltip" data-server-rendered="true" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><!----> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option></select></span>
 <!---->
