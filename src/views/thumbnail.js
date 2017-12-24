@@ -95,8 +95,8 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
                     />
                 </div>
             </nav>
-            <div class="columns is-multiline is-mobile">
-                <div v-bind:class="['column', view.column_size || 'is-12-mobile is-one-third-tablet is-one-quarter-desktop']"
+            <section class="columns is-multiline is-mobile">
+                <section v-bind:class="['column', view.column_size || 'is-12-mobile is-one-third-tablet is-one-quarter-desktop']"
                      v-for="card in tableData"
                 >
                     <article 
@@ -111,8 +111,8 @@ export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
                             v-bind:model="view && view.model"
                         />
                     </article>
-                </div>
-            </div>
+                </section>
+            </section>
         </div>
     `,
     data: () => {

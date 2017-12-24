@@ -56,7 +56,7 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
             v-bind:default-sort="view && view.default_sort"
             v-bind:row-class="rowClass"
         >
-             <template scope="props" slot="header">
+             <template slot-scope="props" slot="header">
                 <b-tooltip 
                     v-bind:active="!!props.column.meta" 
                     v-bind:label="props.column.meta" 
@@ -66,7 +66,7 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
                     {{ props.column.label }}
                 </b-tooltip>
             </template>
-            <template scope="props">
+            <template slot-scope="props">
                 <b-table-column v-for="header in headers"
                     v-bind:key="header.name"
                     v-bind:field="header.name"

@@ -7,7 +7,7 @@ exports[`One2Many Form component Render 1`] = `
 </div>
 </div>
 <div class="level-right">
-    <div class="field has-addons">
+    <nav class="field has-addons">
         <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
             </span>
         </p>
@@ -15,7 +15,7 @@ exports[`One2Many Form component Render 1`] = `
             </span>
         </p>
         <!---->
-    </div>
+    </nav>
 </div>
 </nav>
 <div class="b-table" style="overflow-x:auto;">

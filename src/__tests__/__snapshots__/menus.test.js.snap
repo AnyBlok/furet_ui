@@ -32,7 +32,7 @@ exports[`Menu component Render Menu with value from store open 2`] = `
             <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -43,7 +43,7 @@ exports[`Menu component Render Menu with value from store open 2`] = `
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -83,7 +83,7 @@ exports[`Menu component Render Menu with value from store open and filtering 2`]
             <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -123,7 +123,7 @@ exports[`Menu component Render Menu with value from store open and select custom
             <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -134,7 +134,7 @@ exports[`Menu component Render Menu with value from store open and select custom
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -172,7 +172,7 @@ exports[`Menu component Render Menu with value from store open and select custom
             <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -183,7 +183,7 @@ exports[`Menu component Render Menu with value from store open and select custom
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -223,7 +223,7 @@ exports[`Menu component Render Menu with value from store open and select space 
             <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -234,7 +234,7 @@ exports[`Menu component Render Menu with value from store open and select space 
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -272,7 +272,7 @@ exports[`Menu component Render Menu with value from store open and select space 
             <section class="modal-card-body" style="color:#363636;padding:5px;">
                 <div class="columns is-multiline is-mobile">
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>
@@ -283,7 +283,7 @@ exports[`Menu component Render Menu with value from store open and select space 
                         </article>
                     </div>
                     <div class="column is-12-mobile is-half-tablet is-half-desktop">
-                        <article class="box media furet-ui-space-menu" style="padding:5px;">
+                        <article class="box media furet-ui-space-menu" style="padding:2px;">
                             <aside class="media-left">
                                 <figure class="image is-32x32"><span class="icon"><i class="fa fa-user"></i></span></figure>
                             </aside>

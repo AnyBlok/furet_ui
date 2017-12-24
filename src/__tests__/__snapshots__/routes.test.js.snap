@@ -46,14 +46,12 @@ exports[`Route component Render App with default path 1`] = `
 exports[`Route component Render App with space 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a></a></li>
-                    </ul>
+                    <li class="is-active"><a></a></li>
                 </nav>
             </div>
             <div class="nav-right">
@@ -62,7 +60,7 @@ exports[`Route component Render App with space 1`] = `
             </div>
         </nav>
         <!---->
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -70,14 +68,12 @@ exports[`Route component Render App with space 1`] = `
 exports[`Route component Render App with space 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a></a></li>
-                    </ul>
+                    <li class="is-active"><a></a></li>
                 </nav>
             </div>
             <div class="nav-right">
@@ -86,7 +82,7 @@ exports[`Route component Render App with space 2`] = `
             </div>
         </nav>
         <!---->
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -94,18 +90,16 @@ exports[`Route component Render App with space 2`] = `
 exports[`Route component Render App with space and action 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -113,12 +107,12 @@ exports[`Route component Render App with space and action 1`] = `
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
         <!---->
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -126,28 +120,26 @@ exports[`Route component Render App with space and action 1`] = `
 exports[`Route component Render App with space and action 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
         <!---->
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -155,18 +147,16 @@ exports[`Route component Render App with space and action 2`] = `
 exports[`Route component Render App with space and action and custome view 1`] = `
 <div data-server-rendered="true" viewName="Login" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -174,7 +164,7 @@ exports[`Route component Render App with space and action and custome view 1`] =
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -185,7 +175,7 @@ exports[`Route component Render App with space and action and custome view 1`] =
                     </a></div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -193,18 +183,16 @@ exports[`Route component Render App with space and action and custome view 1`] =
 exports[`Route component Render App with space and action and view 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -212,7 +200,7 @@ exports[`Route component Render App with space and action and view 1`] = `
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -255,26 +243,26 @@ exports[`Route component Render App with space and action and view 1`] = `
         </span>
         </td>
         <td data-label="State"><span><div><span>New</span></div>
-    </span>
-    </td>
-    </tr>
-    <!---->
-    <tr>
-        <!---->
-        <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
-        <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
 </span>
 </td>
-<td data-label="Label"><span><div><span>Label 2</span></div>
-    </span>
-</td>
-<td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
-    </div>
-    </span>
-</td>
-<td data-label="State"><span><div><span>Done</span></div>
-    </span>
-</td>
+</tr>
+<!---->
+<tr>
+    <!---->
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
+        </span>
+    </td>
+    <td data-label="Label"><span><div><span>Label 2</span></div>
+        </span>
+    </td>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+        </div>
+        </span>
+    </td>
+    <td data-label="State"><span><div><span>Done</span></div>
+        </span>
+    </td>
 </tr>
 <!---->
 </tbody>
@@ -302,7 +290,7 @@ exports[`Route component Render App with space and action and view 1`] = `
 </div>
 </div>
 </div>
-</div>
+</section>
 <!---->
 </div>
 `;
@@ -310,18 +298,16 @@ exports[`Route component Render App with space and action and view 1`] = `
 exports[`Route component Render App with space and action and view 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -329,7 +315,7 @@ exports[`Route component Render App with space and action and view 2`] = `
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -355,8 +341,8 @@ exports[`Route component Render App with space and action and view 2`] = `
                     </div>
                 </div>
             </nav>
-            <div class="columns is-multiline is-mobile">
-                <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+            <section class="columns is-multiline is-mobile">
+                <section class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
                     <article class="box content" style="padding:5px;">
                         <div class="columns is-multiline is-mobile">
                             <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                                <span class="control-label">
@@ -373,44 +359,44 @@ exports[`Route component Render App with space and action and view 2`] = `
                             <!---->
                         </div>
                         </span>
-                </div>
-                <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
-                    <!---->
-                </div>
-                </span>
-            </div>
         </div>
-        </article>
-    </div>
-    <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-        <article class="box content" style="padding:5px;">
-            <div class="columns is-multiline is-mobile">
-                <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                    <span class="control-label">
-                Boolean
-            </span></label>
-                    </span>
-                </div>
-                <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
-                    <!---->
-                </div>
-                </span>
-            </div>
-            <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
-                <!---->
-            </div>
-            </span>
-    </div>
-    <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
-        <!---->
-    </div>
-    </span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
+            <!---->
+        </div>
+        </span>
 </div>
 </div>
 </article>
+</section>
+<section class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box content" style="padding:5px;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
+            <!---->
+        </div>
+        </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
+            <!---->
+        </div>
+        </span>
+        </div>
+        </div>
+    </article>
+</section>
+</section>
 </div>
-</div>
-</div>
-</div>
+</section>
 <!---->
 </div>
 `;
@@ -418,18 +404,16 @@ exports[`Route component Render App with space and action and view 2`] = `
 exports[`Route component Render App with space and action and view 3`] = `
 <div data-server-rendered="true" dataId="1" mode="new" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -439,7 +423,7 @@ exports[`Route component Render App with space and action and view 3`] = `
                     <p class="control"><span data-label="Form" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-file-o"></i></span></a>
                         </span>
                     </p>
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -471,17 +455,17 @@ exports[`Route component Render App with space and action and view 3`] = `
                 <!---->
         </div>
         </span>
-    </div>
-    <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
+</div>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option><option value="started">
                         Started
                     </option><option value="done">
                         Done
                     </option></select></span>
-        <!---->
-    </div>
     <!---->
+</div>
+<!---->
 </div>
 </span>
 </div>
@@ -493,7 +477,7 @@ exports[`Route component Render App with space and action and view 3`] = `
 </div>
 </section>
 </div>
-</div>
+</section>
 <!---->
 </div>
 `;
@@ -501,18 +485,16 @@ exports[`Route component Render App with space and action and view 3`] = `
 exports[`Route component Render App with space and action and view 4`] = `
 <div data-server-rendered="true" dataId="2" mode="new" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -522,7 +504,7 @@ exports[`Route component Render App with space and action and view 4`] = `
                     <p class="control"><span data-label="Form" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-file-o"></i></span></a>
                         </span>
                     </p>
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -554,17 +536,17 @@ exports[`Route component Render App with space and action and view 4`] = `
                 <!---->
         </div>
         </span>
-    </div>
-    <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+</div>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
                         New
                     </option><option value="started">
                         Started
                     </option><option selected="selected" value="done">
                         Done
                     </option></select></span>
-        <!---->
-    </div>
     <!---->
+</div>
+<!---->
 </div>
 </span>
 </div>
@@ -576,7 +558,7 @@ exports[`Route component Render App with space and action and view 4`] = `
 </div>
 </section>
 </div>
-</div>
+</section>
 <!---->
 </div>
 `;
@@ -584,14 +566,12 @@ exports[`Route component Render App with space and action and view 4`] = `
 exports[`Route component Render App with space and menu 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a></a></li>
-                    </ul>
+                    <li class="is-active"><a></a></li>
                 </nav>
             </div>
             <div class="nav-right">
@@ -600,7 +580,7 @@ exports[`Route component Render App with space and menu 1`] = `
             </div>
         </nav>
         <!---->
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -608,14 +588,12 @@ exports[`Route component Render App with space and menu 1`] = `
 exports[`Route component Render App with space and menu 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a></a></li>
-                    </ul>
+                    <li class="is-active"><a></a></li>
                 </nav>
             </div>
             <div class="nav-right">
@@ -624,7 +602,7 @@ exports[`Route component Render App with space and menu 2`] = `
             </div>
         </nav>
         <!---->
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -632,18 +610,16 @@ exports[`Route component Render App with space and menu 2`] = `
 exports[`Route component Render App with space and menu and action 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -651,12 +627,12 @@ exports[`Route component Render App with space and menu and action 1`] = `
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
         <!---->
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -664,28 +640,26 @@ exports[`Route component Render App with space and menu and action 1`] = `
 exports[`Route component Render App with space and menu and action 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
         <!---->
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -693,18 +667,16 @@ exports[`Route component Render App with space and menu and action 2`] = `
 exports[`Route component Render App with space and menu and action and custome view 1`] = `
 <div data-server-rendered="true" viewName="Login" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -712,7 +684,7 @@ exports[`Route component Render App with space and menu and action and custome v
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -723,7 +695,7 @@ exports[`Route component Render App with space and menu and action and custome v
                     </a></div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -731,18 +703,16 @@ exports[`Route component Render App with space and menu and action and custome v
 exports[`Route component Render App with space and menu and action and view 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -750,7 +720,7 @@ exports[`Route component Render App with space and menu and action and view 1`] 
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -793,26 +763,26 @@ exports[`Route component Render App with space and menu and action and view 1`] 
         </span>
         </td>
         <td data-label="State"><span><div><span>New</span></div>
-    </span>
-    </td>
-    </tr>
-    <!---->
-    <tr>
-        <!---->
-        <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
-        <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
 </span>
 </td>
-<td data-label="Label"><span><div><span>Label 2</span></div>
-    </span>
-</td>
-<td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
-    </div>
-    </span>
-</td>
-<td data-label="State"><span><div><span>Done</span></div>
-    </span>
-</td>
+</tr>
+<!---->
+<tr>
+    <!---->
+    <td class="checkbox-cell"><label tabindex="0" class="b-checkbox checkbox"><input type="checkbox" true-value="true"> <span class="check"></span> <span class="control-label"></span></label></td>
+    <td data-label="ID" class="has-text-right"><span><div><span>2</span></div>
+        </span>
+    </td>
+    <td data-label="Label"><span><div><span>Label 2</span></div>
+        </span>
+    </td>
+    <td data-label="Boolean"><span><div><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span> <span class="control-label"></span></label>
+        </div>
+        </span>
+    </td>
+    <td data-label="State"><span><div><span>Done</span></div>
+        </span>
+    </td>
 </tr>
 <!---->
 </tbody>
@@ -840,7 +810,7 @@ exports[`Route component Render App with space and menu and action and view 1`] 
 </div>
 </div>
 </div>
-</div>
+</section>
 <!---->
 </div>
 `;
@@ -848,18 +818,16 @@ exports[`Route component Render App with space and menu and action and view 1`] 
 exports[`Route component Render App with space and menu and action and view 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -867,7 +835,7 @@ exports[`Route component Render App with space and menu and action and view 2`] 
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -893,8 +861,8 @@ exports[`Route component Render App with space and menu and action and view 2`] 
                     </div>
                 </div>
             </nav>
-            <div class="columns is-multiline is-mobile">
-                <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+            <section class="columns is-multiline is-mobile">
+                <section class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
                     <article class="box content" style="padding:5px;">
                         <div class="columns is-multiline is-mobile">
                             <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                                <span class="control-label">
@@ -911,44 +879,44 @@ exports[`Route component Render App with space and menu and action and view 2`] 
                             <!---->
                         </div>
                         </span>
-                </div>
-                <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
-                    <!---->
-                </div>
-                </span>
-            </div>
         </div>
-        </article>
-    </div>
-    <div class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
-        <article class="box content" style="padding:5px;">
-            <div class="columns is-multiline is-mobile">
-                <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                    <span class="control-label">
-                Boolean
-            </span></label>
-                    </span>
-                </div>
-                <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
-                    <!---->
-                </div>
-                </span>
-            </div>
-            <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
-                <!---->
-            </div>
-            </span>
-    </div>
-    <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
-        <!---->
-    </div>
-    </span>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>1</span>
+            <!---->
+        </div>
+        </span>
 </div>
 </div>
 </article>
+</section>
+<section class="column is-12-mobile is-one-third-tablet is-one-quarter-desktop">
+    <article class="box content" style="padding:5px;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-4"><span data-label="" class="is-primary is-top is-medium tooltip"><label disabled="disabled" class="b-checkbox checkbox is-disabled"><input type="checkbox" disabled="disabled" true-value="true" checked="checked"> <span class="check"></span>                <span class="control-label">
+                Boolean
+            </span></label>
+                </span>
+            </div>
+            <div class="column is-8"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">Label</label> <span>Label 2</span>
+                <!---->
+            </div>
+            </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <span>Done</span>
+            <!---->
+        </div>
+        </span>
+        </div>
+        <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">ID</label> <span>2</span>
+            <!---->
+        </div>
+        </span>
+        </div>
+        </div>
+    </article>
+</section>
+</section>
 </div>
-</div>
-</div>
-</div>
+</section>
 <!---->
 </div>
 `;
@@ -956,18 +924,16 @@ exports[`Route component Render App with space and menu and action and view 2`] 
 exports[`Route component Render App with space and menu and action and view 3`] = `
 <div data-server-rendered="true" dataId="1" mode="new" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -977,7 +943,7 @@ exports[`Route component Render App with space and menu and action and view 3`] 
                     <p class="control"><span data-label="Form" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-file-o"></i></span></a>
                         </span>
                     </p>
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -1009,17 +975,17 @@ exports[`Route component Render App with space and menu and action and view 3`] 
                 <!---->
         </div>
         </span>
-    </div>
-    <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
+</div>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option selected="selected" value="new">
                         New
                     </option><option value="started">
                         Started
                     </option><option value="done">
                         Done
                     </option></select></span>
-        <!---->
-    </div>
     <!---->
+</div>
+<!---->
 </div>
 </span>
 </div>
@@ -1031,7 +997,7 @@ exports[`Route component Render App with space and menu and action and view 3`] 
 </div>
 </section>
 </div>
-</div>
+</section>
 <!---->
 </div>
 `;
@@ -1039,18 +1005,16 @@ exports[`Route component Render App with space and menu and action and view 3`] 
 exports[`Route component Render App with space and menu and action and view 4`] = `
 <div data-server-rendered="true" dataId="2" mode="new" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -1060,7 +1024,7 @@ exports[`Route component Render App with space and menu and action and view 4`] 
                     <p class="control"><span data-label="Form" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-file-o"></i></span></a>
                         </span>
                     </p>
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -1092,17 +1056,17 @@ exports[`Route component Render App with space and menu and action and view 4`] 
                 <!---->
         </div>
         </span>
-    </div>
-    <div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
+</div>
+<div class="column is-6"><span data-label="" class="is-primary is-top is-medium tooltip" style="width:100%;"><div class="field" style="width:inherit;"><label class="label">State</label> <div class="control is-expanded"><span class="select is-fullwidth"><select><!----> <option value="new">
                         New
                     </option><option value="started">
                         Started
                     </option><option selected="selected" value="done">
                         Done
                     </option></select></span>
-        <!---->
-    </div>
     <!---->
+</div>
+<!---->
 </div>
 </span>
 </div>
@@ -1114,7 +1078,7 @@ exports[`Route component Render App with space and menu and action and view 4`] 
 </div>
 </section>
 </div>
-</div>
+</section>
 <!---->
 </div>
 `;

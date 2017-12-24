@@ -45,7 +45,7 @@ export const onClickMenu = (router, spaceId, menu) => {
 export const ViewSelector = Vue.component('furet-ui-view-selector', {
     props: ['views', 'viewId'],
     template: `
-        <div class="field has-addons" v-if="views.length > 0">
+        <nav class="field has-addons" v-if="views.length > 0">
             <p class="control" 
                 v-for="view in views"
                 v-if="!view.unclickable || view.viewId == viewId"
@@ -62,7 +62,7 @@ export const ViewSelector = Vue.component('furet-ui-view-selector', {
                     </a>
                 </b-tooltip>
             </p>
-        </div>
+        </nav>
     `,
     methods: {
         changeView (viewId) {
@@ -114,30 +114,29 @@ export const Space = Vue.component('furet-ui-space', {
             class="columns is-gapless"
             v-bind:style="{marginTop: '5px'}"
         >
-            <div v-if="isOpenLeft && left_menu.length > 0" class="column is-one-quarter is-half-mobile">
-                <aside class="menu" v-bind:style="{padding: '5px'}">
-                    <furet-ui-space-menu 
-                        v-bind:menus="left_menu" 
-                        v-bind:menuId="menuId" 
-                        v-bind:spaceId="spaceId"
-                    />
-                </aside>
-            </div>
-            <div v-bind:class="['column', getClassSize]" v-bind:style="{paddingLeft: '10px', paddingRight: '10px'}">
+            <aside 
+                v-if="isOpenLeft && left_menu.length > 0" 
+                class="column is-one-quarter is-half-mobile menu"
+            >
+                <furet-ui-space-menu 
+                    v-bind:menus="left_menu" 
+                    v-bind:menuId="menuId" 
+                    v-bind:spaceId="spaceId"
+                />
+            </aside>
+            <section v-bind:class="['column', getClassSize]" v-bind:style="{paddingLeft: '10px', paddingRight: '10px'}">
                 <nav class="nav" v-bind:style="{backgroundColor: 'inherit'}">
                     <div class="nav-left">
                         <a class="button" v-on:click="isOpenLeft = !isOpenLeft" v-if="left_menu.length > 0">
                             <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
                         </a>
                         <nav class="breadcrumb">
-                            <ul>
-                                <li v-for="a in actions">
-                                    <a v-on:click="onClickBreadScrumb(a)">
-                                        {{a.label}}
-                                    </a>
-                                </li>
-                                <li class="is-active"><a>{{action.label}}</a></li>
-                            </ul>
+                            <li v-for="a in actions">
+                                <a v-on:click="onClickBreadScrumb(a)">
+                                    {{a.label}}
+                                </a>
+                            </li>
+                            <li class="is-active"><a>{{action.label}}</a></li>
                         </nav>
                     </div>
                     <div class="nav-right">
@@ -152,16 +151,17 @@ export const Space = Vue.component('furet-ui-space', {
                     </div>
                 </nav>
                 <router-view></router-view>
-            </div>
-            <div v-if="isOpenRight && right_menu.length > 0" class="column is-one-quarter is-half-mobile">
-                <aside class="menu" v-bind:style="{padding: '5px'}">
-                    <furet-ui-space-menu 
-                        v-bind:menus="right_menu" 
-                        v-bind:menuId="menuId" 
-                        v-bind:spaceId="spaceId"
-                    />
-                </aside>
-            </div>
+            </section>
+            <aside 
+                v-if="isOpenRight && right_menu.length > 0" 
+                class="column is-one-quarter is-half-mobile menu"
+            >
+                <furet-ui-space-menu 
+                    v-bind:menus="right_menu" 
+                    v-bind:menuId="menuId" 
+                    v-bind:spaceId="spaceId"
+                />
+            </aside>
         </div>`,
     props: ['spaceId', 'menuId', 'actionId', 'viewId', 'defaultOpenLeft', 'defaultOpenRight'],
     data () {

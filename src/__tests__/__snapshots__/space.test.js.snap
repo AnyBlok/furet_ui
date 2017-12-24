@@ -3,14 +3,12 @@
 exports[`Space component Render 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a></a></li>
-                    </ul>
+                    <li class="is-active"><a></a></li>
                 </nav>
             </div>
             <div class="nav-right">
@@ -26,7 +24,7 @@ exports[`Space component Render 1`] = `
                 </div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -34,22 +32,20 @@ exports[`Space component Render 1`] = `
 exports[`Space component Render breadscrumb 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -61,7 +57,7 @@ exports[`Space component Render breadscrumb 1`] = `
                 </div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -69,25 +65,23 @@ exports[`Space component Render breadscrumb 1`] = `
 exports[`Space component Render breadscrumb 2`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li><a>
-                                        Action 2
-                                    </a></li>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li><a>
+                                    Action 2
+                                </a></li>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -99,7 +93,7 @@ exports[`Space component Render breadscrumb 2`] = `
                 </div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -107,31 +101,29 @@ exports[`Space component Render breadscrumb 2`] = `
 exports[`Space component Render breadscrumb 3`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li><a>
-                                        Action 2
-                                    </a></li>
-                        <li><a>
-                                        Action 3
-                                    </a></li>
-                        <li><a>
-                                        Action 4
-                                    </a></li>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li><a>
+                                    Action 2
+                                </a></li>
+                    <li><a>
+                                    Action 3
+                                </a></li>
+                    <li><a>
+                                    Action 4
+                                </a></li>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -143,7 +135,7 @@ exports[`Space component Render breadscrumb 3`] = `
                 </div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -151,41 +143,37 @@ exports[`Space component Render breadscrumb 3`] = `
 exports[`Space component Render breadscrumb 4`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li><a>
-                                        Action 2
-                                    </a></li>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li><a>
+                                    Action 2
+                                </a></li>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
         <div class="columns is-gapless" style="margin-top:5px;">
             <!---->
-            <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+            <section class="column is-12" style="padding-left:10px;padding-right:10px;">
                 <nav class="nav" style="background-color:inherit;">
                     <div class="nav-left">
                         <!---->
                         <nav class="breadcrumb">
-                            <ul>
-                                <li><a>
-                                        Action 2
-                                    </a></li>
-                                <li class="is-active"><a></a></li>
-                            </ul>
+                            <li><a>
+                                    Action 2
+                                </a></li>
+                            <li class="is-active"><a></a></li>
                         </nav>
                     </div>
                     <div class="nav-right">
@@ -194,10 +182,10 @@ exports[`Space component Render breadscrumb 4`] = `
                     </div>
                 </nav>
                 <!---->
-            </div>
+            </section>
             <!---->
         </div>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -205,17 +193,15 @@ exports[`Space component Render breadscrumb 4`] = `
 exports[`Space component Render display left menu (close) 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left"><a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a>
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -223,7 +209,7 @@ exports[`Space component Render display left menu (close) 1`] = `
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -235,57 +221,53 @@ exports[`Space component Render display left menu (close) 1`] = `
                 </div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
 
 exports[`Space component Render display left menu (open) 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
-    <div class="column is-one-quarter is-half-mobile">
-        <aside class="menu" style="padding:5px;">
-            <ul class="menu-list">
-                <li>
-                    <!---->
-                    <!----><a class="is-active"><span class="icon"><i class="fa fa-user"></i></span>
+    <aside class="column is-one-quarter is-half-mobile menu">
+        <ul class="menu-list">
+            <li>
+                <!---->
+                <!----><a class="is-active"><span class="icon"><i class="fa fa-user"></i></span>
                     Customer
                 </a></li>
-                <li><span><span class="icon"><i class="fa fa-user"></i></span> Setting
-                    </span>
-                    <ul class="menu-list">
-                        <li>
+            <li><span><span class="icon"><i class="fa fa-user"></i></span> Setting
+                </span>
+                <ul class="menu-list">
+                    <li>
+                        <!---->
+                        <!---->
+                        <a>
                             <!---->
+                            Category
+                        </a>
+                    </li>
+                    <li>
+                        <!---->
+                        <!---->
+                        <a>
                             <!---->
-                            <a>
-                                <!---->
-                                Category
-                            </a>
-                        </li>
-                        <li>
-                            <!---->
-                            <!---->
-                            <a>
-                                <!---->
-                                Address
-                            </a>
-                        </li>
-                    </ul>
-                    <!---->
-                </li>
-            </ul>
-        </aside>
-    </div>
-    <div class="column is-three-quarters" style="padding-left:10px;padding-right:10px;">
+                            Address
+                        </a>
+                    </li>
+                </ul>
+                <!---->
+            </li>
+        </ul>
+    </aside>
+    <section class="column is-three-quarters" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left"><a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a>
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -293,7 +275,7 @@ exports[`Space component Render display left menu (open) 1`] = `
                         </span>
                     </p>
                     <!---->
-                </div>
+                </nav>
                 <!---->
             </div>
         </nav>
@@ -305,7 +287,7 @@ exports[`Space component Render display left menu (open) 1`] = `
                 </div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -313,18 +295,16 @@ exports[`Space component Render display left menu (open) 1`] = `
 exports[`Space component Render display right menu (close) 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -332,7 +312,7 @@ exports[`Space component Render display right menu (close) 1`] = `
                         </span>
                     </p>
                     <!---->
-                </div> <a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a></div>
+                </nav> <a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a></div>
         </nav>
         <section class="section content">
             <div class="columns is-mobile">
@@ -342,7 +322,7 @@ exports[`Space component Render display right menu (close) 1`] = `
                 </div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -350,18 +330,16 @@ exports[`Space component Render display right menu (close) 1`] = `
 exports[`Space component Render display right menu (open) 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-three-quarters" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-three-quarters" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a>Action : 1</a></li>
-                    </ul>
+                    <li class="is-active"><a>Action : 1</a></li>
                 </nav>
             </div>
             <div class="nav-right">
-                <div class="field has-addons">
+                <nav class="field has-addons">
                     <p class="control"><span data-label="List" class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><i class="fa fa-list"></i></span></a>
                         </span>
                     </p>
@@ -369,7 +347,7 @@ exports[`Space component Render display right menu (open) 1`] = `
                         </span>
                     </p>
                     <!---->
-                </div> <a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a></div>
+                </nav> <a class="button"><i aria-hidden="true" class="fa fa-bars fa-2x"></i></a></div>
         </nav>
         <section class="section content">
             <div class="columns is-mobile">
@@ -379,40 +357,38 @@ exports[`Space component Render display right menu (open) 1`] = `
                 </div>
             </div>
         </section>
-    </div>
-    <div class="column is-one-quarter is-half-mobile">
-        <aside class="menu" style="padding:5px;">
-            <ul class="menu-list">
-                <li>
-                    <!---->
-                    <!----><a class="is-active"><span class="icon"><i class="fa fa-user"></i></span>
+    </section>
+    <aside class="column is-one-quarter is-half-mobile menu">
+        <ul class="menu-list">
+            <li>
+                <!---->
+                <!----><a class="is-active"><span class="icon"><i class="fa fa-user"></i></span>
                     Customer
                 </a></li>
-                <li><span><span class="icon"><i class="fa fa-user"></i></span> Setting
-                    </span>
-                    <ul class="menu-list">
-                        <li>
+            <li><span><span class="icon"><i class="fa fa-user"></i></span> Setting
+                </span>
+                <ul class="menu-list">
+                    <li>
+                        <!---->
+                        <!---->
+                        <a>
                             <!---->
+                            Category
+                        </a>
+                    </li>
+                    <li>
+                        <!---->
+                        <!---->
+                        <a>
                             <!---->
-                            <a>
-                                <!---->
-                                Category
-                            </a>
-                        </li>
-                        <li>
-                            <!---->
-                            <!---->
-                            <a>
-                                <!---->
-                                Address
-                            </a>
-                        </li>
-                    </ul>
-                    <!---->
-                </li>
-            </ul>
-        </aside>
-    </div>
+                            Address
+                        </a>
+                    </li>
+                </ul>
+                <!---->
+            </li>
+        </ul>
+    </aside>
 </div>
 `;
 
@@ -485,14 +461,12 @@ exports[`SpaceMenu component Render with submenu other selected menu 1`] = `
 exports[`View Selector component Render 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a></a></li>
-                    </ul>
+                    <li class="is-active"><a></a></li>
                 </nav>
             </div>
             <div class="nav-right">
@@ -508,7 +482,7 @@ exports[`View Selector component Render 1`] = `
                 </div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;
@@ -516,14 +490,12 @@ exports[`View Selector component Render 1`] = `
 exports[`View Selector component Render unclickable selected 1`] = `
 <div data-server-rendered="true" class="columns is-gapless" style="margin-top:5px;">
     <!---->
-    <div class="column is-12" style="padding-left:10px;padding-right:10px;">
+    <section class="column is-12" style="padding-left:10px;padding-right:10px;">
         <nav class="nav" style="background-color:inherit;">
             <div class="nav-left">
                 <!---->
                 <nav class="breadcrumb">
-                    <ul>
-                        <li class="is-active"><a></a></li>
-                    </ul>
+                    <li class="is-active"><a></a></li>
                 </nav>
             </div>
             <div class="nav-right">
@@ -539,7 +511,7 @@ exports[`View Selector component Render unclickable selected 1`] = `
                 </div>
             </div>
         </section>
-    </div>
+    </section>
     <!---->
 </div>
 `;

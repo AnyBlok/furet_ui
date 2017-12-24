@@ -675,7 +675,7 @@ exports[`furet-ui-x2m-list-view component Render with color 1`] = `
             </div>
         </div>
         <div class="level-right">
-            <div class="field has-addons">
+            <nav class="field has-addons">
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
@@ -686,7 +686,7 @@ exports[`furet-ui-x2m-list-view component Render with color 1`] = `
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-            </div>
+            </nav>
         </div>
     </nav>
     <div class="b-table" style="overflow-x:auto;">
@@ -809,7 +809,7 @@ exports[`furet-ui-x2m-list-view component Render with data 1 1`] = `
             </div>
         </div>
         <div class="level-right">
-            <div class="field has-addons">
+            <nav class="field has-addons">
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
@@ -820,7 +820,7 @@ exports[`furet-ui-x2m-list-view component Render with data 1 1`] = `
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-            </div>
+            </nav>
         </div>
     </nav>
     <div class="b-table" style="overflow-x:auto;">
@@ -871,7 +871,7 @@ exports[`furet-ui-x2m-list-view component Render with data 2 1`] = `
             </div>
         </div>
         <div class="level-right">
-            <div class="field has-addons">
+            <nav class="field has-addons">
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
@@ -882,7 +882,7 @@ exports[`furet-ui-x2m-list-view component Render with data 2 1`] = `
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-            </div>
+            </nav>
         </div>
     </nav>
     <div class="b-table" style="overflow-x:auto;">
@@ -1005,7 +1005,7 @@ exports[`furet-ui-x2m-list-view component Render with data 2 2`] = `
             </div>
         </div>
         <div class="level-right">
-            <div class="field has-addons">
+            <nav class="field has-addons">
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a disabled="disabled" class="button is-primary"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
@@ -1016,7 +1016,7 @@ exports[`furet-ui-x2m-list-view component Render with data 2 2`] = `
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-            </div>
+            </nav>
         </div>
     </nav>
     <div class="b-table" style="overflow-x:auto;">
@@ -1190,7 +1190,7 @@ exports[`furet-ui-x2m-list-view component Render without data 2 1`] = `
             </div>
         </div>
         <div class="level-right">
-            <div class="field has-addons">
+            <nav class="field has-addons">
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
@@ -1201,7 +1201,7 @@ exports[`furet-ui-x2m-list-view component Render without data 2 1`] = `
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-            </div>
+            </nav>
         </div>
     </nav>
     <div class="b-table" style="overflow-x:auto;">
@@ -1306,7 +1306,7 @@ exports[`furet-ui-x2m-list-view component Render without data 3 1`] = `
             </div>
         </div>
         <div class="level-right">
-            <div class="field has-addons">
+            <nav class="field has-addons">
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
@@ -1317,7 +1317,7 @@ exports[`furet-ui-x2m-list-view component Render without data 3 1`] = `
                 <p class="control"><span class="is-info is-left is-medium tooltip"><a class="button"><span class="icon is-small"><!----></span></a>
                     </span>
                 </p>
-            </div>
+            </nav>
         </div>
     </nav>
     <div class="b-table" style="overflow-x:auto;">

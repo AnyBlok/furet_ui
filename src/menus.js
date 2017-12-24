@@ -73,7 +73,7 @@ export const Menu = Vue.component('furet-ui-appbar-menu', {
                                 <article 
                                     class="box media furet-ui-space-menu" 
                                     v-on:click.stop="selectCard(card)"
-                                    v-bind:style="{padding: '5px'}"
+                                    v-bind:style="{padding: '2px'}"
                                 >
                                     <aside class="media-left">
                                         <figure class="image is-32x32">
