@@ -59,9 +59,9 @@ export const FieldFormSelection = Vue.component('furet-ui-form-field-selection',
                     v-bind:placeholder="placeholder"
                     icon-pack="fa"
                     v-bind:icon="icon"
-                    v-model="data"
+                    v-model="selectedData"
                     expanded
-                    v-on:change="updateValue"
+                    v-on:input="updateValue"
                 >
                     <option 
                         v-for="option in getSelections"
@@ -74,6 +74,12 @@ export const FieldFormSelection = Vue.component('furet-ui-form-field-selection',
             </b-field>
         </b-tooltip>`,
     computed: {
+        selectedData: {
+            get () {
+                return this.data;
+            },
+            set (value) {}
+        },
         value () {
             const selections = this.selections || {};
             const value = this.config && this.config.data && this.config.data[this.name] || '';
