@@ -74,7 +74,7 @@ export const FieldFormColor = Vue.component('furet-ui-form-field-color', {
                             v-if="data || !isReadonly"
                             type="color"
                             v-bind:value="data" 
-                            v-on:change="updateValue"
+                            v-on:input="updateValue"
                             v-bind:disabled="isReadonly"
                         >
                         </b-input>
@@ -83,7 +83,7 @@ export const FieldFormColor = Vue.component('furet-ui-form-field-color', {
                         <b-input 
                             v-if="!isReadonly"
                             v-bind:value="data" 
-                            v-on:change="updateValue"
+                            v-on:input="updateValue"
                             v-bind:placeholder="placeholder"
                             icon-pack="fa"
                             v-bind:icon="icon"

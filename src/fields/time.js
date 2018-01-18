@@ -40,7 +40,7 @@ export const FieldFormTime = Vue.component('furet-ui-form-field-time', {
                     v-else 
                     type="time"
                     v-bind:value="data" 
-                    v-on:change="updateValue"
+                    v-on:input="updateValue"
                     icon-pack="fa"
                     v-bind:icon="icon"
                     v-bind:min="min"

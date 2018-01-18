@@ -59,7 +59,7 @@ export const FieldFormDateTime = Vue.component('furet-ui-form-field-datetime', {
                     v-else 
                     type="datetime-local"
                     v-bind:value="data" 
-                    v-on:change="updateValue"
+                    v-on:input="updateValue"
                     icon-pack="fa"
                     v-bind:icon="icon"
                     v-bind:min="min"

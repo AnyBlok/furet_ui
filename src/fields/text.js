@@ -41,7 +41,7 @@ export const FieldFormText = Vue.component('furet-ui-form-field-text', {
                         v-else 
                         type="textarea"
                         v-bind:value="data" 
-                        v-on:change="updateValue"
+                        v-on:input="updateValue"
                         v-bind:maxlength="maxlength"
                         v-bind:placeholder="placeholder"
                     >

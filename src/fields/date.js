@@ -73,7 +73,7 @@ export const FieldFormDate = Vue.component('furet-ui-form-field-date', {
                     v-else 
                     type="date"
                     v-bind:value="data" 
-                    v-on:change="updateValue"
+                    v-on:input="updateValue"
                     v-bind:icon="icon"
                     v-bind:min="min"
                     v-bind:max="max"

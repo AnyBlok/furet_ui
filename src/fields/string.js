@@ -40,7 +40,7 @@ export const FieldFormString = Vue.component('furet-ui-form-field-string', {
                 <b-input 
                     v-else 
                     v-bind:value="data" 
-                    v-on:change="updateValue"
+                    v-on:input="updateValue"
                     v-bind:maxlength="maxlength"
                     v-bind:placeholder="placeholder"
                     icon-pack="fa"

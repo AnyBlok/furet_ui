@@ -332,7 +332,7 @@ exports[`Route component Render App with space and action and view 2`] = `
                         <p class="control"><a class="button"><i class="fa fa-search"></i></a></p>
                         <p class="control">
                             <div dir="auto" debounce="250" class="dropdown v-select searchable" style="background-color:white;">
-                                <div class="dropdown-toggle clearfix"> <input type="search" autocomplete="false" aria-label="Search for option" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
+                                <div class="dropdown-toggle clearfix"> <input type="search" autocomplete="false" aria-label="Search for option" value="" class="form-control" style="width:100%;"> <button type="button" title="Clear selection" class="clear" style="display:none;"><span aria-hidden="true">×</span></button>                                    <i role="presentation" class="open-indicator"></i>
                                     <div class="spinner" style="display:none;">Loading...</div>
                                 </div>
                                 <!---->
@@ -852,7 +852,7 @@ exports[`Route component Render App with space and menu and action and view 2`] 
                         <p class="control"><a class="button"><i class="fa fa-search"></i></a></p>
                         <p class="control">
                             <div dir="auto" debounce="250" class="dropdown v-select searchable" style="background-color:white;">
-                                <div class="dropdown-toggle clearfix"> <input type="search" autocomplete="false" aria-label="Search for option" value="" class="form-control" style="width:100%;"> <i role="presentation" class="open-indicator"></i>
+                                <div class="dropdown-toggle clearfix"> <input type="search" autocomplete="false" aria-label="Search for option" value="" class="form-control" style="width:100%;"> <button type="button" title="Clear selection" class="clear" style="display:none;"><span aria-hidden="true">×</span></button>                                    <i role="presentation" class="open-indicator"></i>
                                     <div class="spinner" style="display:none;">Loading...</div>
                                 </div>
                                 <!---->

@@ -64,7 +64,7 @@ export const FieldFormUrl = Vue.component('furet-ui-form-field-url', {
                         <b-input 
                             type="url"
                             v-bind:value="data" 
-                            v-on:change="updateValue"
+                            v-on:input="updateValue"
                             v-bind:maxlength="maxlength"
                             v-bind:placeholder="placeholder"
                             icon-pack="fa"

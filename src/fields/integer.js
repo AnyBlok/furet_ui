@@ -41,7 +41,7 @@ export const FieldFormInteger = Vue.component('furet-ui-form-field-integer', {
                     type="number"
                     step="1"
                     v-bind:value="data" 
-                    v-on:change="updateValue"
+                    v-on:input="updateValue"
                     v-bind:min="min"
                     v-bind:max="max"
                 >
