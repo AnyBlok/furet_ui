@@ -56,47 +56,18 @@ export const FieldFormMany2ManyCheckbox = Vue.component('furet-ui-form-field-man
                         v-bind:id="value.dataId"
                         v-bind:class="['column', checkbox_class]" 
                     >
-                        <furet-ui-b-checkbox 
-                            v-bind:checked="isChecked(value.dataId)" 
+                        <b-checkbox 
+                            v-model="checkboxGroup"
+                            v-bind:native-value="value.dataId"
                             v-bind:disabled="isReadonly"
-                            v-on:change="onChange"
                         >
-                            {{value.label}}
+    {{value.dataId}} {{value.label}}
                             <div v-bind:style="getStyle(value.dataId)" />
-                        </furet-ui-b-checkbox>
+                        </b-checkbox>
                     </div>
                 </div>
             </b-field>
         </b-tooltip>`,
-    components: {
-        'furet-ui-b-checkbox': {
-            props: ['checked', 'disabled'],
-            template: `
-                <b-checkbox 
-                    v-model="value" 
-                    v-bind:disabled="disabled"
-                    v-on:change="onChange"
-                >
-                    <slot></slot>
-                </b-checkbox>
-            `,
-            data () {
-                return {
-                    value: this.checked,
-                };
-            },
-            methods: {
-                onChange (value, event) {
-                    this.$emit('change', value, event);
-                },
-            },
-            watch: {
-                disabled (newDisabled) {
-                    this.value = this.checked;
-                },
-            }
-        },
-    },
     created () {
         json_post('/field/x2x/search', 
                   {model: this.model, fields:this.fields}, 
@@ -108,6 +79,18 @@ export const FieldFormMany2ManyCheckbox = Vue.component('furet-ui-form-field-man
         );
     },
     computed: {
+        checkboxGroup: {
+            get () {
+                return _.filter(this.existingIds, id => this.isChecked(id));
+            },
+            set (value) {
+                const old_value =  _.filter(this.existingIds, id => this.isChecked(id));
+                console.log(' ==> ', old_value, value)
+                if (JSON.stringify(old_value) != JSON.stringify(value)) {
+                    this.updateValue(value);
+                }
+            }
+        },
         existingIds () {
             if (this.model) {
                 let data = this.$store.state.data.data;
@@ -137,9 +120,6 @@ export const FieldFormMany2ManyCheckbox = Vue.component('furet-ui-form-field-man
                 if (data[this.fieldcolor]) return {width: '100%', height: '5px', backgroundColor: data[this.fieldcolor]};
             }
             return {'display': 'none'};
-        },
-        onChange (value, event) {
-            this.updateValue(onChangeM2M(this.config, this.name, event.path[2].id, value));
         },
     },
 })
