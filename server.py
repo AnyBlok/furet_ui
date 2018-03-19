@@ -961,137 +961,153 @@ def getView3():
         'onClose': '1',
         'model': 'Test',
         'template': '''
-            <div class="columns is-multiline is-mobile">
-                <div class="column is-4">
-                    <furet-ui-form-field-integer
-                        v-bind:config="config"
-                        name="id"
-                        label="ID"
-                        required="1"
-                        readonly="1"
-                    />
+            <div>
+                <div class="columns is-multiline is-mobile">
+                    <div class="column is-4">
+                        <furet-ui-form-field-integer
+                            v-bind:config="config"
+                            name="id"
+                            label="ID"
+                            required="1"
+                            readonly="1"
+                        />
+                    </div>
+                    <div class="column is-8">
+                        <furet-ui-form-field-string
+                            v-bind:config="config"
+                            required="fields.number"
+                            tooltip="Plop"
+                            name="name"
+                            label="Label"
+                            icon="envelope"
+                        />
+                    </div>
                 </div>
-                <div class="column is-8">
-                    <furet-ui-form-field-string
-                        v-bind:config="config"
-                        required="fields.number"
-                        tooltip="Plop"
-                        name="name"
-                        label="Label"
-                        icon="envelope"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-button
-                        v-bind:config="config"
-                        v-bind:dataId="dataId"
-                        v-bind:viewId="viewId"
-                        v-bind:model="model"
-                        buttonId="6"
-                        v-bind:options="{'test': 'The Test'}"
-                        icon="fa-underline"
-                    >Button 6</furet-ui-form-button>
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-selection
-                        v-bind:config="config"
-                        name="state"
-                        label="State"
-                        v-bind:selections="{'new': 'New', 'started': 'Started', 'done': 'Done'}"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-mail
-                        v-bind:config="config"
-                        name="email"
-                        label="E-mail"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-datetime
-                        v-bind:config="config"
-                        name="creation_date"
-                        label="Creation date"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-date
-                        v-bind:config="config"
-                        name="creation_date2"
-                        label="Creation date2"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-float
-                        v-bind:config="config"
-                        name="number"
-                        label="Number"
-                        max="2"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-url
-                        v-bind:config="config"
-                        name="url"
-                        label="URL"
-                        required="1"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-password
-                        v-bind:config="config"
-                        name="password"
-                        label="Password"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-time
-                        v-bind:config="config"
-                        name="time"
-                        label="Time"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-color
-                        v-bind:config="config"
-                        name="color"
-                        label="Color"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-boolean
-                        v-bind:config="config"
-                        name="bool"
-                        label="Boolean"
-                    />
-                </div>
-                <furet-ui-form-group
-                    v-bind:config="config"
-                    invisible="!fields.color"
-                    class="column is-6 titietgrosminet"
-                >
-                    <furet-ui-form-field-richtext
-                        v-bind:config="config"
-                        name="text"
-                        label="Text"
-                    />
-                </furet-ui-form-group>
-                <div class="column is-6">
-                    <furet-ui-form-field-file
-                        v-bind:config="config"
-                        name="file"
-                        label="File"
-                        filename="filename"
-                        filesize="filesize"
-                    />
-                </div>
-                <div class="column is-6">
-                    <furet-ui-form-field-json
-                        v-bind:config="config"
-                        name="json"
-                        label="JSON"
-                    />
-                </div>
+                <b-tabs type="is-boxed">
+                    <b-tab-item label="Pictures" icon="google-photos">
+                        <div class="columns is-multiline is-mobile">
+                            <div class="column is-6">
+                                <furet-ui-form-button
+                                    v-bind:config="config"
+                                    v-bind:dataId="dataId"
+                                    v-bind:viewId="viewId"
+                                    v-bind:model="model"
+                                    buttonId="6"
+                                    v-bind:options="{'test': 'The Test'}"
+                                    icon="fa-underline"
+                                >Button 6</furet-ui-form-button>
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-selection
+                                    v-bind:config="config"
+                                    name="state"
+                                    label="State"
+                                    v-bind:selections="{'new': 'New', 'started': 'Started', 'done': 'Done'}"
+                                />
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-mail
+                                    v-bind:config="config"
+                                    name="email"
+                                    label="E-mail"
+                                />
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-datetime
+                                    v-bind:config="config"
+                                    name="creation_date"
+                                    label="Creation date"
+                                />
+                            </div>
+                        </div>
+                    </b-tab-item>
+                    <b-tab-item label="Music" icon="library-music">
+                        <div class="columns is-multiline is-mobile">
+                            <div class="column is-6">
+                                <furet-ui-form-field-date
+                                    v-bind:config="config"
+                                    name="creation_date2"
+                                    label="Creation date2"
+                                />
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-float
+                                    v-bind:config="config"
+                                    name="number"
+                                    label="Number"
+                                    max="2"
+                                />
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-url
+                                    v-bind:config="config"
+                                    name="url"
+                                    label="URL"
+                                    required="1"
+                                />
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-password
+                                    v-bind:config="config"
+                                    name="password"
+                                    label="Password"
+                                />
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-time
+                                    v-bind:config="config"
+                                    name="time"
+                                    label="Time"
+                                />
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-color
+                                    v-bind:config="config"
+                                    name="color"
+                                    label="Color"
+                                />
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-boolean
+                                    v-bind:config="config"
+                                    name="bool"
+                                    label="Boolean"
+                                />
+                            </div>
+                        </div>
+                    </b-tab-item>
+                    <b-tab-item label="Music" icon="video">
+                        <div class="columns is-multiline is-mobile">
+                            <furet-ui-form-group
+                                v-bind:config="config"
+                                invisible="!fields.color"
+                                class="column is-6 titietgrosminet"
+                            >
+                                <furet-ui-form-field-richtext
+                                    v-bind:config="config"
+                                    name="text"
+                                    label="Text"
+                                />
+                            </furet-ui-form-group>
+                            <div class="column is-6">
+                                <furet-ui-form-field-file
+                                    v-bind:config="config"
+                                    name="file"
+                                    label="File"
+                                    filename="filename"
+                                    filesize="filesize"
+                                />
+                            </div>
+                            <div class="column is-6">
+                                <furet-ui-form-field-json
+                                    v-bind:config="config"
+                                    name="json"
+                                    label="JSON"
+                                />
+                            </div>
+                        </div>
+                    </b-tab-item>
+                </b-tabs>
             </div>
         ''',
         'buttons': [

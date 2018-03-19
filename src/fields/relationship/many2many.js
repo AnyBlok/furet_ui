@@ -85,7 +85,6 @@ export const FieldFormMany2ManyCheckbox = Vue.component('furet-ui-form-field-man
             },
             set (value) {
                 const old_value =  _.filter(this.existingIds, id => this.isChecked(id));
-                console.log(' ==> ', old_value, value)
                 if (JSON.stringify(old_value) != JSON.stringify(value)) {
                     this.updateValue(value);
                 }
