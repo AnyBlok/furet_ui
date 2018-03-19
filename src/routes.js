@@ -77,6 +77,15 @@ export const router = new VueRouter({
             },
         },
         {
+            path: '/menus/:type',
+            name: 'menu',
+            props: true,
+            component: {
+                template: '<furet-ui-menu v-bind:type="type"/>',
+                props: ['type'],
+            },
+        },
+        {
             path: '/custom/view/:viewName',
             name: 'custom_view',
             props: true,

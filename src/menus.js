@@ -33,90 +33,73 @@ export const selectCard = (type, router, store, card) => {
     store.commit('CLEAR_CHANGE');
 }
 
-export const Menu = Vue.component('furet-ui-appbar-menu', {
+export const openMenu = (type, route, router, store) => {
+    store.commit('UPDATE_PREVIOUS_PATH', {route: route});
+    router.push({name: 'menu', params: {type}}); 
+}
+
+export const closeMenu = (router, store) => {
+    router.push({path:store.state.global.previous_path})
+}
+
+export const MenuDisplay = Vue.component('furet-ui-menu', {
     template: `
-        <a class="nav-item" v-if="hasValue">
-            <a class="button" v-on:click="isModalActive = true; searchText = ''">
-                <furet-ui-picture 
-                    v-bind:type="value.image.type" 
-                    v-bind:value="value.image.value" 
-                />
-                <span> {{ value.label }} </span>
-            </a>
-            <b-modal 
-                v-bind:active.sync="isModalActive"
-                v-bind:canCancel="['escape', 'x', 'outside']"
-                v-bind:width="960"
-            >
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                        <b-field  position="is-centered">
-                            <b-input
-                                type="search"
-                                icon-pack="fa"
-                                icon="search"
-                                v-bind:placeholder="$t('menus.search')"
-                                v-model="searchText">
-                            </b-input>
-                        </b-field>
-                    </header>
-                    <section 
-                        class="modal-card-body"
-                        v-bind:style="{color: '#363636', padding: '5px'}"
-                    >
-                        <div class="columns is-multiline is-mobile">
-                            <div 
-                                class="column is-12-mobile is-half-tablet is-half-desktop"
-                                v-for="card in cards"
-                            >
-                                <article 
-                                    class="box media furet-ui-space-menu" 
-                                    v-on:click.stop="selectCard(card)"
-                                    v-bind:style="{padding: '2px'}"
-                                >
-                                    <aside class="media-left">
-                                        <figure class="image is-32x32">
-                                            <furet-ui-picture
-                                                v-bind:type="card.image.type"
-                                                v-bind:value="card.image.value"
-                                            />
-                                        </figure>
-                                    </aside>
-                                    <section class="media-content">
-                                        <h1>{{card.label}}</h1>
-                                        <p v-bind:style="{whiteSpace: 'pre-wrap'}">{{card.description}}</p>
-                                    </section>
-                                </article>
-                            </div>
-                        </div>
-                    </section>
-                    <footer class="modal-card-foot">
-                        <a 
-                            v-on:click="isModalActive = false"
-                            v-bind:style="{color: '#363636'}"
-                        >{{$t('menus.close')}}</a>
-                    </footer>
+        <div>
+            <div class="level">
+                <div class="level-item">
+                    <a 
+                        class="button is-primary is-medium is-outlined"
+                        v-bind:style="{margin: '5px'}"
+                        v-on:click.stop="closeMenu"
+                    >{{$t('menus.close')}}</a>
                 </div>
-            </b-modal>
-        </a>`,
-    props: ['type', 'unittest_active', 'unittest_search'],
+                <div class="level-item">
+                    <b-input
+                        type="search"
+                        icon-pack="fa"
+                        icon="search"
+                        v-bind:placeholder="$t('menus.search')"
+                        v-model="searchText">
+                    </b-input>
+                </div>
+            </div>
+            <section 
+                v-bind:style="{color: '#363636', padding: '5px'}"
+            >
+                <div class="columns is-multiline is-mobile">
+                    <div 
+                        class="column is-12-mobile is-half-tablet is-one-quarter-desktop"
+                        v-for="card in cards"
+                    >
+                        <article 
+                            class="box media furet-ui-space-menu" 
+                            v-on:click.stop="selectCard(card)"
+                            v-bind:style="{padding: '2px'}"
+                        >
+                            <aside class="media-left">
+                                <figure class="image is-32x32">
+                                    <furet-ui-picture
+                                        v-bind:type="card.image.type"
+                                        v-bind:value="card.image.value"
+                                    />
+                                </figure>
+                            </aside>
+                            <section class="media-content">
+                                <h1>{{card.label}}</h1>
+                                <p v-bind:style="{whiteSpace: 'pre-wrap'}">{{card.description}}</p>
+                            </section>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>`,
+    props: ['type', 'unittest_search'],
     data () {
         return {
-            isModalActive: this.unittest_active || false, 
             searchText: this.unittest_search || '',
         };
     },
     computed: {
-        value () {
-            return this.$store.state[this.type + 'menu'].value;
-        },
-        hasValue () {
-            const value = this.$store.state[this.type + 'menu'].value,
-                  hasImage = _.keys(value.image || {}).length > 0,
-                  hasLabel = value.label.length > 0;
-            return hasImage && hasLabel;
-        },
         cards () {
             const re = new RegExp(this.searchText, 'ig'),
                   store = this.$store.state[this.type + 'menu'],
@@ -127,9 +110,41 @@ export const Menu = Vue.component('furet-ui-appbar-menu', {
     methods: {
         selectCard (card) {
             selectCard(this.type, this.$router, this.$store, card);
-            this.isModalActive = false;
-        }
-    }
+        },
+        closeMenu () {
+            closeMenu(this.$router, this.$store);
+        },
+    },
+})
+
+export const Menu = Vue.component('furet-ui-appbar-menu', {
+    template: `
+        <a class="nav-item" v-if="hasValue">
+            <a class="button" v-on:click="openMenu">
+                <furet-ui-picture 
+                    v-bind:type="value.image.type" 
+                    v-bind:value="value.image.value" 
+                />
+                <span> {{ value.label }} </span>
+            </a>
+        </a>`,
+    props: ['type'],
+    computed: {
+        value () {
+            return this.$store.state[this.type + 'menu'].value;
+        },
+        hasValue () {
+            const value = this.$store.state[this.type + 'menu'].value,
+                  hasImage = _.keys(value.image || {}).length > 0,
+                  hasLabel = value.label.length > 0;
+            return hasImage && hasLabel;
+        },
+    },
+    methods: {
+        openMenu () {
+            openMenu(this.type, this.$route, this.$router, this.$store);
+        },
+    },
 });
 
 export const LeftMenu = Vue.component('furet-ui-appbar-left-menu', {

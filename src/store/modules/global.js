@@ -16,6 +16,7 @@ export const defaultState = {
     modal_custom_view: '',
     breadscrumbs: [],
     notifications: [],
+    previous_path: '',
 };
 export const defaultNotif = {
     title: '',
@@ -71,6 +72,11 @@ export const mutations = {
     'REMOVE_NOTIFICATION'(state, action) {
         const notifications = state.notifications.slice(0);
         state.notifications = _.filter(notifications, n => n.id != action.id);
+    },
+    'UPDATE_PREVIOUS_PATH'(state, action) {
+        if (action.route.name != 'menu') {
+            state.previous_path = action.route.path;
+        }
     },
     'CLEAR_GLOBAL'(state, action) {
         state.title = '';

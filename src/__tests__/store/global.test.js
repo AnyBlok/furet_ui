@@ -26,8 +26,25 @@ describe('store.state.global', () => {
             modal_custom_view: 'A modal custom view',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         mutations.UPDATE_GLOBAL(state, action);
+        chai.expect(state).to.deep.equal(expected)
+    });
+    it('update previous path', () => {
+        const action = {
+            route: {
+                path: '/test',
+            },
+        };
+        const expected = {
+            title: '',
+            modal_custom_view: '',
+            breadscrumbs: [],
+            notifications: [],
+            previous_path: '/test',
+        }
+        mutations.UPDATE_PREVIOUS_PATH(state, action);
         chai.expect(state).to.deep.equal(expected)
     });
     it('add in breadscrumbs 1', () => {
@@ -48,6 +65,7 @@ describe('store.state.global', () => {
                 },
             ],
             notifications: [],
+            previous_path: '',
         }
         mutations.ADD_IN_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -84,6 +102,7 @@ describe('store.state.global', () => {
                 },
             ],
             notifications: [],
+            previous_path: '',
         }
         mutations.ADD_IN_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -105,6 +124,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         mutations.REMOVE_FROM_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -150,6 +170,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         mutations.REMOVE_FROM_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -208,6 +229,7 @@ describe('store.state.global', () => {
                 },
             ],
             notifications: [],
+            previous_path: '',
         }
         mutations.REMOVE_FROM_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -220,6 +242,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         mutations.CLEAR_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -239,6 +262,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         mutations.CLEAR_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -264,6 +288,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         mutations.CLEAR_BREADSCRUMB(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -275,6 +300,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         mutations.CLEAR_GLOBAL(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -291,6 +317,7 @@ describe('store.state.global', () => {
                     position: 0,
                 },
             ],
+            previous_path: '',
         }
         const action = {};
         const expected = {
@@ -298,6 +325,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         mutations.CLEAR_GLOBAL(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -308,6 +336,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         const action = {
             id: 1,
@@ -323,6 +352,7 @@ describe('store.state.global', () => {
                 title: 'Title 1',
                 message: 'Message 1',
             }],
+            previous_path: '',
         }
         mutations.ADD_NOTIFICATION(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -337,6 +367,7 @@ describe('store.state.global', () => {
                 title: 'Title 1',
                 message: 'Message 1',
             }],
+            previous_path: '',
         }
         const action = {
             id: 2,
@@ -359,6 +390,7 @@ describe('store.state.global', () => {
                     message: 'Message 2',
                 },
             ],
+            previous_path: '',
         }
         mutations.ADD_NOTIFICATION(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -373,6 +405,7 @@ describe('store.state.global', () => {
                 title: 'Title 1',
                 message: 'Message 1',
             }],
+            previous_path: '',
         }
         const action = {id: 1};
         const expected = {
@@ -380,6 +413,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         mutations.REMOVE_NOTIFICATION(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -401,6 +435,7 @@ describe('store.state.global', () => {
                     message: 'Message 2',
                 },
             ],
+            previous_path: '',
         }
         const action = {
             id: 2,
@@ -418,6 +453,7 @@ describe('store.state.global', () => {
                     message: 'Message 1',
                 },
             ],
+            previous_path: '',
         }
         mutations.REMOVE_NOTIFICATION(state, action);
         chai.expect(state).to.deep.equal(expected)
@@ -428,6 +464,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         const action = {
             process: 'dispatch',
@@ -449,6 +486,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         const action = {
             process: 'dispatch',
@@ -467,6 +505,7 @@ describe('store.state.global', () => {
             modal_custom_view: '',
             breadscrumbs: [],
             notifications: [],
+            previous_path: '',
         }
         const action = {
             process: 'dispatch',
