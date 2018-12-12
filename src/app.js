@@ -17,17 +17,19 @@ export const App = Vue.component('furet-ui', {
     template: `
         <div>
             <header class="hero is-primary">
-                    <nav class="nav">
-                        <div class="nav-left">
-                            <furet-ui-appbar-left-menu />
-                        </div>
-                        <div class="nav-center">
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <furet-ui-appbar-left-menu />
+                    </div>
+                    <div class="navbar-menu is-active">
+                        <div class="navbar-start">
                             {{ title }}
                         </div>
-                        <div class="nav-right">
+                        <div class="navbar-end">
                             <furet-ui-appbar-right-menu />
                         </div>
-                    </nav>
+                    </div>
+                </nav>
             </header>
             <notifications></notifications>
             <router-view></router-view>

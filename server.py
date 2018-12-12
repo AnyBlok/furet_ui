@@ -1622,8 +1622,10 @@ def _rec_filter(query, Model, keys, searchText):
     return query
 
 
-def getIdsFromFilter(model, filters):
+def getIdsFromFilter(model, filters, offset=None, limit=None, order=None):
+    print(" ##################==> ", model, filters, offset, limit, order)
     ids = []
+    total = 0
     try:
         session = Session()
         Model = MODELS[model]
@@ -1632,6 +1634,19 @@ def getIdsFromFilter(model, filters):
             for f in filters:
                 query = _rec_filter(query, Model, f['key'].split('.'), f['value'])
 
+        total = query.count()
+
+        if order:
+            query = query.order_by(getattr(getattr(Model, order[0]), order[1])())
+
+        if offset:
+            query = query.offset(offset)
+
+        if limit:
+            query = query.limit(limit)
+
+        print(" ##################==> ", str(query))
+
         ids = [x.id for x in query.all()]
     except AttributeError as e:
         print(str(e))
@@ -1639,7 +1654,8 @@ def getIdsFromFilter(model, filters):
         session.rollback()
         session.close()
 
-    return ids
+    print(ids, total)
+    return ids, total
 
 
 def _getData(session, model, ids, fields):
@@ -1864,7 +1880,10 @@ def createData():
 def getMultiView():
     response.set_header('Content-Type', 'application/json')
     data = loads(request.body.read())
-    ids = getIdsFromFilter(data['model'], data['filter'])
+    ids, total = getIdsFromFilter(data['model'], data['filter'],
+                           offset=data.get('offset'),
+                           limit=data.get('limit'),
+                           order=data.get('order'))
     fields = data.get('fields')
     if fields is None:
         view = getView(data['viewId'])
@@ -1875,6 +1894,7 @@ def getMultiView():
         'type': 'UPDATE_VIEW',
         'viewId': data['viewId'],
         'dataIds': ids,
+        'total': total,
     })
     return superDumps(_data)
 

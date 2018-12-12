@@ -119,7 +119,7 @@ export const MenuDisplay = Vue.component('furet-ui-menu', {
 
 export const Menu = Vue.component('furet-ui-appbar-menu', {
     template: `
-        <a class="nav-item" v-if="hasValue">
+        <a class="navbar-item" v-if="hasValue">
             <a class="button" v-on:click="openMenu">
                 <furet-ui-picture 
                     v-bind:type="value.image.type" 

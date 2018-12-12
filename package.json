@@ -38,8 +38,8 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "buefy": "^0.5.4",
-    "bulma": "^0.5.2",
+    "buefy": "^0.6.3",
+    "bulma": "^0.6.2",
     "font-awesome": "^4.7.0",
     "moment": "^2.21.0",
     "underscore": "^1.8.3",

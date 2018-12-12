@@ -43,9 +43,6 @@ export const selectEntryMulti = (obj, card) => {
 
 export const ViewMultiMixin = {
     props: ['spaceId', 'menuId', 'actionId','viewId', 'view', 'dataId', 'dataIds', 'data', 'change'],
-    created: function () {
-        if (this.view) this.getData();
-    },
     computed: {
         search () {
             if (this.view) {
@@ -55,8 +52,17 @@ export const ViewMultiMixin = {
         },
     },
     methods: {
-        getData () {
-            json_post_dispatch_all('/data/read', {model: this.view.model, filter: this.filter, fields: this.view.fields, viewId: this.viewId});
+        getData (data) {
+            const data_ = data || {};
+            json_post_dispatch_all('/data/read', {
+                model: this.view.model, 
+                filter: this.filter, 
+                fields: this.view.fields, 
+                viewId: this.viewId,
+                offset: data_.offset || 0,
+                limit: data_.limit || 0,
+                order: data_.sort,
+            });
         },
         updateFilter(filter) {
             this.filter = filter;

@@ -40,20 +40,30 @@ const safe_eval = (condition, fields) => {
 **/
 export const ListViewBase = Vue.component('furet-ui-list-view-base', {
     props: ['dataIds', 'data', 'change', 'view'],
+    created: function () {
+        if (this.view && (this.dataIds || []).length  == 0) this.getData();
+    },
     template: `
         <b-table
             v-bind:data="tableData"
+            v-bind:loading="loading"
+            v-bind:paginated="paginated"
+            v-bind:backend-pagination="backend_pagination"
+            v-bind:total="view.total"
+            v-bind:per-page="perPage"
+            v-on:page-change="onPageChange"
+            v-bind:backend-sorting="backend_sorting"
+            v-bind:default-sort-direction="defaultSortOrder"
+            v-bind:default-sort="(sortField && [sortField, sortOrder]) || view && view.default_sort"
+            v-on:sort="onSort"
             v-bind:narrowed="narrowed"
             v-bind:checkable="isCheckable"
             v-bind:mobile-cards="mobileCard"
-            v-bind:paginated="paginated"
-            v-bind:per-page="perPage"
             v-bind:selected.sync="selected"
             v-bind:checked-rows.sync="checkedRows"
             v-on:dblclick="selectRow"
             v-on:check="updateCheck"
             v-bind:style="{overflowX: 'auto'}"
-            v-bind:default-sort="view && view.default_sort"
             v-bind:row-class="rowClass"
         >
              <template slot-scope="props" slot="header">
@@ -92,16 +102,26 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
     `,
     data: () => {
         return {
+            loading: false,
+            paginated: true,
+            backend_pagination: true,
+            page: 1,
+            total: 100,
+            backend_sorting: true,
+            sortField: null,
+            sortOrder: 'desc',
+            defaultSortOrder: 'desc',
             selected: {},
             checkedRows: [],
             narrowed: true,
             mobileCard: true,
-            paginated: true,
         };
     },
     computed: {
         tableData () {
             const dataIds = this.dataIds ? this.dataIds : _.keys(this.data || {});
+            console.log(' ==> ', dataIds, this.dataIds)
+            debugger
             return _.map(dataIds, dataId => Object.assign(
                 {__dataId: dataId}, 
                 (this.data || {})[dataId], 
@@ -147,6 +167,25 @@ export const ListViewBase = Vue.component('furet-ui-list-view-base', {
                 }
             }
             return res;
+        },
+        getData() {
+            this.$emit(
+                'need_update_data', 
+                {
+                    offset: (this.page - 1) * this.perPage,
+                    sort: (this.sortField && [this.sortField, this.sortOrder]) || this.view && this.view.default_sort,
+                    limit: this.perPage,
+                }
+            )
+        },
+        onPageChange(page) {
+            this.page = page;
+            this.getData()
+        },
+        onSort(field, order) {
+            this.sortField = field
+            this.sortOrder = order
+            this.getData()
         },
     },
 });
@@ -239,6 +278,7 @@ export const ListView = Vue.component('furet-ui-list-view', {
                 v-bind:view="view"
                 v-on:selectRow="selectEntry"
                 v-on:updateCheck="updateCheck"
+                v-on:need_update_data="getData"
             />
         </div>
     `,

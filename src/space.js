@@ -125,8 +125,8 @@ export const Space = Vue.component('furet-ui-space', {
                 />
             </aside>
             <section v-bind:class="['column', getClassSize]" v-bind:style="{paddingLeft: '10px', paddingRight: '10px'}">
-                <nav class="nav" v-bind:style="{backgroundColor: 'inherit'}">
-                    <div class="nav-left">
+                <nav class="navbar" role="navigation" v-bind:style="{backgroundColor: 'inherit'}">
+                    <div class="navbar-brand">
                         <a class="button" v-on:click="isOpenLeft = !isOpenLeft" v-if="left_menu.length > 0">
                             <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
                         </a>
@@ -139,15 +139,17 @@ export const Space = Vue.component('furet-ui-space', {
                             <li class="is-active"><a>{{action.label}}</a></li>
                         </nav>
                     </div>
-                    <div class="nav-right">
-                        <furet-ui-view-selector
-                            v-bind:views="action.views"
-                            v-bind:viewId="viewId"
-                            v-on:changeView="changeView"
-                        />
-                        <a class="button" v-on:click="isOpenRight = !isOpenRight" v-if="right_menu.length > 0">
-                            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-                        </a>
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <furet-ui-view-selector
+                                v-bind:views="action.views"
+                                v-bind:viewId="viewId"
+                                v-on:changeView="changeView"
+                            />
+                            <a class="button" v-on:click="isOpenRight = !isOpenRight" v-if="right_menu.length > 0">
+                                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
                 </nav>
                 <router-view></router-view>

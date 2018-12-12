@@ -48,6 +48,9 @@ export const getStyle = (obj, card) => {
 
 export const ThumbnailView = Vue.component('furet-ui-thumbnail-view', {
     mixins: [ViewMultiMixin],
+    created: function () {
+        if (this.view) this.getData();
+    },
     template: `
         <div v-bind:style="{'margin-bottom': '20px'}">
             <nav class="level">
