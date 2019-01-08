@@ -1,6 +1,9 @@
+Flask
+Flask-Cors
 sqlalchemy
-psycopg2
-bottle
-Faker
-simplejson
-bson
+
+ipdb
+ipdbplugin
+ipython
+pysqlite3
+nodeenv
