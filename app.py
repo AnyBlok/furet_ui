@@ -23,9 +23,9 @@ def ping_pong():
     return jsonify('pong!')
 
 
-@app.route('/static/<path:path>', methods=['GET'])
+@app.route('/furet-ui/<path:path>', methods=['GET'])
 def get_static(path):
-    return send_from_directory(os.path.join(main_path, 'static'), path)
+    return send_from_directory(os.path.join(main_path, 'furet-ui'), path)
 
 
 @app.route('/', methods=['GET'])
