@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="furet-ui-app">
     <h1>Hello Furet UI</h1>
     <router-view/>
   </div>
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-#app {
+#furet-ui-app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

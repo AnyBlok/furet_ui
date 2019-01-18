@@ -1,0 +1,3 @@
+defineComponent('ping', {
+  template: '#MyTemplate',
+});
