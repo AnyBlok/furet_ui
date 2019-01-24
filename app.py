@@ -16,6 +16,15 @@ app.config.from_object(__name__)
 CORS(app)
 
 
+templates = {
+    'MyTemplate': """
+        <div>
+            <h1>Plop from server.py file</h1>
+            <router-link to="/">Go to the Homepage</router-link>
+    </div>""",
+}
+
+
 # sanity check route
 @app.route('/ping', methods=['GET'])
 def ping_pong():
@@ -25,7 +34,7 @@ def ping_pong():
 @app.route('/furet-ui/app/component/files', methods=['GET'])
 def get_component_files():
     return jsonify({
-        'templates': {},
+        'templates': templates,
         'js': ['other/plop.js', 'other/plop.js'],
         'css': ['other/plop.css'],
         'menus': [],
@@ -35,6 +44,11 @@ def get_component_files():
             'en': {},
         },
     })
+
+
+@app.route('/furet-ui/logo', methods=['GET'])
+def get_logo():
+    return send_from_directory(main_path, 'logo.png')
 
 
 @app.route('/furet-ui/<path:path>', methods=['GET'])
