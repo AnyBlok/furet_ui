@@ -23,7 +23,11 @@ defineComponent('login', {
   prototype: {
     methods: {
       logIn() {
-        this.$store.dispatch('ADD_NOTIFICATION', { message: 'Welcome my feret', duration: 5000 });
+        this.$notify({
+          title: 'Your are logged',
+          text: 'Welcome my feret !!!',
+          duration: 5000,
+        });
         this.$store.commit('LOGIN');
         if (this.$route.query.redirect !== undefined) this.$router.push(this.$route.query.redirect);
         else this.$router.push('/');

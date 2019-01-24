@@ -4,6 +4,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
+import Notifications from 'vue-notification';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -15,6 +16,7 @@ import { i18n } from './i18n';
 import { store } from './store';
 import { createRouter } from './router';
 
+Vue.use(Notifications);
 Vue.config.productionTip = false;
 Vue.use(Buefy);
 library.add(fas, fab);

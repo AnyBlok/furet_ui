@@ -4,7 +4,7 @@ defineComponent('app', {
   template: `
     <div id="furet-ui-app">
       <furet-ui-appbar />
-      <notifications></notifications>
+      <notifications />
       <router-view></router-view>
     </div>`,
 });
