@@ -22,23 +22,37 @@ defineComponent('furet-ui-appbar', {
 defineComponent('furet-ui-appbar-header', {
   template: `
     <div class="hero-head">
-      <nav class="nav">
+      <nav class="navbar" role="navigation">
         <div class="container">
-         <div class="navbar-brand">
-           <furet-ui-appbar-header-brand />
-           <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-             <span></span>
-             <span></span>
-             <span></span>
-           </span>
-         </div>
-         <div id="navbarMenuHeroA" class="navbar-menu">
-           <furet-ui-appbar-user-menu />
-         </div>
+          <div class="navbar-brand">
+            <furet-ui-appbar-header-brand />
+            <a 
+              role="button" 
+              v-bind:class="['navbar-burger', 'burger', isOpen ? 'is-active' : '']" 
+              aria-label="menu" 
+              aria-expanded="false" 
+              data-target="navbarUserMenu" 
+              v-on:click="isOpen = !isOpen"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div id="navbarUserMenu" v-bind:class="['navbar-menu', isOpen ? 'is-active' : '']">
+            <furet-ui-appbar-user-menu />
+          </div>
         </div>
       </nav>
     </div>
   `,
+  prototype: {
+    data() {
+      return {
+        isOpen: false,
+      };
+    },
+  },
 });
 
 defineComponent('furet-ui-appbar-header-brand', {

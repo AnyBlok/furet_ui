@@ -3,7 +3,7 @@ import { defineComponent } from './factory';
 defineComponent('furet-ui-appb-user-menu-login', {
   template: `
     <span class="navbar-item">
-      <router-link class="button is-primary is-inverted" to="/login">Log In</router-link>
+      <router-link class="button is-fullwidth is-primary is-inverted" to="/login">Log In</router-link>
     </span>
   `,
 });
