@@ -22,7 +22,7 @@ defineComponent('furet-ui-appbar', {
 defineComponent('furet-ui-appbar-header', {
   template: `
     <div class="hero-head">
-      <nav class="navbar" role="navigation">
+      <nav class="navbar is-primary" role="navigation">
         <div class="container">
           <div class="navbar-brand">
             <furet-ui-appbar-header-brand />
@@ -40,6 +40,7 @@ defineComponent('furet-ui-appbar-header', {
             </a>
           </div>
           <div id="navbarUserMenu" v-bind:class="['navbar-menu', isOpen ? 'is-active' : '']">
+            <furet-ui-appbar-spaces-menu />
             <furet-ui-appbar-user-menu />
           </div>
         </div>
@@ -67,26 +68,29 @@ defineComponent('furet-ui-appbar-body', {
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title">
-          {{ title }}
+          Furet UI
         </h1>
+        <p class="subtitle">
+          Web Client for any backend serveur
+        </p>
       </div>
     </div>
   `,
-  prototype: {
-    computed: {
-      title() {
-        return this.$store.state.global.title;
-      },
-    },
-  },
 });
 
 defineComponent('furet-ui-appbar-footer', {
   template: `
-    <div class="hero-foot">
-      <furet-ui-appbar-space-menu />
+    <div class="hero-foot" v-if="hasSpaceMenus">
+      <furet-ui-appbar-space-menus />
     </div>
   `,
+  prototype: {
+    computed: {
+      hasSpaceMenus() {
+        return this.$store.state.menus.spaceMenus.length !== 0;
+      },
+    },
+  },
 });
 
 defineComponent('furet-ui-appbar-user-menu', {
@@ -106,7 +110,53 @@ defineComponent('furet-ui-appbar-user-menu', {
     },
     computed: {
       menus() {
-        return this.$store.state.userMenu.menus;
+        return this.$store.state.menus.user;
+      },
+    },
+  },
+});
+
+defineComponent('furet-ui-appbar-spaces-menu', {
+  prototype: {
+    render(createElement) {
+      const menus = [];
+      this.menus.forEach((menu) => {
+        menus.push(createElement(
+          menu.component,
+          {
+            class: menu.class,
+            props: menu.props,
+          },
+          [menu.label]));
+      });
+      return createElement('div', { class: 'navbar-start' }, menus);
+    },
+    computed: {
+      menus() {
+        return this.$store.state.menus.spaces;
+      },
+    },
+  },
+});
+
+defineComponent('furet-ui-appbar-space-menus', {
+  prototype: {
+    render(createElement) {
+      const menus = [];
+      this.menus.forEach((menu) => {
+        menus.push(createElement('li', [
+          createElement(menu.component, { class: menu.class, props: menu.props }, [menu.label]),
+        ]));
+      });
+      return createElement('nav', { class: 'tabs is-boxed' }, [
+        createElement('div', { class: 'container' }, [
+          createElement('ul', [menus]),
+        ]),
+      ]);
+    },
+    computed: {
+      menus() {
+        return this.$store.state.menus.spaceMenus;
       },
     },
   },

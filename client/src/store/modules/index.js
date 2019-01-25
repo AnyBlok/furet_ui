@@ -9,13 +9,11 @@ obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 import global from './global';
-import userMenu from './user-menu';
-import leftmenu from './left-menu';
+import menus from './menus';
 // import data from './data';
 
 export default {
   global,
-  userMenu,
-  leftmenu,
+  menus,
 //  data,
 };

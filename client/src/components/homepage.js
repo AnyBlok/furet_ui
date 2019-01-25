@@ -7,7 +7,6 @@ defineComponent('homepage', {
       <div class="column is-half is-offset-one-quarter">
         <img class="image _s" v-bind:src="logo" alt="Logo">
       </div>
-      <router-link to="/ping">Go to Ping</router-link>
     </div>
   `,
   extend: ['mixin-logo'],

@@ -8,6 +8,20 @@ export const i18nConf = {
   fallbackLocale: 'en',
   messages: {
     en: {
+      components: {
+        login: {
+          appbar: 'Log in',
+          button: 'Log in',
+        },
+        logout: {
+          appbar: {
+            administrator: 'Administrator',
+            logout: 'Log out',
+            about: 'About ...',
+          },
+          button: 'Log out',
+        },
+      },
     },
   },
 };

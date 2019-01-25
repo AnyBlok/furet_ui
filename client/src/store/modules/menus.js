@@ -9,8 +9,14 @@ obtain one at http://mozilla.org/MPL/2.0/.
 */
 
 export const defaultState = {
-  value: { label: '', image: { type: '', value: '' } },
-  values: [],
+  user: [
+    {
+      name: 'login',
+      component: 'furet-ui-appbar-user-menu-login',
+    },
+  ],
+  spaces: [],
+  spaceMenus: [],
 };
 
 // getters
@@ -23,13 +29,10 @@ export const actions = {
 
 // mutations
 export const mutations = {
-  UPDATE_LEFT_MENU(state, action) {
-    if (action.value) state.value = action.value;
-    if (action.values) state.values = action.values;
-  },
-  CLEAR_LEFT_MENU(state) {
-    state.value = { label: '', image: { type: '', value: '' } };
-    state.values = [];
+  UPDATE_MENUS(state, action) {
+    if (action.user !== undefined) state.user = action.user;
+    if (action.spaces !== undefined) state.spaces = action.spaces;
+    if (action.spaceMenus !== undefined) state.spaceMenus = action.spaceMenus;
   },
 };
 
