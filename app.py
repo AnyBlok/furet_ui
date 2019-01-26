@@ -37,6 +37,7 @@ def get_component_files():
         'templates': templates,
         'js': ['other/plop.js', 'other/plop.js'],
         'css': ['other/plop.css'],
+        'global': {},
         'menus': [],
         'lang': 'fr',
         'langs': {

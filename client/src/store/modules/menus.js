@@ -8,12 +8,21 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 */
 
+const defaultUserMenu = {
+  name: undefined,
+  component: 'furet-ui-appbar-user-menu-router-link',
+  class: {},
+  style: {},
+  attrs: {},
+  props: {},
+  domProps: {},
+  on: {},
+  nativeOn: {},
+};
+
 export const defaultState = {
   user: [
-    {
-      name: 'login',
-      component: 'furet-ui-appbar-user-menu-login',
-    },
+    Object.assign({}, defaultUserMenu, { name: 'login', props: { to: '/login', label: 'Log In' } }),
   ],
   spaces: [],
   spaceMenus: [],
@@ -30,7 +39,13 @@ export const actions = {
 // mutations
 export const mutations = {
   UPDATE_MENUS(state, action) {
-    if (action.user !== undefined) state.user = action.user;
+    if (action.user !== undefined) {
+      const menus = [];
+      action.user.forEach((menu) => {
+        menus.push(Object.assign({}, defaultUserMenu, menu));
+      });
+      state.user = menus;
+    }
     if (action.spaces !== undefined) state.spaces = action.spaces;
     if (action.spaceMenus !== undefined) state.spaceMenus = action.spaceMenus;
   },

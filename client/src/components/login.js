@@ -1,15 +1,5 @@
 import { defineComponent } from './factory';
 
-defineComponent('furet-ui-appbar-user-menu-login', {
-  template: `
-    <span class="navbar-item">
-      <router-link class="button is-fullwidth is-primary is-inverted" to="/login">
-        {{ $t('components.login.appbar') }}
-      </router-link>
-    </span>
-  `,
-});
-
 defineComponent('login', {
   template: `
     <section class="section">
@@ -40,7 +30,7 @@ defineComponent('login', {
             },
           ],
         });
-        this.$store.commit('LOGIN');
+        this.$store.commit('LOGIN', { userName: this.$t('components.logout.appbar.administrator') });
         if (this.$route.query.redirect !== undefined) this.$router.push(this.$route.query.redirect);
         else this.$router.push('/');
       },

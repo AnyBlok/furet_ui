@@ -102,7 +102,12 @@ defineComponent('furet-ui-appbar-user-menu', {
           menu.component,
           {
             class: menu.class,
+            style: menu.style,
+            attrs: menu.attrs,
             props: menu.props,
+            domProps: menu.domProps,
+            on: menu.on,
+            nativeOn: menu.nativeOn,
           },
           [menu.label]));
       });
@@ -116,6 +121,19 @@ defineComponent('furet-ui-appbar-user-menu', {
   },
 });
 
+defineComponent('furet-ui-appbar-user-menu-router-link', {
+  template: `
+    <span class="navbar-item">
+      <router-link class="button is-fullwidth is-primary is-inverted" v-bind:to="to">
+        {{ label }}
+      </router-link>
+    </span>
+  `,
+  prototype: {
+    props: ['label', 'to'],
+  },
+});
+
 defineComponent('furet-ui-appbar-spaces-menu', {
   prototype: {
     render(createElement) {
@@ -125,7 +143,12 @@ defineComponent('furet-ui-appbar-spaces-menu', {
           menu.component,
           {
             class: menu.class,
+            style: menu.style,
+            attrs: menu.attrs,
             props: menu.props,
+            domProps: menu.domProps,
+            on: menu.on,
+            nativeOn: menu.nativeOn,
           },
           [menu.label]));
       });
@@ -145,7 +168,18 @@ defineComponent('furet-ui-appbar-space-menus', {
       const menus = [];
       this.menus.forEach((menu) => {
         menus.push(createElement('li', [
-          createElement(menu.component, { class: menu.class, props: menu.props }, [menu.label]),
+          createElement(
+            menu.component,
+            {
+              class: menu.class,
+              style: menu.style,
+              attrs: menu.attrs,
+              props: menu.props,
+              domProps: menu.domProps,
+              on: menu.on,
+              nativeOn: menu.nativeOn,
+            },
+            [menu.label]),
         ]));
       });
       return createElement('nav', { class: 'tabs is-boxed' }, [
