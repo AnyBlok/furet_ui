@@ -30,7 +30,13 @@ defineComponent('furet-ui-appbar-user-dropmenu', {
     methods: {
       logOut() {
         this.$store.commit('UPDATE_MENUS', {
-          user: [{ name: 'login', props: { to: '/login', label: 'Log In' } }],
+          user: [
+            {
+              name: 'login',
+              component: 'furet-ui-appbar-head-router-link-button',
+              props: { to: '/login', label: 'Log In' },
+            },
+          ],
         });
         this.$store.commit('LOGOUT');
         this.$router.push('/');

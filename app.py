@@ -38,7 +38,14 @@ def get_component_files():
         'js': ['other/plop.js', 'other/plop.js'],
         'css': ['other/plop.css'],
         'global': {},
-        'menus': [],
+        'menus': {
+            'spaces': [
+                {
+                    'name': 'ping',
+                    'props': {'to': '/ping', 'label': 'Go to ping'},
+                },
+            ],
+        },
         'lang': 'fr',
         'langs': {
             'fr': {},

@@ -8,9 +8,10 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-const defaultUserMenu = {
+export const defaultHeadMenu = {
   name: undefined,
-  component: 'furet-ui-appbar-user-menu-router-link',
+  label: undefined,
+  component: 'furet-ui-appbar-head-router-link',
   class: {},
   style: {},
   attrs: {},
@@ -22,7 +23,11 @@ const defaultUserMenu = {
 
 export const defaultState = {
   user: [
-    Object.assign({}, defaultUserMenu, { name: 'login', props: { to: '/login', label: 'Log In' } }),
+    Object.assign({}, defaultHeadMenu, {
+      name: 'login',
+      component: 'furet-ui-appbar-head-router-link-button',
+      props: { to: '/login', label: 'Log In' },
+    }),
   ],
   spaces: [],
   spaceMenus: [],
@@ -42,11 +47,17 @@ export const mutations = {
     if (action.user !== undefined) {
       const menus = [];
       action.user.forEach((menu) => {
-        menus.push(Object.assign({}, defaultUserMenu, menu));
+        menus.push(Object.assign({}, defaultHeadMenu, menu));
       });
       state.user = menus;
     }
-    if (action.spaces !== undefined) state.spaces = action.spaces;
+    if (action.spaces !== undefined) {
+      const menus = [];
+      action.spaces.forEach((menu) => {
+        menus.push(Object.assign({}, defaultHeadMenu, menu));
+      });
+      state.spaces = menus;
+    }
     if (action.spaceMenus !== undefined) state.spaceMenus = action.spaceMenus;
   },
 };

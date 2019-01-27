@@ -44,7 +44,8 @@ window.startFuretUi = startFuretUi;
 
 axios.get('furet-ui/app/component/files')
   .then((res) => {
-    store.commit('UPDATE_GLOBAL', res.data.global);
+    if (res.data.global !== undefined) store.commit('UPDATE_GLOBAL', res.data.global);
+    if (res.data.menus !== undefined) store.commit('UPDATE_MENUS', res.data.menus);
     // eslint-disable-next-line
     for (const [name, description] of Object.entries(res.data.templates)) {
       const template = document.createElement('template');// create a stylesheet DOM node

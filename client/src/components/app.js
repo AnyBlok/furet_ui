@@ -121,16 +121,41 @@ defineComponent('furet-ui-appbar-user-menu', {
   },
 });
 
-defineComponent('furet-ui-appbar-user-menu-router-link', {
-  template: `
-    <span class="navbar-item">
-      <router-link class="button is-fullwidth is-primary is-inverted" v-bind:to="to">
-        {{ label }}
-      </router-link>
-    </span>
-  `,
+defineComponent('furet-ui-appbar-head-router-link-goto', {
   prototype: {
     props: ['label', 'to'],
+    methods: {
+      goTo() {
+        // TODO clear data
+        this.$router.push(this.to);
+      },
+    },
+  },
+});
+
+defineComponent('furet-ui-appbar-head-router-link', {
+  template: `
+    <a class="navbar-item" v-on:click="goTo">
+      {{ label }}
+    </a>
+  `,
+  extend: ['furet-ui-appbar-head-router-link-goto'],
+});
+
+defineComponent('furet-ui-appbar-head-router-link-button', {
+  template: `
+    <span class="navbar-item">
+      <a class="button is-primary is-inverted is-fullwidth" v-on:click="goTo">
+        <span class="icon" v-if="icon">
+          <font-awesome-icon v-bind:icon="icon" />
+        </span>
+        <span>{{ label }}</span>
+      </a>
+    </span>
+  `,
+  extend: ['furet-ui-appbar-head-router-link-goto'],
+  prototype: {
+    props: ['icon'],
   },
 });
 
