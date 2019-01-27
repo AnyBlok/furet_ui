@@ -21,6 +21,19 @@ export const defaultHeadMenu = {
   nativeOn: {},
 };
 
+export const defaultFootMenu = {
+  name: undefined,
+  label: undefined,
+  component: 'furet-ui-appbar-foot-router-link',
+  class: {},
+  style: {},
+  attrs: {},
+  props: {},
+  domProps: {},
+  on: {},
+  nativeOn: {},
+};
+
 export const defaultState = {
   user: [
     Object.assign({}, defaultHeadMenu, {
@@ -58,7 +71,13 @@ export const mutations = {
       });
       state.spaces = menus;
     }
-    if (action.spaceMenus !== undefined) state.spaceMenus = action.spaceMenus;
+    if (action.spaceMenus !== undefined) {
+      const menus = [];
+      action.spaceMenus.forEach((menu) => {
+        menus.push(Object.assign({}, defaultFootMenu, menu));
+      });
+      state.spaceMenus = menus;
+    }
   },
 };
 

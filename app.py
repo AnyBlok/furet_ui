@@ -45,6 +45,12 @@ def get_component_files():
                     'props': {'to': '/ping', 'label': 'Go to ping'},
                 },
             ],
+            'spaceMenus': [
+                {
+                    'name': 'ping',
+                    'props': {'to': '/ping', 'label': 'Go to ping'},
+                },
+            ],
         },
         'lang': 'fr',
         'langs': {

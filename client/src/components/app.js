@@ -121,7 +121,7 @@ defineComponent('furet-ui-appbar-user-menu', {
   },
 });
 
-defineComponent('furet-ui-appbar-head-router-link-goto', {
+defineComponent('furet-ui-appbar-router-link-goto', {
   prototype: {
     props: ['label', 'to'],
     methods: {
@@ -139,7 +139,7 @@ defineComponent('furet-ui-appbar-head-router-link', {
       {{ label }}
     </a>
   `,
-  extend: ['furet-ui-appbar-head-router-link-goto'],
+  extend: ['furet-ui-appbar-router-link-goto'],
 });
 
 defineComponent('furet-ui-appbar-head-router-link-button', {
@@ -153,7 +153,7 @@ defineComponent('furet-ui-appbar-head-router-link-button', {
       </a>
     </span>
   `,
-  extend: ['furet-ui-appbar-head-router-link-goto'],
+  extend: ['furet-ui-appbar-router-link-goto'],
   prototype: {
     props: ['icon'],
   },
@@ -218,5 +218,29 @@ defineComponent('furet-ui-appbar-space-menus', {
         return this.$store.state.menus.spaceMenus;
       },
     },
+  },
+});
+
+defineComponent('furet-ui-appbar-foot-router-link', {
+  template: `
+    <a v-on:click="goTo">
+      {{ label }}
+    </a>
+  `,
+  extend: ['furet-ui-appbar-router-link-goto'],
+});
+
+defineComponent('furet-ui-appbar-foot-router-link-button', {
+  template: `
+    <a class="button is-primary is-inverted" v-on:click="goTo">
+      <span class="icon" v-if="icon">
+        <font-awesome-icon v-bind:icon="icon" />
+      </span>
+      <span>{{ label }}</span>
+    </a>
+  `,
+  extend: ['furet-ui-appbar-router-link-goto'],
+  prototype: {
+    props: ['icon'],
   },
 });
