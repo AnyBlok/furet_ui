@@ -1,4 +1,4 @@
-import { createComponents as factoryCreateComponents, getComponentPrototype as factoryGetComponentPrototype } from './factory';
+import { createComponents as factoryCreateComponents } from './factory';
 import './mixins';
 import './app';
 import './homepage';
@@ -7,8 +7,6 @@ import './logout';
 import './about';
 
 export const createComponents = () => factoryCreateComponents();
-export const getComponentPrototype = elementName => factoryGetComponentPrototype(elementName);
 export default {
   createComponents,
-  getComponentPrototype,
 };

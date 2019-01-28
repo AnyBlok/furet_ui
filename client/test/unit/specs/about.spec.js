@@ -1,5 +1,6 @@
 import { mount } from 'vue-test-utils'
-import { getComponentPrototype } from '@/components';
+import '@/components';
+import { getComponentPrototype } from '@/components/factory';
 
 
 describe('about component', () => {
