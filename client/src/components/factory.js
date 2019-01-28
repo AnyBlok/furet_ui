@@ -32,9 +32,11 @@ window.defineComponent = defineComponent;
 const getPrototypeFor = (elementName) => {
   const component = components[elementName];
   const prototypes = [];
-  component.extend.forEach((otherElementName) => {
-    prototypes.push(...getPrototypeFor(otherElementName));
-  });
+  if (component.extend) {
+    component.extend.forEach((otherElementName) => {
+      prototypes.push(...getPrototypeFor(otherElementName));
+    });
+  }
   prototypes.push(...component.prototypes);
   return prototypes;
 };
@@ -50,4 +52,13 @@ export const createComponents = () => {
       });
     });
   });
+};
+
+export const createUnitTestComponent = (elementName) => {
+  const component = components[elementName];
+  const mixins = getPrototypeFor(elementName);
+  return {
+    template: component.template,
+    mixins,
+  };
 };
