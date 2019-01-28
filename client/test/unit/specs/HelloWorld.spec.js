@@ -1,8 +1,5 @@
-// import Vue from 'vue';
 import { mount } from 'vue-test-utils'
 import { createUnitTestComponent } from '@/components';
-import { shallowMount } from 'vue-test-utils'
-
 
 
 describe('about component', () => {

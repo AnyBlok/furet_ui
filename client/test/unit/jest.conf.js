@@ -24,6 +24,6 @@ module.exports = {
     '!src/router/index.js',
     '!**/node_modules/**',
   ],
-  "verbose": true,
-  "testURL": "http://localhost/",
+  verbose: true,
+  testURL: "http://localhost/",
 };
