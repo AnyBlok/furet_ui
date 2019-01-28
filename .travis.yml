@@ -11,7 +11,4 @@ install:
   - npm install
 
 script:
-  - npm run test -- --coverageReporters=text-lcov | coveralls
-
-after_success:
-  - coveralls
+  - npm run test | coveralls
