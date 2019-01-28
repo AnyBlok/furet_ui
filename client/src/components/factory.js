@@ -41,24 +41,19 @@ const getPrototypeFor = (elementName) => {
   return prototypes;
 };
 
-export const createComponents = () => {
-  componentNames.forEach((elementName) => {
-    const component = components[elementName];
-    const mixins = getPrototypeFor(elementName);
-    Vue.component(elementName, (resolve) => {
-      resolve({
-        template: component.template,
-        mixins,
-      });
-    });
-  });
-};
-
-export const createUnitTestComponent = (elementName) => {
+export const getComponentPrototype = (elementName) => {
   const component = components[elementName];
   const mixins = getPrototypeFor(elementName);
   return {
     template: component.template,
     mixins,
   };
+};
+
+export const createComponents = () => {
+  componentNames.forEach((elementName) => {
+    Vue.component(elementName, (resolve) => {
+      resolve(getComponentPrototype(elementName));
+    });
+  });
 };
