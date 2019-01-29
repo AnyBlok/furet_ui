@@ -39,24 +39,52 @@ def get_component_files():
         'css': ['other/plop.css'],
         'global': {},
         'menus': {
+            'user': [
+                {
+                    'name': 'login',
+                    'component': 'furet-ui-appbar-head-router-link-button',
+                    'props': {'to': '/login', 'label': 'Se connecter'},
+                }
+            ],
             'spaces': [
                 {
                     'name': 'ping',
-                    'props': {'to': '/ping', 'label': 'Go to ping'},
+                    'props': {'to': '/ping', 'label': 'Allez à ping'},
+                },
+                {
+                    'name': 'homepage',
+                    'props': {'to': '/', 'label': 'Home page'},
                 },
             ],
             'spaceMenus': [
                 {
                     'name': 'ping',
-                    'props': {'to': '/ping', 'label': 'Go to ping'},
+                    'props': {'to': '/ping', 'label': 'Allez à ping'},
                 },
             ],
         },
         'lang': 'fr',
-        'langs': {
-            'fr': {},
-            'en': {},
-        },
+        'langs': [
+            {
+                'locale': 'fr',
+                'translations': {
+                    'components': {
+                      'login': {
+                        'appbar': 'Se connecter',
+                        'button': 'Se connecter',
+                      },
+                      'logout': {
+                        'appbar': {
+                          'administrator': "Administrateur",
+                          'logout': "Se déconnecter",
+                          'about': "A propos de ...",
+                        },
+                        'button': "Se déconnecter",
+                      },
+                    },
+                },
+            },
+        ],
     })
 
 

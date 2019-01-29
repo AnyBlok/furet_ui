@@ -34,7 +34,7 @@ defineComponent('furet-ui-appbar-user-dropmenu', {
             {
               name: 'login',
               component: 'furet-ui-appbar-head-router-link-button',
-              props: { to: '/login', label: 'Log In' },
+              props: { to: '/login', label: this.$t('components.login.appbar') },
             },
           ],
         });

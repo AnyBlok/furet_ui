@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
+import moment from 'moment';
 
 Vue.use(VueI18n);
 
@@ -26,3 +27,16 @@ export const i18nConf = {
   },
 };
 export const i18n = new VueI18n(i18nConf);
+export const updateLocales = (langs) => {
+  langs.forEach((lang) => {
+    // eslint-disable-next-line
+    console.log(" ==> ", lang, i18n.locale)
+    i18n.setLocaleMessage(lang.locale, lang.translations);
+  });
+};
+window.updateLocales = updateLocales;
+export const updateLang = (lang) => {
+  i18n.locale = lang;
+  moment.locale(lang);
+};
+window.updateLang = updateLang;

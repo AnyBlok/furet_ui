@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { sync } from 'vuex-router-sync';
 import { createComponents } from './components';
 import { getRoutes } from './resources';
-import { i18n } from './i18n';
+import { i18n, updateLocales, updateLang } from './i18n';
 import { createStore } from './store';
 import { createRouter } from './router';
 
@@ -32,6 +32,7 @@ const startFuretUi = () => {
   const router = createRouter(store, getRoutes());
 
   sync(store, router); // use vue-router with vuex
+  // eslint-disable-next-line
   new Vue({
     el: '#furet-ui-app',
     template: '<app/>',
@@ -47,6 +48,8 @@ axios.get('furet-ui/app/component/files')
   .then((res) => {
     if (res.data.global !== undefined) store.commit('UPDATE_GLOBAL', res.data.global);
     if (res.data.menus !== undefined) store.commit('UPDATE_MENUS', res.data.menus);
+    if (res.data.lang !== undefined) updateLang(res.data.lang);
+    if (res.data.langs !== undefined) updateLocales(res.data.langs);
     // eslint-disable-next-line
     for (const [name, description] of Object.entries(res.data.templates)) {
       const template = document.createElement('template');// create a stylesheet DOM node
