@@ -13,7 +13,7 @@ import { sync } from 'vuex-router-sync';
 import { createComponents } from './components';
 import { getRoutes } from './resources';
 import { i18n } from './i18n';
-import { store } from './store';
+import { createStore } from './store';
 import { createRouter } from './router';
 
 Vue.use(Notifications);
@@ -22,13 +22,14 @@ Vue.use(Buefy);
 library.add(fas, fab);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 axios.defaults.baseURL = process.env.API_REST_URL;
+const store = createStore();
 
 const startFuretUi = () => {
   // eslint-disable-next-line
   console.log(' ==> start furet ui');
   /* eslint-disable no-new */
   createComponents();
-  const router = createRouter(getRoutes());
+  const router = createRouter(store, getRoutes());
 
   sync(store, router); // use vue-router with vuex
   new Vue({

@@ -12,5 +12,5 @@ export const storeDef = {
   strict: debug,
 };
 
-export const store = new Vuex.Store(storeDef);
-export default store;
+export const createStore = () => new Vuex.Store(storeDef);
+export default createStore;
