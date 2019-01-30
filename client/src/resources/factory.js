@@ -3,6 +3,8 @@ import _ from 'underscore';
 const resources = {};
 const resourceNames = [];
 
+// TODO removeResource = (resourceName) => {}
+
 export const defineResource = (resourceName, declaration) => {
   let klass;
   if (resourceName in resources) {

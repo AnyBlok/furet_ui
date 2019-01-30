@@ -25,12 +25,6 @@ templates = {
 }
 
 
-# sanity check route
-@app.route('/ping', methods=['GET'])
-def ping_pong():
-    return jsonify('pong!')
-
-
 @app.route('/furet-ui/app/component/files', methods=['GET'])
 def get_component_files():
     return jsonify({

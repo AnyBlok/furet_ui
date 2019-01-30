@@ -29,8 +29,6 @@ export const i18nConf = {
 export const i18n = new VueI18n(i18nConf);
 export const updateLocales = (langs) => {
   langs.forEach((lang) => {
-    // eslint-disable-next-line
-    console.log(" ==> ", lang, i18n.locale)
     i18n.setLocaleMessage(lang.locale, lang.translations);
   });
 };
