@@ -15,7 +15,7 @@ exports[`homepage component snapshot 1`] = `
   >
     <img
       alt="Logo"
-      class="image _s"
+      class="image"
       src="undefined/furet-ui/logo"
     />
   </div>
