@@ -32,7 +32,7 @@ window.defineComponent = defineComponent;
 const getPrototypeFor = (elementName) => {
   const component = components[elementName];
   const prototypes = [];
-  if (component.extend) {
+  if (component.extend.length !== 0) {
     component.extend.forEach((otherElementName) => {
       prototypes.push(...getPrototypeFor(otherElementName));
     });

@@ -9,12 +9,14 @@ exports[`app component snapshot 1`] = `
   <notifications />
    
   <router-view />
+   
+  <furet-ui-footer />
 </div>
 `;
 
 exports[`furet-ui-appbar component snapshot 1`] = `
 <header
-  class="hero is-primary"
+  class="hero is-dark"
 >
   <furet-ui-appbar-header />
    
@@ -60,7 +62,7 @@ exports[`furet-ui-appbar-foot-router-link component snapshot 1`] = `
 
 exports[`furet-ui-appbar-foot-router-link-button component snapshot 1`] = `
 <a
-  class="button is-primary is-inverted"
+  class="button is-dark is-inverted"
 >
   <span
     class="icon"
@@ -101,7 +103,7 @@ exports[`furet-ui-appbar-head-router-link-button component snapshot 1`] = `
   class="navbar-item"
 >
   <a
-    class="button is-primary is-inverted is-fullwidth"
+    class="button is-dark is-inverted is-fullwidth"
   >
     <span
       class="icon"
@@ -123,7 +125,7 @@ exports[`furet-ui-appbar-header component snapshot 1`] = `
   class="hero-head"
 >
   <nav
-    class="navbar is-primary"
+    class="navbar is-dark"
     role="navigation"
   >
     <div
@@ -236,4 +238,42 @@ exports[`furet-ui-appbar-user-menu component snapshot (not empty) 1`] = `
     class=""
   />
 </div>
+`;
+
+exports[`furet-ui-footer component snapshot 1`] = `
+<footer
+  class="footer"
+>
+  <div
+    class="content has-text-centered is-success"
+  >
+    <p>
+      <strong>
+        Furet UI
+      </strong>
+       by 
+      <a
+        href="https://github.com/jssuzanne"
+      >
+        Jean-Sébastien Suzanne
+      </a>
+      . 
+          The source code is licensed 
+      <a
+        href="http://opensource.org/licenses/MPL-2.0"
+      >
+        MPL-2.0
+      </a>
+      .
+          The source is available on 
+      <a
+        href="https://github.com/AnyBlok/furet_ui"
+      >
+        Githup
+      </a>
+      .
+        
+    </p>
+  </div>
+</footer>
 `;

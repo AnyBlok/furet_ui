@@ -41,6 +41,16 @@ describe('store.state.global', () => {
     expect(state).toMatchObject(expected)
     expect(getters.loggedIn(state)).toBe(true)
   });
+  it('mutation login + getter loggedIn (without userName)', () => {
+    const action = {};
+    const expected = {
+      userName: '',
+      authenticated: true,
+    }
+    mutations.LOGIN(state, action);
+    expect(state).toMatchObject(expected)
+    expect(getters.loggedIn(state)).toBe(true)
+  });
 
   it('mutation logout + getter loggedIn', () => {
     state = {

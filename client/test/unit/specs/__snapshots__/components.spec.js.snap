@@ -3,3 +3,5 @@
 exports[`components factory createComponents about 1`] = `<!--function (a, b, c, d) { return createElement(vm, a, b, c, d, true); }-->`;
 
 exports[`components factory createComponents add component and over write it 1`] = `<!--function (a, b, c, d) { return createElement(vm, a, b, c, d, true); }-->`;
+
+exports[`components factory createComponents add component with extend 1`] = `<!--function (a, b, c, d) { return createElement(vm, a, b, c, d, true); }-->`;

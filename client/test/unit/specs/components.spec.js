@@ -11,10 +11,18 @@ describe('components factory', () => {
   });
 
   it('createComponents add component and over write it', () => {
-    defineComponent('fooBar', {'template': '<about />'})
-    defineComponent('fooBar', {'template': '<about />'})
+    defineComponent('fooBar', {'template': '<about />'});
+    defineComponent('fooBar', {'template': '<about />'});
 
     const wrapper = mount(getComponentPrototype('fooBar'));
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it('createComponents add component with extend', () => {
+    defineComponent('foo', {'template': '<foo />'});
+    defineComponent('Bar', {extend: ['foo']});
+
+    const wrapper = mount(getComponentPrototype('Bar'));
     expect(wrapper.element).toMatchSnapshot();
   });
 });

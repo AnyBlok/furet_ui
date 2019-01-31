@@ -18,6 +18,13 @@ describe('furet-ui-appbar component', () => {
   });
 });
 
+describe('furet-ui-footer component', () => {
+  const wrapper = mount(getComponentPrototype('furet-ui-footer'));
+  it('snapshot', () => {
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe('furet-ui-appbar-header component', () => {
   const wrapper = mount(getComponentPrototype('furet-ui-appbar-header'));
   it('snapshot', () => {

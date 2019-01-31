@@ -30,7 +30,9 @@ export const actions = {
 export const mutations = {
   LOGIN(state, action) {
     state.authenticated = true;
-    if (action !== undefined && action.userName !== undefined) state.userName = action.userName;
+    if (action !== undefined && action.userName !== undefined) {
+      state.userName = action.userName;
+    }
   },
   LOGOUT(state) {
     state.authenticated = false;
