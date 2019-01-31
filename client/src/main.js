@@ -50,33 +50,39 @@ axios.get('furet-ui/app/component/files')
     if (res.data.menus !== undefined) store.commit('UPDATE_MENUS', res.data.menus);
     if (res.data.lang !== undefined) updateLang(res.data.lang);
     if (res.data.langs !== undefined) updateLocales(res.data.langs);
-    // eslint-disable-next-line
-    for (const [name, description] of Object.entries(res.data.templates)) {
-      const template = document.createElement('template');// create a stylesheet DOM node
-      template.id = name;
-      template.innerHTML = description;
-      document.body.appendChild(template);
+    if (res.data.templates !== undefined) {
+      // eslint-disable-next-line
+      for (const [name, description] of Object.entries(res.data.templates)) {
+        const template = document.createElement('template');// create a stylesheet DOM node
+        template.id = name;
+        template.innerHTML = description;
+        document.body.appendChild(template);
+      }
     }
-    res.data.css.forEach((file) => {
-      const style = document.createElement('link');// create a stylesheet DOM node
-      style.href = `${process.env.API_REST_URL}/${file}`;// set its src to the provided URL
-      style.rel = 'stylesheet';
-      style.type = 'text/css';
-      document.head.appendChild(style);
-    });
-    let modules2beimported = '(async () => {';
-    res.data.js.forEach((file) => {
+    if (res.data.css !== undefined) {
+      res.data.css.forEach((file) => {
+        const style = document.createElement('link');// create a stylesheet DOM node
+        style.href = `${process.env.API_REST_URL}/${file}`;// set its src to the provided URL
+        style.rel = 'stylesheet';
+        style.type = 'text/css';
+        document.head.appendChild(style);
+      });
+    }
+    if (res.data.js !== undefined) {
+      let modules2beimported = '(async () => {';
+      res.data.js.forEach((file) => {
+        modules2beimported += `
+          await import('${process.env.API_REST_URL}/${file}');`;
+      });
+      const script = document.createElement('script');// create a script DOM node
+      script.type = 'module';
       modules2beimported += `
-        await import('${process.env.API_REST_URL}/${file}');`;
-    });
-    const script = document.createElement('script');// create a script DOM node
-    script.type = 'module';
-    modules2beimported += `
-        startFuretUi();
-      })();
-    `;
-    script.text = modules2beimported;
-    document.body.appendChild(script);
+          startFuretUi();
+        })();
+      `;
+      script.text = modules2beimported;
+      document.body.appendChild(script);
+    }
   })
   .catch((error) => {
     // eslint-disable-next-line
