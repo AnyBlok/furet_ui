@@ -22,6 +22,7 @@ Vue.use(Buefy);
 library.add(fas, fab);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 axios.defaults.baseURL = process.env.API_REST_URL;
+window.axios = axios;
 const store = createStore();
 
 const startFuretUi = () => {
