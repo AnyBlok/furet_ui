@@ -1,9 +1,15 @@
 import _ from 'underscore';
 
 const resources = {};
-const resourceNames = [];
+export const resourceNames = [];
 
-// TODO removeResource = (resourceName) => {}
+export const removeResource = (resourceName) => {
+  const index = resourceNames.indexOf(resourceName);
+  if (index !== -1) {
+    delete resources[resourceName];
+    resourceNames.splice(index, 1);
+  }
+};
 
 export const defineResource = (resourceName, declaration) => {
   let klass;
@@ -11,44 +17,41 @@ export const defineResource = (resourceName, declaration) => {
     klass = resources[resourceName];
   } else {
     klass = {
-      /*
-       * {
-       *    name:
-       *    path:
-       *    template_name:
-       *    props: []
-       *    transition : {}
-       * }
-       * */
-      views: [],
+      children: [],
+      name: resourceName,
       path: resourceName,
       templateName: resourceName,
+      props: [],
       mustBeAuthenticated: false,
     };
     resources[resourceName] = klass;
     resourceNames.push(resourceName);
   }
   if (declaration.path !== undefined) klass.path = declaration.path;
+  if (declaration.templateName !== undefined) klass.templateName = declaration.templateName;
+  if (declaration.props !== undefined) klass.props = declaration.props;
   if (declaration.mustBeAuthenticated !== undefined) {
     klass.mustBeAuthenticated = declaration.mustBeAuthenticated;
   }
-  if (declaration.views !== undefined) {
-    declaration.views.forEach((view) => {
-      let viewDefinition = _.find(klass.view, v => v.name === view.name);
-      if (viewDefinition === undefined) {
-        viewDefinition = {
-          name: view.name,
-          template: '',
+  if (declaration.children !== undefined) {
+    declaration.children.forEach((child) => {
+      let childDefinition = _.find(klass.children, c => c.name === child.name);
+      if (childDefinition === undefined) {
+        childDefinition = {
+          name: child.name,
+          completeName: `${resourceName}_${child.name}`,
+          templateName: child.name,
+          path: child.name,
           props: [],
-          transition: {},
+          mustBeAuthenticated: false,
         };
-        klass.view.push(viewDefinition);
+        klass.children.push(childDefinition);
       }
-      if (view.path !== undefined) viewDefinition.path = view.path;
-      if (view.template !== undefined) viewDefinition.template = view.template;
-      if (view.props !== undefined) viewDefinition.props.push(...view.props);
-      if (view.transition !== undefined) {
-        viewDefinition.transition = Object.assign(viewDefinition.transition, view.transition);
+      if (child.path !== undefined) childDefinition.path = child.path;
+      if (child.templateName !== undefined) childDefinition.templateName = child.templateName;
+      if (child.props !== undefined) childDefinition.props.push(...child.props);
+      if (child.mustBeAuthenticated !== undefined) {
+        childDefinition.mustBeAuthenticated = child.mustBeAuthenticated;
       }
     });
   }
@@ -56,21 +59,45 @@ export const defineResource = (resourceName, declaration) => {
 
 window.defineResource = defineResource;
 
+const createRoute = (resource, defaultTemplateProps) => {
+  let path = `/${resource.path}`;
+  let templateProps = defaultTemplateProps || '';
+  if (resource.path === resource.name) {
+    if (resource.props.length !== 0) {
+      resource.props.forEach((prop) => {
+        path += `/:${prop}`;
+        templateProps += ` v-bind:${prop}="${prop}"`;
+      });
+    }
+  }
+  const route = {
+    name: resource.completeName || resource.name,
+    path,
+    props: templateProps !== '',
+    meta: { requiresAuth: resource.mustBeAuthenticated },
+    component: {},
+  };
+  if (resource.children === undefined || resource.children.length === 0) {
+    route.component.template = `<${resource.templateName}${templateProps} />`;
+  } else {
+    route.children = [];
+    if (resource.templateName === resource.name) {
+      route.component.template = '<router-view />';
+    } else {
+      route.component.template = `<${resource.templateName}${templateProps} />`;
+    }
+    resource.children.forEach((child) => {
+      route.children.push(createRoute(child, templateProps));
+    });
+  }
+  return route;
+};
+
 export const getRoutes = () => {
   const routes = [];
   resourceNames.forEach((resourceName) => {
     const resource = resources[resourceName];
-    const route = {
-      name: resourceName,
-      path: `/${resource.path}`,
-    };
-    if (resource.views.length === 0) {
-      route.component = {
-        template: `<${resource.templateName}></${resource.templateName}>`,
-      };
-      route.meta = { requiresAuth: resource.mustBeAuthenticated };
-    }
-    routes.push(route);
+    routes.push(createRoute(resource));
   });
   return routes;
 };

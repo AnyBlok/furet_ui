@@ -264,12 +264,12 @@ exports[`furet-ui-footer component snapshot 1`] = `
       >
         MPL-2.0
       </a>
-      .
-          The source is available on 
+       and 
+          is available on 
       <a
         href="https://github.com/AnyBlok/furet_ui"
       >
-        Githup
+        Github
       </a>
       .
         

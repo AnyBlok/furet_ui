@@ -252,8 +252,8 @@ defineComponent('furet-ui-footer', {
       <div class="content has-text-centered is-success">
         <p>
           <strong>Furet UI</strong> by <a href="https://github.com/jssuzanne">Jean-Sébastien Suzanne</a>. 
-          The source code is licensed <a href="http://opensource.org/licenses/MPL-2.0">MPL-2.0</a>.
-          The source is available on <a href="https://github.com/AnyBlok/furet_ui">Githup</a>.
+          The source code is licensed <a href="http://opensource.org/licenses/MPL-2.0">MPL-2.0</a> and 
+          is available on <a href="https://github.com/AnyBlok/furet_ui">Github</a>.
         </p>
       </div>
     </footer>
