@@ -16,7 +16,7 @@ exports[`app component snapshot 1`] = `
 
 exports[`furet-ui-appbar component snapshot 1`] = `
 <header
-  class="hero is-dark"
+  class="hero is-primary"
 >
   <furet-ui-appbar-header />
    
@@ -62,7 +62,7 @@ exports[`furet-ui-appbar-foot-router-link component snapshot 1`] = `
 
 exports[`furet-ui-appbar-foot-router-link-button component snapshot 1`] = `
 <a
-  class="button is-dark is-inverted"
+  class="button is-primary is-inverted"
 >
   <span
     class="icon"
@@ -103,7 +103,7 @@ exports[`furet-ui-appbar-head-router-link-button component snapshot 1`] = `
   class="navbar-item"
 >
   <a
-    class="button is-dark is-inverted is-fullwidth"
+    class="button is-primary is-inverted is-fullwidth"
   >
     <span
       class="icon"
@@ -125,7 +125,7 @@ exports[`furet-ui-appbar-header component snapshot 1`] = `
   class="hero-head"
 >
   <nav
-    class="navbar is-dark"
+    class="navbar is-primary"
     role="navigation"
   >
     <div

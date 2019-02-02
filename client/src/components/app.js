@@ -12,7 +12,7 @@ defineComponent('app', {
 
 defineComponent('furet-ui-appbar', {
   template: `
-    <header class="hero is-dark">
+    <header class="hero is-primary">
       <furet-ui-appbar-header />
       <furet-ui-appbar-body />
       <furet-ui-appbar-footer />
@@ -23,7 +23,7 @@ defineComponent('furet-ui-appbar', {
 defineComponent('furet-ui-appbar-header', {
   template: `
     <div class="hero-head">
-      <nav class="navbar is-dark" role="navigation">
+      <nav class="navbar is-primary" role="navigation">
         <div class="container">
           <div class="navbar-brand">
             <furet-ui-appbar-header-brand />
@@ -146,7 +146,7 @@ defineComponent('furet-ui-appbar-head-router-link', {
 defineComponent('furet-ui-appbar-head-router-link-button', {
   template: `
     <span class="navbar-item">
-      <a class="button is-dark is-inverted is-fullwidth" v-on:click="goTo">
+      <a class="button is-primary is-inverted is-fullwidth" v-on:click="goTo">
         <span class="icon" v-if="icon">
           <font-awesome-icon v-bind:icon="icon" />
         </span>
@@ -233,7 +233,7 @@ defineComponent('furet-ui-appbar-foot-router-link', {
 
 defineComponent('furet-ui-appbar-foot-router-link-button', {
   template: `
-    <a class="button is-dark is-inverted" v-on:click="goTo">
+    <a class="button is-primary is-inverted" v-on:click="goTo">
       <span class="icon" v-if="icon">
         <font-awesome-icon v-bind:icon="icon" />
       </span>

@@ -15,6 +15,7 @@ import { getRoutes } from './resources';
 import { i18n, updateLocales, updateLang } from './i18n';
 import { createStore } from './store';
 import { createRouter } from './router';
+import './styles.scss';
 
 Vue.use(Notifications);
 Vue.config.productionTip = false;
