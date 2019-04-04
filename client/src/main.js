@@ -27,6 +27,7 @@ window.axios = axios;
 const store = createStore();
 
 const startFuretUi = () => {
+  document.getElementById('import_reporting').remove();
   // eslint-disable-next-line
   console.log(' ==> start furet ui');
   /* eslint-disable no-new */
@@ -53,28 +54,45 @@ axios.get('furet-ui/app/component/files')
     if (res.data.lang !== undefined) updateLang(res.data.lang);
     if (res.data.langs !== undefined) updateLocales(res.data.langs);
     if (res.data.templates !== undefined) {
+      const node = document.getElementById('templates');
+      let templateSize = 0;
+      node.setAttribute('max', Object.keys(res.data.templates).length);
       // eslint-disable-next-line
       for (const [name, description] of Object.entries(res.data.templates)) {
         const template = document.createElement('template');// create a stylesheet DOM node
         template.id = name;
         template.innerHTML = description;
         document.body.appendChild(template);
+        templateSize += 1;
+        node.setAttribute('value', templateSize);
       }
     }
     if (res.data.css !== undefined) {
+      const node = document.getElementById('styles');
+      let stylesSize = 0;
+      node.setAttribute('max', res.data.css.length);
       res.data.css.forEach((file) => {
         const style = document.createElement('link');// create a stylesheet DOM node
         style.href = `${process.env.API_REST_URL}/${file}`;// set its src to the provided URL
         style.rel = 'stylesheet';
         style.type = 'text/css';
         document.head.appendChild(style);
+        stylesSize += 1;
+        node.setAttribute('value', stylesSize);
       });
     }
     if (res.data.js !== undefined) {
       let modules2beimported = '(async () => {';
+      modules2beimported += `
+        document.getElementById('error').remove();
+        const node = document.getElementById('prototypes');
+        node.setAttribute('max', ${res.data.js.length});`;
+      let jsSize = 0;
       res.data.js.forEach((file) => {
+        jsSize += 1;
         modules2beimported += `
-          await import('${process.env.API_REST_URL}/${file}');`;
+          await import('${process.env.API_REST_URL}/${file}');
+          node.setAttribute('value', ${jsSize});`;
       });
       const script = document.createElement('script');// create a script DOM node
       script.type = 'module';
