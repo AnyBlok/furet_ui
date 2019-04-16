@@ -1,13 +1,14 @@
 language: node_js
 sudo: true
 node_js:
-    - "node"
-    - "6"
+  - "node"
+  - "6"
+
+before_install: 
+  - cd client
 
 install:
-    - npm install
+  - npm install
 
 script:
-    - npm run test
-after_success:
-  - bash <(curl -s https://codecov.io/bash) -e TRAVIS_NODE_VERSION
+  - npm run test

@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app component snapshot 1`] = `
+<div
+  id="furet-ui-app"
+>
+  <furet-ui-appbar />
+   
+  <notifications />
+   
+  <router-view />
+   
+  <furet-ui-footer />
+</div>
+`;
+
+exports[`furet-ui-appbar component snapshot 1`] = `
+<header
+  class="hero is-primary"
+>
+  <furet-ui-appbar-header />
+   
+  <furet-ui-appbar-body />
+   
+  <furet-ui-appbar-footer />
+</header>
+`;
+
+exports[`furet-ui-appbar-body component snapshot 1`] = `
+<div
+  class="hero-body"
+>
+  <div
+    class="container has-text-centered"
+  >
+    <h1
+      class="title"
+    >
+      
+          Furet UI
+        
+    </h1>
+     
+    <p
+      class="subtitle"
+    >
+      
+          Web Client for any backend serveur
+        
+    </p>
+  </div>
+</div>
+`;
+
+exports[`furet-ui-appbar-foot-router-link component snapshot 1`] = `
+<a>
+  
+      fooBar
+    
+</a>
+`;
+
+exports[`furet-ui-appbar-foot-router-link-button component snapshot 1`] = `
+<a
+  class="button is-primary is-inverted"
+>
+  <span
+    class="icon"
+  >
+    <font-awesome-icon
+      icon="spinner"
+    />
+  </span>
+   
+  <span>
+    fooBar
+  </span>
+</a>
+`;
+
+exports[`furet-ui-appbar-footer component snapshot (empty) 1`] = `<!---->`;
+
+exports[`furet-ui-appbar-footer component snapshot (not empty) 1`] = `
+<div
+  class="hero-foot"
+>
+  <furet-ui-appbar-space-menus />
+</div>
+`;
+
+exports[`furet-ui-appbar-head-router-link component snapshot 1`] = `
+<a
+  class="navbar-item"
+>
+  
+      fooBar
+    
+</a>
+`;
+
+exports[`furet-ui-appbar-head-router-link-button component snapshot 1`] = `
+<span
+  class="navbar-item"
+>
+  <a
+    class="button is-primary is-inverted is-fullwidth"
+  >
+    <span
+      class="icon"
+    >
+      <font-awesome-icon
+        icon="spinner"
+      />
+    </span>
+     
+    <span>
+      fooBar
+    </span>
+  </a>
+</span>
+`;
+
+exports[`furet-ui-appbar-header component snapshot 1`] = `
+<div
+  class="hero-head"
+>
+  <nav
+    class="navbar is-primary"
+    role="navigation"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="navbar-brand"
+      >
+        <furet-ui-appbar-header-brand />
+         
+        <a
+          aria-expanded="false"
+          aria-label="menu"
+          class="navbar-burger burger"
+          data-target="navbarUserMenu"
+          role="button"
+        >
+          <span
+            aria-hidden="true"
+          />
+           
+          <span
+            aria-hidden="true"
+          />
+           
+          <span
+            aria-hidden="true"
+          />
+        </a>
+      </div>
+       
+      <div
+        class="navbar-menu"
+        id="navbarUserMenu"
+      >
+        <furet-ui-appbar-spaces-menu />
+         
+        <furet-ui-appbar-user-menu />
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`furet-ui-appbar-header-brand component snapshot 1`] = `
+<img
+  alt="Logo"
+  class="image is-64x64"
+  src="undefined/furet-ui/logo"
+/>
+`;
+
+exports[`furet-ui-appbar-space-menus component snapshot (empty) 1`] = `
+<nav
+  class="tabs is-boxed"
+>
+  <div
+    class="container"
+  >
+    <ul />
+  </div>
+</nav>
+`;
+
+exports[`furet-ui-appbar-space-menus component snapshot (not empty) 1`] = `
+<nav
+  class="tabs is-boxed"
+>
+  <div
+    class="container"
+  >
+    <ul>
+      <li>
+        <furet-ui-appbar-foot-router-link
+          class=""
+        />
+      </li>
+    </ul>
+  </div>
+</nav>
+`;
+
+exports[`furet-ui-appbar-spaces-menu component snapshot (empty) 1`] = `
+<div
+  class="navbar-start"
+/>
+`;
+
+exports[`furet-ui-appbar-spaces-menu component snapshot (not empty) 1`] = `
+<div
+  class="navbar-start"
+>
+  <furet-ui-appbar-head-router-link
+    class=""
+  />
+</div>
+`;
+
+exports[`furet-ui-appbar-user-menu component snapshot (empty) 1`] = `
+<div
+  class="navbar-end"
+/>
+`;
+
+exports[`furet-ui-appbar-user-menu component snapshot (not empty) 1`] = `
+<div
+  class="navbar-end"
+>
+  <furet-ui-appbar-head-router-link
+    class=""
+  />
+</div>
+`;
+
+exports[`furet-ui-footer component snapshot 1`] = `
+<footer
+  class="footer"
+>
+  <div
+    class="content has-text-centered is-success"
+  >
+    <p>
+      <strong>
+        Furet UI
+      </strong>
+       by 
+      <a
+        href="https://github.com/jssuzanne"
+      >
+        Jean-Sébastien Suzanne
+      </a>
+      . 
+          The source code is licensed 
+      <a
+        href="http://opensource.org/licenses/MPL-2.0"
+      >
+        MPL-2.0
+      </a>
+       and 
+          is available on 
+      <a
+        href="https://github.com/AnyBlok/furet_ui"
+      >
+        Github
+      </a>
+      .
+        
+    </p>
+  </div>
+</footer>
+`;

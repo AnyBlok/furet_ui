@@ -11,6 +11,14 @@
 RELEASE
 =======
 
+2.0.0
+-----
+
+* Refactored all
+
+1.4.0
+-----
+
 * FIX Many2One list field have not to display ``undefined`` when the field is
   empty
 * FIX: removed the empty getters, because latest version of vuex fail if the

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`logout component snapshot 1`] = `
+<div
+  class="navbar-item has-dropdown is-hoverable"
+>
+  <a
+    class="navbar-link"
+  >
+    
+        Foo Bar
+      
+  </a>
+   
+  <div
+    class="navbar-dropdown"
+  >
+    <div
+      class="navbar-item"
+    >
+      <a
+        class="button is-primary is-inverted is-fullwidth"
+      >
+        
+           Log out
+         
+      </a>
+    </div>
+     
+    <hr
+      class="navbar-divider"
+    />
+     
+    <div
+      class="navbar-item"
+    >
+      <a
+        class="button is-primary is-inverted is-fullwidth"
+      >
+        <router-link
+          to="/about"
+        >
+          About ...
+        </router-link>
+      </a>
+    </div>
+  </div>
+</div>
+`;

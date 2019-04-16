@@ -1,0 +1,12 @@
+@charset "utf-8";
+@import "~bulma/sass/utilities/_all";
+
+$primary: #0075a2;
+$primary-invert: findColorInvert($primary);
+
+$colors: (
+  "primary": ($primary, $primary-invert),
+);
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";

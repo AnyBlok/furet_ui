@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login component snapshot 1`] = `
+<section
+  class="section"
+>
+  <div
+    class="container has-text-centered"
+  >
+    <div
+      class="columns is-mobile"
+    >
+      <div
+        class="column is-half is-offset-one-quarter"
+      >
+        <a
+          class="button is-primary is-fullwidth"
+        >
+          
+             Log in
+           
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -1,12 +1,10 @@
 syntax: glob
 
-etc/
-build/
-var/
 doc/
 coverage/
-node_modules/
+client/node_modules/
 develop-eggs
+venv/
 docs/_build/
 .installed.cfg
 *.egg-info
