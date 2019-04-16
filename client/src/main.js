@@ -6,6 +6,7 @@ import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
 import Notifications from 'vue-notification';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -17,10 +18,11 @@ import { createStore } from './store';
 import { createRouter } from './router';
 import './styles.scss';
 
+
 Vue.use(Notifications);
 Vue.config.productionTip = false;
 Vue.use(Buefy);
-library.add(fas, fab);
+library.add(far, fas, fab);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 axios.defaults.baseURL = process.env.API_REST_URL;
 window.axios = axios;

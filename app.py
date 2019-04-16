@@ -24,12 +24,45 @@ templates = {
     </div>""",
 }
 
+TEAMS = [
+    {
+        'firstname': 'Jean-Sébastien',
+        'lastname': 'Suzanne',
+        'roles': ['Anyblok -> 1er lien'],
+    },
+    {
+        'firstname': 'Pierre',
+        'lastname': 'Verkest',
+        'roles': ['Anyblok -> 2nd lien', 'Cluster -> 1er lien'],
+    },
+    {
+        'firstname': 'Fabien',
+        'lastname': 'Castarède',
+        'roles': ['Anyblok -> Facilitateur', 'Cluster -> 2nd lien'],
+    },
+    {
+        'firstname': 'Renaud',
+        'lastname': 'Boyer',
+        'roles': ['Anyblok -> Secretaire', 'Achat.IO -> 1er lien'],
+    },
+    {
+        'firstname': 'Audrey',
+        'lastname': 'Braun',
+        'roles': [],
+    },
+]
+
+
+@app.route('/teams', methods=['GET'])
+def get_teams():
+    return jsonify(TEAMS)
+
 
 @app.route('/furet-ui/app/component/files', methods=['GET'])
 def get_component_files():
     return jsonify({
         'templates': templates,
-        'js': ['other/plop.js', 'other/plop.js'],
+        'js': ['other/plop.js', 'other/plop.js', 'other/teams.js'],
         'css': ['other/plop.css'],
         'global': {},
         'menus': {
@@ -48,6 +81,10 @@ def get_component_files():
                 {
                     'name': 'homepage',
                     'props': {'to': '/', 'label': 'Home page'},
+                },
+                {
+                    'name': 'teams',
+                    'props': {'to': '/teams', 'label': 'Teams'},
                 },
             ],
             'spaceMenus': [
@@ -75,6 +112,10 @@ def get_component_files():
                         },
                         'button': "Se déconnecter",
                       },
+                      'list': {
+                        'search': 'Rechercher',
+                        'notFound': 'Aucun élément trouvé',
+                      }
                     },
                 },
             },

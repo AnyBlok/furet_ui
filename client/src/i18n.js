@@ -22,6 +22,10 @@ export const i18nConf = {
           },
           button: 'Log out',
         },
+        list: {
+          search: 'Search',
+          notFound: 'No result found',
+        },
       },
     },
   },

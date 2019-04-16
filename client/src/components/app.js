@@ -10,6 +10,23 @@ defineComponent('app', {
     </div>`,
 });
 
+defineComponent('furet-ui-app-errors', {
+  template: `
+    <div class="container">
+      <b-message type="is-danger" v-if="errors && errors.length" v-bind:closable="false" v-bind:title="$i18n.t('error')">
+        <ul>
+          <li v-for="error in errors">
+            <pre>{{ error }}</pre>
+          </li>
+        </ul>
+      </b-message>
+    </div>
+  `,
+  prototype: {
+    props: ['errors'],
+  },
+});
+
 defineComponent('furet-ui-appbar', {
   template: `
     <header class="hero is-primary">
