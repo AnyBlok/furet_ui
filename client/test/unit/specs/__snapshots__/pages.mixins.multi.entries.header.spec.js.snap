@@ -1,0 +1,1044 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`furet-ui-page-multi-entries-header component empty filter 1`] = `
+<header
+  id="furet-ui-page-multi-entries-header"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        Title
+      </h2>
+       
+      <span
+        class="level-item"
+      >
+        <small>
+          (1)
+        </small>
+         
+      </span>
+       
+      <h3
+        class="is-size-4"
+      >
+        Sub Title
+      </h3>
+    </div>
+     
+    <div
+      class="level-right"
+    >
+      <div
+        class="level-item"
+      >
+        <b-field
+          group-multiline=""
+          grouped=""
+        >
+           
+          <!---->
+        </b-field>
+      </div>
+       
+      <div
+        class="level-item"
+      >
+        <b-autocomplete
+          clear-on-select=""
+          data="[object Object]"
+          icon="search"
+          placeholder="Search"
+        >
+          <template>
+            No result found
+          </template>
+        </b-autocomplete>
+      </div>
+       
+      <div
+        class="level-item buttons"
+      >
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-refresh"
+        >
+          <font-awesome-icon
+            icon="sync"
+          />
+        </a>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <b-collapse
+    class="panel is-pulled-right"
+  >
+    <b-taglist />
+  </b-collapse>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-page-multi-entries-header component filter close value 1`] = `
+<header
+  id="furet-ui-page-multi-entries-header"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        Title
+      </h2>
+       
+      <span
+        class="level-item"
+      >
+        <small>
+          (1)
+        </small>
+         
+      </span>
+       
+      <h3
+        class="is-size-4"
+      >
+        Sub Title
+      </h3>
+    </div>
+     
+    <div
+      class="level-right"
+    >
+      <div
+        class="level-item"
+      >
+        <b-field
+          group-multiline=""
+          grouped=""
+        >
+           
+          <div
+            class="control"
+          >
+            <b-taglist
+              attached=""
+            >
+              <!---->
+               
+              <b-tag
+                type="is-dark"
+              >
+                State
+              </b-tag>
+               
+              <b-tag
+                class="furet-ui-page-multi-entries-header-filter state fooBar"
+                closable=""
+                type="is-primary"
+              >
+                fooBar 
+              </b-tag>
+            </b-taglist>
+          </div>
+        </b-field>
+      </div>
+       
+      <div
+        class="level-item"
+      >
+        <b-autocomplete
+          clear-on-select=""
+          data="[object Object]"
+          icon="search"
+          placeholder="Search"
+        >
+          <template>
+            No result found
+          </template>
+        </b-autocomplete>
+      </div>
+       
+      <div
+        class="level-item buttons"
+      >
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-refresh"
+        >
+          <font-awesome-icon
+            icon="sync"
+          />
+        </a>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <b-collapse
+    class="panel is-pulled-right"
+  >
+    <b-taglist />
+  </b-collapse>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-page-multi-entries-header component filter one value 1`] = `
+<header
+  id="furet-ui-page-multi-entries-header"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        Title
+      </h2>
+       
+      <span
+        class="level-item"
+      >
+        <small>
+          (1)
+        </small>
+         
+      </span>
+       
+      <h3
+        class="is-size-4"
+      >
+        Sub Title
+      </h3>
+    </div>
+     
+    <div
+      class="level-right"
+    >
+      <div
+        class="level-item"
+      >
+        <b-field
+          group-multiline=""
+          grouped=""
+        >
+           
+          <div
+            class="control"
+          >
+            <b-taglist
+              attached=""
+            >
+              <!---->
+               
+              <b-tag
+                type="is-dark"
+              >
+                State
+              </b-tag>
+               
+              <b-tag
+                class="furet-ui-page-multi-entries-header-filter state fooBar"
+                closable=""
+                type="is-primary"
+              >
+                fooBar 
+              </b-tag>
+            </b-taglist>
+          </div>
+        </b-field>
+      </div>
+       
+      <div
+        class="level-item"
+      >
+        <b-autocomplete
+          clear-on-select=""
+          data="[object Object]"
+          icon="search"
+          placeholder="Search"
+        >
+          <template>
+            No result found
+          </template>
+        </b-autocomplete>
+      </div>
+       
+      <div
+        class="level-item buttons"
+      >
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-refresh"
+        >
+          <font-awesome-icon
+            icon="sync"
+          />
+        </a>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <b-collapse
+    class="panel is-pulled-right"
+  >
+    <b-taglist />
+  </b-collapse>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-page-multi-entries-header component filter two value 1`] = `
+<header
+  id="furet-ui-page-multi-entries-header"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        Title
+      </h2>
+       
+      <span
+        class="level-item"
+      >
+        <small>
+          (1)
+        </small>
+         
+      </span>
+       
+      <h3
+        class="is-size-4"
+      >
+        Sub Title
+      </h3>
+    </div>
+     
+    <div
+      class="level-right"
+    >
+      <div
+        class="level-item"
+      >
+        <b-field
+          group-multiline=""
+          grouped=""
+        >
+           
+          <div
+            class="control"
+          >
+            <b-taglist
+              attached=""
+            >
+              <!---->
+               
+              <b-tag
+                type="is-dark"
+              >
+                State
+              </b-tag>
+               
+              <b-tag
+                class="furet-ui-page-multi-entries-header-filter state foo"
+                closable=""
+                type="is-primary"
+              >
+                foo 
+              </b-tag>
+              <b-tag
+                class="furet-ui-page-multi-entries-header-filter state bar"
+                closable=""
+                type="is-primary"
+              >
+                bar 
+              </b-tag>
+            </b-taglist>
+          </div>
+        </b-field>
+      </div>
+       
+      <div
+        class="level-item"
+      >
+        <b-autocomplete
+          clear-on-select=""
+          data="[object Object]"
+          icon="search"
+          placeholder="Search"
+        >
+          <template>
+            No result found
+          </template>
+        </b-autocomplete>
+      </div>
+       
+      <div
+        class="level-item buttons"
+      >
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-refresh"
+        >
+          <font-awesome-icon
+            icon="sync"
+          />
+        </a>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <b-collapse
+    class="panel is-pulled-right"
+  >
+    <b-taglist />
+  </b-collapse>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-page-multi-entries-header component snapshot can_go_to_new 1`] = `
+<header
+  id="furet-ui-page-multi-entries-header"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        Title
+      </h2>
+       
+      <span
+        class="level-item"
+      >
+        <small>
+          (1)
+        </small>
+         
+      </span>
+       
+      <h3
+        class="is-size-4"
+      >
+        Sub Title
+      </h3>
+    </div>
+     
+    <div
+      class="level-right"
+    >
+      <div
+        class="level-item"
+      >
+        <b-field
+          group-multiline=""
+          grouped=""
+        >
+           
+        </b-field>
+      </div>
+       
+      <div
+        class="level-item"
+      >
+        <b-autocomplete
+          clear-on-select=""
+          data=""
+          icon="search"
+          placeholder="Search"
+        >
+          <template>
+            No result found
+          </template>
+        </b-autocomplete>
+      </div>
+       
+      <div
+        class="level-item buttons"
+      >
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-refresh"
+        >
+          <font-awesome-icon
+            icon="sync"
+          />
+        </a>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <b-collapse
+    class="panel is-pulled-right"
+  >
+    <b-taglist />
+  </b-collapse>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <a
+      class="button is-primary is-outlined"
+      id="furet-ui-page-multi-entries-header-new"
+    >
+      <span
+        class="icon"
+      >
+        <font-awesome-icon
+          icon="plus-square"
+        />
+      </span>
+       
+      <span>
+        New
+      </span>
+    </a>
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-page-multi-entries-header component snapshot minimum 1`] = `
+<header
+  id="furet-ui-page-multi-entries-header"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        Title
+      </h2>
+       
+      <span
+        class="level-item"
+      >
+        <small>
+          (1)
+        </small>
+         
+      </span>
+       
+      <h3
+        class="is-size-4"
+      >
+        Sub Title
+      </h3>
+    </div>
+     
+    <div
+      class="level-right"
+    >
+      <div
+        class="level-item"
+      >
+        <b-field
+          group-multiline=""
+          grouped=""
+        >
+           
+        </b-field>
+      </div>
+       
+      <div
+        class="level-item"
+      >
+        <b-autocomplete
+          clear-on-select=""
+          data=""
+          icon="search"
+          placeholder="Search"
+        >
+          <template>
+            No result found
+          </template>
+        </b-autocomplete>
+      </div>
+       
+      <div
+        class="level-item buttons"
+      >
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-refresh"
+        >
+          <font-awesome-icon
+            icon="sync"
+          />
+        </a>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <b-collapse
+    class="panel is-pulled-right"
+  >
+    <b-taglist />
+  </b-collapse>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-page-multi-entries-header component snapshot with tags no selected 1`] = `
+<header
+  id="furet-ui-page-multi-entries-header"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        Title
+      </h2>
+       
+      <span
+        class="level-item"
+      >
+        <small>
+          (1)
+        </small>
+         
+      </span>
+       
+      <h3
+        class="is-size-4"
+      >
+        Sub Title
+      </h3>
+    </div>
+     
+    <div
+      class="level-right"
+    >
+      <div
+        class="level-item"
+      >
+        <b-field
+          group-multiline=""
+          grouped=""
+        >
+          <!---->
+          <!---->
+           
+        </b-field>
+      </div>
+       
+      <div
+        class="level-item"
+      >
+        <b-autocomplete
+          clear-on-select=""
+          data=""
+          icon="search"
+          placeholder="Search"
+        >
+          <template>
+            No result found
+          </template>
+        </b-autocomplete>
+      </div>
+       
+      <div
+        class="level-item buttons"
+      >
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-refresh"
+        >
+          <font-awesome-icon
+            icon="sync"
+          />
+        </a>
+         
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-tags"
+        >
+          <font-awesome-icon
+            icon="caret-square-down"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+   
+  <b-collapse
+    class="panel is-pulled-right"
+  >
+    <b-taglist>
+      <b-tag
+        class="is-small has-text-weight-bold"
+      >
+        <a
+          class="furet-ui-page-multi-entries-header-toggle-tag tag1"
+        >
+          Tag 1
+        </a>
+      </b-tag>
+      <b-tag
+        class="is-small has-text-weight-bold"
+      >
+        <a
+          class="furet-ui-page-multi-entries-header-toggle-tag tag2"
+        >
+          Tag 2
+        </a>
+      </b-tag>
+    </b-taglist>
+  </b-collapse>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-page-multi-entries-header component snapshot with tags one selected 1`] = `
+<header
+  id="furet-ui-page-multi-entries-header"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        Title
+      </h2>
+       
+      <span
+        class="level-item"
+      >
+        <small>
+          (1)
+        </small>
+         
+      </span>
+       
+      <h3
+        class="is-size-4"
+      >
+        Sub Title
+      </h3>
+    </div>
+     
+    <div
+      class="level-right"
+    >
+      <div
+        class="level-item"
+      >
+        <b-field
+          group-multiline=""
+          grouped=""
+        >
+          <div
+            class="control"
+          >
+            <b-tag
+              class="furet-ui-page-multi-entries-header-tag tag1"
+              closable=""
+              type="is-primary"
+            >
+              Tag 1 
+            </b-tag>
+          </div>
+          <!---->
+           
+        </b-field>
+      </div>
+       
+      <div
+        class="level-item"
+      >
+        <b-autocomplete
+          clear-on-select=""
+          data=""
+          icon="search"
+          placeholder="Search"
+        >
+          <template>
+            No result found
+          </template>
+        </b-autocomplete>
+      </div>
+       
+      <div
+        class="level-item buttons"
+      >
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-refresh"
+        >
+          <font-awesome-icon
+            icon="sync"
+          />
+        </a>
+         
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-tags"
+        >
+          <font-awesome-icon
+            icon="caret-square-down"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+   
+  <b-collapse
+    class="panel is-pulled-right"
+  >
+    <b-taglist>
+      <b-tag
+        class="is-small"
+      >
+        <a
+          class="furet-ui-page-multi-entries-header-toggle-tag tag1"
+        >
+          Tag 1
+        </a>
+      </b-tag>
+      <b-tag
+        class="is-small has-text-weight-bold"
+      >
+        <a
+          class="furet-ui-page-multi-entries-header-toggle-tag tag2"
+        >
+          Tag 2
+        </a>
+      </b-tag>
+    </b-taglist>
+  </b-collapse>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-page-multi-entries-header component snapshot with tags two selected 1`] = `
+<header
+  id="furet-ui-page-multi-entries-header"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        Title
+      </h2>
+       
+      <span
+        class="level-item"
+      >
+        <small>
+          (1)
+        </small>
+         
+      </span>
+       
+      <h3
+        class="is-size-4"
+      >
+        Sub Title
+      </h3>
+    </div>
+     
+    <div
+      class="level-right"
+    >
+      <div
+        class="level-item"
+      >
+        <b-field
+          group-multiline=""
+          grouped=""
+        >
+          <div
+            class="control"
+          >
+            <b-tag
+              class="furet-ui-page-multi-entries-header-tag tag1"
+              closable=""
+              type="is-primary"
+            >
+              Tag 1 
+            </b-tag>
+          </div>
+          <div
+            class="control"
+          >
+            <b-tag
+              class="furet-ui-page-multi-entries-header-tag tag2"
+              closable=""
+              type="is-primary"
+            >
+              Tag 2 
+            </b-tag>
+          </div>
+           
+        </b-field>
+      </div>
+       
+      <div
+        class="level-item"
+      >
+        <b-autocomplete
+          clear-on-select=""
+          data=""
+          icon="search"
+          placeholder="Search"
+        >
+          <template>
+            No result found
+          </template>
+        </b-autocomplete>
+      </div>
+       
+      <div
+        class="level-item buttons"
+      >
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-refresh"
+        >
+          <font-awesome-icon
+            icon="sync"
+          />
+        </a>
+         
+        <a
+          class="button"
+          id="furet-ui-page-multi-entries-header-tags"
+        >
+          <font-awesome-icon
+            icon="caret-square-down"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+   
+  <b-collapse
+    class="panel is-pulled-right"
+  >
+    <b-taglist>
+      <b-tag
+        class="is-small"
+      >
+        <a
+          class="furet-ui-page-multi-entries-header-toggle-tag tag1"
+        >
+          Tag 1
+        </a>
+      </b-tag>
+      <b-tag
+        class="is-small"
+      >
+        <a
+          class="furet-ui-page-multi-entries-header-toggle-tag tag2"
+        >
+          Tag 2
+        </a>
+      </b-tag>
+    </b-taglist>
+  </b-collapse>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <!---->
+     
+  </div>
+</header>
+`;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mixin-page-multi-entries component snapshot minimum 1`] = `
+<div>
+  <furet-ui-page-errors
+    errors=""
+  />
+   
+  <furet-ui-page-multi-entries-header
+    can_go_to_new=""
+    data=""
+    filters=""
+    subtitle="Sub Title"
+    tags=""
+    title="Title"
+    total="0"
+  />
+</div>
+`;
+
+exports[`mixin-page-multi-entries component snapshot minimum with error 1`] = `
+<div>
+  <furet-ui-page-errors
+    errors=""
+  />
+   
+  <furet-ui-page-multi-entries-header
+    can_go_to_new=""
+    data=""
+    filters=""
+    subtitle="Sub Title"
+    tags=""
+    title="Title"
+    total="0"
+  />
+</div>
+`;

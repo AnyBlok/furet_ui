@@ -4,6 +4,6 @@ import './homepage';
 import './login';
 import './logout';
 import './about';
-import './list';
+import './pages';
 
 export { createComponents, default } from './factory';

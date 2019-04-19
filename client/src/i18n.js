@@ -22,9 +22,12 @@ export const i18nConf = {
           },
           button: 'Log out',
         },
-        list: {
-          search: 'Search',
-          notFound: 'No result found',
+        page: {
+          list: {
+            search: 'Search',
+            'new': 'New',
+            notFound: 'No result found',
+          },
         },
       },
     },
