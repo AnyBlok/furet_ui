@@ -25,7 +25,7 @@ export const i18nConf = {
         page: {
           list: {
             search: 'Search',
-            'new': 'New',
+            new: 'New',
             notFound: 'No result found',
           },
         },

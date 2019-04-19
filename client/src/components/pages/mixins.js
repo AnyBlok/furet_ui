@@ -140,7 +140,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
 defineComponent('mixin-page-multi-entries', {
   prototype: {
     props: [
-      'title', 'subtitle', 'default_filters', 'default_tags','defaultSortField', 'defaultSortOrder', 
+      'title', 'subtitle', 'default_filters', 'default_tags', 'defaultSortField', 'defaultSortOrder',
       'rest_api_url', 'perpage', 'many2one_select', 'can_go_to_new'],
     data() {
       return {
