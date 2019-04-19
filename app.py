@@ -112,10 +112,12 @@ def get_component_files():
                         },
                         'button': "Se déconnecter",
                       },
-                      'list': {
-                        'search': 'Rechercher',
-                        'notFound': 'Aucun élément trouvé',
-                      }
+                      'page': {
+                          'list': {
+                            'search': 'Rechercher',
+                            'notFound': 'Aucun élément trouvé',
+                          },
+                      },
                     },
                 },
             },

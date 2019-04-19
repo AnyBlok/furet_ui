@@ -4,7 +4,7 @@ defineComponent('teams', {
       <furet-ui-list
         title="Teams"
         rest_api_url='/teams'
-        :default_filter="filters"
+        :default_filters="filters"
         :default_tags="tags"
         defaultSortField="lastname"
         defaultSortOrder="desc"
