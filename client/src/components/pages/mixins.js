@@ -141,7 +141,7 @@ defineComponent('mixin-page-multi-entries', {
   prototype: {
     props: [
       'title', 'subtitle', 'default_filters', 'default_tags', 'defaultSortField', 'defaultSortOrder',
-      'rest_api_url', 'perpage', 'many2one_select', 'can_go_to_new'],
+      'rest_api_url', 'perpage', 'many2one_select', 'can_go_to_new', 'browseFields'],
     data() {
       return {
         data: [],
@@ -156,13 +156,46 @@ defineComponent('mixin-page-multi-entries', {
         sortOrder: this.defaultSortOrder,
       };
     },
+    computed: {
+      selectedEntries () {
+        return this.data;
+      },
+    },
     methods: {
       goToNew() {
         this.$emit('goToNew');
       },
-      onClick(row) {
+      browsing () {
+        if (this.selectedEntries.length === 0) return;
+        if ((this.browseFields || []).length === 0) return;
+        const list = [];
+        this.selectedEntries.forEach((row) => {
+          const entry = {};
+          this.browseFields.forEach((field) => {
+            entry[field] = row[field];
+          });
+          list.push(entry);
+        });
+        return list;
+      },
+      goToPage(row) {
         if (this.many2one_select) this.many2one_select(row);
-        else this.$emit('click', row);
+        else if ((this.browseFields || []).length !== 0 ) {
+          const list = this.browsing()
+          const entry = {};
+          this.browseFields.forEach((field) => {
+            entry[field] = row[field];
+          });
+          const offset = list.indexOf(entry);
+          this.$store.commit('UPDATE_BROWSER_LIST', { list, offset });
+          this.$emit('goToPage', row);
+        }
+        else this.$emit('goToPage', row);
+      },
+      startBrowsing() {
+        const list = this.browsing()
+        this.$store.commit('UPDATE_BROWSER_LIST', { list });
+        this.$emit('goToPage', list[0]);
       },
       updateData() {
         if (!this.many2one_select) {
@@ -262,9 +295,23 @@ defineComponent('mixin-page-multi-entries', {
         this.sortOrder = order;
         this.updateData();
       },
+      startBrowsing() {
+        if (this.selectedEntries.length === 0) return;
+        if ((this.browseFields || []).length === 0) return;
+        const list = [];
+        this.selectedEntries.forEach((row) => {
+          const entry = {};
+          this.browseFields.forEach((field) => {
+            entry[field] = row[field];
+          });
+          list.push(entry);
+        });
+        this.$store.commit('UPDATE_BROWSER_LIST', { list });
+        this.$emit('goToPage', list[0]);
+      },
     },
     mounted() {
-      // this.$store.commit('CLEAR_BROWSER_LIST');
+      this.$store.commit('CLEAR_BROWSER_LIST');
       const regexWithOption = new RegExp('.*\\[(.+)\\]\\[(.+)\\]');
       const regexWithoutOption = new RegExp('.*\\[(.+)\\]');
       const query = this.$route.query;

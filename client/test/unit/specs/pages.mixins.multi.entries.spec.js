@@ -40,8 +40,10 @@ describe('mixin-page-multi-entries component', () => {
   });
 
   it('snapshot minimum', (done) => {
+    const commitSpy = sinon.spy();
     const mocks = {
       $route: {query: {}},
+      $store: { commit: commitSpy },
     };
     const propsData = {
       title: 'Title',
@@ -53,6 +55,7 @@ describe('mixin-page-multi-entries component', () => {
     const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
     wrapper.vm.$nextTick(() => {
       expect(wrapper.element).toMatchSnapshot();
+      expect(commitSpy.called).toBe(true);
       done();
     });
   });
@@ -92,10 +95,9 @@ describe('mixin-page-multi-entries component', () => {
     expect(spyEmit.called).toBe(false);
     wrapper.find('furet-ui-page-multi-entries-header').trigger('goToNew');
     expect(spyEmit.called).toBe(true);
-    console.log(wrapper.vm.onClick)
   });
 
-  it('onClick', () => {
+  it('goToPage', () => {
     const spyEmit = sinon.spy();
     const mocks = {
       $emit: spyEmit,
@@ -110,9 +112,30 @@ describe('mixin-page-multi-entries component', () => {
     };
     const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
     expect(spyEmit.called).toBe(false);
-    wrapper.vm.onClick('data')
+    wrapper.vm.goToPage('data')
     expect(spyEmit.called).toBe(true);
   });
+
+    /**
+  it('goToPage with selectedEntries and browseFields', () => {
+    const spyEmit = sinon.spy();
+    const mocks = {
+      $emit: spyEmit,
+      $route: {query: {}},
+    }
+    const propsData = {
+      title: 'Title',
+      subtitle: 'Sub Title',
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/test',
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
+    expect(spyEmit.called).toBe(true);
+    wrapper.vm.goToPage('data')
+    expect(spyEmit.called).toBe(true);
+  });
+  **/
 
   it('updateData', () => {
     const spyRouter = sinon.spy();
@@ -689,6 +712,151 @@ describe('mixin-page-multi-entries component', () => {
     expect(wrapper.vm.tags[0].selected).toBe(true);
     expect(wrapper.vm.tags[1].selected).toBe(true);
     expect(wrapper.vm.tags[2].selected).toBe(undefined);
+  });
+
+  it('method startBrowsing empty data and browseFields', () => {
+    const commitSpy = sinon.spy();
+    const emitSpy = sinon.spy();
+    const mocks = {
+      $route: {query: {}},
+      $store: { commit: commitSpy },
+      $emit: emitSpy,
+    };
+    const propsData = {
+      title: 'Title',
+      subtitle: 'Sub Title',
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/error',
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
+    expect(emitSpy.called).toBe(false);
+    expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
+    wrapper.vm.startBrowsing()
+    expect(emitSpy.called).toBe(false);
+    expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
+  });
+
+  it('method startBrowsing without browseFields', () => {
+    const commitSpy = sinon.spy();
+    const emitSpy = sinon.spy();
+    const mocks = {
+      $route: {query: {}},
+      $store: { commit: commitSpy },
+      $emit: emitSpy,
+    };
+    const propsData = {
+      title: 'Title',
+      subtitle: 'Sub Title',
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/error',
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
+    wrapper.vm.data = [
+      { id: 1, firstname: 'test1', lastname: 'test1' },
+      { id: 2, firstname: 'test1', lastname: 'test2' },
+      { id: 3, firstname: 'test1', lastname: 'test3' },
+      { id: 4, firstname: 'test1', lastname: 'test4' },
+    ]
+    expect(emitSpy.called).toBe(false);
+    expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
+    wrapper.vm.startBrowsing()
+    expect(emitSpy.called).toBe(false);
+    expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
+  });
+
+  it('method startBrowsing without data', () => {
+    const commitSpy = sinon.spy();
+    const emitSpy = sinon.spy();
+    const mocks = {
+      $route: {query: {}},
+      $store: { commit: commitSpy },
+      $emit: emitSpy,
+    };
+    const propsData = {
+      title: 'Title',
+      subtitle: 'Sub Title',
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/error',
+      browseFields: ['id'],
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
+    expect(emitSpy.called).toBe(false);
+    expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
+    wrapper.vm.startBrowsing()
+    expect(emitSpy.called).toBe(false);
+    expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
+  });
+
+  it('method startBrowsing 1', () => {
+    const commitSpy = sinon.spy();
+    const emitSpy = sinon.spy();
+    const mocks = {
+      $route: {query: {}},
+      $store: { commit: commitSpy },
+      $emit: emitSpy,
+    };
+    const propsData = {
+      title: 'Title',
+      subtitle: 'Sub Title',
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/error',
+      browseFields: ['id'],
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
+    wrapper.vm.data = [
+      { id: 1, firstname: 'test1', lastname: 'test1' },
+      { id: 2, firstname: 'test1', lastname: 'test2' },
+      { id: 3, firstname: 'test1', lastname: 'test3' },
+      { id: 4, firstname: 'test1', lastname: 'test4' },
+    ]
+    expect(emitSpy.called).toBe(false);
+    expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
+    wrapper.vm.startBrowsing()
+    expect(emitSpy.called).toBe(true);
+    expect(emitSpy.lastCall.lastArg).toEqual({ id: 1});
+    expect(commitSpy.calledTwice).toBe(true); // mount from multi entries
+    expect(commitSpy.lastCall.lastArg).toEqual({ list: [ { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 } ] });
+  });
+
+  it('method startBrowsing 2', () => {
+    const commitSpy = sinon.spy();
+    const emitSpy = sinon.spy();
+    const mocks = {
+      $route: {query: {}},
+      $store: { commit: commitSpy },
+      $emit: emitSpy,
+    };
+    const propsData = {
+      title: 'Title',
+      subtitle: 'Sub Title',
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/error',
+      browseFields: ['id', 'other'],
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
+    wrapper.vm.data = [
+      { other: 'other', id: 1, firstname: 'test1', lastname: 'test1' },
+      { other: 'other', id: 2, firstname: 'test1', lastname: 'test2' },
+      { other: 'other', id: 3, firstname: 'test1', lastname: 'test3' },
+      { other: 'other', id: 4, firstname: 'test1', lastname: 'test4' },
+    ]
+    expect(emitSpy.called).toBe(false);
+    expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
+    wrapper.vm.startBrowsing()
+    expect(emitSpy.called).toBe(true);
+    expect(emitSpy.lastCall.lastArg).toEqual({ id: 1, other: 'other'});
+    expect(commitSpy.calledTwice).toBe(true); // mount from multi entries
+    expect(commitSpy.lastCall.lastArg).toEqual({ list: [ 
+      { id: 1, other: 'other' }, 
+      { id: 2, other: 'other' }, 
+      { id: 3, other: 'other' }, 
+      { id: 4, other: 'other' }, 
+    ] });
   });
 
 });

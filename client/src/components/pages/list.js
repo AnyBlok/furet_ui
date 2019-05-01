@@ -19,7 +19,7 @@ defineComponent('furet-ui-list', {
       >
       </furet-ui-page-multi-entries-header>
         <template slot="actions" slot-scope="props">
-          <a v-if="can_browse && checkedRows.length > 0" class="button is-primary is-outlined" v-on:click="startBrowsing">
+          <a v-if="(browseFields || []).length && checkedRows.length > 0" class="button is-primary is-outlined" v-on:click="startBrowsing">
             <span class="icon"><font-awesome-icon icon="compass" /></span>
             <span>{{ $t('components.page.list.browse') }}</span>
           </a>
@@ -48,7 +48,7 @@ defineComponent('furet-ui-list', {
         v-bind:checkable="isCheckable"
         v-bind:checked-rows.sync="checkedRows"
 
-        v-on:dblclick="onClick"
+        v-on:dblclick="goToPage"
       >
         <template slot-scope="props">
           <slot v-bind:row="props.row" />
@@ -71,26 +71,17 @@ defineComponent('furet-ui-list', {
   extend: ['mixin-page-multi-entries'],
   prototype: {
     props: [
-      'is_checkable', 'checkedElements', 'can_browse', 'detailed', 'detail_key'],
+      'is_checkable', 'checkedElements', 'detailed', 'detail_key'],
     data() {
       return {
         isCheckable: this.is_checkable || false,
         checkedRows: this.checkedElements || [],
       };
     },
-    methods: {
-      startBrowsing() {
-        const list = [];
-        this.checkedRows.forEach((row) => {
-          if (row.id !== undefined) {
-            list.push({ id: row.id });
-          }
-          if (row.uuid !== undefined) {
-            list.push({ uuid: row.uuid });
-          }
-        });
-        this.$store.commit('UPDATE_BROWSER_LIST', { list });
-        this.$emit('goToPage', list[0]);
+    computed: {
+      selectedEntries () {
+        if (this.checkedRows.length !== 0) return this.checkedRows
+        return this.data;
       },
     },
   },

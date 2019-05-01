@@ -10,10 +10,10 @@ obtain one at http://mozilla.org/MPL/2.0/.
 
 import global from './global';
 import menus from './menus';
-// import data from './data';
+import browser from './browser';
 
 export default {
   global,
   menus,
-//  data,
+  browser,
 };
