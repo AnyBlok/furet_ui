@@ -79,8 +79,8 @@ defineComponent('furet-ui-list', {
       };
     },
     computed: {
-      selectedEntries () {
-        if (this.checkedRows.length !== 0) return this.checkedRows
+      selectedEntries() {
+        if (this.checkedRows.length !== 0) return this.checkedRows;
         return this.data;
       },
     },

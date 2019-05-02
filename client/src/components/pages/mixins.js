@@ -157,7 +157,7 @@ defineComponent('mixin-page-multi-entries', {
       };
     },
     computed: {
-      selectedEntries () {
+      selectedEntries() {
         return this.data;
       },
     },
@@ -165,9 +165,9 @@ defineComponent('mixin-page-multi-entries', {
       goToNew() {
         this.$emit('goToNew');
       },
-      browsing () {
-        if (this.selectedEntries.length === 0) return;
-        if ((this.browseFields || []).length === 0) return;
+      browsing() {
+        if (this.selectedEntries.length === 0) return [];
+        if ((this.browseFields || []).length === 0) return [];
         const list = [];
         this.selectedEntries.forEach((row) => {
           const entry = {};
@@ -180,8 +180,8 @@ defineComponent('mixin-page-multi-entries', {
       },
       goToPage(row) {
         if (this.many2one_select) this.many2one_select(row);
-        else if ((this.browseFields || []).length !== 0 ) {
-          const list = this.browsing()
+        else if ((this.browseFields || []).length !== 0) {
+          const list = this.browsing();
           const entry = {};
           this.browseFields.forEach((field) => {
             entry[field] = row[field];
@@ -189,11 +189,11 @@ defineComponent('mixin-page-multi-entries', {
           const offset = list.indexOf(entry);
           this.$store.commit('UPDATE_BROWSER_LIST', { list, offset });
           this.$emit('goToPage', row);
-        }
-        else this.$emit('goToPage', row);
+        } else this.$emit('goToPage', row);
       },
       startBrowsing() {
-        const list = this.browsing()
+        const list = this.browsing();
+        if (list.length === 0) return;
         this.$store.commit('UPDATE_BROWSER_LIST', { list });
         this.$emit('goToPage', list[0]);
       },
@@ -294,20 +294,6 @@ defineComponent('mixin-page-multi-entries', {
         this.sortField = field;
         this.sortOrder = order;
         this.updateData();
-      },
-      startBrowsing() {
-        if (this.selectedEntries.length === 0) return;
-        if ((this.browseFields || []).length === 0) return;
-        const list = [];
-        this.selectedEntries.forEach((row) => {
-          const entry = {};
-          this.browseFields.forEach((field) => {
-            entry[field] = row[field];
-          });
-          list.push(entry);
-        });
-        this.$store.commit('UPDATE_BROWSER_LIST', { list });
-        this.$emit('goToPage', list[0]);
       },
     },
     mounted() {

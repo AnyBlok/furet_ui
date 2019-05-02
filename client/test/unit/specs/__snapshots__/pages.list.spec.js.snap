@@ -18,6 +18,7 @@ exports[`furet-ui-list component snapshot minimum 1`] = `
     total="0"
   />
    
+   
   <b-table
     backend-pagination=""
     backend-sorting=""
@@ -32,6 +33,7 @@ exports[`furet-ui-list component snapshot minimum 1`] = `
     striped=""
     total="0"
   >
+      
     <template>
       <section
         class="section"
@@ -67,6 +69,7 @@ exports[`furet-ui-list component snapshot minimum with error 1`] = `
     total="0"
   />
    
+   
   <b-table
     backend-pagination=""
     backend-sorting=""
@@ -81,6 +84,7 @@ exports[`furet-ui-list component snapshot minimum with error 1`] = `
     striped=""
     total="0"
   >
+      
     <template>
       <section
         class="section"
