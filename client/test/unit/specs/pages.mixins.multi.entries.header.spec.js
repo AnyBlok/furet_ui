@@ -1,5 +1,4 @@
-import { mount } from 'vue-test-utils'
-import { createLocalVue } from 'vue-test-utils'
+import { mount, createLocalVue } from 'vue-test-utils';
 import '@/components';
 import { i18nConf } from '@/i18n';
 import { getComponentPrototype } from '@/components/factory';
@@ -7,7 +6,6 @@ import VueI18n from 'vue-i18n';
 import sinon from 'sinon';
 
 describe('furet-ui-page-multi-entries-header component', () => {
-
   const localVue = createLocalVue();
   localVue.use(VueI18n);
   const i18n = new VueI18n(i18nConf);
@@ -44,7 +42,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
     const spyEmit = sinon.spy();
     const mocks = {
       $emit: spyEmit,
-    }
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -63,7 +61,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
     const spyEmit = sinon.spy();
     const mocks = {
       $emit: spyEmit,
-    }
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -146,7 +144,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
     const spyEmit = sinon.spy();
     const mocks = {
       $emit: spyEmit,
-    }
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -168,7 +166,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
     const spyEmit = sinon.spy();
     const mocks = {
       $emit: spyEmit,
-    }
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -197,7 +195,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
           label: 'State',
           op: 'or-ilike',
           values: [],
-        }
+        },
       ],
       tags: [],
       data: [],
@@ -218,7 +216,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
           label: 'State',
           op: 'or-ilike',
           values: ['fooBar'],
-        }
+        },
       ],
       tags: [],
       data: [],
@@ -239,7 +237,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
           label: 'State',
           op: 'or-ilike',
           values: ['foo', 'bar'],
-        }
+        },
       ],
       tags: [],
       data: [],
@@ -253,7 +251,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
     const spyEmit = sinon.spy();
     const mocks = {
       $emit: spyEmit,
-    }
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -264,7 +262,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
           label: 'State',
           op: 'or-ilike',
           values: ['fooBar'],
-        }
+        },
       ],
       tags: [],
       data: [],
@@ -281,7 +279,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
     const spyEmit = sinon.spy();
     const mocks = {
       $emit: spyEmit,
-    }
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -292,7 +290,7 @@ describe('furet-ui-page-multi-entries-header component', () => {
           label: 'State',
           op: 'or-ilike',
           values: ['fooBar'],
-        }
+        },
       ],
       tags: [],
       data: [],
@@ -303,5 +301,4 @@ describe('furet-ui-page-multi-entries-header component', () => {
     wrapper.find('b-autocomplete').trigger('select');
     expect(spyEmit.called).toBe(true);
   });
-
 });

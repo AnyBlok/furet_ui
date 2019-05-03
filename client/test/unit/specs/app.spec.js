@@ -1,4 +1,4 @@
-import { mount } from 'vue-test-utils'
+import { mount } from 'vue-test-utils';
 import '@/components';
 import { getComponentPrototype } from '@/components/factory';
 import sinon from 'sinon';
@@ -49,31 +49,31 @@ describe('furet-ui-appbar-body component', () => {
 describe('furet-ui-appbar-footer component', () => {
   it('snapshot (empty)', () => {
     const mocks = {
-      $store: {state: {menus: {spaceMenus: []}}},
-    }
-    const wrapper = mount(getComponentPrototype('furet-ui-appbar-footer'), {mocks});
+      $store: { state: { menus: { spaceMenus: [] } } },
+    };
+    const wrapper = mount(getComponentPrototype('furet-ui-appbar-footer'), { mocks });
     expect(wrapper.element).toMatchSnapshot();
   });
 
   it('snapshot (not empty)', () => {
     const mocks = {
-      $store: {state: {menus: {spaceMenus: [
+      $store: { state: { menus: { spaceMenus: [
         {
           attrs: {},
           class: {},
-          component: "furet-ui-appbar-foot-router-link",
+          component: 'furet-ui-appbar-foot-router-link',
           domProps: {},
-          name: "test",
+          name: 'test',
           nativeOn: {},
           on: {},
           props: {
-            foo: "bar",
+            foo: 'bar',
           },
           style: {},
         },
-      ]}}},
-    }
-    const wrapper = mount(getComponentPrototype('furet-ui-appbar-footer'), {mocks});
+      ] } } },
+    };
+    const wrapper = mount(getComponentPrototype('furet-ui-appbar-footer'), { mocks });
 
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -82,31 +82,31 @@ describe('furet-ui-appbar-footer component', () => {
 describe('furet-ui-appbar-user-menu component', () => {
   it('snapshot (empty)', () => {
     const mocks = {
-      $store: {state: {menus: {user: []}}},
-    }
-    const wrapper = mount(getComponentPrototype('furet-ui-appbar-user-menu'), {mocks});
+      $store: { state: { menus: { user: [] } } },
+    };
+    const wrapper = mount(getComponentPrototype('furet-ui-appbar-user-menu'), { mocks });
     expect(wrapper.element).toMatchSnapshot();
   });
 
   it('snapshot (not empty)', () => {
     const mocks = {
-      $store: {state: {menus: {user: [
+      $store: { state: { menus: { user: [
         {
           attrs: {},
           class: {},
-          component: "furet-ui-appbar-head-router-link",
+          component: 'furet-ui-appbar-head-router-link',
           domProps: {},
-          name: "test",
+          name: 'test',
           nativeOn: {},
           on: {},
           props: {
-            foo: "bar",
+            foo: 'bar',
           },
           style: {},
         },
-      ]}}},
-    }
-    const wrapper = mount(getComponentPrototype('furet-ui-appbar-user-menu'), {mocks});
+      ] } } },
+    };
+    const wrapper = mount(getComponentPrototype('furet-ui-appbar-user-menu'), { mocks });
 
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -115,9 +115,9 @@ describe('furet-ui-appbar-user-menu component', () => {
 describe('furet-ui-appbar-head-router-link component', () => {
   const spyRouter = sinon.spy();
   const mocks = {
-    $router: {push: spyRouter},
-  }
-  const wrapper = mount(getComponentPrototype('furet-ui-appbar-head-router-link'), {mocks});
+    $router: { push: spyRouter },
+  };
+  const wrapper = mount(getComponentPrototype('furet-ui-appbar-head-router-link'), { mocks });
   wrapper.setProps({
     label: 'fooBar',
     to: '/fooBar',
@@ -135,9 +135,9 @@ describe('furet-ui-appbar-head-router-link component', () => {
 describe('furet-ui-appbar-head-router-link-button component', () => {
   const spyRouter = sinon.spy();
   const mocks = {
-    $router: {push: spyRouter},
-  }
-  const wrapper = mount(getComponentPrototype('furet-ui-appbar-head-router-link-button'), {mocks});
+    $router: { push: spyRouter },
+  };
+  const wrapper = mount(getComponentPrototype('furet-ui-appbar-head-router-link-button'), { mocks });
   wrapper.setProps({
     label: 'fooBar',
     to: '/fooBar',
@@ -156,31 +156,31 @@ describe('furet-ui-appbar-head-router-link-button component', () => {
 describe('furet-ui-appbar-spaces-menu component', () => {
   it('snapshot (empty)', () => {
     const mocks = {
-      $store: {state: {menus: {spaces: []}}},
-    }
-    const wrapper = mount(getComponentPrototype('furet-ui-appbar-spaces-menu'), {mocks});
+      $store: { state: { menus: { spaces: [] } } },
+    };
+    const wrapper = mount(getComponentPrototype('furet-ui-appbar-spaces-menu'), { mocks });
     expect(wrapper.element).toMatchSnapshot();
   });
 
   it('snapshot (not empty)', () => {
     const mocks = {
-      $store: {state: {menus: {spaces: [
+      $store: { state: { menus: { spaces: [
         {
           attrs: {},
           class: {},
-          component: "furet-ui-appbar-head-router-link",
+          component: 'furet-ui-appbar-head-router-link',
           domProps: {},
-          name: "test",
+          name: 'test',
           nativeOn: {},
           on: {},
           props: {
-            foo: "bar",
+            foo: 'bar',
           },
           style: {},
         },
-      ]}}},
-    }
-    const wrapper = mount(getComponentPrototype('furet-ui-appbar-spaces-menu'), {mocks});
+      ] } } },
+    };
+    const wrapper = mount(getComponentPrototype('furet-ui-appbar-spaces-menu'), { mocks });
 
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -189,31 +189,31 @@ describe('furet-ui-appbar-spaces-menu component', () => {
 describe('furet-ui-appbar-space-menus component', () => {
   it('snapshot (empty)', () => {
     const mocks = {
-      $store: {state: {menus: {spaceMenus: []}}},
-    }
-    const wrapper = mount(getComponentPrototype('furet-ui-appbar-space-menus'), {mocks});
+      $store: { state: { menus: { spaceMenus: [] } } },
+    };
+    const wrapper = mount(getComponentPrototype('furet-ui-appbar-space-menus'), { mocks });
     expect(wrapper.element).toMatchSnapshot();
   });
 
   it('snapshot (not empty)', () => {
     const mocks = {
-      $store: {state: {menus: {spaceMenus: [
+      $store: { state: { menus: { spaceMenus: [
         {
           attrs: {},
           class: {},
-          component: "furet-ui-appbar-foot-router-link",
+          component: 'furet-ui-appbar-foot-router-link',
           domProps: {},
-          name: "test",
+          name: 'test',
           nativeOn: {},
           on: {},
           props: {
-            foo: "bar",
+            foo: 'bar',
           },
           style: {},
         },
-      ]}}},
-    }
-    const wrapper = mount(getComponentPrototype('furet-ui-appbar-space-menus'), {mocks});
+      ] } } },
+    };
+    const wrapper = mount(getComponentPrototype('furet-ui-appbar-space-menus'), { mocks });
 
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -222,9 +222,9 @@ describe('furet-ui-appbar-space-menus component', () => {
 describe('furet-ui-appbar-foot-router-link component', () => {
   const spyRouter = sinon.spy();
   const mocks = {
-    $router: {push: spyRouter},
-  }
-  const wrapper = mount(getComponentPrototype('furet-ui-appbar-foot-router-link'), {mocks});
+    $router: { push: spyRouter },
+  };
+  const wrapper = mount(getComponentPrototype('furet-ui-appbar-foot-router-link'), { mocks });
   wrapper.setProps({
     label: 'fooBar',
     to: '/fooBar',
@@ -242,9 +242,9 @@ describe('furet-ui-appbar-foot-router-link component', () => {
 describe('furet-ui-appbar-foot-router-link-button component', () => {
   const spyRouter = sinon.spy();
   const mocks = {
-    $router: {push: spyRouter},
-  }
-  const wrapper = mount(getComponentPrototype('furet-ui-appbar-foot-router-link-button'), {mocks});
+    $router: { push: spyRouter },
+  };
+  const wrapper = mount(getComponentPrototype('furet-ui-appbar-foot-router-link-button'), { mocks });
   wrapper.setProps({
     label: 'fooBar',
     to: '/fooBar',

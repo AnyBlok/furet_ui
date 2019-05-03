@@ -8,7 +8,7 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 */
 import '@/store';
-import {defaultState, getters, mutations, actions} from '@/store/modules/global';
+import { defaultState, getters, mutations } from '@/store/modules/global';
 
 describe('store.state.global', () => {
   let state;
@@ -24,9 +24,9 @@ describe('store.state.global', () => {
     const expected = {
       userName: 'Admin',
       authenticated: false,
-    }
+    };
     mutations.UPDATE_GLOBAL(state, action);
-    expect(state).toMatchObject(expected)
+    expect(state).toMatchObject(expected);
   });
 
   it('mutation login + getter loggedIn', () => {
@@ -36,20 +36,20 @@ describe('store.state.global', () => {
     const expected = {
       userName: 'Admin',
       authenticated: true,
-    }
+    };
     mutations.LOGIN(state, action);
-    expect(state).toMatchObject(expected)
-    expect(getters.loggedIn(state)).toBe(true)
+    expect(state).toMatchObject(expected);
+    expect(getters.loggedIn(state)).toBe(true);
   });
   it('mutation login + getter loggedIn (without userName)', () => {
     const action = {};
     const expected = {
       userName: '',
       authenticated: true,
-    }
+    };
     mutations.LOGIN(state, action);
-    expect(state).toMatchObject(expected)
-    expect(getters.loggedIn(state)).toBe(true)
+    expect(state).toMatchObject(expected);
+    expect(getters.loggedIn(state)).toBe(true);
   });
 
   it('mutation logout + getter loggedIn', () => {
@@ -57,13 +57,13 @@ describe('store.state.global', () => {
       userName: 'Admin',
       authenticated: true,
     };
-    expect(getters.loggedIn(state)).toBe(true)
+    expect(getters.loggedIn(state)).toBe(true);
     const expected = {
       userName: '',
       authenticated: false,
-    }
+    };
     mutations.LOGOUT(state);
-    expect(state).toMatchObject(expected)
-    expect(getters.loggedIn(state)).toBe(false)
+    expect(state).toMatchObject(expected);
+    expect(getters.loggedIn(state)).toBe(false);
   });
 });

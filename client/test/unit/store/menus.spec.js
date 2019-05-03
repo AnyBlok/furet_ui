@@ -8,7 +8,7 @@ v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 */
 import '@/store/modules';
-import {defaultState, getters, mutations, actions} from '@/store/modules/menus';
+import { defaultState, mutations } from '@/store/modules/menus';
 
 describe('store.state.menus', () => {
   let state;
@@ -33,20 +33,20 @@ describe('store.state.menus', () => {
         {
           attrs: {},
           class: {},
-          component: "furet-ui-appbar-head-router-link",
+          component: 'furet-ui-appbar-head-router-link',
           domProps: {},
-          name: "test",
+          name: 'test',
           nativeOn: {},
           on: {},
           props: {
-            foo: "bar",
+            foo: 'bar',
           },
           style: {},
         },
       ],
-    }
+    };
     mutations.UPDATE_MENUS(state, action);
-    expect(state).toMatchObject(expected)
+    expect(state).toMatchObject(expected);
   });
 
   it('mutation update_menu (spaces)', () => {
@@ -64,13 +64,13 @@ describe('store.state.menus', () => {
         {
           attrs: {},
           class: {},
-          component: "furet-ui-appbar-head-router-link",
+          component: 'furet-ui-appbar-head-router-link',
           domProps: {},
-          name: "test",
+          name: 'test',
           nativeOn: {},
           on: {},
           props: {
-            foo: "bar",
+            foo: 'bar',
           },
           style: {},
         },
@@ -79,21 +79,21 @@ describe('store.state.menus', () => {
         {
           attrs: {},
           class: {},
-          component: "furet-ui-appbar-head-router-link-button",
+          component: 'furet-ui-appbar-head-router-link-button',
           domProps: {},
-          name: "login",
+          name: 'login',
           nativeOn: {},
           on: {},
           props: {
-            to: "/login",
-            label: "Log In",
+            to: '/login',
+            label: 'Log In',
           },
           style: {},
         },
       ],
-    }
+    };
     mutations.UPDATE_MENUS(state, action);
-    expect(state).toMatchObject(expected)
+    expect(state).toMatchObject(expected);
   });
 
   it('mutation update_menu (spaceMenus)', () => {
@@ -111,13 +111,13 @@ describe('store.state.menus', () => {
         {
           attrs: {},
           class: {},
-          component: "furet-ui-appbar-foot-router-link",
+          component: 'furet-ui-appbar-foot-router-link',
           domProps: {},
-          name: "test",
+          name: 'test',
           nativeOn: {},
           on: {},
           props: {
-            foo: "bar",
+            foo: 'bar',
           },
           style: {},
         },
@@ -126,20 +126,20 @@ describe('store.state.menus', () => {
         {
           attrs: {},
           class: {},
-          component: "furet-ui-appbar-head-router-link-button",
+          component: 'furet-ui-appbar-head-router-link-button',
           domProps: {},
-          name: "login",
+          name: 'login',
           nativeOn: {},
           on: {},
           props: {
-            to: "/login",
-            label: "Log In",
+            to: '/login',
+            label: 'Log In',
           },
           style: {},
         },
       ],
-    }
+    };
     mutations.UPDATE_MENUS(state, action);
-    expect(state).toMatchObject(expected)
+    expect(state).toMatchObject(expected);
   });
 });

@@ -1,5 +1,4 @@
-import { mount } from 'vue-test-utils'
-import { createLocalVue } from 'vue-test-utils'
+import { mount, createLocalVue } from 'vue-test-utils';
 import '@/components';
 import { i18nConf } from '@/i18n';
 import { getComponentPrototype } from '@/components/factory';
@@ -7,17 +6,16 @@ import VueI18n from 'vue-i18n';
 import sinon from 'sinon';
 
 describe('logout component', () => {
-
   const spyStore = sinon.spy();
   const spyRouter = sinon.spy();
   const localVue = createLocalVue();
   localVue.use(VueI18n);
   const i18n = new VueI18n(i18nConf);
   const mocks = {
-    $store: {commit: spyStore, state: { global: { userName: 'Foo Bar' } } },
-    $router: {push: spyRouter},
-    $route: {query: {}},
-  }
+    $store: { commit: spyStore, state: { global: { userName: 'Foo Bar' } } },
+    $router: { push: spyRouter },
+    $route: { query: {} },
+  };
   const wrapper = mount(
     getComponentPrototype('furet-ui-appbar-user-dropmenu'), { localVue, i18n, mocks });
 
@@ -31,13 +29,12 @@ describe('logout component', () => {
     expect(spyStore.firstCall.lastArg).toMatchObject({
       user: [
         {
-          component: "furet-ui-appbar-head-router-link-button",
-          name: "login"
+          component: 'furet-ui-appbar-head-router-link-button',
+          name: 'login',
         },
       ],
     });
     expect(spyRouter.called).toBe(true);
     expect(spyRouter.firstCall.lastArg).toBe('/');
   });
-
 });

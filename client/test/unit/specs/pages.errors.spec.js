@@ -1,13 +1,10 @@
-import { mount } from 'vue-test-utils'
-import { createLocalVue } from 'vue-test-utils'
+import { mount, createLocalVue } from 'vue-test-utils';
 import '@/components';
 import { i18nConf } from '@/i18n';
 import { getComponentPrototype } from '@/components/factory';
 import VueI18n from 'vue-i18n';
-import sinon from 'sinon';
 
 describe('furet-ui-page-errors component', () => {
-
   const localVue = createLocalVue();
   localVue.use(VueI18n);
   const i18n = new VueI18n(i18nConf);

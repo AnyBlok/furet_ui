@@ -1,5 +1,4 @@
-import { mount } from 'vue-test-utils'
-import { createLocalVue } from 'vue-test-utils'
+import { mount, createLocalVue } from 'vue-test-utils';
 import '@/components';
 import { i18nConf } from '@/i18n';
 import { getComponentPrototype } from '@/components/factory';
@@ -7,7 +6,6 @@ import VueI18n from 'vue-i18n';
 import sinon from 'sinon';
 
 describe('mixin-page-multi-entries component', () => {
-
   const localVue = createLocalVue();
   localVue.use(VueI18n);
   const i18n = new VueI18n(i18nConf);
@@ -32,17 +30,17 @@ describe('mixin-page-multi-entries component', () => {
     </div>
   `;
 
-  jest.mock('axios', () => {
-    get: (url, option) => {
+  jest.mock('axios', () => ({
+    get(url) {
       if (url === '/test') return Promise.resolve({ data: [] });
-      if (url === '/error') return Promise.resolve({ error: [] });
-    }
-  });
+      return Promise.resolve({ error: [] });
+    },
+  }));
 
   it('snapshot minimum', (done) => {
     const commitSpy = sinon.spy();
     const mocks = {
-      $route: {query: {}},
+      $route: { query: {} },
       $store: { commit: commitSpy },
     };
     const propsData = {
@@ -62,7 +60,7 @@ describe('mixin-page-multi-entries component', () => {
 
   it('snapshot minimum with error', (done) => {
     const mocks = {
-      $route: {query: {}},
+      $route: { query: {} },
     };
     const propsData = {
       title: 'Title',
@@ -82,8 +80,8 @@ describe('mixin-page-multi-entries component', () => {
     const spyEmit = sinon.spy();
     const mocks = {
       $emit: spyEmit,
-      $route: {query: {}},
-    }
+      $route: { query: {} },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -101,8 +99,8 @@ describe('mixin-page-multi-entries component', () => {
     const spyEmit = sinon.spy();
     const mocks = {
       $emit: spyEmit,
-      $route: {query: {}},
-    }
+      $route: { query: {} },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -112,11 +110,11 @@ describe('mixin-page-multi-entries component', () => {
     };
     const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
     expect(spyEmit.called).toBe(false);
-    wrapper.vm.goToPage('data')
+    wrapper.vm.goToPage('data');
     expect(spyEmit.called).toBe(true);
   });
 
-    /**
+  /**
   it('goToPage with selectedEntries and browseFields', () => {
     const spyEmit = sinon.spy();
     const mocks = {
@@ -135,14 +133,14 @@ describe('mixin-page-multi-entries component', () => {
     wrapper.vm.goToPage('data')
     expect(spyEmit.called).toBe(true);
   });
-  **/
+  * */
 
   it('updateData', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -158,15 +156,15 @@ describe('mixin-page-multi-entries component', () => {
     expect(spyRouter.called).toBe(false);
     wrapper.vm.updateData();
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.firstCall.lastArg).toEqual({"query": {"order": "state,desc", "page": 1}});
+    expect(spyRouter.firstCall.lastArg).toEqual({ query: { order: 'state,desc', page: 1 } });
   });
 
   it('updateFilters', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -177,7 +175,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'or-ilike',
           values: [],
-        }
+        },
       ],
       default_tags: [],
       rest_api_url: '/test',
@@ -194,9 +192,9 @@ describe('mixin-page-multi-entries component', () => {
   it('updateFilters or-', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -207,7 +205,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'or-ilike',
           values: [],
-        }
+        },
       ],
       default_tags: [],
       rest_api_url: '/test',
@@ -217,13 +215,13 @@ describe('mixin-page-multi-entries component', () => {
     expect(wrapper.vm.filters[0].values.length).toBe(0);
     expect(wrapper.vm.filters[0].values).toEqual([]);
     expect(spyRouter.called).toBe(false);
-    wrapper.vm.updateFilters({key: 'state', mode: 'include', value: 'foo'});
+    wrapper.vm.updateFilters({ key: 'state', mode: 'include', value: 'foo' });
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.firstCall.lastArg).toEqual({"query": {"filters": "{\"filter[state]\":\"foo\"}", "page": 1}});
+    expect(spyRouter.firstCall.lastArg).toEqual({ query: { filters: '{"filter[state]":"foo"}', page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(1);
     expect(wrapper.vm.filters[0].values).toEqual(['foo']);
-    wrapper.vm.updateFilters({key: 'state', mode: 'include', value: 'bar'});
-    expect(spyRouter.lastCall.lastArg).toEqual({"query": {"filters": "{\"filter[state]\":\"foo,bar\"}", "page": 1}});
+    wrapper.vm.updateFilters({ key: 'state', mode: 'include', value: 'bar' });
+    expect(spyRouter.lastCall.lastArg).toEqual({ query: { filters: '{"filter[state]":"foo,bar"}', page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(2);
     expect(wrapper.vm.filters[0].values).toEqual(['foo', 'bar']);
   });
@@ -231,9 +229,9 @@ describe('mixin-page-multi-entries component', () => {
   it('updateFilters or- and opt', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -245,7 +243,7 @@ describe('mixin-page-multi-entries component', () => {
           op: 'or-ilike',
           opt: 'test',
           values: [],
-        }
+        },
       ],
       default_tags: [],
       rest_api_url: '/test',
@@ -255,13 +253,13 @@ describe('mixin-page-multi-entries component', () => {
     expect(wrapper.vm.filters[0].values.length).toBe(0);
     expect(wrapper.vm.filters[0].values).toEqual([]);
     expect(spyRouter.called).toBe(false);
-    wrapper.vm.updateFilters({key: 'state', mode: 'include', value: 'foo', opt: 'test'});
+    wrapper.vm.updateFilters({ key: 'state', mode: 'include', value: 'foo', opt: 'test' });
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.firstCall.lastArg).toEqual({"query": {"filters": "{\"filter[state][test]\":\"foo\"}", "page": 1}});
+    expect(spyRouter.firstCall.lastArg).toEqual({ query: { filters: '{"filter[state][test]":"foo"}', page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(1);
     expect(wrapper.vm.filters[0].values).toEqual(['foo']);
-    wrapper.vm.updateFilters({key: 'state', mode: 'include', value: 'bar', opt: 'test'});
-    expect(spyRouter.lastCall.lastArg).toEqual({"query": {"filters": "{\"filter[state][test]\":\"foo,bar\"}", "page": 1}});
+    wrapper.vm.updateFilters({ key: 'state', mode: 'include', value: 'bar', opt: 'test' });
+    expect(spyRouter.lastCall.lastArg).toEqual({ query: { filters: '{"filter[state][test]":"foo,bar"}', page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(2);
     expect(wrapper.vm.filters[0].values).toEqual(['foo', 'bar']);
   });
@@ -269,9 +267,9 @@ describe('mixin-page-multi-entries component', () => {
   it('updateFilters ~ or-', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -282,7 +280,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'or-ilike',
           values: [],
-        }
+        },
       ],
       default_tags: [],
       rest_api_url: '/test',
@@ -292,13 +290,13 @@ describe('mixin-page-multi-entries component', () => {
     expect(wrapper.vm.filters[0].values.length).toBe(0);
     expect(wrapper.vm.filters[0].values).toEqual([]);
     expect(spyRouter.called).toBe(false);
-    wrapper.vm.updateFilters({key: 'state', mode: 'exclude', value: 'foo'});
+    wrapper.vm.updateFilters({ key: 'state', mode: 'exclude', value: 'foo' });
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.firstCall.lastArg).toEqual({"query": {"filters": "{\"~filter[state]\":\"foo\"}", "page": 1}});
+    expect(spyRouter.firstCall.lastArg).toEqual({ query: { filters: '{"~filter[state]":"foo"}', page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(1);
     expect(wrapper.vm.filters[0].values).toEqual(['foo']);
-    wrapper.vm.updateFilters({key: 'state', mode: 'exclude', value: 'bar'});
-    expect(spyRouter.lastCall.lastArg).toEqual({"query": {"filters": "{\"~filter[state]\":\"foo,bar\"}", "page": 1}});
+    wrapper.vm.updateFilters({ key: 'state', mode: 'exclude', value: 'bar' });
+    expect(spyRouter.lastCall.lastArg).toEqual({ query: { filters: '{"~filter[state]":"foo,bar"}', page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(2);
     expect(wrapper.vm.filters[0].values).toEqual(['foo', 'bar']);
   });
@@ -306,9 +304,9 @@ describe('mixin-page-multi-entries component', () => {
   it('updateFilters equal', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -319,7 +317,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'eq',
           values: [],
-        }
+        },
       ],
       default_tags: [],
       rest_api_url: '/test',
@@ -329,13 +327,13 @@ describe('mixin-page-multi-entries component', () => {
     expect(wrapper.vm.filters[0].values.length).toBe(0);
     expect(wrapper.vm.filters[0].values).toEqual([]);
     expect(spyRouter.called).toBe(false);
-    wrapper.vm.updateFilters({key: 'state', mode: 'include', value: 'foo'});
+    wrapper.vm.updateFilters({ key: 'state', mode: 'include', value: 'foo' });
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.firstCall.lastArg).toEqual({"query": {"filters": "{\"filter[state]\":\"foo\"}", "page": 1}});
+    expect(spyRouter.firstCall.lastArg).toEqual({ query: { filters: '{"filter[state]":"foo"}', page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(1);
     expect(wrapper.vm.filters[0].values).toEqual(['foo']);
-    wrapper.vm.updateFilters({key: 'state', mode: 'include', value: 'bar'});
-    expect(spyRouter.lastCall.lastArg).toEqual({"query": {"filters": "{\"filter[state]\":\"bar\"}", "page": 1}});
+    wrapper.vm.updateFilters({ key: 'state', mode: 'include', value: 'bar' });
+    expect(spyRouter.lastCall.lastArg).toEqual({ query: { filters: '{"filter[state]":"bar"}', page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(1);
     expect(wrapper.vm.filters[0].values).toEqual(['bar']);
   });
@@ -343,9 +341,9 @@ describe('mixin-page-multi-entries component', () => {
   it('removeFilter', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -356,7 +354,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'or-ilike',
           values: ['foo', 'bar'],
-        }
+        },
       ],
       default_tags: [],
       rest_api_url: '/test',
@@ -368,11 +366,11 @@ describe('mixin-page-multi-entries component', () => {
     expect(spyRouter.called).toBe(false);
     wrapper.vm.removeFilter('state', 'include', undefined, 'foo');
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.firstCall.lastArg).toEqual({"query": {"filters": "{\"filter[state]\":\"bar\"}", "page": 1}});
+    expect(spyRouter.firstCall.lastArg).toEqual({ query: { filters: '{"filter[state]":"bar"}', page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(1);
     expect(wrapper.vm.filters[0].values).toEqual(['bar']);
     wrapper.vm.removeFilter('state', 'include', undefined, 'bar');
-    expect(spyRouter.lastCall.lastArg).toEqual({"query": {"page": 1}});
+    expect(spyRouter.lastCall.lastArg).toEqual({ query: { page: 1 } });
     expect(wrapper.vm.filters[0].values.length).toBe(0);
     expect(wrapper.vm.filters[0].values).toEqual([]);
   });
@@ -380,9 +378,9 @@ describe('mixin-page-multi-entries component', () => {
   it('toggleTag', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -398,19 +396,19 @@ describe('mixin-page-multi-entries component', () => {
     expect(spyRouter.called).toBe(false);
     wrapper.vm.toggleTag(wrapper.vm.tags[0]);
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.firstCall.lastArg).toEqual({"query": {"tags": "tag", "page": 1}});
+    expect(spyRouter.firstCall.lastArg).toEqual({ query: { tags: 'tag', page: 1 } });
     expect(wrapper.vm.tags[0].selected).toEqual(true);
     wrapper.vm.toggleTag(wrapper.vm.tags[0]);
-    expect(spyRouter.lastCall.lastArg).toEqual({"query": {"page": 1}});
+    expect(spyRouter.lastCall.lastArg).toEqual({ query: { page: 1 } });
     expect(wrapper.vm.tags[0].selected).toEqual(false);
   });
 
   it('removeTag', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -426,16 +424,16 @@ describe('mixin-page-multi-entries component', () => {
     expect(spyRouter.called).toBe(false);
     wrapper.vm.removeTag(wrapper.vm.tags[0]);
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.lastCall.lastArg).toEqual({"query": {"page": 1}});
+    expect(spyRouter.lastCall.lastArg).toEqual({ query: { page: 1 } });
     expect(wrapper.vm.tags[0].selected).toEqual(false);
   });
 
   it('refresh', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -452,9 +450,9 @@ describe('mixin-page-multi-entries component', () => {
   it('onPageChange', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -466,16 +464,16 @@ describe('mixin-page-multi-entries component', () => {
     expect(spyRouter.called).toBe(false);
     wrapper.vm.onPageChange(2);
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.lastCall.lastArg).toEqual({"query": {"page": 2}});
+    expect(spyRouter.lastCall.lastArg).toEqual({ query: { page: 2 } });
     expect(wrapper.vm.page).toBe(2);
   });
 
   it('onSort', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {} },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -487,7 +485,7 @@ describe('mixin-page-multi-entries component', () => {
     expect(spyRouter.called).toBe(false);
     wrapper.vm.onSort('state', 'desc');
     expect(spyRouter.called).toBe(true);
-    expect(spyRouter.lastCall.lastArg).toEqual({"query": {"order": "state,desc", "page": 1}});
+    expect(spyRouter.lastCall.lastArg).toEqual({ query: { order: 'state,desc', page: 1 } });
     expect(wrapper.vm.sortField).toBe('state');
     expect(wrapper.vm.sortOrder).toBe('desc');
   });
@@ -495,9 +493,9 @@ describe('mixin-page-multi-entries component', () => {
   it('mount with queryString: page', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {page: '2'}},
-      $router: {push: spyRouter},
-    }
+      $route: { query: { page: '2' } },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -508,7 +506,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'or-ilike',
           values: [],
-        }
+        },
       ],
       default_tags: [
         { key: 'tag1', label: 'Tag 1' },
@@ -524,11 +522,11 @@ describe('mixin-page-multi-entries component', () => {
   it('mount with queryString: order', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {
-          order: 'state,desc',
-      }},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {
+        order: 'state,desc',
+      } },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -539,7 +537,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'or-ilike',
           values: [],
-        }
+        },
       ],
       default_tags: [
         { key: 'tag1', label: 'Tag 1' },
@@ -556,11 +554,11 @@ describe('mixin-page-multi-entries component', () => {
   it('mount with queryString: filters', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {
-          filters: "{\"filter[state]\":\"foo,bar\"}",
-      }},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {
+        filters: '{"filter[state]":"foo,bar"}',
+      } },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -571,7 +569,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'or-ilike',
           values: [],
-        }
+        },
       ],
       default_tags: [
         { key: 'tag1', label: 'Tag 1' },
@@ -587,11 +585,11 @@ describe('mixin-page-multi-entries component', () => {
   it('mount with queryString: filters with opt', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {
-          filters: "{\"filter[state][test]\":\"foo,bar\"}",
-      }},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {
+        filters: '{"filter[state][test]":"foo,bar"}',
+      } },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -603,7 +601,7 @@ describe('mixin-page-multi-entries component', () => {
           op: 'or-ilike',
           opt: 'test',
           values: [],
-        }
+        },
       ],
       default_tags: [
         { key: 'tag1', label: 'Tag 1' },
@@ -619,12 +617,12 @@ describe('mixin-page-multi-entries component', () => {
   it('mount with queryString: ~ filters', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {
-          filters: "{\"~filter[state]\":\"foo,bar\"}",
-          // tags: "tag1,tag2"
-      }},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {
+        filters: '{"~filter[state]":"foo,bar"}',
+        // tags: "tag1,tag2"
+      } },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -635,7 +633,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'or-ilike',
           values: [],
-        }
+        },
       ],
       default_tags: [
         { key: 'tag1', label: 'Tag 1' },
@@ -651,12 +649,12 @@ describe('mixin-page-multi-entries component', () => {
   it('mount with queryString: ~ filters and opt', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {
-          filters: "{\"~filter[state][test]\":\"foo,bar\"}",
-          // tags: "tag1,tag2"
-      }},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {
+        filters: '{"~filter[state][test]":"foo,bar"}',
+        // tags: "tag1,tag2"
+      } },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -668,7 +666,7 @@ describe('mixin-page-multi-entries component', () => {
           op: 'or-ilike',
           opt: 'test',
           values: [],
-        }
+        },
       ],
       default_tags: [
         { key: 'tag1', label: 'Tag 1' },
@@ -684,11 +682,11 @@ describe('mixin-page-multi-entries component', () => {
   it('mount with queryString: tags', () => {
     const spyRouter = sinon.spy();
     const mocks = {
-      $route: {query: {
-          tags: "tag1,tag2"
-      }},
-      $router: {push: spyRouter},
-    }
+      $route: { query: {
+        tags: 'tag1,tag2',
+      } },
+      $router: { push: spyRouter },
+    };
     const propsData = {
       title: 'Title',
       subtitle: 'Sub Title',
@@ -699,7 +697,7 @@ describe('mixin-page-multi-entries component', () => {
           label: 'State',
           op: 'or-ilike',
           values: [],
-        }
+        },
       ],
       default_tags: [
         { key: 'tag1', label: 'Tag 1' },
@@ -718,7 +716,7 @@ describe('mixin-page-multi-entries component', () => {
     const commitSpy = sinon.spy();
     const emitSpy = sinon.spy();
     const mocks = {
-      $route: {query: {}},
+      $route: { query: {} },
       $store: { commit: commitSpy },
       $emit: emitSpy,
     };
@@ -732,7 +730,7 @@ describe('mixin-page-multi-entries component', () => {
     const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
     expect(emitSpy.called).toBe(false);
     expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
-    wrapper.vm.startBrowsing()
+    wrapper.vm.startBrowsing();
     expect(emitSpy.called).toBe(false);
     expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
   });
@@ -741,7 +739,7 @@ describe('mixin-page-multi-entries component', () => {
     const commitSpy = sinon.spy();
     const emitSpy = sinon.spy();
     const mocks = {
-      $route: {query: {}},
+      $route: { query: {} },
       $store: { commit: commitSpy },
       $emit: emitSpy,
     };
@@ -758,10 +756,10 @@ describe('mixin-page-multi-entries component', () => {
       { id: 2, firstname: 'test1', lastname: 'test2' },
       { id: 3, firstname: 'test1', lastname: 'test3' },
       { id: 4, firstname: 'test1', lastname: 'test4' },
-    ]
+    ];
     expect(emitSpy.called).toBe(false);
     expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
-    wrapper.vm.startBrowsing()
+    wrapper.vm.startBrowsing();
     expect(emitSpy.called).toBe(false);
     expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
   });
@@ -770,7 +768,7 @@ describe('mixin-page-multi-entries component', () => {
     const commitSpy = sinon.spy();
     const emitSpy = sinon.spy();
     const mocks = {
-      $route: {query: {}},
+      $route: { query: {} },
       $store: { commit: commitSpy },
       $emit: emitSpy,
     };
@@ -785,7 +783,7 @@ describe('mixin-page-multi-entries component', () => {
     const wrapper = mount(Component, { localVue, i18n, propsData, mocks });
     expect(emitSpy.called).toBe(false);
     expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
-    wrapper.vm.startBrowsing()
+    wrapper.vm.startBrowsing();
     expect(emitSpy.called).toBe(false);
     expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
   });
@@ -794,7 +792,7 @@ describe('mixin-page-multi-entries component', () => {
     const commitSpy = sinon.spy();
     const emitSpy = sinon.spy();
     const mocks = {
-      $route: {query: {}},
+      $route: { query: {} },
       $store: { commit: commitSpy },
       $emit: emitSpy,
     };
@@ -812,21 +810,28 @@ describe('mixin-page-multi-entries component', () => {
       { id: 2, firstname: 'test1', lastname: 'test2' },
       { id: 3, firstname: 'test1', lastname: 'test3' },
       { id: 4, firstname: 'test1', lastname: 'test4' },
-    ]
+    ];
     expect(emitSpy.called).toBe(false);
     expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
-    wrapper.vm.startBrowsing()
+    wrapper.vm.startBrowsing();
     expect(emitSpy.called).toBe(true);
-    expect(emitSpy.lastCall.lastArg).toEqual({ id: 1});
+    expect(emitSpy.lastCall.lastArg).toEqual({ id: 1 });
     expect(commitSpy.calledTwice).toBe(true); // mount from multi entries
-    expect(commitSpy.lastCall.lastArg).toEqual({ list: [ { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 } ] });
+    expect(commitSpy.lastCall.lastArg).toEqual({
+      list: [
+        { id: 1 },
+        { id: 2 },
+        { id: 3 },
+        { id: 4 },
+      ],
+    });
   });
 
   it('method startBrowsing 2', () => {
     const commitSpy = sinon.spy();
     const emitSpy = sinon.spy();
     const mocks = {
-      $route: {query: {}},
+      $route: { query: {} },
       $store: { commit: commitSpy },
       $emit: emitSpy,
     };
@@ -844,19 +849,18 @@ describe('mixin-page-multi-entries component', () => {
       { other: 'other', id: 2, firstname: 'test1', lastname: 'test2' },
       { other: 'other', id: 3, firstname: 'test1', lastname: 'test3' },
       { other: 'other', id: 4, firstname: 'test1', lastname: 'test4' },
-    ]
+    ];
     expect(emitSpy.called).toBe(false);
     expect(commitSpy.calledOnce).toBe(true); // mount from multi entries
-    wrapper.vm.startBrowsing()
+    wrapper.vm.startBrowsing();
     expect(emitSpy.called).toBe(true);
-    expect(emitSpy.lastCall.lastArg).toEqual({ id: 1, other: 'other'});
+    expect(emitSpy.lastCall.lastArg).toEqual({ id: 1, other: 'other' });
     expect(commitSpy.calledTwice).toBe(true); // mount from multi entries
-    expect(commitSpy.lastCall.lastArg).toEqual({ list: [ 
-      { id: 1, other: 'other' }, 
-      { id: 2, other: 'other' }, 
-      { id: 3, other: 'other' }, 
-      { id: 4, other: 'other' }, 
+    expect(commitSpy.lastCall.lastArg).toEqual({ list: [
+      { id: 1, other: 'other' },
+      { id: 2, other: 'other' },
+      { id: 3, other: 'other' },
+      { id: 4, other: 'other' },
     ] });
   });
-
 });
