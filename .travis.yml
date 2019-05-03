@@ -12,3 +12,8 @@ install:
 
 script:
   - npm run test
+
+jobs:
+  include:
+    - name: "Lint"
+      script: npm run lint
