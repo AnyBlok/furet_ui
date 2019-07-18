@@ -7,10 +7,11 @@ defineComponent('furet-ui-list', {
       <furet-ui-page-multi-entries-header 
         v-bind:title="title"
         v-bind:subtitle="subtitle"
-        v-bind:total="total"
-        v-bind:data="data"
         v-bind:filters="filters"
         v-bind:tags="tags"
+        v-bind:total="total"
+        v-bind:data="data"
+        v-bind:can_go_to_new="can_go_to_new"
         v-on:updateFilters="updateFilters"
         v-on:removeFilter="removeFilter"
         v-on:refresh="refresh"
