@@ -55,12 +55,12 @@ defineComponent('furet-ui-page-multi-entries-header', {
             <b-autocomplete
               v-model="filterSearch"
               v-bind:data="filteredDataArray"
-              v-bind:placeholder="this.$i18n.t('components.page.list.search')"
+              v-bind:placeholder="this.$i18n.t('components.page.header.search')"
               icon="search"
               v-on:select="updateFilters"
               clear-on-select
             >
-              <template slot="empty">{{ $t('components.page.list.notFound') }}</template>
+              <template slot="empty">{{ $t('components.page.header.notFound') }}</template>
               <template slot-scope="props">
                 {{ props.option.mode == 'exclude' ? ' ~ ' : '' }} <small>{{ props.option.label }} </small> : <strong>{{ props.option.value }}</strong>
               </template>
@@ -86,7 +86,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
       <div class="buttons is-grouped is-centered">
         <a id="furet-ui-page-multi-entries-header-new" v-if="can_go_to_new" class="button is-primary is-outlined" v-on:click="goToNew">
           <span class="icon"><font-awesome-icon icon="plus-square" /></span>
-          <span>{{ $t('components.page.list.new') }}</span>
+          <span>{{ $t('components.page.new') }}</span>
         </a>
         <slot name="actions" v-bind:data="data" />
       </div>
@@ -164,6 +164,7 @@ defineComponent('mixin-page-multi-entries', {
     methods: {
       goToNew() {
         this.$emit('goToNew');
+        this.$emit('gotonew');
       },
       browsing() {
         if (this.selectedEntries.length === 0) return [];
@@ -189,13 +190,18 @@ defineComponent('mixin-page-multi-entries', {
           const offset = list.indexOf(entry);
           this.$store.commit('UPDATE_BROWSER_LIST', { list, offset });
           this.$emit('goToPage', row);
-        } else this.$emit('goToPage', row);
+          this.$emit('gotopage', row);
+        } else {
+          this.$emit('goToPage', row);
+          this.$emit('gotopage', row);
+        }
       },
       startBrowsing() {
         const list = this.browsing();
         if (list.length === 0) return;
         this.$store.commit('UPDATE_BROWSER_LIST', { list });
         this.$emit('goToPage', list[0]);
+        this.$emit('gotopage', list[0]);
       },
       updateData() {
         if (!this.many2one_select) {
@@ -340,6 +346,111 @@ defineComponent('mixin-page-multi-entries', {
         });
       }
       this.loadAsyncData();
+    },
+  },
+});
+
+defineComponent('furet-ui-header-page', {
+  template: `
+    <header id="header_page">
+      <div class="level">
+        <div class="level-left">
+          <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
+          <h3 class="is-size-4">{{ subtitle }}</h3>
+        </div>
+        <div class="level-right">
+          <slot name="states" v-bind:data="data" />
+        </div>
+      </div>
+      <div class="buttons is-grouped is-centered">
+        <a class="button is-primary is-outlined" v-on:click="goToList">
+          <span class="icon">
+            <i class="fa fa-list"></i>
+          </span>
+          <span>{{ $t('components.page.list') }}</span>
+        </a>
+        <a v-if="prevous_target" class="button is-primary is-outlined" v-on:click="goToPreviousPage">
+          <span class="icon">
+            <i class="fa fa-arrow-left"></i>
+          </span>
+          <span>{{ $t('components.page.header.previous') }}</span>
+        </a>
+        <a v-if="next_target" class="button is-primary is-outlined" v-on:click="goToNextPage">
+          <span class="icon">
+            <i class="fa fa-arrow-right"></i>
+          </span>
+          <span>{{ $t('components.page.header.next') }}</span>
+        </a>
+        <a v-if="can_go_to_new" class="button is-primary is-outlined" v-on:click="goToNew">
+          <span class="icon">
+            <i class="fa fa-plus-square-o"></i>
+          </span>
+          <span>{{ $t('components.page.new') }}</span>
+        </a>
+        <a v-if="can_modify" class="button is-primary is-outlined" v-on:click="goToEdit">
+          <span class="icon">
+            <i class="fa fa-pencil"></i>
+          </span>
+          <span>{{ $t('components.page.edit') }}</span>
+        </a>
+        <button v-if="can_save" class="button is-primary is-outlined" type="submit" v-bind:value="$i18n.t('components.page.save')" ref="submit">
+          <span class="icon">
+            <i class="fa fa-floppy-o"></i>
+          </span>
+          <span>{{ $t('components.page.save') }}</span>
+        </button>
+        <a v-if="can_delete" class="button is-danger is-outlined" v-on:click="deleteEntry">
+          <span class="icon">
+            <i class="fa fa-trash"></i>
+          </span>
+          <span>{{ $t('component.page.delete') }}</span>
+        </a>
+      </div>
+      <div class="buttons is-grouped is-centered">
+        <slot name="actions" v-bind:data="data" />
+      </div>
+    </header>
+  `,
+  prototype: {
+    props: ['title', 'subtitle', 'can_go_to_new', 'can_modify', 'can_delete', 'can_save', 'data'],
+    computed: {
+      prevous_target() {
+        return this.$store.getters.previousBrowserTarget;
+      },
+      next_target() {
+        return this.$store.getters.nextBrowserTarget;
+      },
+    },
+    methods: {
+      goToList() {
+        this.$emit('goToList');
+      },
+      goToPreviousPage() {
+        const target = this.prevous_target;
+        if (target !== undefined) {
+          this.$store.commit('DECREASE_BROWSER_OFFSET');
+          this.$emit('goToPage', target);
+        }
+      },
+      goToNextPage() {
+        const target = this.next_target;
+        if (target !== undefined) {
+          this.$store.commit('INCREASE_BROWSER_OFFSET');
+          this.$emit('goToPage', target);
+        }
+      },
+      goToNew() {
+        this.$emit('goToNew');
+      },
+      goToEdit() {
+        this.$emit('goToEdit');
+      },
+      save() {
+        this.$emit('save');
+      },
+      deleteEntry() {
+        this.$emit('deleteEntry');
+      },
     },
   },
 });

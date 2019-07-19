@@ -17,6 +17,7 @@ defineComponent('furet-ui-list', {
         v-on:refresh="refresh"
         v-on:toggleTag="toggleTag"
         v-on:removeTag="removeTag"
+        v-on:goToNew="goToNew"
       >
       </furet-ui-page-multi-entries-header>
         <template slot="actions" slot-scope="props">
@@ -62,7 +63,7 @@ defineComponent('furet-ui-list', {
         <template slot="empty">
           <section class="section">
             <div class="content has-text-grey has-text-centered">
-              <p>{{ $t('components.page.list.notFound') }}</p>
+              <p>{{ $t('components.page.header.notFound') }}</p>
             </div>
           </section>
         </template>

@@ -69,13 +69,17 @@ const createRoute = (resource, defaultTemplateProps) => {
         templateProps += ` v-bind:${prop}="${prop}"`;
       });
     }
+  } else if (resource.props.length !== 0) {
+    resource.props.forEach((prop) => {
+      templateProps += ` v-bind:${prop}="${prop}"`;
+    });
   }
   const route = {
     name: resource.completeName || resource.name,
     path,
     props: templateProps !== '',
     meta: { requiresAuth: resource.mustBeAuthenticated },
-    component: {},
+    component: { props: resource.props },
   };
   if (resource.children === undefined || resource.children.length === 0) {
     route.component.template = `<${resource.templateName}${templateProps} />`;
