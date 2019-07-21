@@ -148,7 +148,7 @@ defineComponent('furet-ui-appbar-head-router-link-button', {
     <span class="navbar-item">
       <a class="button is-primary is-inverted is-fullwidth" v-on:click="goTo">
         <span class="icon" v-if="icon">
-          <font-awesome-icon v-bind:icon="icon" />
+          <b-icon v-bind:icon="icon" />
         </span>
         <span>{{ label }}</span>
       </a>
@@ -235,7 +235,7 @@ defineComponent('furet-ui-appbar-foot-router-link-button', {
   template: `
     <a class="button is-primary is-inverted" v-on:click="goTo">
       <span class="icon" v-if="icon">
-        <font-awesome-icon v-bind:icon="icon" />
+        <b-icon v-bind:icon="icon" />
       </span>
       <span>{{ label }}</span>
     </a>

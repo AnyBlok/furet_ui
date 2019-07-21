@@ -67,9 +67,9 @@ defineComponent('furet-ui-page-multi-entries-header', {
             </b-autocomplete>
           </div>
           <div class="level-item buttons">
-            <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><font-awesome-icon icon="sync" /></a>
+            <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><b-icon icon="reload" /></a>
             <a id="furet-ui-page-multi-entries-header-tags" v-if="tags.length" class="button" v-on:click.stop="tag_list_open = ! tag_list_open">
-              <font-awesome-icon :icon="tag_list_open ? 'caret-square-up' : 'caret-square-down'" />
+              <b-icon :icon="tag_list_open ? 'arrow-up-drop-circle' : 'arrow-down-drop-circle'" />
             </a>
           </div>
         </div>
@@ -85,7 +85,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
       </b-collapse>
       <div class="buttons is-grouped is-centered">
         <a id="furet-ui-page-multi-entries-header-new" v-if="can_go_to_new" class="button is-primary is-outlined" v-on:click="goToNew">
-          <span class="icon"><font-awesome-icon icon="plus-square" /></span>
+          <span class="icon"><b-icon icon="plus" /></span>
           <span>{{ $t('components.page.new') }}</span>
         </a>
         <slot name="actions" v-bind:data="data" />
@@ -365,43 +365,43 @@ defineComponent('furet-ui-header-page', {
       <div class="buttons is-grouped is-centered">
         <a class="button is-primary is-outlined" v-on:click="goToList">
           <span class="icon">
-            <i class="fa fa-list"></i>
+            <b-icon icon="keyboard-return" />
           </span>
           <span>{{ $t('components.page.list') }}</span>
         </a>
         <a v-if="prevous_target" class="button is-primary is-outlined" v-on:click="goToPreviousPage">
           <span class="icon">
-            <i class="fa fa-arrow-left"></i>
+            <b-icon icon="page-previous" />
           </span>
           <span>{{ $t('components.page.header.previous') }}</span>
         </a>
         <a v-if="next_target" class="button is-primary is-outlined" v-on:click="goToNextPage">
           <span class="icon">
-            <i class="fa fa-arrow-right"></i>
+            <b-icon icon="page-next" />
           </span>
           <span>{{ $t('components.page.header.next') }}</span>
         </a>
         <a v-if="can_go_to_new" class="button is-primary is-outlined" v-on:click="goToNew">
           <span class="icon">
-            <i class="fa fa-plus-square-o"></i>
+            <b-icon icon="plus" />
           </span>
           <span>{{ $t('components.page.new') }}</span>
         </a>
         <a v-if="can_modify" class="button is-primary is-outlined" v-on:click="goToEdit">
           <span class="icon">
-            <i class="fa fa-pencil"></i>
+            <b-icon icon="file-document-edit" />
           </span>
           <span>{{ $t('components.page.edit') }}</span>
         </a>
         <button v-if="can_save" class="button is-primary is-outlined" type="submit" v-bind:value="$i18n.t('components.page.save')" ref="submit">
           <span class="icon">
-            <i class="fa fa-floppy-o"></i>
+            <b-icon icon="content-save" />
           </span>
           <span>{{ $t('components.page.save') }}</span>
         </button>
         <a v-if="can_delete" class="button is-danger is-outlined" v-on:click="deleteEntry">
           <span class="icon">
-            <i class="fa fa-trash"></i>
+            <b-icon icon="delete" />
           </span>
           <span>{{ $t('component.page.delete') }}</span>
         </a>

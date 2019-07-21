@@ -22,7 +22,7 @@ defineComponent('furet-ui-list', {
       </furet-ui-page-multi-entries-header>
         <template slot="actions" slot-scope="props">
           <a v-if="(browseFields || []).length && checkedRows.length > 0" class="button is-primary is-outlined" v-on:click="startBrowsing">
-            <span class="icon"><font-awesome-icon icon="compass" /></span>
+            <span class="icon"><b-icon icon="file-document-box-multiple" /></span>
             <span>{{ $t('components.page.list.browse') }}</span>
           </a>
           <slot name="actions" v-bind:data="props.data" />
