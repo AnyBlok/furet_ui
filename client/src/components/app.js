@@ -130,6 +130,9 @@ defineComponent('furet-ui-appbar-router-link-goto', {
         // TODO clear data
         this.$router.push(this.to);
       },
+      format_label(label) {
+        return this.$i18n.t(label);
+      },
     },
   },
 });
@@ -137,7 +140,7 @@ defineComponent('furet-ui-appbar-router-link-goto', {
 defineComponent('furet-ui-appbar-head-router-link', {
   template: `
     <a class="navbar-item" v-on:click="goTo">
-      {{ label }}
+      {{ format_label(label) }}
     </a>
   `,
   extend: ['furet-ui-appbar-router-link-goto'],
@@ -150,13 +153,48 @@ defineComponent('furet-ui-appbar-head-router-link-button', {
         <span class="icon" v-if="icon">
           <b-icon v-bind:icon="icon" />
         </span>
-        <span>{{ label }}</span>
+        <span>{{ format_label(label) }}</span>
       </a>
     </span>
   `,
   extend: ['furet-ui-appbar-router-link-goto'],
   prototype: {
     props: ['icon'],
+  },
+});
+
+defineComponent('furet-ui-appbar-head-router-link-dropdown', {
+  template: `
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link">
+        <router-link v-bind:to="to" v-if="to">
+          <b-icon v-bind:icon="icon" v-if="child.icon" />
+          <span>{{ format_label(label) }}</span>
+        </router-link>
+        <div v-else>
+          <b-icon v-bind:icon="icon" v-if="icon" />
+          <span>{{ format_label(label) }}</span>
+        </div>
+      </a>
+      <div class="navbar-dropdown">
+        <div v-bind:key="child.name" v-for="child in children">
+          <hr class="navbar-divider" v-if="child.divider === 'before'">
+          <div class="navbar-item">
+            <a class="button is-primary is-inverted is-fullwidth">
+              <router-link v-bind:to="child.to">
+                <b-icon v-bind:icon="child.icon" v-if="child.icon" />
+                <span>{{ format_label(child.label) }}</span>
+              </router-link>
+            </a>
+          </div>
+          <hr class="navbar-divider" v-if="child.divider === 'after'">
+        </div>
+      </div>
+    </div>
+  `,
+  extend: ['furet-ui-appbar-router-link-goto'],
+  prototype: {
+    props: ['icon', 'children'],
   },
 });
 
@@ -225,7 +263,7 @@ defineComponent('furet-ui-appbar-space-menus', {
 defineComponent('furet-ui-appbar-foot-router-link', {
   template: `
     <a v-on:click="goTo">
-      {{ label }}
+      {{ format_label(label) }}
     </a>
   `,
   extend: ['furet-ui-appbar-router-link-goto'],
@@ -237,7 +275,7 @@ defineComponent('furet-ui-appbar-foot-router-link-button', {
       <span class="icon" v-if="icon">
         <b-icon v-bind:icon="icon" />
       </span>
-      <span>{{ label }}</span>
+      <span>{{ format_label(label) }}</span>
     </a>
   `,
   extend: ['furet-ui-appbar-router-link-goto'],
