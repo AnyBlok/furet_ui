@@ -34,8 +34,8 @@ defineComponent('furet-ui-edit', {
           <template slot="aftertitle" slot-scope="props">
             <slot name="aftertitle" v-bind:data="props.data" />
           </template>
-          <template slot="actions" slot-scope="props">
-            <slot name="actions" v-bind:data="props.data" v-bind:submit="$refs.submit"/>
+          <template slot="head_actions" slot-scope="props">
+            <slot name="head_actions" v-bind:data="props.data" v-bind:submit="$refs.submit"/>
           </template>
           <template slot="states" slot-scope="props">
             <slot name="states" v-bind:data="props.data" />
@@ -58,7 +58,7 @@ defineComponent('furet-ui-edit', {
                 </span>
                 <span>{{ $t('components.page.clear') }}</span>
               </button>
-              <slot name="buttons" />
+              <slot name="foot_actions" v-bind:data="data" v-bind:submit="$refs.submit"/>
             </p>
           </div>
         </footer>
