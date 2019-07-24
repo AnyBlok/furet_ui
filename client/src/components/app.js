@@ -5,7 +5,7 @@ defineComponent('app', {
     <div id="furet-ui-app">
       <furet-ui-appbar />
       <notifications />
-      <router-view></router-view>
+      <router-view v-bind:key="$route.fullPath"></router-view>
       <furet-ui-footer />
     </div>`,
 });

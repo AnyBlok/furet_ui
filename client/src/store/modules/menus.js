@@ -60,6 +60,10 @@ export const mutations = {
     if (action.user !== undefined) {
       const menus = [];
       action.user.forEach((menu) => {
+        if (menu.props && menu.props.to && menu.props.to.query && menu.props.to.query.filters && typeof menu.props.to.query.filters !== 'string') {
+          // eslint-disable-next-line
+          menu.props.to.query.filters = JSON.stringify(menu.props.to.query.filters);
+        }
         menus.push(Object.assign({}, defaultHeadMenu, menu));
       });
       state.user = menus;
@@ -67,6 +71,10 @@ export const mutations = {
     if (action.spaces !== undefined) {
       const menus = [];
       action.spaces.forEach((menu) => {
+        if (menu.props && menu.props.to && menu.props.to.query && menu.props.to.query.filters && typeof menu.props.to.query.filters !== 'string') {
+          // eslint-disable-next-line
+          menu.props.to.query.filters = JSON.stringify(menu.props.to.query.filters);
+        }
         menus.push(Object.assign({}, defaultHeadMenu, menu));
       });
       state.spaces = menus;
@@ -74,6 +82,10 @@ export const mutations = {
     if (action.spaceMenus !== undefined) {
       const menus = [];
       action.spaceMenus.forEach((menu) => {
+        if (menu.props && menu.props.to && menu.props.to.query && menu.props.to.query.filters && typeof menu.props.to.query.filters !== 'string') {
+          // eslint-disable-next-line
+          menu.props.to.query.filters = JSON.stringify(menu.props.to.query.filters);
+        }
         menus.push(Object.assign({}, defaultFootMenu, menu));
       });
       state.spaceMenus = menus;

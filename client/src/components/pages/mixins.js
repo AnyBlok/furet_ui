@@ -116,7 +116,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
     },
     methods: {
       goToNew() {
-        this.$emit('goToNew');
+        this.$emit('go-to-new');
       },
       updateFilters(option) {
         this.$emit('updateFilters', option);
@@ -163,8 +163,7 @@ defineComponent('mixin-page-multi-entries', {
     },
     methods: {
       goToNew() {
-        this.$emit('goToNew');
-        this.$emit('gotonew');
+        this.$emit('go-to-new');
       },
       browsing() {
         if (this.selectedEntries.length === 0) return [];
@@ -189,19 +188,16 @@ defineComponent('mixin-page-multi-entries', {
           });
           const offset = list.indexOf(entry);
           this.$store.commit('UPDATE_BROWSER_LIST', { list, offset });
-          this.$emit('goToPage', row);
-          this.$emit('gotopage', row);
+          this.$emit('go-to-page', row);
         } else {
-          this.$emit('goToPage', row);
-          this.$emit('gotopage', row);
+          this.$emit('go-to-page', row);
         }
       },
       startBrowsing() {
         const list = this.browsing();
         if (list.length === 0) return;
         this.$store.commit('UPDATE_BROWSER_LIST', { list });
-        this.$emit('goToPage', list[0]);
-        this.$emit('gotopage', list[0]);
+        this.$emit('go-to-page', list[0]);
       },
       updateData() {
         if (!this.many2one_select) {
@@ -389,13 +385,13 @@ defineComponent('furet-ui-header-page', {
         </a>
         <a v-if="can_modify" class="button is-primary is-outlined" v-on:click="goToEdit">
           <span class="icon">
-            <b-icon icon="file-document-edit" />
+            <b-icon icon="square-edit-outline" />
           </span>
           <span>{{ $t('components.page.edit') }}</span>
         </a>
         <button v-if="can_save" class="button is-primary is-outlined" type="submit" v-bind:value="$i18n.t('components.page.save')" ref="submit">
           <span class="icon">
-            <b-icon icon="content-save" />
+            <b-icon icon="floppy" />
           </span>
           <span>{{ $t('components.page.save') }}</span>
         </button>
@@ -403,11 +399,9 @@ defineComponent('furet-ui-header-page', {
           <span class="icon">
             <b-icon icon="delete" />
           </span>
-          <span>{{ $t('component.page.delete') }}</span>
+          <span>{{ $t('components.page.delete') }}</span>
         </a>
-      </div>
-      <div class="buttons is-grouped is-centered">
-        <slot name="actions" v-bind:data="data" />
+        <slot name="head_actions" v-bind:data="data" />
       </div>
     </header>
   `,
@@ -423,33 +417,33 @@ defineComponent('furet-ui-header-page', {
     },
     methods: {
       goToList() {
-        this.$emit('goToList');
+        this.$emit('go-to-list');
       },
       goToPreviousPage() {
         const target = this.prevous_target;
         if (target !== undefined) {
           this.$store.commit('DECREASE_BROWSER_OFFSET');
-          this.$emit('goToPage', target);
+          this.$emit('go-to-page', target);
         }
       },
       goToNextPage() {
         const target = this.next_target;
         if (target !== undefined) {
           this.$store.commit('INCREASE_BROWSER_OFFSET');
-          this.$emit('goToPage', target);
+          this.$emit('go-to-page', target);
         }
       },
       goToNew() {
-        this.$emit('goToNew');
+        this.$emit('go-to-new');
       },
       goToEdit() {
-        this.$emit('goToEdit');
+        this.$emit('go-to-edit');
       },
       save() {
         this.$emit('save');
       },
       deleteEntry() {
-        this.$emit('deleteEntry');
+        this.$emit('delete-entry');
       },
     },
   },

@@ -19,9 +19,9 @@ defineComponent('furet-ui-edit', {
           v-bind:can_modify="can_modify"
           v-bind:can_delete="can_delete"
           can_save="true"
-          v-on:goToList="goToList"
-          v-on:goToPage="goToEdit"
-          v-on:deleteEntry="deleteEntry"
+          v-on:go-to-list="goToList"
+          v-on:go-to-page="goToEdit"
+          v-on:delete-entry="deleteEntry"
           v-on:save="savePage(true)"
           v-bind:data="data"
         >
@@ -48,13 +48,13 @@ defineComponent('furet-ui-edit', {
             <p class="control">
               <button class="button is-primary is-outlined" type="submit" v-bind:value="$i18n.t('components.page.save')" ref="submit">
                 <span class="icon">
-                  <i class="fa fa-floppy-o"></i>
+                  <b-icon icon="floppy" />
                 </span>
                 <span>{{ $t('components.page.save') }}</span>
               </button>
               <button class="button is-primary is-outlined" type="reset" v-bind:value="$i18n.t('components.page.clear')">
                 <span class="icon">
-                  <i class="fa fa-eraser"></i>
+                  <b-icon icon="format-clear" />
                 </span>
                 <span>{{ $t('components.page.clear') }}</span>
               </button>
@@ -79,12 +79,10 @@ defineComponent('furet-ui-edit', {
     },
     methods: {
       goToList() {
-        this.$emit('goToList');
-        this.$emit('gotolist');
+        this.$emit('go-to-list');
       },
       goToEdit(target) {
-        this.$emit('goToEdit', target);
-        this.$emit('gotoedit', target);
+        this.$emit('go-to-edit', target);
       },
       applyResponse(response) {
         this.initial_data = response.data;
@@ -111,20 +109,17 @@ defineComponent('furet-ui-edit', {
             axios.patch(this.rest_api_url, body)
               .then((response) => {
                 this.loading = false;
-                this.$emit('goToPage', response.data);
-                this.$emit('gotopage', response.data);
+                this.$emit('go-to-page', response.data);
               })
               .catch((error) => {
                 this.errors = error.response.data.errors;
                 this.loading = false;
               });
           } else {
-            this.$emit('goToPage', this.initial_data);
-            this.$emit('gotopage', this.initial_data);
+            this.$emit('go-to-page', this.initial_data);
           }
         } else {
-          this.$emit('goToPage', this.initial_data);
-          this.$emit('gotopage', this.initial_data);
+          this.$emit('go-to-page', this.initial_data);
         }
       },
       deleteEntry() {

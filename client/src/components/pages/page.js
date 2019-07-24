@@ -17,23 +17,17 @@ defineComponent('furet-ui-page', {
         v-bind:subtitle="subtitle"
         v-bind:can_modify="can_modify"
         v-bind:can_delete="can_delete"
-        v-on:goToList="goToList"
-        v-on:goToEdit="goToEdit"
-        v-on:goToPage="goToPage"
-        v-on:deleteEntry="deleteEntry"
+        v-on:go-to-list="goToList"
+        v-on:go-to-edit="goToEdit"
+        v-on:go-to-page="goToPage"
+        v-on:delete-entry="deleteEntry"
         v-bind:data="data"
       >
-        <template slot="fsm_states" slot-scope="props">
-          <slot name="fsm_states" v-bind:fsm_state="props.fsm_state" v-bind:fsm_instance="props.fsm_instance"/>
-        </template>
-        <template slot="fsm_controls" slot-scope="props">
-          <slot name="fsm_controls" v-bind:fsm_state="props.fsm_state" v-bind:fsm_instance="props.fsm_instance"/>
-        </template>
         <template slot="aftertitle" slot-scope="props">
           <slot name="aftertitle" v-bind:data="props.data" />
         </template>
-        <template slot="actions" slot-scope="props">
-          <slot name="actions" v-bind:data="props.data" />
+        <template slot="head_actions" slot-scope="props">
+          <slot name="head_actions" v-bind:data="props.data" />
         </template>
         <template slot="states" slot-scope="props">
           <slot name="states" v-bind:data="props.data" />
@@ -44,10 +38,8 @@ defineComponent('furet-ui-page', {
         <slot v-bind:data="data" />
       </div>
       <footer>
-        <div class="field is-grouped is-grouped-centered">
-          <p class="control">
-            <slot name="buttons" />
-          </p>
+        <div class="buttons is-grouped is-centered">
+          <slot name="foot_actions" v-bind:data="data" />
         </div>
       </footer>
     </section>
@@ -77,16 +69,13 @@ defineComponent('furet-ui-page', {
           });
       },
       goToList() {
-        this.$emit('goToList');
-        this.$emit('gotolist');
+        this.$emit('go-to-list');
       },
       goToPage(arg) {
-        this.$emit('goToPage', arg);
-        this.$emit('gotopage', arg);
+        this.$emit('go-to-page', arg);
       },
       goToEdit() {
-        this.$emit('goToEdit');
-        this.$emit('gotoedit');
+        this.$emit('go-to-edit');
       },
       deleteEntry() {
         this.loading = true;

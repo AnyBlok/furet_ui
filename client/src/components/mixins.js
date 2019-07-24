@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { defineComponent } from './factory';
 
 defineComponent('mixin-logo', {
@@ -15,3 +16,16 @@ defineComponent('mixin-logo', {
   },
 });
 
+defineComponent('date-display', {
+  prototype: {
+    methods: {
+      formatDate(date) {
+        if (date) {
+          moment.locale(document.documentElement.lang);
+          return moment(date).format('LLL');
+        }
+        return '';
+      },
+    },
+  },
+});

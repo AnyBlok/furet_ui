@@ -17,7 +17,7 @@ defineComponent('furet-ui-new', {
           v-bind:title="title"
           v-bind:subtitle="subtitle"
           can_save="true"
-          v-on:goToList="goToList"
+          v-on:go-to-list="goToList"
           v-bind:data="data"
         >
           <template slot="aftertitle" slot-scope="props">
@@ -37,13 +37,13 @@ defineComponent('furet-ui-new', {
             <p class="control">
               <button class="button is-primary is-outlined" type="submit" v-bind:value="$i18n.t('components.page.save')" ref="submit">
                 <span class="icon">
-                  <i class="fa fa-floppy-o"></i>
+                  <b-icon icon="floppy" />
                 </span>
                 <span>{{ $t('components.page.save') }}</span>
               </button>
               <button class="button is-primary is-outlined" type="reset" v-bind:value="$i18n.t('components.page.clear')">
                 <span class="icon">
-                  <i class="fa fa-eraser"></i>
+                  <b-icon icon="format-clear" />
                 </span>
                 <span>{{ $t('components.page.clear') }}</span>
               </button>
@@ -65,8 +65,7 @@ defineComponent('furet-ui-new', {
     },
     methods: {
       goToList() {
-        this.$emit('goToList');
-        this.$emit('gotolist');
+        this.$emit('go-to-list');
       },
       goToPage(haveToSave) {
         if (haveToSave) {
@@ -74,16 +73,14 @@ defineComponent('furet-ui-new', {
           axios.post(this.rest_api_url, [this.data])
             .then((response) => {
               this.loading = false;
-              this.$emit('goToPage', response.data[0]);
-              this.$emit('gotopage', response.data[0]);
+              this.$emit('go-to-page', response.data[0]);
             })
             .catch((error) => {
               this.errors = error.response.data.errors;
               this.loading = false;
             });
         } else {
-          this.$emit('goToList');
-          this.$emit('gotolist');
+          this.$emit('go-to-list');
         }
       },
     },

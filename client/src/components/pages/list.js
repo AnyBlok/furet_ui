@@ -17,9 +17,8 @@ defineComponent('furet-ui-list', {
         v-on:refresh="refresh"
         v-on:toggleTag="toggleTag"
         v-on:removeTag="removeTag"
-        v-on:goToNew="goToNew"
+        v-on:go-to-new="goToNew"
       >
-      </furet-ui-page-multi-entries-header>
         <template slot="actions" slot-scope="props">
           <a v-if="(browseFields || []).length && checkedRows.length > 0" class="button is-primary is-outlined" v-on:click="startBrowsing">
             <span class="icon"><b-icon icon="file-document-box-multiple" /></span>
@@ -27,6 +26,7 @@ defineComponent('furet-ui-list', {
           </a>
           <slot name="actions" v-bind:data="props.data" />
         </template>
+      </furet-ui-page-multi-entries-header>
       <b-table
         ref="list_table"
         v-bind:data="data"
