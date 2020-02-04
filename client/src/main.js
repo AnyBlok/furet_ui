@@ -79,7 +79,6 @@ axios.get('furet-ui/app/component/files')
     if (res.data.js !== undefined) {
       let modules2beimported = '(async () => {';
       modules2beimported += `
-        document.getElementById('error').remove();
         const node = document.getElementById('prototypes');
         node.setAttribute('max', ${res.data.js.length});`;
       let jsSize = 0;
