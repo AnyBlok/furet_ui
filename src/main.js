@@ -18,7 +18,7 @@ Vue.use(Buefy);
 axios.defaults.baseURL = process.env.API_REST_URL;
 
 
-const startFuretUI = (elementId) => {
+export const startFuretUI = (elementId) => {
   const elementExists = document.getElementById(elementId);
   if (elementExists === null) return;
   console.log(` ==> start furet ui on element #${elementId}`);
@@ -36,3 +36,6 @@ const startFuretUI = (elementId) => {
   }).$mount(`#${elementId}`)
 }
 startFuretUI('furet-ui')
+export default {
+    startFuretUI,
+};
