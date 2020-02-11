@@ -1,0 +1,91 @@
+"""
+This plugin provides ``--ipdb`` and ``--ipdb-failures`` options. The ``--ipdb``
+option will drop the test runner into pdb when it encounters an error. To
+drop into pdb on failure, use ``--ipdb-failures``.
+"""
+import logging
+import sys
+import inspect
+import traceback
+from nose.plugins.base import Plugin
+
+log = logging.getLogger("nose.plugins.ipdbplugin")
+
+class iPdb(Plugin):
+    """
+    Provides --ipdb and --ipdb-failures options that cause the test runner to
+    drop into ipdb if it encounters an error or failure, respectively.
+    """
+    enabled_for_errors = False
+    enabled_for_failures = False
+    score = 5 # run last, among builtins
+
+    def options(self, parser, env):
+        """Register commandline options.
+        """
+        parser.add_option(
+            "--ipdb", action="store_true", dest="ipdbErrors",
+            default=env.get('NOSE_IPDB', False),
+            help="Drop into ipdb on errors")
+        parser.add_option(
+            "--ipdb-failures", action="store_true",
+            dest="ipdbFailures",
+            default=env.get('NOSE_IPDB_FAILURES', False),
+            help="Drop into ipdb on failures")
+
+    def configure(self, options, conf):
+        """Configure which kinds of exceptions trigger plugin.
+        """
+        self.conf = conf
+        self.enabled = options.ipdbErrors or options.ipdbFailures
+        self.enabled_for_errors = options.ipdbErrors
+        self.enabled_for_failures = options.ipdbFailures
+        if options.capture:
+            log.warn("Autocomplete will not work with stdout capture on. "
+                     "Use --nocapture to have the ipdb shell working properly.")
+
+    def addError(self, test, err):
+        """Enter ipdb if configured to debug errors.
+        """
+        if not self.enabled_for_errors:
+            return
+        self.debug(err)
+
+    def addFailure(self, test, err):
+        """Enter ipdb if configured to debug failures.
+        """
+        if not self.enabled_for_failures:
+            return
+        self.debug(err)
+
+    def debug(self, err):
+        import IPython
+        ec, ev, tb = err
+        # This is to work around issue #16, that occured when the exception
+        # value was being passed as a string.
+        if isinstance(ev, str):
+            ev = ec(ev)
+        stdout = sys.stdout
+        sys.stdout = sys.__stdout__
+        sys.stderr.write('\n- TRACEBACK --------------------------------------------------------------------\n')
+        traceback.print_exception(ec, ev, tb)
+        sys.stderr.write('--------------------------------------------------------------------------------\n')
+        try:
+            from IPython.terminal.ipapp import TerminalIPythonApp
+            app = TerminalIPythonApp.instance()
+            app.initialize(argv=['--no-banner'])
+            try:
+                # ipython >= 5.0
+                p = IPython.terminal.debugger.TerminalPdb(app.shell.colors)
+            except AttributeError:
+                p = IPython.core.debugger.Pdb(app.shell.colors)
+
+            p.reset()
+
+            # inspect.getinnerframes() returns a list of frames information
+            # from this frame to the one that raised the exception being
+            # treated
+            frame, filename, line, func_name, ctx, idx = inspect.getinnerframes(tb)[-1]
+            p.interaction(frame, tb)
+        finally:
+            sys.stdout = stdout

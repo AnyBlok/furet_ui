@@ -1,0 +1,2 @@
+
+if type -p deactivate_node > /dev/null; then deactivate_node;fi
