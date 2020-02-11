@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-export NODE_PATH=/home/jssuzanne/anyblok/furet_ui/venv/lib/node_modules
-export NPM_CONFIG_PREFIX=/home/jssuzanne/anyblok/furet_ui/venv
-export npm_config_prefix=/home/jssuzanne/anyblok/furet_ui/venv
-exec /home/jssuzanne/anyblok/furet_ui/venv/bin/node "$@"
