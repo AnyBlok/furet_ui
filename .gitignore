@@ -1,22 +1,22 @@
-syntax: glob
+.DS_Store
+node_modules
+/dist
 
-doc/
-coverage/
-client/node_modules/
-develop-eggs
-venv/
-docs/_build/
-.installed.cfg
-*.egg-info
-*.swp
-*.mo
-*.orig
-*.dump
-*.pyc
-*.pyo
-*.log
-*.coverage
-*.noseids
-*\#
-*.\#*
-*~
+# local env files
+/venv
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
