@@ -126,18 +126,14 @@ def get_component_files():
 
 
 @app.route('/furet-ui/logo', methods=['GET'])
-def get_logo():
+@app.route('/furet-ui/favicon', methods=['GET'])
+def get_favicon():
     return send_from_directory(main_path, 'logo.png')
 
 
 @app.route('/furet-ui/<path:path>', methods=['GET'])
 def get_static(path):
     return send_from_directory(os.path.join(dist_path, 'furet-ui'), path)
-
-
-@app.route('/other/<path:path>', methods=['GET'])
-def get_other(path):
-    return send_from_directory(os.path.join(main_path, 'other'), path)
 
 
 @app.route('/', methods=['GET'])

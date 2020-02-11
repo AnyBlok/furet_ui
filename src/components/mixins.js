@@ -10,7 +10,7 @@ defineComponent('mixin-logo', {
     },
     methods: {
       format_url(path) {
-        return `${process.env.API_REST_URL}${path}`;
+        return `${process.env.VUE_APP_API_REST_URL}${path}`;
       },
     },
   },

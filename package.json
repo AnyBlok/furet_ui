@@ -50,8 +50,7 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "babel-eslint",
-      "sourceType": "module"
+      "parser": "babel-eslint"
     },
     "rules": {},
     "overrides": [

@@ -13,12 +13,11 @@ import './styles.scss';
 
 Vue.config.productionTip = false
 Vue.use(Notifications);
-Vue.config.productionTip = false;
 Vue.use(Buefy);
-axios.defaults.baseURL = process.env.API_REST_URL;
+axios.defaults.baseURL = process.env.VUE_APP_API_REST_URL;
 
 
-export const startFuretUI = (elementId) => {
+export const startFuretUI = (elementId, routes) => {
   const elementExists = document.getElementById(elementId);
   if (elementExists === null) return;
   console.log(` ==> start furet ui on element #${elementId}`);
@@ -35,7 +34,7 @@ export const startFuretUI = (elementId) => {
     i18n,
   }).$mount(`#${elementId}`)
 }
-startFuretUI('furet-ui')
+startFuretUI('furet-ui', routes)
 export default {
     startFuretUI,
 };
