@@ -3,7 +3,6 @@ import './app';
 import './homepage';
 import './login';
 import './logout';
-import './about';
 import './pages';
 import './fields';
 

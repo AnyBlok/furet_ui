@@ -10,6 +10,7 @@ export const routes = [
         component: {
             template: '<homepage />',
         },
+        meta: { requiresAuth: false },
     },
     {
         name: 'login',
@@ -17,6 +18,15 @@ export const routes = [
         component: {
             template: '<login />',
         },
+        meta: { requiresAuth: false },
+    },
+    {
+        name: 'space_menus',
+        path: '/space/menus',
+        component: {
+            template: '<furet-ui-space-menus />',
+        },
+        meta: { requiresAuth: true },
     }
 ];
 

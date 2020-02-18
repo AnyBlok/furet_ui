@@ -1,4 +1,7 @@
+import axios from 'axios';
+import _ from 'underscore';
 import { defineComponent } from './factory';
+import { dispatchAll } from '../store';
 
 defineComponent('app', {
   template: `
@@ -24,26 +27,9 @@ defineComponent('furet-ui-appbar-header', {
   template: `
     <div class="hero-head">
       <nav class="navbar is-primary" role="navigation">
-        <div class="container">
-          <div class="navbar-brand">
-            <furet-ui-appbar-header-brand />
-            <a 
-              role="button" 
-              v-bind:class="['navbar-burger', 'burger', isOpen ? 'is-active' : '']" 
-              aria-label="menu" 
-              aria-expanded="false" 
-              data-target="navbarUserMenu" 
-              v-on:click="isOpen = !isOpen"
-            >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-          <div id="navbarUserMenu" v-bind:class="['navbar-menu', isOpen ? 'is-active' : '']">
-            <furet-ui-appbar-spaces-menu />
-            <furet-ui-appbar-user-menu />
-          </div>
+        <div id="navbarUserMenu" v-bind:class="['navbar-menu', isOpen ? 'is-active' : '']">
+          <furet-ui-appbar-spaces-menu />
+          <furet-ui-appbar-user-menu />
         </div>
       </nav>
     </div>
@@ -57,13 +43,6 @@ defineComponent('furet-ui-appbar-header', {
   },
 });
 
-defineComponent('furet-ui-appbar-header-brand', {
-  template: `
-    <img class="image is-64x64" v-bind:src="logo" alt="Logo">
-  `,
-  extend: ['mixin-logo'],
-});
-
 defineComponent('furet-ui-appbar-body', {
   template: `
     <div class="hero-body">
@@ -72,7 +51,7 @@ defineComponent('furet-ui-appbar-body', {
           Furet UI
         </h1>
         <p class="subtitle">
-          Web Client for any backend serveur
+          Web Client for all your AnyBlok backend
         </p>
       </div>
     </div>
@@ -81,17 +60,8 @@ defineComponent('furet-ui-appbar-body', {
 
 defineComponent('furet-ui-appbar-footer', {
   template: `
-    <div class="hero-foot" v-if="hasSpaceMenus">
-      <furet-ui-appbar-space-menus />
-    </div>
+    <div class="hero-foot" />
   `,
-  prototype: {
-    computed: {
-      hasSpaceMenus() {
-        return this.$store.state.menus.spaceMenus.length !== 0;
-      },
-    },
-  },
 });
 
 defineComponent('furet-ui-appbar-user-menu', {
@@ -199,88 +169,37 @@ defineComponent('furet-ui-appbar-head-router-link-dropdown', {
 });
 
 defineComponent('furet-ui-appbar-spaces-menu', {
-  prototype: {
-    render(createElement) {
-      const menus = [];
-      this.menus.forEach((menu) => {
-        menus.push(createElement(
-          menu.component,
-          {
-            class: menu.class,
-            style: menu.style,
-            attrs: menu.attrs,
-            props: menu.props,
-            domProps: menu.domProps,
-            on: menu.on,
-            nativeOn: menu.nativeOn,
-          },
-          [menu.label]));
-      });
-      return createElement('div', { class: 'navbar-start' }, menus);
-    },
-    computed: {
-      menus() {
-        return this.$store.state.menus.spaces;
-      },
-    },
-  },
-});
-
-defineComponent('furet-ui-appbar-space-menus', {
-  prototype: {
-    render(createElement) {
-      const menus = [];
-      this.menus.forEach((menu) => {
-        menus.push(createElement('li', [
-          createElement(
-            menu.component,
-            {
-              class: menu.class,
-              style: menu.style,
-              attrs: menu.attrs,
-              props: menu.props,
-              domProps: menu.domProps,
-              on: menu.on,
-              nativeOn: menu.nativeOn,
-            },
-            [menu.label]),
-        ]));
-      });
-      return createElement('nav', { class: 'tabs is-boxed' }, [
-        createElement('div', { class: 'container' }, [
-          createElement('ul', [menus]),
-        ]),
-      ]);
-    },
-    computed: {
-      menus() {
-        return this.$store.state.menus.spaceMenus;
-      },
-    },
-  },
-});
-
-defineComponent('furet-ui-appbar-foot-router-link', {
   template: `
-    <a v-on:click="goTo">
-      {{ format_label(label) }}
-    </a>
+    <div class="navbar-start">
+      <b-button 
+        v-if="authenticated"
+        type="is-primary"
+        v-on:click="toggle_menu"
+        icon-left="bars"
+     >
+        {{ space_name }}
+     </b-button>
+    </div>
   `,
-  extend: ['furet-ui-appbar-router-link-goto'],
-});
-
-defineComponent('furet-ui-appbar-foot-router-link-button', {
-  template: `
-    <a class="button is-primary is-inverted" v-on:click="goTo">
-      <span class="icon" v-if="icon">
-        <b-icon v-bind:icon="icon" />
-      </span>
-      <span>{{ format_label(label) }}</span>
-    </a>
-  `,
-  extend: ['furet-ui-appbar-router-link-goto'],
   prototype: {
-    props: ['icon'],
+    computed: {
+        space_name () {
+          return this.$store.state.global.space_name;
+        },
+        authenticated () {
+          return this.$store.loggedIn;
+        }
+    },
+    methods: {
+      toggle_menu () {
+        if (this.$route.name == 'space_menus') {
+          this.$router.push(this.$store.state.global.previous_route);
+        } else {
+          this.$store.commit('UPDATE_PREVIOUS_ROUTE', {route: this.$route});
+          this.$router.push({name: 'space_menus'});
+        }
+      }
+    }
   },
 });
 
@@ -296,4 +215,91 @@ defineComponent('furet-ui-footer', {
       </div>
     </footer>
   `,
+});
+
+defineComponent('furet-ui-space-menus', {
+  template: `
+    <div class="container">
+      <h1 class="subtitle">{{$t('components.spaces.title')}}</h1>
+      <b-field>
+        <b-input 
+          v-model="searchText"
+          v-bind:placeholder="this.$i18n.t('components.spaces.search')"
+          icon="search"
+          rounded
+        >
+        </b-input>
+      </b-field>
+      <div class="columns is-multiline">
+        <div 
+          v-for="menu in space_menus" 
+          v-bind:key="menu.code"
+          class="column is-one-quarter-desktop is-half-tablet is-12-mobile"
+        >
+          <div class="box" v-on:click="selectMenu(menu)">
+            <article class="media">
+              <figure class="media-left">
+                <p class="image is-64x64">
+                  <b-icon
+                    v-bind:icon="menu.icon.code"
+                    size="is-large"
+                    v-bind:type="menu.icon.type">
+                  </b-icon>
+                </p>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>{{ menu.label }}</strong>
+                    <br>
+                    {{ menu.description }}
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+  prototype: {
+    data () {
+        return {
+            searchText: '',
+        }
+    },
+    computed: {
+        space_menus () {
+          const menus = this.$store.state.global.space_menus;
+          if (! this.searchText) return menus;
+          return _.filter(
+              menus,
+              (menu) => {
+                  if (menu.label.search(this.searchText) >= 0) return true;
+                  if (menu.description.search(this.searchText) >= 0) return true;
+                  return false;
+              }
+          );
+        }
+    },
+    methods: {
+      selectMenu (menu) {
+        this.$router.push(menu.path)
+      }
+    },
+    mounted() {
+      axios.get(
+        'furet-ui/read', 
+        {
+            params: {
+                model: 'Model.FuretUI.Space',
+                fields: ['code', 'label', 'description', 'icon'],
+                querystring: {},
+            }
+        }
+      ).then((result) => {
+            dispatchAll(this.$router, this.$store, result.data);
+        });
+    }
+  },
 });

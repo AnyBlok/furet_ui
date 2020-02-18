@@ -27,8 +27,6 @@ export const defineComponent = (elementName, declaration) => {
   }
 };
 
-window.defineComponent = defineComponent;
-
 const getPrototypeFor = (elementName) => {
   const component = components[elementName];
   const prototypes = [];
@@ -57,3 +55,7 @@ export const createComponents = () => {
     });
   });
 };
+
+export default {
+    createComponents,
+}

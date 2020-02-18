@@ -1,38 +1,73 @@
+import axios from 'axios';
 import { defineComponent } from './factory';
+import { dispatchAll } from '../store';
 
 defineComponent('login', {
   template: `
-    <section class="section">
+    <form v-on:submit="logIn">
       <div class="container has-text-centered">
-       <div class="columns is-mobile">
-         <div class="column is-half is-offset-one-quarter">
-           <a class="button is-primary is-fullwidth" v-on:click="logIn">
-             {{ $t('components.login.button') }}
-           </a>
+         <furet-ui-page-errors v-bind:errors="errors" />
+         <b-field v-bind:label="$i18n.t('components.login.username')">
+             <b-input v-model="username" expanded></b-input>
+         </b-field>
+         <b-field v-bind:label="$i18n.t('components.login.password')">
+             <b-input v-model="password" type="password" expanded password-reveal></b-input>
+         </b-field>
+         <br />
+         <div class="buttons">
+           <b-button 
+             type="is-primary" 
+             native-type="submit" 
+             expanded
+             v-bind:disabled="is_not_clickable"
+           >
+           {{ $t('components.login.button') }}
+           </b-button>
          </div>
-       </div>
       </div>
-    </section>
+    </form>
   `,
   prototype: {
+    data () {
+      return {
+        username: '',
+        password: '',
+        errors: [],
+      };
+    },
+    computed: {
+      is_not_clickable() {
+        if (!this.username) return true;
+        if (!this.password) return true;
+        return false;
+      }
+    },
     methods: {
-      logIn() {
+      notify_connection () {
         this.$notify({
           title: 'Your are logged',
           text: 'Welcome my feret !!!',
           duration: 5000,
         });
-        this.$store.commit('UPDATE_MENUS', {
-          user: [
-            {
-              name: 'user',
-              component: 'furet-ui-appbar-user-dropmenu',
-            },
-          ],
-        });
-        this.$store.commit('LOGIN', { userName: this.$t('components.logout.appbar.administrator') });
-        if (this.$route.query.redirect !== undefined) this.$router.push(this.$route.query.redirect);
-        else this.$router.push('/');
+      },
+      logIn() {
+        if (this.is_not_clickable) return;
+        this.errors = [];
+        axios.post('/furet-ui/login', 
+          {
+            login: this.username, 
+            password: this.password,
+            redirect: this.$route.query.redirect,
+          }
+        )
+          .then((result) => {
+            dispatchAll(this.$router, this.$store, result.data);
+          })
+          .catch((error) => {
+              error.response.data.errors.forEach((error) => {
+                this.errors.push(this.$t('components.login.errors.' + error.name));
+              });
+          })
       },
     },
   },

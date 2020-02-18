@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
-import moment from 'moment';
 
 Vue.use(VueI18n);
 
@@ -10,6 +9,10 @@ export const i18nConf = {
   messages: {
     en: {
       components: {
+        spaces: {
+            title: 'Space menus',
+            search: 'Filter ...',
+        },
         login: {
           appbar: 'Log in',
           button: 'Log in',
@@ -33,15 +36,5 @@ export const i18nConf = {
     },
   },
 };
+
 export const i18n = new VueI18n(i18nConf);
-export const updateLocales = (langs) => {
-  langs.forEach((lang) => {
-    i18n.setLocaleMessage(lang.locale, lang.translations);
-  });
-};
-window.updateLocales = updateLocales;
-export const updateLang = (lang) => {
-  i18n.locale = lang;
-  moment.locale(lang);
-};
-window.updateLang = updateLang;

@@ -13,6 +13,9 @@ obtain one at http://mozilla.org/MPL/2.0/.
 export const defaultState = {
   userName: '',
   authenticated: false,
+  space_menus: [],
+  space_name: 'Menu',
+  previous_route: {},
 };
 
 // getters
@@ -37,6 +40,12 @@ export const mutations = {
   LOGOUT(state) {
     state.authenticated = false;
     state.userName = '';
+  },
+  UPDATE_PREVIOUS_ROUTE(state, action) {
+      state.previous_route = action.route;
+  },
+  UPDATE_SPACE_MENUS(state, action) {
+      state.space_menus = action.menus;
   },
   UPDATE_GLOBAL(state, action) {
     // eslint-disable-next-line

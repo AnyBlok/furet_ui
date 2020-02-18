@@ -6,14 +6,14 @@ import Notifications from 'vue-notification';
 import { sync } from 'vuex-router-sync';
 import { i18n } from './i18n';
 import { createComponents } from './components';
-import { createStore } from './store';
+import { createStore, dispatchAll } from './store';
 import { createRouter, routes } from './router';
 
 import './styles.scss';
 
 Vue.config.productionTip = false
 Vue.use(Notifications);
-Vue.use(Buefy);
+Vue.use(Buefy, {defaultIconPack: 'fa'});
 axios.defaults.baseURL = process.env.VUE_APP_API_REST_URL;
 
 
@@ -32,6 +32,15 @@ export const startFuretUI = (elementId, routes) => {
     router,
     store,
     i18n,
+    created () {
+      axios.get('furet-ui/initialize', this.$route.name)
+        .then((result) => {
+            dispatchAll(this.$router, this.$store, result.data);
+        })
+        .catch((error) => {
+          console.error('call initialize', error);
+        });
+    },
   }).$mount(`#${elementId}`)
 }
 startFuretUI('furet-ui', routes)
