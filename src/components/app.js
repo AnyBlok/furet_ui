@@ -230,6 +230,7 @@ defineComponent('furet-ui-space-menus', {
         >
         </b-input>
       </b-field>
+      <br />
       <div class="columns is-multiline">
         <div 
           v-for="menu in space_menus" 

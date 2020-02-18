@@ -71,6 +71,25 @@ def login():
     ])
 
 
+@app.route('/furet-ui/logout', methods=['POST'])
+def logout():
+    return jsonify([
+        {
+            'type': 'UPDATE_MENUS',
+            'user': [
+                {
+                    'name': 'login',
+                    'component': 'furet-ui-appbar-head-router-link-button',
+                    'props': {'to': '/login',
+                              'label': 'components.login.appbar'},
+                },
+            ],
+        },
+        {'type': 'LOGOUT'},
+        {'type': 'UPDATE_ROUTE', 'path': '/'},
+    ])
+
+
 @app.route('/furet-ui/initialize', methods=['GET'])
 def get_initialize():
     return jsonify([

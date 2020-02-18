@@ -1,4 +1,6 @@
+import axios from 'axios';
 import { defineComponent } from './factory';
+import { dispatchAll } from '../store';
 
 defineComponent('furet-ui-appbar-user-dropmenu', {
   template: `
@@ -12,12 +14,6 @@ defineComponent('furet-ui-appbar-user-dropmenu', {
            {{ $t('components.logout.button') }}
          </a>
         </div>
-        <hr class="navbar-divider">
-        <div class="navbar-item">
-         <a class="button is-primary is-inverted is-fullwidth">
-           <router-link to="/resource/about">{{ $t('components.logout.appbar.about') }}</router-link>
-         </a>
-        </div>
       </div>
     </div>
   `,
@@ -29,17 +25,10 @@ defineComponent('furet-ui-appbar-user-dropmenu', {
     },
     methods: {
       logOut() {
-        this.$store.commit('UPDATE_MENUS', {
-          user: [
-            {
-              name: 'login',
-              component: 'furet-ui-appbar-head-router-link-button',
-              props: { to: '/login', label: this.$t('components.login.appbar') },
-            },
-          ],
-        });
-        this.$store.commit('LOGOUT');
-        this.$router.push('/');
+        axios.post('/furet-ui/logout')
+          .then((result) => {
+            dispatchAll(this.$router, this.$store, result.data);
+          })
       },
     },
   },

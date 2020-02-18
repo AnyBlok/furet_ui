@@ -4,8 +4,8 @@ import { dispatchAll } from '../store';
 
 defineComponent('login', {
   template: `
-    <form v-on:submit="logIn">
-      <div class="container has-text-centered">
+    <div class="container has-text-centered">
+      <form v-on:submit="logIn">
          <furet-ui-page-errors v-bind:errors="errors" />
          <b-field v-bind:label="$i18n.t('components.login.username')">
              <b-input v-model="username" expanded></b-input>
@@ -24,8 +24,8 @@ defineComponent('login', {
            {{ $t('components.login.button') }}
            </b-button>
          </div>
-      </div>
-    </form>
+      </form>
+    </div>
   `,
   prototype: {
     data () {
@@ -64,9 +64,7 @@ defineComponent('login', {
             dispatchAll(this.$router, this.$store, result.data);
           })
           .catch((error) => {
-              error.response.data.errors.forEach((error) => {
-                this.errors.push(this.$t('components.login.errors.' + error.name));
-              });
+              this.errors = [error];
           })
       },
     },
