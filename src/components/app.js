@@ -172,7 +172,6 @@ defineComponent('furet-ui-appbar-spaces-menu', {
   template: `
     <div class="navbar-start">
       <b-button 
-        v-if="authenticated"
         type="is-primary"
         v-on:click="toggle_menu"
         icon-left="bars"
@@ -186,9 +185,6 @@ defineComponent('furet-ui-appbar-spaces-menu', {
         space_name () {
           return this.$store.state.global.space_name;
         },
-        authenticated () {
-          return this.$store.loggedIn;
-        }
     },
     methods: {
       toggle_menu () {
@@ -294,8 +290,8 @@ defineComponent('furet-ui-space-menus', {
         {
             params: {
                 model: 'Model.FuretUI.Space',
-                fields: ['code', 'label', 'description', 'icon'],
-                querystring: {},
+                fields: 'code,label,description,icon',
+                // filter_by ...
             }
         }
       ).then((result) => {
