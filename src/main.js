@@ -14,8 +14,6 @@ import './styles.scss';
 Vue.config.productionTip = false
 Vue.use(Notifications);
 Vue.use(Buefy, {defaultIconPack: 'fa'});
-axios.defaults.baseURL = process.env.VUE_APP_API_REST_URL;
-
 
 export const startFuretUI = (elementId, routes) => {
   const elementExists = document.getElementById(elementId);
