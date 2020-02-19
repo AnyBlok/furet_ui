@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { defineComponent } from './factory';
-import { dispatchAll } from '../store';
 
 defineComponent('furet-ui-appbar-user-dropmenu', {
   template: `
@@ -27,7 +26,7 @@ defineComponent('furet-ui-appbar-user-dropmenu', {
       logOut() {
         axios.post('/furet-ui/logout')
           .then((result) => {
-            dispatchAll(this.$router, this.$store, result.data);
+            this.$dispatchAll(result.data);
           })
       },
     },

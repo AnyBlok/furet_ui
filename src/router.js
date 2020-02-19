@@ -32,25 +32,51 @@ export const routes = [
         name: 'space',
         path: '/space/:code',
         component: {
-            template: '<furet-ui-space v-bind:code="code"/>',
-            props: ['code']
+            template: '<furet-ui-space v-bind:code="$route.params.code"/>',
         },
         meta: { requiresAuth: true },
+        children: [
+          {
+            path: 'resource/:id',
+            component: {
+                template: '<div />',
+            },
+          }
+        ],
     },
 ];
 
 export const createRouter = (store, routes) => {
   const router = new Router({ routes });
+
   router.beforeEach((to, from, next) => {
-    if (to.matched.some(record => record.meta.requiresAuth)) {
-      if (!store.getters.loggedIn) {
-        next({ path: '/login', query: { redirect: to.fullPath } });
-      } else {
-        next();
+    const proceed = () => {
+      if (store.state.global.appLoaded) {
+        if (to.matched.some(record => record.meta.requiresAuth)) {
+          if (!store.getters.loggedIn) {
+            next({ path: '/login', query: { redirect: to.fullPath } });
+          } else {
+            next();
+          }
+        } else {
+          next(); // make sure to always call next()!
+        }
       }
-    } else {
-      next(); // make sure to always call next()!
     }
+
+    if (!store.state.global.appLoaded) {
+      store.watch(
+        (state) => state.global.appLoaded,
+        (value) => {
+          if (value === true) {
+            proceed()
+          }
+        }
+      )
+    } else {
+      proceed()
+    }
+
   });
   return router;
 };

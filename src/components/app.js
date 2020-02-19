@@ -1,13 +1,12 @@
 import axios from 'axios';
 import _ from 'underscore';
 import { defineComponent } from './factory';
-import { dispatchAll } from '../store';
 
 defineComponent('app', {
   template: `
     <div id="furet-ui-app">
       <furet-ui-appbar />
-      <notifications />
+      <notifications position="top center"/>
       <router-view v-bind:key="$route.fullPath"></router-view>
       <furet-ui-footer />
     </div>`,
@@ -287,24 +286,27 @@ defineComponent('furet-ui-space-menus', {
     mounted() {
       axios.get(
         'furet-ui/spaces').then((result) => {
-          dispatchAll(this.$router, this.$store, result.data);
+          this.$dispatchAll(result.data);
         });
     }
   },
 });
 
 defineComponent('furet-ui-space', {
+  // TODO MENU RIGTH LEFT
+  // TODO BREADSCRUMB
   template: `
     <div>
-        Plop
+      <router-view v-bind:key="$route.fullPath"></router-view>
+      Plop
     </div>
   `,
   prototype: {
     props: ['code'],
-    beforeCreate() {
+    mounted() {
       axios.get(
-        'furet-ui/space').then((result) => {
-          dispatchAll(this.$router, this.$store, result.data);
+        `furet-ui/space/${this.code}`).then((result) => {
+          this.$dispatchAll(result.data);
         });
     }
   },

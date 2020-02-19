@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { defineComponent } from './factory';
-import { dispatchAll } from '../store';
 
 defineComponent('login', {
   template: `
@@ -43,13 +42,6 @@ defineComponent('login', {
       }
     },
     methods: {
-      notify_connection () {
-        this.$notify({
-          title: 'Your are logged',
-          text: 'Welcome my feret !!!',
-          duration: 5000,
-        });
-      },
       logIn() {
         if (this.is_not_clickable) return;
         this.errors = [];
@@ -61,7 +53,7 @@ defineComponent('login', {
           }
         )
           .then((result) => {
-            dispatchAll(this.$router, this.$store, result.data);
+            this.$dispatchAll(result.data);
           })
           .catch((error) => {
               this.errors = [error];

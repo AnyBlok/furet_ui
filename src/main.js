@@ -6,8 +6,9 @@ import Notifications from 'vue-notification';
 import { sync } from 'vuex-router-sync';
 import { i18n } from './i18n';
 import { createComponents } from './components';
-import { createStore, dispatchAll } from './store';
+import { createStore } from './store';
 import { createRouter, routes } from './router';
+import PluginDispatch from "./plugins/dispatch.js";
 
 import './styles.scss';
 
@@ -24,17 +25,29 @@ export const startFuretUI = (elementId, routes) => {
   const router = createRouter(store, routes);
 
   sync(store, router); // use vue-router with vuex
+    Vue.use(PluginDispatch, {router, store, i18n});
   new Vue({
     // el: '#furet-ui',
-    template: '<app/>',
+    template: `
+      <div>
+        <app/>
+        <b-loading :is-full-page="true" :active.sync="isLoading"></b-loading>
+      </div>
+    `,
     router,
     store,
     i18n,
-    beforeCreate () {
+    data() {
+      return {
+          isLoading: true,
+      }
+    },
+    created () {
       axios.get('furet-ui/initialize', this.$route.name)
         .then((result) => {
-            console.log(result)
-            dispatchAll(this.$router, this.$store, result.data);
+            this.$dispatchAll(result.data);
+            this.$store.commit('FURETUI LOADED');
+            this.isLoading = false;
         })
         .catch((error) => {
           console.error('call initialize', error);
