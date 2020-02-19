@@ -286,16 +286,8 @@ defineComponent('furet-ui-space-menus', {
     },
     mounted() {
       axios.get(
-        'furet-ui/read', 
-        {
-            params: {
-                model: 'Model.FuretUI.Space',
-                fields: 'code,label,description,icon',
-                // filter_by ...
-            }
-        }
-      ).then((result) => {
-            dispatchAll(this.$router, this.$store, result.data);
+        'furet-ui/spaces').then((result) => {
+          dispatchAll(this.$router, this.$store, result.data);
         });
     }
   },

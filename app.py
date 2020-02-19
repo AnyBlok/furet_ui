@@ -37,13 +37,9 @@ def getFuretUISpaces():
     ]
 
 
-@app.route('/furet-ui/read', methods=['GET'])
-def read():
-    res = []
-    if request.args['model'] == 'Model.FuretUI.Space':
-        res = getFuretUISpaces()
-
-    return jsonify(res)
+@app.route('/furet-ui/spaces', methods=['GET'])
+def spaces():
+    return jsonify(getFuretUISpaces())
 
 
 @app.route('/furet-ui/login', methods=['POST'])
