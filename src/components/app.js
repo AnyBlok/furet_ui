@@ -292,3 +292,20 @@ defineComponent('furet-ui-space-menus', {
     }
   },
 });
+
+defineComponent('furet-ui-space', {
+  template: `
+    <div>
+        Plop
+    </div>
+  `,
+  prototype: {
+    props: ['code'],
+    beforeCreate() {
+      axios.get(
+        'furet-ui/space').then((result) => {
+          dispatchAll(this.$router, this.$store, result.data);
+        });
+    }
+  },
+});

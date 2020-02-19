@@ -30,9 +30,10 @@ export const startFuretUI = (elementId, routes) => {
     router,
     store,
     i18n,
-    created () {
+    beforeCreate () {
       axios.get('furet-ui/initialize', this.$route.name)
         .then((result) => {
+            console.log(result)
             dispatchAll(this.$router, this.$store, result.data);
         })
         .catch((error) => {

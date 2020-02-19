@@ -27,7 +27,16 @@ export const routes = [
             template: '<furet-ui-space-menus />',
         },
         meta: { requiresAuth: true },
-    }
+    },
+    {
+        name: 'space',
+        path: '/space/:code',
+        component: {
+            template: '<furet-ui-space v-bind:code="code"/>',
+            props: ['code']
+        },
+        meta: { requiresAuth: true },
+    },
 ];
 
 export const createRouter = (store, routes) => {
