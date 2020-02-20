@@ -39,7 +39,9 @@ export const routes = [
           {
             path: 'resource/:id',
             component: {
-                template: '<div />',
+                template: `
+                    <furet-ui-space-resource-manager v-bind:id="$route.params.id" />
+                `,
             },
           }
         ],

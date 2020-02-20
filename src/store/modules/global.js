@@ -17,6 +17,7 @@ export const defaultState = {
   space_menus: [],
   space_name: 'Menu',
   previous_route: {},
+  resources: {},
 };
 
 // getters
@@ -63,6 +64,13 @@ export const mutations = {
     for (const [key, value] of Object.entries(action)) {
       state[key] = value;
     }
+  },
+  UPDATE_RESOURCES(state, action) {
+    const resources = Object.assign({}, state.resources)
+    action.definitions.forEach(definition => {
+        resources[String(definition.id)] = definition;
+    });
+    state.resources = resources;
   },
 };
 

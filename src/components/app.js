@@ -1,6 +1,7 @@
 import axios from 'axios';
 import _ from 'underscore';
 import { defineComponent } from './factory';
+import  {resources}  from './resource/resources';
 
 defineComponent('app', {
   template: `
@@ -298,16 +299,71 @@ defineComponent('furet-ui-space', {
   template: `
     <div>
       <router-view v-bind:key="$route.fullPath"></router-view>
-      Plop
     </div>
   `,
   prototype: {
     props: ['code'],
     mounted() {
-      axios.get(
-        `furet-ui/space/${this.code}`).then((result) => {
-          this.$dispatchAll(result.data);
-        });
+      axios.get(`furet-ui/space/${this.code}`).then((result) => {
+        this.$dispatchAll(result.data);
+      });
+    }
+  },
+});
+
+defineComponent('furet-ui-waiting-resource', {
+  template: `
+    <div class="container"> 
+        <strong>Waiting loading component</strong>
+    </div>
+  `,
+});
+
+defineComponent('furet-ui-resource-not-found', {
+  template: `
+    <div class="container"> 
+        <strong>Resource type not found</strong>
+    </div>
+  `,
+});
+
+defineComponent('furet-ui-space-resource-manager', {
+  template: `
+    <component 
+      v-bind:is="resourceComponents" 
+      v-bind:id="id" 
+      v-bind:manager="manager" 
+      v-on:update-query-string="updateQueryString"
+    />
+  `,
+  prototype: {
+    props: ['id'],
+    data () {
+      return {
+        manager: {},
+      };
+    },
+    computed: {
+      resource () {
+        return this.$store.state.global.resources[this.id];
+      },
+      resourceComponents () {
+        if (this.resource === undefined) return 'furet-ui-waiting-resource';
+        if (resources[this.resource.type] !== undefined) return resources[this.resource.type];
+        return 'furet-ui-resource-not-found';
+      },
+    },
+    methods: {
+      updateQueryString (query) {
+        this.$router.push({ query });
+      }
+    },
+    mounted() {
+      const query = this.$route.query;
+      this.manager = Object.assign({}, query);
+      axios.get(`furet-ui/resource/${this.id}`).then((result) => {
+        this.$dispatchAll(result.data);
+      });
     }
   },
 });
