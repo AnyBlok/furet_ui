@@ -335,6 +335,7 @@ defineComponent('furet-ui-space', {
           <aside class="menu" v-bind:style="{padding: '5px'}">
               <furet-ui-space-menu 
                   v-bind:menus="left_menus" 
+                  v-bind:menuId="menuId" 
                   v-bind:code="code"
               />
           </aside>
@@ -375,7 +376,7 @@ defineComponent('furet-ui-space', {
     </div>
   `,
   prototype: {
-    props: ['code'],
+    props: ['code', 'menuId'],
     data () {
       return {
         isOpenLeft: false,

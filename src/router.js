@@ -30,9 +30,13 @@ export const routes = [
     },
     {
         name: 'space',
-        path: '/space/:code',
+        path: '/space/:code/menu/:menuId',
         component: {
-            template: '<furet-ui-space v-bind:code="$route.params.code"/>',
+            template: `
+              <furet-ui-space 
+                v-bind:code="$route.params.code"
+                v-bind:menuId="$route.params.menuId"
+              />`,
         },
         meta: { requiresAuth: true },
         children: [
