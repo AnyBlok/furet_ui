@@ -293,16 +293,103 @@ defineComponent('furet-ui-space-menus', {
   },
 });
 
+defineComponent('furet-ui-space-menu', {
+    template: `
+      <ul class="menu-list">
+        <li v-for="menu in menus">
+            <a v-on:click="onClickMenu(menu)"
+               v-bind:class="[menu.id == menuId ? 'is-active' : '']"
+            >
+              <span v-if="menu.label">
+                  {{menu.label}}
+              </span>
+            </a>
+            <furet-ui-space-menu
+                v-if="(menu.children || []).length != 0"
+                v-bind:menus="menu.children || []"
+                v-bind:menuId="menuId"
+                v-bind:code="code"
+            />
+        </li>
+      </ul>
+    `,
+    prototype: {
+      props: ['menus', 'menuId', 'code'],
+      methods: {
+          onClickMenu (menu) {
+              console.log(menu)
+          }
+      }
+    }
+});
+
 defineComponent('furet-ui-space', {
   // TODO MENU RIGTH LEFT
   // TODO BREADSCRUMB
   template: `
-    <div>
-      <router-view v-bind:key="$route.fullPath"></router-view>
+    <div 
+        class="columns is-gapless"
+        v-bind:style="{marginTop: '5px'}"
+    >
+      <div v-if="isOpenLeft && left_menus.length > 0" class="column is-one-quarter is-half-mobile">
+          <aside class="menu" v-bind:style="{padding: '5px'}">
+              <furet-ui-space-menu 
+                  v-bind:menus="left_menus" 
+                  v-bind:code="code"
+              />
+          </aside>
+      </div>
+      <div class="column" v-bind:style="{paddingLeft: '10px', paddingRight: '10px'}">
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <a class="button" v-on:click="isOpenLeft = !isOpenLeft" v-if="left_menus.length > 0">
+                  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="level-item">
+              <p class="subtitle is-5">
+                Breadcrumb
+              </p>
+            </div>
+          </diV>
+          <div class="level-right">
+            <div class="level-item">
+              <a class="button" v-on:click="isOpenRight = !isOpenRight" v-if="right_menus.length > 0">
+                  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+              </a>
+            </div>
+          </diV>
+        </nav>
+        <router-view v-bind:key="$route.fullPath"></router-view>
+      </div>
+      <div v-if="isOpenRight && right_menus.length > 0" class="column is-one-quarter is-half-mobile">
+          <aside class="menu" v-bind:style="{padding: '5px'}">
+              <furet-ui-space-menu 
+                  v-bind:menus="right_menus" 
+                  v-bind:menuId="menuId" 
+                  v-bind:spaceId="spaceId"
+              />
+          </aside>
+      </div>
     </div>
   `,
   prototype: {
     props: ['code'],
+    data () {
+      return {
+        isOpenLeft: false,
+        isOpenRight: false,
+      }
+    },
+    computed: {
+      left_menus () {
+        return this.$store.state.global.left_menus;
+      },
+      right_menus () {
+        return this.$store.state.global.right_menus;
+      },
+    },
     mounted() {
       axios.get(`furet-ui/space/${this.code}`).then((result) => {
         this.$dispatchAll(result.data);

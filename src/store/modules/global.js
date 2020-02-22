@@ -18,6 +18,8 @@ export const defaultState = {
   space_name: 'Menu',
   previous_route: {},
   resources: {},
+  left_menus: [],
+  right_menus: [],
 };
 
 // getters
@@ -71,6 +73,9 @@ export const mutations = {
         resources[String(definition.id)] = definition;
     });
     state.resources = resources;
+  },
+  UPDATE_CURRENT_LEFT_MENUS(state, action) {
+    state.left_menus = action.menus;
   },
 };
 
