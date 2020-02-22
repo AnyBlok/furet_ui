@@ -41,6 +41,7 @@ export const routes = [
         meta: { requiresAuth: true },
         children: [
           {
+            name: 'resource',
             path: 'resource/:id',
             component: {
                 template: `

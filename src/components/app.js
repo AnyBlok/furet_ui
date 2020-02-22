@@ -316,9 +316,12 @@ defineComponent('furet-ui-space-menu', {
     prototype: {
       props: ['menus', 'menuId', 'code'],
       methods: {
-          onClickMenu (menu) {
-              console.log(menu)
-          }
+        onClickMenu (menu) {
+          this.$router.push({
+            name: 'resource', 
+            params: {code: this.code, menuId: menu.id, id: menu.resource}
+          });
+        }
       }
     }
 });
