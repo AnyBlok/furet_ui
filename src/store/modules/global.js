@@ -20,6 +20,8 @@ export const defaultState = {
   resources: {},
   left_menus: [],
   right_menus: [],
+  isOpenLeft: false,
+  isOpenRight: false,
 };
 
 // getters
@@ -76,6 +78,13 @@ export const mutations = {
   },
   UPDATE_CURRENT_LEFT_MENUS(state, action) {
     state.left_menus = action.menus;
+  },
+  OPEN_LEFT_MENU(state, value) {
+    console.log('plop', value)
+    state.isOpenLeft = value;
+  },
+  UPDATE_CURRENT_RIGHT_MENUS(state, action) {
+    state.right_menus = action.menus;
   },
 };
 

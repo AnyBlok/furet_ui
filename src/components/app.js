@@ -317,17 +317,18 @@ defineComponent('furet-ui-space-menu', {
       props: ['menus', 'menuId', 'code'],
       methods: {
         onClickMenu (menu) {
-          this.$router.push({
-            name: 'resource', 
-            params: {code: this.code, menuId: menu.id, id: menu.resource}
-          });
+          if (menu.resource !== undefined) {
+            this.$router.push({
+              name: 'resource', 
+              params: {code: this.code, menuId: menu.id, id: menu.resource}
+            });
+          }
         }
       }
     }
 });
 
 defineComponent('furet-ui-space', {
-  // TODO MENU RIGTH LEFT
   // TODO BREADSCRUMB
   template: `
     <div 
@@ -359,7 +360,8 @@ defineComponent('furet-ui-space', {
           </diV>
           <div class="level-right">
             <div class="level-item">
-              <a class="button" v-on:click="isOpenRight = !isOpenRight" v-if="right_menus.length > 0">
+              <a class="button" 
+                v-on:click="isOpenRight = !isOpenRight" v-if="right_menus.length > 0">
                   <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
               </a>
             </div>
@@ -380,13 +382,25 @@ defineComponent('furet-ui-space', {
   `,
   prototype: {
     props: ['code', 'menuId'],
-    data () {
-      return {
-        isOpenLeft: false,
-        isOpenRight: false,
-      }
-    },
     computed: {
+      isOpenLeft: {
+        get () {
+          console.log('plop', this.$store.state.global)
+          return this.$store.state.global.isOpenLeft;
+        },
+        set (newvalue) {
+          this.$store.commit('OPEN_LEFT_MENU', newvalue);
+          console.log('plop', this.$store.state.global)
+        },
+      },
+      isOpenRight: {
+        get () {
+          return this.$store.state.global.isOpenRight;
+        },
+        set (newvalue) {
+          this.$store.commit('OPEN_RIGHT_MENU', newvalue);
+        },
+      },
       left_menus () {
         return this.$store.state.global.left_menus;
       },
