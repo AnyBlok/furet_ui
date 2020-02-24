@@ -385,12 +385,10 @@ defineComponent('furet-ui-space', {
     computed: {
       isOpenLeft: {
         get () {
-          console.log('plop', this.$store.state.global)
           return this.$store.state.global.isOpenLeft;
         },
         set (newvalue) {
           this.$store.commit('OPEN_LEFT_MENU', newvalue);
-          console.log('plop', this.$store.state.global)
         },
       },
       isOpenRight: {
@@ -465,7 +463,7 @@ defineComponent('furet-ui-space-resource-manager', {
     },
     mounted() {
       const query = this.$route.query;
-      this.manager = Object.assign({}, query);
+      this.manager.query = Object.assign({}, query);
       axios.get(`furet-ui/resource/${this.id}`).then((result) => {
         this.$dispatchAll(result.data);
       });
