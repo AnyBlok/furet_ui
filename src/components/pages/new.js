@@ -15,7 +15,6 @@ defineComponent('furet-ui-new', {
         <furet-ui-header-page
           name="furet-ui-header-new"
           v-bind:title="title"
-          v-bind:subtitle="subtitle"
           can_save="true"
           v-on:go-to-list="goToList"
           v-bind:data="data"
@@ -55,7 +54,7 @@ defineComponent('furet-ui-new', {
     </section>
   `,
   prototype: {
-    props: ['title', 'subtitle', 'default_data', 'rest_api_url'],
+    props: ['title', 'default_data', 'rest_api_url'],
     data() {
       return {
         data: this.default_data || {},

@@ -15,7 +15,6 @@ defineComponent('furet-ui-edit', {
         <furet-ui-header-page
           name="furet-ui-header-edit"
           v-bind:title="title"
-          v-bind:subtitle="subtitle"
           v-bind:can_modify="can_modify"
           v-bind:can_delete="can_delete"
           can_save="true"
@@ -67,7 +66,7 @@ defineComponent('furet-ui-edit', {
   `,
   prototype: {
     props: [
-      'title', 'subtitle', 'rest_api_url', 'get_body',
+      'title', 'rest_api_url', 'get_body',
       'can_modify', 'can_delete', 'can_save'],
     data() {
       return {

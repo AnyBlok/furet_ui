@@ -4,62 +4,66 @@ import { defineComponent } from '../factory';
 
 defineComponent('furet-ui-resource-list', {
   template : `
-    <div>
-      <furet-ui-page-errors v-bind:errors="errors"/>
-      <furet-ui-list
-        v-bind:title="resource.title"
-        v-bind:data="data"
+    <furet-ui-list
+      v-bind:title="resource.title"
+      v-bind:default_filters="resource.filters || []"
+      v-bind:default_tags="resource.tags || []"
+      v-bind:perpage="resource.perpage"
+      rest_api_url="/furet-ui/read"
+      v-bind:rest_api_params="api_params"
 
-        v-on:update-query-string="updateQueryString"
-      >
-      </furet-ui-list>
-    </div>
+      v-bind:rest_api_formater="api_formater"
+      v-bind:query="manager.query"
+
+      v-on:update-query-string="updateQueryString"
+    >
+      <template slot-scope="props">
+        <b-table-column 
+          v-for="header in resource.headers" 
+          v-bind:key="header.name"
+          v-bind:field="header.name" 
+          v-bind:label="header.label" 
+          v-bind:sortable="header.sortable"
+          >
+            <component 
+              v-bind:is="header.component" 
+              v-bind:config="header"
+              v-bind:resource="resource"
+              v-bind:data="props.row" />
+        </b-table-column>
+      </template>
+    </furet-ui-list>
   `,
   prototype: {
     props: ['id', 'manager'],
+    data () {
+      return {
+        data: [],
+      };
+    },
     computed: {
       resource () {
-        console.log( this.$store.state.global.resources[this.id]);
         return this.$store.state.global.resources[this.id];
+      },
+      api_params () {
+        return {
+          model: this.resource.model,
+          fields: this.resource.fields.toString(),
+        }
       },
     },
     methods: {
+      api_formater (data) {
+        this.$dispatchAll(data.data);
+        const res = [];
+        data.pks.forEach(pk => {
+            res.push(this.$store.getters.get_entry(this.resource.model, pk))
+        });
+        return res;
+      },
       updateQueryString (query) {
         this.$emit('update-query-string', query);
       },
-      loadAsyncData() {
-        this.loading = true;
-        const params = {
-          offset: (this.page - 1) * this.perPage,
-          limit: this.perPage,
-        };
-        params[`order_by[${this.sortOrder}]`] = this.sortField;
-        _.each(this.filters, (filter) => {
-          if (filter.values.length) {
-            const value = (filter.op.startsWith('or-') || filter.op === 'in') ? filter.values.toString() : filter.values[0];
-            const preop = filter.mode === 'exclude' ? '~' : '';
-            params[`${preop}filter[${filter.key}][${filter.op}]`] = value;
-          }
-        });
-        const tags = [];
-        _.each(this.tags, (tag) => {
-          if (tag.selected) tags.push(tag.key);
-        });
-        if (tags.length) params.tags = tags.toString();
-
-        axios.get(this.rest_api_url, { params })
-          .then((response) => {
-            this.data = response.data || [];
-            this.total = response.headers['x-total-records'] || response.data.length;
-            this.loading = false;
-          })
-          .catch((error) => {
-            this.errors = error.response.data.errors;
-            this.loading = false;
-          });
-      },
-    },
-    mounted() {
     },
   },
 });

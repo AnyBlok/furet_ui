@@ -25,7 +25,6 @@ defineComponent('furet-ui-page-multi-entries-header', {
       <div class="level">
         <div class="level-left">
           <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item"><small>({{ total }})</small>&nbsp;<slot name="aftertitle" v-bind:data="data" /></span>
-          <h3 class="is-size-4">{{ subtitle }}</h3>
         </div>
         <div class="level-right">
           <div class="level-item">
@@ -93,7 +92,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
     </header>
   `,
   prototype: {
-    props: ['title', 'subtitle', 'filters', 'tags', 'total', 'data', 'can_go_to_new'],
+    props: ['title', 'filters', 'tags', 'total', 'data', 'can_go_to_new'],
     data() {
       return {
         filterSearch: '',
@@ -140,8 +139,9 @@ defineComponent('furet-ui-page-multi-entries-header', {
 defineComponent('mixin-page-multi-entries', {
   prototype: {
     props: [
-      'title', 'subtitle', 'default_filters', 'default_tags', 'defaultSortField', 'defaultSortOrder',
-      'rest_api_url', 'perpage', 'many2one_select', 'can_go_to_new', 'browseFields'],
+      'title', 'default_filters', 'default_tags', 'defaultSortField', 'defaultSortOrder',
+      'perpage', 'can_go_to_new', 'rest_api_url', 'rest_api_params', 'rest_api_formater', 
+      'query'],
     data() {
       return {
         data: [],
@@ -165,63 +165,29 @@ defineComponent('mixin-page-multi-entries', {
       goToNew() {
         this.$emit('go-to-new');
       },
-      browsing() {
-        if (this.selectedEntries.length === 0) return [];
-        if ((this.browseFields || []).length === 0) return [];
-        const list = [];
-        this.selectedEntries.forEach((row) => {
-          const entry = {};
-          this.browseFields.forEach((field) => {
-            entry[field] = row[field];
-          });
-          list.push(entry);
-        });
-        return list;
-      },
       goToPage(row) {
-        if (this.many2one_select) this.many2one_select(row);
-        else if ((this.browseFields || []).length !== 0) {
-          const list = this.browsing();
-          const entry = {};
-          this.browseFields.forEach((field) => {
-            entry[field] = row[field];
-          });
-          const offset = list.indexOf(entry);
-          this.$store.commit('UPDATE_BROWSER_LIST', { list, offset });
-          this.$emit('go-to-page', row);
-        } else {
-          this.$emit('go-to-page', row);
-        }
-      },
-      startBrowsing() {
-        const list = this.browsing();
-        if (list.length === 0) return;
-        this.$store.commit('UPDATE_BROWSER_LIST', { list });
-        this.$emit('go-to-page', list[0]);
+        this.$emit('go-to-page', row);
       },
       updateData() {
-        if (!this.many2one_select) {
-          const query = { page: this.page };
-          const filters = {};
-          const tags = [];
-          if (this.sortOrder !== undefined && this.sortField !== undefined) {
-            query.order = `${this.sortField},${this.sortOrder}`;
-          }
-          _.each(this.filters, (f) => {
-            if (f.values.length) {
-              const mode = f.mode === 'exclude' ? '~' : '';
-              const opt = f.opt ? `[${f.opt}]` : '';
-              filters[`${mode}filter[${f.key}]${opt}`] = f.values.join();
-            }
-          });
-          if (_.keys(filters).length) query.filters = JSON.stringify(filters);
-          _.each(this.tags, (t) => {
-            if (t.selected) tags.push(t.key);
-          });
-          if (tags.length) query.tags = tags.join();
-          this.$router.push({ query });
+        const query = { page: this.page };
+        const filters = {};
+        const tags = [];
+        if (this.sortOrder !== undefined && this.sortField !== undefined) {
+          query.order = `${this.sortField},${this.sortOrder}`;
         }
-        this.loadAsyncData();
+        _.each(this.filters, (f) => {
+          if (f.values.length) {
+            const mode = f.mode === 'exclude' ? '~' : '';
+            const opt = f.opt ? `[${f.opt}]` : '';
+            filters[`${mode}filter[${f.key}]${opt}`] = f.values.join();
+          }
+        });
+        if (_.keys(filters).length) query.filters = JSON.stringify(filters);
+        _.each(this.tags, (t) => {
+          if (t.selected) tags.push(t.key);
+        });
+        if (tags.length) query.tags = tags.join();
+        this.$emit('update-query-string', query);
       },
       updateFilters(option) {
         if (option) {
@@ -255,10 +221,9 @@ defineComponent('mixin-page-multi-entries', {
       },
       loadAsyncData() {
         this.loading = true;
-        const params = {
-          offset: (this.page - 1) * this.perPage,
-          limit: this.perPage,
-        };
+        const params = this.rest_api_params || {};
+        params.offset = (this.page - 1) * this.perPage;
+        params.limit = this.perPage;
         params[`order_by[${this.sortOrder}]`] = this.sortField;
         _.each(this.filters, (filter) => {
           if (filter.values.length) {
@@ -275,8 +240,13 @@ defineComponent('mixin-page-multi-entries', {
 
         axios.get(this.rest_api_url, { params })
           .then((response) => {
-            this.data = response.data || [];
-            this.total = response.headers['x-total-records'] || response.data.length;
+            if (this.rest_api_formater) {
+              this.data = this.rest_api_formater(response.data || []);
+              this.total = response.headers['x-total-records'] || response.data.total;
+            } else {
+              this.data = response.data || [];
+              this.total = response.headers['x-total-records'] || response.data.length;
+            }
             this.loading = false;
           })
           .catch((error) => {
@@ -297,51 +267,53 @@ defineComponent('mixin-page-multi-entries', {
         this.sortOrder = order;
         this.updateData();
       },
+      parse_query() {
+        const regexWithOption = new RegExp('.*\\[(.+)\\]\\[(.+)\\]');
+        const regexWithoutOption = new RegExp('.*\\[(.+)\\]');
+        const query = this.query || {};
+        if (query.page) this.page = parseInt(query.page, 10);
+        if (query.order) {
+          const order = query.order.split(',');
+          this.sortField = order[0].trim();
+          this.sortOrder = order[1].trim();
+        }
+        if (query.filters) {
+          _.each(JSON.parse(query.filters), (queryStringValue, queryStringName) => {
+            if (queryStringName.startsWith('filter')) {
+              const resWithOption = queryStringName.match(regexWithOption);
+              const resWithoutOption = queryStringName.match(regexWithoutOption);
+              let key = '';
+              let opt;
+              if (resWithOption) {
+                key = resWithOption[1];
+                opt = resWithOption[2];
+              } else key = resWithoutOption[1];
+              const filter = _.find(this.filters, f => f.key === key && f.opt === opt && f.mode !== 'exclude');
+              filter.values = queryStringValue.split(',');
+            } else if (queryStringName.startsWith('~filter')) {
+              const resWithOption = queryStringName.match(regexWithOption);
+              const resWithoutOption = queryStringName.match(regexWithoutOption);
+              let key = '';
+              let opt;
+              if (resWithOption) {
+                key = resWithOption[1];
+                opt = resWithOption[2];
+              } else key = resWithoutOption[1];
+              const filter = _.find(this.filters, f => f.key === key && f.opt === opt && f.mode === 'exclude');
+              filter.values = queryStringValue.split(',');
+            }
+          });
+        }
+        if (query.tags) {
+          _.each(query.tags.split(','), (tag) => {
+            _.find(this.tags, t => t.key === tag.trim()).selected = true;
+          });
+        }
+        this.loadAsyncData();
+      }
     },
     mounted() {
-      this.$store.commit('CLEAR_BROWSER_LIST');
-      const regexWithOption = new RegExp('.*\\[(.+)\\]\\[(.+)\\]');
-      const regexWithoutOption = new RegExp('.*\\[(.+)\\]');
-      const query = this.$route.query;
-      if (query.page) this.page = parseInt(query.page, 10);
-      if (query.order) {
-        const order = query.order.split(',');
-        this.sortField = order[0].trim();
-        this.sortOrder = order[1].trim();
-      }
-      if (query.filters) {
-        _.each(JSON.parse(query.filters), (queryStringValue, queryStringName) => {
-          if (queryStringName.startsWith('filter')) {
-            const resWithOption = queryStringName.match(regexWithOption);
-            const resWithoutOption = queryStringName.match(regexWithoutOption);
-            let key = '';
-            let opt;
-            if (resWithOption) {
-              key = resWithOption[1];
-              opt = resWithOption[2];
-            } else key = resWithoutOption[1];
-            const filter = _.find(this.filters, f => f.key === key && f.opt === opt && f.mode !== 'exclude');
-            filter.values = queryStringValue.split(',');
-          } else if (queryStringName.startsWith('~filter')) {
-            const resWithOption = queryStringName.match(regexWithOption);
-            const resWithoutOption = queryStringName.match(regexWithoutOption);
-            let key = '';
-            let opt;
-            if (resWithOption) {
-              key = resWithOption[1];
-              opt = resWithOption[2];
-            } else key = resWithoutOption[1];
-            const filter = _.find(this.filters, f => f.key === key && f.opt === opt && f.mode === 'exclude');
-            filter.values = queryStringValue.split(',');
-          }
-        });
-      }
-      if (query.tags) {
-        _.each(query.tags.split(','), (tag) => {
-          _.find(this.tags, t => t.key === tag.trim()).selected = true;
-        });
-      }
-      this.loadAsyncData();
+      this.parse_query()
     },
   },
 });
@@ -352,7 +324,6 @@ defineComponent('furet-ui-header-page', {
       <div class="level">
         <div class="level-left">
           <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
-          <h3 class="is-size-4">{{ subtitle }}</h3>
         </div>
         <div class="level-right">
           <slot name="states" v-bind:data="data" />
@@ -406,7 +377,7 @@ defineComponent('furet-ui-header-page', {
     </header>
   `,
   prototype: {
-    props: ['title', 'subtitle', 'can_go_to_new', 'can_modify', 'can_delete', 'can_save', 'data'],
+    props: ['title', 'can_go_to_new', 'can_modify', 'can_delete', 'can_save', 'data'],
     computed: {
       prevous_target() {
         return this.$store.getters.previousBrowserTarget;

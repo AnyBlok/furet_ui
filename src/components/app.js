@@ -226,37 +226,38 @@ defineComponent('furet-ui-space-menus', {
         >
         </b-input>
       </b-field>
-      <br />
-      <div class="columns is-multiline">
-        <div 
-          v-for="menu in space_menus" 
-          v-bind:key="menu.code"
-          class="column is-one-quarter-desktop is-half-tablet is-12-mobile"
-        >
-          <div class="box" v-on:click="selectMenu(menu)">
-            <article class="media">
-              <figure class="media-left">
-                <p class="image is-64x64">
-                  <b-icon
-                    v-bind:icon="menu.icon.code"
-                    size="is-large"
-                    v-bind:type="menu.icon.type">
-                  </b-icon>
-                </p>
-              </figure>
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong>{{ menu.label }}</strong>
-                    <br>
-                    {{ menu.description }}
+      <section class="section">
+        <div class="columns is-multiline">
+          <div 
+            v-for="menu in space_menus" 
+            v-bind:key="menu.code"
+            class="column is-one-quarter-desktop is-half-tablet is-12-mobile"
+          >
+            <div class="box" v-on:click="selectMenu(menu)">
+              <article class="media">
+                <figure class="media-left">
+                  <p class="image is-64x64">
+                    <b-icon
+                      v-bind:icon="menu.icon.code"
+                      size="is-large"
+                      v-bind:type="menu.icon.type">
+                    </b-icon>
                   </p>
+                </figure>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>{{ menu.label }}</strong>
+                      <br>
+                      {{ menu.description }}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   `,
   prototype: {
