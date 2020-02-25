@@ -270,7 +270,8 @@ defineComponent('mixin-page-multi-entries', {
       parse_query() {
         const regexWithOption = new RegExp('.*\\[(.+)\\]\\[(.+)\\]');
         const regexWithoutOption = new RegExp('.*\\[(.+)\\]');
-        const query = this.query || {};
+        const query = this.query;
+        if (query === undefined) return;
         if (query.page) this.page = parseInt(query.page, 10);
         if (query.order) {
           const order = query.order.split(',');
@@ -311,6 +312,11 @@ defineComponent('mixin-page-multi-entries', {
         }
         this.loadAsyncData();
       }
+    },
+    watch: {
+      query () {
+        this.parse_query();  // query is reactive
+      },
     },
     mounted() {
       this.parse_query()
