@@ -5,7 +5,7 @@ import { defineComponent } from '../factory';
 defineComponent('furet-ui-resource-list', {
   template : `
     <furet-ui-list
-      v-bind:title="resource.title"
+      v-bind:title="$t(resource.title)"
       v-bind:default_filters="resource.filters || []"
       v-bind:default_tags="resource.tags || []"
       v-bind:perpage="resource.perpage"
@@ -22,7 +22,7 @@ defineComponent('furet-ui-resource-list', {
           v-for="header in resource.headers" 
           v-bind:key="header.name"
           v-bind:field="header.name" 
-          v-bind:label="header.label" 
+          v-bind:label="$t(header.label)" 
           v-bind:sortable="header.sortable"
           >
             <component 

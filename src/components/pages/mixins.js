@@ -33,12 +33,12 @@ defineComponent('furet-ui-page-multi-entries-header', {
                   <b-tag 
                     v-bind:class="['furet-ui-page-multi-entries-header-tag', tag.key]" 
                     type="is-primary" closable 
-                    v-on:close="removeTag(tag)">{{ tag.label }} </b-tag>
+                    v-on:close="removeTag(tag)">{{ $t(tag.label) }} </b-tag>
               </div>
               <div class="control" v-for="filter in filters" v-if="filter.values.length" v-bind:key="filter.key + '-' + filter.mode + '-' + filter.opt">
                 <b-taglist attached>
                   <b-tag type="is-danger" v-if="filter.mode == 'exclude'"> ~ </b-tag>
-                  <b-tag type="is-dark">{{ filter.label }}</b-tag>
+                  <b-tag type="is-dark">{{ $t(filter.label) }}</b-tag>
                   <b-tag 
                     type="is-primary" 
                     closable 
@@ -50,7 +50,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
               </div>
             </b-field>
           </div>
-          <div class="level-item">
+          <div class="level-item" v-if="filters.length" >
             <b-autocomplete
               v-model="filterSearch"
               v-bind:data="filteredDataArray"
@@ -61,12 +61,12 @@ defineComponent('furet-ui-page-multi-entries-header', {
             >
               <template slot="empty">{{ $t('components.page.header.notFound') }}</template>
               <template slot-scope="props">
-                {{ props.option.mode == 'exclude' ? ' ~ ' : '' }} <small>{{ props.option.label }} </small> : <strong>{{ props.option.value }}</strong>
+                {{ props.option.mode == 'exclude' ? ' ~ ' : '' }} <small>{{ $t(props.option.label) }} </small> : <strong>{{ props.option.value }}</strong>
               </template>
             </b-autocomplete>
           </div>
           <div class="level-item buttons">
-            <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><b-icon icon="reload" /></a>
+            <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><b-icon icon="redo" /></a>
             <a id="furet-ui-page-multi-entries-header-tags" v-if="tags.length" class="button" v-on:click.stop="tag_list_open = ! tag_list_open">
               <b-icon :icon="tag_list_open ? 'arrow-up-drop-circle' : 'arrow-down-drop-circle'" />
             </a>

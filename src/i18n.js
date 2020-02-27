@@ -32,6 +32,12 @@ export const i18nConf = {
             notFound: 'No result found',
           },
         },
+        fields: {
+          yesno: {
+            yes: 'Yes',
+            no: 'No',
+          },
+        },
       },
     },
   },

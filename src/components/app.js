@@ -176,7 +176,7 @@ defineComponent('furet-ui-appbar-spaces-menu', {
         v-on:click="toggle_menu"
         icon-left="bars"
      >
-        {{ space_name }}
+        {{ $t(space_name) }}
      </b-button>
     </div>
   `,
@@ -247,9 +247,9 @@ defineComponent('furet-ui-space-menus', {
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong>{{ menu.label }}</strong>
+                      <strong>{{ $t(menu.label) }}</strong>
                       <br>
-                      {{ menu.description }}
+                      {{ $t(menu.description) }}
                     </p>
                   </div>
                 </div>
@@ -302,7 +302,7 @@ defineComponent('furet-ui-space-menu', {
                v-bind:class="[menu.id == menuId ? 'is-active' : '']"
             >
               <span v-if="menu.label">
-                  {{menu.label}}
+                  {{ $t(menu.label) }}
               </span>
             </a>
             <furet-ui-space-menu

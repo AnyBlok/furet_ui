@@ -1,5 +1,8 @@
 import { fields } from './fields';
 import './common';
+import './boolean';
+import './datetime';
+import './integer';
 import './string';
 import { defineComponent } from '../factory';
 
