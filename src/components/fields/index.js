@@ -4,6 +4,9 @@ import './boolean';
 import './datetime';
 import './integer';
 import './string';
+
+import './relationship';
+
 import { defineComponent } from '../factory';
 
 defineComponent('furet-ui-unknown-field', {
