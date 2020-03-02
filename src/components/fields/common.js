@@ -35,7 +35,7 @@ export const listTemplate = `
 
 defineComponent('furet-ui-list-field-common', {
   prototype: {
-    props: ['data', 'config'],
+    props: ['resource', 'data', 'config'],
     computed: {
       value () {
         return this.data[this.config.name] || '';
@@ -48,53 +48,53 @@ defineComponent('furet-ui-list-field-common', {
 });
 
 
-defineComponent('furet-ui-thumbnail-field-common', {
-  template: `
-    <div v-if="this.isInvisible" />
-    <b-tooltip 
-        v-bind:label="getTooltip" 
-        v-bind:position="tooltipPosition"
-        v-bind:style="{'width': '100%'}"
-        v-else
-    >
-        <b-field 
-            v-bind:label="this.config.label"
-            v-bind:style="{'width': 'inherit'}"
-        >
-            <span>{{value}}</span>
-        </b-field>
-    </b-tooltip>
-  `,
-  prototype: {
-    props: ['data', 'config'],
-    computed: {
-      value () {
-        return this.data && this.data[this.config.name] || '';
-      },
-      isInvisible () {
-        return safe_eval(this.config.invisible, this.data || {});
-      },
-      getTooltip () {
-          return this.config.tooltip || '';
-      },
-      tooltipPosition () {
-          return this.config.tooltip_position || 'is-top';
-      },
-    },
-  }
-});
+// defineComponent('furet-ui-thumbnail-field-common', {
+//   template: `
+//     <div v-if="this.isInvisible" />
+//     <b-tooltip 
+//         v-bind:label="getTooltip" 
+//         v-bind:position="tooltipPosition"
+//         v-bind:style="{'width': '100%'}"
+//         v-else
+//     >
+//         <b-field 
+//             v-bind:label="this.config.label"
+//             v-bind:style="{'width': 'inherit'}"
+//         >
+//             <span>{{value}}</span>
+//         </b-field>
+//     </b-tooltip>
+//   `,
+//   prototype: {
+//     props: ['data', 'config'],
+//     computed: {
+//       value () {
+//         return this.data && this.data[this.config.name] || '';
+//       },
+//       isInvisible () {
+//         return safe_eval(this.config.invisible, this.data || {});
+//       },
+//       getTooltip () {
+//           return this.config.tooltip || '';
+//       },
+//       tooltipPosition () {
+//           return this.config.tooltip_position || 'is-top';
+//       },
+//     },
+//   }
+// });
 
 
 defineComponent('furet-ui-form-field-common', {
   prototype: {
-    props: ['data', 'config'],
+    props: ['resource', 'data', 'config'],
     computed: {
       value () {
         return this.data && this.data[this.config.name] || '';
       },
       isReadonly () {
         const readonlyParams = safe_eval(this.config.readonly, this.data || {});
-        const readonly = this.config.mode == 'readonly';
+        const readonly = this.resource.readonly;
         return readonly || readonlyParams;
       },
       isRequired () {
@@ -117,21 +117,23 @@ defineComponent('furet-ui-form-field-common', {
         return '';
       },
       getMessage () {
+        if (this.isReadonly) return '';
         if (this.isRequired) {
           if (!this.value) return this.$i18n.t('fields.common.required');
         }
         return ''
       },
-      // methods: {
-      //   updateValue (value, fieldname) {
-      //       this.$store.commit(this.config.store_key, {
-      //           model: this.config.view.model,
-      //           dataId: this.config.dataId,
-      //           fieldname: fieldname || this.name,
-      //           value
-      //       })
-      //   }
-      // },
+    },
+    methods: {
+      updateValue (value, fieldname) {
+        console.log(' update ', value, fieldname)
+        // this.$store.commit(this.config.store_key, {
+        //     model: this.config.view.model,
+        //     dataId: this.config.dataId,
+        //     fieldname: fieldname || this.name,
+        //     value
+        // })
+      }
     },
   }
 });

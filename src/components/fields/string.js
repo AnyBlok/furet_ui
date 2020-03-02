@@ -22,34 +22,36 @@ fields.list.string = 'furet-ui-list-field-string'
 //     mixins: [ThumbnailMixin],
 // })
 // 
-// export const FieldFormString = Vue.component('furet-ui-form-field-string', {
-//     props: ['maxlength', 'placeholder', 'icon'],
-//     mixins: [FormMixin],
-//     template: `
-//         <div v-if="this.isInvisible" />
-//         <b-tooltip 
-//             v-bind:label="getTooltip" 
-//             v-bind:position="tooltipPosition"
-//             v-bind:style="{'width': '100%'}"
-//             v-else
-//         >
-//             <b-field 
-//                 v-bind:label="this.label"
-//                 v-bind:type="getType"
-//                 v-bind:message="getMessage"
-//                 v-bind:style="{'width': 'inherit'}"
-//             >
-//                 <span v-if="isReadonly"> {{data}} </span>
-//                 <b-input 
-//                     v-else 
-//                     v-bind:value="data" 
-//                     v-on:change="updateValue"
-//                     v-bind:maxlength="maxlength"
-//                     v-bind:placeholder="placeholder"
-//                     icon-pack="fa"
-//                     v-bind:icon="icon"
-//                 >
-//                 </b-input>
-//             </b-field>
-//         </b-tooltip>`,
-// })
+
+defineComponent('furet-ui-form-field-string', {
+  template: `
+    <div v-if="this.isInvisible" />
+    <b-tooltip 
+        v-bind:label="getTooltip" 
+        v-bind:position="tooltipPosition"
+        v-bind:style="{'width': '100%'}"
+        v-else
+    >
+        <b-field 
+            v-bind:label="config.label"
+            v-bind:type="getType"
+            v-bind:message="getMessage"
+            v-bind:style="{'width': 'inherit'}"
+        >
+            <span v-if="isReadonly"> {{value}} </span>
+            <b-input 
+                v-else 
+                v-bind:value="value" 
+                v-on:change="updateValue"
+                v-bind:maxlength="config.maxlength"
+                v-bind:placeholder="config.placeholder"
+                icon-pack="fa"
+                v-bind:icon="config.icon"
+            >
+            </b-input>
+        </b-field>
+    </b-tooltip>
+  `,
+  extend: ['furet-ui-form-field-common'],
+})
+fields.form.string = 'furet-ui-form-field-string'

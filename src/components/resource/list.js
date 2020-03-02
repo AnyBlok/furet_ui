@@ -9,13 +9,16 @@ defineComponent('furet-ui-resource-list', {
       v-bind:default_filters="resource.filters || []"
       v-bind:default_tags="resource.tags || []"
       v-bind:perpage="resource.perpage"
-      rest_api_url="/furet-ui/read"
+      v-bind:can_go_to_new="manager.can_create"
+      rest_api_url="/furet-ui/crud"
       v-bind:rest_api_params="api_params"
 
       v-bind:rest_api_formater="api_formater"
       v-bind:query="manager.query"
 
       v-on:update-query-string="updateQueryString"
+      v-on:go-to-new="goToNew"
+      v-on:go-to-page="goToPage"
     >
       <template slot-scope="props">
         <b-table-column 
@@ -63,6 +66,12 @@ defineComponent('furet-ui-resource-list', {
       },
       updateQueryString (query) {
         this.$emit('update-query-string', query);
+      },
+      goToNew() {
+        this.$emit('go-to-new');
+      },
+      goToPage(row) {
+        this.$emit('go-to-page', row);
       },
     },
   },

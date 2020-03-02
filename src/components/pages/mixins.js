@@ -329,7 +329,7 @@ defineComponent('furet-ui-header-page', {
     <header id="header_page">
       <div class="level">
         <div class="level-left">
-          <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
+          <h2 class="level-item is-size-3">{{ $t(title) }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
         </div>
         <div class="level-right">
           <slot name="states" v-bind:data="data" />
@@ -338,7 +338,7 @@ defineComponent('furet-ui-header-page', {
       <div class="buttons is-grouped is-centered">
         <a class="button is-primary is-outlined" v-on:click="goToList">
           <span class="icon">
-            <b-icon icon="keyboard-return" />
+            <b-icon icon="arrow-left" />
           </span>
           <span>{{ $t('components.page.list') }}</span>
         </a>
@@ -362,7 +362,7 @@ defineComponent('furet-ui-header-page', {
         </a>
         <a v-if="can_modify" class="button is-primary is-outlined" v-on:click="goToEdit">
           <span class="icon">
-            <b-icon icon="square-edit-outline" />
+            <b-icon icon="pencil-alt" />
           </span>
           <span>{{ $t('components.page.edit') }}</span>
         </a>
@@ -374,7 +374,7 @@ defineComponent('furet-ui-header-page', {
         </button>
         <a v-if="can_delete" class="button is-danger is-outlined" v-on:click="deleteEntry">
           <span class="icon">
-            <b-icon icon="delete" />
+            <b-icon icon="trash" />
           </span>
           <span>{{ $t('components.page.delete') }}</span>
         </a>

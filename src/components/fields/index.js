@@ -18,7 +18,12 @@ defineComponent('furet-ui-unknown-field', {
 
 defineComponent('furet-ui-field', {
   template : `
-    <component v-bind:is="component" v-bind:config="config" v-bind:data="data" />
+    <component 
+      v-bind:is="component" 
+      v-bind:resource="resource" 
+      v-bind:config="config" 
+      v-bind:data="data"
+    />
   `,
   prototype: {
     props: ['resource', 'config', 'data'],
