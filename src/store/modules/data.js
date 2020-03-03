@@ -31,6 +31,10 @@ export const getters = {
     const change = (state.changes[model] || {})[key] || {};
     return Object.assign({}, data, change);
   },
+  get_new_entry: (state) => (model, uuid) => {
+    const change = ((state.changes[model] || {}).new || {})[uuid] || {};
+    return Object.assign({}, change);
+  },
 };
 
 // actions
@@ -46,24 +50,31 @@ export const mutations = {
         data[action.model][pk] = Object.assign({}, data[action.model][pk], action.data);
         state.data = data;
     },
-    'DELETE_DATA'(state, action) {
-        const data = Object.assign({}, state.data)
-        _.each(action.dataIds, dataId => {
-            if (data[action.model] && data[action.model][dataId])
-                delete data[action.model][dataId];
-        });
-        state.data = data;
-    },
+    // 'DELETE_DATA'(state, action) {
+    //     const data = Object.assign({}, state.data)
+    //     _.each(action.dataIds, dataId => {
+    //         if (data[action.model] && data[action.model][dataId])
+    //             delete data[action.model][dataId];
+    //     });
+    //     state.data = data;
+    // },
     'UPDATE_CHANGE'(state, action) {
         const changes = Object.assign({}, state.changes);
         if (changes[action.model] == undefined) changes[action.model] = {}
-        if (changes[action.model][action.dataId] == undefined) changes[action.model][action.dataId] = {};
-        changes[action.model][action.dataId][action.fieldname] = action.value;
+        if (action.uuid != null) {
+          if (changes[action.model].new == undefined) changes[action.model].new = {};
+          if (changes[action.model].new[action.uuid] == undefined) changes[action.model].new[action.uuid] = {};
+          changes[action.model].new[action.uuid][action.fieldname] = action.value;
+        } else {
+          const pk = pk2string(action.pk)
+          if (changes[action.model][pk] == undefined) changes[action.model][pk] = {};
+          changes[action.model][pk][action.fieldname] = action.value;
+        }
         state.changes = changes
     },
-    'REPLACE_CHANGE'(state, action) {
-        state.changes = Object.assign({}, action.changes);
-    },
+    // 'REPLACE_CHANGE'(state, action) {
+    //     state.changes = Object.assign({}, action.changes);
+    // },
     'CLEAR_CHANGE'(state) {
         state.changes = {};
     },

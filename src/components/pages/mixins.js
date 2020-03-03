@@ -366,9 +366,9 @@ defineComponent('furet-ui-header-page', {
           </span>
           <span>{{ $t('components.page.edit') }}</span>
         </a>
-        <button v-if="can_save" class="button is-primary is-outlined" type="submit" v-bind:value="$i18n.t('components.page.save')" ref="submit">
+        <button v-if="can_save" class="button is-primary is-outlined" v-on:click="save">
           <span class="icon">
-            <b-icon icon="floppy" />
+            <b-icon icon="save" />
           </span>
           <span>{{ $t('components.page.save') }}</span>
         </button>

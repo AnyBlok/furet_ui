@@ -7,6 +7,7 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
+import { debounce } from "debounce";
 import {defineComponent} from '../factory'
 
 
@@ -104,7 +105,7 @@ defineComponent('furet-ui-form-field-common', {
         return safe_eval(this.config.invisible, this.data || {});
       },
       getTooltip () {
-          return this.config.tooltip || '';
+          return this.$t(this.config.tooltip || '');
       },
       tooltipPosition () {
           return this.config.tooltip_position || 'is-top';
@@ -125,15 +126,16 @@ defineComponent('furet-ui-form-field-common', {
       },
     },
     methods: {
-      updateValue (value, fieldname) {
-        console.log(' update ', value, fieldname)
-        // this.$store.commit(this.config.store_key, {
-        //     model: this.config.view.model,
-        //     dataId: this.config.dataId,
-        //     fieldname: fieldname || this.name,
-        //     value
-        // })
-      }
+      updateValue: debounce(function(value) {
+        const action = {
+          model: this.resource.model,
+          pk: this.resource.pks,
+          uuid: this.resource.uuid,
+          fieldname: this.config.name,
+          value,
+        }
+        this.$store.commit('UPDATE_CHANGE', action)
+      }, 200),
     },
   }
 });

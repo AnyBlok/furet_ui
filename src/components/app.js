@@ -433,18 +433,25 @@ defineComponent('furet-ui-resource-not-found', {
 
 defineComponent('furet-ui-space-resource-manager', {
   template: `
-    <component 
-      v-bind:is="resourceComponents" 
-      v-bind:id="id" 
-      v-bind:manager="manager" 
-      v-on:update-query-string="updateQueryString"
-    />
+    <div>
+      <furet-ui-page-errors v-bind:errors="errors"/>
+      <component 
+        ref="resource"
+        v-bind:is="resourceComponents" 
+        v-bind:id="id" 
+        v-bind:manager="manager" 
+        v-on:update-query-string="updateQueryString"
+        v-on:create-data="createData"
+        v-on:update-data="updateData"
+      />
+    </div>
   `,
   prototype: {
     props: ['id'],
     data () {
       return {
         manager: {},
+        errors: [],
       };
     },
     computed: {
@@ -460,7 +467,28 @@ defineComponent('furet-ui-space-resource-manager', {
     methods: {
       updateQueryString (query) {
         this.$router.push({ query });
-      }
+      },
+      createData (data) {
+        const query = Object.assign({}, this.$route.query);
+        axios.post('/furet-ui/crud', data)
+          .then((response) => {
+            this.$store.commit('CLEAR_DATA')
+            query.pks = JSON.stringify(response.data.pks);
+            this.updateQueryString(query)
+          })
+          .catch((error) => {
+            this.errors = error.response.data.errors;
+          });
+      },
+      updateData (data) {
+        axios.patch('/furet-ui/crud', data)
+          .then(() => {
+            this.$refs.resource.saved();
+          })
+          .catch((error) => {
+            this.errors = error.response.data.errors;
+          });
+      },
     },
     mounted() {
       const query = this.$route.query;

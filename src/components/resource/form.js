@@ -1,5 +1,6 @@
 import axios from 'axios';
 import _ from 'underscore';
+import { v1 as uuidv1 } from 'uuid';
 import { resources } from './resources';
 import { defineComponent } from '../factory';
 
@@ -7,19 +8,22 @@ import { defineComponent } from '../factory';
 defineComponent('furet-ui-resource-form', {
   template : `
     <section>
-      <furet-ui-page-errors v-bind:errors="errors"/>
       <b-loading v-bind:active.sync="loading"></b-loading>
       <furet-ui-header-page
         name="furet-ui-page"
         v-bind:title="resource.title"
-        v-bind:can_go_to_new="manager.can_create"
-        v-bind:can_modify="manager.can_modify"
-        v-bind:can_delete="manager.can_delete"
+        v-bind:can_go_to_new="readonly && manager.can_create"
+        v-bind:can_modify="readonly && manager.can_modify"
+        v-bind:can_delete="readonly && manager.can_delete"
+        v-bind:can_save="!readonly"
 
         v-on:go-to-list="goToList"
         v-on:go-to-edit="goToEdit"
+        v-on:go-to-new="goToNew"
         v-on:go-to-page="goToPage"
         v-on:delete-entry="deleteEntry"
+        v-on:save="save"
+
         v-bind:data="data"
       >
         <template slot="aftertitle" slot-scope="props">
@@ -45,18 +49,27 @@ defineComponent('furet-ui-resource-form', {
     props: ['id', 'manager'],
     data() {
       return {
-        data: {},
         loading: false,
         errors: [],
         readonly: true,  // RO, RW
         pks: {},
+        uuid: null,
       };
     },
     computed: {
+      data () {
+        if (this.uuid) {
+          return this.$store.getters.get_new_entry(this.resource.model, this.uuid)
+        } else if (this.pks) {
+          return this.$store.getters.get_entry(this.resource.model, this.pks)
+        }
+      },
       resource () {
         return Object.assign(
           {
               readonly: this.readonly,
+              pks: this.pks,
+              uuid: this.uuid,
           },
           this.$store.state.global.resources[this.id]
         );
@@ -79,11 +92,34 @@ defineComponent('furet-ui-resource-form', {
       },
       goToList () {
       },
+      goToNew () {
+        this.updateQueryString({mode: 'form'})
+      },
       goToEdit () {
+        this.readonly = false;
       },
       goToPage () {
+        this.$store.commit('CLEAR_DATA')
+        this.readonly = true;
       },
       deleteEntry () {
+      },
+      save () {
+        if (this.uuid) {
+          this.$emit('create-data', {
+            model: this.resource.model,
+            uuid: this.uuid,
+            changes: this.$store.state.data.changes,
+          })
+        } else {
+          this.$emit('update-data', {
+            model: this.resource.model,
+            pks: this.pks,
+            changes: this.$store.state.data.changes,
+          })
+        }
+      },
+      create () {
       },
       loadAsyncData() {
         // this.loading = true;
@@ -97,7 +133,6 @@ defineComponent('furet-ui-resource-form', {
         axios.get('/furet-ui/crud', { params })
           .then((response) => {
             this.$dispatchAll(response.data.data);
-            this.data = this.$store.getters.get_entry(this.resource.model, this.pks)
             this.loading = false;
           })
           .catch((error) => {
@@ -106,10 +141,15 @@ defineComponent('furet-ui-resource-form', {
           });
       },
       parse_query() {
-        console.log('plop', this.manager.query)
-        if (this.manager.query && this.manager.query.pks) {
-          this.pks = JSON.parse(this.manager.query.pks)
-          this.loadAsyncData();
+        if (this.manager.query !== undefined) {
+          if (this.manager.query.pks) {
+            this.pks = JSON.parse(this.manager.query.pks)
+            this.loadAsyncData();
+          } else {
+            // new case
+            this.readonly = false;
+            this.uuid = uuidv1();
+          }
         }
       }
     },

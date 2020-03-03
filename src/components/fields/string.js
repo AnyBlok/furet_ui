@@ -33,7 +33,7 @@ defineComponent('furet-ui-form-field-string', {
         v-else
     >
         <b-field 
-            v-bind:label="config.label"
+            v-bind:label="$t(config.label)"
             v-bind:type="getType"
             v-bind:message="getMessage"
             v-bind:style="{'width': 'inherit'}"
@@ -42,7 +42,7 @@ defineComponent('furet-ui-form-field-string', {
             <b-input 
                 v-else 
                 v-bind:value="value" 
-                v-on:change="updateValue"
+                v-on:input="updateValue"
                 v-bind:maxlength="config.maxlength"
                 v-bind:placeholder="config.placeholder"
                 icon-pack="fa"

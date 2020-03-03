@@ -5,10 +5,13 @@ import { defineComponent } from '../factory';
 defineComponent('furet-ui-resource-set', {
   template : `
     <component 
+      ref="resource"
       v-bind:is="getResourceComponent" 
       v-bind:id="subResource.id" 
       v-bind:manager="resourceManager" 
       v-on:update-query-string="updateQueryString"
+      v-on:create-data="createData"
+      v-on:update-data="updateData"
 
       v-on:go-to-new="goToNew"
       v-on:go-to-page="goToPage"
@@ -26,7 +29,6 @@ defineComponent('furet-ui-resource-set', {
         return this.getResource(this.id);
       },
       subResource () {
-        console.log('getResourceComponent', this.mode)
         return this.getResource(this.resource[this.mode])
       },
       getResourceComponent () {
@@ -52,9 +54,15 @@ defineComponent('furet-ui-resource-set', {
       updateQueryString (query) {
         this.$emit('update-query-string', query);
       },
+      createData (data) {
+        this.$emit('create-data', data);
+      },
+      updateData (data) {
+        this.$emit('update-data', data);
+      },
       goToNew () {
         // add to breadscrumb
-        console.log("go to new")
+        this.$emit('update-query-string', {mode: 'form'})
       },
       goToPage (row) {
         // add to breadscrumb
@@ -64,6 +72,10 @@ defineComponent('furet-ui-resource-set', {
         })
         this.$emit('update-query-string', {mode: 'form', pks: JSON.stringify(pks)})
       },
+      saved() {
+        this.$refs.resource.goToPage()
+        this.$refs.resource.loadAsyncData()
+      }
     },
     mounted () {
       const query = this.$route.query;
