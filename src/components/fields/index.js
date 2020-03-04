@@ -3,6 +3,8 @@ import './common';
 import './boolean';
 import './datetime';
 import './integer';
+import './timestamp';
+import './selection';
 import './string';
 
 import './relationship';
