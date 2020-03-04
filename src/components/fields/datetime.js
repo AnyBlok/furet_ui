@@ -41,52 +41,57 @@ fields.list.datetime = 'furet-ui-list-field-datetime'
 //         },
 //     }
 // })
-// 
-// export const FieldFormDateTime = Vue.component('furet-ui-form-field-datetime', {
-//     props: ['icon', 'min', 'max'],
-//     mixins: [FormMixin],
-//     template: `
-//         <div v-if="this.isInvisible" />
-//         <b-tooltip 
-//             v-bind:label="getTooltip" 
-//             v-bind:position="tooltipPosition"
-//             v-bind:style="{'width': '100%'}"
-//             v-else
-//         >
-//             <b-field 
-//                 v-bind:label="this.label"
-//                 v-bind:type="getType"
-//                 v-bind:message="getMessage"
-//                 v-bind:style="{'width': 'inherit'}"
-//             >
-//                 <span v-if="isReadonly"> {{value}} </span>
-//                 <b-input 
-//                     v-else 
-//                     type="datetime-local"
-//                     v-bind:value="data" 
-//                     v-on:change="updateValue"
-//                     icon-pack="fa"
-//                     v-bind:icon="icon"
-//                     v-bind:min="min"
-//                     v-bind:max="max"
-//                 >
-//                 </b-input>
-//             </b-field>
-//         </b-tooltip>`,
-//     computed: {
-//         value () {
-//             moment.locale(i18n.locale);
-//             const value = this.config && this.config.data && this.config.data[this.name];
-//             if (value) return moment(value).format('LLL');
-//             return '';
-//         },
-//         data () {
-//             const value = this.config && this.config.data && this.config.data[this.name];
-//             if (value) {
-//                 const date = new Date(Date.parse(value)).toISOString();
-//                 return date.replace(/\.[0-9]{3}/, '').replace(/Z/, '');
-//             }
-//             return '';
-//         }
-//     }
-// })
+
+defineComponent('furet-ui-form-field-datetime', {
+  extend: ['furet-ui-form-field-common'],
+  template: `
+    <div v-if="this.isInvisible" />
+    <b-tooltip 
+        v-bind:label="getTooltip" 
+        v-bind:position="tooltipPosition"
+        v-bind:style="{'width': '100%'}"
+        v-else
+    >
+        <b-field 
+            v-bind:label="$t(config.label)"
+            v-bind:type="getType"
+            v-bind:message="getMessage"
+            v-bind:style="{'width': 'inherit'}"
+        >
+            <span v-if="isReadonly"> {{value}} </span>
+            <b-datetimepicker
+               v-else
+               rounded
+               v-bind:placeholder="config.placeholder"
+               v-bind:value="value" 
+               v-on:input="updateDateTimeValue"
+               v-bind:editable="config.editable"
+               v-bind:datepicker="config.show_week_number"
+               v-bind:timepicker="config.timepicker">
+               icon-pack="fa"
+               v-bind:icon="config.icon"
+            </b-datetimepicker>
+        </b-field>
+    </b-tooltip>`,
+  prototype: {
+    computed: {
+      value () {
+        moment.locale(i18n.locale);
+        const value = this.data[this.config.name];
+        if (this.isReadonly) {
+          if (value) return moment(value).format('LLL');
+          return ''
+        }
+
+        if (!value) return null;
+        return new Date(Date.parse(value))
+      },
+    },
+    methods: {
+      updateDateTimeValue (value) {
+        this.updateValue(value.toISOString())
+      },
+    },
+  },
+})
+fields.form.datetime = 'furet-ui-form-field-datetime'
