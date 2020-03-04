@@ -50,14 +50,13 @@ export const mutations = {
         data[action.model][pk] = Object.assign({}, data[action.model][pk], action.data);
         state.data = data;
     },
-    // 'DELETE_DATA'(state, action) {
-    //     const data = Object.assign({}, state.data)
-    //     _.each(action.dataIds, dataId => {
-    //         if (data[action.model] && data[action.model][dataId])
-    //             delete data[action.model][dataId];
-    //     });
-    //     state.data = data;
-    // },
+    'DELETE_DATA'(state, action) {
+        const data = Object.assign({}, state.data)
+        const pks = pk2string(action.pks)
+        if (data[action.model] && data[action.model][pks])
+          delete data[action.model][pks];
+        state.data = data;
+    },
     'UPDATE_CHANGE'(state, action) {
         const changes = Object.assign({}, state.changes);
         if (changes[action.model] == undefined) changes[action.model] = {}

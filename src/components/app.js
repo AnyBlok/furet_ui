@@ -443,6 +443,7 @@ defineComponent('furet-ui-space-resource-manager', {
         v-on:update-query-string="updateQueryString"
         v-on:create-data="createData"
         v-on:update-data="updateData"
+        v-on:delete-data="deleteData"
       />
     </div>
   `,
@@ -472,7 +473,7 @@ defineComponent('furet-ui-space-resource-manager', {
         const query = Object.assign({}, this.$route.query);
         axios.post('/furet-ui/crud', data)
           .then((response) => {
-            this.$store.commit('CLEAR_DATA')
+            this.$store.commit('CLEAR_CHANGE')
             query.pks = JSON.stringify(response.data.pks);
             this.updateQueryString(query)
           })
@@ -484,6 +485,17 @@ defineComponent('furet-ui-space-resource-manager', {
         axios.patch('/furet-ui/crud', data)
           .then(() => {
             this.$refs.resource.saved();
+          })
+          .catch((error) => {
+            this.errors = error.response.data.errors;
+          });
+      },
+      deleteData (data) {
+        axios.delete('/furet-ui/crud', {params: data})
+          .then(() => {
+            this.$store.commit('CLEAR_CHANGE')
+            this.$store.commit('DELETE_DATA', data)
+            this.updateQueryString({})  // replace it by breadscrumb
           })
           .catch((error) => {
             this.errors = error.response.data.errors;

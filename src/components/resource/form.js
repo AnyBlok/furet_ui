@@ -91,6 +91,7 @@ defineComponent('furet-ui-resource-form', {
         this.$emit('update-query-string', query);
       },
       goToList () {
+        // use breadcrumb
       },
       goToNew () {
         this.updateQueryString({mode: 'form'})
@@ -103,6 +104,10 @@ defineComponent('furet-ui-resource-form', {
         this.readonly = true;
       },
       deleteEntry () {
+        this.$emit('delete-data', {
+          model: this.resource.model,
+          pks: Object.assign({}, this.pks),
+        })
       },
       save () {
         if (this.uuid) {
@@ -114,12 +119,10 @@ defineComponent('furet-ui-resource-form', {
         } else {
           this.$emit('update-data', {
             model: this.resource.model,
-            pks: this.pks,
+            pks: Object.assign({}, this.pks),
             changes: this.$store.state.data.changes,
           })
         }
-      },
-      create () {
       },
       loadAsyncData() {
         // this.loading = true;

@@ -12,6 +12,7 @@ defineComponent('furet-ui-resource-set', {
       v-on:update-query-string="updateQueryString"
       v-on:create-data="createData"
       v-on:update-data="updateData"
+      v-on:delete-data="deleteData"
 
       v-on:go-to-new="goToNew"
       v-on:go-to-page="goToPage"
@@ -59,6 +60,9 @@ defineComponent('furet-ui-resource-set', {
       },
       updateData (data) {
         this.$emit('update-data', data);
+      },
+      deleteData (data) {
+        this.$emit('delete-data', data);
       },
       goToNew () {
         // add to breadscrumb
