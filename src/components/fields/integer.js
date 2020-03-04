@@ -22,35 +22,34 @@ fields.list.integer = 'furet-ui-list-field-integer'
 // export const FieldThumbnailInteger = Vue.component('furet-ui-thumbnail-field-integer', {
 //     mixins: [ThumbnailMixin],
 // })
-// 
-// export const FieldFormInteger = Vue.component('furet-ui-form-field-integer', {
-//     props: ['min', 'max'],
-//     mixins: [FormMixin],
-//     template: `
-//         <div v-if="this.isInvisible" />
-//         <b-tooltip 
-//             v-bind:label="getTooltip" 
-//             v-bind:position="tooltipPosition"
-//             v-bind:style="{'width': '100%'}"
-//             v-else
-//         >
-//             <b-field 
-//                 v-bind:label="this.label"
-//                 v-bind:type="getType"
-//                 v-bind:message="getMessage"
-//                 v-bind:style="{'width': 'inherit'}"
-//             >
-//                 <span v-if="isReadonly"> {{data}} </span>
-//                 <b-input 
-//                     v-else 
-//                     type="number"
-//                     step="1"
-//                     v-bind:value="data" 
-//                     v-on:change="updateValue"
-//                     v-bind:min="min"
-//                     v-bind:max="max"
-//                 >
-//                 </b-input>
-//             </b-field>
-//         </b-tooltip>`,
-// })
+
+defineComponent('furet-ui-form-field-integer', {
+  template: `
+    <div v-if="this.isInvisible" />
+    <b-tooltip 
+      v-bind:label="getTooltip" 
+      v-bind:position="tooltipPosition"
+      v-bind:style="{'width': '100%'}"
+      v-else
+    >
+      <b-field 
+        v-bind:label="config.label"
+        v-bind:type="getType"
+        v-bind:message="getMessage"
+        v-bind:style="{'width': 'inherit'}"
+      >
+        <span v-if="isReadonly"> {{value}} </span>
+        <b-input 
+          v-else 
+          type="number"
+          step="1"
+          v-bind:value="value" 
+          v-on:input="updateValue"
+          v-bind:min="config.min"
+          v-bind:max="config.max"
+        />
+      </b-field>
+    </b-tooltip>`,
+  extend: ['furet-ui-form-field-common'],
+})
+fields.form.integer = 'furet-ui-form-field-integer'

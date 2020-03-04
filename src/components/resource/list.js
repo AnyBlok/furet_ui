@@ -1,3 +1,4 @@
+import _ from 'underscore';
 import { resources } from './resources';
 import { defineComponent } from '../factory';
 
@@ -20,6 +21,24 @@ defineComponent('furet-ui-resource-list', {
       v-on:go-to-new="goToNew"
       v-on:go-to-page="goToPage"
     >
+      <template slot="hidden_field">
+        <section class="section" v-if="hidden_field.length">
+          <b-field grouped group-multiline>
+            <div 
+              v-for="header in hidden_field"
+              v-bind:key="header.name"
+              class="control"
+            >
+              <b-checkbox 
+                v-bind:value="!header.hidden"
+                v-on:input="toggleHidden(header.name)"
+              > 
+                  {{ $t(header.label) }}
+              </b-checkbox>
+            </div>
+          </b-field>
+        </section>
+      </template>
       <template slot-scope="props">
         <b-table-column 
           v-for="header in resource.headers" 
@@ -27,6 +46,7 @@ defineComponent('furet-ui-resource-list', {
           v-bind:field="header.name" 
           v-bind:label="$t(header.label)" 
           v-bind:sortable="header.sortable"
+          v-bind:visible="!header.hidden"
           >
             <component 
               v-bind:is="header.component" 
@@ -48,6 +68,9 @@ defineComponent('furet-ui-resource-list', {
       resource () {
         return this.$store.state.global.resources[this.id];
       },
+      hidden_field () {
+        return _.filter(this.resource.headers, header => header.can_be_hidden);
+      },
       api_params () {
         return {
           model: this.resource.model,
@@ -63,6 +86,9 @@ defineComponent('furet-ui-resource-list', {
             res.push(this.$store.getters.get_entry(this.resource.model, pk))
         });
         return res;
+      },
+      toggleHidden (field) {
+        this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN', {id: this.id, field})
       },
       updateQueryString (query) {
         this.$emit('update-query-string', query);

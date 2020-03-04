@@ -71,32 +71,35 @@ fields.list.yesno = 'furet-ui-list-field-yesno'
 //        },
 //    }
 //})
-//
-//export const FieldFormBoolean = Vue.component('furet-ui-form-field-boolean', {
-//    mixins: [FormMixin],
-//    template: `
-//        <div v-if="this.isInvisible" />
-//        <b-tooltip 
-//            v-bind:label="getTooltip" 
-//            v-bind:position="tooltipPosition"
-//            v-else
-//        >
-//            <b-checkbox 
-//                v-model="data" 
-//                v-bind:disabled="isReadonly"
-//            >
-//                {{this.label}}
-//            </b-checkbox>
-//        </b-tooltip>`,
-//    computed: {
-//        data: {
-//            get () {
-//                const value = this.config && this.config.data && this.config.data[this.name] || '';
-//                return eval(value) ? true : false;
-//            },
-//            set (value) {
-//                this.updateValue (value);
-//            },
-//        },
-//    },
-//})
+
+
+defineComponent('furet-ui-form-field-boolean', {
+  template: `
+    <div v-if="isInvisible" />
+    <b-tooltip 
+      v-bind:label="getTooltip" 
+      v-bind:position="tooltipPosition"
+      v-else
+    >
+      <b-checkbox 
+        v-model="checked" 
+        v-bind:disabled="isReadonly"
+      >
+        {{ $t(config.label) }}
+      </b-checkbox>
+    </b-tooltip>`,
+  extend: ['furet-ui-form-field-common'],
+  prototype: {
+    computed: {
+      checked: {
+        get () {
+          return eval(this.value) ? true : false;
+        },
+        set (value) {
+          this.updateValue (value);
+        },
+      },
+    },
+  },
+})
+fields.form.boolean = 'furet-ui-form-field-boolean'

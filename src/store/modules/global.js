@@ -76,6 +76,15 @@ export const mutations = {
     });
     state.resources = resources;
   },
+  UPDATE_RESOURCE_TOGGLE_HIDDEN(state, action) {
+    const resources = Object.assign({}, state.resources)
+    resources[action.id].headers.forEach(header => {
+      if (header.name == action.field) {
+        header.hidden = ! header.hidden
+      }
+    });
+    state.resources = resources;
+  },
   UPDATE_CURRENT_LEFT_MENUS(state, action) {
     state.left_menus = action.menus;
   },
