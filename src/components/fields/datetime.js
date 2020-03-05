@@ -45,44 +45,44 @@ fields.list.datetime = 'furet-ui-list-field-datetime'
 defineComponent('furet-ui-form-field-datetime', {
   extend: ['furet-ui-form-field-common'],
   template: `
-    <div v-if="this.isInvisible" />
-    <b-tooltip 
-        v-bind:label="getTooltip" 
-        v-bind:position="tooltipPosition"
-        v-bind:style="{'width': '100%'}"
-        v-else
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:data="data"
+      v-bind:config="config"
     >
-        <b-field 
-            v-bind:label="$t(config.label)"
-            v-bind:type="getType"
-            v-bind:message="getMessage"
-            v-bind:style="{'width': 'inherit'}"
-        >
-            <span v-if="isReadonly"> {{value}} </span>
-            <b-datetimepicker
-               v-else
-               rounded
-               v-bind:placeholder="config.placeholder"
-               v-bind:value="value" 
-               v-on:input="updateDateTimeValue"
-               v-bind:editable="config.editable"
-               v-bind:datepicker="config.show_week_number"
-               v-bind:timepicker="config.timepicker">
-               icon-pack="fa"
-               v-bind:icon="config.icon"
-            </b-datetimepicker>
-        </b-field>
-    </b-tooltip>`,
+      <b-datetimepicker
+        rounded
+        v-bind:placeholder="config.placeholder"
+        v-bind:disabled="isReadonly" 
+        v-bind:value="value" 
+        v-on:input="updateDateTimeValue"
+        v-bind:editable="config.editable"
+        v-bind:datepicker="config.datepicker"
+        v-bind:timepicker="config.timepicker"
+        icon-pack="fa"
+        v-bind:icon="config.icon"
+      >
+        <template slot="left">
+          <button class="button is-primary"
+            v-on:click="updateDateTimeValue(new Date())">
+            <b-icon icon="clock"></b-icon>
+            <span>Now</span>
+          </button>
+        </template>
+        <template slot="right">
+          <button class="button is-danger"
+            v-on:click="updateValue(null)">
+            <b-icon icon="times"></b-icon>
+            <span>Clear</span>
+          </button>
+        </template>
+      </b-datetimepicker>
+    </furet-ui-form-field-common-tooltip-field>
+  `,
   prototype: {
     computed: {
       value () {
         moment.locale(i18n.locale);
         const value = this.data[this.config.name];
-        if (this.isReadonly) {
-          if (value) return moment(value).format('LLL');
-          return ''
-        }
-
         if (!value) return null;
         return new Date(Date.parse(value))
       },

@@ -75,11 +75,9 @@ fields.list.yesno = 'furet-ui-list-field-yesno'
 
 defineComponent('furet-ui-form-field-boolean', {
   template: `
-    <div v-if="isInvisible" />
-    <b-tooltip 
-      v-bind:label="getTooltip" 
-      v-bind:position="tooltipPosition"
-      v-else
+    <furet-ui-form-field-common-tooltip
+      v-bind:data="data"
+      v-bind:config="config"
     >
       <b-checkbox 
         v-model="checked" 
@@ -87,7 +85,7 @@ defineComponent('furet-ui-form-field-boolean', {
       >
         {{ $t(config.label) }}
       </b-checkbox>
-    </b-tooltip>`,
+    </furet-ui-form-field-common-tooltip>`,
   extend: ['furet-ui-form-field-common'],
   prototype: {
     computed: {

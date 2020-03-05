@@ -86,6 +86,76 @@ defineComponent('furet-ui-list-field-common', {
 // });
 
 
+defineComponent('furet-ui-form-field-common-tooltip', {
+  template: `
+    <div v-if="isInvisible" />
+    <b-tooltip 
+      v-bind:label="getTooltip" 
+      v-bind:position="tooltipPosition"
+      v-bind:style="{'width': '100%'}"
+      v-else
+    >
+      <slot />
+    </b-tooltip>`,
+  prototype: {
+    props: ['data', 'config'],
+    computed: {
+      isInvisible () {
+        return safe_eval(this.config.invisible, this.data || {});
+      },
+      getTooltip () {
+        return this.$t(this.config.tooltip || '');
+      },
+      tooltipPosition () {
+        return this.config.tooltip_position || 'is-top';
+      },
+    },
+  },
+})
+
+
+defineComponent('furet-ui-form-field-common-tooltip-field', {
+  template: `
+    <furet-ui-form-field-common-tooltip
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <b-field 
+        v-bind:label="$t(config.label)"
+        v-bind:type="getType"
+        v-bind:message="getMessage"
+        v-bind:style="{'width': 'inherit'}"
+      >
+        <slot />
+      </b-field>
+    </furet-ui-form-field-common-tooltip>`,
+  prototype: {
+    props: ['data', 'config'],
+    computed: {
+      value () {
+        return this.data && this.data[this.config.name] || '';
+      },
+      isRequired () {
+        return safe_eval(this.config.required, this.data || {});
+      },
+      getType () {
+        if (this.isRequired) {
+          if (this.value) return 'is-info';
+          return 'is-danger';
+        }
+        return '';
+      },
+      getMessage () {
+        if (this.isRequired) {
+          if (!this.value) return this.$i18n.t('fields.common.required');
+        }
+        return ''
+      },
+    },
+  },
+})
+
+
 defineComponent('furet-ui-form-field-common', {
   prototype: {
     props: ['resource', 'data', 'config'],
@@ -97,32 +167,6 @@ defineComponent('furet-ui-form-field-common', {
         const readonlyParams = safe_eval(this.config.readonly, this.data || {});
         const readonly = this.resource.readonly;
         return readonly || readonlyParams;
-      },
-      isRequired () {
-        return safe_eval(this.config.required, this.data || {});
-      },
-      isInvisible () {
-        return safe_eval(this.config.invisible, this.data || {});
-      },
-      getTooltip () {
-          return this.$t(this.config.tooltip || '');
-      },
-      tooltipPosition () {
-          return this.config.tooltip_position || 'is-top';
-      },
-      getType () {
-        if (this.isRequired) {
-          if (this.value) return 'is-info';
-          return 'is-danger';
-        }
-        return '';
-      },
-      getMessage () {
-        if (this.isReadonly) return '';
-        if (this.isRequired) {
-          if (!this.value) return this.$i18n.t('fields.common.required');
-        }
-        return ''
       },
     },
     methods: {

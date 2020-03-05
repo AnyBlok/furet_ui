@@ -25,31 +25,21 @@ fields.list.integer = 'furet-ui-list-field-integer'
 
 defineComponent('furet-ui-form-field-integer', {
   template: `
-    <div v-if="this.isInvisible" />
-    <b-tooltip 
-      v-bind:label="getTooltip" 
-      v-bind:position="tooltipPosition"
-      v-bind:style="{'width': '100%'}"
-      v-else
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:data="data"
+      v-bind:config="config"
     >
-      <b-field 
-        v-bind:label="config.label"
-        v-bind:type="getType"
-        v-bind:message="getMessage"
-        v-bind:style="{'width': 'inherit'}"
-      >
-        <span v-if="isReadonly"> {{value}} </span>
-        <b-input 
-          v-else 
-          type="number"
-          step="1"
-          v-bind:value="value" 
-          v-on:input="updateValue"
-          v-bind:min="config.min"
-          v-bind:max="config.max"
-        />
-      </b-field>
-    </b-tooltip>`,
+      <b-input 
+        type="number"
+        step="1"
+        v-bind:value="value" 
+        v-bind:disabled="isReadonly" 
+        v-on:input="updateValue"
+        v-bind:min="config.min"
+        v-bind:max="config.max"
+      />
+    </furet-ui-form-field-common-tooltip-field>
+  `,
   extend: ['furet-ui-form-field-common'],
 })
 fields.form.integer = 'furet-ui-form-field-integer'

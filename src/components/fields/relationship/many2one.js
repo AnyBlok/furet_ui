@@ -76,44 +76,31 @@ fields.list.many2one = 'furet-ui-list-field-many2one'
 // 
 defineComponent('furet-ui-form-field-many2one', {
   template: `
-    <div v-if="this.isInvisible" />
-    <b-tooltip 
-      v-bind:label="getTooltip" 
-      v-bind:position="tooltipPosition"
-      v-bind:style="{'width': '100%'}"
-      v-else
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:data="data"
+      v-bind:config="config"
     >
-      <b-field 
-        v-bind:label="$t(config.label)"
-        v-bind:type="getType"
-        v-bind:message="getMessage"
-        v-bind:style="{'width': 'inherit'}"
-      >
-        <a v-if="isReadonly" v-on:click.stop="onClick">{{value}}</a>
-        <div 
-          v-else
-          class="field has-addons" 
-        >
-          <p class="control is-expanded">
-            <b-autocomplete
-              v-bind:value="value"
-              v-bind:data="choices"
-              field="label"
-              v-bind:placeholder="config.placeholder"
-              icon-pack="fa"
-              v-bind:icon="config.icon"
-              v-on:typing="onChange"
-              v-on:select="onSelect"
-            />
-          </p>
-          <p class="control" v-if="value">
-            <a v-on:click.stop="onClick" class="button">
-              <b-icon icon="external-link-alt" />
-            </a>
-          </p>
-        </div>
-      </b-field>
-    </b-tooltip>
+      <div class="field has-addons">
+        <p class="control is-expanded">
+          <b-autocomplete
+            v-bind:value="value"
+            v-bind:disabled="isReadonly" 
+            v-bind:data="choices"
+            field="label"
+            v-bind:placeholder="config.placeholder"
+            icon-pack="fa"
+            v-bind:icon="config.icon"
+            v-on:typing="onChange"
+            v-on:select="onSelect"
+          />
+        </p>
+        <p class="control" v-if="value">
+          <a v-on:click.stop="onClick" class="button">
+            <b-icon icon="external-link-alt" />
+          </a>
+        </p>
+      </div>
+    </furet-ui-form-field-common-tooltip-field>
   `,
   extend: ['furet-ui-form-field-common', 'furet-ui-list-field-relationship'],
   prototype: {
@@ -147,6 +134,7 @@ defineComponent('furet-ui-form-field-many2one', {
         this.updateValue(value.pk)
       },
       onChange (value) {
+        if (this.value) this.updateValue(null)
         const params = {
           model: this.config.model,
           fields: this.config.fields.toString(),

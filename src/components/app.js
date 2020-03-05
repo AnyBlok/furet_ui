@@ -444,6 +444,7 @@ defineComponent('furet-ui-space-resource-manager', {
         v-on:create-data="createData"
         v-on:update-data="updateData"
         v-on:delete-data="deleteData"
+        v-on:clear-change="clearChange"
       />
     </div>
   `,
@@ -500,6 +501,9 @@ defineComponent('furet-ui-space-resource-manager', {
           .catch((error) => {
             this.errors = error.response.data.errors;
           });
+      },
+      clearChange () {
+        this.$store.commit('CLEAR_CHANGE')
       },
     },
     mounted() {

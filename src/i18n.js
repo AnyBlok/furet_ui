@@ -29,6 +29,7 @@ export const i18nConf = {
           list: {
             search: 'Search',
             new: 'New',
+            canel: 'Cancel',
             notFound: 'No result found',
           },
         },

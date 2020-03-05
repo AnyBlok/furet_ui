@@ -37,11 +37,13 @@ defineComponent('furet-ui-resource-form', {
         </template>
       </furet-ui-header-page>
       <div class="section">
-        <component 
-          v-bind:is="form_card" 
-          v-bind:resource="resource"
-          v-bind:data="data"
-        />
+        <fieldset v-bind:disabled="readonly">
+          <component 
+            v-bind:is="form_card" 
+            v-bind:resource="resource"
+            v-bind:data="data"
+          />
+        </fieldset>
       </div>
     </section>
   `,
@@ -100,8 +102,9 @@ defineComponent('furet-ui-resource-form', {
         this.readonly = false;
       },
       goToPage () {
-        this.$store.commit('CLEAR_DATA')
-        this.readonly = true;
+        this.$emit('clear-change', {pks: this.pks, uuid: this.uuid})
+        if (this.uuid) this.goToList();
+        else this.readonly = true;
       },
       deleteEntry () {
         this.$emit('delete-data', {

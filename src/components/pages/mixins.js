@@ -336,7 +336,13 @@ defineComponent('furet-ui-header-page', {
         </div>
       </div>
       <div class="buttons is-grouped is-centered">
-        <a class="button is-primary is-outlined" v-on:click="goToList">
+        <a v-if="can_save" class="button is-warning is-outlined" v-on:click="goToPage">
+          <span class="icon">
+            <b-icon icon="times" />
+          </span>
+          <span>{{ $t('components.page.cancel') }}</span>
+        </a>
+        <a v-else class="button is-primary is-outlined" v-on:click="goToList">
           <span class="icon">
             <b-icon icon="arrow-left" />
           </span>
@@ -395,6 +401,9 @@ defineComponent('furet-ui-header-page', {
     methods: {
       goToList() {
         this.$emit('go-to-list');
+      },
+      goToPage(row) {
+        this.$emit('go-to-page', row);
       },
       goToPreviousPage() {
         const target = this.prevous_target;

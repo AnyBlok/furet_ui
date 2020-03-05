@@ -25,32 +25,20 @@ fields.list.string = 'furet-ui-list-field-string'
 
 defineComponent('furet-ui-form-field-string', {
   template: `
-    <div v-if="this.isInvisible" />
-    <b-tooltip 
-        v-bind:label="getTooltip" 
-        v-bind:position="tooltipPosition"
-        v-bind:style="{'width': '100%'}"
-        v-else
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:data="data"
+      v-bind:config="config"
     >
-        <b-field 
-            v-bind:label="$t(config.label)"
-            v-bind:type="getType"
-            v-bind:message="getMessage"
-            v-bind:style="{'width': 'inherit'}"
-        >
-            <span v-if="isReadonly"> {{value}} </span>
-            <b-input 
-                v-else 
-                v-bind:value="value" 
-                v-on:input="updateValue"
-                v-bind:maxlength="config.maxlength"
-                v-bind:placeholder="config.placeholder"
-                icon-pack="fa"
-                v-bind:icon="config.icon"
-            >
-            </b-input>
-        </b-field>
-    </b-tooltip>
+      <b-input 
+          v-bind:value="value" 
+          v-bind:disabled="isReadonly" 
+          v-on:input="updateValue"
+          v-bind:maxlength="config.maxlength"
+          v-bind:placeholder="config.placeholder"
+          icon-pack="fa"
+          v-bind:icon="config.icon"
+      />
+    </furet-ui-form-field-common-tooltip-field>
   `,
   extend: ['furet-ui-form-field-common'],
 })

@@ -10,11 +10,18 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import _ from 'underscore';
 import {defineComponent} from '../factory'
 import {fields} from './fields';
-import { listTemplate } from './common';
 
 
 defineComponent('furet-ui-list-field-selection', {
-  template: listTemplate,
+  template: `
+    <div>
+      <span v-if="isInvisible" />
+      <div v-else>
+        <b-tag v-if="color !== undefined" v-bind:type="color">{{value}}</b-tag>
+        <span v-else>{{value}}</span>
+      </div>
+    </div>
+  `,
   extend: ['furet-ui-list-field-common'],
   prototype: {
     computed: {
@@ -22,7 +29,12 @@ defineComponent('furet-ui-list-field-selection', {
           const selections = this.config.selections || {};
           const value = this.data[this.config.name] || '';
           if (selections[value] == undefined) return ' --- ';
-          return selections[value];
+          return this.$t(selections[value]);
+      },
+      color () {
+          const colors = this.config.colors || {};
+          const value = this.data[this.config.name] || '';
+          return colors[value];
       },
     },
   },
@@ -47,23 +59,19 @@ fields.list.selection = 'furet-ui-list-field-selection'
 
 defineComponent('furet-ui-form-field-selection', {
   template: `
-    <div v-if="this.isInvisible" />
-    <b-tooltip 
-      v-bind:label="getTooltip" 
-      v-bind:position="tooltipPosition"
-      v-bind:style="{'width': '100%'}"
-      v-else
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:data="data"
+      v-bind:config="config"
     >
-      <b-field 
-        v-bind:label="config.label"
-        v-bind:type="getType"
-        v-bind:message="getMessage"
-        v-bind:style="{'width': 'inherit'}"
-      >
-        <span v-if="isReadonly"> {{formated_value}} </span>
+      <div class="field has-addons">
+        <p class="control" v-if="color">
+          <a class="button">
+            <b-icon icon="info-circle" v-bind:type="color"/>
+          </a>
+        </p>
         <b-select 
-          v-else 
           v-bind:placeholder="config.placeholder"
+          v-bind:disabled="isReadonly" 
           icon-pack="fa"
           v-bind:icon="config.icon"
           v-bind:value="value"
@@ -78,8 +86,9 @@ defineComponent('furet-ui-form-field-selection', {
             {{ option.label }}
           </option>
         </b-select>
-      </b-field>
-    </b-tooltip>`,
+      </div>
+    </furet-ui-form-field-common-tooltip-field>
+  `,
   extend: ['furet-ui-form-field-common'],
   prototype: {
     computed: {
@@ -89,7 +98,14 @@ defineComponent('furet-ui-form-field-selection', {
         return this.$t(selections[this.value]);
       },
       getSelections () {
-        return _.map(this.config.selections, (label, value) => ({value, label: this.$t(label)}));
+        const colors = this.config.colors || {};
+        return _.map(this.config.selections, (label, value) => (
+          {value, label: this.$t(label), color: colors[value]}
+        ));
+      },
+      color () {
+        const colors = this.config.colors || {};
+        return colors[this.value];
       },
     },
   },
