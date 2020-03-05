@@ -76,11 +76,11 @@ export const mutations = {
     });
     state.resources = resources;
   },
-  UPDATE_RESOURCE_TOGGLE_HIDDEN(state, action) {
+  UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN(state, action) {
     const resources = Object.assign({}, state.resources)
     resources[action.id].headers.forEach(header => {
       if (header.name == action.field) {
-        header.hidden = ! header.hidden
+        header['hidden-column'] = ! header['hidden-column']
       }
     });
     state.resources = resources;

@@ -54,7 +54,7 @@ defineComponent('furet-ui-list-field-relationship', {
 // export const RelationShipX2MList = {
 //     template: `
 //         <div>
-//             <span v-if="isInvisible" />
+//             <span v-if="isHidden" />
 //             <div v-else>
 //                 <span 
 //                     v-for="value in values"
@@ -105,7 +105,7 @@ defineComponent('furet-ui-list-field-relationship', {
 // export const RelationShipX2MThumbnail = {
 //     props: ['model', 'spaceId', 'menuId', 'actionId', 'mode', 'display', 'fieldcolor'],
 //     template: `
-//         <div v-if="this.isInvisible" />
+//         <div v-if="this.isHidden" />
 //         <b-tooltip 
 //             v-bind:label="getTooltip" 
 //             v-bind:position="tooltipPosition"

@@ -21,17 +21,17 @@ defineComponent('furet-ui-resource-list', {
       v-on:go-to-new="goToNew"
       v-on:go-to-page="goToPage"
     >
-      <template slot="hidden_field">
-        <section class="section" v-if="hidden_field.length">
+      <template slot="hidden_columns">
+        <section class="section" v-if="hidden_columns.length">
           <b-field grouped group-multiline>
             <div 
-              v-for="header in hidden_field"
+              v-for="header in hidden_columns"
               v-bind:key="header.name"
               class="control"
             >
               <b-checkbox 
-                v-bind:value="!header.hidden"
-                v-on:input="toggleHidden(header.name)"
+                v-bind:value="!header.column_column"
+                v-on:input="toggleHiddenColumn(header.name)"
               > 
                   {{ $t(header.label) }}
               </b-checkbox>
@@ -46,7 +46,7 @@ defineComponent('furet-ui-resource-list', {
           v-bind:field="header.name" 
           v-bind:label="$t(header.label)" 
           v-bind:sortable="header.sortable"
-          v-bind:visible="!header.hidden"
+          v-bind:visible="!header['hidden-column']"
           >
             <component 
               v-bind:is="header.component" 
@@ -68,8 +68,8 @@ defineComponent('furet-ui-resource-list', {
       resource () {
         return this.$store.state.global.resources[this.id];
       },
-      hidden_field () {
-        return _.filter(this.resource.headers, header => header.can_be_hidden);
+      hidden_columns () {
+        return _.filter(this.resource.headers, header => header['column-can-be-hidden']);
       },
       api_params () {
         return {
@@ -87,8 +87,8 @@ defineComponent('furet-ui-resource-list', {
         });
         return res;
       },
-      toggleHidden (field) {
-        this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN', {id: this.id, field})
+      toggleHiddenColumn (field) {
+        this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})
       },
       updateQueryString (query) {
         this.$emit('update-query-string', query);

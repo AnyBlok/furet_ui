@@ -16,7 +16,7 @@ import { listTemplate } from './common';
 defineComponent('furet-ui-list-field-boolean', {
   template: `
     <div>
-      <span v-if="isInvisible" />
+      <span v-if="isHidden" />
       <b-checkbox 
         v-else
         v-model="checked"
@@ -52,7 +52,7 @@ fields.list.yesno = 'furet-ui-list-field-yesno'
 //export const FieldThumbnailBoolean = Vue.component('furet-ui-thumbnail-field-boolean', {
 //    mixins: [ThumbnailMixin],
 //    template: `
-//        <div v-if="this.isInvisible" />
+//        <div v-if="this.isHidden" />
 //        <b-tooltip 
 //            v-bind:label="getTooltip" 
 //            v-bind:position="tooltipPosition"

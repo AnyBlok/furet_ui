@@ -28,7 +28,7 @@ export const safe_eval = (condition, fields) => {
 
 export const listTemplate = `
   <div>
-    <span v-if="isInvisible" />
+    <span v-if="isHidden" />
     <span v-else>{{value}}</span>
   </div>
 `
@@ -41,8 +41,9 @@ defineComponent('furet-ui-list-field-common', {
       value () {
         return this.data[this.config.name] || '';
       },
-      isInvisible () {
-        return safe_eval(this.config.invisible, this.data || {});
+      isHidden () {
+        if (this.config.hidden === undefined) return false;
+        return safe_eval(this.config.hidden, this.data || {});
       },
     },
   }
@@ -51,7 +52,7 @@ defineComponent('furet-ui-list-field-common', {
 
 // defineComponent('furet-ui-thumbnail-field-common', {
 //   template: `
-//     <div v-if="this.isInvisible" />
+//     <div v-if="this.isHidden" />
 //     <b-tooltip 
 //         v-bind:label="getTooltip" 
 //         v-bind:position="tooltipPosition"
@@ -72,8 +73,8 @@ defineComponent('furet-ui-list-field-common', {
 //       value () {
 //         return this.data && this.data[this.config.name] || '';
 //       },
-//       isInvisible () {
-//         return safe_eval(this.config.invisible, this.data || {});
+//       isHidden () {
+//         return safe_eval(this.config.hidden, this.data || {});
 //       },
 //       getTooltip () {
 //           return this.config.tooltip || '';
@@ -88,7 +89,7 @@ defineComponent('furet-ui-list-field-common', {
 
 defineComponent('furet-ui-form-field-common-tooltip', {
   template: `
-    <div v-if="isInvisible" />
+    <div v-if="isHidden" />
     <b-tooltip 
       v-bind:label="getTooltip" 
       v-bind:position="tooltipPosition"
@@ -100,8 +101,9 @@ defineComponent('furet-ui-form-field-common-tooltip', {
   prototype: {
     props: ['data', 'config'],
     computed: {
-      isInvisible () {
-        return safe_eval(this.config.invisible, this.data || {});
+      isHidden () {
+        if (this.config.hidden === undefined) return false;
+        return safe_eval(this.config.hidden, this.data || {});
       },
       getTooltip () {
         return this.$t(this.config.tooltip || '');
@@ -164,9 +166,13 @@ defineComponent('furet-ui-form-field-common', {
         return this.data && this.data[this.config.name] || '';
       },
       isReadonly () {
+        if (this.resource.readonly) return true;
         const readonlyParams = safe_eval(this.config.readonly, this.data || {});
-        const readonly = this.resource.readonly;
-        return readonly || readonlyParams;
+        if (this.config.writable) {
+          const writableParams = safe_eval(this.config.writable, this.data || {});
+          return readonlyParams && ! writableParams
+        }
+        return readonlyParams;
       },
     },
     methods: {

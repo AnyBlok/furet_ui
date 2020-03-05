@@ -15,7 +15,7 @@ import {fields} from './fields';
 defineComponent('furet-ui-list-field-selection', {
   template: `
     <div>
-      <span v-if="isInvisible" />
+      <span v-if="isHidden" />
       <div v-else>
         <b-tag v-if="color !== undefined" v-bind:type="color">{{value}}</b-tag>
         <span v-else>{{value}}</span>

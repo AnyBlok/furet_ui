@@ -26,7 +26,7 @@ defineComponent('furet-ui-list', {
           <slot name="actions" v-bind:data="props.data" />
         </template>
       </furet-ui-page-multi-entries-header>
-      <slot name="hidden_field" />
+      <slot name="hidden_columns" />
       <b-table
         ref="list_table"
         v-bind:data="data"

@@ -16,7 +16,7 @@ import {fields} from '../fields';
 defineComponent('furet-ui-list-field-many2one', {
   template: `
     <div>
-      <span v-if="isInvisible" />
+      <span v-if="isHidden" />
       <a v-else v-on:click.stop="onClick">{{$t(value)}}</a>
     </div>`,
   extend: ['furet-ui-list-field-common', 'furet-ui-list-field-relationship'],
@@ -42,7 +42,7 @@ fields.list.many2one = 'furet-ui-list-field-many2one'
 //     props: ['model', 'spaceId', 'menuId', 'actionId', 'mode', 'display'],
 //     mixins: [ThumbnailMixin, RelationShip],
 //     template: `
-//         <div v-if="isInvisible" />
+//         <div v-if="isHidden" />
 //         <b-tooltip 
 //             v-bind:label="getTooltip" 
 //             v-bind:position="tooltipPosition"
