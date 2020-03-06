@@ -10,6 +10,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import _ from 'underscore';
 import {defineComponent} from '../factory'
 import {fields} from './fields';
+import {safe_eval} from './common';
 
 
 defineComponent('furet-ui-list-field-selection', {
@@ -97,11 +98,19 @@ defineComponent('furet-ui-form-field-selection', {
         if (selections[this.value] == undefined) return ' --- ';
         return this.$t(selections[this.value]);
       },
+      isRequired () {
+        return safe_eval(this.config.required, this.data || {});
+      },
       getSelections () {
         const colors = this.config.colors || {};
-        return _.map(this.config.selections, (label, value) => (
-          {value, label: this.$t(label), color: colors[value]}
-        ));
+        const selections = [];
+          if (!this.isRequired) selections.push({label: '', value: null, color: null});
+
+        _.each(this.config.selections, (label, value) => {
+          selections.push({value, label: this.$t(label), color: colors[value]})
+        });
+
+        return selections;
       },
       color () {
         const colors = this.config.colors || {};

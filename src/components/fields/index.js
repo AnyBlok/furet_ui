@@ -3,6 +3,7 @@ import './common';
 import './boolean';
 import './datetime';
 import './integer';
+import './password';
 import './timestamp';
 import './selection';
 import './string';
