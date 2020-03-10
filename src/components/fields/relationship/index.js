@@ -9,5 +9,5 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import './common';
 import './many2one';
-// import './one2many';
+import './one2many';
 // import './many2many';

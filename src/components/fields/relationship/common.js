@@ -10,6 +10,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 // import {json_post_dispatch_all} from '../../server-call';
 // import _ from 'underscore';
 import {defineComponent} from '../../factory'
+import {safe_eval} from '../common'
 
 
 defineComponent('furet-ui-list-field-relationship', {
@@ -19,19 +20,34 @@ defineComponent('furet-ui-list-field-relationship', {
        fields
        return eval(condition);
      },
+     getStyle(value) {
+       if (this.config.color !== undefined) {
+         const data =  this.$store.getters.get_entry(this.config.model, value);
+         return safe_eval(this.config.color, data);
+       }
+       return {}
+     },
      // addInBreadscrumb (options) {
      //   addInBreadscrumb(this.$route, this.$store, options);
-     // },
-     // getStyle (dataId) {
-     //   if (this.fieldcolor) {
-     //     const data = this.$store.state.data.data[this.model][dataId];
-     //     if (data[this.fieldcolor]) return {border: '4px solid ' + data[this.fieldcolor]};
-     //   }
-     //   return {};
      // },
      },
   },
 });
+export const RelationShipX2MList = `
+  <div>
+    <span v-if="isHidden" />
+    <div v-else>
+      <span 
+        v-for="value in values"
+        class="tag" 
+        v-bind:style="getStyle(value)"
+      >
+        <a 
+          v-on:click.stop="onClick(value.pk)">{{value.label}}
+        </a>
+      </span>
+    </div>
+  </div>`
 
 // export const addInBreadscrumb = (route, store, options) => {
 //     const changes = Object.assign({}, store.state.data.changes);
@@ -52,36 +68,7 @@ defineComponent('furet-ui-list-field-relationship', {
 // };
 // 
 // export const RelationShipX2MList = {
-//     template: `
-//         <div>
-//             <span v-if="isHidden" />
-//             <div v-else>
-//                 <span 
-//                     v-for="value in values"
-//                     class="tag" 
-//                     v-bind:style="getStyle(value.dataId)"
-//                 >
-//                     <a 
-//                         v-on:click.stop="onClick(value.dataId)">{{value.label}}
-//                     </a>
-//                 </span>
-//             </div>
-//         </div>`,
 //     computed: {
-//         values () {
-//             const values = this.row[this.header.name] || '';
-//             const model = this.header.model; 
-//             if (model) {
-//                 let data = this.$store.state.data.data;
-//                 if (data[model]) {
-//                     data = data[model];
-//                     return _.map(values, dataId => {
-//                         return {dataId, label: this.format(this.header.display, data[String(dataId)])}
-//                     })
-//                 }
-//             }
-//             return [];
-//         },
 //         model () {
 //             return this.header.model;
 //         },
@@ -89,18 +76,6 @@ defineComponent('furet-ui-list-field-relationship', {
 //             return this.header.fieldcolor;
 //         },
 //     },
-//     methods: {
-//         onClick (dataId) {
-//             this.addInBreadscrumb({
-//                 spaceId: this.header.spaceId,
-//                 menuId: this.header.menuId,
-//                 actionId: this.header.actionId,
-//                 dataId,
-//                 mode: this.header.mode,
-//             });
-//         },
-//     },
-// }
 // 
 // export const RelationShipX2MThumbnail = {
 //     props: ['model', 'spaceId', 'menuId', 'actionId', 'mode', 'display', 'fieldcolor'],

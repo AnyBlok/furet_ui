@@ -68,7 +68,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
           <div class="level-item buttons">
             <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><b-icon icon="redo" /></a>
             <a id="furet-ui-page-multi-entries-header-tags" v-if="tags.length" class="button" v-on:click.stop="tag_list_open = ! tag_list_open">
-              <b-icon :icon="tag_list_open ? 'arrow-up-drop-circle' : 'arrow-down-drop-circle'" />
+              <b-icon :icon="tag_list_open ? 'arrow-cicle-up' : 'arrow-circle-down'" />
             </a>
           </div>
         </div>
@@ -78,7 +78,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
           <b-tag v-for="tag in tags" v-bind:key="tag.key" v-bind:class="['is-small', tag.selected ? '': 'has-text-weight-bold']" >
             <a 
               v-bind:class="['furet-ui-page-multi-entries-header-toggle-tag', tag.key]" 
-              v-on:click.stop="toggleTag(tag)">{{ tag.label }}</a>
+              v-on:click.stop="toggleTag(tag)">{{ $t(tag.label) }}</a>
           </b-tag>
         </b-taglist>
       </b-collapse>

@@ -43,7 +43,7 @@ defineComponent('furet-ui-resource-set', {
         return Object.assign(
           {
               'can_create': this.resource.can_create,
-              'can_modify': this.resource.can_modify,
+              'can_update': this.resource.can_update,
               'can_delete': this.resource.can_delete,
           }, 
           this.manager);
@@ -73,6 +73,7 @@ defineComponent('furet-ui-resource-set', {
         this.$emit('update-query-string', {mode: 'form'})
       },
       goToPage (row) {
+        if (! this.resource.can_read) return
         // add to breadscrumb
         const pks = {}
         this.resource.pks.forEach(pk => {

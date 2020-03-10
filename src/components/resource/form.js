@@ -13,7 +13,7 @@ defineComponent('furet-ui-resource-form', {
         name="furet-ui-page"
         v-bind:title="resource.title"
         v-bind:can_go_to_new="readonly && manager.can_create"
-        v-bind:can_modify="readonly && manager.can_modify"
+        v-bind:can_modify="readonly && manager.can_update"
         v-bind:can_delete="readonly && manager.can_delete"
         v-bind:can_save="!readonly"
 

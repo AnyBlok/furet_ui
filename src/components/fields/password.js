@@ -60,9 +60,7 @@ defineComponent('furet-ui-form-field-password', {
     computed: {
       reveal () {
         if (this.isReadonly) return false;
-        const res = safe_eval(this.config.reveal, this.data || {});
-        console.log(this.config.reveal, this.data, res)
-        return res
+        return safe_eval(this.config.reveal, this.data || {});
       },
     },
   }

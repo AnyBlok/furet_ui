@@ -318,9 +318,18 @@ defineComponent('furet-ui-space-menu', {
       methods: {
         onClickMenu (menu) {
           if (menu.resource !== undefined) {
+            // TODO CLEAR DATA
+            const query = {};
+            if (menu.tags) query.tags = menu.tags
+            if (menu.order_by) query.order = menu.order_by
+            if (_.keys(menu.filters).length) {
+              query.filters = JSON.stringify(menu.filters);
+            }
+            console.log(menu)
             this.$router.push({
               name: 'resource', 
-              params: {code: this.code, menuId: menu.id, id: menu.resource}
+              params: {code: this.code, menuId: menu.id, id: menu.resource},
+              query,
             });
           }
         }
