@@ -23,7 +23,7 @@ defineComponent('furet-ui-list-field-relationship', {
      getStyle(value) {
        if (this.config.color !== undefined) {
          const data =  this.$store.getters.get_entry(this.config.model, value);
-         return safe_eval(this.config.color, data);
+         return safe_eval(this.config.color, data, {});
        }
        return {}
      },

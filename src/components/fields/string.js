@@ -26,6 +26,7 @@ fields.list.string = 'furet-ui-list-field-string'
 defineComponent('furet-ui-form-field-string', {
   template: `
     <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
     >

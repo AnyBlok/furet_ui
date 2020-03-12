@@ -17,7 +17,7 @@ defineComponent('furet-ui-list-field-many2one', {
   template: `
     <div>
       <span v-if="isHidden" />
-      <a v-else v-on:click.stop="onClick">{{$t(value)}}</a>
+      <a v-else v-on:click.stop="onClick">{{value}}</a>
     </div>`,
   extend: ['furet-ui-list-field-common', 'furet-ui-list-field-relationship'],
     prototype: {
@@ -77,6 +77,7 @@ fields.list.many2one = 'furet-ui-list-field-many2one'
 defineComponent('furet-ui-form-field-many2one', {
   template: `
     <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
     >

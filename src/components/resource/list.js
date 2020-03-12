@@ -6,7 +6,7 @@ import { defineComponent } from '../factory';
 defineComponent('furet-ui-resource-list', {
   template : `
     <furet-ui-list
-      v-bind:title="$t(resource.title)"
+      v-bind:title="resource.title"
       v-bind:default_filters="resource.filters || []"
       v-bind:default_tags="resource.tags || []"
       v-bind:perpage="resource.perpage"
@@ -33,7 +33,7 @@ defineComponent('furet-ui-resource-list', {
                 v-bind:value="!header.column_column"
                 v-on:input="toggleHiddenColumn(header.name)"
               > 
-                  {{ $t(header.label) }}
+                  {{ header.label }}
               </b-checkbox>
             </div>
           </b-field>
@@ -44,7 +44,7 @@ defineComponent('furet-ui-resource-list', {
           v-for="header in resource.headers" 
           v-bind:key="header.name"
           v-bind:field="typeof header.sortable === 'string'? header.sortable : header.name" 
-          v-bind:label="$t(header.label)" 
+          v-bind:label="header.label" 
           v-bind:sortable="typeof header.sortable === 'string'? true: header.sortable"
           v-bind:visible="!header['hidden-column']"
           >

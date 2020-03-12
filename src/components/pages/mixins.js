@@ -327,14 +327,17 @@ defineComponent('mixin-page-multi-entries', {
 defineComponent('furet-ui-header-page', {
   template: `
     <header id="header_page">
-      <div class="level">
-        <div class="level-left">
-          <h2 class="level-item is-size-3">{{ $t(title) }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
+      
+      <slot name="header" v-bind:data="data">
+        <div class="level">
+          <div class="level-left">
+            <h2 class="level-item is-size-3">{{ $t(title) }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
+          </div>
+          <div class="level-right">
+            <slot name="states" v-bind:data="data" />
+          </div>
         </div>
-        <div class="level-right">
-          <slot name="states" v-bind:data="data" />
-        </div>
-      </div>
+      </slot>
       <div class="buttons is-grouped is-centered">
         <a v-if="can_save" class="button is-warning is-outlined" v-on:click="goToPage">
           <span class="icon">

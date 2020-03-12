@@ -11,10 +11,11 @@ import { debounce } from "debounce";
 import {defineComponent} from '../factory'
 
 
-export const safe_eval = (condition, fields) => {
+export const safe_eval = (condition, fields, selectors) => {
     const now = Date.now(),
           toDate = (v) => new Date(v);
     fields  // lint
+    selectors  // lint
     now  // lint
     toDate  // lint
     let res = false;
@@ -43,7 +44,7 @@ defineComponent('furet-ui-list-field-common', {
       },
       isHidden () {
         if (this.config.hidden === undefined) return false;
-        return safe_eval(this.config.hidden, this.data || {});
+        return safe_eval(this.config.hidden, this.data || {}, {});
       },
     },
   }
@@ -99,14 +100,14 @@ defineComponent('furet-ui-form-field-common-tooltip', {
       <slot />
     </b-tooltip>`,
   prototype: {
-    props: ['data', 'config'],
+    props: ['resource', 'data', 'config'],
     computed: {
       isHidden () {
         if (this.config.hidden === undefined) return false;
-        return safe_eval(this.config.hidden, this.data || {});
+        return safe_eval(this.config.hidden, this.data || {}, this.resource.selectors);
       },
       getTooltip () {
-        return this.$t(this.config.tooltip || '');
+        return this.config.tooltip || '';
       },
       tooltipPosition () {
         return this.config.tooltip_position || 'is-top';
@@ -119,11 +120,12 @@ defineComponent('furet-ui-form-field-common-tooltip', {
 defineComponent('furet-ui-form-field-common-tooltip-field', {
   template: `
     <furet-ui-form-field-common-tooltip
+      v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
     >
       <b-field 
-        v-bind:label="$t(config.label)"
+        v-bind:label="config.label"
         v-bind:type="getType"
         v-bind:message="getMessage"
         v-bind:style="{'width': 'inherit'}"
@@ -132,13 +134,13 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
       </b-field>
     </furet-ui-form-field-common-tooltip>`,
   prototype: {
-    props: ['data', 'config'],
+    props: ['resource', 'data', 'config'],
     computed: {
       value () {
         return this.data && this.data[this.config.name] || '';
       },
       isRequired () {
-        return safe_eval(this.config.required, this.data || {});
+        return safe_eval(this.config.required, this.data || {}, this.resource.selectors);
       },
       getType () {
         if (this.isRequired) {
@@ -167,9 +169,9 @@ defineComponent('furet-ui-form-field-common', {
       },
       isReadonly () {
         if (this.resource.readonly) return true;
-        const readonlyParams = safe_eval(this.config.readonly, this.data || {});
+        const readonlyParams = safe_eval(this.config.readonly, this.data || {}, this.resource.selectors);
         if (this.config.writable) {
-          const writableParams = safe_eval(this.config.writable, this.data || {});
+          const writableParams = safe_eval(this.config.writable, this.data || {}, this.resource.selectors);
           return readonlyParams && ! writableParams
         }
         return readonlyParams;

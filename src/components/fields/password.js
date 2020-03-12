@@ -39,6 +39,7 @@ fields.list.password = 'furet-ui-list-field-password'
 defineComponent('furet-ui-form-field-password', {
   template: `
     <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
     >
@@ -60,7 +61,7 @@ defineComponent('furet-ui-form-field-password', {
     computed: {
       reveal () {
         if (this.isReadonly) return false;
-        return safe_eval(this.config.reveal, this.data || {});
+        return safe_eval(this.config.reveal, this.data || {}, this.resource.selectors);
       },
     },
   }

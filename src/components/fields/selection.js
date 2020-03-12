@@ -30,7 +30,7 @@ defineComponent('furet-ui-list-field-selection', {
           const selections = this.config.selections || {};
           const value = this.data[this.config.name] || '';
           if (selections[value] == undefined) return ' --- ';
-          return this.$t(selections[value]);
+          return selections[value];
       },
       color () {
           const colors = this.config.colors || {};
@@ -61,6 +61,7 @@ fields.list.selection = 'furet-ui-list-field-selection'
 defineComponent('furet-ui-form-field-selection', {
   template: `
     <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
     >
@@ -96,10 +97,10 @@ defineComponent('furet-ui-form-field-selection', {
       formated_value () {
         const selections = this.config.selections || {};
         if (selections[this.value] == undefined) return ' --- ';
-        return this.$t(selections[this.value]);
+        return selections[this.value];
       },
       isRequired () {
-        return safe_eval(this.config.required, this.data || {});
+        return safe_eval(this.config.required, this.data || {}, this.resource.selectors);
       },
       getSelections () {
         const colors = this.config.colors || {};
@@ -107,7 +108,7 @@ defineComponent('furet-ui-form-field-selection', {
           if (!this.isRequired) selections.push({label: '', value: null, color: null});
 
         _.each(this.config.selections, (label, value) => {
-          selections.push({value, label: this.$t(label), color: colors[value]})
+          selections.push({value, label, color: colors[value]})
         });
 
         return selections;

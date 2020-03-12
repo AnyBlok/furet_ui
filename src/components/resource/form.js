@@ -26,6 +26,13 @@ defineComponent('furet-ui-resource-form', {
 
         v-bind:data="data"
       >
+        <template slot="header" v-if="resource.header_template">
+          <component 
+            v-bind:is="form_card_header_template" 
+            v-bind:resource="resource"
+            v-bind:data="data"
+          />
+        </template>
         <template slot="aftertitle" slot-scope="props">
           <slot name="aftertitle" v-bind:data="props.data" />
         </template>
@@ -39,11 +46,16 @@ defineComponent('furet-ui-resource-form', {
       <div class="section">
         <fieldset v-bind:disabled="readonly">
           <component 
-            v-bind:is="form_card" 
+            v-bind:is="form_card_body_template" 
             v-bind:resource="resource"
             v-bind:data="data"
           />
         </fieldset>
+        <component 
+          v-bind:is="form_card_footer_template" 
+          v-bind:resource="resource"
+          v-bind:data="data"
+        />
       </div>
     </section>
   `,
@@ -56,6 +68,8 @@ defineComponent('furet-ui-resource-form', {
         readonly: true,  // RO, RW
         pks: {},
         uuid: null,
+        selectors: {},
+        tags: {},
       };
     },
     computed: {
@@ -72,14 +86,27 @@ defineComponent('furet-ui-resource-form', {
               readonly: this.readonly,
               pks: this.pks,
               uuid: this.uuid,
+              selectors: this.selectors,
+              tags: this.tags,
           },
           this.$store.state.global.resources[this.id]
         );
       },
-      form_card () {
-        if (this.resource.template) {
+      form_card_header_template () {
+        return this.form_card('header_template');
+      },
+      form_card_body_template () {
+        return this.form_card('body_template');
+      },
+      form_card_footer_template () {
+        return this.form_card('footer_template');
+      },
+    },
+    methods: {
+      form_card (part) {
+        if (this.resource[part]) {
           return {
-            template: this.resource.template,
+            template: this.resource[part],
             props: ['data', 'resource'],
           };
         }
@@ -87,8 +114,6 @@ defineComponent('furet-ui-resource-form', {
             template: '<div></div>'
         };
       },
-    },
-    methods: {
       updateQueryString (query) {
         this.$emit('update-query-string', query);
       },

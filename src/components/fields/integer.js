@@ -26,6 +26,7 @@ fields.list.integer = 'furet-ui-list-field-integer'
 defineComponent('furet-ui-form-field-integer', {
   template: `
     <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
     >

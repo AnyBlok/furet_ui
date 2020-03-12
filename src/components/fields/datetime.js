@@ -46,6 +46,7 @@ defineComponent('furet-ui-form-field-datetime', {
   extend: ['furet-ui-form-field-common'],
   template: `
     <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
     >
