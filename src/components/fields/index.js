@@ -6,6 +6,7 @@ import './integer';
 import './password';
 import './timestamp';
 import './selection';
+import './statusbar';
 import './string';
 
 import './relationship';
