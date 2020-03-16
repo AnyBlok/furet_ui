@@ -51,22 +51,10 @@ defineComponent('furet-ui-form-field-statusbar', {
     computed: {
       getStates () {
         const res = []
-        console.log(this.resource, this.config)
         _.each(this.config.selections, (label, value) => {
           res.push({label, type: this.value == value ? 'is-success': ''})
         })
         return res
-      },
-      getSelections () {
-        const colors = this.config.colors || {};
-        const selections = [];
-          if (!this.isRequired) selections.push({label: '', value: null, color: null});
-
-        _.each(this.config.selections, (label, value) => {
-          selections.push({value, label, color: colors[value]})
-        });
-
-        return selections;
       },
     },
   },
