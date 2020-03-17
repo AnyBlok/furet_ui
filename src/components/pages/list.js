@@ -39,9 +39,11 @@ defineComponent('furet-ui-list', {
         v-on:page-change="onPageChange"
 
         backend-sorting
-        v-bind:default-sort-direction="defaultSortOrder"
-        v-bind:default-sort="[sortField, sortOrder]"
+        sort-multiple
+        :sort-multiple-data="sortingPrioirty"
+
         v-on:sort="onSort"
+        @sorting-priority-removed="onSortingPriorityRemoved"
 
         striped
         hoverable

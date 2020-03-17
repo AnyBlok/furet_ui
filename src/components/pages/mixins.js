@@ -143,6 +143,10 @@ defineComponent('mixin-page-multi-entries', {
       'perpage', 'can_go_to_new', 'rest_api_url', 'rest_api_params', 'rest_api_formater', 
       'query'],
     data() {
+      const sortingPrioirty = [];
+      if (this.defaultSortField) {
+        sortingPrioirty.push({field: this.defaultSortField, order: this.defaultSortOrder || 'asc'})
+      }
       return {
         data: [],
         errors: [],
@@ -152,8 +156,7 @@ defineComponent('mixin-page-multi-entries', {
         perPage: this.perpage || 25,
         filters: _.map((this.default_filters || []), f => f),
         tags: _.map((this.default_tags || []), t => t),
-        sortField: this.defaultSortField,
-        sortOrder: this.defaultSortOrder,
+        sortingPrioirty,
       };
     },
     computed: {
@@ -172,9 +175,12 @@ defineComponent('mixin-page-multi-entries', {
         const query = { page: this.page };
         const filters = {};
         const tags = [];
-        if (this.sortOrder !== undefined && this.sortField !== undefined) {
-          query.order = `${this.sortField},${this.sortOrder}`;
-        }
+        const orders = [];
+        this.sortingPrioirty.forEach(sort => {
+          orders.push(`${sort.field}:${sort.order}`)
+        });
+        if (orders.length) query.orders = orders.toString()
+
         _.each(this.filters, (f) => {
           if (f.values.length) {
             const mode = f.mode === 'exclude' ? '~' : '';
@@ -224,7 +230,9 @@ defineComponent('mixin-page-multi-entries', {
         const params = this.rest_api_params || {};
         params.offset = (this.page - 1) * this.perPage;
         params.limit = this.perPage;
-        params[`order_by[${this.sortOrder}]`] = this.sortField;
+        this.sortingPrioirty.forEach(({field, order}) => {
+          params[`order_by[${field}]`] = order;
+        })
         _.each(this.filters, (filter) => {
           if (filter.values.length) {
             const value = (filter.op.startsWith('or-') || filter.op === 'in') ? filter.values.toString() : filter.values[0];
@@ -263,8 +271,18 @@ defineComponent('mixin-page-multi-entries', {
         this.updateData();
       },
       onSort(field, order) {
-        this.sortField = field;
-        this.sortOrder = order;
+        let existingPriority = this.sortingPrioirty.find(i => i.field === field)
+        if(existingPriority) {
+          existingPriority.order = existingPriority.order === 'desc' ? 'asc' : 'desc'
+        } else {
+          // request sorted data from backend
+          this.sortingPrioirty.push({field, order})
+        }
+        this.updateData();
+      },
+      onSortingPriorityRemoved (field){
+        this.sortingPrioirty = this.sortingPrioirty.filter(
+            (priority) => priority.field !== field)
         this.updateData();
       },
       parse_query() {
@@ -273,10 +291,11 @@ defineComponent('mixin-page-multi-entries', {
         const query = this.query;
         if (query === undefined) return;
         if (query.page) this.page = parseInt(query.page, 10);
-        if (query.order) {
-          const order = query.order.split(',');
-          this.sortField = order[0].trim();
-          this.sortOrder = order[1].trim();
+        if (query.orders) {
+          query.orders.split(',').forEach(sort => {
+            let [field, order] = sort.split(':');
+            this.sortingPrioirty.push({field, order});
+          })
         }
         if (query.filters) {
           _.each(JSON.parse(query.filters), (queryStringValue, queryStringName) => {
