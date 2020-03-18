@@ -31,8 +31,11 @@ defineComponent('furet-ui-list', {
         ref="list_table"
         v-bind:data="data"
         v-bind:loading="loading"
+
         paginated
         backend-pagination
+        pagination-position="both"
+
         v-bind:total="total"
         v-bind:current-page.sync="page"
         v-bind:per-page="perPage"

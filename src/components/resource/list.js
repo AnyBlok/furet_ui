@@ -22,7 +22,7 @@ defineComponent('furet-ui-resource-list', {
       v-on:go-to-page="goToPage"
     >
       <template slot="hidden_columns">
-        <section class="section" v-if="hidden_columns.length">
+        <section v-if="hidden_columns.length">
           <b-field grouped group-multiline>
             <div 
               v-for="header in hidden_columns"
