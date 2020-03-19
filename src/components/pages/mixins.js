@@ -155,6 +155,7 @@ defineComponent('mixin-page-multi-entries', {
         page: 1,
         perPage: this.perpage || 25,
         filters: _.map((this.default_filters || []), f => f),
+        additional_filter: {},
         tags: _.map((this.default_tags || []), t => t),
         sortingPrioirty,
       };
@@ -239,6 +240,9 @@ defineComponent('mixin-page-multi-entries', {
             const preop = filter.mode === 'exclude' ? '~' : '';
             params[`${preop}filter[${filter.key}][${filter.op}]`] = value;
           }
+        });
+        _.each(_.keys(this.additional_filter), filter => {
+          params[`filter[${filter}][in]`] = this.additional_filter[filter].toString()
         });
         const tags = [];
         _.each(this.tags, (tag) => {
@@ -329,6 +333,7 @@ defineComponent('mixin-page-multi-entries', {
             _.find(this.tags, t => t.key === tag.trim()).selected = true;
           });
         }
+        if (query.additional_filter) this.additional_filter = query.additional_filter;
         this.loadAsyncData();
       }
     },

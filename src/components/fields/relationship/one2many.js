@@ -38,19 +38,34 @@ defineComponent('furet-ui-list-field-one2many', {
   },
 })
 fields.list.one2many = 'furet-ui-list-field-one2many'
-// import Vue from 'vue';
-// import {FormMixin, ThumbnailMixin, ListMixin} from '../common';
-// import {RelationShip, RelationShipX2MList, RelationShipX2MThumbnail} from './common';
-// import {json_post_dispatch_all} from '../../server-call';
-// import _ from 'underscore';
-// 
-// export const FieldListOne2Many = Vue.component('furet-ui-list-field-one2many', {
-//     mixins: [ListMixin, RelationShip, RelationShipX2MList],
-// })
-// 
+
 // export const FieldThumbnailOne2Many = Vue.component('furet-ui-thumbnail-field-one2many', {
 //     mixins: [ThumbnailMixin, RelationShip, RelationShipX2MThumbnail],
 // })
+
+
+defineComponent('furet-ui-form-field-one2many', {
+  template: `
+    <furet-ui-form-field-common-tooltip
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <furet-ui-form-field-resource-manager
+        v-bind:id="config.resource"
+        v-bind:value="value"
+      />
+    </furet-ui-form-field-common-tooltip>
+  `,
+  extend: ['furet-ui-list-field-common', 'furet-ui-list-field-relationship'],
+  prototype: {
+    computed: {
+    },
+    methods: {
+    },
+  },
+})
+fields.form.one2many = 'furet-ui-form-field-one2many'
 // 
 // export const FieldFormOne2Many = Vue.component('furet-ui-form-field-one2many', {
 //     mixins: [FormMixin, RelationShip],

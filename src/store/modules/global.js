@@ -17,7 +17,6 @@ export const defaultState = {
   space_menus: [],
   space_name: 'Menu',
   previous_route: {},
-  resources: {},
   left_menus: [],
   right_menus: [],
   isOpenLeft: false,
@@ -68,22 +67,6 @@ export const mutations = {
     for (const [key, value] of Object.entries(action)) {
       state[key] = value;
     }
-  },
-  UPDATE_RESOURCES(state, action) {
-    const resources = Object.assign({}, state.resources)
-    action.definitions.forEach(definition => {
-        resources[String(definition.id)] = definition;
-    });
-    state.resources = resources;
-  },
-  UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN(state, action) {
-    const resources = Object.assign({}, state.resources)
-    resources[action.id].headers.forEach(header => {
-      if (header.name == action.field) {
-        header['hidden-column'] = ! header['hidden-column']
-      }
-    });
-    state.resources = resources;
   },
   UPDATE_CURRENT_LEFT_MENUS(state, action) {
     state.left_menus = action.menus;

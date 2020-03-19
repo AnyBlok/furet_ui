@@ -10,13 +10,9 @@ defineComponent('furet-ui-resource-custom', {
       v-on:update-query-string="updateQueryString"
       />
   `,
+  extend: ['furet-ui-resource'],
   prototype: {
     props: ['id', 'manager'],
-    computed: {
-      resource () {
-        return this.$store.state.global.resources[this.id];
-      },
-    },
     methods: {
       updateQueryString (query) {
         this.$emit('update-query-string', query);

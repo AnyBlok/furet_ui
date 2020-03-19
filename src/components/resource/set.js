@@ -19,17 +19,15 @@ defineComponent('furet-ui-resource-set', {
       v-on:go-to-page="goToPage"
       />
   `,
+  extend: ['furet-ui-resource'],
   prototype: {
-    props: ['id', 'manager'],
+    props: ['manager'],
     data () {
       return {
           mode: 'multi',
       }
     },
     computed: {
-      resource () {
-        return this.getResource(this.id);
-      },
       subResource () {
         return this.getResource(this.resource[this.mode])
       },
@@ -50,9 +48,6 @@ defineComponent('furet-ui-resource-set', {
       },
     },
     methods: {
-      getResource (id) {
-        return this.$store.state.global.resources[id];
-      },
       updateQueryString (query) {
         this.$emit('update-query-string', query);
       },
@@ -86,8 +81,14 @@ defineComponent('furet-ui-resource-set', {
         this.$refs.resource.loadAsyncData()
       }
     },
+    watch: {
+      manager () {
+        const query = this.manager.query || {};
+        if (query.mode !== undefined) this.mode = query.mode;
+      },
+    },
     mounted () {
-      const query = this.$route.query;
+      const query = this.manager.query || {};
       if (query.mode !== undefined) this.mode = query.mode;
     },
   },

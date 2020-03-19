@@ -325,7 +325,6 @@ defineComponent('furet-ui-space-menu', {
             if (_.keys(menu.filters).length) {
               query.filters = JSON.stringify(menu.filters);
             }
-            console.log(menu)
             this.$router.push({
               name: 'resource', 
               params: {code: this.code, menuId: menu.id, id: menu.resource},

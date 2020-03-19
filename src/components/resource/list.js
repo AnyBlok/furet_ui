@@ -57,6 +57,7 @@ defineComponent('furet-ui-resource-list', {
       </template>
     </furet-ui-list>
   `,
+  extend: ['furet-ui-resource'],
   prototype: {
     props: ['id', 'manager'],
     data () {
@@ -65,9 +66,6 @@ defineComponent('furet-ui-resource-list', {
       };
     },
     computed: {
-      resource () {
-        return this.$store.state.global.resources[this.id];
-      },
       hidden_columns () {
         return _.filter(this.resource.headers, header => header['column-can-be-hidden']);
       },

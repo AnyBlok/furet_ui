@@ -44,23 +44,22 @@ defineComponent('furet-ui-resource-form', {
         </template>
       </furet-ui-header-page>
       <div class="section">
-        <fieldset v-bind:disabled="readonly">
-          <component 
-            v-bind:is="form_card_body_template" 
-            v-bind:resource="resource"
-            v-bind:data="data"
-          />
-        </fieldset>
         <component 
-          v-bind:is="form_card_footer_template" 
+          v-bind:is="form_card_body_template" 
           v-bind:resource="resource"
           v-bind:data="data"
         />
       </div>
+      <component 
+        v-bind:is="form_card_footer_template" 
+        v-bind:resource="resource"
+        v-bind:data="data"
+      />
     </section>
   `,
+  extend: ['furet-ui-resource'],
   prototype: {
-    props: ['id', 'manager'],
+    props: ['manager'],
     data() {
       return {
         loading: false,
@@ -89,7 +88,7 @@ defineComponent('furet-ui-resource-form', {
               selectors: this.selectors,
               tags: this.tags,
           },
-          this.$store.state.global.resources[this.id]
+          this.$store.state.resource[this.id]
         );
       },
       form_card_header_template () {
