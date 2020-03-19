@@ -181,6 +181,14 @@ defineComponent('furet-ui-resource-form', {
             this.uuid = uuidv1();
           }
         }
+      },
+      isReadonly () {
+        return this.readonly
+      },
+    },
+    provide: function () {
+      return {
+        partIsReadonly: this.isReadonly
       }
     },
     watch: {

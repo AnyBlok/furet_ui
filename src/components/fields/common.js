@@ -160,21 +160,33 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
 })
 
 
-defineComponent('furet-ui-form-field-common', {
+defineComponent('furet-ui-form-field-common-readonly', {
   prototype: {
     props: ['resource', 'data', 'config'],
+    inject: ['partIsReadonly'],
     computed: {
-      value () {
-        return this.data && this.data[this.config.name] || '';
-      },
       isReadonly () {
         if (this.resource.readonly) return true;
+        if (this.partIsReadonly()) return true;
         const readonlyParams = safe_eval(this.config.readonly, this.data || {}, this.resource.selectors);
         if (this.config.writable) {
           const writableParams = safe_eval(this.config.writable, this.data || {}, this.resource.selectors);
           return readonlyParams && ! writableParams
         }
         return readonlyParams;
+      },
+    },
+  },
+})
+
+
+defineComponent('furet-ui-form-field-common', {
+  extend: ['furet-ui-form-field-common-readonly'],
+  prototype: {
+    props: ['resource', 'data', 'config'],
+    computed: {
+      value () {
+        return this.data && this.data[this.config.name] || '';
       },
     },
     methods: {
