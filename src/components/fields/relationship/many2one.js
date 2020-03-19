@@ -81,26 +81,18 @@ defineComponent('furet-ui-form-field-many2one', {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <div class="field has-addons">
-        <p class="control is-expanded">
-          <b-autocomplete
-            v-bind:value="value"
-            v-bind:disabled="isReadonly" 
-            v-bind:data="choices"
-            field="label"
-            v-bind:placeholder="config.placeholder"
-            icon-pack="fa"
-            v-bind:icon="config.icon"
-            v-on:typing="onChange"
-            v-on:select="onSelect"
-          />
-        </p>
-        <p class="control" v-if="value">
-          <a v-on:click.stop="onClick" class="button">
-            <b-icon icon="external-link-alt" />
-          </a>
-        </p>
-      </div>
+      <a v-if="isReadonly">{{value}}</a>
+      <b-autocomplete
+        v-else
+        v-bind:value="value"
+        v-bind:data="choices"
+        field="label"
+        v-bind:placeholder="config.placeholder"
+        icon-pack="fa"
+        v-bind:icon="config.icon"
+        v-on:typing="onChange"
+        v-on:select="onSelect"
+      />
     </furet-ui-form-field-common-tooltip-field>
   `,
   extend: ['furet-ui-form-field-common', 'furet-ui-list-field-relationship'],

@@ -30,14 +30,15 @@ defineComponent('furet-ui-form-field-string', {
       v-bind:data="data"
       v-bind:config="config"
     >
+      <span v-if="isReadonly">{{ value }}</span>
       <b-input 
-          v-bind:value="value" 
-          v-bind:disabled="isReadonly" 
-          v-on:input="updateValue"
-          v-bind:maxlength="config.maxlength"
-          v-bind:placeholder="config.placeholder"
-          icon-pack="fa"
-          v-bind:icon="config.icon"
+        v-else
+        v-bind:value="value" 
+        v-on:input="updateValue"
+        v-bind:maxlength="config.maxlength"
+        v-bind:placeholder="config.placeholder"
+        icon-pack="fa"
+        v-bind:icon="config.icon"
       />
     </furet-ui-form-field-common-tooltip-field>
   `,

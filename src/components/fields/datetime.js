@@ -50,10 +50,11 @@ defineComponent('furet-ui-form-field-datetime', {
       v-bind:data="data"
       v-bind:config="config"
     >
+      <span v-if="isReadonly">{{ readonly_value }}</span>
       <b-datetimepicker
+        v-else
         rounded
         v-bind:placeholder="config.placeholder"
-        v-bind:disabled="isReadonly" 
         v-bind:value="value" 
         v-on:input="updateDateTimeValue"
         v-bind:editable="config.editable"
@@ -81,6 +82,12 @@ defineComponent('furet-ui-form-field-datetime', {
   `,
   prototype: {
     computed: {
+      readonly_value () {
+        moment.locale(i18n.locale);
+        const value = this.data[this.config.name];
+        if (value) return moment(value).format('LLL');
+        return '';
+      },
       value () {
         moment.locale(i18n.locale);
         const value = this.data[this.config.name];

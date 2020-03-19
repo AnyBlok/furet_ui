@@ -65,7 +65,11 @@ defineComponent('furet-ui-form-field-selection', {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <div class="field has-addons">
+      <div v-if="isReadonly">
+        <b-tag v-if="color !== undefined" v-bind:type="color">{{formated_value}}</b-tag>
+        <span v-else>{{formated_value}}</span>
+      </div>
+      <div class="field has-addons" v-else>
         <p class="control" v-if="color">
           <a class="button">
             <b-icon icon="info-circle" v-bind:type="color"/>
@@ -73,7 +77,6 @@ defineComponent('furet-ui-form-field-selection', {
         </p>
         <b-select 
           v-bind:placeholder="config.placeholder"
-          v-bind:disabled="isReadonly" 
           icon-pack="fa"
           v-bind:icon="config.icon"
           v-bind:value="value"
