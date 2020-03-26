@@ -39,6 +39,7 @@ defineComponent('furet-ui-form-field-string', {
         v-bind:placeholder="config.placeholder"
         icon-pack="fa"
         v-bind:icon="config.icon"
+        v-bind:key="config.key"
       />
     </furet-ui-form-field-common-tooltip-field>
   `,

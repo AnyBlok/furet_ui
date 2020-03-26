@@ -54,6 +54,7 @@ defineComponent('furet-ui-form-field-password', {
         v-bind:icon="config.icon"
         type="password"
         v-bind:password-reveal="reveal"
+        v-bind:key="config.key"
       />
     </furet-ui-form-field-common-tooltip-field>
   `,

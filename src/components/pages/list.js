@@ -11,6 +11,7 @@ defineComponent('furet-ui-list', {
         v-bind:total="total"
         v-bind:data="data"
         v-bind:can_go_to_new="can_go_to_new"
+        v-bind:readonly="readonly"
         v-on:updateFilters="updateFilters"
         v-on:removeFilter="removeFilter"
         v-on:refresh="refresh"
@@ -78,7 +79,7 @@ defineComponent('furet-ui-list', {
   extend: ['mixin-page-multi-entries'],
   prototype: {
     props: [
-      'is_checkable', 'checkedElements', 'detailed', 'detail_key'],
+      'is_checkable', 'checkedElements', 'detailed', 'detail_key', 'readonly'],
     data() {
       return {
         isCheckable: this.is_checkable || false,

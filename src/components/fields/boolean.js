@@ -83,6 +83,7 @@ defineComponent('furet-ui-form-field-boolean', {
       <b-checkbox 
         v-model="checked" 
         v-bind:disabled="isReadonly"
+        v-bind:key="config.key"
       >
         {{ config.label }}
       </b-checkbox>

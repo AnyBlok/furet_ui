@@ -82,6 +82,7 @@ defineComponent('furet-ui-form-field-selection', {
           v-bind:value="value"
           expanded
           v-on:input="updateValue"
+          v-bind:key="config.key"
         >
           <option 
             v-for="option in getSelections"

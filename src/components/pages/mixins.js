@@ -83,16 +83,22 @@ defineComponent('furet-ui-page-multi-entries-header', {
         </b-taglist>
       </b-collapse>
       <div class="buttons is-grouped is-centered">
-        <a id="furet-ui-page-multi-entries-header-new" v-if="can_go_to_new" class="button is-primary is-outlined" v-on:click="goToNew">
+        <button 
+          id="furet-ui-page-multi-entries-header-new" 
+          v-if="can_go_to_new" 
+          v-bind:disabled="readonly"
+          class="button is-primary is-outlined" 
+          v-on:click="goToNew"
+        >
           <span class="icon"><b-icon icon="plus" /></span>
           <span>{{ $t('components.page.new') }}</span>
-        </a>
+        </button>
         <slot name="actions" v-bind:data="data" />
       </div>
     </header>
   `,
   prototype: {
-    props: ['title', 'filters', 'tags', 'total', 'data', 'can_go_to_new'],
+    props: ['title', 'filters', 'tags', 'total', 'data', 'can_go_to_new', 'readonly'],
     data() {
       return {
         filterSearch: '',
@@ -154,9 +160,9 @@ defineComponent('mixin-page-multi-entries', {
         loading: false,
         page: 1,
         perPage: this.perpage || 25,
-        filters: _.map((this.default_filters || []), f => f),
+        filters: _.map((this.default_filters || []), f => Object.assign({}, f, {values: Object.assign([], f.values || [])})),
         additional_filter: {},
-        tags: _.map((this.default_tags || []), t => t),
+        tags: _.map((this.default_tags || []), t => Object.assign({}, t)),
         sortingPrioirty,
       };
     },
@@ -227,7 +233,6 @@ defineComponent('mixin-page-multi-entries', {
         this.updateData();
       },
       loadAsyncData() {
-        this.loading = true;
         const params = this.rest_api_params || {};
         params.offset = (this.page - 1) * this.perPage;
         params.limit = this.perPage;
@@ -241,6 +246,7 @@ defineComponent('mixin-page-multi-entries', {
             params[`${preop}filter[${filter.key}][${filter.op}]`] = value;
           }
         });
+        if (this.additional_filter === null) return
         _.each(_.keys(this.additional_filter), filter => {
           params[`filter[${filter}][in]`] = this.additional_filter[filter].toString()
         });
@@ -250,6 +256,7 @@ defineComponent('mixin-page-multi-entries', {
         });
         if (tags.length) params.tags = tags.toString();
 
+        this.loading = true;
         axios.get(this.rest_api_url, { params })
           .then((response) => {
             if (this.rest_api_formater) {
@@ -334,6 +341,7 @@ defineComponent('mixin-page-multi-entries', {
           });
         }
         if (query.additional_filter) this.additional_filter = query.additional_filter;
+        else if (query.additional_filter === null) this.additional_filter = null;
         this.loadAsyncData();
       }
     },
@@ -351,7 +359,6 @@ defineComponent('mixin-page-multi-entries', {
 defineComponent('furet-ui-header-page', {
   template: `
     <header id="header_page">
-      
       <slot name="header" v-bind:data="data">
         <div class="level">
           <div class="level-left">
@@ -387,36 +394,36 @@ defineComponent('furet-ui-header-page', {
           </span>
           <span>{{ $t('components.page.header.next') }}</span>
         </a>
-        <a v-if="can_go_to_new" class="button is-primary is-outlined" v-on:click="goToNew">
+        <button v-if="can_go_to_new" v-bind:disabled="readonly" class="button is-primary is-outlined" v-on:click="goToNew">
           <span class="icon">
             <b-icon icon="plus" />
           </span>
           <span>{{ $t('components.page.new') }}</span>
-        </a>
-        <a v-if="can_modify" class="button is-primary is-outlined" v-on:click="goToEdit">
+        </button>
+        <button v-if="can_modify" v-bind:disabled="readonly" class="button is-primary is-outlined" v-on:click="goToEdit">
           <span class="icon">
             <b-icon icon="pencil-alt" />
           </span>
           <span>{{ $t('components.page.edit') }}</span>
-        </a>
+        </button>
         <button v-if="can_save" class="button is-primary is-outlined" v-on:click="save">
           <span class="icon">
             <b-icon icon="save" />
           </span>
           <span>{{ $t('components.page.save') }}</span>
         </button>
-        <a v-if="can_delete" class="button is-danger is-outlined" v-on:click="deleteEntry">
+        <button v-if="can_delete" v-bind:disabled="readonly" class="button is-danger is-outlined" v-on:click="deleteEntry">
           <span class="icon">
             <b-icon icon="trash" />
           </span>
           <span>{{ $t('components.page.delete') }}</span>
-        </a>
+        </button>
         <slot name="head_actions" v-bind:data="data" />
       </div>
     </header>
   `,
   prototype: {
-    props: ['title', 'can_go_to_new', 'can_modify', 'can_delete', 'can_save', 'data'],
+    props: ['title', 'can_go_to_new', 'can_modify', 'can_delete', 'can_save', 'data', 'readonly'],
     computed: {
       prevous_target() {
         return this.$store.getters.previousBrowserTarget;

@@ -39,6 +39,7 @@ defineComponent('furet-ui-form-field-integer', {
         v-on:input="updateValue"
         v-bind:min="config.min"
         v-bind:max="config.max"
+        v-bind:key="config.key"
       />
     </furet-ui-form-field-common-tooltip-field>
   `,

@@ -40,7 +40,7 @@ defineComponent('furet-ui-resource', {
       },
       async_load_resource: debounce(function(id) {
         this.load_resource(id);
-      }, 500),
+      }, 250),
     },
   },
 });
@@ -78,6 +78,7 @@ defineComponent('furet-ui-space-resource-manager', {
         v-on:update-data="updateData"
         v-on:delete-data="deleteData"
         v-on:clear-change="clearChange"
+        v-on:go-to-list="goToList"
       />
     </div>
   `,
@@ -89,6 +90,7 @@ defineComponent('furet-ui-space-resource-manager', {
       },
       createData (data) {
         const query = Object.assign({}, this.$route.query);
+        data.changes = this.$store.state.data.changes;
         axios.post('/furet-ui/crud', data)
           .then((response) => {
             this.$store.commit('CLEAR_CHANGE')
@@ -100,6 +102,7 @@ defineComponent('furet-ui-space-resource-manager', {
           });
       },
       updateData (data) {
+        data.changes = this.$store.state.data.changes;
         axios.patch('/furet-ui/crud', data)
           .then(() => {
             this.$refs.resource.saved();
@@ -122,6 +125,9 @@ defineComponent('furet-ui-space-resource-manager', {
       clearChange () {
         this.$store.commit('CLEAR_CHANGE')
       },
+      goToList () {
+          // TODO
+      },
     },
     mounted() {
       const query = this.$route.query;
@@ -134,89 +140,82 @@ defineComponent('furet-ui-space-resource-manager', {
 
 defineComponent('furet-ui-form-field-resource-manager', {
   template: `
-    <div v-bind:style="{width: '100%'}">
-      <furet-ui-page-errors v-bind:errors="errors"/>
-      <component 
-        ref="resource"
-        v-bind:is="resourceComponents" 
-        v-bind:id="id" 
-        v-bind:manager="manager" 
-        v-on:update-query-string="updateQueryString"
-        v-on:create-data="createData"
-        v-on:update-data="updateData"
-        v-on:delete-data="deleteData"
-        v-on:clear-change="clearChange"
-      />
+    <div v-bind:style="{width: '100%'}" class="box">
+        <furet-ui-page-errors v-bind:errors="errors"/>
+        <component 
+          ref="resource"
+          v-bind:is="resourceComponents" 
+          v-bind:id="id" 
+          v-bind:config="config"
+          v-bind:manager="manager" 
+          v-on:update-query-string="updateQueryString"
+          v-on:create-data="createData"
+          v-on:update-data="updateData"
+          v-on:delete-data="deleteData"
+          v-on:clear-change="clearChange"
+          v-on:go-to-list="goToList"
+        />
     </div>
   `,
   extend: ['furet-ui-resource-manager'],
   prototype: {
-    props: ['value'],
+    props: ['value', 'x2m_resource', 'isReadonly', 'add', 'update', 'delete', 'config'],
     data () {
-      const pks = {};
-      if (this.value) {
+      const pks = this.get_pks()
+      return {
+        manager: {
+          readonly: this.isReadonly,
+          query: {additional_filter: pks},
+          pks,
+        },
+      };
+    },
+    methods: {
+      get_pks () {
+        if (!this.value) return null;
+        const pks = {};
         this.value.forEach(value => {
           _.each(_.keys(value), key => {
             if (pks[key] === undefined) pks[key] = []
             pks[key].push(value[key])
           });
         });
-      }
-      return {
-        manager: {
-            query: {additional_filter: pks},
-          pks,
-        },
-      };
-    },
-    methods: {
-      updateQueryString (query) {
-        query.additional_filter = this.pks
+        return pks
+      },
+      updateQueryString (newquery) {
+        const query = Object.assign({}, newquery);
+        if (query.mode !== 'form') query.additional_filter = this.pks
         this.manager = Object.assign({}, this.manager, {query})
       },
+      goToList () {
+        const query = {additional_filter: this.manager.pks}
+        this.manager = Object.assign({}, this.manager, {query})
+        this.$refs.resource.mode = 'multi';
+      },
       createData (data) {
-        data
-        // const query = Object.assign({}, this.$route.query);
-        // axios.post('/furet-ui/crud', data)
-        //   .then((response) => {
-        //     this.$store.commit('CLEAR_CHANGE')
-        //     query.pks = JSON.stringify(response.data.pks);
-        //     this.updateQueryString(query)
-        //   })
-        //   .catch((error) => {
-        //     this.errors = error.response.data.errors;
-        //   });
+        this.add(data);
       },
       updateData (data) {
-        data
-        // axios.patch('/furet-ui/crud', data)
-        //   .then(() => {
-        //     this.$refs.resource.saved();
-        //   })
-        //   .catch((error) => {
-        //     this.errors = error.response.data.errors;
-        //   });
+        this.update(data);
       },
       deleteData (data) {
-        data
-        // axios.delete('/furet-ui/crud', {params: data})
-        //   .then(() => {
-        //     this.$store.commit('CLEAR_CHANGE')
-        //     this.$store.commit('DELETE_DATA', data)
-        //     this.updateQueryString({})  // replace it by breadscrumb
-        //   })
-        //   .catch((error) => {
-        //     this.errors = error.response.data.errors;
-        //   });
+        this.delete(data);
       },
       clearChange () {
-        // this.$store.commit('CLEAR_CHANGE')
+      },
+    },
+    watch: {
+      isReadonly () {
+        this.manager.readonly = this.isReadonly
+      },
+      value () {
+        const pks = this.get_pks()
+        const query = Object.assign({}, this.manager.query, {additional_filter: pks})
+        this.manager = Object.assign({}, this.manager, {query, pks})
       },
     },
     mounted () {
-      if (!this.resource) {
-        this.async_load_resource(this.id);
-      }
+      this.load_resource(this.id);
     },
   },
 });

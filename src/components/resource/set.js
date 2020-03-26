@@ -4,32 +4,32 @@ import { defineComponent } from '../factory';
 
 defineComponent('furet-ui-resource-set', {
   template : `
-    <component 
-      ref="resource"
-      v-bind:is="getResourceComponent" 
-      v-bind:id="subResource.id" 
-      v-bind:manager="resourceManager" 
-      v-on:update-query-string="updateQueryString"
-      v-on:create-data="createData"
-      v-on:update-data="updateData"
-      v-on:delete-data="deleteData"
-      v-on:clear-change="clearChange"
+    <keep-alive>
+      <component 
+        ref="resource"
+        v-bind:is="getResourceComponent" 
+        v-bind:id="subResource.id" 
+        v-bind:key="subResource.id" 
+        v-bind:manager="resourceManager" 
 
-      v-on:go-to-new="goToNew"
-      v-on:go-to-page="goToPage"
+        v-on:update-query-string="updateQueryString"
+        v-on:create-data="createData"
+        v-on:update-data="updateData"
+        v-on:delete-data="deleteData"
+        v-on:clear-change="clearChange"
+
+        v-on:go-to-new="goToNew"
+        v-on:go-to-page="goToPage"
+        v-on:go-to-list="goToList"
       />
+    </keep-alive>
   `,
   extend: ['furet-ui-resource'],
   prototype: {
-    props: ['manager'],
-    data () {
-      return {
-          mode: 'multi',
-      }
-    },
+    props: ['manager', 'config'],
     computed: {
       subResource () {
-        return this.getResource(this.resource[this.mode])
+        return this.getResource(this.resource[this.manager.mode])
       },
       getResourceComponent () {
         const resource = this.subResource;
@@ -50,6 +50,9 @@ defineComponent('furet-ui-resource-set', {
     methods: {
       updateQueryString (query) {
         this.$emit('update-query-string', query);
+      },
+      goToList () {
+        this.$emit('go-to-list');
       },
       createData (data) {
         this.$emit('create-data', data);
@@ -84,12 +87,14 @@ defineComponent('furet-ui-resource-set', {
     watch: {
       manager () {
         const query = this.manager.query || {};
-        if (query.mode !== undefined) this.mode = query.mode;
+        if (query.mode !== undefined) this.manager.mode = query.mode;
+        else this.manager.mode = 'multi';
       },
     },
-    mounted () {
+    created () {
       const query = this.manager.query || {};
-      if (query.mode !== undefined) this.mode = query.mode;
+      if (query.mode !== undefined) this.manager.mode = query.mode;
+      else this.manager.mode = 'multi';
     },
   },
 });

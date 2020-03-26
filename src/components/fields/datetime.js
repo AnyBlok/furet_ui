@@ -62,6 +62,7 @@ defineComponent('furet-ui-form-field-datetime', {
         v-bind:timepicker="config.timepicker"
         icon-pack="fa"
         v-bind:icon="config.icon"
+        v-bind:key="config.key"
       >
         <template slot="left">
           <button class="button is-primary"

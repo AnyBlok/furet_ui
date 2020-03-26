@@ -9,6 +9,7 @@ defineComponent('furet-ui-resource-form', {
   template : `
     <section>
       <b-loading v-bind:active.sync="loading"></b-loading>
+      {{ resource.tabs }}
       <furet-ui-header-page
         name="furet-ui-page"
         v-bind:title="resource.title"
@@ -16,6 +17,7 @@ defineComponent('furet-ui-resource-form', {
         v-bind:can_modify="readonly && manager.can_update"
         v-bind:can_delete="readonly && manager.can_delete"
         v-bind:can_save="!readonly"
+        v-bind:readonly="manager.readonly"
 
         v-on:go-to-list="goToList"
         v-on:go-to-edit="goToEdit"
@@ -27,11 +29,13 @@ defineComponent('furet-ui-resource-form', {
         v-bind:data="data"
       >
         <template slot="header" v-if="resource.header_template">
+        <keep-alive>
           <component 
             v-bind:is="form_card_header_template" 
             v-bind:resource="resource"
             v-bind:data="data"
           />
+        </keep-alive>
         </template>
         <template slot="aftertitle" slot-scope="props">
           <slot name="aftertitle" v-bind:data="props.data" />
@@ -48,12 +52,14 @@ defineComponent('furet-ui-resource-form', {
           v-bind:is="form_card_body_template" 
           v-bind:resource="resource"
           v-bind:data="data"
+          v-bind:key="'body_' + resource.id"
         />
       </div>
       <component 
         v-bind:is="form_card_footer_template" 
         v-bind:resource="resource"
         v-bind:data="data"
+        v-bind:key="'footer_' + resource.id"
       />
     </section>
   `,
@@ -68,7 +74,8 @@ defineComponent('furet-ui-resource-form', {
         pks: {},
         uuid: null,
         selectors: {},
-        tags: {},
+        tabs: {},
+        templates: {},
       };
     },
     computed: {
@@ -86,7 +93,7 @@ defineComponent('furet-ui-resource-form', {
               pks: this.pks,
               uuid: this.uuid,
               selectors: this.selectors,
-              tags: this.tags,
+              tabs: this.tabs,
           },
           this.$store.state.resource[this.id]
         );
@@ -103,21 +110,23 @@ defineComponent('furet-ui-resource-form', {
     },
     methods: {
       form_card (part) {
-        if (this.resource[part]) {
-          return {
-            template: this.resource[part],
-            props: ['data', 'resource'],
-          };
+        if (this.templates[part] !== undefined) return this.templates[part];
+        const template = {
+          template: '<div></div>',
+          name: `${part}_${this.resource.id}`,
+          props: ['data', 'resource'],
         }
-        return {
-            template: '<div></div>'
-        };
+        if (this.resource[part]) {
+            template.template = this.resource[part];
+            this.templates[part] = template;
+        }
+        return template;
       },
       updateQueryString (query) {
         this.$emit('update-query-string', query);
       },
       goToList () {
-        // use breadcrumb
+        this.$emit('go-to-list');
       },
       goToNew () {
         this.updateQueryString({mode: 'form'})
@@ -141,13 +150,11 @@ defineComponent('furet-ui-resource-form', {
           this.$emit('create-data', {
             model: this.resource.model,
             uuid: this.uuid,
-            changes: this.$store.state.data.changes,
           })
         } else {
           this.$emit('update-data', {
             model: this.resource.model,
             pks: Object.assign({}, this.pks),
-            changes: this.$store.state.data.changes,
           })
         }
       },
@@ -196,7 +203,7 @@ defineComponent('furet-ui-resource-form', {
         this.parse_query();  // query is reactive
       },
     },
-    mounted() {
+    created() {
       this.parse_query()
     },
   },

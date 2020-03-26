@@ -53,77 +53,20 @@ defineComponent('furet-ui-form-field-one2many', {
     >
       <furet-ui-form-field-resource-manager
         v-bind:id="config.resource"
+        v-bind:x2m_resource="resource"
+        v-bind:isReadonly="isReadonly"
         v-bind:value="value"
+        v-bind:config="config"
       />
     </furet-ui-form-field-common-tooltip>
   `,
-  extend: ['furet-ui-list-field-common', 'furet-ui-list-field-relationship'],
+  extend: ['furet-ui-form-field-common'],
   prototype: {
-    computed: {
-    },
     methods: {
+      add (values) {
+        values
+      },
     },
-  },
+  }
 })
 fields.form.one2many = 'furet-ui-form-field-one2many'
-// 
-// export const FieldFormOne2Many = Vue.component('furet-ui-form-field-one2many', {
-//     mixins: [FormMixin, RelationShip],
-//     props: ['model', 'views', 'x2oField'],
-//     template: `
-//         <div v-if="this.isInvisible" />
-//         <b-tooltip 
-//             v-bind:label="getTooltip" 
-//             v-bind:position="tooltipPosition"
-//             v-bind:style="{'width': '100%'}"
-//             v-else
-//         >
-//             <b-field 
-//                 v-bind:label="label"
-//                 v-bind:type="getType"
-//                 v-bind:message="getMessage"
-//                 v-bind:style="{'width': 'inherit'}"
-//             >
-//                 <div v-bind:style="{backgroundColor: '#f5f5f5', padding: '5px'}">
-//                     <furet-ui-x2m-view 
-//                         v-bind:model="model"
-//                         v-bind:views="views"
-//                         v-bind:viewId="viewId"
-//                         v-bind:dataIds="dataIds"
-//                         v-bind:dataId="dataId"
-//                         v-bind:isReadonly="isReadonly"
-//                         v-bind:x2oField="x2oField"
-//                         v-bind:x2oFieldId="config.dataId"
-//                         v-on:changeView="changeView"
-//                         v-on:updateDataIds="updateDataIds"
-//                     />
-//                 </div>
-//             </b-field>
-//         </b-tooltip>`,
-//     data () {
-//         return {
-//             viewId: this.views && this.views[0] && this.views[0].viewId,
-//             dataId: null,
-//         }
-//     },
-//     created () {
-//         json_post_dispatch_all('/field/x2m/get/views', {viewIds: _.map(this.views, v => v.viewId)});
-//     },
-//     computed: {
-//         dataIds () {
-//             return this.config && this.config.data && this.config.data[this.name] || [];
-//         },
-//         view () {
-//             return this.$store.state.data.view[this.viewId];
-//         },
-//     },
-//     methods: {
-//         changeView (viewId, dataId) {
-//             this.viewId = viewId;
-//             this.dataId = dataId;
-//         },
-//         updateDataIds (dataIds) {
-//             this.updateValue(dataIds)
-//         },
-//     },
-// })

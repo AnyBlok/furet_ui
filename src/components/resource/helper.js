@@ -49,7 +49,7 @@ defineComponent('furet-ui-tabs', {
     <b-tabs 
       v-if="!isHidden" 
       ref="tabs" 
-      v-model="resource.tags[config.name]" 
+      v-model="resource.tabs[config.name]" 
       v-bind="config.props"
     >
       <slot />
@@ -64,12 +64,14 @@ defineComponent('furet-ui-tab', {
     render: function (createElement, context) {
         const visible = (() => {
           if (context.props.config.hidden == undefined) return true;
-          return !safe_eval(context.props.config.hidden, context.props.data || {}, context.props.resource.selectors);
+          return !safe_eval(context.props.config.hidden, context.props.data || {}, context.props.resource);
         })();
         const options = Object.assign({}, context.data)
         options.attrs.visible= visible
+        const props = context.props
+        console.log(props)
         return createElement( 'b-tab-item', options, [
-          createElement('furet-ui-div', {props: context.props}, context.children)
+          createElement('furet-ui-div', {props}, context.children)
         ])
     },
   },
