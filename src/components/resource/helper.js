@@ -12,16 +12,16 @@ defineComponent('furet-ui-helper-mixin', {
       },
       isHidden () {
         if (this.config.hidden == undefined) return false;
-        return safe_eval(this.config.hidden, this.data || {}, this.resource.selectors);
+        return safe_eval(this.config.hidden, this.data || {}, this.resource);
       },
     },
     methods: {
       getIsReadonly () {
         if (this.resource.readonly) return true;
         if (this.partIsReadonly()) return true;
-        const readonlyParams = safe_eval(this.config.readonly, this.data || {}, this.resource.selectors);
+        const readonlyParams = safe_eval(this.config.readonly, this.data || {}, this.resource);
         if (this.config.writable) {
-          const writableParams = safe_eval(this.config.writable, this.data || {}, this.resource.selectors);
+          const writableParams = safe_eval(this.config.writable, this.data || {}, this.resource);
           return readonlyParams && ! writableParams
         }
         return readonlyParams;
@@ -88,7 +88,7 @@ defineComponent('furet-ui-div', {
     computed: {
       isHidden () {
         if (this.config.hidden == undefined) return false;
-        return safe_eval(this.config.hidden, this.data || {}, this.resource.selectors);
+        return safe_eval(this.config.hidden, this.data || {}, this.resource);
       },
     },
   },

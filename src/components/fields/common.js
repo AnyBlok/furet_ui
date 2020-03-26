@@ -11,11 +11,14 @@ import { debounce } from "debounce";
 import {defineComponent} from '../factory'
 
 
-export const safe_eval = (condition, fields, selectors) => {
+export const safe_eval = (condition, fields, resource) => {
     const now = Date.now(),
-          toDate = (v) => new Date(v);
+          toDate = (v) => new Date(v),
+          selectors = resource.selectors,
+          tabs = resource.tabs;
     fields  // lint
     selectors  // lint
+    tabs  // lint
     now  // lint
     toDate  // lint
     let res = false;
@@ -104,7 +107,7 @@ defineComponent('furet-ui-form-field-common-tooltip', {
     computed: {
       isHidden () {
         if (this.config.hidden === undefined) return false;
-        return safe_eval(this.config.hidden, this.data || {}, this.resource.selectors);
+        return safe_eval(this.config.hidden, this.data || {}, this.resource);
       },
       getTooltip () {
         return this.config.tooltip || '';
@@ -140,7 +143,7 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
         return this.data && this.data[this.config.name] || '';
       },
       isRequired () {
-        return safe_eval(this.config.required, this.data || {}, this.resource.selectors);
+        return safe_eval(this.config.required, this.data || {}, this.resource);
       },
       getType () {
         if (this.isRequired) {
@@ -168,9 +171,9 @@ defineComponent('furet-ui-form-field-common-readonly', {
       isReadonly () {
         if (this.resource.readonly) return true;
         if (this.partIsReadonly()) return true;
-        const readonlyParams = safe_eval(this.config.readonly, this.data || {}, this.resource.selectors);
+        const readonlyParams = safe_eval(this.config.readonly, this.data || {}, this.resource);
         if (this.config.writable) {
-          const writableParams = safe_eval(this.config.writable, this.data || {}, this.resource.selectors);
+          const writableParams = safe_eval(this.config.writable, this.data || {}, this.resource);
           return readonlyParams && ! writableParams
         }
         return readonlyParams;

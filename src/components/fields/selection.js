@@ -104,7 +104,7 @@ defineComponent('furet-ui-form-field-selection', {
         return selections[this.value];
       },
       isRequired () {
-        return safe_eval(this.config.required, this.data || {}, this.resource.selectors);
+        return safe_eval(this.config.required, this.data || {}, this.resource);
       },
       getSelections () {
         const colors = this.config.colors || {};

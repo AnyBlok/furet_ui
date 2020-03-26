@@ -10,6 +10,7 @@ defineComponent('furet-ui-resource-form', {
     <section>
       <b-loading v-bind:active.sync="loading"></b-loading>
       {{ resource.tabs }}
+      {{ resource.selectors }}
       <furet-ui-header-page
         name="furet-ui-page"
         v-bind:title="resource.title"
