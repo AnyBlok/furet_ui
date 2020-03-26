@@ -58,21 +58,37 @@ defineComponent('furet-ui-tabs', {
   extend: ['furet-ui-helper-mixin'],
 })
 
+const eval_counter = (value, fields) => {
+  if (_.keys(fields).length === 0) return 0
+  fields
+  if (!value) return 0;
+  let res = 0;
+  try {
+      res = eval(value);
+  } catch (e) {
+    console.log(e)
+  }
+  return res;
+}
+
 defineComponent('furet-ui-tab', {
   prototype: {
     functional: true,
     render: function (createElement, context) {
-        const visible = (() => {
-          if (context.props.config.hidden == undefined) return true;
-          return !safe_eval(context.props.config.hidden, context.props.data || {}, context.props.resource);
-        })();
-        const options = Object.assign({}, context.data)
-        options.attrs.visible= visible
-        const props = context.props
-        console.log(props)
-        return createElement( 'b-tab-item', options, [
-          createElement('furet-ui-div', {props}, context.children)
-        ])
+      const visible = (() => {
+        if (context.props.config.hidden == undefined) return true;
+        return !safe_eval(context.props.config.hidden, context.props.data || {}, context.props.resource);
+      })();
+      const options = Object.assign({}, context.data)
+      options.attrs.visible= visible
+      const props = context.props
+      if (props.counter !== undefined) {
+        const counter = eval_counter(props.counter, context.props.data);
+        options.attrs.label = `${props.label} (${counter})`
+      }
+      return createElement( 'b-tab-item', options, [
+        createElement('furet-ui-div', {props}, context.children)
+      ])
     },
   },
 })

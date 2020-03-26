@@ -38,6 +38,7 @@ defineComponent('furet-ui-form-field-statusbar', {
         <b-tag type="is-dark" size="is-medium">{{ config.label }}</b-tag>
         <b-tag 
           v-for="state in getStates" 
+          v-bind:key="state.value" 
           v-bind:type="state.type" 
           size="is-medium"
         >
@@ -52,7 +53,7 @@ defineComponent('furet-ui-form-field-statusbar', {
       getStates () {
         const res = []
         _.each(this.config.selections, (label, value) => {
-          res.push({label, type: this.value == value ? 'is-success': ''})
+          res.push({value, label, type: this.value == value ? 'is-success': ''})
         })
         return res
       },
