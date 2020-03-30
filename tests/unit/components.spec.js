@@ -3,7 +3,10 @@ import { defineComponent, getComponentPrototype } from "@/components/factory";
 
 describe("components factory", () => {
   it("createComponents homepage", () => {
-    const wrapper = shallowMount({ template: "<homepage />" });
+    // createComponents called in `./tests/setup.js`
+    const wrapper = shallowMount({
+      template: "<homepage />"
+    });
     expect(wrapper.element).toMatchSnapshot();
   });
 
