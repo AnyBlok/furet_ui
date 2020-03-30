@@ -4,15 +4,11 @@ node_js:
   - "node"
 
 install:
-  - npm install
+  - npm ci
 
 script:
   - npm run test:unit
-
-jobs:
-  include:
-    - name: "Lint"
-      script: npm run lint
+  - npm run lint
 
 after_success:
   - npm install coveralls
