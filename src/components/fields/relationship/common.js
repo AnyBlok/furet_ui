@@ -15,6 +15,7 @@ import {safe_eval} from '../common'
 
 defineComponent('furet-ui-list-field-relationship', {
   prototype: {
+    inject: ['getEntry'],
     methods: {
      format (condition, fields) {
        fields
@@ -22,7 +23,7 @@ defineComponent('furet-ui-list-field-relationship', {
      },
      getStyle(value) {
        if (this.config.color !== undefined) {
-         const data =  this.$store.getters.get_entry(this.config.model, value);
+         const data =  this.getEntry(this.config.model, value);
          return safe_eval(this.config.color, data, {});
        }
        return {}
@@ -48,113 +49,3 @@ export const RelationShipX2MList = `
       </span>
     </div>
   </div>`
-
-// export const addInBreadscrumb = (route, store, options) => {
-//     const changes = Object.assign({}, store.state.data.changes);
-//     const action = store.state.data.actions[String(route.params.actionId)];
-//     store.commit('ADD_IN_BREADSCRUMB', {
-//         path: route.path,
-//         label: action.label,
-//         changes,
-//     });
-//     const params = {
-//         spaceId: options.spaceId || route.params.spaceId,
-//         menuId: options.menuId,
-//         dataId: options.dataId,
-//         mode: options.mode || 'readonly',
-//     }
-//     json_post_dispatch_all('/action/' + options.actionId, params);
-//     store.commit('CLEAR_CHANGE', {});
-// };
-// 
-// export const RelationShipX2MList = {
-//     computed: {
-//         model () {
-//             return this.header.model;
-//         },
-//         fieldcolor () {
-//             return this.header.fieldcolor;
-//         },
-//     },
-// 
-// export const RelationShipX2MThumbnail = {
-//     props: ['model', 'spaceId', 'menuId', 'actionId', 'mode', 'display', 'fieldcolor'],
-//     template: `
-//         <div v-if="this.isHidden" />
-//         <b-tooltip 
-//             v-bind:label="getTooltip" 
-//             v-bind:position="tooltipPosition"
-//             v-else
-//         >
-//             <b-field 
-//                 v-bind:label="this.label"
-//                 v-bind:style="{'width': 'inherit'}"
-//             >
-//                 <span 
-//                     v-for="value in values"
-//                     class="tag" 
-//                     v-bind:style="getStyle(value.dataId)"
-//                 >
-//                     <a 
-//                         v-on:click.stop="onClick(value.dataId)">{{value.label}}
-//                     </a>
-//                 </span>
-//             </b-field>
-//         </b-tooltip>`,
-//     computed: {
-//         values () {
-//             const values = this.data && this.data[this.name] || '';
-//             if (this.model) {
-//                 let data = this.$store.state.data.data;
-//                 if (data[this.model]) {
-//                     data = data[this.model];
-//                     return _.map(values, dataId => {
-//                         return {dataId, label: this.format(this.display, data[String(dataId)])}
-//                     })
-//                 }
-//             }
-//             return [];
-//         }
-//     },
-//     methods: {
-//         onClick (dataId) {
-//             this.addInBreadscrumb({
-//                 spaceId: this.spaceId,
-//                 menuId: this.menuId,
-//                 actionId: this.actionId,
-//                 dataId: dataId,
-//                 mode: this.mode,
-//             });
-//         },
-//     },
-// }
-// 
-// export const RelationShipX2MForm = {
-//     props: ['model', 'spaceId', 'menuId', 'actionId', 'mode', 'display', 'fieldcolor'],
-//     computed: {
-//         values () {
-//             const values = this.config && this.config.data && this.config.data[this.name] || '';
-//             if (this.model) {
-//                 let data = this.$store.state.data.data;
-//                 if (data[this.model]) {
-//                     data = data[this.model];
-//                     return _.map(values, dataId => {
-//                         return {dataId, label: this.format(this.display, data[String(dataId)])}
-//                     })
-//                 }
-//             }
-//             return [];
-//         }
-//     },
-//     methods: {
-//         onClick (dataId) {
-//             this.addInBreadscrumb({
-//                 spaceId: this.spaceId,
-//                 menuId: this.menuId,
-//                 actionId: this.actionId,
-//                 dataId: dataId,
-//                 mode: this.mode,
-//             });
-//         },
-//     },
-// }

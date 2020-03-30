@@ -25,7 +25,7 @@ defineComponent('furet-ui-list-field-many2one', {
         value () {
           const value = this.data[this.config.name] || '';
           const model = this.config.model; 
-          return this.format(this.config.display, this.$store.getters.get_entry(model, value));
+          return this.format(this.config.display, this.getEntry(model, value));
         }
       },
       methods: {
@@ -38,42 +38,6 @@ defineComponent('furet-ui-list-field-many2one', {
 fields.list.many2one = 'furet-ui-list-field-many2one'
 
 
-// export const FieldThumbnailMany2One = Vue.component('furet-ui-thumbnail-field-many2one', {
-//     props: ['model', 'spaceId', 'menuId', 'actionId', 'mode', 'display'],
-//     mixins: [ThumbnailMixin, RelationShip],
-//     template: `
-//         <div v-if="isHidden" />
-//         <b-tooltip 
-//             v-bind:label="getTooltip" 
-//             v-bind:position="tooltipPosition"
-//             v-else
-//         >
-//             <b-field 
-//                 v-bind:label="this.label"
-//                 v-bind:style="{'width': 'inherit'}"
-//             >
-//                 <a v-on:click.stop="onClick">{{value}}</a>
-//             </b-field>
-//         </b-tooltip>`,
-//     computed: {
-//         value () {
-//             const value = this.data && this.data[this.name] || '';
-//             return this.format(this.display, getRemoteValue(this.$store.state.data, this.model, value));
-//         }
-//     },
-//     methods: {
-//         onClick () {
-//             this.addInBreadscrumb({
-//                 spaceId: this.spaceId,
-//                 menuId: this.menuId,
-//                 actionId: this.actionId,
-//                 dataId: this.data && this.data[this.name],
-//                 mode: this.mode,
-//             });
-//         },
-//     },
-// })
-// 
 defineComponent('furet-ui-form-field-many2one', {
   template: `
     <furet-ui-form-field-common-tooltip-field
@@ -106,14 +70,14 @@ defineComponent('furet-ui-form-field-many2one', {
       value () {
         const value = this.data[this.config.name] || '';
         const model = this.config.model; 
-        return this.format(this.config.display, this.$store.getters.get_entry(model, value));
+        return this.format(this.config.display, this.getEntry(model, value));
       },
       choices () {
         const res = [];
         this.pks.forEach(pk => {
           res.push({
               pk,
-              label: this.format(this.config.display, this.$store.getters.get_entry(this.config.model, pk)),
+              label: this.format(this.config.display, this.getEntry(this.config.model, pk)),
           })
         });
         return res

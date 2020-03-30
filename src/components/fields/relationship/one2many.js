@@ -24,7 +24,7 @@ defineComponent('furet-ui-list-field-one2many', {
         this.value.forEach(pk => {
           res.push({
             pk,
-            label: this.format(display, this.$store.getters.get_entry(model, pk)),
+            label: this.format(display, this.getEntry(model, pk)),
           });
         });
         return res;

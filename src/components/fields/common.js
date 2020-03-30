@@ -7,8 +7,8 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import { debounce } from "debounce";
 import {defineComponent} from '../factory'
+import { debounce } from 'debounce';
 
 
 export const safe_eval = (condition, fields, resource) => {
@@ -52,43 +52,6 @@ defineComponent('furet-ui-list-field-common', {
     },
   }
 });
-
-
-// defineComponent('furet-ui-thumbnail-field-common', {
-//   template: `
-//     <div v-if="this.isHidden" />
-//     <b-tooltip 
-//         v-bind:label="getTooltip" 
-//         v-bind:position="tooltipPosition"
-//         v-bind:style="{'width': '100%'}"
-//         v-else
-//     >
-//         <b-field 
-//             v-bind:label="this.config.label"
-//             v-bind:style="{'width': 'inherit'}"
-//         >
-//             <span>{{value}}</span>
-//         </b-field>
-//     </b-tooltip>
-//   `,
-//   prototype: {
-//     props: ['data', 'config'],
-//     computed: {
-//       value () {
-//         return this.data && this.data[this.config.name] || '';
-//       },
-//       isHidden () {
-//         return safe_eval(this.config.hidden, this.data || {});
-//       },
-//       getTooltip () {
-//           return this.config.tooltip || '';
-//       },
-//       tooltipPosition () {
-//           return this.config.tooltip_position || 'is-top';
-//       },
-//     },
-//   }
-// });
 
 
 defineComponent('furet-ui-form-field-common-tooltip', {
@@ -186,7 +149,7 @@ defineComponent('furet-ui-form-field-common-readonly', {
 defineComponent('furet-ui-form-field-common', {
   extend: ['furet-ui-form-field-common-readonly'],
   prototype: {
-    props: ['resource', 'data', 'config'],
+    inject: ['updateChangeState'],
     computed: {
       value () {
         return this.data && this.data[this.config.name] || '';
@@ -201,7 +164,7 @@ defineComponent('furet-ui-form-field-common', {
           fieldname: this.config.name,
           value,
         }
-        this.$store.commit('UPDATE_CHANGE', action)
+        this.updateChangeState(action);
       }, 200),
     },
   }

@@ -65,6 +65,7 @@ defineComponent('furet-ui-resource-form', {
   extend: ['furet-ui-resource'],
   prototype: {
     props: ['manager'],
+    inject: ['getEntry', 'getNewEntry'],
     data() {
       return {
         loading: false,
@@ -80,9 +81,9 @@ defineComponent('furet-ui-resource-form', {
     computed: {
       data () {
         if (this.uuid) {
-          return this.$store.getters.get_new_entry(this.resource.model, this.uuid)
+          return this.getNewEntry(this.resource.model, this.uuid)
         } else if (this.pks) {
-          return this.$store.getters.get_entry(this.resource.model, this.pks)
+          return this.getEntry(this.resource.model, this.pks)
         }
       },
       resource () {

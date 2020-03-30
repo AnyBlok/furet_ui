@@ -61,6 +61,7 @@ defineComponent('furet-ui-resource-list', {
   extend: ['furet-ui-resource'],
   prototype: {
     props: ['id', 'manager'],
+    inject: ['getEntry'],
     data () {
       return {
         data: [],
@@ -82,7 +83,7 @@ defineComponent('furet-ui-resource-list', {
         this.$dispatchAll(data.data);
         const res = [];
         data.pks.forEach(pk => {
-            res.push(this.$store.getters.get_entry(this.resource.model, pk))
+          res.push(this.getEntry(this.resource.model, pk))
         });
         return res;
       },

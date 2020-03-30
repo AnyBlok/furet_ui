@@ -3,7 +3,6 @@ import Vue from 'vue';
 import axios from 'axios';
 import  {resources}  from './resources';
 import { defineComponent } from '../factory';
-import { debounce } from 'debounce';
 
 defineComponent('furet-ui-waiting-resource', {
   template: `
@@ -38,9 +37,6 @@ defineComponent('furet-ui-resource', {
           this.$dispatchAll(result.data);
         });
       },
-      async_load_resource: debounce(function(id) {
-        this.load_resource(id);
-      }, 250),
     },
   },
 });
@@ -60,6 +56,13 @@ defineComponent('furet-ui-resource-manager', {
         if (resources[this.resource.type] !== undefined) return resources[this.resource.type];
         return 'furet-ui-resource-not-found';
       },
+    },
+    provide: function () {
+      return {
+        updateChangeState: this.updateChangeState,
+        getEntry: this.getEntry,
+        getNewEntry: this.getNewEntry,
+      }
     },
   },
 });
@@ -127,6 +130,15 @@ defineComponent('furet-ui-space-resource-manager', {
       },
       goToList () {
           // TODO
+      },
+      updateChangeState (action) {
+        this.$store.commit('UPDATE_CHANGE', action)
+      },
+      getEntry (model, pk) {
+        return this.$store.getters.get_entry(model, pk)
+      },
+      getNewEntry (model, uuid) {
+        return this.$store.getters.get_new_entry(model, uuid)
       },
     },
     mounted() {
@@ -202,6 +214,15 @@ defineComponent('furet-ui-form-field-resource-manager', {
         this.delete(data);
       },
       clearChange () {
+      },
+      updateChangeState (action) {
+        console.log(action)
+      },
+      getEntry (model, pk) {
+        return this.$store.getters.get_entry(model, pk)
+      },
+      getNewEntry (model, uuid) {
+        return this.$store.getters.get_new_entry(model, uuid)
       },
     },
     watch: {
