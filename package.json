@@ -71,6 +71,9 @@
     "last 2 versions"
   ],
   "jest": {
-    "preset": "@vue/cli-plugin-unit-jest"
+    "preset": "@vue/cli-plugin-unit-jest",
+    "setupFiles": [
+      "./tests/setup.js"
+    ]
   }
 }
