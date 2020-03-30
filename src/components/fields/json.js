@@ -14,7 +14,7 @@ const format = (value) => {
     if (value)
         try {
             return JSON.stringify(JSON.parse(value), null, 2);
-        } catch (e) {};
+        } catch (e) {}
     return value;
 }
 
