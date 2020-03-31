@@ -91,7 +91,7 @@ export const FieldFormMany2ManyCheckbox = Vue.component('furet-ui-form-field-man
                 },
             },
             watch: {
-                disabled (newDisabled) {
+                disabled (_newDisabled) {
                     this.value = this.checked;
                 },
             }

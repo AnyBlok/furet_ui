@@ -14,7 +14,7 @@ import './relationship';
 import { defineComponent } from '../factory';
 
 defineComponent('furet-ui-unknown-field', {
-  template : `<div>Unknow Field <strong>{{config.type}}</strong></div>`,
+  template : `<div>Unknown Field <strong>{{config.type}}</strong></div>`,
   prototype: {
     props: ['config', 'data'],
   }
