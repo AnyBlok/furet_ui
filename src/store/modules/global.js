@@ -72,7 +72,6 @@ export const mutations = {
     state.left_menus = action.menus;
   },
   OPEN_LEFT_MENU(state, value) {
-    console.log('plop', value)
     state.isOpenLeft = value;
   },
   UPDATE_CURRENT_RIGHT_MENUS(state, action) {

@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
+    "test:unit": "vue-cli-service test:unit --coverage",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -53,7 +53,14 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {},
+    "rules": {
+      "no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_"
+        }
+      ]
+    },
     "overrides": [
       {
         "files": [
@@ -71,6 +78,10 @@
     "last 2 versions"
   ],
   "jest": {
-    "preset": "@vue/cli-plugin-unit-jest"
+    "preset": "@vue/cli-plugin-unit-jest",
+    "setupFiles": [
+      "./tests/setup.js",
+      "./tests/fixtures.js"
+    ]
   }
 }
