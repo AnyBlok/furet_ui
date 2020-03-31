@@ -72,12 +72,16 @@ defineComponent('furet-ui-resource-set', {
       },
       goToPage (row) {
         if (! this.resource.can_read) return
-        // add to breadscrumb
-        const pks = {}
-        this.resource.pks.forEach(pk => {
-            pks[pk] = row[pk]
-        })
-        this.$emit('update-query-string', {mode: 'form', pks: JSON.stringify(pks)})
+        if (row.__x2m_uuid) {
+          this.$emit('update-query-string', {mode: 'form', uuid: row.__x2m_uuid})
+        } else {
+          // add to breadscrumb
+          const pks = {}
+          this.resource.pks.forEach(pk => {
+              pks[pk] = row[pk]
+          })
+          this.$emit('update-query-string', {mode: 'form', pks: JSON.stringify(pks)})
+        }
       },
       saved() {
         this.$refs.resource.goToPage()

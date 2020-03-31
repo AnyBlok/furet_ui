@@ -222,6 +222,7 @@ defineComponent('furet-ui-form-field-resource-manager', {
       createData (data) {
         data.changes = this.changes
         this.$emit('add', data)
+        this.clearChange()
         this.goToList ()
       },
       updateData (data) {
@@ -249,7 +250,7 @@ defineComponent('furet-ui-form-field-resource-manager', {
       getNewEntryWrapper (model, uuid) {
         const data = this.getNewEntry(model, uuid)
         const change = ((this.changes[model] || {}).new || {})[uuid] || {};
-        return Object.assign({}, data, change);
+        return Object.assign({__x2m_uuid: uuid}, data, change);
       },
     },
     watch: {
