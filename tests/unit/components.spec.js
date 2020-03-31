@@ -16,16 +16,17 @@ describe("components factory", () => {
 
   it("Define a new component overwrite it and mount it", () => {
     defineComponent("fooBar", { template: `<homepage />` });
-    defineComponent("fooBar", { template: `<homepage />` });
 
     const wrapper = mount(getComponentPrototype("fooBar"), { localVue });
     expect(wrapper.element).toMatchSnapshot();
   });
 
   it("Define a new component with extend", () => {
-    defineComponent("Bar", { extend: ["homepage"] });
-
+    defineComponent("Bar", { template: "<div></div>", extend: ["homepage"] });
     const wrapper = mount(getComponentPrototype("Bar"), { localVue });
+    // getting method from mixin-logo
+    expect(wrapper.vm.format_url("my/path")).toBe("my/path");
+    // overwriting template
     expect(wrapper.element).toMatchSnapshot();
   });
 });
