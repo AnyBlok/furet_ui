@@ -55,9 +55,11 @@ describe("store global module", () => {
   });
 
   it("test LOGIN mutation with user name", () => {
-    state.authenticated = true;
-    state.userName = "test";
-    state.space_name = "My menu";
+    state = Object.assign(state, {
+      authenticated: true,
+      userName: "test",
+      space_name: "My menu"
+    });
     store.commit("LOGOUT", { userName: "test" });
     expect(state.authenticated).toBe(false);
     expect(state.userName).toBe("");
