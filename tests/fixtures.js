@@ -11,13 +11,11 @@ import PluginDispatch from "@/plugins/dispatch.js";
 
 // shared localVue
 global.localVue = createLocalVue();
-global.localVue.use(Buefy, {defaultIconPack: 'fa'});
+global.localVue.use(Buefy, { defaultIconPack: "fa" });
 global.localVue.use(Notifications);
 global.localVue.use(Vuex);
 global.localVue.use(Router);
 
 const store = createStore();
 const router = createRouter(store, routes);
-
-global.localVue.use(PluginDispatch, {router, store, i18n});
-global.localVue.config.runtimeCompiler = true;
+global.localVue.use(PluginDispatch, { router, store, i18n });

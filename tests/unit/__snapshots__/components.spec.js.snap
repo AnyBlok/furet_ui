@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components factory createComponents add component and over write it 1`] = `
+exports[`components factory Define a new component overwrite it and mount it 1`] = `
 <!--function (el) {
       var obj;
 
@@ -43,7 +43,7 @@ exports[`components factory createComponents add component and over write it 1`]
     }-->
 `;
 
-exports[`components factory createComponents add component with extend 1`] = `
+exports[`components factory Define a new component with extend 1`] = `
 <!--function (el) {
       var obj;
 
@@ -86,7 +86,7 @@ exports[`components factory createComponents add component with extend 1`] = `
     }-->
 `;
 
-exports[`components factory createComponents homepage 1`] = `
+exports[`components factory createComponents makes homepage component available to new component 1`] = `
 <!--function (el) {
       var obj;
 
