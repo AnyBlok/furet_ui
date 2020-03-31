@@ -12,10 +12,11 @@ const wrapper = mount(getComponentPrototype("furet-ui-form-field-string"), {
     data: {},
     config: {}
   },
-  mocks: {
+  provide: {
     partIsReadonly: () => {
       return false;
-    }
+    },
+    updateChangeState: () => {}
   }
 });
 
