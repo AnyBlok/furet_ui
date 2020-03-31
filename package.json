@@ -80,7 +80,8 @@
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest",
     "setupFiles": [
-      "./tests/setup.js"
+      "./tests/setup.js",
+      "./tests/fixtures.js"
     ]
   }
 }
