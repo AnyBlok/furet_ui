@@ -39,10 +39,6 @@ defineComponent('furet-ui-list-field-one2many', {
 })
 fields.list.one2many = 'furet-ui-list-field-one2many'
 
-// export const FieldThumbnailOne2Many = Vue.component('furet-ui-thumbnail-field-one2many', {
-//     mixins: [ThumbnailMixin, RelationShip, RelationShipX2MThumbnail],
-// })
-
 
 defineComponent('furet-ui-form-field-one2many', {
   template: `
@@ -57,14 +53,24 @@ defineComponent('furet-ui-form-field-one2many', {
         v-bind:isReadonly="isReadonly"
         v-bind:value="value"
         v-bind:config="config"
+
+        v-on:add="o2m_add"
+        v-on:update="o2m_update"
+        v-on:delete="o2m_delete"
       />
     </furet-ui-form-field-common-tooltip>
   `,
   extend: ['furet-ui-form-field-common'],
   prototype: {
     methods: {
-      add (values) {
-        values
+      o2m_add (actions) {
+        console.log('O2M add : ', actions)
+      },
+      o2m_update (actions) {
+        console.log('O2M update : ', actions)
+      },
+      o2m_delete (actions) {
+        console.log('O2M delete : ', actions)
       },
     },
   }

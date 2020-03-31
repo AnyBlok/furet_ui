@@ -3,6 +3,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import  {resources}  from './resources';
 import { defineComponent } from '../factory';
+import {pk2string, update_change_object} from '../../store/modules/data';
 
 defineComponent('furet-ui-waiting-resource', {
   template: `
@@ -60,8 +61,8 @@ defineComponent('furet-ui-resource-manager', {
     provide: function () {
       return {
         updateChangeState: this.updateChangeState,
-        getEntry: this.getEntry,
-        getNewEntry: this.getNewEntry,
+        getEntry: this.getEntryWrapper,
+        getNewEntry: this.getNewEntryWrapper,
       }
     },
   },
@@ -134,10 +135,10 @@ defineComponent('furet-ui-space-resource-manager', {
       updateChangeState (action) {
         this.$store.commit('UPDATE_CHANGE', action)
       },
-      getEntry (model, pk) {
+      getEntryWrapper (model, pk) {
         return this.$store.getters.get_entry(model, pk)
       },
-      getNewEntry (model, uuid) {
+      getNewEntryWrapper (model, uuid) {
         return this.$store.getters.get_new_entry(model, uuid)
       },
     },
@@ -171,10 +172,12 @@ defineComponent('furet-ui-form-field-resource-manager', {
   `,
   extend: ['furet-ui-resource-manager'],
   prototype: {
-    props: ['value', 'x2m_resource', 'isReadonly', 'add', 'update', 'delete', 'config'],
+    props: ['value', 'x2m_resource', 'isReadonly', 'config'],
+    inject: ['getEntry', 'getNewEntry'],
     data () {
       const pks = this.get_pks()
       return {
+        changes: {},
         manager: {
           readonly: this.isReadonly,
           query: {additional_filter: pks},
@@ -203,26 +206,36 @@ defineComponent('furet-ui-form-field-resource-manager', {
         const query = {additional_filter: this.manager.pks}
         this.manager = Object.assign({}, this.manager, {query})
         this.$refs.resource.mode = 'multi';
+        this.clearChange();
       },
       createData (data) {
-        this.add(data);
+        this.$emit('add', data)
+        this.clearChange() // because is an hard action
       },
       updateData (data) {
-        this.update(data);
+        this.$emit('update', data)
+        this.clearChange() // because is an hard action
       },
       deleteData (data) {
-        this.delete(data);
+        this.$emit('delete', data)
+        this.clearChange() // because is an hard action
       },
       clearChange () {
+        this.changes = {}  // clear the changes
       },
       updateChangeState (action) {
-        console.log(action)
+        this.changes = update_change_object(this.changes, action)
       },
-      getEntry (model, pk) {
-        return this.$store.getters.get_entry(model, pk)
+      getEntryWrapper (model, pk) {
+        const key = pk2string(pk)
+        const data = this.getEntry(model, pk)
+        const change = (this.changes[model] || {})[key] || {};
+        return Object.assign({}, data, change);
       },
-      getNewEntry (model, uuid) {
-        return this.$store.getters.get_new_entry(model, uuid)
+      getNewEntryWrapper (model, uuid) {
+        const data = this.getNewEntry(model, uuid)
+        const change = ((this.changes[model] || {}).new || {})[uuid] || {};
+        return Object.assign({}, data, change);
       },
     },
     watch: {
