@@ -59,12 +59,6 @@
         {
           "argsIgnorePattern": "^_"
         }
-      ],
-      "no-empty": [
-        "error",
-        {
-          "allowEmptyCatch": true
-        }
       ]
     },
     "overrides": [
