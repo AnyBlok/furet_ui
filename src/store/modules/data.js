@@ -25,7 +25,15 @@ export const update_change_object = (state_changes, action) => {
       if (changes[model] === undefined) changes[model] = {}
       _.each(_.keys(action.merge[model]), pk => {
         if (changes[model][pk] === undefined) changes[model][pk] = {}
-        Object.assign(changes[model][pk], action.merge[model][pk])
+        if (pk === 'new') {
+          if (changes[model].new === undefined) changes[model].new = {}
+          _.each(_.keys(action.merge[model].new), uuid => {
+            if (changes[model].new[uuid] === undefined) changes[model].new[uuid] = {}
+            Object.assign(changes[model].new[uuid], action.merge[model].new[uuid])
+          });
+        } else {
+          Object.assign(changes[model][pk], action.merge[model][pk])
+        }
       });
     })
   }

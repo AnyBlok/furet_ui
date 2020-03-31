@@ -182,6 +182,7 @@ defineComponent('furet-ui-form-field-resource-manager', {
           readonly: this.isReadonly,
           query: {additional_filter: pks},
           pks,
+          x2m_pks: this.value,
         },
       };
     },
@@ -190,7 +191,13 @@ defineComponent('furet-ui-form-field-resource-manager', {
         if (!this.value) return null;
         const pks = {};
         this.value.forEach(value => {
-          if (value.__x2m_state !== 'DELETED') {
+          if (value.__x2m_state === 'DELETED') {
+            // removed so don't search and display this value
+          }
+          else if (value.__x2m_state === 'ADDED') {
+            // new dont search this value
+          }
+          else {
             _.each(_.keys(value), key => {
               if (key !== '__x2m_state') {
                 if (pks[key] === undefined) pks[key] = []
@@ -215,7 +222,7 @@ defineComponent('furet-ui-form-field-resource-manager', {
       createData (data) {
         data.changes = this.changes
         this.$emit('add', data)
-        this.clearChange() // because is an hard action
+        this.goToList ()
       },
       updateData (data) {
         data.changes = this.changes
@@ -252,7 +259,7 @@ defineComponent('furet-ui-form-field-resource-manager', {
       value () {
         const pks = this.get_pks()
         const query = Object.assign({}, this.manager.query, {additional_filter: pks})
-        this.manager = Object.assign({}, this.manager, {query, pks})
+        this.manager = Object.assign({}, this.manager, {query, pks, x2m_pks: this.value})
       },
     },
     mounted () {

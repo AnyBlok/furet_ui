@@ -65,28 +65,26 @@ defineComponent('furet-ui-form-field-one2many', {
   extend: ['furet-ui-form-field-common'],
   prototype: {
     methods: {
-      o2m_add (actions) {
-        console.log('O2M add : ', actions)
-      },
-      o2m_update (actions) {
+      addState(actions, state) {
         const pks = pk2string(actions.pks)
         const newvalue = _.map(this.value, value => {
           if (pk2string(value) === pks) {
-            value.__x2m_state = 'UPDATED';
+            value.__x2m_state = state;
           }
           return value;
         })
+        return newvalue;
+      },
+      o2m_add (actions) {
+        const newvalue = _.map(this.value, value => value)
+        newvalue.push({__x2m_state: 'ADDED', uuid: actions.uuid})
         this.updateValue(newvalue, actions.changes)
       },
+      o2m_update (actions) {
+        this.updateValue(this.addState(actions, 'UPDATED'), actions.changes)
+      },
       o2m_delete (actions) {
-        const pks = pk2string(actions.pks)
-        const newvalue = _.map(this.value, value => {
-          if (pk2string(value) === pks) {
-            value.__x2m_state = 'DELETED';
-          }
-          return value;
-        })
-        this.updateValue(newvalue)
+        this.updateValue(this.addState(actions, 'DELETED'))
       },
     },
   }
