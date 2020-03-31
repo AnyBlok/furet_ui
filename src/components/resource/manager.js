@@ -190,10 +190,14 @@ defineComponent('furet-ui-form-field-resource-manager', {
         if (!this.value) return null;
         const pks = {};
         this.value.forEach(value => {
-          _.each(_.keys(value), key => {
-            if (pks[key] === undefined) pks[key] = []
-            pks[key].push(value[key])
-          });
+          if (value.__x2m_state !== 'DELETED') {
+            _.each(_.keys(value), key => {
+              if (key !== '__x2m_state') {
+                if (pks[key] === undefined) pks[key] = []
+                pks[key].push(value[key])
+              }
+            });
+          }
         });
         return pks
       },
@@ -209,16 +213,19 @@ defineComponent('furet-ui-form-field-resource-manager', {
         this.clearChange();
       },
       createData (data) {
+        data.changes = this.changes
         this.$emit('add', data)
         this.clearChange() // because is an hard action
       },
       updateData (data) {
+        data.changes = this.changes
         this.$emit('update', data)
-        this.clearChange() // because is an hard action
+        this.$refs.resource.saved();
       },
       deleteData (data) {
         this.$emit('delete', data)
         this.clearChange() // because is an hard action
+        this.updateQueryString({})  // replace it by breadscrumb
       },
       clearChange () {
         this.changes = {}  // clear the changes

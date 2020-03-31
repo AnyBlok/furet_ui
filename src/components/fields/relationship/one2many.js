@@ -10,6 +10,8 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import {defineComponent} from '../../factory'
 import {fields} from '../fields';
 import {RelationShipX2MList} from './common';
+import {pk2string} from '../../../store/modules/data';
+import _ from 'underscore';
 
 
 defineComponent('furet-ui-list-field-one2many', {
@@ -67,10 +69,24 @@ defineComponent('furet-ui-form-field-one2many', {
         console.log('O2M add : ', actions)
       },
       o2m_update (actions) {
-        console.log('O2M update : ', actions)
+        const pks = pk2string(actions.pks)
+        const newvalue = _.map(this.value, value => {
+          if (pk2string(value) === pks) {
+            value.__x2m_state = 'UPDATED';
+          }
+          return value;
+        })
+        this.updateValue(newvalue, actions.changes)
       },
       o2m_delete (actions) {
-        console.log('O2M delete : ', actions)
+        const pks = pk2string(actions.pks)
+        const newvalue = _.map(this.value, value => {
+          if (pk2string(value) === pks) {
+            value.__x2m_state = 'DELETED';
+          }
+          return value;
+        })
+        this.updateValue(newvalue)
       },
     },
   }

@@ -156,13 +156,14 @@ defineComponent('furet-ui-form-field-common', {
       },
     },
     methods: {
-      updateValue: debounce(function(value) {
+      updateValue: debounce(function(value, merge) {
         const action = {
           model: this.resource.model,
           pk: this.resource.pks,
           uuid: this.resource.uuid,
           fieldname: this.config.name,
           value,
+          merge
         }
         this.updateChangeState(action);
       }, 200),

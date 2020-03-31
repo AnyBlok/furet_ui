@@ -20,6 +20,15 @@ export const pk2string = (pk) => {
 
 export const update_change_object = (state_changes, action) => {
   const changes = Object.assign({}, state_changes);
+  if (action.merge !== undefined) {
+    _.each(_.keys(action.merge), model => {
+      if (changes[model] === undefined) changes[model] = {}
+      _.each(_.keys(action.merge[model]), pk => {
+        if (changes[model][pk] === undefined) changes[model][pk] = {}
+        Object.assign(changes[model][pk], action.merge[model][pk])
+      });
+    })
+  }
   if (changes[action.model] == undefined) changes[action.model] = {}
   if (action.uuid != null) {
     if (changes[action.model].new == undefined) changes[action.model].new = {};
