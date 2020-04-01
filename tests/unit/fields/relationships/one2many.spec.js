@@ -151,4 +151,12 @@ describe("Field.One2Many for Resource.Form", () => {
     expect(updateValue.lastCall.args[0][1].uuid).toBe('uuid')
     expect(updateValue.lastCall.args[0][1].__x2m_state).toBe('ADDED')
   });
+  it("o2m_add twice", () => {
+    wrapper.vm.o2m_update({model: 'Model.2', pks:{id: 1}})
+    expect(updateValue.lastCall.args[0].length).toBe(1)
+    wrapper.vm.o2m_add({model: 'Model.2', uuid: 'uuid'})
+    expect(updateValue.lastCall.args[0].length).toBe(2)
+    wrapper.vm.o2m_add({model: 'Model.2', uuid: 'uuid'})
+    expect(updateValue.lastCall.args[0].length).toBe(2)
+  });
 });
