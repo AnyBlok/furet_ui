@@ -78,6 +78,10 @@
     "last 2 versions"
   ],
   "jest": {
+    "moduleNameMapper": {
+      "vue.runtime.common.dev.js": "<rootDir>/node_modules/vue/dist/vue.common.dev.js",
+      "vue.runtime.common.js": "<rootDir>/node_modules/vue/dist/vue.common.js"
+    },
     "preset": "@vue/cli-plugin-unit-jest",
     "setupFiles": [
       "./tests/setup.js",

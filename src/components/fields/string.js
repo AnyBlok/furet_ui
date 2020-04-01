@@ -18,10 +18,6 @@ defineComponent('furet-ui-list-field-string', {
 })
 fields.list.string = 'furet-ui-list-field-string'
 
-// export const FieldThumbnailString = Vue.component('furet-ui-thumbnail-field-string', {
-//     mixins: [ThumbnailMixin],
-// })
-// 
 
 defineComponent('furet-ui-form-field-string', {
   template: `
