@@ -94,6 +94,8 @@ defineComponent('furet-ui-space-resource-manager', {
   prototype: {
     methods: {
       updateQueryString (query) {
+        // eslint-disable-next-line no-debugger
+        this.$store.commit("PushBreadcrumb", {label: this.$store.state.global.breadcrumb.length, route: this.$router.currentRoute})
         this.$router.push({ query });
       },
       createData (data) {

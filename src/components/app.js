@@ -97,6 +97,7 @@ defineComponent('furet-ui-appbar-router-link-goto', {
     methods: {
       goTo() {
         // TODO clear data
+        // PV: wonder when this code is called and if we should mind in breadcrumb
         this.$router.push(this.to);
       },
       format_label(label) {
@@ -193,6 +194,7 @@ defineComponent('furet-ui-appbar-spaces-menu', {
           this.$store.commit('UPDATE_PREVIOUS_ROUTE', {route: this.$route});
           this.$router.push({name: 'space_menus'});
         }
+        this.$store.commit("ClearBreadcrumb");
       }
     }
   },
@@ -281,7 +283,8 @@ defineComponent('furet-ui-space-menus', {
     },
     methods: {
       selectMenu (menu) {
-        this.$router.push(menu.path)
+        this.$router.push(menu.path);
+        this.$store.commit("ClearBreadcrumb");
       }
     },
     mounted() {
@@ -330,6 +333,7 @@ defineComponent('furet-ui-space-menu', {
               params: {code: this.code, menuId: menu.id, id: menu.resource},
               query,
             });
+            this.$store.commit("ClearBreadcrumb");
           }
         }
       }
@@ -360,6 +364,7 @@ defineComponent("furet-ui-breadcrumb", {
     },
     methods: {
       backToResource: function(index, _event) {
+        this.$router.push(this.$store.state.global.breadcrumb[index].route);
         this.$store.commit("ClearBreadcrumbFrom", index);
       }
     }
