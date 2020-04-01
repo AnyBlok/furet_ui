@@ -1,3 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`One2Many field for form View test furet ui form field one2many 1`] = `<span data-label="" class="is-primary is-top is-medium b-tooltip" style="transition-delay:0ms;width:100%;"><div class="box" style="width:100%;"><div class="container"><!----></div> <div config="[object Object]" manager="[object Object]" class="container"><strong>Waiting loading component</strong></div></div></span>`;
+exports[`One2Many field for form View test furet ui form field one2many 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="box"
+    style="width: 100%;"
+  >
+    <div
+      class="container"
+    >
+      <!---->
+    </div>
+     
+    <div
+      class="container"
+      config="[object Object]"
+      manager="[object Object]"
+    >
+      <strong>
+        Waiting loading component
+      </strong>
+    </div>
+  </div>
+</span>
+`;

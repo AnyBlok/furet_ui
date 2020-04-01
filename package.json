@@ -31,7 +31,6 @@
     "@vue/cli-plugin-unit-jest": "^4.2.3",
     "@vue/cli-plugin-vuex": "^4.2.3",
     "@vue/cli-service": "^4.2.3",
-    "@vue/server-test-utils": "^1.0.0-beta.32",
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
@@ -40,7 +39,6 @@
     "eslint-plugin-vue": "^6.2.2",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
-    "vue-server-renderer": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -80,6 +78,10 @@
     "last 2 versions"
   ],
   "jest": {
+    "moduleNameMapper": {
+      "vue.runtime.common.dev.js": "<rootDir>/node_modules/vue/dist/vue.common.dev.js",
+      "vue.runtime.common.js": "<rootDir>/node_modules/vue/dist/vue.common.js"
+    },
     "preset": "@vue/cli-plugin-unit-jest",
     "setupFiles": [
       "./tests/setup.js",
