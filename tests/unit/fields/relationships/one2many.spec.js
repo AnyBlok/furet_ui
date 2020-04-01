@@ -1,7 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { getComponentPrototype } from "@/components/factory";
 import { i18n } from "@/i18n";
-import sinon from 'sinon';
 import axios from 'axios';
 
 const mock = jest.spyOn(axios, "get");
@@ -104,7 +103,7 @@ describe("Field.One2Many for Resource.Form", () => {
   let updateValue;
   let wrapper;
   beforeEach(() => {
-    updateValue = sinon.spy()
+    updateValue = jest.fn()
     wrapper = mount(Component, {
       store,
       i18n,
@@ -139,24 +138,16 @@ describe("Field.One2Many for Resource.Form", () => {
   });
   it("o2m_delete", () => {
     wrapper.vm.o2m_delete({model: 'Model.2', pks:{id: 1}})
-    expect(updateValue.lastCall.args[0][0].__x2m_state).toBe('DELETED')
+    expect(updateValue.mock.calls[0][0][0].__x2m_state).toBe('DELETED')
   });
   it("o2m_update", () => {
     wrapper.vm.o2m_update({model: 'Model.2', pks:{id: 1}})
-    expect(updateValue.lastCall.args[0][0].__x2m_state).toBe('UPDATED')
+    expect(updateValue.mock.calls[0][0][0].__x2m_state).toBe('UPDATED')
   });
   it("o2m_add", () => {
     wrapper.vm.o2m_add({model: 'Model.2', uuid: 'uuid'})
-    expect(updateValue.lastCall.args[0][0].__x2m_state).toBe(undefined)
-    expect(updateValue.lastCall.args[0][1].uuid).toBe('uuid')
-    expect(updateValue.lastCall.args[0][1].__x2m_state).toBe('ADDED')
-  });
-  it("o2m_add twice", () => {
-    wrapper.vm.o2m_update({model: 'Model.2', pks:{id: 1}})
-    expect(updateValue.lastCall.args[0].length).toBe(1)
-    wrapper.vm.o2m_add({model: 'Model.2', uuid: 'uuid'})
-    expect(updateValue.lastCall.args[0].length).toBe(2)
-    wrapper.vm.o2m_add({model: 'Model.2', uuid: 'uuid'})
-    expect(updateValue.lastCall.args[0].length).toBe(2)
+    expect(updateValue.mock.calls[0][0][0].__x2m_state).toBe(undefined)
+    expect(updateValue.mock.calls[0][0][1].uuid).toBe('uuid')
+    expect(updateValue.mock.calls[0][0][1].__x2m_state).toBe('ADDED')
   });
 });
