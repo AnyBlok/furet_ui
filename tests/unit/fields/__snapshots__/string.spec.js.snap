@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`String field test furet ui form field string 1`] = `
+exports[`Field.String for Resource.Form Empty 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
   data-label=""
@@ -27,6 +27,82 @@ exports[`String field test furet ui form field string 1`] = `
        
       <!---->
     </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.String for Resource.Form With value, label and icon 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="control has-icons-left is-clearfix"
+    >
+      <input
+        autocomplete="on"
+        class="input"
+        maxlength="10"
+        placeholder="An explicit placeholder"
+        type="text"
+      />
+       
+      <span
+        class="icon is-left"
+      >
+        <i
+          class="fa fa-user fa-lg"
+        />
+      </span>
+       
+      <!---->
+       
+      <small
+        class="help counter is-invisible"
+      >
+        
+            7 / 10
+        
+      </small>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.String for Resource.Form With value, label, readonly 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <span>
+      A value
+    </span>
      
     <!---->
   </div>
