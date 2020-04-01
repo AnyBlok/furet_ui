@@ -3,15 +3,51 @@ import { getComponentPrototype } from "@/components/factory";
 
 const localVue = global.localVue;
 const store = global.store;
+const provide = {
+  partIsReadonly: () => {
+    return false;
+  },
+  updateChangeState: () => {}
+};
 
+describe("Field.String for Resource.List", () => {
+  const ListStringField = getComponentPrototype("furet-ui-list-field-string");
+
+  it("Empty", () => {
+    const wrapper = mount(ListStringField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ListStringField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
 describe("Field.String for Resource.Form", () => {
   const FormStringField = getComponentPrototype("furet-ui-form-field-string");
-  const provide = {
-    partIsReadonly: () => {
-      return false;
-    },
-    updateChangeState: () => {}
-  };
 
   it("Empty", () => {
     const wrapper = mount(FormStringField, {

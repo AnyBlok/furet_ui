@@ -108,3 +108,19 @@ exports[`Field.String for Resource.Form With value, label, readonly 1`] = `
   </div>
 </span>
 `;
+
+exports[`Field.String for Resource.List Empty 1`] = `
+<div>
+  <span>
+    
+  </span>
+</div>
+`;
+
+exports[`Field.String for Resource.List With value 1`] = `
+<div>
+  <span>
+    A value
+  </span>
+</div>
+`;
