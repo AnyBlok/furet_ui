@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`One2Many field for form View test furet ui form field one2many 1`] = `
+exports[`Field.One2Many for Resource.Form test furet ui form field one2many 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
   data-label=""
@@ -27,4 +27,79 @@ exports[`One2Many field for form View test furet ui form field one2many 1`] = `
     </div>
   </div>
 </span>
+`;
+
+exports[`Field.One2Many for Resource.List Empty 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`Field.One2Many for Resource.List Hidden 1`] = `
+<div>
+  <span />
+</div>
+`;
+
+exports[`Field.One2Many for Resource.List With one value 1`] = `
+<div>
+  <div>
+    <span
+      class="tag"
+    >
+      <a>
+        Go to =&gt; Entry 1
+        
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Field.One2Many for Resource.List With style 1`] = `
+<div>
+  <div>
+    <span
+      class="tag"
+      style="color: red;"
+    >
+      <a>
+        Go to =&gt; Entry 1
+        
+      </a>
+    </span>
+    <span
+      class="tag"
+      style="color: blue;"
+    >
+      <a>
+        Go to =&gt; Entry 2
+        
+      </a>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Field.One2Many for Resource.List With two value 1`] = `
+<div>
+  <div>
+    <span
+      class="tag"
+    >
+      <a>
+        Go to =&gt; Entry 1
+        
+      </a>
+    </span>
+    <span
+      class="tag"
+    >
+      <a>
+        Go to =&gt; Entry 2
+        
+      </a>
+    </span>
+  </div>
+</div>
 `;

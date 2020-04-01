@@ -47,7 +47,7 @@ defineComponent('furet-ui-list-field-common', {
       },
       isHidden () {
         if (this.config.hidden === undefined) return false;
-        return safe_eval(this.config.hidden, this.data || {}, {});
+        return safe_eval(this.config.hidden, this.data || {}, this.resource);
       },
     },
   }
