@@ -21,6 +21,8 @@ export const defaultState = {
   right_menus: [],
   isOpenLeft: false,
   isOpenRight: false,
+  // breadcrumb: [{label: "home", icon: "home"}, {label: "user", icon: "user"}]
+  breadcrumb: []
 };
 
 // getters
@@ -39,6 +41,15 @@ export const actions = {
 
 // mutations
 export const mutations = {
+  PushBreadcrumb(state, resource) {
+    state.breadcrumb.push(resource);
+  },
+  ClearBreadcrumbFrom(state, index) {
+    state.breadcrumb.splice(index, state.breadcrumb.length - index);
+  },
+  ClearBreadcrumb(state) {
+    state.breadcrumb = [];
+  },
   'FURETUI LOADED'(state) {
       state.appLoaded = true;
   },

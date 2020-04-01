@@ -336,8 +336,37 @@ defineComponent('furet-ui-space-menu', {
     }
 });
 
+defineComponent("furet-ui-breadcrumb", {
+  template: `
+  <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+    <ul>
+      <li v-for="(item, index) in history" :key="index">
+        <a v-on:click="backToResource(index, $event)">
+          <b-icon
+            v-if="item.icon"
+            :icon="item.icon"
+            size="is-small" />
+          <span>{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  `,
+  prototype: {
+    computed: {
+      history () {
+        return this.$store.state.global.breadcrumb;
+      }
+    },
+    methods: {
+      backToResource: function(index, _event) {
+        this.$store.commit("ClearBreadcrumbFrom", index);
+      }
+    }
+  }
+});
+
 defineComponent('furet-ui-space', {
-  // TODO BREADSCRUMB
   template: `
     <div 
         class="columns is-gapless"
@@ -361,9 +390,7 @@ defineComponent('furet-ui-space', {
               </a>
             </div>
             <div class="level-item">
-              <p class="subtitle is-5">
-                Breadcrumb
-              </p>
+              <furet-ui-breadcrumb/>
             </div>
           </diV>
           <div class="level-right">
