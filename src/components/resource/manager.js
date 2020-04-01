@@ -3,6 +3,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import  {resources}  from './resources';
 import { defineComponent } from '../factory';
+import {pk2string, update_change_object} from '../../store/modules/data';
 
 defineComponent('furet-ui-waiting-resource', {
   template: `
@@ -33,9 +34,13 @@ defineComponent('furet-ui-resource', {
         return this.$store.state.resource[id];
       },
       load_resource (id) {
-        axios.get(`furet-ui/resource/${id}`).then((result) => {
-          this.$dispatchAll(result.data);
-        });
+        axios
+          .get(`furet-ui/resource/${id}`).then((result) => {
+            this.$dispatchAll(result.data);
+          })
+          .catch((error) => {
+            console.error(error)
+          });
       },
     },
   },
@@ -60,8 +65,8 @@ defineComponent('furet-ui-resource-manager', {
     provide: function () {
       return {
         updateChangeState: this.updateChangeState,
-        getEntry: this.getEntry,
-        getNewEntry: this.getNewEntry,
+        getEntry: this.getEntryWrapper,
+        getNewEntry: this.getNewEntryWrapper,
       }
     },
   },
@@ -134,10 +139,10 @@ defineComponent('furet-ui-space-resource-manager', {
       updateChangeState (action) {
         this.$store.commit('UPDATE_CHANGE', action)
       },
-      getEntry (model, pk) {
+      getEntryWrapper (model, pk) {
         return this.$store.getters.get_entry(model, pk)
       },
-      getNewEntry (model, uuid) {
+      getNewEntryWrapper (model, uuid) {
         return this.$store.getters.get_new_entry(model, uuid)
       },
     },
@@ -171,14 +176,17 @@ defineComponent('furet-ui-form-field-resource-manager', {
   `,
   extend: ['furet-ui-resource-manager'],
   prototype: {
-    props: ['value', 'x2m_resource', 'isReadonly', 'add', 'update', 'delete', 'config'],
+    props: ['value', 'x2m_resource', 'isReadonly', 'config'],
+    inject: ['getEntry', 'getNewEntry'],
     data () {
       const pks = this.get_pks()
       return {
+        changes: {},
         manager: {
           readonly: this.isReadonly,
           query: {additional_filter: pks},
           pks,
+          x2m_pks: this.value,
         },
       };
     },
@@ -187,10 +195,20 @@ defineComponent('furet-ui-form-field-resource-manager', {
         if (!this.value) return null;
         const pks = {};
         this.value.forEach(value => {
-          _.each(_.keys(value), key => {
-            if (pks[key] === undefined) pks[key] = []
-            pks[key].push(value[key])
-          });
+          if (value.__x2m_state === 'DELETED') {
+            // removed so don't search and display this value
+          }
+          else if (value.__x2m_state === 'ADDED') {
+            // new dont search this value
+          }
+          else {
+            _.each(_.keys(value), key => {
+              if (key !== '__x2m_state') {
+                if (pks[key] === undefined) pks[key] = []
+                pks[key].push(value[key])
+              }
+            });
+          }
         });
         return pks
       },
@@ -203,26 +221,40 @@ defineComponent('furet-ui-form-field-resource-manager', {
         const query = {additional_filter: this.manager.pks}
         this.manager = Object.assign({}, this.manager, {query})
         this.$refs.resource.mode = 'multi';
+        this.clearChange();
       },
       createData (data) {
-        this.add(data);
+        data.changes = this.changes
+        this.$emit('add', data)
+        this.clearChange()
+        this.goToList ()
       },
       updateData (data) {
-        this.update(data);
+        data.changes = this.changes
+        this.$emit('update', data)
+        this.$refs.resource.saved();
       },
       deleteData (data) {
-        this.delete(data);
+        this.$emit('delete', data)
+        this.clearChange() // because is an hard action
+        this.updateQueryString({})  // replace it by breadscrumb
       },
       clearChange () {
+        this.changes = {}  // clear the changes
       },
       updateChangeState (action) {
-        console.log(action)
+        this.changes = update_change_object(this.changes, action)
       },
-      getEntry (model, pk) {
-        return this.$store.getters.get_entry(model, pk)
+      getEntryWrapper (model, pk) {
+        const key = pk2string(pk)
+        const data = this.getEntry(model, pk)
+        const change = (this.changes[model] || {})[key] || {};
+        return Object.assign({}, data, change);
       },
-      getNewEntry (model, uuid) {
-        return this.$store.getters.get_new_entry(model, uuid)
+      getNewEntryWrapper (model, uuid) {
+        const data = this.getNewEntry(model, uuid)
+        const change = ((this.changes[model] || {}).new || {})[uuid] || {};
+        return Object.assign({__x2m_uuid: uuid}, data, change);
       },
     },
     watch: {
@@ -232,7 +264,7 @@ defineComponent('furet-ui-form-field-resource-manager', {
       value () {
         const pks = this.get_pks()
         const query = Object.assign({}, this.manager.query, {additional_filter: pks})
-        this.manager = Object.assign({}, this.manager, {query, pks})
+        this.manager = Object.assign({}, this.manager, {query, pks, x2m_pks: this.value})
       },
     },
     mounted () {

@@ -269,6 +269,7 @@ defineComponent('mixin-page-multi-entries', {
             this.loading = false;
           })
           .catch((error) => {
+            console.error(error)
             this.errors = error.response.data.errors;
             this.loading = false;
           });

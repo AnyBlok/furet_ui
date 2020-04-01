@@ -69,7 +69,7 @@ defineComponent('furet-ui-list', {
         <template slot="empty">
           <section class="section">
             <div class="content has-text-grey has-text-centered">
-              <p>{{ $t('components.page.header.notFound') }}</p>
+              <p>{{ $t('components.page.list.notFound') }}</p>
             </div>
           </section>
         </template>

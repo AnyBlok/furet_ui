@@ -9,13 +9,45 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import _ from 'underscore';
 
-const pk2string = (pk) => {
+export const pk2string = (pk) => {
     const keys = _.sortBy(_.keys(pk));
     const res = [];
     keys.forEach(key => {
         res.push([key, pk[key]]);
     });
     return JSON.stringify(res)
+}
+
+export const update_change_object = (state_changes, action) => {
+  const changes = Object.assign({}, state_changes);
+  if (action.merge !== undefined) {
+    _.each(_.keys(action.merge), model => {
+      if (changes[model] === undefined) changes[model] = {}
+      _.each(_.keys(action.merge[model]), pk => {
+        if (changes[model][pk] === undefined) changes[model][pk] = {}
+        if (pk === 'new') {
+          if (changes[model].new === undefined) changes[model].new = {}
+          _.each(_.keys(action.merge[model].new), uuid => {
+            if (changes[model].new[uuid] === undefined) changes[model].new[uuid] = {}
+            Object.assign(changes[model].new[uuid], action.merge[model].new[uuid])
+          });
+        } else {
+          Object.assign(changes[model][pk], action.merge[model][pk])
+        }
+      });
+    })
+  }
+  if (changes[action.model] == undefined) changes[action.model] = {}
+  if (action.uuid != null) {
+    if (changes[action.model].new == undefined) changes[action.model].new = {};
+    if (changes[action.model].new[action.uuid] == undefined) changes[action.model].new[action.uuid] = {};
+    changes[action.model].new[action.uuid][action.fieldname] = action.value;
+  } else {
+    const pk = pk2string(action.pk)
+    if (changes[action.model][pk] == undefined) changes[action.model][pk] = {};
+    changes[action.model][pk][action.fieldname] = action.value;
+  }
+  return changes
 }
 
 export const defaultState = {
@@ -58,18 +90,7 @@ export const mutations = {
         state.data = data;
     },
     'UPDATE_CHANGE'(state, action) {
-        const changes = Object.assign({}, state.changes);
-        if (changes[action.model] == undefined) changes[action.model] = {}
-        if (action.uuid != null) {
-          if (changes[action.model].new == undefined) changes[action.model].new = {};
-          if (changes[action.model].new[action.uuid] == undefined) changes[action.model].new[action.uuid] = {};
-          changes[action.model].new[action.uuid][action.fieldname] = action.value;
-        } else {
-          const pk = pk2string(action.pk)
-          if (changes[action.model][pk] == undefined) changes[action.model][pk] = {};
-          changes[action.model][pk][action.fieldname] = action.value;
-        }
-        state.changes = changes
+        state.changes = update_change_object(state.changes, action)
     },
     // 'REPLACE_CHANGE'(state, action) {
     //     state.changes = Object.assign({}, action.changes);

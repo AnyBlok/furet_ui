@@ -47,7 +47,7 @@ defineComponent('furet-ui-list-field-common', {
       },
       isHidden () {
         if (this.config.hidden === undefined) return false;
-        return safe_eval(this.config.hidden, this.data || {}, {});
+        return safe_eval(this.config.hidden, this.data || {}, this.resource);
       },
     },
   }
@@ -156,13 +156,14 @@ defineComponent('furet-ui-form-field-common', {
       },
     },
     methods: {
-      updateValue: debounce(function(value) {
+      updateValue: debounce(function(value, merge) {
         const action = {
           model: this.resource.model,
           pk: this.resource.pks,
           uuid: this.resource.uuid,
           fieldname: this.config.name,
           value,
+          merge
         }
         this.updateChangeState(action);
       }, 200),

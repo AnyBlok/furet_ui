@@ -136,8 +136,8 @@ defineComponent('furet-ui-resource-form', {
       },
       goToPage () {
         this.$emit('clear-change', {pks: this.pks, uuid: this.uuid})
+        this.readonly = true;
         if (this.uuid) this.goToList();
-        else this.readonly = true;
       },
       deleteEntry () {
         this.$emit('delete-data', {
@@ -181,7 +181,12 @@ defineComponent('furet-ui-resource-form', {
         if (this.manager.query !== undefined) {
           if (this.manager.query.pks) {
             this.pks = JSON.parse(this.manager.query.pks)
+            this.uuid = null;
             this.loadAsyncData();
+          } else if (this.manager.query.uuid) {
+            // new case
+            this.readonly = false;
+            this.uuid = this.manager.query.uuid;
           } else {
             // new case
             this.readonly = false;
