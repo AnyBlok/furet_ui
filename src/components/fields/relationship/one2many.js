@@ -78,7 +78,7 @@ defineComponent('furet-ui-form-field-one2many', {
       o2m_add (actions) {
         const newvalue = _.map(this.value, value => value)
         if (!_.find(newvalue, value => value.uuid === actions.uuid)) {
-            newvalue.push({__x2m_state: 'ADDED', uuid: actions.uuid})
+          newvalue.push({__x2m_state: 'ADDED', uuid: actions.uuid})
         }
         this.updateValue(newvalue, actions.changes)
       },

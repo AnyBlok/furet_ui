@@ -15,13 +15,7 @@ import {pk2string} from '../../../store/modules/data';
 
 const safe_eval = (style, fields) => {
   fields  // lint
-  let res = {};
-  try {
-    res = eval(style)
-  } catch (e) {
-    console.warn(e)
-  }
-  return res;
+  return  eval(style)
 }
 
 
