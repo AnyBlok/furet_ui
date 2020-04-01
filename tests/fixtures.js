@@ -17,6 +17,7 @@ global.localVue.use(Vuex);
 global.localVue.use(Router);
 
 const store = createStore();
-global.store = store;
 const router = createRouter(store, routes);
 global.localVue.use(PluginDispatch, { router, store, i18n });
+global.store = store;
+global.router = router;
