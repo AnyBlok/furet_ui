@@ -2,6 +2,10 @@ import { mount } from "@vue/test-utils";
 import { getComponentPrototype } from "@/components/factory";
 import { i18n } from "@/i18n";
 import sinon from 'sinon';
+import axios from 'axios';
+
+const mock = jest.spyOn(axios, "get");
+mock.mockResolvedValue({data: [], headers: {'x-total-records': 0}});
 
 const localVue = global.localVue;
 const store = global.store;
@@ -16,7 +20,6 @@ const data = {
 const getEntry = (model, pk) => {
   return data[model][pk.id]
 }
-
 describe("Field.One2Many for Resource.List", () => {
   const Component = getComponentPrototype("furet-ui-list-field-one2many");
   const getOptions = (data, hidden, style) => {
@@ -127,7 +130,6 @@ describe("Field.One2Many for Resource.Form", () => {
         getNewEntry: () => {return {}}
       },
       methods: {
-        load_resource: () => {},
         updateValue,
       }
     });

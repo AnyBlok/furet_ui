@@ -45,7 +45,7 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
               class="level-item"
             >
               <small>
-                (0)
+                ()
               </small>
                
             </span>
@@ -117,9 +117,52 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
       </header>
         
       <div
-        class="b-table is-loading"
+        class="b-table"
       >
-        <!---->
+        <div
+          class="field table-mobile-sort"
+        >
+          <div
+            class="field has-addons"
+          >
+            <div
+              class="control is-expanded"
+            >
+              <span
+                class="select is-fullwidth"
+              >
+                <select>
+                  <!---->
+                   
+                  <option
+                    value="[object Object]"
+                  >
+                    
+                    Title
+                    
+                    <!---->
+                  </option>
+                  <option
+                    value="[object Object]"
+                  >
+                    
+                    Color
+                    
+                    <!---->
+                  </option>
+                </select>
+              </span>
+               
+              <!---->
+            </div>
+             
+            <div
+              class="control"
+            >
+              <!---->
+            </div>
+          </div>
+        </div>
          
         <div
           class="top level"
@@ -189,30 +232,79 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
           class="table-wrapper has-mobile-cards"
         >
           <table
-            class="table is-striped"
+            class="table is-striped is-hoverable"
           >
-            <!---->
+            <thead>
+              <tr>
+                <!---->
+                 
+                <!---->
+                 
+                <th
+                  class="is-sortable"
+                >
+                  <div
+                    class="th-wrap"
+                  >
+                    Title 
+                    <!---->
+                  </div>
+                </th>
+                <th
+                  class="is-sortable"
+                >
+                  <div
+                    class="th-wrap"
+                  >
+                    Color 
+                    <!---->
+                  </div>
+                </th>
+                 
+                <!---->
+              </tr>
+               
+              <!---->
+               
+              <!---->
+            </thead>
              
             <tbody>
               <tr
-                class="is-empty"
+                class=""
+                draggable="false"
               >
+                <!---->
+                 
+                <!---->
+                 
                 <td
-                  colspan="0"
+                  class=""
+                  data-label="Title"
                 >
-                  <section
-                    class="section"
-                  >
-                    <div
-                      class="content has-text-grey has-text-centered"
-                    >
-                      <p>
-                        components.page.header.notFound
-                      </p>
-                    </div>
-                  </section>
+                  <div>
+                    <span>
+                      Entry 1
+                    </span>
+                  </div>
                 </td>
+                <td
+                  class=""
+                  data-label="Color"
+                >
+                  <div>
+                    <span>
+                      red
+                    </span>
+                  </div>
+                </td>
+                 
+                <!---->
               </tr>
+               
+              <!---->
+               
+              <!---->
             </tbody>
              
             <!---->

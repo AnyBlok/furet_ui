@@ -34,9 +34,13 @@ defineComponent('furet-ui-resource', {
         return this.$store.state.resource[id];
       },
       load_resource (id) {
-        axios.get(`furet-ui/resource/${id}`).then((result) => {
-          this.$dispatchAll(result.data);
-        });
+        axios
+          .get(`furet-ui/resource/${id}`).then((result) => {
+            this.$dispatchAll(result.data);
+          })
+          .catch((error) => {
+            console.error(error)
+          });
       },
     },
   },
