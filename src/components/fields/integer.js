@@ -19,10 +19,6 @@ defineComponent('furet-ui-list-field-integer', {
 fields.list.integer = 'furet-ui-list-field-integer'
 
 
-// export const FieldThumbnailInteger = Vue.component('furet-ui-thumbnail-field-integer', {
-//     mixins: [ThumbnailMixin],
-// })
-
 defineComponent('furet-ui-form-field-integer', {
   template: `
     <furet-ui-form-field-common-tooltip-field

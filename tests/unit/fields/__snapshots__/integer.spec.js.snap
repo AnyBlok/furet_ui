@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field.Integer for Resource.Form Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="control is-clearfix"
+    >
+      <input
+        autocomplete="on"
+        class="input"
+        step="1"
+        type="number"
+      />
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Integer for Resource.Form With value, label and icon 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="control is-clearfix"
+    >
+      <input
+        autocomplete="on"
+        class="input"
+        max="20"
+        min="5"
+        step="1"
+        type="number"
+      />
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Integer for Resource.Form With value, label, readonly 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <span>
+      15
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Integer for Resource.List Empty 1`] = `
+<div>
+  <span>
+    
+  </span>
+</div>
+`;
+
+exports[`Field.Integer for Resource.List With value 1`] = `
+<div>
+  <span>
+    10
+  </span>
+</div>
+`;
