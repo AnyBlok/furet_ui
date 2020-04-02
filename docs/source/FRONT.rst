@@ -52,7 +52,7 @@ Unit Test
 
 Run the test with ``npm``::
 
-    npm run test
+    npm run test:unit
 
 
 AnyBlok is tested using `Travis <https://travis-ci.org/AnyBlok/furet_ui>`_

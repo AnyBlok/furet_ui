@@ -339,6 +339,20 @@ defineComponent('furet-ui-space-menu', {
     }
 });
 
+/**
+ * furet-ui-breadcrumb is used to display a navigational aid to keep track
+ * and maintain awareness of the user location.
+ *
+ * Its state is saved in an Array to the `global.breadcrumb` vuex store.
+ * Each element is an Object::
+ *
+ *  {
+ *     icon: "home",  // a fontAwesome icon name https://fontawesome.com/
+ *     label: "Home", // Name of the element in the breadcrumb
+ *     route: Object  // A vue-router route which is saved to restore when
+ *                    // user want's to come back.
+ *   }
+ */
 defineComponent("furet-ui-breadcrumb", {
   template: `
   <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">

@@ -30,6 +30,13 @@ defineComponent('furet-ui-resource', {
       },
     },
     methods: {
+      /** This method should be implement in subclass to return
+       * label and icon to be displayed in breadcrumb
+       *
+       * @return {Object} {label: "Label to display in breadcrumb", icon: "list"} -
+       *    Where `label` and `icon` are String.
+       *    `icon` is a https://fontawesome.com icon name
+       */
       getBreadcrumbInfo() {
         throw new Error(
           `You must implement this method **getBreadcrumbInfo** in subclass,
@@ -104,6 +111,12 @@ defineComponent('furet-ui-space-resource-manager', {
       updateQueryString (query) {
         this.$router.push({ query });
       },
+      /** This method add an element to the breadcrumb
+       *
+       * It gets label and icon information on child resource component
+       * calling ``getBreadcrumbInfo`` to know the icon and label to display
+       * and commit the new element to vuex store with the current route.
+      */
       pushInBreadcrumb (){
         const {label, icon} = this.$refs.resource.getBreadcrumbInfo();
         this.$store.commit(
@@ -153,6 +166,12 @@ defineComponent('furet-ui-space-resource-manager', {
       goToList() {
         this.goToPreviousBreadcrumbElement();
       },
+      /**
+       * Go back to the previous breadcrumb element. As if the user
+       * clicked on the last element.
+       *
+       * If there is no previous element it clear the vue-router.
+       */
       goToPreviousBreadcrumbElement() {
           const breadcrumb_lenght = this.$store.state.global.breadcrumb.length;
           let route;

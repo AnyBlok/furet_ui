@@ -12,16 +12,15 @@ obtain one at http://mozilla.org/MPL/2.0/.
 // initial state
 export const defaultState = {
   appLoaded: false,
-  userName: '',
+  userName: "",
   authenticated: false,
   space_menus: [],
-  space_name: 'Menu',
+  space_name: "Menu",
   previous_route: {},
   left_menus: [],
   right_menus: [],
   isOpenLeft: false,
   isOpenRight: false,
-  // breadcrumb: [{label: "home", icon: "home"}, {label: "user", icon: "user"}]
   breadcrumb: []
 };
 
@@ -32,12 +31,11 @@ export const getters = {
   },
   isLoaded(state) {
     return state.appLoaded;
-  },
+  }
 };
 
 // actions
-export const actions = {
-};
+export const actions = {};
 
 // mutations
 export const mutations = {
@@ -53,8 +51,8 @@ export const mutations = {
   ClearBreadcrumb(state) {
     state.breadcrumb = [];
   },
-  'FURETUI LOADED'(state) {
-      state.appLoaded = true;
+  "FURETUI LOADED"(state) {
+    state.appLoaded = true;
   },
   LOGIN(state, action) {
     state.authenticated = true;
@@ -64,17 +62,17 @@ export const mutations = {
   },
   LOGOUT(state) {
     state.authenticated = false;
-    state.userName = '';
-    state.space_name = 'Menu';
+    state.userName = "";
+    state.space_name = "Menu";
   },
   UPDATE_PREVIOUS_ROUTE(state, action) {
-      state.previous_route = action.route;
+    state.previous_route = action.route;
   },
   UPDATE_SPACE_MENUS(state, action) {
-      state.space_menus = action.menus;
+    state.space_menus = action.menus;
   },
   UPDATE_CURRENT_SPACE(state, action) {
-      state.space_name = action.label;
+    state.space_name = action.label;
   },
   UPDATE_GLOBAL(state, action) {
     // eslint-disable-next-line
@@ -90,12 +88,12 @@ export const mutations = {
   },
   UPDATE_CURRENT_RIGHT_MENUS(state, action) {
     state.right_menus = action.menus;
-  },
+  }
 };
 
 export default {
   state: defaultState,
   getters,
   actions,
-  mutations,
+  mutations
 };
