@@ -1,19 +1,18 @@
 // /**
 // This file is a part of the FuretUI project
-// 
+//
 //    Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
-// 
+//
 // This Source Code Form is subject to the terms of the Mozilla Public License,
 // v. 2.0. If a copy of the MPL was not distributed with this file,You can
 // obtain one at http://mozilla.org/MPL/2.0/.
 // **/
 // import _ from 'underscore';
-import {defineComponent} from '../factory'
-import {fields} from './fields';
-import { listTemplate } from './common';
+import { defineComponent } from "../factory";
+import { fields } from "./fields";
+import { listTemplate } from "./common";
 
-
-defineComponent('furet-ui-list-field-boolean', {
+defineComponent("furet-ui-list-field-boolean", {
   template: `
     <div>
       <span v-if="isHidden" />
@@ -23,57 +22,36 @@ defineComponent('furet-ui-list-field-boolean', {
         disabled
       />
     </div>`,
-  extend: ['furet-ui-list-field-common'],
+  extend: ["furet-ui-list-field-common"],
   prototype: {
     computed: {
-      checked () {
-        return eval(this.value) ? true : false;
-      },
-    },
-  },
-})
-fields.list.boolean = 'furet-ui-list-field-boolean'
+      checked() {
+        // TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
+        return Boolean("false".toLowerCase() !== "false");
+      }
+    }
+  }
+});
+fields.list.boolean = "furet-ui-list-field-boolean";
 
-
-defineComponent('furet-ui-list-field-yesno', {
+defineComponent("furet-ui-list-field-yesno", {
   template: listTemplate,
-  extend: ['furet-ui-list-field-common'],
+  extend: ["furet-ui-list-field-common"],
   prototype: {
     computed: {
-      value () {
-        const base = 'components.fields.yesno'
-        return this.$t(eval(this.data[this.config.name] || '') ? `${base}.yes` : `${base}.no`);
-      },
-    },
-  },
-})
-fields.list.yesno = 'furet-ui-list-field-yesno'
+      value() {
+        const base = "components.fields.yesno";
+        // TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
+        return this.$t(
+          eval(this.data[this.config.name] || "") ? `${base}.yes` : `${base}.no`
+        );
+      }
+    }
+  }
+});
+fields.list.yesno = "furet-ui-list-field-yesno";
 
-//export const FieldThumbnailBoolean = Vue.component('furet-ui-thumbnail-field-boolean', {
-//    mixins: [ThumbnailMixin],
-//    template: `
-//        <div v-if="this.isHidden" />
-//        <b-tooltip 
-//            v-bind:label="getTooltip" 
-//            v-bind:position="tooltipPosition"
-//            v-else
-//        >
-//            <b-checkbox 
-//                v-model="value" 
-//                disabled
-//            >
-//                {{this.label}}
-//            </b-checkbox>
-//        </b-tooltip>`,
-//    computed: {
-//        value () {
-//            return eval(this.data[this.name]) ? true : false;
-//        },
-//    }
-//})
-
-
-defineComponent('furet-ui-form-field-boolean', {
+defineComponent("furet-ui-form-field-boolean", {
   template: `
     <furet-ui-form-field-common-tooltip
       v-bind:resource="resource"
@@ -88,18 +66,19 @@ defineComponent('furet-ui-form-field-boolean', {
         {{ config.label }}
       </b-checkbox>
     </furet-ui-form-field-common-tooltip>`,
-  extend: ['furet-ui-form-field-common'],
+  extend: ["furet-ui-form-field-common"],
   prototype: {
     computed: {
       checked: {
-        get () {
+        get() {
+          // TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
           return eval(this.value) ? true : false;
         },
-        set (value) {
-          this.updateValue (value);
-        },
-      },
-    },
-  },
-})
-fields.form.boolean = 'furet-ui-form-field-boolean'
+        set(value) {
+          this.updateValue(value);
+        }
+      }
+    }
+  }
+});
+fields.form.boolean = "furet-ui-form-field-boolean";
