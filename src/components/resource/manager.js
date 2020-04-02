@@ -139,9 +139,9 @@ defineComponent('furet-ui-space-resource-manager', {
       deleteData (data) {
         axios.delete('/furet-ui/crud', {params: data})
           .then(() => {
-            this.$store.commit('CLEAR_CHANGE')
-            this.$store.commit('DELETE_DATA', data)
-            this.updateQueryString({})  // replace it by breadscrumb
+            this.$store.commit('CLEAR_CHANGE');
+            this.$store.commit('DELETE_DATA', data);
+            this.goToPreviousBreadcrumbElement();
           })
           .catch((error) => {
             this.errors = error.response.data.errors;
@@ -150,7 +150,10 @@ defineComponent('furet-ui-space-resource-manager', {
       clearChange () {
         this.$store.commit('CLEAR_CHANGE')
       },
-      goToList () {
+      goToList() {
+        this.goToPreviousBreadcrumbElement();
+      },
+      goToPreviousBreadcrumbElement() {
           const breadcrumb_lenght = this.$store.state.global.breadcrumb.length;
           let route;
           if (breadcrumb_lenght > 0){
