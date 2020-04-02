@@ -4,8 +4,6 @@ import { getComponentPrototype } from "@/components/factory";
 const localVue = global.localVue;
 const store = global.store;
 
-const data = {title: 'Entry 1', color: 'red'}
-
 const getEntry = () => {
   return {title: 'Entry'}
 }
