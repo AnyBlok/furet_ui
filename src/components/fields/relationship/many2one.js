@@ -24,8 +24,10 @@ defineComponent('furet-ui-list-field-many2one', {
       computed: {
         value () {
           const value = this.data[this.config.name] || '';
-          const model = this.config.model; 
-          return this.format(this.config.display, this.getEntry(model, value));
+          if (value) {
+            const model = this.config.model; 
+            return this.format(this.config.display, this.getEntry(model, value));
+          } else return ''
         }
       },
       methods: {
