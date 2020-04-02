@@ -6,7 +6,7 @@ const store = global.store;
 
 const data = {title: 'Entry 1', color: 'red'}
 
-const getEntry = (model, pk) => {
+const getEntry = () => {
   return {title: 'Entry'}
 }
 describe("Field.Many2One for Resource.List", () => {
