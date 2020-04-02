@@ -16,7 +16,7 @@ import _ from 'underscore';
 
 defineComponent('furet-ui-list-field-one2many', {
   template: RelationShipX2MList,
-  extend: ['furet-ui-list-field-common', 'furet-ui-list-field-relationship'],
+  extend: ['furet-ui-list-field-common', 'furet-ui-field-relationship'],
   prototype: {
     computed: {
       values () {
@@ -30,11 +30,6 @@ defineComponent('furet-ui-list-field-one2many', {
           });
         });
         return res;
-      },
-    },
-    methods: {
-      onClick () {
-        this.addInBreadscrumb();
       },
     },
   },

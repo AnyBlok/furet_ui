@@ -19,7 +19,7 @@ defineComponent('furet-ui-list-field-many2one', {
       <span v-if="isHidden" />
       <a v-else v-on:click.stop="onClick">{{value}}</a>
     </div>`,
-  extend: ['furet-ui-list-field-common', 'furet-ui-list-field-relationship'],
+  extend: ['furet-ui-list-field-common', 'furet-ui-field-relationship'],
     prototype: {
       computed: {
         value () {
@@ -32,7 +32,8 @@ defineComponent('furet-ui-list-field-many2one', {
       },
       methods: {
         onClick () {
-          this.addInBreadscrumb();
+          const value = this.data[this.config.name];
+          if (value) this.openResource(value);
         },
       },
     },
@@ -61,7 +62,7 @@ defineComponent('furet-ui-form-field-many2one', {
       />
     </furet-ui-form-field-common-tooltip-field>
   `,
-  extend: ['furet-ui-form-field-common', 'furet-ui-list-field-relationship'],
+  extend: ['furet-ui-form-field-common', 'furet-ui-field-relationship'],
   prototype: {
     data () {
         return {

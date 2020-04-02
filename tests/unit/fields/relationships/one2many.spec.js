@@ -8,6 +8,8 @@ mock.mockResolvedValue({data: [], headers: {'x-total-records': 0}});
 
 const localVue = global.localVue;
 const store = global.store;
+const router = global.router;
+const mock_router_push = jest.spyOn(router, "push");
 
 const data = {
   'Model.1': {
@@ -21,9 +23,11 @@ const getEntry = (model, pk) => {
 }
 describe("Field.One2Many for Resource.List", () => {
   const Component = getComponentPrototype("furet-ui-list-field-one2many");
-  const getOptions = (data, hidden, style) => {
+  const pushInBreadcrumb = jest.fn()
+  const getOptions = (data, hidden, style, menu, resource) => {
     return {
       store,
+      router,
       localVue,
       propsData: {
         resource: {},
@@ -35,8 +39,13 @@ describe("Field.One2Many for Resource.List", () => {
           style,
           model: 'Model.1',
           name: 'test',
-          display: "'Go to => ' + fields.title"
+          display: "'Go to => ' + fields.title",
+          menu: menu,
+          resource: resource,
         }
+      },
+      methods: {
+        pushInBreadcrumb,
       },
       provide: {
         getEntry,
@@ -44,15 +53,39 @@ describe("Field.One2Many for Resource.List", () => {
     }
   }
 
+  beforeEach(() => {
+    pushInBreadcrumb.mockClear()
+    mock_router_push.mockClear()
+  })
   it("Empty", () => {
     const wrapper = mount(Component, getOptions([], false, undefined))
     expect(wrapper.element).toMatchSnapshot();
   });
-  it("With one value", () => {
+  it("With one value: Snapshot", () => {
     const wrapper = mount(Component, getOptions([{id: 1}], false, undefined))
     expect(wrapper.element).toMatchSnapshot();
   });
-  it("With two value", () => {
+  it("With one value: openResource", () => {
+    const wrapper = mount(Component, getOptions([{id: 1}], false, undefined, 10, 20))
+    expect(pushInBreadcrumb).not.toHaveBeenCalled()
+    const o2m = wrapper.find('a')
+    o2m.trigger('click')
+    expect(pushInBreadcrumb).toHaveBeenCalled()
+    expect(mock_router_push).toHaveBeenLastCalledWith({
+      name: "resource", 
+      params: {code: undefined, id: 20, menuId: 10}, 
+      query: {mode: "form", pks: "{\"pk\":{\"id\":1},\"label\":\"Go to => Entry 1\"}"}
+    });
+  });
+  it("With one value: openResource without link", () => {
+    const wrapper = mount(Component, getOptions([{id: 1}], false, undefined))
+    expect(pushInBreadcrumb).not.toHaveBeenCalled()
+    const o2m = wrapper.find('a')
+    o2m.trigger('click')
+    expect(pushInBreadcrumb).not.toHaveBeenCalled()
+    expect(mock_router_push).not.toHaveBeenCalled()
+  });
+  it("With two value: Snapshot", () => {
     const wrapper = mount(Component, getOptions([{id: 1}, {id: 2}], false, undefined))
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -112,7 +145,7 @@ describe("Field.One2Many for Resource.Form", () => {
         resource: {
         },
         data: {
-          test: [{id: 1}]
+            test: [{id: 1}, {id: 2}]
         },
         config: {
           model: 'Model.1',
@@ -147,7 +180,7 @@ describe("Field.One2Many for Resource.Form", () => {
   it("o2m_add", () => {
     wrapper.vm.o2m_add({model: 'Model.2', uuid: 'uuid'})
     expect(updateValue.mock.calls[0][0][0].__x2m_state).toBe(undefined)
-    expect(updateValue.mock.calls[0][0][1].uuid).toBe('uuid')
-    expect(updateValue.mock.calls[0][0][1].__x2m_state).toBe('ADDED')
+    expect(updateValue.mock.calls[0][0][2].uuid).toBe('uuid')
+    expect(updateValue.mock.calls[0][0][2].__x2m_state).toBe('ADDED')
   });
 });
