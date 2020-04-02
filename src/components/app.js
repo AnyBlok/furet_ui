@@ -194,7 +194,6 @@ defineComponent('furet-ui-appbar-spaces-menu', {
           this.$store.commit('UPDATE_PREVIOUS_ROUTE', {route: this.$route});
           this.$router.push({name: 'space_menus'});
         }
-        this.$store.commit("ClearBreadcrumb");
       }
     }
   },

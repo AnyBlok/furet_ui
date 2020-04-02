@@ -47,6 +47,9 @@ export const mutations = {
   ClearBreadcrumbFrom(state, index) {
     state.breadcrumb.splice(index, state.breadcrumb.length - index);
   },
+  PopBreadcrumb(state) {
+    state.breadcrumb.pop();
+  },
   ClearBreadcrumb(state) {
     state.breadcrumb = [];
   },

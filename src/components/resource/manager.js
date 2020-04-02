@@ -30,6 +30,13 @@ defineComponent('furet-ui-resource', {
       },
     },
     methods: {
+      getBreadcrumbInfo() {
+        throw new Error(
+          `You must implement this method **getBreadcrumbInfo** in subclass,
+          it should return a dict:
+          {label: "Label to display in breadcrumb", icon: "list"}`
+        );
+      },
       getResource (id) {
         return this.$store.state.resource[id];
       },
@@ -87,6 +94,7 @@ defineComponent('furet-ui-space-resource-manager', {
         v-on:delete-data="deleteData"
         v-on:clear-change="clearChange"
         v-on:go-to-list="goToList"
+        v-on:push-in-breadcrumb="pushInBreadcrumb"
       />
     </div>
   `,
@@ -94,9 +102,16 @@ defineComponent('furet-ui-space-resource-manager', {
   prototype: {
     methods: {
       updateQueryString (query) {
-        // eslint-disable-next-line no-debugger
-        this.$store.commit("PushBreadcrumb", {label: this.$store.state.global.breadcrumb.length, route: this.$router.currentRoute})
         this.$router.push({ query });
+      },
+      pushInBreadcrumb (){
+        const {label, icon} = this.$refs.resource.getBreadcrumbInfo();
+        this.$store.commit(
+          "PushBreadcrumb", {
+          route: this.$route,
+          label,
+          icon
+        });
       },
       createData (data) {
         const query = Object.assign({}, this.$route.query);
@@ -136,7 +151,17 @@ defineComponent('furet-ui-space-resource-manager', {
         this.$store.commit('CLEAR_CHANGE')
       },
       goToList () {
-          // TODO
+          const breadcrumb_lenght = this.$store.state.global.breadcrumb.length;
+          let route;
+          if (breadcrumb_lenght > 0){
+            route = this.$store.state.global.breadcrumb[
+              this.$store.state.global.breadcrumb.length - 1
+            ].route;
+          } else {
+            route = {}
+          }
+          this.$router.push(route);
+          this.$store.commit("PopBreadcrumb");
       },
       updateChangeState (action) {
         this.$store.commit('UPDATE_CHANGE', action)
@@ -147,6 +172,11 @@ defineComponent('furet-ui-space-resource-manager', {
       getNewEntryWrapper (model, uuid) {
         return this.$store.getters.get_new_entry(model, uuid)
       },
+    },
+    provide() {
+      return {
+        pushInBreadcrumb: this.pushInBreadcrumb
+      }
     },
     mounted() {
       const query = this.$route.query;

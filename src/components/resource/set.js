@@ -68,6 +68,7 @@ defineComponent('furet-ui-resource-set', {
       },
       goToNew () {
         // add to breadscrumb
+        this.$emit('push-in-breadcrumb')
         this.$emit('update-query-string', {mode: 'form'})
       },
       goToPage (row) {
@@ -75,7 +76,7 @@ defineComponent('furet-ui-resource-set', {
         if (row.__x2m_uuid) {
           this.$emit('update-query-string', {mode: 'form', uuid: row.__x2m_uuid})
         } else {
-          // add to breadscrumb
+          this.$emit('push-in-breadcrumb')
           const pks = {}
           this.resource.pks.forEach(pk => {
               pks[pk] = row[pk]
@@ -86,6 +87,9 @@ defineComponent('furet-ui-resource-set', {
       saved() {
         this.$refs.resource.goToPage()
         this.$refs.resource.loadAsyncData()
+      },
+      getBreadcrumbInfo(){
+        return this.$refs.resource.getBreadcrumbInfo();
       }
     },
     watch: {

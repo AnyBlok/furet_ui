@@ -79,6 +79,9 @@ defineComponent('furet-ui-resource-list', {
       },
     },
     methods: {
+      getBreadcrumbInfo () {
+        return {label: this.$t(this.resource.title), icon: "list"}
+      },
       api_formater (data) {
         this.$dispatchAll(data.data);
         const res = [];
