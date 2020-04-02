@@ -13,30 +13,38 @@ import {defineComponent} from '../../factory'
 import {fields} from '../fields';
 
 
+defineComponent('furet-ui-field-many2one-common', {
+  prototype: {
+    computed: {
+      value () {
+        const value = this.data[this.config.name] || '';
+        if (value) {
+          const model = this.config.model; 
+          return this.format(this.config.display, this.getEntry(model, value));
+        } else return ''
+      }
+    },
+    methods: {
+      onClick () {
+        const value = this.data[this.config.name];
+        if (value) this.openResource(value);
+      },
+    },
+  },
+})
+
+
 defineComponent('furet-ui-list-field-many2one', {
   template: `
     <div>
       <span v-if="isHidden" />
       <a v-else v-on:click.stop="onClick">{{value}}</a>
     </div>`,
-  extend: ['furet-ui-list-field-common', 'furet-ui-field-relationship'],
-    prototype: {
-      computed: {
-        value () {
-          const value = this.data[this.config.name] || '';
-          if (value) {
-            const model = this.config.model; 
-            return this.format(this.config.display, this.getEntry(model, value));
-          } else return ''
-        }
-      },
-      methods: {
-        onClick () {
-          const value = this.data[this.config.name];
-          if (value) this.openResource(value);
-        },
-      },
-    },
+  extend: [
+    'furet-ui-list-field-common',
+    'furet-ui-field-relationship',
+    'furet-ui-field-many2one-common',
+  ],
 })
 fields.list.many2one = 'furet-ui-list-field-many2one'
 
@@ -48,7 +56,7 @@ defineComponent('furet-ui-form-field-many2one', {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <a v-if="isReadonly">{{value}}</a>
+      <a v-if="isReadonly" v-on:click.stop="onClick">{{value}}</a>
       <b-autocomplete
         v-else
         v-bind:value="value"
@@ -62,7 +70,11 @@ defineComponent('furet-ui-form-field-many2one', {
       />
     </furet-ui-form-field-common-tooltip-field>
   `,
-  extend: ['furet-ui-form-field-common', 'furet-ui-field-relationship'],
+  extend: [
+    'furet-ui-form-field-common',
+    'furet-ui-field-relationship',
+    'furet-ui-field-many2one-common',
+  ],
   prototype: {
     data () {
         return {
@@ -70,11 +82,6 @@ defineComponent('furet-ui-form-field-many2one', {
         };
     },
     computed: {
-      value () {
-        const value = this.data[this.config.name] || '';
-        const model = this.config.model; 
-        return this.format(this.config.display, this.getEntry(model, value));
-      },
       choices () {
         const res = [];
         this.pks.forEach(pk => {
@@ -87,9 +94,6 @@ defineComponent('furet-ui-form-field-many2one', {
       },
     },
     methods: {
-      onClick () {
-        // add breadscrumb
-      },
       onSelect (value) {
         this.updateValue(value.pk)
       },
