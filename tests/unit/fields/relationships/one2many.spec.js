@@ -44,11 +44,9 @@ describe("Field.One2Many for Resource.List", () => {
           resource: resource,
         }
       },
-      methods: {
-        pushInBreadcrumb,
-      },
       provide: {
         getEntry,
+        pushInBreadcrumb,
       }
     }
   }

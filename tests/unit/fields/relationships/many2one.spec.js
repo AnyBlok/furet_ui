@@ -11,6 +11,8 @@ const store = global.store;
 const getEntry = () => {
   return {title: 'Entry'}
 }
+const pushInBreadcrumb = () => {}
+
 describe("Field.Many2One for Resource.List", () => {
   const Component = getComponentPrototype("furet-ui-list-field-many2one");
   const openResource = jest.fn()
@@ -35,6 +37,7 @@ describe("Field.Many2One for Resource.List", () => {
       },
       provide: {
         getEntry,
+        pushInBreadcrumb,
       }
     }
   }
@@ -100,7 +103,8 @@ describe("Field.One2Many for Resource.Form", () => {
         },
         getEntry,
         updateChangeState: () => {},
-        getNewEntry: () => {return {}}
+        getNewEntry: () => {return {}},
+        pushInBreadcrumb,
       },
       methods: {
         updateValue,
