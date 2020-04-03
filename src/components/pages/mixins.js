@@ -54,12 +54,12 @@ defineComponent('furet-ui-page-multi-entries-header', {
             <b-autocomplete
               v-model="filterSearch"
               v-bind:data="filteredDataArray"
-              v-bind:placeholder="this.$i18n.t('components.page.header.search')"
+              v-bind:placeholder="this.$i18n.t('components.page.list.search')"
               icon="search"
               v-on:select="updateFilters"
               clear-on-select
             >
-              <template slot="empty">{{ $t('components.page.header.notFound') }}</template>
+              <template slot="empty">{{ $t('components.page.list.notFound') }}</template>
               <template slot-scope="props">
                 {{ props.option.mode == 'exclude' ? ' ~ ' : '' }} <small>{{ $t(props.option.label) }} </small> : <strong>{{ props.option.value }}</strong>
               </template>
@@ -91,7 +91,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
           v-on:click="goToNew"
         >
           <span class="icon"><b-icon icon="plus" /></span>
-          <span>{{ $t('components.page.new') }}</span>
+          <span>{{ $t('components.page.list.new') }}</span>
         </button>
         <slot name="actions" v-bind:data="data" />
       </div>
