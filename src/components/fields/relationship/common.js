@@ -21,7 +21,7 @@ const safe_eval = (style, fields) => {
 
 defineComponent('furet-ui-field-relationship', {
   prototype: {
-    inject: ['getEntry'],
+    inject: ['getEntry', 'pushInBreadcrumb'],
     methods: {
       format (display, fields) {
         return safe_eval(display, fields);
