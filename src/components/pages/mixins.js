@@ -149,9 +149,9 @@ defineComponent('mixin-page-multi-entries', {
       'perpage', 'can_go_to_new', 'rest_api_url', 'rest_api_params', 'rest_api_formater', 
       'query'],
     data() {
-      const sortingPrioirty = [];
+      const sortingPriority = [];
       if (this.defaultSortField) {
-        sortingPrioirty.push({field: this.defaultSortField, order: this.defaultSortOrder || 'asc'})
+        sortingPriority.push({field: this.defaultSortField, order: this.defaultSortOrder || 'asc'})
       }
       return {
         data: [],
@@ -163,7 +163,7 @@ defineComponent('mixin-page-multi-entries', {
         filters: _.map((this.default_filters || []), f => Object.assign({}, f, {values: Object.assign([], f.values || [])})),
         additional_filter: {},
         tags: _.map((this.default_tags || []), t => Object.assign({}, t)),
-        sortingPrioirty,
+        sortingPriority,
       };
     },
     computed: {
@@ -183,7 +183,7 @@ defineComponent('mixin-page-multi-entries', {
         const filters = {};
         const tags = [];
         const orders = [];
-        this.sortingPrioirty.forEach(sort => {
+        this.sortingPriority.forEach(sort => {
           orders.push(`${sort.field}:${sort.order}`)
         });
         if (orders.length) query.orders = orders.toString()
@@ -236,7 +236,7 @@ defineComponent('mixin-page-multi-entries', {
         const params = this.rest_api_params || {};
         params.offset = (this.page - 1) * this.perPage;
         params.limit = this.perPage;
-        this.sortingPrioirty.forEach(({field, order}) => {
+        this.sortingPriority.forEach(({field, order}) => {
           params[`order_by[${field}]`] = order;
         })
         _.each(this.filters, (filter) => {
@@ -283,17 +283,17 @@ defineComponent('mixin-page-multi-entries', {
         this.updateData();
       },
       onSort(field, order) {
-        let existingPriority = this.sortingPrioirty.find(i => i.field === field)
+        let existingPriority = this.sortingPriority.find(i => i.field === field)
         if(existingPriority) {
           existingPriority.order = existingPriority.order === 'desc' ? 'asc' : 'desc'
         } else {
           // request sorted data from backend
-          this.sortingPrioirty.push({field, order})
+          this.sortingPriority.push({field, order})
         }
         this.updateData();
       },
       onSortingPriorityRemoved (field){
-        this.sortingPrioirty = this.sortingPrioirty.filter(
+        this.sortingPriority = this.sortingPriority.filter(
             (priority) => priority.field !== field)
         this.updateData();
       },
@@ -306,7 +306,7 @@ defineComponent('mixin-page-multi-entries', {
         if (query.orders) {
           query.orders.split(',').forEach(sort => {
             let [field, order] = sort.split(':');
-            this.sortingPrioirty.push({field, order});
+            this.sortingPriority.push({field, order});
           })
         }
         if (query.filters) {
