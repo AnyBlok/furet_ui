@@ -4,6 +4,9 @@ import { i18n } from "@/i18n";
 
 const localVue = global.localVue;
 
+const mock = jest.spyOn(i18n, "_t");
+mock.mockResolvedValue();
+
 describe('furet-ui-page-multi-entries-header component', () => {
   const Component = getComponentPrototype('furet-ui-page-multi-entries-header');
 
