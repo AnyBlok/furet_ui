@@ -34,7 +34,7 @@ fields.list.integer = "furet-ui-list-field-integer";
  *                            tags and manage reactivity.
  *
  * ``config`` Object contains
- * @param {String} key - the key to use in the ``data`` object where is store the value
+ * @param {String} name - the key to use in the ``data`` object where is store the value
  * @param {String?} icon - An icon to display on the left of the component
  * @param {String?} placeholder - A placeholder to help user to know what to collect
  */
