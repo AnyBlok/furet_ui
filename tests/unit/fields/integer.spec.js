@@ -85,7 +85,7 @@ describe("Field.Integer for Resource.Form", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it("With value, label and icon", () => {
+  it("With value, label, icon and placeholder", () => {
     const wrapper = mount(FormIntegerField, {
       store,
       localVue,
@@ -98,7 +98,9 @@ describe("Field.Integer for Resource.Form", () => {
           name: "fieldName",
           label: "My field label",
           min: 5,
-          max: 20
+          max: 20,
+          placeholder: "An explicit placeholder",
+          icon: "user"
         },
         data: {
           fieldName: 15

@@ -31,11 +31,14 @@ defineComponent('furet-ui-form-field-integer', {
         v-else
         type="number"
         step="1"
+        icon-pack="fa"
         v-bind:value="value" 
         v-on:input="updateValue"
         v-bind:min="config.min"
         v-bind:max="config.max"
         v-bind:key="config.key"
+        v-bind:icon="config.icon"
+        v-bind:placeholder="config.placeholder"
       />
     </furet-ui-form-field-common-tooltip-field>
   `,

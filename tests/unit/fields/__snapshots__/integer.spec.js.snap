@@ -34,7 +34,7 @@ exports[`Field.Integer for Resource.Form Empty 1`] = `
 </span>
 `;
 
-exports[`Field.Integer for Resource.Form With value, label and icon 1`] = `
+exports[`Field.Integer for Resource.Form With value, label, icon and placeholder 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
   data-label=""
@@ -51,18 +51,25 @@ exports[`Field.Integer for Resource.Form With value, label and icon 1`] = `
     </label>
      
     <div
-      class="control is-clearfix"
+      class="control has-icons-left is-clearfix"
     >
       <input
         autocomplete="on"
         class="input"
         max="20"
         min="5"
+        placeholder="An explicit placeholder"
         step="1"
         type="number"
       />
        
-      <!---->
+      <span
+        class="icon is-left"
+      >
+        <i
+          class="fa fa-user fa-lg"
+        />
+      </span>
        
       <!---->
        
