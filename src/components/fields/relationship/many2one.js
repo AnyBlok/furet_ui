@@ -13,6 +13,22 @@ import {defineComponent} from '../../factory'
 import {fields} from '../fields';
 
 
+/**
+ * furet-ui-field-many2one component is a mixed used to manage relationship many2one
+ *
+ * @mixin
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String} model - A model name, needed to display the data
+ * @param {String} display - An evaluate string to display the entry
+ */
 defineComponent('furet-ui-field-many2one-common', {
   prototype: {
     computed: {
@@ -34,6 +50,34 @@ defineComponent('furet-ui-field-many2one-common', {
 })
 
 
+/**
+ * furet-ui-list-field-many2one component is used to manage relationship many2one on list
+ * resource (``furet-ui-resource-list``).
+ *
+ * Extend Mixins:
+ *  * @see ``furet-ui-list-field-common``
+ *  * @see ``furet-ui-field-relationship``
+ *  * @see ``furet-ui-field-many2one-common``
+ *
+ * @example
+ *  <furet-ui-list-field-many2one
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @mixes <furet-ui-list-field-common>, <furet-ui-field-relationship>, <furet-ui-field-many2one-common>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String} model - A model name, needed to display the data
+ * @param {String} display - An evaluate string to display the entry
+ */
 defineComponent('furet-ui-list-field-many2one', {
   template: `
     <div>
@@ -49,6 +93,39 @@ defineComponent('furet-ui-list-field-many2one', {
 fields.list.many2one = 'furet-ui-list-field-many2one'
 
 
+/**
+ * furet-ui-form-field-many2one component is used to manage relationship many2one on form
+ * resource (``furet-ui-resource-form``).
+ *
+ * Extend Mixins:
+ *  * @see ``furet-ui-form-field-common``
+ *  * @see ``furet-ui-field-relationship``
+ *  * @see ``furet-ui-field-many2one-common``
+ *
+ * @example
+ *  <furet-ui-form-field-many2one
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @mixes <furet-ui-form-field-common>, <furet-ui-field-relationship>, <furet-ui-field-many2one-common>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String?} icon - An icon to display on the left of the component
+ * @param {String?} placeholder - A placeholder to help user to know what to collect
+ * @param {String} model - A model name, needed to display the data
+ * @param {Array[String]} fields - Names of field to get by api
+ * @param {Array[String]} filter_by - Names of field used to create filter during call of the api
+ * @param {String} display - An evaluate string to display the entry
+ * @param {Integeer} limit - Apply a limit in the api query
+ */
 defineComponent('furet-ui-form-field-many2one', {
   template: `
     <furet-ui-form-field-common-tooltip-field
