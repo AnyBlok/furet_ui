@@ -1,6 +1,7 @@
 import { mount } from "@vue/test-utils";
 import { getComponentPrototype } from "@/components/factory";
 import { safe_eval_boolean } from "@/components/fields/common";
+import { i18n } from "@/i18n";
 
 const localVue = global.localVue;
 const store = global.store;
@@ -81,6 +82,81 @@ describe("Field.Boolean for Resource.List", () => {
   });
 });
 
+
+describe("Field.YesNo YesNo for Resource.List", () => {
+  const ListBooleanField = getComponentPrototype("furet-ui-list-field-yesno");
+
+  it("Empty", () => {
+    const wrapper = mount(ListBooleanField, {
+      store,
+      localVue,
+      i18n,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With true value", () => {
+    const wrapper = mount(ListBooleanField, {
+      store,
+      localVue,
+      i18n,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "true"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With false value", () => {
+    const wrapper = mount(ListBooleanField, {
+      store,
+      localVue,
+      i18n,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "false"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With security issue value", () => {
+    const wrapper = mount(ListBooleanField, {
+      store,
+      localVue,
+      i18n,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "throw Error('this is a security issue')"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.Boolean for Resource.Form", () => {
   const FormBooleanField = getComponentPrototype("furet-ui-form-field-boolean");
 
@@ -96,6 +172,45 @@ describe("Field.Boolean for Resource.Form", () => {
       }
     });
     expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With security issue value", () => {
+    const wrapper = mount(FormBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "throw Error('this is a security issue')"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and label", () => {
+    const wrapper = mount(FormBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          name: "fieldName",
+          label: "My field label",
+        },
+        data: {
+          fieldName: true
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+    expect(wrapper.find("input").element.checked).toBe(true);
   });
 });
 

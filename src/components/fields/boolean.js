@@ -42,7 +42,7 @@ defineComponent("furet-ui-list-field-yesno", {
     computed: {
       value() {
         const base = "components.fields.yesno";
-        // TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
+        // #11 safe eval can return null at the moment we are ignoring null values
         return this.$t(
           safe_eval_boolean(this.data[this.config.name] || "")
             ? `${base}.yes`
