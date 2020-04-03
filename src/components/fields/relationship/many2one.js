@@ -124,7 +124,7 @@ fields.list.many2one = 'furet-ui-list-field-many2one'
  * @param {Array[String]} fields - Names of field to get by api
  * @param {Array[String]} filter_by - Names of field used to create filter during call of the api
  * @param {String} display - An evaluate string to display the entry
- * @param {Integeer} limit - Apply a limit in the api query
+ * @param {Integer} limit - Apply a limit in the api query
  */
 defineComponent('furet-ui-form-field-many2one', {
   template: `
