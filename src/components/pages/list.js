@@ -44,7 +44,7 @@ defineComponent('furet-ui-list', {
 
         backend-sorting
         sort-multiple
-        :sort-multiple-data="sortingPrioirty"
+        :sort-multiple-data="sortingPriority"
 
         v-on:sort="onSort"
         @sorting-priority-removed="onSortingPriorityRemoved"
