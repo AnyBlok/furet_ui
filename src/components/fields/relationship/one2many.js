@@ -14,6 +14,33 @@ import {pk2string} from '../../../store/modules/data';
 import _ from 'underscore';
 
 
+/**
+ * furet-ui-list-field-one2many component is used to manage relationship one2many on list
+ * resource (``furet-ui-resource-list``).
+ *
+ * Extend Mixins:
+ *  * @see ``furet-ui-list-field-common``
+ *  * @see ``furet-ui-field-relationship``
+ *
+ * @example
+ *  <furet-ui-list-field-one2many
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @mixes <furet-ui-list-field-common>, <furet-ui-field-relationship>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String} model - A model name, needed to display the data
+ * @param {String} display - An evaluate string to display the entry
+ */
 defineComponent('furet-ui-list-field-one2many', {
   template: RelationShipX2MList,
   extend: ['furet-ui-list-field-common', 'furet-ui-field-relationship'],
@@ -37,6 +64,32 @@ defineComponent('furet-ui-list-field-one2many', {
 fields.list.one2many = 'furet-ui-list-field-one2many'
 
 
+/**
+ * furet-ui-form-field-one2many component is used to manage relationship one2many on form
+ * resource (``furet-ui-resource-form``).
+ *
+ * Extend Mixins:
+ *  * @see ``furet-ui-list-field-common``
+ *
+ * @example
+ *  <furet-ui-form-field-one2many
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @mixes <furet-ui-list-field-common>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String} model - A model name, needed to display the data
+ * @param {Integer} resource - Id of the resource to used
+ */
 defineComponent('furet-ui-form-field-one2many', {
   template: `
     <furet-ui-form-field-common-tooltip
