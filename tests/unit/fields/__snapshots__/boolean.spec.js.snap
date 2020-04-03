@@ -92,36 +92,6 @@ exports[`Field.Boolean for Resource.Form With value and label 1`] = `
 </span>
 `;
 
-exports[`Field.Boolean for Resource.Form With value, label and icon 1`] = `
-<span
-  class="is-primary is-top is-medium b-tooltip"
-  data-label=""
-  style="transition-delay: 0ms; width: 100%;"
->
-  <label
-    class="b-checkbox checkbox"
-  >
-    <input
-      true-value="true"
-      type="checkbox"
-      value="false"
-    />
-     
-    <span
-      class="check"
-    />
-     
-    <span
-      class="control-label"
-    >
-      
-        My field label
-      
-    </span>
-  </label>
-</span>
-`;
-
 exports[`Field.Boolean for Resource.List Empty 1`] = `
 <div>
   <label
