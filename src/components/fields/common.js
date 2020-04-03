@@ -11,6 +11,53 @@ import {defineComponent} from '../factory'
 import { debounce } from 'debounce';
 
 
+/**
+ * Eval a value (that could be anything String / integer / null / undefined / bool)
+ * and cast as a boolean or null.
+ *
+ * @param {any} value - A value to cast to boolean
+ * @returns {Boolean?} return one of those values [true, false, null]
+ *
+ * Have a look to tests/unit/fields/boolean.spec.js for a complet list of
+ * use case.
+ */
+export const safe_eval_boolean = value => {
+  if (value === null || value === undefined) {
+    return null;
+  }
+
+  // if dev use new String("") or new Boolean(true) this give an object so
+  // we convert to its primitive type
+  if (
+    typeof value === "object" &&
+    ["[object String]", "[object Boolean]"].includes(toString.call(value))
+  ) {
+    value = value.valueOf();
+  }
+
+  if (typeof value === "string") {
+    if (
+      value.trim().toLowerCase() === "null" ||
+      value.trim().toLowerCase() === "undefined"
+    ) {
+      return null;
+    }
+    return ["true", "t", "yes", "y", "on", "1"].includes(
+      value.trim().toLowerCase()
+    );
+  }
+
+  if (typeof value === "number") {
+    return value === 1;
+  }
+
+  if (typeof value === "boolean") {
+    return value;
+  }
+
+  return false;
+};
+
 export const safe_eval = (condition, fields, resource) => {
     const now = Date.now(),
           toDate = (v) => new Date(v),

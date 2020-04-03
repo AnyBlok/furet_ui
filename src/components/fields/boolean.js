@@ -11,6 +11,7 @@
 import { defineComponent } from "../factory";
 import { fields } from "./fields";
 import { listTemplate } from "./common";
+import { safe_eval_boolean } from "@/components/fields/common";
 
 defineComponent("furet-ui-list-field-boolean", {
   template: `
@@ -26,8 +27,8 @@ defineComponent("furet-ui-list-field-boolean", {
   prototype: {
     computed: {
       checked() {
-        // TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
-        return Boolean("false".toLowerCase() !== "false");
+        // #11 safe eval can return null at the moment we are ignoring null values
+        return safe_eval_boolean(this.value) ? true : false;
       }
     }
   }
@@ -43,7 +44,9 @@ defineComponent("furet-ui-list-field-yesno", {
         const base = "components.fields.yesno";
         // TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
         return this.$t(
-          eval(this.data[this.config.name] || "") ? `${base}.yes` : `${base}.no`
+          safe_eval_boolean(this.data[this.config.name] || "")
+            ? `${base}.yes`
+            : `${base}.no`
         );
       }
     }
@@ -71,8 +74,8 @@ defineComponent("furet-ui-form-field-boolean", {
     computed: {
       checked: {
         get() {
-          // TODO: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
-          return eval(this.value) ? true : false;
+          // #11 safe eval can return null at the moment we are ignoring null values
+          return safe_eval_boolean(this.value) ? true : null;
         },
         set(value) {
           this.updateValue(value);
