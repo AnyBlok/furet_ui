@@ -9,6 +9,10 @@ const mock_router_push = jest.spyOn(router, "push");
 describe("furet-ui-breadcrumb", () => {
   const Breadcrumb = getComponentPrototype("furet-ui-breadcrumb");
 
+  beforeEach(() => {
+    mock_router_push.mockClear()
+  });
+
   it("Empty", () => {
     const wrapper = mount(Breadcrumb, {
       store,

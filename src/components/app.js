@@ -97,7 +97,6 @@ defineComponent('furet-ui-appbar-router-link-goto', {
     methods: {
       goTo() {
         // TODO clear data
-        // PV: wonder when this code is called and if we should mind in breadcrumb
         this.$router.push(this.to);
       },
       format_label(label) {
