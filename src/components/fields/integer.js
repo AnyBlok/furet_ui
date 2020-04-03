@@ -7,19 +7,38 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import {defineComponent} from '../factory'
-import {fields} from './fields';
-import { listTemplate } from './common';
+import { defineComponent } from "../factory";
+import { fields } from "./fields";
+import { listTemplate } from "./common";
 
-
-defineComponent('furet-ui-list-field-integer', {
+defineComponent("furet-ui-list-field-integer", {
   template: listTemplate,
-  extend: ['furet-ui-list-field-common'],
-})
-fields.list.integer = 'furet-ui-list-field-integer'
+  extend: ["furet-ui-list-field-common"]
+});
+fields.list.integer = "furet-ui-list-field-integer";
 
-
-defineComponent('furet-ui-form-field-integer', {
+/**
+ * furet-ui-form-field-integer component is used to manage integer on form
+ * resource (``furet-ui-resource-form``).
+ *
+ * @example
+ *  <furet-ui-form-field-integer
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} key - the key to use in the ``data`` object where is store the value
+ * @param {String?} icon - An icon to display on the left of the component
+ * @param {String?} placeholder - A placeholder to help user to know what to collect
+ */
+defineComponent("furet-ui-form-field-integer", {
   template: `
     <furet-ui-form-field-common-tooltip-field
       v-bind:resource="resource"
@@ -42,6 +61,6 @@ defineComponent('furet-ui-form-field-integer', {
       />
     </furet-ui-form-field-common-tooltip-field>
   `,
-  extend: ['furet-ui-form-field-common'],
-})
-fields.form.integer = 'furet-ui-form-field-integer'
+  extend: ["furet-ui-form-field-common"]
+});
+fields.form.integer = "furet-ui-form-field-integer";
