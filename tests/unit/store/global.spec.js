@@ -19,6 +19,32 @@ describe("store global module", () => {
     });
   });
 
+  it("test PushBreadcrumb mutation", () => {
+    store.commit("PushBreadcrumb", "test");
+    expect(state.breadcrumb.length).toBe(1);
+    expect(state.breadcrumb[0]).toBe("test");
+  });
+
+  it("test ClearBreadcrumbFrom mutation", () => {
+    state.breadcrumb = ["a", "b", "c"]
+    store.commit("ClearBreadcrumbFrom", 1);
+    expect(state.breadcrumb.length).toBe(1);
+    expect(state.breadcrumb[0]).toBe("a");
+  });
+  
+  it("test ClearBreadcrumb mutation", () => {
+    state.breadcrumb = [{test: "1"}, {test: "2"}, {test: "3"}]
+    store.commit("ClearBreadcrumb");
+    expect(state.breadcrumb.length).toBe(0);
+  });
+  
+  it("test PopBreadcrumb mutation", () => {
+    state.breadcrumb = [{test: "1"}, {test: "2"}, {test: "3"}]
+    store.commit("PopBreadcrumb");
+    expect(state.breadcrumb.length).toBe(2);
+    expect(state.breadcrumb[1].test).toBe("2");
+  });
+
   it("test FURETUI LOADED mutation", () => {
     expect(state.appLoaded).toBe(false);
     store.commit("FURETUI LOADED");

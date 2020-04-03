@@ -281,7 +281,8 @@ defineComponent('furet-ui-space-menus', {
     },
     methods: {
       selectMenu (menu) {
-        this.$router.push(menu.path)
+        this.$router.push(menu.path);
+        this.$store.commit("ClearBreadcrumb");
       }
     },
     mounted() {
@@ -330,14 +331,59 @@ defineComponent('furet-ui-space-menu', {
               params: {code: this.code, menuId: menu.id, id: menu.resource},
               query,
             });
+            this.$store.commit("ClearBreadcrumb");
           }
         }
       }
     }
 });
 
+/**
+ * furet-ui-breadcrumb is used to display a navigational aid to keep track
+ * and maintain awareness of the user location.
+ *
+ * Its state is saved in an Array to the `global.breadcrumb` vuex store.
+ * Each element is an Object::
+ *
+ *  {
+ *     icon: "home",  // a fontAwesome icon name https://fontawesome.com/
+ *     label: "Home", // Name of the element in the breadcrumb
+ *     route: Object  // A vue-router route which is saved to restore when
+ *                    // user want's to come back.
+ *   }
+ */
+defineComponent("furet-ui-breadcrumb", {
+  template: `
+  <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+    <ul>
+      <li v-for="(item, index) in history" :key="index">
+        <a v-on:click="backToResource(index, $event)">
+          <b-icon
+            v-if="item.icon"
+            :icon="item.icon"
+            size="is-small" />
+          <span>{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  `,
+  prototype: {
+    computed: {
+      history () {
+        return this.$store.state.global.breadcrumb;
+      }
+    },
+    methods: {
+      backToResource: function(index, _event) {
+        this.$router.push(this.$store.state.global.breadcrumb[index].route);
+        this.$store.commit("ClearBreadcrumbFrom", index);
+      }
+    }
+  }
+});
+
 defineComponent('furet-ui-space', {
-  // TODO BREADSCRUMB
   template: `
     <div 
         class="columns is-gapless"
@@ -361,9 +407,7 @@ defineComponent('furet-ui-space', {
               </a>
             </div>
             <div class="level-item">
-              <p class="subtitle is-5">
-                Breadcrumb
-              </p>
+              <furet-ui-breadcrumb/>
             </div>
           </diV>
           <div class="level-right">

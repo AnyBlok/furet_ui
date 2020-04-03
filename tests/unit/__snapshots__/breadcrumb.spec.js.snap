@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`furet-ui-breadcrumb Empty 1`] = `
+<nav
+  aria-label="breadcrumbs"
+  class="breadcrumb has-succeeds-separator"
+>
+  <ul />
+</nav>
+`;
+
+exports[`furet-ui-breadcrumb makes sure end of history is removed after a click on an item 1`] = `
+<nav
+  aria-label="breadcrumbs"
+  class="breadcrumb has-succeeds-separator"
+>
+  <ul>
+    <li>
+      <a>
+        <span
+          class="icon is-small"
+        >
+          <i
+            class="fa fa-home"
+          />
+        </span>
+         
+        <span>
+          Home
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`furet-ui-breadcrumb with data 1`] = `
+<nav
+  aria-label="breadcrumbs"
+  class="breadcrumb has-succeeds-separator"
+>
+  <ul>
+    <li>
+      <a>
+        <span
+          class="icon is-small"
+        >
+          <i
+            class="fa fa-home"
+          />
+        </span>
+         
+        <span>
+          Home
+        </span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <span
+          class="icon is-small"
+        >
+          <i
+            class="fa fa-user"
+          />
+        </span>
+         
+        <span>
+          User
+        </span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <!---->
+         
+        <span>
+          Without icon
+        </span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <!---->
+         
+        <span>
+          Null icon
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
