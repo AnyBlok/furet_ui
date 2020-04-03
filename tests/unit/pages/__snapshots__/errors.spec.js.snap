@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`furet-ui-page-errors component snapshot with one error 1`] = `
+<div
+  class="container"
+>
+  <article
+    class="message is-danger"
+  >
+    <header
+      class="message-header"
+    >
+      <p>
+        error
+      </p>
+       
+      <!---->
+    </header>
+     
+    <section
+      class="message-body"
+    >
+      <div
+        class="media"
+      >
+        <!---->
+         
+        <div
+          class="media-content"
+        >
+          <ul>
+            <li>
+              <pre>
+                One Error
+              </pre>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </article>
+</div>
+`;
+
+exports[`furet-ui-page-errors component snapshot with two error 1`] = `
+<div
+  class="container"
+>
+  <article
+    class="message is-danger"
+  >
+    <header
+      class="message-header"
+    >
+      <p>
+        error
+      </p>
+       
+      <!---->
+    </header>
+     
+    <section
+      class="message-body"
+    >
+      <div
+        class="media"
+      >
+        <!---->
+         
+        <div
+          class="media-content"
+        >
+          <ul>
+            <li>
+              <pre>
+                One Error
+              </pre>
+            </li>
+            <li>
+              <pre>
+                {
+  "this is": "Another error"
+}
+              </pre>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </article>
+</div>
+`;
+
+exports[`furet-ui-page-errors component snapshot without errors 1`] = `
+<div
+  class="container"
+>
+  <!---->
+</div>
+`;
