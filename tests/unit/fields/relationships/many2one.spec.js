@@ -1,5 +1,9 @@
 import { mount } from "@vue/test-utils";
 import { getComponentPrototype } from "@/components/factory";
+import axios from 'axios';
+
+const mock = jest.spyOn(axios, "get");
+mock.mockResolvedValue({data: {data: [], pks: [{id: 1}]}});
 
 const localVue = global.localVue;
 const store = global.store;
@@ -84,7 +88,10 @@ describe("Field.One2Many for Resource.Form", () => {
         config: {
           model: 'Model.1',
           name: 'test',
-          display: "'Go to => ' + fields.title"
+          display: "'Go to => ' + fields.title",
+          fields: ['title'],
+          filter_by: ['code'],
+          limit: 10,
         }
       },
       provide: {
@@ -119,5 +126,35 @@ describe("Field.One2Many for Resource.Form", () => {
     const o2m = wrapper.find('a')
     o2m.trigger('click')
     expect(openResource).toHaveBeenCalled()
+  });
+  it("compute choices", () => {
+    const wrapper = mount(Component, getOptions(false));
+    expect(wrapper.vm.choices).toStrictEqual([])
+    wrapper.setData({pks: [{id: 1}]})
+    expect(wrapper.vm.choices).toStrictEqual([{
+      label: "Go to => Entry", pk: {id: 1}}])
+  });
+  it("onSelect", () => {
+    const wrapper = mount(Component, getOptions(false));
+    expect(updateValue).not.toHaveBeenCalled()
+    wrapper.vm.onSelect({pk: {id: 2}})
+    expect(updateValue).toHaveBeenCalled()
+  });
+  it("onChange: with value", () => {
+    const wrapper = mount(Component, getOptions(false));
+    expect(wrapper.vm.pks).toStrictEqual([])
+    expect(updateValue).not.toHaveBeenCalled()
+    wrapper.vm.onChange(test)
+    expect(wrapper.vm.pks).toStrictEqual([])
+    expect(updateValue).toHaveBeenCalled()
+  });
+  it("onChange: without value", () => {
+    const wrapper = mount(Component, getOptions(false));
+    wrapper.setProps({data: {}})
+    expect(wrapper.vm.pks).toStrictEqual([])
+    expect(updateValue).not.toHaveBeenCalled()
+    wrapper.vm.onChange(test)
+    expect(wrapper.vm.pks).toStrictEqual([])
+    expect(updateValue).not.toHaveBeenCalled()
   });
 });
