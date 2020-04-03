@@ -305,6 +305,41 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
               <!---->
                
               <!---->
+              <tr
+                class=""
+                draggable="false"
+              >
+                <!---->
+                 
+                <!---->
+                 
+                <td
+                  class=""
+                  data-label="Title"
+                >
+                  <div>
+                    <span>
+                      Entry 2
+                    </span>
+                  </div>
+                </td>
+                <td
+                  class=""
+                  data-label="Color"
+                >
+                  <div>
+                    <span>
+                      blue
+                    </span>
+                  </div>
+                </td>
+                 
+                <!---->
+              </tr>
+               
+              <!---->
+               
+              <!---->
             </tbody>
              
             <!---->
@@ -392,7 +427,7 @@ exports[`Field.One2Many for Resource.List Hidden 1`] = `
 </div>
 `;
 
-exports[`Field.One2Many for Resource.List With one value 1`] = `
+exports[`Field.One2Many for Resource.List With one value: Snapshot 1`] = `
 <div>
   <div>
     <span
@@ -400,7 +435,6 @@ exports[`Field.One2Many for Resource.List With one value 1`] = `
     >
       <a>
         Go to =&gt; Entry 1
-        
       </a>
     </span>
   </div>
@@ -416,7 +450,6 @@ exports[`Field.One2Many for Resource.List With style 1`] = `
     >
       <a>
         Go to =&gt; Entry 1
-        
       </a>
     </span>
     <span
@@ -425,14 +458,13 @@ exports[`Field.One2Many for Resource.List With style 1`] = `
     >
       <a>
         Go to =&gt; Entry 2
-        
       </a>
     </span>
   </div>
 </div>
 `;
 
-exports[`Field.One2Many for Resource.List With two value 1`] = `
+exports[`Field.One2Many for Resource.List With two value: Snapshot 1`] = `
 <div>
   <div>
     <span
@@ -440,7 +472,6 @@ exports[`Field.One2Many for Resource.List With two value 1`] = `
     >
       <a>
         Go to =&gt; Entry 1
-        
       </a>
     </span>
     <span
@@ -448,7 +479,6 @@ exports[`Field.One2Many for Resource.List With two value 1`] = `
     >
       <a>
         Go to =&gt; Entry 2
-        
       </a>
     </span>
   </div>

@@ -19,9 +19,35 @@ const safe_eval = (style, fields) => {
 }
 
 
-defineComponent('furet-ui-list-field-relationship', {
+/**
+ * furet-ui-field-relationship component is a mixin used to manage relationship to add
+ * helper:
+ *
+ *   * format: function to display an entry of the relationship
+ *   * openResource: strategie to open the resource as the main resource
+ *   * getKey: transform primary key to string
+ *   * getStyle: return a style string for ``a`` tag
+ *   
+ * added injection:
+ *   * getEntry
+ *   * pushInBreadcrumb
+ *
+ * @mixin
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String} model - A model name, needed to display the data
+ * @param {String} display - An evaluate string to display the entry
+ */
+defineComponent('furet-ui-field-relationship', {
   prototype: {
-    inject: ['getEntry'],
+    inject: ['getEntry', 'pushInBreadcrumb'],
     methods: {
       format (display, fields) {
         return safe_eval(display, fields);
@@ -37,12 +63,21 @@ defineComponent('furet-ui-list-field-relationship', {
         }
         return style
       },
-      // addInBreadscrumb (options) {
-      //   addInBreadscrumb(this.$route, this.$store, options);
-      // },
+      openResource (value) {
+        const params = {code: this.$route.params.code, menuId: 0, id: 0}
+        if (this.config.menu) params.menuId = this.config.menu;
+        if (this.config.resource) {
+          const query = {mode: 'form', pks: JSON.stringify(value)}
+          params.id = this.config.resource;
+          this.pushInBreadcrumb();
+          this.$router.push({name: 'resource', params, query})
+        }
+      },
     },
   },
 });
+
+
 export const RelationShipX2MList = `
   <div>
     <span v-if="isHidden" />
@@ -53,9 +88,7 @@ export const RelationShipX2MList = `
         v-bind:key="getKey(value)"
         v-bind:style="getStyle(value)"
       >
-        <a 
-          v-on:click.stop="onClick(value.pk)">{{value.label}}
-        </a>
+        <a v-on:click.stop="openResource(value)">{{value.label}}</a>
       </span>
     </div>
   </div>`

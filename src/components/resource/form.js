@@ -109,6 +109,9 @@ defineComponent('furet-ui-resource-form', {
       },
     },
     methods: {
+      getBreadcrumbInfo() {
+        return {label: this.$t(this.resource.title), icon: "newspaper"};
+      },
       form_card (part) {
         if (this.templates[part] !== undefined) return this.templates[part];
         const template = {
