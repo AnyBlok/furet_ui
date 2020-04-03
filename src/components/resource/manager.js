@@ -30,6 +30,20 @@ defineComponent('furet-ui-resource', {
       },
     },
     methods: {
+      /** This method should be implement in subclass to return
+       * label and icon to be displayed in breadcrumb
+       *
+       * @return {Object} {label: "Label to display in breadcrumb", icon: "list"} -
+       *    Where `label` and `icon` are String.
+       *    `icon` is a https://fontawesome.com icon name
+       */
+      getBreadcrumbInfo() {
+        throw new Error(
+          `You must implement this method **getBreadcrumbInfo** in subclass,
+          it should return a dict:
+          {label: "Label to display in breadcrumb", icon: "list"}`
+        );
+      },
       getResource (id) {
         return this.$store.state.resource[id];
       },
@@ -87,6 +101,7 @@ defineComponent('furet-ui-space-resource-manager', {
         v-on:delete-data="deleteData"
         v-on:clear-change="clearChange"
         v-on:go-to-list="goToList"
+        v-on:push-in-breadcrumb="pushInBreadcrumb"
       />
     </div>
   `,
@@ -95,6 +110,21 @@ defineComponent('furet-ui-space-resource-manager', {
     methods: {
       updateQueryString (query) {
         this.$router.push({ query });
+      },
+      /** This method add an element to the breadcrumb
+       *
+       * It gets label and icon information on child resource component
+       * calling ``getBreadcrumbInfo`` to know the icon and label to display
+       * and commit the new element to vuex store with the current route.
+      */
+      pushInBreadcrumb (){
+        const {label, icon} = this.$refs.resource.getBreadcrumbInfo();
+        this.$store.commit(
+          "PushBreadcrumb", {
+          route: this.$route,
+          label,
+          icon
+        });
       },
       createData (data) {
         const query = Object.assign({}, this.$route.query);
@@ -122,9 +152,9 @@ defineComponent('furet-ui-space-resource-manager', {
       deleteData (data) {
         axios.delete('/furet-ui/crud', {params: data})
           .then(() => {
-            this.$store.commit('CLEAR_CHANGE')
-            this.$store.commit('DELETE_DATA', data)
-            this.updateQueryString({})  // replace it by breadscrumb
+            this.$store.commit('CLEAR_CHANGE');
+            this.$store.commit('DELETE_DATA', data);
+            this.goToPreviousBreadcrumbElement();
           })
           .catch((error) => {
             this.errors = error.response.data.errors;
@@ -133,8 +163,27 @@ defineComponent('furet-ui-space-resource-manager', {
       clearChange () {
         this.$store.commit('CLEAR_CHANGE')
       },
-      goToList () {
-          // TODO
+      goToList() {
+        this.goToPreviousBreadcrumbElement();
+      },
+      /**
+       * Go back to the previous breadcrumb element. As if the user
+       * clicked on the last element.
+       *
+       * If there is no previous element it clear the vue-router.
+       */
+      goToPreviousBreadcrumbElement() {
+          const breadcrumb_lenght = this.$store.state.global.breadcrumb.length;
+          let route;
+          if (breadcrumb_lenght > 0){
+            route = this.$store.state.global.breadcrumb[
+              this.$store.state.global.breadcrumb.length - 1
+            ].route;
+          } else {
+            route = {}
+          }
+          this.$router.push(route);
+          this.$store.commit("PopBreadcrumb");
       },
       updateChangeState (action) {
         this.$store.commit('UPDATE_CHANGE', action)
@@ -145,6 +194,11 @@ defineComponent('furet-ui-space-resource-manager', {
       getNewEntryWrapper (model, uuid) {
         return this.$store.getters.get_new_entry(model, uuid)
       },
+    },
+    provide() {
+      return {
+        pushInBreadcrumb: this.pushInBreadcrumb
+      }
     },
     mounted() {
       const query = this.$route.query;
