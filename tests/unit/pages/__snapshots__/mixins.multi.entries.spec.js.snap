@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mixin-page-multi-entries component mount with queryString: tags 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <header
+    id="furet-ui-page-multi-entries-header"
+  >
+    <div
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <h2
+          class="level-item is-size-3"
+        >
+          Title
+        </h2>
+         
+        <span
+          class="level-item"
+        >
+          <small>
+            (0)
+          </small>
+           
+        </span>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="level-item"
+        >
+          <div
+            class="autocomplete control"
+          >
+            <div
+              class="control has-icons-left is-clearfix"
+            >
+              <input
+                autocomplete="off"
+                class="input"
+                placeholder="[object Promise]"
+                type="text"
+              />
+               
+              <span
+                class="icon is-left"
+              >
+                <i
+                  class="fa fa-search fa-lg"
+                />
+              </span>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="dropdown-menu"
+              style="display: none;"
+            >
+              <div
+                class="dropdown-content"
+                style="display: none;"
+              >
+                <!---->
+                 
+                <a
+                  class="dropdown-item"
+                >
+                  
+                 
+                  <small>
+                    [object Promise] 
+                  </small>
+                   : 
+                  <strong>
+                    
+                  </strong>
+                </a>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="level-item buttons"
+        >
+          <a
+            class="button"
+            id="furet-ui-page-multi-entries-header-refresh"
+          >
+            <span
+              class="icon"
+            >
+              <i
+                class="fa fa-redo fa-lg"
+              />
+            </span>
+          </a>
+           
+          <a
+            class="button"
+            id="furet-ui-page-multi-entries-header-tags"
+          >
+            <span
+              class="icon"
+            >
+              <i
+                class="fa fa-arrow-circle-down fa-lg"
+              />
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="collapse panel is-pulled-right"
+    >
+      <div
+        class="collapse-trigger"
+      />
+      <div
+        class="collapse-content"
+        id=""
+        style="display: none;"
+      >
+        <div
+          class="tags"
+        >
+          <span
+            class="tag is-small has-text-weight-bold"
+          >
+            <span
+              class=""
+            >
+              <a
+                class="furet-ui-page-multi-entries-header-toggle-tag tag1"
+              >
+                [object Promise]
+              </a>
+            </span>
+             
+            <!---->
+          </span>
+          <span
+            class="tag is-small has-text-weight-bold"
+          >
+            <span
+              class=""
+            >
+              <a
+                class="furet-ui-page-multi-entries-header-toggle-tag tag2"
+              >
+                [object Promise]
+              </a>
+            </span>
+             
+            <!---->
+          </span>
+          <span
+            class="tag is-small has-text-weight-bold"
+          >
+            <span
+              class=""
+            >
+              <a
+                class="furet-ui-page-multi-entries-header-toggle-tag tag3"
+              >
+                [object Promise]
+              </a>
+            </span>
+             
+            <!---->
+          </span>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="buttons is-grouped is-centered"
+    >
+      <!---->
+       
+    </div>
+  </header>
+</div>
+`;
+
+exports[`mixin-page-multi-entries component snapshot minimum with error 1`] = `
+<div
+  subtitle="Sub Title"
+>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <header
+    id="furet-ui-page-multi-entries-header"
+  >
+    <div
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <h2
+          class="level-item is-size-3"
+        >
+          Title
+        </h2>
+         
+        <span
+          class="level-item"
+        >
+          <small>
+            (0)
+          </small>
+           
+        </span>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+         
+        <!---->
+         
+        <div
+          class="level-item buttons"
+        >
+          <a
+            class="button"
+            id="furet-ui-page-multi-entries-header-refresh"
+          >
+            <span
+              class="icon"
+            >
+              <i
+                class="fa fa-redo fa-lg"
+              />
+            </span>
+          </a>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="collapse panel is-pulled-right"
+    >
+      <div
+        class="collapse-trigger"
+      />
+      <div
+        class="collapse-content"
+        id=""
+        style="display: none;"
+      >
+        <div
+          class="tags"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="buttons is-grouped is-centered"
+    >
+      <!---->
+       
+    </div>
+  </header>
+</div>
+`;
