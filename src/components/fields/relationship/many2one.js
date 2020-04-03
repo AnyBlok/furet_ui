@@ -14,7 +14,7 @@ import {fields} from '../fields';
 
 
 /**
- * furet-ui-field-many2one component is a mixed used to manage relationship many2one
+ * furet-ui-field-many2one component is a mixin used to manage relationship many2one
  *
  * @mixin
  *

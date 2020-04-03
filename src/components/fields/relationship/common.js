@@ -19,6 +19,32 @@ const safe_eval = (style, fields) => {
 }
 
 
+/**
+ * furet-ui-field-relationship component is a mixin used to manage relationship to add
+ * helper:
+ *
+ *   * format: function to display an entry of the relationship
+ *   * openResource: strategie to open the resource as the main resource
+ *   * getKey: transform primary key to string
+ *   * getStyle: return a style string for ``a`` tag
+ *   
+ * added injection:
+ *   * getEntry
+ *   * pushInBreadcrumb
+ *
+ * @mixin
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String} model - A model name, needed to display the data
+ * @param {String} display - An evaluate string to display the entry
+ */
 defineComponent('furet-ui-field-relationship', {
   prototype: {
     inject: ['getEntry', 'pushInBreadcrumb'],
@@ -50,6 +76,8 @@ defineComponent('furet-ui-field-relationship', {
     },
   },
 });
+
+
 export const RelationShipX2MList = `
   <div>
     <span v-if="isHidden" />
