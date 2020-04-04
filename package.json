@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "buefy": "^0.8.10",
+    "buefy": "^0.8.15",
     "bulma": "^0.8.1",
     "core-js": "^3.6.4",
     "debounce": "^1.2.0",
@@ -89,6 +89,8 @@
       "./tests/setup.js",
       "./tests/fixtures.js"
     ],
-    "setupFilesAfterEnv": ["jest-expect-message"]
+    "setupFilesAfterEnv": [
+      "jest-expect-message"
+    ]
   }
 }
