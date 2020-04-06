@@ -4,7 +4,6 @@ import { i18n } from "@/i18n";
 
 const localVue = global.localVue;
 const router = global.router;
-const $store = global.store;
 
 const mocki18n = jest.spyOn(i18n, "_t");
 mocki18n.mockResolvedValue('');
