@@ -64,7 +64,11 @@ const eval_counter = (value, fields) => {
   if (!value) return 0;
   let res = 0;
   try {
-      res = eval(value);
+    res = eval(value);
+    if (typeof res === 'object') {
+      if (res.length !== undefined) res = res.length
+      else if (res.count !== undefined) res = res.count
+    } else if (res == undefined) res = 0;
   } catch (e) {
     console.log(e)
   }
