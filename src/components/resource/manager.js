@@ -241,6 +241,7 @@ defineComponent('furet-ui-form-field-resource-manager', {
           query: {additional_filter: pks},
           pks,
           x2m_pks: this.value,
+          selectors: this.x2m_resource.selectors || {},
         },
       };
     },
