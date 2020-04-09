@@ -1,5 +1,6 @@
 import _ from 'underscore';
 import { resources } from './resources';
+import { safe_eval } from '../fields/common';
 import { defineComponent } from '../factory';
 
 
@@ -47,7 +48,7 @@ defineComponent('furet-ui-resource-list', {
           v-bind:field="typeof header.sortable === 'string'? header.sortable : header.name" 
           v-bind:label="header.label" 
           v-bind:sortable="typeof header.sortable === 'string'? true: header.sortable"
-          v-bind:visible="!header['hidden-column']"
+          v-bind:visible="!safe_eval(header['hidden-column'], props.row)"
           >
             <component 
               v-bind:is="header.component" 
@@ -79,6 +80,10 @@ defineComponent('furet-ui-resource-list', {
       },
     },
     methods: {
+      safe_eval (hidden, row) {
+        const resource = Object.assign({manager: this.manager}, this.resource)
+        return safe_eval(hidden, row, resource)
+      },
       getBreadcrumbInfo() {
         return {label: this.$t(this.resource.title), icon: "list"};
       },
