@@ -70,7 +70,7 @@ export const safe_eval = (condition, fields, resource) => {
     toDate  // lint
     let res = false;
     try {
-        res = eval(condition) ? true : false;
+        res = safe_eval_boolean(eval(condition));
     } catch (e) {
       console.log(e)
     }
