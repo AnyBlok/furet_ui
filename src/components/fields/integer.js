@@ -46,21 +46,30 @@ defineComponent("furet-ui-form-field-integer", {
       v-bind:config="config"
     >
       <span v-if="isReadonly">{{ value }}</span>
-      <b-input 
+      <b-numberinput 
         v-else
-        type="number"
         step="1"
+        controlsPosition="compact"
+        expanded
         icon-pack="fa"
         v-bind:value="value" 
         v-on:input="updateValue"
-        v-bind:min="config.min"
-        v-bind:max="config.max"
+        v-bind:min="format_min_max(config.min)"
+        v-bind:max="format_min_max(config.max)"
         v-bind:key="config.key"
         v-bind:icon="config.icon"
         v-bind:placeholder="config.placeholder"
       />
     </furet-ui-form-field-common-tooltip-field>
   `,
-  extend: ["furet-ui-form-field-common"]
+  extend: ["furet-ui-form-field-common"],
+  prototype: {
+    methods: {
+      format_min_max (value) {
+        if (value === null) return undefined;
+        return value;
+      },
+    },
+  },
 });
 fields.form.integer = "furet-ui-form-field-integer";

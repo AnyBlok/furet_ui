@@ -7,77 +7,91 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import Vue from 'vue';
-import {FormMixin, ThumbnailMixin, ListMixin} from './common';
+import { defineComponent } from "../factory";
+import { fields } from "./fields";
+import { listTemplate } from "./common";
 
 
-const round = (value, step) => {
-    if (value != undefined) {
-        return Math.round(eval(value) / eval(step || 0.01)) * eval(step || 0.01);
-    }
-    return '';
-}
-
-
-export const FieldListFloat = Vue.component('furet-ui-list-field-float', {
-    mixins: [ListMixin],
+defineComponent("furet-ui-list-field-float", {
+  template: listTemplate,
+  extend: ["furet-ui-list-field-common"],
+  prototype: {
     computed: {
-        value () {
-            return round(this.row[this.header.name], this.header.step);
-        },
+      value () {
+        const value =  this.data[this.config.name] || '';
+        if (value) return Number(value).toFixed(this.config.rounded || 2)
+        return '';
+      },
     }
-})
+  }
+});
+fields.list.float = "furet-ui-list-field-float";
 
-
-export const FieldThumbnailFloat = Vue.component('furet-ui-thumbnail-field-float', {
-    mixins: [ThumbnailMixin],
+/**
+ * furet-ui-form-fieldfloatinteger component is used to manage float on form
+ * resource (``furet-ui-resource-form``).
+ *
+ * @example
+ *  <furet-ui-form-field-float
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String?} icon - An icon to display on the left of the component
+ * @param {String?} placeholder - A placeholder to help user to know what to collect
+ * @param {Integer?} rounded - number of decimal for the float part
+ */
+defineComponent("furet-ui-form-field-float", {
+  template: `
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <span v-if="isReadonly">{{ rounded_value }}</span>
+      <b-numberinput 
+        v-else
+        v-bind:step="step"
+        controlsPosition="compact"
+        expanded
+        icon-pack="fa"
+        v-bind:value="value" 
+        v-on:input="updateValue"
+        v-bind:min="format_min_max(config.min)"
+        v-bind:max="format_min_max(config.max)"
+        v-bind:key="config.key"
+        v-bind:icon="config.icon"
+        v-bind:placeholder="config.placeholder"
+      />
+    </furet-ui-form-field-common-tooltip-field>
+  `,
+  extend: ["furet-ui-form-field-common"],
+  prototype: {
     computed: {
-        value () {
-            return round(this.data[this.name], this.step);
-        },
-    }
-})
-
-export const FieldFormFloat = Vue.component('furet-ui-form-field-float', {
-    props: ['icon', 'placeholder', 'step', 'min', 'max'],
-    mixins: [FormMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-bind:style="{'width': '100%'}"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:type="getType"
-                v-bind:message="getMessage"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <span v-if="isReadonly"> {{data}} </span>
-                <b-input 
-                    v-else 
-                    type="number"
-                    v-bind:step="getStep"
-                    v-bind:value="data" 
-                    v-on:change="updateValue"
-                    v-bind:placeholder="placeholder"
-                    icon-pack="fa"
-                    v-bind:icon="icon"
-                    v-bind:min="min"
-                    v-bind:max="max"
-                >
-                </b-input>
-            </b-field>
-        </b-tooltip>`,
-    computed: {
-        getStep () {
-            return this.step || '0.01';
-        },
-        data () {
-            const value = this.config.data && this.config.data[this.name] || '';
-            return round(value, this.step);
-        },
+      rounded () {
+        return this.config.rounded || 2;
+      },
+      step () {
+        return Math.pow(0.1, this.rounded).toFixed(this.rounded);
+      },
+      rounded_value () {
+        return Number(this.value).toFixed(this.rounded);
+      },
     },
-})
+    methods: {
+      format_min_max (value) {
+        if (value === null) return undefined;
+        return value;
+      },
+    },
+  },
+});
+fields.form.float = "furet-ui-form-field-float";
