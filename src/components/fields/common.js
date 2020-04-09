@@ -61,7 +61,7 @@ export const safe_eval_boolean = value => {
 export const safe_eval = (condition, fields, resource) => {
     const now = Date.now(),
           toDate = (v) => new Date(v),
-          selectors = (resource.manager || {}).selectors || {},
+          selectors = Object.assign((resource.manager || {}).selectors || {}, resource.selectors || {}),
           tabs = resource.tabs;
     fields  // lint
     selectors  // lint
