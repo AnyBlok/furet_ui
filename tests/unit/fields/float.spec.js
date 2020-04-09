@@ -108,6 +108,6 @@ describe("Field.Float for Resource.Form", () => {
       }
     });
     expect(wrapper.element).toMatchSnapshot();
-    expect(wrapper.find("input").element.value).toBe("15.46");
+    expect(wrapper.find("input").element.value).toBe("15.456");
   });
 });

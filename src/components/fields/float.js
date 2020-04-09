@@ -56,16 +56,17 @@ defineComponent("furet-ui-form-field-float", {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <span v-if="isReadonly">{{ value }}</span>
-      <b-input 
+      <span v-if="isReadonly">{{ rounded_value }}</span>
+      <b-numberinput 
         v-else
-        type="number"
         v-bind:step="step"
+        controlsPosition="compact"
+        expanded
         icon-pack="fa"
-        v-bind:value="rounded_value" 
+        v-bind:value="value" 
         v-on:input="updateValue"
-        v-bind:min="config.min"
-        v-bind:max="config.max"
+        v-bind:min="format_min_max(config.min)"
+        v-bind:max="format_min_max(config.max)"
         v-bind:key="config.key"
         v-bind:icon="config.icon"
         v-bind:placeholder="config.placeholder"
@@ -83,6 +84,12 @@ defineComponent("furet-ui-form-field-float", {
       },
       rounded_value () {
         return Number(this.value).toFixed(this.rounded);
+      },
+    },
+    methods: {
+      format_min_max (value) {
+        if (value === null) return undefined;
+        return value;
       },
     },
   },

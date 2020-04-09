@@ -199,7 +199,7 @@ defineComponent('furet-ui-form-field-common', {
     inject: ['updateChangeState'],
     computed: {
       value () {
-        return this.data && this.data[this.config.name] || '';
+        return this.data && this.data[this.config.name] || null;
       },
     },
     methods: {

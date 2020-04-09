@@ -7,26 +7,64 @@ exports[`Field.Float for Resource.Form Empty 1`] = `
   style="transition-delay: 0ms; width: 100%;"
 >
   <div
-    class="field"
+    class="field has-numberinput has-numberinput-compact"
     style="width: inherit;"
   >
     <!---->
      
     <div
-      class="control is-clearfix"
+      class="b-numberinput field has-addons is-expanded"
     >
-      <input
-        autocomplete="on"
-        class="input"
-        step="0.01"
-        type="number"
-      />
+      <p
+        class="control"
+      >
+        <button
+          class="button is-primary"
+          type="button"
+        >
+          <span
+            class="icon"
+          >
+            <i
+              class="fa fa-minus fa-lg"
+            />
+          </span>
+        </button>
+      </p>
        
-      <!---->
+      <div
+        class="control is-expanded is-clearfix"
+      >
+        <input
+          autocomplete="on"
+          class="input"
+          step="0.01"
+          type="number"
+        />
+         
+        <!---->
+         
+        <!---->
+         
+        <!---->
+      </div>
        
-      <!---->
-       
-      <!---->
+      <p
+        class="control"
+      >
+        <button
+          class="button is-primary"
+          type="button"
+        >
+          <span
+            class="icon"
+          >
+            <i
+              class="fa fa-plus fa-lg"
+            />
+          </span>
+        </button>
+      </p>
     </div>
      
     <!---->
@@ -41,7 +79,7 @@ exports[`Field.Float for Resource.Form With value, label, icon and placeholder 1
   style="transition-delay: 0ms; width: 100%;"
 >
   <div
-    class="field"
+    class="field has-numberinput has-numberinput-compact"
     style="width: inherit;"
   >
     <label
@@ -51,29 +89,67 @@ exports[`Field.Float for Resource.Form With value, label, icon and placeholder 1
     </label>
      
     <div
-      class="control has-icons-left is-clearfix"
+      class="b-numberinput field has-addons is-expanded"
     >
-      <input
-        autocomplete="on"
-        class="input"
-        max="20"
-        min="5"
-        placeholder="An explicit placeholder"
-        step="0.01"
-        type="number"
-      />
-       
-      <span
-        class="icon is-left"
+      <p
+        class="control"
       >
-        <i
-          class="fa fa-user fa-lg"
+        <button
+          class="button is-primary"
+          type="button"
+        >
+          <span
+            class="icon"
+          >
+            <i
+              class="fa fa-minus fa-lg"
+            />
+          </span>
+        </button>
+      </p>
+       
+      <div
+        class="control has-icons-left is-expanded is-clearfix"
+      >
+        <input
+          autocomplete="on"
+          class="input"
+          max="20"
+          min="5"
+          placeholder="An explicit placeholder"
+          step="0.01"
+          type="number"
         />
-      </span>
+         
+        <span
+          class="icon is-left"
+        >
+          <i
+            class="fa fa-user fa-lg"
+          />
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </div>
        
-      <!---->
-       
-      <!---->
+      <p
+        class="control"
+      >
+        <button
+          class="button is-primary"
+          type="button"
+        >
+          <span
+            class="icon"
+          >
+            <i
+              class="fa fa-plus fa-lg"
+            />
+          </span>
+        </button>
+      </p>
     </div>
      
     <!---->
@@ -98,7 +174,7 @@ exports[`Field.Float for Resource.Form With value, label, readonly 1`] = `
     </label>
      
     <span>
-      15.123
+      15.12
     </span>
      
     <!---->
