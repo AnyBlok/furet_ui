@@ -10,8 +10,7 @@
 // import _ from 'underscore';
 import { defineComponent } from "../factory";
 import { fields } from "./fields";
-import { listTemplate } from "./common";
-import { safe_eval_boolean } from "@/components/fields/common";
+import { listTemplate, safe_eval_boolean } from "./common";
 
 defineComponent("furet-ui-list-field-boolean", {
   template: `
