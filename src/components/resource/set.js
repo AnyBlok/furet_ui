@@ -73,8 +73,8 @@ defineComponent('furet-ui-resource-set', {
       },
       goToPage (row) {
         if (! this.resource.can_read) return
-        if (row.__x2m_uuid) {
-          this.$emit('update-query-string', {mode: 'form', uuid: row.__x2m_uuid})
+        if (row.__uuid) {
+          this.$emit('update-query-string', {mode: 'form', uuid: row.__uuid})
         } else {
           this.$emit('push-in-breadcrumb')
           const pks = {}

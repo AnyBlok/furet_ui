@@ -4,7 +4,26 @@ import { i18n } from "@/i18n";
 import axios from 'axios';
 
 const mock = jest.spyOn(axios, "get");
-mock.mockResolvedValue({data: [], headers: {'x-total-records': 0}});
+mock.mockResolvedValue({
+  data: {
+    data: [
+      {
+        model: "Model.1",
+        pk: { id: 1 },
+        data: { id: 1, title: "Entry 1", color: "red" },
+        type: "UPDATE_DATA"
+      },
+      {
+        model: "Model.1",
+        pk: { id: 2 },
+        data: { id: 2, title: "Entry 2", color: "blue" },
+        type: "UPDATE_DATA"
+      }
+    ],
+    pks: [{ id: 1 }, { id: 2 }]
+  },
+  headers: { 'x-total-records': 0 }
+});
 
 const localVue = global.localVue;
 const store = global.store;
@@ -177,8 +196,7 @@ describe("Field.One2Many for Resource.Form", () => {
   });
   it("o2m_add", () => {
     wrapper.vm.o2m_add({model: 'Model.2', uuid: 'uuid'})
-    expect(updateValue.mock.calls[0][0][0].__x2m_state).toBe(undefined)
-    expect(updateValue.mock.calls[0][0][2].uuid).toBe('uuid')
-    expect(updateValue.mock.calls[0][0][2].__x2m_state).toBe('ADDED')
+    expect(updateValue.mock.calls[0][0][0].uuid).toBe('uuid')
+    expect(updateValue.mock.calls[0][0][0].__x2m_state).toBe('ADDED')
   });
 });

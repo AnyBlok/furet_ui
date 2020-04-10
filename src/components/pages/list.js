@@ -55,6 +55,7 @@ defineComponent('furet-ui-list', {
         v-bind:detail-key="detail_key"
         v-bind:checkable="isCheckable"
         v-bind:checked-rows.sync="checkedRows"
+        v-bind:row-class="row_state"
 
         v-on:dblclick="goToPage"
       >
@@ -91,6 +92,31 @@ defineComponent('furet-ui-list', {
         if (this.checkedRows.length !== 0) return this.checkedRows;
         return this.data;
       },
+      row_state() {
+        return (row, _index) => {
+          let style_class = ""
+          switch(row.__change_state) {
+            case "create":
+              style_class = "has-background-success";
+              break;
+            case "update":
+              style_class = "has-background-warning";
+              break;
+            case "delete":
+              style_class = "has-background-danger";
+              break;
+            case "link":
+              style_class = "has-background-primary";
+              break;
+            case "unlink":
+              style_class = "has-background-grey";
+              break;
+            default:
+              style_class = "";
+            }
+            return style_class
+        };
+      }
     },
   },
 });

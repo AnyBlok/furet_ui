@@ -71,7 +71,7 @@ defineComponent('furet-ui-resource-list', {
   extend: ['furet-ui-resource'],
   prototype: {
     props: ['id', 'manager'],
-    inject: ['getEntry', 'getNewEntry'],
+    inject: ['getEntry', 'getNewEntry', 'getNewEntries'],
     data () {
       return {
         data: [],
@@ -89,7 +89,7 @@ defineComponent('furet-ui-resource-list', {
           'context[model]': this.resource.model,
           'context[fields]': this.resource.fields.toString(),
         }
-      },
+      }
     },
     methods: {
       safe_eval (hidden, row) {
@@ -101,26 +101,13 @@ defineComponent('furet-ui-resource-list', {
       },
       api_formater (data) {
         this.$dispatchAll(data.data);
-        const res = [];
-        if (this.manager.x2m_pks) {
-          this.manager.x2m_pks.forEach(pk => {
-            if (pk.__x2m_state === 'DELETED') { 
-             // do nothing
-            } else if (pk.__x2m_state === 'ADDED') { 
-              res.push(this.getNewEntry(this.resource.model, pk.uuid))
-            } else if (pk.__x2m_state === 'UPDATED') { 
-              const pk2 = Object.assign({}, pk)
-              delete pk2['__x2m_state']
-              res.push(this.getEntry(this.resource.model, pk2))
-            } else {
-              res.push(this.getEntry(this.resource.model, pk))
-            }
-          });
-        } else {
-          data.pks.forEach(pk => {
-            res.push(this.getEntry(this.resource.model, pk))
-          });
-        }
+        let res = [];
+        data.pks.forEach(pk => {
+          res.push(this.getEntry(this.resource.model, pk))
+        });
+        const news = this.getNewEntries(this.resource.model);
+        res = res.concat(news)
+        data.total += news.length;
         return res;
       },
       toggleHiddenColumn (field) {
