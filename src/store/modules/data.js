@@ -13,7 +13,7 @@ export const pk2string = (pk) => {
     const keys = _.sortBy(_.keys(pk));
     const res = [];
     keys.forEach(key => {
-        res.push([key, pk[key]]);
+        if (key !== '__x2m_state') res.push([key, pk[key]]);
     });
     return JSON.stringify(res)
 }
@@ -92,47 +92,9 @@ export const mutations = {
     'UPDATE_CHANGE'(state, action) {
         state.changes = update_change_object(state.changes, action)
     },
-    // 'REPLACE_CHANGE'(state, action) {
-    //     state.changes = Object.assign({}, action.changes);
-    // },
     'CLEAR_CHANGE'(state) {
         state.changes = {};
     },
-    // 'CREATE_CHANGE_X2M'(state, action) {
-    //     const changes = Object.assign({}, state.changes);
-    //     if (changes.new == undefined) changes.new = {};
-    //     if (changes.new[action.model] == undefined) changes.new[action.model] = {};
-    //     if (changes.new[action.model][action.dataId] == undefined) changes.new[action.model][action.dataId] = {};
-    //     state.changes = changes;
-    // },
-    // 'UPDATE_CHANGE_X2M'(state, action) {
-    //     const changes = Object.assign({}, state.changes);
-    //     if (changes.new && changes.new[action.model] && changes.new[action.model][action.dataId] != undefined) {
-    //         changes.new[action.model][action.dataId][action.fieldname] = action.value;
-    //     } else {
-    //         if (changes[action.model] == undefined) changes[action.model] = {}
-    //         if (changes[action.model][action.dataId] == undefined) changes[action.model][action.dataId] = {};
-    //         changes[action.model][action.dataId][action.fieldname] = action.value;
-    //     }
-    //     state.changes = changes;
-    // },
-    // 'UPDATE_CHANGE_X2M_DELETE'(state, action) {
-    //     const changes = Object.assign({}, state.changes);
-    //     const model = action.model;
-    //     _.each(action.dataIds, dataId => {
-    //         if (changes.new && changes.new[model] && changes.new[model][dataId] != undefined) delete changes.new[model][dataId];
-    //         else {
-    //             if (changes[model] == undefined) changes[model] = {};
-    //             changes[model][dataId] = 'DELETED';
-    //             if (state.data && state.data[model] && state.data[model][dataId] != undefined) {
-    //                 const data = Object.assign({}, state.data);
-    //                 delete state.data[model][dataId];
-    //                 state.data = data;
-    //             }
-    //         }
-    //     });
-    //     state.changes = changes;
-    // },
     'CLEAR_DATA'(state) {
         state.data = {};
         state.changes = {};
