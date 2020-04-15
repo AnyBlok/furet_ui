@@ -8,6 +8,7 @@ export const i18nConf = {
   fallbackLocale: 'en',
   messages: {
     en: {
+      error: 'Error',
       components: {
         spaces: {
             title: 'Space menus',
@@ -25,13 +26,18 @@ export const i18nConf = {
           },
           button: 'Log out',
         },
-        page: {
-          list: {
-            search: 'Search',
-            new: 'New',
-            canel: 'Cancel',
-            notFound: 'No result found',
-          },
+        header: {
+          search: 'Search',
+          new: 'New',
+          edit: 'Edit',
+          cancel: 'Cancel',
+          save: 'Save',
+          delete: 'Delete',
+          notFound: 'No result found',
+          return: 'Return',
+          previous: 'Previous',
+          next: 'Next',
+          browse: 'Browse',
         },
         fields: {
           yesno: {

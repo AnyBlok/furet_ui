@@ -30,7 +30,7 @@ defineComponent('furet-ui-list-field-selection', {
           const selections = this.config.selections || {};
           const value = this.data[this.config.name] || '';
           if (selections[value] == undefined) return ' --- ';
-          return selections[value];
+          return this.$t(selections[value]);
       },
       color () {
           const colors = this.config.colors || {};
@@ -42,21 +42,6 @@ defineComponent('furet-ui-list-field-selection', {
 })
 fields.list.selection = 'furet-ui-list-field-selection'
 
-
-// 
-// 
-// export const FieldThumbnailSelection = Vue.component('furet-ui-thumbnail-field-selection', {
-//     props: ['selections'],
-//     mixins: [ThumbnailMixin],
-//     computed: {
-//         value () {
-//             const selections = this.selections || {};
-//             const value = this.data && this.data[this.name] || '';
-//             if (selections[value] == undefined) return ' --- ';
-//             return selections[value];
-//         },
-//     },
-// })
 
 defineComponent('furet-ui-form-field-selection', {
   template: `
@@ -101,7 +86,7 @@ defineComponent('furet-ui-form-field-selection', {
       formated_value () {
         const selections = this.config.selections || {};
         if (selections[this.value] == undefined) return ' --- ';
-        return selections[this.value];
+        return this.$t(selections[this.value]);
       },
       isRequired () {
         return safe_eval(this.config.required, this.data || {}, this.resource);
@@ -112,7 +97,7 @@ defineComponent('furet-ui-form-field-selection', {
           if (!this.isRequired) selections.push({label: '', value: null, color: null});
 
         _.each(this.config.selections, (label, value) => {
-          selections.push({value, label, color: colors[value]})
+          selections.push({value, label: this.$t(label), color: colors[value]})
         });
 
         return selections;

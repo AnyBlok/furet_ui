@@ -22,7 +22,7 @@ defineComponent('furet-ui-list', {
         <template slot="actions" slot-scope="props">
           <a v-if="checkedRows.length > 0" class="button is-primary is-outlined" v-on:click="startBrowsing">
             <span class="icon"><b-icon icon="file-document-box-multiple" /></span>
-            <span>{{ $t('components.page.list.browse') }}</span>
+            <span>{{ $t('components.header.browse') }}</span>
           </a>
           <slot name="actions" v-bind:data="props.data" />
         </template>
@@ -69,7 +69,7 @@ defineComponent('furet-ui-list', {
         <template slot="empty">
           <section class="section">
             <div class="content has-text-grey has-text-centered">
-              <p>{{ $t('components.page.list.notFound') }}</p>
+              <p>{{ $t('components.header.notFound') }}</p>
             </div>
           </section>
         </template>

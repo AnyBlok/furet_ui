@@ -54,12 +54,12 @@ defineComponent('furet-ui-page-multi-entries-header', {
             <b-autocomplete
               v-model="filterSearch"
               v-bind:data="filteredDataArray"
-              v-bind:placeholder="this.$i18n.t('components.page.list.search')"
+              v-bind:placeholder="this.$i18n.t('components.header.search')"
               icon="search"
               v-on:select="updateFilters"
               clear-on-select
             >
-              <template slot="empty">{{ $t('components.page.list.notFound') }}</template>
+              <template slot="empty">{{ $t('components.header.notFound') }}</template>
               <template slot-scope="props">
                 {{ props.option.mode == 'exclude' ? ' ~ ' : '' }} <small>{{ $t(props.option.label) }} </small> : <strong>{{ props.option.value }}</strong>
               </template>
@@ -91,7 +91,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
           v-on:click="goToNew"
         >
           <span class="icon"><b-icon icon="plus" /></span>
-          <span>{{ $t('components.page.list.new') }}</span>
+          <span>{{ $t('components.header.new') }}</span>
         </button>
         <slot name="actions" v-bind:data="data" />
       </div>
@@ -375,49 +375,49 @@ defineComponent('furet-ui-header-page', {
           <span class="icon">
             <b-icon icon="times" />
           </span>
-          <span>{{ $t('components.page.cancel') }}</span>
+          <span>{{ $t('components.header.cancel') }}</span>
         </a>
         <a v-else class="button is-primary is-outlined" v-on:click="goToList">
           <span class="icon">
             <b-icon icon="arrow-left" />
           </span>
-          <span>{{ $t('components.page.list') }}</span>
+          <span>{{ $t('components.header.return') }}</span>
         </a>
         <a v-if="prevous_target" class="button is-primary is-outlined" v-on:click="goToPreviousPage">
           <span class="icon">
             <b-icon icon="page-previous" />
           </span>
-          <span>{{ $t('components.page.header.previous') }}</span>
+          <span>{{ $t('components.header.previous') }}</span>
         </a>
         <a v-if="next_target" class="button is-primary is-outlined" v-on:click="goToNextPage">
           <span class="icon">
             <b-icon icon="page-next" />
           </span>
-          <span>{{ $t('components.page.header.next') }}</span>
+          <span>{{ $t('components.header.next') }}</span>
         </a>
         <button v-if="can_go_to_new" v-bind:disabled="readonly" class="button is-primary is-outlined" v-on:click="goToNew">
           <span class="icon">
             <b-icon icon="plus" />
           </span>
-          <span>{{ $t('components.page.new') }}</span>
+          <span>{{ $t('components.header.new') }}</span>
         </button>
         <button v-if="can_modify" v-bind:disabled="readonly" class="button is-primary is-outlined" v-on:click="goToEdit">
           <span class="icon">
             <b-icon icon="pencil-alt" />
           </span>
-          <span>{{ $t('components.page.edit') }}</span>
+          <span>{{ $t('components.header.edit') }}</span>
         </button>
         <button v-if="can_save" class="button is-primary is-outlined" v-on:click="save">
           <span class="icon">
             <b-icon icon="save" />
           </span>
-          <span>{{ $t('components.page.save') }}</span>
+          <span>{{ $t('components.header.save') }}</span>
         </button>
         <button v-if="can_delete" v-bind:disabled="readonly" class="button is-danger is-outlined" v-on:click="deleteEntry">
           <span class="icon">
             <b-icon icon="trash" />
           </span>
-          <span>{{ $t('components.page.delete') }}</span>
+          <span>{{ $t('components.header.delete') }}</span>
         </button>
         <slot name="head_actions" v-bind:data="data" />
       </div>
