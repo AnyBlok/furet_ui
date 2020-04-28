@@ -148,11 +148,23 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
     </furet-ui-form-field-common-tooltip>`,
   prototype: {
     props: ['resource', 'data', 'config'],
+    inject: ['partIsReadonly'],
     computed: {
       value () {
         return this.data && this.data[this.config.name] || '';
       },
+      isReadonly () {
+        if (this.resource.readonly) return true;
+        if (this.partIsReadonly()) return true;
+        const readonlyParams = safe_eval(this.config.readonly, this.data || {}, this.resource);
+        if (this.config.writable) {
+          const writableParams = safe_eval(this.config.writable, this.data || {}, this.resource);
+          return readonlyParams && ! writableParams
+        }
+        return readonlyParams;
+      },
       isRequired () {
+        if (this.isReadonly) return false;
         return safe_eval(this.config.required, this.data || {}, this.resource);
       },
       getType () {

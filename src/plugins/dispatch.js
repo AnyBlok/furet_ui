@@ -24,7 +24,7 @@ export default {
               moment.locale(data.locale);
               break
             case 'UPDATE_ROUTE':
-              if (data.name) router.push({name: data.name, params: data.params});
+              if (data.name) router.push({name: data.name, params: data.params, query: data.query});
               else if (data.path) router.push({path: data.path});
               break;
             case 'NOTIFY':

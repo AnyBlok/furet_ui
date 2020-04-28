@@ -2,6 +2,7 @@ import _ from 'underscore';
 import { resources } from './resources';
 import { safe_eval } from '../fields/common';
 import { defineComponent } from '../factory';
+import axios from 'axios';
 
 
 defineComponent('furet-ui-resource-list', {
@@ -40,6 +41,13 @@ defineComponent('furet-ui-resource-list', {
             </div>
           </b-field>
         </section>
+      </template>
+      <template slot="actions" slot-scope="props">
+        <furet-ui-list-button 
+          v-for="button in resource.buttons" 
+          v-bind:resource="resource"
+          v-bind:data="props.data"
+          v-bind:config="button" />
       </template>
       <template slot-scope="props">
         <b-table-column 
@@ -127,3 +135,34 @@ defineComponent('furet-ui-resource-list', {
   },
 });
 resources.list = 'furet-ui-resource-list';
+
+defineComponent('furet-ui-list-button', {
+  template: `
+    <a class="button is-primary is-outlined" v-on:click="server_call">
+      {{ $t(config.label) }}
+    </a>
+  `,
+  // extend: ['furet-ui-helper-mixin'], waittin readony / readwrite on view
+  prototype: {
+    props: ['resource', 'data', 'config'],
+    methods: {
+      server_call () {
+        this.$parent.$parent.errors = [];
+        this.$parent.$parent.loading = true;
+        axios.post(`/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/${this.config.call}`, {})
+          .then((response) => {
+            this.$parent.$parent.loading = false;
+            if (response.data.length) {
+              this.$dispatchAll(response.data)
+            } else {
+              this.$parent.$parent.loadAsyncData()
+            }
+          })
+          .catch((error) => {
+            this.$parent.$parent.loading = false;
+            this.$parent.$parent.errors = error.response.data.errors;
+          });
+      },
+    },
+  },
+})
