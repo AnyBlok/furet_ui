@@ -7,142 +7,157 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import Vue from 'vue';
-import {FormMixin, ThumbnailMixin, ListMixin} from './common';
+import {defineComponent} from '../factory'
+import {fields} from './fields';
 
 const format = (value) => {
-    if (value)
-        try {
-            return JSON.stringify(JSON.parse(value), null, 2);
-        } catch (e) {
-            // continue regardless of error
+  if (value)
+    try {
+        let parsed = value;
+        if (typeof value === "string") {
+            parsed = JSON.parse(value)
         }
-    return value;
+      return JSON.stringify(parsed, null, 2);
+    } catch (e) {
+      // console.error('Fields.Json : parse json', e)
+      return null
+    }
+  return value;
 }
 
 
-export const FieldListJson = Vue.component('furet-ui-list-field-json', {
-    mixins: [ListMixin],
-    template: `
-        <div>
-            <span v-if="isInvisible" />
-            <pre 
-                v-else
-                v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
-            >{{value}}</pre>
-        </div>`,
+/**
+ * furet-ui-list-field-json component is used to manage json/jsonb on list
+ * resource (``furet-ui-resource-list``).
+ *
+ * @example
+ *  <furet-ui-form-field-json
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ */
+defineComponent('furet-ui-list-field-json', {
+  template: `
+    <div>
+      <span v-if="isHidden" />
+      <pre 
+        v-else
+        v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+      >{{value}}</pre>
+    </div>`,
+  extend: ['furet-ui-list-field-common'],
+  prototype: {
     computed: {
-        value () {
-            return format(this.row[this.header.name] || '');
-        },
-    }
+      value () {
+        const value = this.data[this.config.name] || '';
+        return format(value)
+      },
+    },
+  },
 })
+fields.list.json = 'furet-ui-list-field-json'
+fields.list.jsonb = 'furet-ui-list-field-json'
 
-export const FieldThumbnailJson = Vue.component('furet-ui-thumbnail-field-json', {
-    mixins: [ThumbnailMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <pre
-                    v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
-                >{{value}}</pre>
-            </b-field>
-        </b-tooltip>`,
-    computed: {
-        value () {
-            return format(this.data && this.data[this.name] || '');
-        },
-    }
-})
 
-export const FieldFormJson = Vue.component('furet-ui-form-field-json', {
-    props: ['placeholder'],
-    mixins: [FormMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-bind:style="{'width': '100%'}"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:type="getType"
-                v-bind:message="getMessage"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <pre v-if="isReadonly"
-                    v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
-                >{{data}}</pre>
-                <textarea 
-                    v-else 
-                    class="textarea"
-                    v-bind:value="data" 
-                    v-on:change="updateValue"
-                    v-bind:placeholder="placeholder"
-                    v-bind:rows="getNbRow"
-                    v-bind:style="{width: '100%', height: '100%', resize: 'none'}"
-                />
-            </b-field>
-        </b-tooltip>`,
+/**
+ * furet-ui-form-field-json component is used to manage json/jsonb on form
+ * resource (``furet-ui-resource-form``).
+ *
+ * @example
+ *  <furet-ui-form-field-json
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String?} placeholder - A placeholder to help user to know what to collect
+ */
+defineComponent('furet-ui-form-field-json', {
+  template: `
+    <furet-ui-form-field-common-tooltip
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <b-field 
+        v-bind:label="config.label"
+        v-bind:type="getType"
+        v-bind:message="getMessage"
+        v-bind:style="{'width': 'inherit'}"
+      >
+        <pre v-if="isReadonly"
+            v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+        >{{value}}</pre>
+        <b-input 
+          type="textarea"
+          v-else 
+          v-bind:value="value" 
+          v-on:input="updateValue"
+          v-bind:placeholder="config.placeholder"
+        />
+      </b-field>
+    </furet-ui-form-field-common-tooltip>
+  `,
+  extend: ['furet-ui-form-field-common', 'furet-ui-form-field-common-tooltip-field'],
+  prototype: {
     computed: {
-        data () {
-            return format(this.config && this.config.data && this.config.data[this.name] || '');
-        },
-        getNbRow () {
-            const value = this.config && this.config.data && this.config.data[this.name] || '';
-            return value.split('\n').length;
-        },
-        isJsonInvalid () {
-            if (!this.isReadonly) {
-                const value = this.config && this.config.data && this.config.data[this.name] || '';
-                try {
-                    JSON.parse(value)
-                } catch (e) {
-                    return true;
-                }
-            }
-            return false;
-        },
-        getType () {
-            if (this.isRequired) {
-                if (this.data) {
-                    if (this.isJsonInvalid) return 'is-danger';
-                    return 'is-info';
-                }
-                return 'is-danger';
-            }
+      raw_value () {
+        return this.data[this.config.name] || '';
+      },
+      value () {
+        return format(this.raw_value)
+      },
+      getType () {
+        if (this.isRequired) {
+          if (this.raw_value) {
             if (this.isJsonInvalid) return 'is-danger';
-            return '';
-        },
-        getMessage () {
-            if (this.isRequired) {
-                if (!this.data) {
-                    if (this.isJsonInvalid) return this.$i18n.t('fields.json.invalid');
-                    return this.$i18n.t('fields.common.required');
-                }
-            }
-            if (this.isJsonInvalid) return this.$i18n.t('fields.json.invalid');
-            return ''
-        },
-    },
-    methods: {
-        updateValue (e) {
-            this.$store.commit(this.config.store_key, {
-                model: this.config.view.model,
-                dataId: this.config.dataId,
-                fieldname: this.name,
-                value: e.target.value,
-            })
+            return 'is-info';
+          }
+          return 'is-danger';
         }
+        if (this.isJsonInvalid) return 'is-danger';
+        return '';
+      },
+      getMessage () {
+        if (this.isRequired) {
+          if (!this.value) {
+            if (this.isJsonInvalid) return this.$t('components.fields.json.invalid');
+            return this.$i18n.t('fields.common.required');
+          }
+        }
+        if (this.isJsonInvalid) return this.$t('components.fields.json.invalid');
+        return ''
+      },
+      isJsonInvalid () {
+        if (!this.isReadonly) {
+          if (! this.raw_value) return false
+          try {
+            JSON.parse(this.raw_value)
+          } catch (e) {
+            // console.error(e, this.raw_value)
+            return true;
+          }
+        }
+        return false;
+      },
     },
+  },
 })
+fields.form.json = 'furet-ui-form-field-json'
+fields.form.jsonb = 'furet-ui-form-field-json'

@@ -44,6 +44,9 @@ export const i18nConf = {
             yes: 'Yes',
             no: 'No',
           },
+          json: {
+            invalid: 'Json is invalid',
+          },
         },
       },
     },

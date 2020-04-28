@@ -45,6 +45,7 @@ defineComponent('furet-ui-resource-list', {
       <template slot="actions" slot-scope="props">
         <furet-ui-list-button 
           v-for="button in resource.buttons" 
+          v-bind:key="button.call"
           v-bind:resource="resource"
           v-bind:data="props.data"
           v-bind:config="button" />
