@@ -2,6 +2,7 @@ import { fields } from './fields';
 import './common';
 import './boolean';
 import './datetime';
+import './mail';
 import './integer';
 import './json';
 import './float';

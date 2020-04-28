@@ -7,47 +7,39 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import Vue from 'vue';
-import {FormMixin, ThumbnailMixin, ListMixin} from './common';
+import {defineComponent} from '../factory'
+import {fields} from './fields';
+import { listTemplate } from './common';
 
-export const FieldListMail = Vue.component('furet-ui-list-field-mail', {
-    mixins: [ListMixin],
-})
 
-export const FieldThumbnailMail = Vue.component('furet-ui-thumbnail-field-mail', {
-    mixins: [ThumbnailMixin],
+defineComponent('furet-ui-list-field-email', {
+  template: listTemplate,
+  extend: ['furet-ui-list-field-common'],
 })
+fields.list.email = 'furet-ui-list-field-email'
 
-export const FieldFormMail = Vue.component('furet-ui-form-field-mail', {
-    props: ['maxlength', 'placeholder', 'icon'],
-    mixins: [FormMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-bind:style="{'width': '100%'}"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:type="getType"
-                v-bind:message="getMessage"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <span v-if="isReadonly"> {{data}} </span>
-                <b-input 
-                    v-else 
-                    type="email"
-                    step="1"
-                    v-bind:value="data" 
-                    v-on:change="updateValue"
-                    v-bind:maxlength="maxlength"
-                    v-bind:placeholder="placeholder"
-                    icon-pack="fa"
-                    v-bind:icon="icon"
-                >
-                </b-input>
-            </b-field>
-        </b-tooltip>`,
+
+defineComponent('furet-ui-form-field-email', {
+  template: `
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <span v-if="isReadonly">{{ value }}</span>
+      <b-input 
+        v-else
+        type="email"
+        v-bind:value="value" 
+        v-on:input="updateValue"
+        v-bind:maxlength="config.maxlength"
+        v-bind:placeholder="config.placeholder"
+        icon-pack="fa"
+        v-bind:icon="config.icon"
+        v-bind:key="config.key"
+      />
+    </furet-ui-form-field-common-tooltip-field>
+  `,
+  extend: ['furet-ui-form-field-common'],
 })
+fields.form.email = 'furet-ui-form-field-email'
