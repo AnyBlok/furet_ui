@@ -8,10 +8,11 @@ import './json';
 import './float';
 import './decimal';
 import './password';
-import './timestamp';
+import './rich-text';
 import './selection';
 import './statusbar';
 import './string';
+import './timestamp';
 import './url';
 
 import './relationship';
