@@ -22,5 +22,5 @@ global.localVue.use(PluginDispatch, { router, store, i18n });
 global.store = store;
 global.router = router;
 
-document.execCommand = jest.fn()
-document.getSelection = jest.fn()
+document.execCommand = () => {}
+document.getSelection = () => {}
