@@ -12,6 +12,7 @@ import './timestamp';
 import './selection';
 import './statusbar';
 import './string';
+import './url';
 
 import './relationship';
 

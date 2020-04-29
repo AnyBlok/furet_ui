@@ -19,6 +19,28 @@ defineComponent('furet-ui-list-field-email', {
 fields.list.email = 'furet-ui-list-field-email'
 
 
+/**
+ * furet-ui-form-field-email component is used to manage email on form
+ * resource (``furet-ui-resource-form``).
+ *
+ * @example
+ *  <furet-ui-form-field-email
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String?} placeholder - A placeholder to help user to know what to collect
+ * @param {String?} length - A max size
+ * @param {String?} icon - A fontawesome icon name
+ */
 defineComponent('furet-ui-form-field-email', {
   template: `
     <furet-ui-form-field-common-tooltip-field

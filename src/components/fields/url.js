@@ -7,76 +7,73 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import Vue from 'vue';
-import {FormMixin, ThumbnailMixin, ListMixin} from './common';
+import {defineComponent} from '../factory'
+import {fields} from './fields';
+import { listTemplate } from './common';
 
 
-export const FieldListUrl = Vue.component('furet-ui-list-field-url', {
-    mixins: [ListMixin],
-    template: `
-        <div>
-            <span v-if="isInvisible" />
-            <a v-else v-bind:href="value">{{value}}</a>
-        </div>`,
+defineComponent('furet-ui-list-field-url', {
+  template: listTemplate,
+  extend: ['furet-ui-list-field-common'],
 })
+fields.list.url = 'furet-ui-list-field-url'
 
-export const FieldThumbnailUrl = Vue.component('furet-ui-thumbnail-field-url', {
-    mixins: [ThumbnailMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <a v-bind:href="value" v-on:click.stop="() => {}">{{value}}</a>
-            </b-field>
-        </b-tooltip>`,
-})
 
-export const FieldFormUrl = Vue.component('furet-ui-form-field-url', {
-    props: ['maxlength', 'placeholder', 'icon'],
-    mixins: [FormMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-bind:style="{'width': '100%'}"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:type="getType"
-                v-bind:message="getMessage"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <a v-if="isReadonly" v-bind:href="data">{{data}}</a>
-                <div 
-                    v-else
-                    class="field has-addons" 
-                >
-                    <p class="control is-expanded">
-                        <b-input 
-                            type="url"
-                            v-bind:value="data" 
-                            v-on:change="updateValue"
-                            v-bind:maxlength="maxlength"
-                            v-bind:placeholder="placeholder"
-                            icon-pack="fa"
-                            v-bind:icon="icon"
-                        />
-                    </p>
-                    <p class="control" v-if="data">
-                        <a class="button" v-bind:href="data">
-                            <i class="fa fa-external-link"></i>
-                        </a>
-                    </p>
-                </div>
-            </b-field>
-        </b-tooltip>`,
+
+
+/**
+ * furet-ui-form-field-url component is used to manage url/uri on form
+ * resource (``furet-ui-resource-form``).
+ *
+ * @example
+ *  <furet-ui-form-field-url
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String?} placeholder - A placeholder to help user to know what to collect
+ * @param {String?} length - A max size
+ * @param {String?} icon - A fontawesome icon name
+ */
+defineComponent('furet-ui-form-field-url', {
+  template: `
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <span v-if="isReadonly">{{ value }}</span>
+      <div 
+        v-else
+        class="field has-addons" 
+      >
+        <p class="control is-expanded">
+          <b-input 
+            v-bind:value="value" 
+            v-on:input="updateValue"
+            v-bind:maxlength="config.maxlength"
+            v-bind:placeholder="config.placeholder"
+            icon-pack="fa"
+            v-bind:icon="config.icon"
+            v-bind:key="config.key"
+          />
+        </p>
+        <p class="control" v-if="value">
+          <a class="button" v-bind:href="value" target="_blank">
+            <b-icon icon="external-link-alt"></b-icon>
+          </a>
+        </p>
+      </div>
+    </furet-ui-form-field-common-tooltip-field>
+  `,
+  extend: ['furet-ui-form-field-common'],
 })
+fields.form.url = 'furet-ui-form-field-url'
