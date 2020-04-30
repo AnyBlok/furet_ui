@@ -11,22 +11,6 @@ import _ from 'underscore';
 import {defineComponent} from '../factory'
 import {fields} from './fields';
 
-
-// 
-// 
-// export const FieldThumbnailSelection = Vue.component('furet-ui-thumbnail-field-selection', {
-//     props: ['selections'],
-//     mixins: [ThumbnailMixin],
-//     computed: {
-//         value () {
-//             const selections = this.selections || {};
-//             const value = this.data && this.data[this.name] || '';
-//             if (selections[value] == undefined) return ' --- ';
-//             return selections[value];
-//         },
-//     },
-// })
-
 defineComponent('furet-ui-form-field-statusbar', {
   template: `
     <furet-ui-form-field-common-tooltip

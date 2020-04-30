@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field.StatusBar for Resource.Form Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        
+      </span>
+       
+      <!---->
+    </span>
+     
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Form Empty without selections 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        
+      </span>
+       
+      <!---->
+    </span>
+     
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Form With unknown value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        My field label
+      </span>
+       
+      <!---->
+    </span>
+     
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Form With value, label and icon 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        My field label
+      </span>
+       
+      <!---->
+    </span>
+     
+    <span
+      class="tag is-success is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Form With value, label, readonly 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        My field label
+      </span>
+       
+      <!---->
+    </span>
+     
+    <span
+      class="tag is-success is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Form With, required, value, label and icon 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        My field label
+      </span>
+       
+      <!---->
+    </span>
+     
+    <span
+      class="tag is-success is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
