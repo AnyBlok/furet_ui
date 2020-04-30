@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import { getComponentPrototype } from "@/components/factory";
 
-const value = new Date("2020, 5, 6, 14:20:00")
+const value = new Date("2020-05-06T12:20:00.000Z")
 
 const localVue = global.localVue;
 const store = global.store;
