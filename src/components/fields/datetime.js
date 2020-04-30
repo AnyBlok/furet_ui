@@ -7,7 +7,7 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import moment from 'moment';
+import moment from 'moment-timezone';
 import {defineComponent} from '../factory'
 import {fields} from './fields';
 import { listTemplate } from './common';
@@ -22,7 +22,8 @@ defineComponent('furet-ui-list-field-datetime', {
       value () {
         moment.locale(i18n.locale);
         const value = this.data[this.config.name];
-        if (value) return moment(value).format('LLL');
+        const timezone = this.$store.state.global.userTimeZone;
+        if (value) return moment(value).tz(timezone).format('LLL');
         return '';
       },
     },
@@ -74,7 +75,8 @@ defineComponent('furet-ui-form-field-datetime', {
       readonly_value () {
         moment.locale(i18n.locale);
         const value = this.data[this.config.name];
-        if (value) return moment(value).format('LLL');
+        const timezone = this.$store.state.global.userTimeZone;
+        if (value) return moment(value).tz(timezone).format('LLL');
         return '';
       },
       value () {

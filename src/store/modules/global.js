@@ -13,6 +13,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 export const defaultState = {
   appLoaded: false,
   userName: "",
+  userTimeZone: "Europe/Paris",
   authenticated: false,
   space_menus: [],
   space_name: "Menu",

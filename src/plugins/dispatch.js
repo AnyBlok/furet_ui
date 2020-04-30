@@ -22,6 +22,9 @@ export default {
             case 'SET_LOCALE':
               i18n.locale = data.locale;
               moment.locale(data.locale);
+              if (data.timezone) {
+                store.commit('UPDATE_GLOBAL', {userTimeZone: data.timezone})
+              }
               break
             case 'UPDATE_ROUTE':
               if (data.name) router.push({name: data.name, params: data.params, query: data.query});
