@@ -30,18 +30,6 @@ defineComponent('furet-ui-list-field-datetime', {
 })
 fields.list.datetime = 'furet-ui-list-field-datetime'
 
-// export const FieldThumbnailDateTime = Vue.component('furet-ui-thumbnail-field-datetime', {
-//     mixins: [ThumbnailMixin],
-//     computed: {
-//         value () {
-//             moment.locale(i18n.locale);
-//             const value = this.data && this.data[this.name];
-//             if (value) return moment(value).format('LLL');
-//             return '';
-//         },
-//     }
-// })
-
 defineComponent('furet-ui-form-field-datetime', {
   extend: ['furet-ui-form-field-common'],
   template: `
