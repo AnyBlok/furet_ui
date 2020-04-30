@@ -88,9 +88,6 @@ defineComponent('furet-ui-form-field-selection', {
         if (selections[this.value] == undefined) return ' --- ';
         return this.$t(selections[this.value]);
       },
-      isRequired () {
-        return safe_eval(this.config.required, this.data || {}, this.resource);
-      },
       getSelections () {
         const colors = this.config.colors || {};
         const selections = [];

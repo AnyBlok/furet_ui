@@ -213,6 +213,9 @@ defineComponent('furet-ui-form-field-common', {
       value () {
         return this.data && this.data[this.config.name] || null;
       },
+      isRequired () {
+        return safe_eval(this.config.required, this.data || {}, this.resource);
+      },
     },
     methods: {
       updateValue: debounce(function(value, merge) {
