@@ -4526,7 +4526,7 @@ exports[`Field.Datetime for Resource.Form With value, label, readonly 1`] = `
     </label>
      
     <span>
-      May 6, 2020 2:20 PM
+      6 mai 2020 14:20
     </span>
      
     <!---->
@@ -4545,7 +4545,7 @@ exports[`Field.Datetime for Resource.List Empty 1`] = `
 exports[`Field.Datetime for Resource.List With value 1`] = `
 <div>
   <span>
-    May 6, 2020 2:20 PM
+    6 mai 2020 14:20
   </span>
 </div>
 `;
