@@ -10,7 +10,6 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import _ from 'underscore';
 import {defineComponent} from '../factory'
 import {fields} from './fields';
-import {safe_eval} from './common';
 
 
 defineComponent('furet-ui-list-field-selection', {

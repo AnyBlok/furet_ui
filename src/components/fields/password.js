@@ -16,25 +16,18 @@ import {safe_eval} from './common';
 
 defineComponent('furet-ui-list-field-password', {
   template: listTemplate,
-  extend: ['furet-ui-list-field-password'],
+  extend: ['furet-ui-list-field-common'],
   prototype: {
     computed: {
       value () {
-        return _.map(this.data[this.condif.name] || '', () => '*').join('');
+        const value = this.data[this.config.name] || null
+        if (!value) return ''
+        return _.map(value, () => '*').join('');
       },
     },
   },
 })
 fields.list.password = 'furet-ui-list-field-password'
-
-// export const FieldThumbnailPassword = Vue.component('furet-ui-thumbnail-field-password', {
-//     mixins: [ThumbnailMixin],
-//     computed: {
-//         value () {
-//             return _.map(this.data && this.data[this.name] || '', a => '*').join('');
-//         },
-//     },
-// })
 
 defineComponent('furet-ui-form-field-password', {
   template: `
@@ -62,11 +55,12 @@ defineComponent('furet-ui-form-field-password', {
   prototype: {
     computed: {
       readonly_value () {
-        return _.map(this.data[this.config.name] || '', () => '*').join('');
+        const value = this.data[this.config.name] || null
+        if (!value) return ''
+        return _.map(value, () => '*').join('');
       },
       reveal () {
-        if (this.isReadonly) return false;
-        return safe_eval(this.config.reveal, this.data || {}, this.resource);
+        return safe_eval(this.config.reveal, this.data, this.resource);
       },
     },
   }
