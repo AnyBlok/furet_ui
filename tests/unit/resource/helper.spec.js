@@ -82,7 +82,6 @@ describe('furet-ui-fieldset component', () => {
 
 describe('furet-ui-tabs/furet-ui-tab component', () => {
   it('snapshot', () => {
-    const tab = getComponentPrototype('furet-ui-tab')
     const wrapper = mount(getComponentPrototype('furet-ui-tabs'), {
       localVue, 
       router,
@@ -106,7 +105,6 @@ describe('furet-ui-tabs/furet-ui-tab component', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
   it('snapshot counter', () => {
-    const tab = getComponentPrototype('furet-ui-tab')
     const wrapper = mount(getComponentPrototype('furet-ui-tabs'), {
       localVue, 
       router,
@@ -130,7 +128,6 @@ describe('furet-ui-tabs/furet-ui-tab component', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
   it('snapshot hidden', () => {
-    const tab = getComponentPrototype('furet-ui-tab')
     const wrapper = mount(getComponentPrototype('furet-ui-tabs'), {
       localVue, 
       router,
