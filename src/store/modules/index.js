@@ -12,12 +12,11 @@ import global from './global';
 import data from './data';
 import resource from './resource';
 import menus from './menus';
-import browser from './browser';
+// import browser from './browser';
 
 export default {
   global,
   data,
   resource,
   menus,
-  browser,
 };
