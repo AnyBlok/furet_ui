@@ -1025,6 +1025,27 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                           class="datepicker-cell is-unselectable"
                         >
                           <span>
+                            26
+                          </span>
+                        </div>
+                        <div
+                          class="datepicker-cell is-unselectable"
+                        >
+                          <span>
+                            27
+                          </span>
+                        </div>
+                        <div
+                          class="datepicker-cell is-unselectable"
+                        >
+                          <span>
+                            28
+                          </span>
+                        </div>
+                        <div
+                          class="datepicker-cell is-unselectable"
+                        >
+                          <span>
                             29
                           </span>
                         </div>
@@ -1033,13 +1054,6 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                         >
                           <span>
                             30
-                          </span>
-                        </div>
-                        <div
-                          class="datepicker-cell is-unselectable"
-                        >
-                          <span>
-                            31
                           </span>
                         </div>
                         <a
@@ -1066,11 +1080,16 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                            
                           <!---->
                         </a>
+                      </div>
+                      <div
+                        class="datepicker-row"
+                      >
+                        <!---->
+                         
                         <a
-                          class="datepicker-cell is-selectable dots"
+                          class="datepicker-cell is-today is-selectable dots"
                           href="#"
                           role="button"
-                          tabindex="-1"
                         >
                           <span>
                             3
@@ -1090,12 +1109,6 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                            
                           <!---->
                         </a>
-                      </div>
-                      <div
-                        class="datepicker-row"
-                      >
-                        <!---->
-                         
                         <a
                           class="datepicker-cell is-selectable dots"
                           href="#"
@@ -1156,6 +1169,12 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                            
                           <!---->
                         </a>
+                      </div>
+                      <div
+                        class="datepicker-row"
+                      >
+                        <!---->
+                         
                         <a
                           class="datepicker-cell is-selectable dots"
                           href="#"
@@ -1180,12 +1199,6 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                            
                           <!---->
                         </a>
-                      </div>
-                      <div
-                        class="datepicker-row"
-                      >
-                        <!---->
-                         
                         <a
                           class="datepicker-cell is-selectable dots"
                           href="#"
@@ -1246,6 +1259,12 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                            
                           <!---->
                         </a>
+                      </div>
+                      <div
+                        class="datepicker-row"
+                      >
+                        <!---->
+                         
                         <a
                           class="datepicker-cell is-selectable dots"
                           href="#"
@@ -1270,12 +1289,6 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                            
                           <!---->
                         </a>
-                      </div>
-                      <div
-                        class="datepicker-row"
-                      >
-                        <!---->
-                         
                         <a
                           class="datepicker-cell is-selectable dots"
                           href="#"
@@ -1336,6 +1349,12 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                            
                           <!---->
                         </a>
+                      </div>
+                      <div
+                        class="datepicker-row"
+                      >
+                        <!---->
+                         
                         <a
                           class="datepicker-cell is-selectable dots"
                           href="#"
@@ -1360,12 +1379,6 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                            
                           <!---->
                         </a>
-                      </div>
-                      <div
-                        class="datepicker-row"
-                      >
-                        <!---->
-                         
                         <a
                           class="datepicker-cell is-selectable dots"
                           href="#"
@@ -1415,12 +1428,31 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                           <!---->
                         </a>
                         <a
-                          class="datepicker-cell is-today is-selectable dots"
+                          class="datepicker-cell is-selectable dots"
                           href="#"
                           role="button"
+                          tabindex="-1"
                         >
                           <span>
                             30
+                          </span>
+                           
+                          <!---->
+                        </a>
+                      </div>
+                      <div
+                        class="datepicker-row"
+                      >
+                        <!---->
+                         
+                        <a
+                          class="datepicker-cell is-selectable dots"
+                          href="#"
+                          role="button"
+                          tabindex="-1"
+                        >
+                          <span>
+                            31
                           </span>
                            
                           <!---->
@@ -1439,12 +1471,6 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                             2
                           </span>
                         </div>
-                      </div>
-                      <div
-                        class="datepicker-row"
-                      >
-                        <!---->
-                         
                         <div
                           class="datepicker-cell is-unselectable"
                         >
@@ -1471,27 +1497,6 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                         >
                           <span>
                             6
-                          </span>
-                        </div>
-                        <div
-                          class="datepicker-cell is-unselectable"
-                        >
-                          <span>
-                            7
-                          </span>
-                        </div>
-                        <div
-                          class="datepicker-cell is-unselectable"
-                        >
-                          <span>
-                            8
-                          </span>
-                        </div>
-                        <div
-                          class="datepicker-cell is-unselectable"
-                        >
-                          <span>
-                            9
                           </span>
                         </div>
                       </div>
@@ -3326,7 +3331,7 @@ exports[`Field.Datetime for Resource.Form With value, label and icon 1`] = `
                           </span>
                         </div>
                         <div
-                          class="datepicker-cell is-today is-unselectable"
+                          class="datepicker-cell is-unselectable"
                         >
                           <span>
                             30
@@ -3363,7 +3368,7 @@ exports[`Field.Datetime for Resource.Form With value, label and icon 1`] = `
                         <!---->
                          
                         <a
-                          class="datepicker-cell is-selectable dots"
+                          class="datepicker-cell is-today is-selectable dots"
                           href="#"
                           role="button"
                           tabindex="-1"
