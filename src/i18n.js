@@ -17,6 +17,8 @@ export const i18nConf = {
         login: {
           appbar: 'Log in',
           button: 'Log in',
+          username: 'User name',
+          password: 'Password',
         },
         logout: {
           appbar: {

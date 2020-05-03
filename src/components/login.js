@@ -6,11 +6,11 @@ defineComponent('login', {
     <div class="container has-text-centered">
       <form v-on:submit="logIn">
          <furet-ui-page-errors v-bind:errors="errors" />
-         <b-field v-bind:label="$i18n.t('components.login.username')">
-             <b-input v-model="username" expanded></b-input>
+         <b-field v-bind:label="$t('components.login.username')">
+           <b-input v-model="username" expanded></b-input>
          </b-field>
-         <b-field v-bind:label="$i18n.t('components.login.password')">
-             <b-input v-model="password" type="password" expanded password-reveal></b-input>
+         <b-field v-bind:label="$t('components.login.password')">
+           <b-input v-model="password" type="password" expanded password-reveal></b-input>
          </b-field>
          <br />
          <div class="buttons">
@@ -56,7 +56,7 @@ defineComponent('login', {
             this.$dispatchAll(result.data);
           })
           .catch((error) => {
-              this.errors = [error];
+            this.errors = [error];
           })
       },
     },
