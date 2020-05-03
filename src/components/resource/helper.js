@@ -19,12 +19,12 @@ defineComponent('furet-ui-helper-mixin', {
       getIsReadonly () {
         if (this.resource.readonly) return true;
         if (this.partIsReadonly()) return true;
-        const readonlyParams = safe_eval(this.config.readonly, this.data || {}, this.resource);
+        const readonlyParams = safe_eval(this.config.readonly, this.data, this.resource);
         if (this.config.writable) {
-          const writableParams = safe_eval(this.config.writable, this.data || {}, this.resource);
-          return readonlyParams && ! writableParams
+          const writableParams = safe_eval(this.config.writable, this.data, this.resource);
+          return (readonlyParams && !writableParams) ? true : false
         }
-        return readonlyParams;
+        return readonlyParams ? true: false;
       },
     },
     provide: function () {
@@ -58,7 +58,7 @@ defineComponent('furet-ui-tabs', {
   extend: ['furet-ui-helper-mixin'],
 })
 
-const eval_counter = (value, fields) => {
+export const eval_counter = (value, fields) => {
   if (_.keys(fields).length === 0) return 0
   fields
   if (!value) return 0;
@@ -70,7 +70,7 @@ const eval_counter = (value, fields) => {
       else if (res.count !== undefined) res = res.count
     } else if (res == undefined) res = 0;
   } catch (e) {
-    console.log(e)
+    // console.log(e)
   }
   return res;
 }
@@ -81,7 +81,7 @@ defineComponent('furet-ui-tab', {
     render: function (createElement, context) {
       const visible = (() => {
         if (context.props.config.hidden == undefined) return true;
-        return !safe_eval(context.props.config.hidden, context.props.data || {}, context.props.resource);
+        return !safe_eval(context.props.config.hidden, context.props.data, context.props.resource);
       })();
       const options = Object.assign({}, context.data)
       options.attrs.visible= visible
@@ -104,14 +104,6 @@ defineComponent('furet-ui-div', {
     </div>
   `,
   extend: ['furet-ui-helper-mixin'],
-  prototype: {
-    computed: {
-      isHidden () {
-        if (this.config.hidden == undefined) return false;
-        return safe_eval(this.config.hidden, this.data || {}, this.resource);
-      },
-    },
-  },
 })
 
 defineComponent('furet-ui-selector', {
@@ -121,7 +113,7 @@ defineComponent('furet-ui-selector', {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <div class="field has-addons">
+      <div class="field has-addons" v-if="isHidden">
         <b-select 
           v-bind:disabled="isReadonly" 
           icon-pack="fa"
@@ -143,15 +135,12 @@ defineComponent('furet-ui-selector', {
   prototype: {
     props: ['resource', 'data', 'config'],
     computed: {
-      value () {
-        return this.resource.selectors[this.config.name];
-      },
       isHidden () {
         if (this.config.hidden == undefined) return false;
-        return safe_eval(this.config.hidden, this.data || {}, this.resource.selectors);
+        return safe_eval(this.config.hidden, this.data, this.resource);
       },
       isReadonly () {
-        const readonlyParams = safe_eval(this.config.readonly, this.data || {}, this.resource.selectors);
+        const readonlyParams = safe_eval(this.config.readonly, this.data, this.resource);
         return readonlyParams;
       },
       getSelections () {
