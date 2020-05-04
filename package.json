@@ -14,7 +14,7 @@
     "bulma": "^0.8.2",
     "core-js": "^3.6.5",
     "debounce": "^1.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.25.1",
     "moment-timezone": "^0.5.28",
     "underscore": "^1.10.2",
     "vue": "^2.6.11",

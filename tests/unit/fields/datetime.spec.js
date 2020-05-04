@@ -50,6 +50,7 @@ describe("Field.Datetime for Resource.List", () => {
 });
 describe("Field.Datetime for Resource.Form", () => {
   const FormDatetimeField = getComponentPrototype("furet-ui-form-field-datetime");
+  jest.spyOn(global.Date, 'now').mockImplementationOnce(() => value.valueOf())
 
   it("Empty", () => {
     const wrapper = mount(FormDatetimeField, {
