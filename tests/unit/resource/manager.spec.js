@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import { getComponentPrototype } from '@/components/factory';
 import { i18n } from "@/i18n";
-import { eval_counter } from "@/components/resource/helper";
+// import { eval_counter } from "@/components/resource/helper";
 import axios from 'axios';
 
 const localVue = global.localVue;
