@@ -13,7 +13,7 @@ defineComponent('furet-ui-resource-list', {
       v-bind:default_tags="resource.tags || []"
       v-bind:perpage="resource.perpage"
       v-bind:can_go_to_new="manager.can_create"
-      rest_api_url="/furet-ui/crud"
+      v-bind:rest_api_url="rest_api_url"
       v-bind:rest_api_params="api_params"
 
       v-bind:rest_api_formater="api_formater"
@@ -81,10 +81,13 @@ defineComponent('furet-ui-resource-list', {
       hidden_columns () {
         return _.filter(this.resource.headers, header => header['column-can-be-hidden']);
       },
+      rest_api_url () {
+        return `/furet-ui/resource/${this.id}/crud`;
+      },
       api_params () {
         return {
-          model: this.resource.model,
-          fields: this.resource.fields.toString(),
+          'context[model]': this.resource.model,
+          'context[fields]': this.resource.fields.toString(),
         }
       },
     },

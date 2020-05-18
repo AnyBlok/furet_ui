@@ -1,0 +1,581 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`furet-ui-form-field-resource-manager component snapshot 1`] = `
+<div
+  class="box"
+  style="width: 100%;"
+>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <section
+    config="[object Object]"
+    id="furet-ui-list"
+  >
+    <div
+      class="container"
+    >
+      <!---->
+    </div>
+     
+    <header
+      id="furet-ui-page-multi-entries-header"
+    >
+      <div
+        class="level"
+      >
+        <div
+          class="level-left"
+        >
+          <h2
+            class="level-item is-size-3"
+          >
+            Templates
+          </h2>
+           
+          <span
+            class="level-item"
+          >
+            <small>
+              (0)
+            </small>
+             
+          </span>
+        </div>
+         
+        <div
+          class="level-right"
+        >
+          <div
+            class="level-item"
+          >
+            <div
+              class="field is-grouped-multiline is-grouped"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+           
+          <!---->
+           
+          <div
+            class="level-item buttons"
+          >
+            <a
+              class="button"
+              id="furet-ui-page-multi-entries-header-refresh"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fa fa-redo fa-lg"
+                />
+              </span>
+            </a>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="collapse panel is-pulled-right"
+      >
+        <div
+          class="collapse-trigger"
+        />
+        <div
+          class="collapse-content"
+          id=""
+          style="display: none;"
+        >
+          <div
+            class="tags"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="buttons is-grouped is-centered"
+      >
+        <!---->
+         
+        <!---->
+         
+      </div>
+    </header>
+      
+    <div
+      class="b-table"
+    >
+      <!---->
+       
+      <div
+        class="top level"
+      >
+        <div
+          class="level-left"
+        />
+         
+        <div
+          class="level-right"
+        >
+          <div
+            class="level-item"
+          >
+            <nav
+              class="pagination"
+            >
+              <a
+                class="pagination-link pagination-previous"
+                disabled="disabled"
+                href="#"
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="icon"
+                >
+                  <i
+                    class="fa fa-angle-left fa-lg"
+                  />
+                </span>
+              </a>
+               
+              <a
+                class="pagination-link pagination-next"
+                disabled="disabled"
+                href="#"
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="icon"
+                >
+                  <i
+                    class="fa fa-angle-right fa-lg"
+                  />
+                </span>
+              </a>
+               
+              <ul
+                class="pagination-list"
+              >
+                <!---->
+                 
+                <!---->
+                  
+                <!---->
+                 
+                <!---->
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="table-wrapper has-mobile-cards"
+      >
+        <table
+          class="table is-striped"
+        >
+          <!---->
+           
+          <tbody>
+            <tr
+              class="is-empty"
+            >
+              <td
+                colspan="0"
+              >
+                <section
+                  class="section"
+                >
+                  <div
+                    class="content has-text-grey has-text-centered"
+                  >
+                    <p>
+                      [object Promise]
+                    </p>
+                  </div>
+                </section>
+              </td>
+            </tr>
+          </tbody>
+           
+          <!---->
+        </table>
+      </div>
+       
+      <div
+        class="level"
+      >
+        <div
+          class="level-left"
+        />
+         
+        <div
+          class="level-right"
+        >
+          <div
+            class="level-item"
+          >
+            <nav
+              class="pagination"
+            >
+              <a
+                class="pagination-link pagination-previous"
+                disabled="disabled"
+                href="#"
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="icon"
+                >
+                  <i
+                    class="fa fa-angle-left fa-lg"
+                  />
+                </span>
+              </a>
+               
+              <a
+                class="pagination-link pagination-next"
+                disabled="disabled"
+                href="#"
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="icon"
+                >
+                  <i
+                    class="fa fa-angle-right fa-lg"
+                  />
+                </span>
+              </a>
+               
+              <ul
+                class="pagination-list"
+              >
+                <!---->
+                 
+                <!---->
+                  
+                <!---->
+                 
+                <!---->
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`furet-ui-resource-not-found component snapshot 1`] = `
+<div
+  class="container"
+>
+  <strong>
+    Resource type not found
+  </strong>
+</div>
+`;
+
+exports[`furet-ui-space-resource-manager component snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <section
+    id="furet-ui-list"
+  >
+    <div
+      class="container"
+    >
+      <!---->
+    </div>
+     
+    <header
+      id="furet-ui-page-multi-entries-header"
+    >
+      <div
+        class="level"
+      >
+        <div
+          class="level-left"
+        >
+          <h2
+            class="level-item is-size-3"
+          >
+            Templates
+          </h2>
+           
+          <span
+            class="level-item"
+          >
+            <small>
+              (0)
+            </small>
+             
+          </span>
+        </div>
+         
+        <div
+          class="level-right"
+        >
+          <div
+            class="level-item"
+          >
+            <div
+              class="field is-grouped-multiline is-grouped"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+           
+          <!---->
+           
+          <div
+            class="level-item buttons"
+          >
+            <a
+              class="button"
+              id="furet-ui-page-multi-entries-header-refresh"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fa fa-redo fa-lg"
+                />
+              </span>
+            </a>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="collapse panel is-pulled-right"
+      >
+        <div
+          class="collapse-trigger"
+        />
+        <div
+          class="collapse-content"
+          id=""
+          style="display: none;"
+        >
+          <div
+            class="tags"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="buttons is-grouped is-centered"
+      >
+        <!---->
+         
+        <!---->
+         
+      </div>
+    </header>
+      
+    <div
+      class="b-table"
+    >
+      <!---->
+       
+      <div
+        class="top level"
+      >
+        <div
+          class="level-left"
+        />
+         
+        <div
+          class="level-right"
+        >
+          <div
+            class="level-item"
+          >
+            <nav
+              class="pagination"
+            >
+              <a
+                class="pagination-link pagination-previous"
+                disabled="disabled"
+                href="#"
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="icon"
+                >
+                  <i
+                    class="fa fa-angle-left fa-lg"
+                  />
+                </span>
+              </a>
+               
+              <a
+                class="pagination-link pagination-next"
+                disabled="disabled"
+                href="#"
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="icon"
+                >
+                  <i
+                    class="fa fa-angle-right fa-lg"
+                  />
+                </span>
+              </a>
+               
+              <ul
+                class="pagination-list"
+              >
+                <!---->
+                 
+                <!---->
+                  
+                <!---->
+                 
+                <!---->
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="table-wrapper has-mobile-cards"
+      >
+        <table
+          class="table is-striped"
+        >
+          <!---->
+           
+          <tbody>
+            <tr
+              class="is-empty"
+            >
+              <td
+                colspan="0"
+              >
+                <section
+                  class="section"
+                >
+                  <div
+                    class="content has-text-grey has-text-centered"
+                  >
+                    <p>
+                      [object Promise]
+                    </p>
+                  </div>
+                </section>
+              </td>
+            </tr>
+          </tbody>
+           
+          <!---->
+        </table>
+      </div>
+       
+      <div
+        class="level"
+      >
+        <div
+          class="level-left"
+        />
+         
+        <div
+          class="level-right"
+        >
+          <div
+            class="level-item"
+          >
+            <nav
+              class="pagination"
+            >
+              <a
+                class="pagination-link pagination-previous"
+                disabled="disabled"
+                href="#"
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="icon"
+                >
+                  <i
+                    class="fa fa-angle-left fa-lg"
+                  />
+                </span>
+              </a>
+               
+              <a
+                class="pagination-link pagination-next"
+                disabled="disabled"
+                href="#"
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                  class="icon"
+                >
+                  <i
+                    class="fa fa-angle-right fa-lg"
+                  />
+                </span>
+              </a>
+               
+              <ul
+                class="pagination-list"
+              >
+                <!---->
+                 
+                <!---->
+                  
+                <!---->
+                 
+                <!---->
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`furet-ui-waiting-resource component snapshot 1`] = `
+<div
+  class="container"
+>
+  <strong>
+    Waiting loading component
+  </strong>
+</div>
+`;

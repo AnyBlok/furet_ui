@@ -130,7 +130,7 @@ defineComponent('furet-ui-space-resource-manager', {
         const query = Object.assign({}, this.$route.query);
         data.changes = this.$store.state.data.changes;
         this.errors = [];
-        axios.post('/furet-ui/crud', data)
+        axios.post(`/furet-ui/resource/${this.id}/crud`, data)
           .then((response) => {
             this.$store.commit('CLEAR_CHANGE')
             query.pks = JSON.stringify(response.data.pks);
@@ -143,7 +143,7 @@ defineComponent('furet-ui-space-resource-manager', {
       updateData (data) {
         data.changes = this.$store.state.data.changes;
         this.errors = [];
-        axios.patch('/furet-ui/crud', data)
+        axios.patch(`/furet-ui/resource/${this.id}/crud`, data)
           .then(() => {
             this.$refs.resource.saved();
           })
@@ -153,7 +153,7 @@ defineComponent('furet-ui-space-resource-manager', {
       },
       deleteData (data) {
         this.errors = [];
-        axios.delete('/furet-ui/crud', {params: data})
+        axios.delete(`/furet-ui/resource/${this.id}/crud`, {params: data})
           .then(() => {
             this.$store.commit('CLEAR_CHANGE');
             this.$store.commit('DELETE_DATA', data);

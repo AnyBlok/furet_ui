@@ -164,14 +164,14 @@ defineComponent('furet-ui-resource-form', {
       loadAsyncData() {
         // this.loading = true;
         const params = {
-          model: this.resource.model,
-          fields: this.resource.fields.toString(),
+          'context[model]': this.resource.model,
+          'context[fields]': this.resource.fields.toString(),
         };
         _.each(_.keys(this.pks), pk => {
             params[`filter[${pk}][eq]`] = this.pks[pk];
         })
         this.errors = [];
-        axios.get('/furet-ui/crud', { params })
+        axios.get('/furet-ui/resource/${this.id}/crud', { params })
           .then((response) => {
             this.$dispatchAll(response.data.data);
             this.loading = false;
