@@ -5,7 +5,7 @@ import Vuex from "vuex";
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-describe("store global module", () => {
+describe("store global module: Mutation", () => {
   let state;
   let store;
 
@@ -90,5 +90,80 @@ describe("store global module", () => {
     expect(state.authenticated).toBe(false);
     expect(state.userName).toBe("");
     expect(state.space_name).toBe("Menu");
+  });
+
+  it("test UPDATE_PREVIOUS_ROUTE", () => {
+    expect(state.previous_route).toStrictEqual({});
+    store.commit("UPDATE_PREVIOUS_ROUTE", {route: 'test'});
+    expect(state.previous_route).toStrictEqual('test');
+  });
+
+  it("test UPDATE_SPACE_MENUS", () => {
+    expect(state.space_menus).toStrictEqual([]);
+    store.commit("UPDATE_SPACE_MENUS", {menus: [1, 2, 3]});
+    expect(state.space_menus).toStrictEqual([1, 2, 3]);
+  });
+
+  it("test UPDATE_CURRENT_SPACE", () => {
+    expect(state.space_name).toBe('Menu');
+    store.commit("UPDATE_CURRENT_SPACE", {label: 'test'});
+    expect(state.space_name).toBe('test');
+  });
+
+  it("test UPDATE_GLOBAL", () => {
+    expect(state.isOpenLeft).toBe(false);
+    store.commit("UPDATE_GLOBAL", {isOpenLeft: true});
+    expect(state.isOpenLeft).toBe(true);
+  });
+
+  it("test OPEN_LEFT_MENU", () => {
+    expect(state.isOpenLeft).toBe(false);
+    store.commit("OPEN_LEFT_MENU", true);
+    expect(state.isOpenLeft).toBe(true);
+    store.commit("OPEN_LEFT_MENU", false);
+    expect(state.isOpenLeft).toBe(false);
+  });
+
+  it("test OPEN_RIGHT_MENU", () => {
+    expect(state.isOpenRight).toBe(false);
+    store.commit("OPEN_RIGHT_MENU", true);
+    expect(state.isOpenRight).toBe(true);
+    store.commit("OPEN_RIGHT_MENU", false);
+    expect(state.isOpenRight).toBe(false);
+  });
+
+  it("test UPDATE_CURRENT_LEFT_MENUS", () => {
+    expect(state.left_menus).toStrictEqual([]);
+    store.commit("UPDATE_CURRENT_LEFT_MENUS", {menus: [1, 2, 3]});
+    expect(state.left_menus).toStrictEqual([1, 2, 3]);
+  });
+
+  it("test UPDATE_CURRENT_RIGHT_MENUS", () => {
+    expect(state.right_menus).toStrictEqual([]);
+    store.commit("UPDATE_CURRENT_RIGHT_MENUS", {menus: [1, 2, 3]});
+    expect(state.right_menus).toStrictEqual([1, 2, 3]);
+  });
+});
+
+describe("store global module: Getter", () => {
+  let state;
+  let store;
+
+  beforeEach(() => {
+    // Make test predictable deep copying state before each test
+    state = JSON.parse(JSON.stringify(defaultState));
+    store = new Vuex.Store({
+      getters,
+      state,
+      mutations
+    });
+  });
+
+  it("test loggedIn", () => {
+    expect(store.getters.loggedIn).toBe(false)
+  });
+
+  it("test isLoaded", () => {
+    expect(store.getters.isLoaded).toBe(false)
   });
 });

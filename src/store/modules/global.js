@@ -81,11 +81,14 @@ export const mutations = {
       state[key] = value;
     }
   },
-  UPDATE_CURRENT_LEFT_MENUS(state, action) {
-    state.left_menus = action.menus;
-  },
   OPEN_LEFT_MENU(state, value) {
     state.isOpenLeft = value;
+  },
+  OPEN_RIGHT_MENU(state, value) {
+    state.isOpenRight = value;
+  },
+  UPDATE_CURRENT_LEFT_MENUS(state, action) {
+    state.left_menus = action.menus;
   },
   UPDATE_CURRENT_RIGHT_MENUS(state, action) {
     state.right_menus = action.menus;

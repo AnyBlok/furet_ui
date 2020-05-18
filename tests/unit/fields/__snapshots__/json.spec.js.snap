@@ -71,7 +71,10 @@ exports[`Field.Json for Resource.Form Empty 1 With required 1`] = `
     <p
       class="help is-danger"
     >
-      fields.common.required
+      
+                    fields.common.required
+                    
+      <!---->
     </p>
   </div>
 </span>
@@ -159,7 +162,10 @@ exports[`Field.Json for Resource.Form Invalid With required 1`] = `
     <p
       class="help is-danger"
     >
-      Json is invalid
+      
+                    Json is invalid
+                    
+      <!---->
     </p>
   </div>
 </span>
@@ -205,7 +211,10 @@ exports[`Field.Json for Resource.Form With value, label, maxrow and placeholder 
     <p
       class="help is-danger"
     >
-      Json is invalid
+      
+                    Json is invalid
+                    
+      <!---->
     </p>
   </div>
 </span>
