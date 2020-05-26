@@ -90,7 +90,10 @@ defineComponent('furet-ui-resource-set', {
       },
       getBreadcrumbInfo(){
         return this.$refs.resource.getBreadcrumbInfo();
-      }
+      },
+      refresh () {
+        this.$refs.resource.refresh()
+      },
     },
     watch: {
       manager () {

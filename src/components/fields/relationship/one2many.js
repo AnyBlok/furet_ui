@@ -97,6 +97,7 @@ defineComponent("furet-ui-form-field-one2many", {
       v-bind:config="config"
     >
       <furet-ui-form-field-resource-manager
+        ref="manager"
         v-bind:id="config.resource"
         v-bind:x2m_resource="resource"
         v-bind:isReadonly="isReadonly"
@@ -110,6 +111,7 @@ defineComponent("furet-ui-form-field-one2many", {
   `,
   extend: ["furet-ui-form-field-common"],
   prototype: {
+    inject: ['registryField2Refresh'],
     methods: {
       addState(actions, state) {
         return [Object.assign({}, actions.pks, { __x2m_state: state})];
@@ -128,8 +130,14 @@ defineComponent("furet-ui-form-field-one2many", {
         const pks = pk2string(actions.pks);
         data[actions.model][pks] = Object.assign({__change_state: "delete"}, actions.pks);
         this.updateValue(this.addState(actions, "DELETED"), data);
-      }
-    }
+      },
+      refresh () {
+        this.$refs.manager.$refs.resource.refresh()
+      },
+    },
+    mounted () {
+      this.registryField2Refresh(this);
+    },
   }
 });
 fields.form.one2many = "furet-ui-form-field-one2many";

@@ -8,6 +8,7 @@ import axios from 'axios';
 defineComponent('furet-ui-resource-list', {
   template : `
     <furet-ui-list
+      ref="list"
       v-bind:title="resource.title"
       v-bind:default_filters="resource.filters || []"
       v-bind:default_tags="resource.tags || []"
@@ -121,6 +122,9 @@ defineComponent('furet-ui-resource-list', {
       },
       goToPage(row) {
         this.$emit('go-to-page', row);
+      },
+      refresh() {
+        this.$refs.list.loadAsyncData();
       },
     },
   },
