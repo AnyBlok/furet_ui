@@ -76,7 +76,7 @@ defineComponent('furet-ui-resource-form', {
         selectors: {},
         tabs: {},
         templates: {},
-        fields2refresh: [],
+        refreshCallbacks: [],
       };
     },
     computed: {
@@ -166,9 +166,8 @@ defineComponent('furet-ui-resource-form', {
       refresh_fields () {
         this.$emit('clear-change', {pks: this.pks, uuid: this.uuid})
         this.readonly = true;
-        console.log(this.fields2refresh)
-        this.fields2refresh.forEach(obj => {
-          obj.refresh()
+        this.refreshCallbacks.forEach(callback => {
+          callback();
         });
       },
       refresh () {
@@ -215,17 +214,16 @@ defineComponent('furet-ui-resource-form', {
       isReadonly () {
         return this.readonly
       },
-      registryField2Refresh(obj) {
-        if (this.fields2refresh.indexOf(obj) === -1) {
-          this.fields2refresh.push(obj)
+      registryRefreshCallback (callback) {
+        if (this.refreshCallbacks.indexOf(callback) === -1) {
+          this.refreshCallbacks.push(callback)
         }
-        console.log(this.fields2refresh)
       },
     },
     provide: function () {
       return {
         partIsReadonly: this.isReadonly,
-        registryField2Refresh: this.registryField2Refresh,
+        registryRefreshCallback: this.registryRefreshCallback,
       }
     },
     watch: {

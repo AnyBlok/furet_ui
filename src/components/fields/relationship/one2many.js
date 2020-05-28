@@ -111,7 +111,7 @@ defineComponent("furet-ui-form-field-one2many", {
   `,
   extend: ["furet-ui-form-field-common"],
   prototype: {
-    inject: ['registryField2Refresh'],
+    inject: ['registryRefreshCallback'],
     methods: {
       addState(actions, state) {
         return [Object.assign({}, actions.pks, { __x2m_state: state})];
@@ -136,7 +136,7 @@ defineComponent("furet-ui-form-field-one2many", {
       },
     },
     mounted () {
-      this.registryField2Refresh(this);
+      this.registryRefreshCallback(this.refresh);
     },
   }
 });
