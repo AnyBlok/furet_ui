@@ -76,6 +76,7 @@ defineComponent('furet-ui-resource-form', {
         selectors: {},
         tabs: {},
         templates: {},
+        refreshCallbacks: [],
       };
     },
     computed: {
@@ -141,6 +142,7 @@ defineComponent('furet-ui-resource-form', {
         this.$emit('clear-change', {pks: this.pks, uuid: this.uuid})
         this.readonly = true;
         if (this.uuid) this.goToList();
+        this.refresh_fields()
       },
       deleteEntry () {
         this.$emit('delete-data', {
@@ -160,6 +162,17 @@ defineComponent('furet-ui-resource-form', {
             pks: Object.assign({}, this.pks),
           })
         }
+      },
+      refresh_fields () {
+        this.$emit('clear-change', {pks: this.pks, uuid: this.uuid})
+        this.readonly = true;
+        this.refreshCallbacks.forEach(callback => {
+          callback();
+        });
+      },
+      refresh () {
+        this.loadAsyncData();
+        this.refresh_fields();
       },
       loadAsyncData() {
         // this.loading = true;
@@ -201,10 +214,16 @@ defineComponent('furet-ui-resource-form', {
       isReadonly () {
         return this.readonly
       },
+      registryRefreshCallback (callback) {
+        if (this.refreshCallbacks.indexOf(callback) === -1) {
+          this.refreshCallbacks.push(callback)
+        }
+      },
     },
     provide: function () {
       return {
-        partIsReadonly: this.isReadonly
+        partIsReadonly: this.isReadonly,
+        registryRefreshCallback: this.registryRefreshCallback,
       }
     },
     watch: {
