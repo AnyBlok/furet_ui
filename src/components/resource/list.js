@@ -109,9 +109,19 @@ defineComponent('furet-ui-resource-list', {
           res.push(this.getEntry(this.resource.model, pk))
         });
         const news = this.getNewEntries(this.resource.model);
-        obj.data = res.concat(news);
-        obj.total = obj.data.length;
-        data.total = obj.total;
+        const total = data.total + news.length;
+        if (res.length < obj.perPage){
+          const modulus = data.total % obj.perPage;
+          const page_count = Math.floor(data.total / obj.perPage) + 1;
+          let start = ((obj.page - page_count) * obj.perPage);
+          if(start > 0 ){
+            start -= modulus;
+          }
+          const end = start + obj.perPage;
+          obj.data = res.concat(news.slice(start, end));
+        }
+        data.total = total;
+        obj.total = total;
       },
       toggleHiddenColumn (field) {
         this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})
