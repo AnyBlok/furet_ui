@@ -4,7 +4,8 @@ defineComponent('furet-ui-list', {
   template: `
     <section id="furet-ui-list">
       <furet-ui-page-errors v-bind:errors="errors"/>
-      <furet-ui-page-multi-entries-header 
+      <component
+        v-bind:is="headerComponentName"
         v-bind:title="title"
         v-bind:filters="filters"
         v-bind:tags="tags"
@@ -26,7 +27,7 @@ defineComponent('furet-ui-list', {
           </a>
           <slot name="actions" v-bind:data="props.data" />
         </template>
-      </furet-ui-page-multi-entries-header>
+      </component>
       <slot name="hidden_columns" />
       <b-table
         ref="list_table"
@@ -36,6 +37,7 @@ defineComponent('furet-ui-list', {
         paginated
         backend-pagination
         pagination-position="both"
+        v-bind:pagination-size="pagination_size"
 
         v-bind:total="total"
         v-bind:current-page.sync="page"
@@ -80,7 +82,7 @@ defineComponent('furet-ui-list', {
   extend: ['mixin-page-multi-entries'],
   prototype: {
     props: [
-      'is_checkable', 'checkedElements', 'detailed', 'detail_key', 'readonly'],
+      'is_checkable', 'checkedElements', 'detailed', 'detail_key', 'readonly', 'pagination_size'],
     data() {
       return {
         isCheckable: this.is_checkable || false,

@@ -68,7 +68,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
           <div class="level-item buttons">
             <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><b-icon icon="redo" /></a>
             <a id="furet-ui-page-multi-entries-header-tags" v-if="tags.length" class="button" v-on:click.stop="tag_list_open = ! tag_list_open">
-              <b-icon :icon="tag_list_open ? 'arrow-cicle-up' : 'arrow-circle-down'" />
+              <b-icon :icon="tag_list_open ? 'arrow-circle-up' : 'arrow-circle-down'" />
             </a>
           </div>
         </div>
@@ -147,7 +147,7 @@ defineComponent('mixin-page-multi-entries', {
     props: [
       'title', 'default_filters', 'default_tags', 'defaultSortField', 'defaultSortOrder',
       'perpage', 'can_go_to_new', 'rest_api_url', 'rest_api_params', 'rest_api_formater', 
-      'query'],
+      'query', 'default_header_component_name'],
     data() {
       const sortingPriority = [];
       if (this.defaultSortField) {
@@ -164,6 +164,7 @@ defineComponent('mixin-page-multi-entries', {
         additional_filter: {},
         tags: _.map((this.default_tags || []), t => Object.assign({}, t)),
         sortingPriority,
+        headerComponentName: this.default_header_component_name || 'furet-ui-page-multi-entries-header',
       };
     },
     computed: {

@@ -9,7 +9,8 @@ defineComponent('furet-ui-resource-form', {
   template : `
     <section>
       <b-loading v-bind:active.sync="loading"></b-loading>
-      <furet-ui-header-page
+      <component
+        v-bind:is="headerComponentName"
         name="furet-ui-page"
         v-bind:title="resource.title"
         v-bind:can_go_to_new="readonly && manager.can_create"
@@ -28,24 +29,15 @@ defineComponent('furet-ui-resource-form', {
         v-bind:data="data"
       >
         <template slot="header" v-if="resource.header_template">
-        <keep-alive>
-          <component 
-            v-bind:is="form_card_header_template" 
-            v-bind:resource="resource"
-            v-bind:data="data"
-          />
-        </keep-alive>
+          <keep-alive>
+            <component 
+              v-bind:is="form_card_header_template" 
+              v-bind:resource="resource"
+              v-bind:data="data"
+            />
+          </keep-alive>
         </template>
-        <template slot="aftertitle" slot-scope="props">
-          <slot name="aftertitle" v-bind:data="props.data" />
-        </template>
-        <template slot="head_actions" slot-scope="props">
-          <slot name="head_actions" v-bind:data="props.data" />
-        </template>
-        <template slot="states" slot-scope="props">
-          <slot name="states" v-bind:data="props.data" />
-        </template>
-      </furet-ui-header-page>
+      </component>
       <div class="section">
         <component 
           v-bind:is="form_card_body_template" 
@@ -77,6 +69,7 @@ defineComponent('furet-ui-resource-form', {
         tabs: {},
         templates: {},
         refreshCallbacks: [],
+        headerComponentName: this.manager.page_header_component_name || 'furet-ui-header-page',
       };
     },
     computed: {

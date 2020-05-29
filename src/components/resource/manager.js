@@ -243,6 +243,9 @@ defineComponent("furet-ui-form-field-resource-manager", {
       return {
         changes: {},
         manager: {
+          multi_header_component_name: this.config.multi_header_component_name,
+          page_header_component_name: this.config.page_header_component_name,
+          pagination_size: this.config.pagination_size,
           readonly: this.isReadonly,
           query: { additional_filter: this.build_additional_filter() },
           selectors: this.x2m_resource.selectors || {}

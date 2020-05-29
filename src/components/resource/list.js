@@ -12,6 +12,7 @@ defineComponent('furet-ui-resource-list', {
       v-bind:title="resource.title"
       v-bind:default_filters="resource.filters || []"
       v-bind:default_tags="resource.tags || []"
+      v-bind:default_header_component_name="manager.multi_header_component_name || null"
       v-bind:perpage="resource.perpage"
       v-bind:can_go_to_new="manager.can_create"
       v-bind:rest_api_url="rest_api_url"
@@ -20,6 +21,7 @@ defineComponent('furet-ui-resource-list', {
       v-bind:rest_api_formater="api_formater"
       v-bind:query="manager.query"
       v-bind:readonly="manager.readonly"
+      v-bind:pagination_size="manager.pagination_size"
 
       v-on:update-query-string="updateQueryString"
       v-on:go-to-new="goToNew"
