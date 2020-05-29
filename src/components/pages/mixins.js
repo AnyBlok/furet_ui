@@ -68,7 +68,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
           <div class="level-item buttons">
             <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><b-icon icon="redo" /></a>
             <a id="furet-ui-page-multi-entries-header-tags" v-if="tags.length" class="button" v-on:click.stop="tag_list_open = ! tag_list_open">
-              <b-icon :icon="tag_list_open ? 'arrow-cicle-up' : 'arrow-circle-down'" />
+              <b-icon :icon="tag_list_open ? 'arrow-circle-up' : 'arrow-circle-down'" />
             </a>
           </div>
         </div>

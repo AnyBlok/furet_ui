@@ -21,6 +21,7 @@ defineComponent('furet-ui-resource-list', {
       v-bind:rest_api_formater="api_formater"
       v-bind:query="manager.query"
       v-bind:readonly="manager.readonly"
+      v-bind:pagination_size="manager.pagination_size"
 
       v-on:update-query-string="updateQueryString"
       v-on:go-to-new="goToNew"

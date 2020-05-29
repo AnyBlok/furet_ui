@@ -37,6 +37,7 @@ defineComponent('furet-ui-list', {
         paginated
         backend-pagination
         pagination-position="both"
+        v-bind:pagination-size="pagination_size"
 
         v-bind:total="total"
         v-bind:current-page.sync="page"
@@ -81,7 +82,7 @@ defineComponent('furet-ui-list', {
   extend: ['mixin-page-multi-entries'],
   prototype: {
     props: [
-      'is_checkable', 'checkedElements', 'detailed', 'detail_key', 'readonly'],
+      'is_checkable', 'checkedElements', 'detailed', 'detail_key', 'readonly', 'pagination_size'],
     data() {
       return {
         isCheckable: this.is_checkable || false,

@@ -68,7 +68,19 @@ defineComponent('furet-ui-page-o2m-list-header', {
     <header id="furet-ui-page-multi-entries-header">
       <div class="level">
         <div class="level-left">
-          <h4 class="level-item is-size-3">{{ title }}</h4>&nbsp;<span class="level-item"><small>({{ total }})</small>&nbsp;<slot name="aftertitle" v-bind:data="data" /></span>
+          <div class="buttons is-grouped is-left">
+            <button 
+              id="furet-ui-page-multi-entries-header-new" 
+              v-if="can_go_to_new" 
+              v-bind:disabled="readonly"
+              class="button is-primary is-small" 
+              v-on:click="goToNew"
+            >
+              <span class="icon"><b-icon icon="plus" /></span>
+              <span>{{ $t('components.header.new') }}</span>
+            </button>
+            <slot name="actions" v-bind:data="data" />
+          </div>
         </div>
         <div class="level-right">
           <div class="level-item">
@@ -102,7 +114,7 @@ defineComponent('furet-ui-page-o2m-list-header', {
               icon="search"
               v-on:select="updateFilters"
               clear-on-select
-              size="small"
+              size="is-small"
             >
               <template slot="empty">{{ $t('components.header.notFound') }}</template>
               <template slot-scope="props">
@@ -111,9 +123,9 @@ defineComponent('furet-ui-page-o2m-list-header', {
             </b-autocomplete>
           </div>
           <div class="level-item buttons">
-            <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><b-icon icon="redo" /></a>
-            <a id="furet-ui-page-multi-entries-header-tags" v-if="tags.length" class="button" v-on:click.stop="tag_list_open = ! tag_list_open">
-              <b-icon :icon="tag_list_open ? 'arrow-cicle-up' : 'arrow-circle-down'" />
+            <a id="furet-ui-page-multi-entries-header-refresh" class="button is-small" v-on:click="refresh"><b-icon icon="redo" /></a>
+            <a id="furet-ui-page-multi-entries-header-tags" v-if="tags.length" class="button is-small" v-on:click.stop="tag_list_open = ! tag_list_open">
+              <b-icon :icon="tag_list_open ? 'arrow-circle-up' : 'arrow-circle-down'" />
             </a>
           </div>
         </div>
@@ -127,19 +139,6 @@ defineComponent('furet-ui-page-o2m-list-header', {
           </b-tag>
         </b-taglist>
       </b-collapse>
-      <div class="buttons is-grouped is-left">
-        <button 
-          id="furet-ui-page-multi-entries-header-new" 
-          v-if="can_go_to_new" 
-          v-bind:disabled="readonly"
-          class="button is-primary is-small" 
-          v-on:click="goToNew"
-        >
-          <span class="icon"><b-icon icon="plus" /></span>
-          <span>{{ $t('components.header.new') }}</span>
-        </button>
-        <slot name="actions" v-bind:data="data" />
-      </div>
     </header>
   `,
   extend: ['furet-ui-page-multi-entries-header'],
@@ -148,16 +147,6 @@ defineComponent('furet-ui-page-o2m-list-header', {
 defineComponent('furet-ui-page-o2m-page-header', {
   template: `
     <header id="header_page">
-      <slot name="header" v-bind:data="data">
-        <div class="level">
-          <div class="level-left">
-            <h4 class="level-item is-size-3">{{ $t(title) }}</h4>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
-          </div>
-          <div class="level-right">
-            <slot name="states" v-bind:data="data" />
-          </div>
-        </div>
-      </slot>
       <div class="buttons is-grouped has-addons">
         <a v-if="can_save" class="button is-warning is-small" v-on:click="goToPage">
           <span class="icon">
@@ -243,7 +232,7 @@ defineComponent('furet-ui-page-o2m-page-header', {
  */
 defineComponent("furet-ui-form-field-one2many", {
   template: `
-    <furet-ui-form-field-common-tooltip
+    <furet-ui-form-field-common-tooltip-field
       v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
@@ -259,7 +248,7 @@ defineComponent("furet-ui-form-field-one2many", {
         v-on:update="o2m_update"
         v-on:delete="o2m_delete"
       />
-    </furet-ui-form-field-common-tooltip>
+    </furet-ui-form-field-common-tooltip-field>
   `,
   extend: ["furet-ui-form-field-common"],
   prototype: {
@@ -272,6 +261,7 @@ defineComponent("furet-ui-form-field-one2many", {
         if (this.config.page_header_component_name === undefined) {
           this.config.page_header_component_name = 'furet-ui-page-o2m-page-header';
         }
+        this.config.pagination_size = 'is-small';
         return this.config;
       },
     },
