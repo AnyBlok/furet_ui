@@ -4,7 +4,8 @@ defineComponent('furet-ui-list', {
   template: `
     <section id="furet-ui-list">
       <furet-ui-page-errors v-bind:errors="errors"/>
-      <furet-ui-page-multi-entries-header 
+      <component
+        v-bind:is="headerComponentName"
         v-bind:title="title"
         v-bind:filters="filters"
         v-bind:tags="tags"
@@ -26,7 +27,7 @@ defineComponent('furet-ui-list', {
           </a>
           <slot name="actions" v-bind:data="props.data" />
         </template>
-      </furet-ui-page-multi-entries-header>
+      </component>
       <slot name="hidden_columns" />
       <b-table
         ref="list_table"
