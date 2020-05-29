@@ -63,6 +63,89 @@ defineComponent('furet-ui-list-field-one2many', {
 fields.list.one2many = 'furet-ui-list-field-one2many'
 
 
+defineComponent('furet-ui-page-o2m-list-header', {
+  template: `
+    <header id="furet-ui-page-multi-entries-header">
+      <div class="level">
+        <div class="level-left">
+          <h4 class="level-item is-size-3">{{ title }}</h4>&nbsp;<span class="level-item"><small>({{ total }})</small>&nbsp;<slot name="aftertitle" v-bind:data="data" /></span>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <b-field grouped group-multiline>
+              <div class="control" v-for="tag in tags" v-if="tag.selected" v-bind:key="tag.key">
+                  <b-tag 
+                    v-bind:class="['furet-ui-page-multi-entries-header-tag', tag.key]" 
+                    type="is-primary" closable 
+                    v-on:close="removeTag(tag)">{{ $t(tag.label) }} </b-tag>
+              </div>
+              <div class="control" v-for="filter in filters" v-if="filter.values.length" v-bind:key="filter.key + '-' + filter.mode + '-' + filter.opt">
+                <b-taglist attached>
+                  <b-tag type="is-danger" v-if="filter.mode == 'exclude'"> ~ </b-tag>
+                  <b-tag type="is-dark">{{ $t(filter.label) }}</b-tag>
+                  <b-tag 
+                    type="is-primary" 
+                    closable 
+                    v-for="value in filter.values" 
+                    v-bind:class="['furet-ui-page-multi-entries-header-filter', filter.key, value]" 
+                    v-on:close="removeFilter(filter.key, filter.mode, filter.opt, value)" 
+                    v-bind:key="value">{{ value }} </b-tag>
+                </b-taglist>
+              </div>
+            </b-field>
+          </div>
+          <div class="level-item" v-if="filters.length" >
+            <b-autocomplete
+              v-model="filterSearch"
+              v-bind:data="filteredDataArray"
+              v-bind:placeholder="this.$i18n.t('components.header.search')"
+              icon="search"
+              v-on:select="updateFilters"
+              clear-on-select
+              size="small"
+            >
+              <template slot="empty">{{ $t('components.header.notFound') }}</template>
+              <template slot-scope="props">
+                {{ props.option.mode == 'exclude' ? ' ~ ' : '' }} <small>{{ $t(props.option.label) }} </small> : <strong>{{ props.option.value }}</strong>
+              </template>
+            </b-autocomplete>
+          </div>
+          <div class="level-item buttons">
+            <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><b-icon icon="redo" /></a>
+            <a id="furet-ui-page-multi-entries-header-tags" v-if="tags.length" class="button" v-on:click.stop="tag_list_open = ! tag_list_open">
+              <b-icon :icon="tag_list_open ? 'arrow-cicle-up' : 'arrow-circle-down'" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <b-collapse class="panel is-pulled-right" v-bind:open.sync="tag_list_open">
+        <b-taglist>
+          <b-tag v-for="tag in tags" v-bind:key="tag.key" v-bind:class="['is-small', tag.selected ? '': 'has-text-weight-bold']" >
+            <a 
+              v-bind:class="['furet-ui-page-multi-entries-header-toggle-tag', tag.key]" 
+              v-on:click.stop="toggleTag(tag)">{{ $t(tag.label) }}</a>
+          </b-tag>
+        </b-taglist>
+      </b-collapse>
+      <div class="buttons is-grouped is-left">
+        <button 
+          id="furet-ui-page-multi-entries-header-new" 
+          v-if="can_go_to_new" 
+          v-bind:disabled="readonly"
+          class="button is-primary is-small" 
+          v-on:click="goToNew"
+        >
+          <span class="icon"><b-icon icon="plus" /></span>
+          <span>{{ $t('components.header.new') }}</span>
+        </button>
+        <slot name="actions" v-bind:data="data" />
+      </div>
+    </header>
+  `,
+  extend: ['furet-ui-page-multi-entries-header'],
+});
+
+
 /**
  * furet-ui-form-field-one2many component is used to manage relationship one2many on form
  * resource (``furet-ui-resource-form``).
@@ -101,7 +184,7 @@ defineComponent("furet-ui-form-field-one2many", {
         v-bind:id="config.resource"
         v-bind:x2m_resource="resource"
         v-bind:isReadonly="isReadonly"
-        v-bind:config="config"
+        v-bind:config="x2mconfig"
 
         v-on:add="o2m_add"
         v-on:update="o2m_update"
@@ -112,6 +195,14 @@ defineComponent("furet-ui-form-field-one2many", {
   extend: ["furet-ui-form-field-common"],
   prototype: {
     inject: ['registryRefreshCallback'],
+    computed: {
+      x2mconfig () {
+        if (this.config.multi_header_component_name === undefined) {
+          this.config.multi_header_component_name = 'furet-ui-page-o2m-list-header';
+        }
+        return this.config;
+      },
+    },
     methods: {
       addState(actions, state) {
         return [Object.assign({}, actions.pks, { __x2m_state: state})];
