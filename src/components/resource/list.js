@@ -128,6 +128,11 @@ defineComponent('furet-ui-resource-list', {
         }
         data.total = total;
         obj.total = total;
+        obj.number_created = news.length;
+        // obj.number_updated
+        // obj.number_deleted
+        // obj.number_linked
+        // obj.number_unlinked
       },
       toggleHiddenColumn (field) {
         this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})
