@@ -246,6 +246,7 @@ defineComponent("furet-ui-form-field-resource-manager", {
           multi_header_component_name: this.config.multi_header_component_name,
           page_header_component_name: this.config.page_header_component_name,
           pagination_size: this.config.pagination_size,
+          changed_rows: this.value || [],
           readonly: this.isReadonly,
           query: { additional_filter: this.build_additional_filter() },
           selectors: this.x2m_resource.selectors || {}
@@ -315,7 +316,7 @@ defineComponent("furet-ui-form-field-resource-manager", {
         const query = Object.assign({}, this.manager.query, {
           additional_filter: this.build_additional_filter()
         });
-        this.manager = Object.assign({}, this.manager, { query });
+        this.manager = Object.assign({}, this.manager, { query, changed_rows: this.value });
       }
     },
     mounted() {
