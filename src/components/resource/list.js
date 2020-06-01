@@ -108,16 +108,26 @@ defineComponent('furet-ui-resource-list', {
       getBreadcrumbInfo() {
         return {label: this.$t(this.resource.title), icon: "list"};
       },
-      api_formater (data) {
+      api_formater (obj, data) {
         this.$dispatchAll(data.data);
         let res = [];
         data.pks.forEach(pk => {
           res.push(this.getEntry(this.resource.model, pk))
         });
         const news = this.getNewEntries(this.resource.model);
-        res = res.concat(news)
-        data.total += news.length;
-        return res;
+        const total = data.total + news.length;
+        if (res.length < obj.perPage){
+          const modulus = data.total % obj.perPage;
+          const page_count = Math.floor(data.total / obj.perPage) + 1;
+          let start = ((obj.page - page_count) * obj.perPage);
+          if(start > 0 ){
+            start -= modulus;
+          }
+          const end = start + obj.perPage;
+          obj.data = res.concat(news.slice(start, end));
+        }
+        data.total = total;
+        obj.total = total;
       },
       toggleHiddenColumn (field) {
         this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})
