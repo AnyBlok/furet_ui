@@ -261,8 +261,7 @@ defineComponent('mixin-page-multi-entries', {
         axios.get(this.rest_api_url, { params })
           .then((response) => {
             if (this.rest_api_formater) {
-              this.data = this.rest_api_formater(response.data || []);
-              this.total = response.headers['x-total-records'] || response.data.total;
+              this.rest_api_formater(this, response.data || []);
             } else {
               this.data = response.data || [];
               this.total = response.headers['x-total-records'] || response.data.length;
@@ -270,7 +269,7 @@ defineComponent('mixin-page-multi-entries', {
             this.loading = false;
           })
           .catch((error) => {
-            console.error(error)
+            console.error(error);
             this.errors = error.response.data.errors;
             this.loading = false;
           });
