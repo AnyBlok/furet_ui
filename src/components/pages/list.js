@@ -99,22 +99,22 @@ defineComponent('furet-ui-list', {
           let style_class = ""
           switch(row.__change_state) {
             case "create":
-              style_class = "has-background-success";
+              style_class = "is-created";
               break;
             case "update":
-              style_class = "has-background-warning";
+              style_class = "is-updated";
               break;
             case "delete":
-              style_class = "has-background-danger";
+              style_class = "is-deleted";
               break;
             case "link":
-              style_class = "has-background-primary";
+              style_class = "is-linked";
               break;
             case "unlink":
-              style_class = "has-background-grey";
+              style_class = "is-unlinked";
               break;
             default:
-              style_class = "";
+              style_class = "is-unmodified";
             }
             return style_class
         };

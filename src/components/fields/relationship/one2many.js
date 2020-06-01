@@ -73,7 +73,7 @@ defineComponent('furet-ui-page-o2m-list-header', {
               id="furet-ui-page-multi-entries-header-new" 
               v-if="can_go_to_new" 
               v-bind:disabled="readonly"
-              class="button is-primary is-small" 
+              class="button is-x2m-created is-small" 
               v-on:click="goToNew"
             >
               <span class="icon"><b-icon icon="plus" /></span>
@@ -148,49 +148,55 @@ defineComponent('furet-ui-page-o2m-page-header', {
   template: `
     <header id="header_page">
       <div class="buttons is-grouped has-addons">
-        <a v-if="can_save" class="button is-warning is-small" v-on:click="goToPage">
+        <a v-if="can_save" class="button is-small" v-on:click="goToPage">
           <span class="icon">
             <b-icon icon="times" />
           </span>
           <span>{{ $t('components.header.cancel') }}</span>
         </a>
-        <a v-else class="button is-primary is-small" v-on:click="goToList">
+        <a v-else class="button is-small" v-on:click="goToList">
           <span class="icon">
             <b-icon icon="arrow-left" />
           </span>
           <span>{{ $t('components.header.return') }}</span>
         </a>
-        <a v-if="prevous_target" class="button is-primary is-small" v-on:click="goToPreviousPage">
+        <a v-if="prevous_target" class="button is-small" v-on:click="goToPreviousPage">
           <span class="icon">
             <b-icon icon="page-previous" />
           </span>
           <span>{{ $t('components.header.previous') }}</span>
         </a>
-        <a v-if="next_target" class="button is-primary is-small" v-on:click="goToNextPage">
+        <a v-if="next_target" class="button is-small" v-on:click="goToNextPage">
           <span class="icon">
             <b-icon icon="page-next" />
           </span>
           <span>{{ $t('components.header.next') }}</span>
         </a>
-        <button v-if="can_go_to_new" v-bind:disabled="readonly" class="button is-primary is-small" v-on:click="goToNew">
+        <button v-if="can_go_to_new" v-bind:disabled="readonly" class="button is-x2m-created is-small" v-on:click="goToNew">
           <span class="icon">
             <b-icon icon="plus" />
           </span>
           <span>{{ $t('components.header.new') }}</span>
         </button>
-        <button v-if="can_modify" v-bind:disabled="readonly" class="button is-primary is-small" v-on:click="goToEdit">
+        <button v-if="can_modify" v-bind:disabled="readonly" class="button is-x2m-updated is-small" v-on:click="goToEdit">
           <span class="icon">
             <b-icon icon="pencil-alt" />
           </span>
           <span>{{ $t('components.header.edit') }}</span>
         </button>
-        <button v-if="can_save" class="button is-primary is-small" v-on:click="save">
+        <button v-if="can_save & data.__uuid !== undefined" class="button is-x2m-created is-small" v-on:click="save">
           <span class="icon">
             <b-icon icon="save" />
           </span>
           <span>{{ $t('components.header.apply') }}</span>
         </button>
-        <button v-if="can_delete" v-bind:disabled="readonly" class="button is-danger is-small" v-on:click="deleteEntry">
+        <button v-if="can_save & data.__uuid === undefined" class="button is-x2m-updated is-small" v-on:click="save">
+          <span class="icon">
+            <b-icon icon="save" />
+          </span>
+          <span>{{ $t('components.header.apply') }}</span>
+        </button>
+        <button v-if="can_delete" v-bind:disabled="readonly" class="button is-x2m-deleted is-small" v-on:click="deleteEntry">
           <span class="icon">
             <b-icon icon="trash" />
           </span>
