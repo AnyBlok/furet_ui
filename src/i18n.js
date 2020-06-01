@@ -41,6 +41,12 @@ export const i18nConf = {
           previous: 'Previous',
           next: 'Next',
           browse: 'Browse',
+          total: 'Total',
+          created: 'Created',
+          updated: 'Updated',
+          deleted: 'Deleted',
+          linked: 'Linked',
+          unlinked: 'Unlinked',
         },
         fields: {
           yesno: {
