@@ -303,7 +303,7 @@ defineComponent('mixin-page-multi-entries', {
         axios.get(this.rest_api_url, { params })
           .then((response) => {
             if (this.rest_api_formater) {
-              this.rest_api_formater(this, response.data || []);
+              this.rest_api_formater(this, response.data || {});
             } else {
               this.data = response.data || [];
               this.total = response.headers['x-total-records'] || response.data.length;

@@ -174,7 +174,7 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                     Total :
                   </strong>
                   
-        NaN
+        0
       
                 </div>
                  
@@ -427,7 +427,7 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                     Total :
                   </strong>
                   
-        NaN
+        0
       
                 </div>
                  

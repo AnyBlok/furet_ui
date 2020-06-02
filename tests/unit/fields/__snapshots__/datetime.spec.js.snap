@@ -1029,9 +1029,10 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                           </span>
                         </div>
                         <a
-                          class="datepicker-cell is-today is-selectable dots"
+                          class="datepicker-cell is-selectable dots"
                           href="#"
                           role="button"
+                          tabindex="-1"
                         >
                           <span>
                             1
@@ -1040,10 +1041,9 @@ exports[`Field.Datetime for Resource.Form Empty 1`] = `
                           <!---->
                         </a>
                         <a
-                          class="datepicker-cell is-selectable dots"
+                          class="datepicker-cell is-today is-selectable dots"
                           href="#"
                           role="button"
-                          tabindex="-1"
                         >
                           <span>
                             2
@@ -3734,14 +3734,14 @@ exports[`Field.Datetime for Resource.Form With value, label and icon 1`] = `
                           <!---->
                         </a>
                         <div
-                          class="datepicker-cell is-today is-unselectable"
+                          class="datepicker-cell is-unselectable"
                         >
                           <span>
                             1
                           </span>
                         </div>
                         <div
-                          class="datepicker-cell is-unselectable"
+                          class="datepicker-cell is-today is-unselectable"
                         >
                           <span>
                             2

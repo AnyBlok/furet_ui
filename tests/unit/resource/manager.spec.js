@@ -30,6 +30,10 @@ const getNewEntry = (model, uuid) => {
   return data[model][1]
 }
 
+const new_entries = {'Model.1': []}
+const getNewEntries = (model) => {
+  return new_entries[model];
+}
 
 describe('furet-ui-waiting-resource component', () => {
   it('snapshot', () => {
@@ -154,7 +158,8 @@ describe('furet-ui-form-field-resource-manager component', () => {
       },
       provide: {
         getEntry,
-        getNewEntry
+        getNewEntry,
+        getNewEntries
       }
     });
     expect(wrapper.vm.build_additional_filter()).toEqual({"remote_key1": "value1", "remote_key2": "value2"});
@@ -180,6 +185,7 @@ describe('furet-ui-form-field-resource-manager component', () => {
         getEntry,
         getNewEntry,
         pushInBreadcrumb,
+        getNewEntries,
       }
     });
     expect(wrapper.element).toMatchSnapshot();
