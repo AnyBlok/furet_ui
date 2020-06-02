@@ -54,8 +54,14 @@ defineComponent('furet-ui-resource-list', {
           v-bind:config="button" />
       </template>
       <template slot-scope="props">
+        <b-table-column class="is-action">
+          <a class="button is-outlined" v-on:click="revert_modification(props.row)">
+            <b-icon icon="redo-alt" size="is-small"/>
+          </a>
+        </b-table-column>
         <b-table-column 
           v-for="header in resource.headers" 
+          class="is-list-cell"
           v-bind:key="header.name"
           v-bind:field="typeof header.sortable === 'string'? header.sortable : header.name" 
           v-bind:label="header.label" 

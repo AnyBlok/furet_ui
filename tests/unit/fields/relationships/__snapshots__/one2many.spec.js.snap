@@ -125,6 +125,7 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                   <select>
                     <!---->
                      
+                    <!---->
                     <option
                       value="[object Object]"
                     >
@@ -232,6 +233,16 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                   <!---->
                    
                   <th
+                    class=""
+                  >
+                    <div
+                      class="th-wrap"
+                    >
+                       
+                      <!---->
+                    </div>
+                  </th>
+                  <th
                     class="is-sortable"
                   >
                     <div
@@ -262,7 +273,7 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                
               <tbody>
                 <tr
-                  class=""
+                  class="is-unmodified"
                   draggable="false"
                 >
                   <!---->
@@ -270,7 +281,23 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                   <!---->
                    
                   <td
-                    class=""
+                    class="is-action"
+                  >
+                    <a
+                      class="button is-outlined"
+                    >
+                      <span
+                        class="icon is-small"
+                      >
+                        <i
+                          class="fa fa-redo-alt"
+                        />
+                      </span>
+                    </a>
+                  </td>
+                   
+                  <td
+                    class="is-list-cell"
                     data-label="Title"
                   >
                     <div>
@@ -280,7 +307,7 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                     </div>
                   </td>
                   <td
-                    class=""
+                    class="is-list-cell"
                     data-label="Color"
                   >
                     <div>
@@ -297,7 +324,7 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                  
                 <!---->
                 <tr
-                  class=""
+                  class="is-unmodified"
                   draggable="false"
                 >
                   <!---->
@@ -305,7 +332,23 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                   <!---->
                    
                   <td
-                    class=""
+                    class="is-action"
+                  >
+                    <a
+                      class="button is-outlined"
+                    >
+                      <span
+                        class="icon is-small"
+                      >
+                        <i
+                          class="fa fa-redo-alt"
+                        />
+                      </span>
+                    </a>
+                  </td>
+                   
+                  <td
+                    class="is-list-cell"
                     data-label="Title"
                   >
                     <div>
@@ -315,7 +358,7 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
                     </div>
                   </td>
                   <td
-                    class=""
+                    class="is-list-cell"
                     data-label="Color"
                   >
                     <div>
