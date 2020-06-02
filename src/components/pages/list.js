@@ -9,7 +9,6 @@ defineComponent('furet-ui-list', {
         v-bind:title="title"
         v-bind:filters="filters"
         v-bind:tags="tags"
-        v-bind:total="total"
         v-bind:data="data"
         v-bind:can_go_to_new="can_go_to_new"
         v-bind:readonly="readonly"
@@ -63,6 +62,30 @@ defineComponent('furet-ui-list', {
       >
         <template slot-scope="props">
           <slot v-bind:row="props.row" />
+        </template>
+
+        <template slot="top-left">
+          <furet-ui-list-total
+            v-bind:pagination_size="pagination_size"
+            v-bind:total="total"
+            v-bind:number_created="number_created"
+            v-bind:number_updated="number_updated"
+            v-bind:number_deleted="number_deleted"
+            v-bind:number_linked="number_linked"
+            v-bind:number_unlinked="number_unlinked"
+          />
+        </template>
+
+        <template slot="bottom-left">
+          <furet-ui-list-total
+            v-bind:pagination_size="pagination_size"
+            v-bind:total="total"
+            v-bind:number_created="number_created"
+            v-bind:number_updated="number_updated"
+            v-bind:number_deleted="number_deleted"
+            v-bind:number_linked="number_linked"
+            v-bind:number_unlinked="number_unlinked"
+          />
         </template>
 
         <template v-if="detailed" slot="detail" slot-scope="props">

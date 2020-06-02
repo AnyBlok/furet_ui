@@ -249,6 +249,7 @@ defineComponent("furet-ui-form-field-one2many", {
         v-bind:x2m_resource="resource"
         v-bind:isReadonly="isReadonly"
         v-bind:config="x2mconfig"
+        v-bind:value="value"
 
         v-on:add="o2m_add"
         v-on:update="o2m_update"

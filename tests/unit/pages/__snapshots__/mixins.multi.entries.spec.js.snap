@@ -12,6 +12,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters 1`
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -28,9 +29,6 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters 1`
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -226,6 +224,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters an
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -242,9 +241,6 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters an
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -442,6 +438,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters 1`] 
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -458,9 +455,6 @@ exports[`mixin-page-multi-entries component mount with queryString: filters 1`] 
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -658,6 +652,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters with
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -674,9 +669,6 @@ exports[`mixin-page-multi-entries component mount with queryString: filters with
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -874,6 +866,7 @@ exports[`mixin-page-multi-entries component mount with queryString: order 1`] = 
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -890,9 +883,6 @@ exports[`mixin-page-multi-entries component mount with queryString: order 1`] = 
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -1090,6 +1080,7 @@ exports[`mixin-page-multi-entries component mount with queryString: page 1`] = `
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -1106,9 +1097,6 @@ exports[`mixin-page-multi-entries component mount with queryString: page 1`] = `
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -1304,6 +1292,7 @@ exports[`mixin-page-multi-entries component mount with queryString: tags 1`] = `
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -1320,9 +1309,6 @@ exports[`mixin-page-multi-entries component mount with queryString: tags 1`] = `
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -1520,6 +1506,7 @@ exports[`mixin-page-multi-entries component onSort 1`] = `
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -1536,9 +1523,6 @@ exports[`mixin-page-multi-entries component onSort 1`] = `
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -1620,6 +1604,7 @@ exports[`mixin-page-multi-entries component onSort multi 1`] = `
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -1636,9 +1621,6 @@ exports[`mixin-page-multi-entries component onSort multi 1`] = `
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -1720,6 +1702,7 @@ exports[`mixin-page-multi-entries component onSort remove 1`] = `
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -1736,9 +1719,6 @@ exports[`mixin-page-multi-entries component onSort remove 1`] = `
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -1820,6 +1800,7 @@ exports[`mixin-page-multi-entries component snapshot minimum 1`] = `
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -1836,9 +1817,6 @@ exports[`mixin-page-multi-entries component snapshot minimum 1`] = `
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -1920,6 +1898,7 @@ exports[`mixin-page-multi-entries component snapshot minimum with error 1`] = `
    
   <header
     id="furet-ui-page-multi-entries-header"
+    total="0"
   >
     <div
       class="level"
@@ -1936,9 +1915,6 @@ exports[`mixin-page-multi-entries component snapshot minimum with error 1`] = `
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>

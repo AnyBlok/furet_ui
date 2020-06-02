@@ -161,7 +161,36 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
           >
             <div
               class="level-left"
-            />
+            >
+              <div
+                class="field is-grouped-multiline is-grouped is-small"
+              >
+                <!---->
+                 
+                <div
+                  class="control"
+                >
+                  <strong>
+                    Total :
+                  </strong>
+                  
+        NaN
+      
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
              
             <div
               class="level-right"
@@ -385,7 +414,36 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
           >
             <div
               class="level-left"
-            />
+            >
+              <div
+                class="field is-grouped-multiline is-grouped is-small"
+              >
+                <!---->
+                 
+                <div
+                  class="control"
+                >
+                  <strong>
+                    Total :
+                  </strong>
+                  
+        NaN
+      
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
              
             <div
               class="level-right"

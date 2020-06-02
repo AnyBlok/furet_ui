@@ -19,12 +19,49 @@ defineComponent('furet-ui-page-errors', {
   },
 });
 
+defineComponent('furet-ui-list-total', {
+  template: `
+    <b-field grouped group-multiline v-bind:class="pagination_size">
+      <div class="control">
+        <strong>{{ $t('components.header.total') }} :</strong>
+        {{ total }}
+      </div>
+      <div v-if="number_created" class="control has-text-x2m-created">
+        <strong>{{ $t('components.header.created') }} :</strong>
+        +{{ number_created }}
+      </div>
+      <div v-if="number_updated" class="control has-text-x2m-updated">
+        <strong>{{ $t('components.header.updated') }} :</strong>
+        {{ number_updated }}
+      </div>
+      <div v-if="number_deleted" class="control has-text-x2m-deleted">
+        <strong>{{ $t('components.header.deleted') }} :</strong>
+        -{{ number_deleted }}
+      </div>
+      <div v-if="number_linked" class="control has-text-x2m-linked">
+        <strong>{{ $t('components.header.linked') }} :</strong>
+        +{{ number_linked }}
+      </div>
+      <div v-if="number_unlinked" class="control has-text-x2m-unlinked">
+        <strong>{{ $t('components.header.unlinked') }} :</strong>
+        -{{ number_unlinked }}
+      </div>
+    </b-field>
+  `,
+  prototype: {
+    props: [
+      'total', 'number_created', 'number_updated', 'number_deleted',
+      'number_linked', 'number_unlinked', 'pagination_size', 
+    ],
+  },
+});
+
 defineComponent('furet-ui-page-multi-entries-header', {
   template: `
     <header id="furet-ui-page-multi-entries-header">
       <div class="level">
         <div class="level-left">
-          <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item"><small>({{ total }})</small>&nbsp;<slot name="aftertitle" v-bind:data="data" /></span>
+          <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item">&nbsp;<slot name="aftertitle" v-bind:data="data" /></span>
         </div>
         <div class="level-right">
           <div class="level-item">
@@ -98,7 +135,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
     </header>
   `,
   prototype: {
-    props: ['title', 'filters', 'tags', 'total', 'data', 'can_go_to_new', 'readonly'],
+    props: ['title', 'filters', 'tags', 'data', 'can_go_to_new', 'readonly'],
     data() {
       return {
         filterSearch: '',
@@ -157,6 +194,11 @@ defineComponent('mixin-page-multi-entries', {
         data: [],
         errors: [],
         total: 0,
+        number_created: 0,
+        number_updated: 0,
+        number_deleted: 0,
+        number_linked: 0,
+        number_unlinked: 0,
         loading: false,
         page: 1,
         perPage: this.perpage || 25,

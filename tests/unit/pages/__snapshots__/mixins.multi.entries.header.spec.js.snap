@@ -4,6 +4,7 @@ exports[`furet-ui-page-multi-entries-header component empty filter 1`] = `
 <header
   id="furet-ui-page-multi-entries-header"
   subtitle="Sub Title"
+  total="1"
 >
   <div
     class="level"
@@ -20,9 +21,6 @@ exports[`furet-ui-page-multi-entries-header component empty filter 1`] = `
       <span
         class="level-item"
       >
-        <small>
-          (1)
-        </small>
          
       </span>
     </div>
@@ -154,6 +152,7 @@ exports[`furet-ui-page-multi-entries-header component filter close value 1`] = `
 <header
   id="furet-ui-page-multi-entries-header"
   subtitle="Sub Title"
+  total="1"
 >
   <div
     class="level"
@@ -170,9 +169,6 @@ exports[`furet-ui-page-multi-entries-header component filter close value 1`] = `
       <span
         class="level-item"
       >
-        <small>
-          (1)
-        </small>
          
       </span>
     </div>
@@ -342,6 +338,7 @@ exports[`furet-ui-page-multi-entries-header component filter one value 1`] = `
 <header
   id="furet-ui-page-multi-entries-header"
   subtitle="Sub Title"
+  total="1"
 >
   <div
     class="level"
@@ -358,9 +355,6 @@ exports[`furet-ui-page-multi-entries-header component filter one value 1`] = `
       <span
         class="level-item"
       >
-        <small>
-          (1)
-        </small>
          
       </span>
     </div>
@@ -530,6 +524,7 @@ exports[`furet-ui-page-multi-entries-header component filter two value 1`] = `
 <header
   id="furet-ui-page-multi-entries-header"
   subtitle="Sub Title"
+  total="1"
 >
   <div
     class="level"
@@ -546,9 +541,6 @@ exports[`furet-ui-page-multi-entries-header component filter two value 1`] = `
       <span
         class="level-item"
       >
-        <small>
-          (1)
-        </small>
          
       </span>
     </div>
@@ -733,6 +725,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot can_go_to_new 1`]
 <header
   id="furet-ui-page-multi-entries-header"
   subtitle="Sub Title"
+  total="1"
 >
   <div
     class="level"
@@ -749,9 +742,6 @@ exports[`furet-ui-page-multi-entries-header component snapshot can_go_to_new 1`]
       <span
         class="level-item"
       >
-        <small>
-          (1)
-        </small>
          
       </span>
     </div>
@@ -843,6 +833,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot minimum 1`] = `
 <header
   id="furet-ui-page-multi-entries-header"
   subtitle="Sub Title"
+  total="1"
 >
   <div
     class="level"
@@ -859,9 +850,6 @@ exports[`furet-ui-page-multi-entries-header component snapshot minimum 1`] = `
       <span
         class="level-item"
       >
-        <small>
-          (1)
-        </small>
          
       </span>
     </div>
@@ -934,6 +922,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags no sele
 <header
   id="furet-ui-page-multi-entries-header"
   subtitle="Sub Title"
+  total="1"
 >
   <div
     class="level"
@@ -950,9 +939,6 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags no sele
       <span
         class="level-item"
       >
-        <small>
-          (1)
-        </small>
          
       </span>
     </div>
@@ -1067,6 +1053,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags one sel
 <header
   id="furet-ui-page-multi-entries-header"
   subtitle="Sub Title"
+  total="1"
 >
   <div
     class="level"
@@ -1083,9 +1070,6 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags one sel
       <span
         class="level-item"
       >
-        <small>
-          (1)
-        </small>
          
       </span>
     </div>
@@ -1221,6 +1205,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags two sel
 <header
   id="furet-ui-page-multi-entries-header"
   subtitle="Sub Title"
+  total="1"
 >
   <div
     class="level"
@@ -1237,9 +1222,6 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags two sel
       <span
         class="level-item"
       >
-        <small>
-          (1)
-        </small>
          
       </span>
     </div>

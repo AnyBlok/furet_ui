@@ -80,7 +80,7 @@ defineComponent('furet-ui-resource-list', {
   extend: ['furet-ui-resource'],
   prototype: {
     props: ['id', 'manager'],
-    inject: ['getEntry', 'getNewEntry', 'getNewEntries'],
+    inject: ['getEntry', 'getNewEntries'],
     data () {
       return {
         data: [],
@@ -125,9 +125,42 @@ defineComponent('furet-ui-resource-list', {
           }
           const end = start + obj.perPage;
           obj.data = res.concat(news.slice(start, end));
+        } else {
+          obj.data = res;
         }
         data.total = total;
         obj.total = total;
+
+        let created = 0;
+        let updated = 0;
+        let deleted = 0;
+        let linked = 0;
+        let unlinked = 0;
+
+        (this.manager.changed_rows || []).forEach(change => {
+          switch (change.__x2m_state) {
+            case 'ADDED':
+              created++;
+              break;
+            case 'UPDATED':
+              updated++;
+              break;
+            case 'DELETED':
+              deleted++;
+              break;
+            case 'LINKED':
+              linked++;
+              break;
+            case 'UNLINKED':
+              unlinked++;
+              break;
+          }
+        })
+        obj.number_created = created;
+        obj.number_updated = updated;
+        obj.number_deleted = deleted;
+        obj.number_linked = linked;
+        obj.number_unlinked = unlinked;
       },
       toggleHiddenColumn (field) {
         this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})
