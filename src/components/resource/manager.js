@@ -275,6 +275,7 @@ defineComponent("furet-ui-form-field-resource-manager", {
       goToList() {
         const query = {additional_filter: this.build_additional_filter()};
         this.manager = Object.assign({}, this.manager, { query });
+        this.$refs.resource.$refs.resource.readonly = true;
         this.$refs.resource.mode = "multi";
         this.clearChange();
       },
