@@ -201,4 +201,9 @@ describe("Field.One2Many for Resource.Form", () => {
     expect(updateValue.mock.calls[0][0][0].uuid).toBe('uuid')
     expect(updateValue.mock.calls[0][0][0].__x2m_state).toBe('ADDED')
   });
+  it("o2m_revert", () => {
+    wrapper.vm.o2m_revert({model: 'Model.2', uuid: 'uuid'})
+    expect(updateValue.mock.calls[0][0][0].uuid).toBe('uuid')
+    expect(updateValue.mock.calls[0][0][0].__revert).toBe(true)
+  });
 });

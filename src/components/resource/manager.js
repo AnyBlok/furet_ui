@@ -230,6 +230,7 @@ defineComponent("furet-ui-form-field-resource-manager", {
           v-on:create-data="createData"
           v-on:update-data="updateData"
           v-on:delete-data="deleteData"
+          v-on:revert-data="revertData"
           v-on:clear-change="clearChange"
           v-on:go-to-list="goToList"
         />
@@ -292,6 +293,9 @@ defineComponent("furet-ui-form-field-resource-manager", {
       deleteData(data) {
         this.$emit("delete", data);
         this.goToList();
+      },
+      revertData(data){
+        this.$emit("revert", data);
       },
       clearChange(_data) {
         this.changes = {}; // clear the changes

@@ -252,6 +252,7 @@ defineComponent("furet-ui-form-field-one2many", {
         v-bind:value="value"
 
         v-on:add="o2m_add"
+        v-on:revert="o2m_revert"
         v-on:update="o2m_update"
         v-on:delete="o2m_delete"
       />
@@ -275,6 +276,20 @@ defineComponent("furet-ui-form-field-one2many", {
     methods: {
       addState(actions, state) {
         return [Object.assign({}, actions.pks, { __x2m_state: state})];
+      },
+      o2m_revert(actions) {
+        const newvalue = [];
+        const changes = {};
+        changes[actions.model] = {};
+        if (actions.uuid){
+          newvalue.push({ __revert: true, uuid: actions.uuid });
+          changes[actions.model]["new"] = {};
+          changes[actions.model]["new"][actions.uuid] = {"__revert": true};
+        } else {
+          changes[actions.model][pk2string(actions.pks)] = {"__revert": true};
+          newvalue.push(Object.assign({ __revert: true}, actions.pks));
+        }
+        this.updateValue(newvalue, changes);
       },
       o2m_add(actions) {
         const newvalue = [];
