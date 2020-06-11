@@ -283,6 +283,7 @@ defineComponent('furet-ui-space-menus', {
       selectMenu (menu) {
         this.$router.push(menu.path);
         this.$store.commit("ClearBreadcrumb");
+        this.$store.commit("CLEAR_CHANGE");
       }
     },
     mounted() {
@@ -332,6 +333,7 @@ defineComponent('furet-ui-space-menu', {
               query,
             });
             this.$store.commit("ClearBreadcrumb");
+            this.$store.commit("CLEAR_CHANGE");
           }
         }
       }
@@ -378,6 +380,7 @@ defineComponent("furet-ui-breadcrumb", {
       backToResource: function(index, _event) {
         this.$router.push(this.$store.state.global.breadcrumb[index].route);
         this.$store.commit("ClearBreadcrumbFrom", index);
+        this.$store.commit("CLEAR_CHANGE");
       }
     }
   }

@@ -126,6 +126,7 @@ defineComponent('furet-ui-space-resource-manager', {
           label,
           icon
         });
+        this.$store.commit("CLEAR_CHANGE");
       },
       createData (data) {
         const query = Object.assign({}, this.$route.query);
@@ -188,6 +189,7 @@ defineComponent('furet-ui-space-resource-manager', {
           }
           this.$router.push(route);
           this.$store.commit("PopBreadcrumb");
+          this.$store.commit("CLEAR_CHANGE");
       },
       updateChangeState (action) {
         this.$store.commit('UPDATE_CHANGE', action)
