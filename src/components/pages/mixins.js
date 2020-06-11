@@ -19,12 +19,49 @@ defineComponent('furet-ui-page-errors', {
   },
 });
 
+defineComponent('furet-ui-list-total', {
+  template: `
+    <b-field grouped group-multiline v-bind:class="pagination_size">
+      <div class="control">
+        <strong>{{ $t('components.header.total') }} :</strong>
+        {{ total }}
+      </div>
+      <div v-if="number_created" class="control has-text-x2m-created">
+        <strong>{{ $t('components.header.created') }} :</strong>
+        +{{ number_created }}
+      </div>
+      <div v-if="number_updated" class="control has-text-x2m-updated">
+        <strong>{{ $t('components.header.updated') }} :</strong>
+        {{ number_updated }}
+      </div>
+      <div v-if="number_deleted" class="control has-text-x2m-deleted">
+        <strong>{{ $t('components.header.deleted') }} :</strong>
+        -{{ number_deleted }}
+      </div>
+      <div v-if="number_linked" class="control has-text-x2m-linked">
+        <strong>{{ $t('components.header.linked') }} :</strong>
+        +{{ number_linked }}
+      </div>
+      <div v-if="number_unlinked" class="control has-text-x2m-unlinked">
+        <strong>{{ $t('components.header.unlinked') }} :</strong>
+        -{{ number_unlinked }}
+      </div>
+    </b-field>
+  `,
+  prototype: {
+    props: [
+      'total', 'number_created', 'number_updated', 'number_deleted',
+      'number_linked', 'number_unlinked', 'pagination_size', 
+    ],
+  },
+});
+
 defineComponent('furet-ui-page-multi-entries-header', {
   template: `
     <header id="furet-ui-page-multi-entries-header">
       <div class="level">
         <div class="level-left">
-          <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item"><small>({{ total }})</small>&nbsp;<slot name="aftertitle" v-bind:data="data" /></span>
+          <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item">&nbsp;<slot name="aftertitle" v-bind:data="data" /></span>
         </div>
         <div class="level-right">
           <div class="level-item">
@@ -68,7 +105,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
           <div class="level-item buttons">
             <a id="furet-ui-page-multi-entries-header-refresh" class="button" v-on:click="refresh"><b-icon icon="redo" /></a>
             <a id="furet-ui-page-multi-entries-header-tags" v-if="tags.length" class="button" v-on:click.stop="tag_list_open = ! tag_list_open">
-              <b-icon :icon="tag_list_open ? 'arrow-cicle-up' : 'arrow-circle-down'" />
+              <b-icon :icon="tag_list_open ? 'arrow-circle-up' : 'arrow-circle-down'" />
             </a>
           </div>
         </div>
@@ -98,7 +135,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
     </header>
   `,
   prototype: {
-    props: ['title', 'filters', 'tags', 'total', 'data', 'can_go_to_new', 'readonly'],
+    props: ['title', 'filters', 'tags', 'data', 'can_go_to_new', 'readonly'],
     data() {
       return {
         filterSearch: '',
@@ -147,7 +184,7 @@ defineComponent('mixin-page-multi-entries', {
     props: [
       'title', 'default_filters', 'default_tags', 'defaultSortField', 'defaultSortOrder',
       'perpage', 'can_go_to_new', 'rest_api_url', 'rest_api_params', 'rest_api_formater', 
-      'query'],
+      'query', 'default_header_component_name'],
     data() {
       const sortingPriority = [];
       if (this.defaultSortField) {
@@ -157,6 +194,11 @@ defineComponent('mixin-page-multi-entries', {
         data: [],
         errors: [],
         total: 0,
+        number_created: 0,
+        number_updated: 0,
+        number_deleted: 0,
+        number_linked: 0,
+        number_unlinked: 0,
         loading: false,
         page: 1,
         perPage: this.perpage || 25,
@@ -164,6 +206,7 @@ defineComponent('mixin-page-multi-entries', {
         additional_filter: {},
         tags: _.map((this.default_tags || []), t => Object.assign({}, t)),
         sortingPriority,
+        headerComponentName: this.default_header_component_name || 'furet-ui-page-multi-entries-header',
       };
     },
     computed: {
@@ -260,8 +303,7 @@ defineComponent('mixin-page-multi-entries', {
         axios.get(this.rest_api_url, { params })
           .then((response) => {
             if (this.rest_api_formater) {
-              this.data = this.rest_api_formater(response.data || []);
-              this.total = response.headers['x-total-records'] || response.data.total;
+              this.rest_api_formater(this, response.data || {});
             } else {
               this.data = response.data || [];
               this.total = response.headers['x-total-records'] || response.data.length;
@@ -269,7 +311,7 @@ defineComponent('mixin-page-multi-entries', {
             this.loading = false;
           })
           .catch((error) => {
-            console.error(error)
+            console.error(error);
             this.errors = error.response.data.errors;
             this.loading = false;
           });

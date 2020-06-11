@@ -29,9 +29,6 @@ exports[`furet-ui-list component snapshot minimum 1`] = `
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -111,7 +108,36 @@ exports[`furet-ui-list component snapshot minimum 1`] = `
     >
       <div
         class="level-left"
-      />
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        0
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
        
       <div
         class="level-right"
@@ -209,7 +235,36 @@ exports[`furet-ui-list component snapshot minimum 1`] = `
     >
       <div
         class="level-left"
-      />
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        0
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
        
       <div
         class="level-right"
@@ -300,9 +355,6 @@ exports[`furet-ui-list component snapshot minimum with error 1`] = `
         <span
           class="level-item"
         >
-          <small>
-            (0)
-          </small>
            
         </span>
       </div>
@@ -382,7 +434,36 @@ exports[`furet-ui-list component snapshot minimum with error 1`] = `
     >
       <div
         class="level-left"
-      />
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        0
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
        
       <div
         class="level-right"
@@ -480,7 +561,36 @@ exports[`furet-ui-list component snapshot minimum with error 1`] = `
     >
       <div
         class="level-left"
-      />
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        0
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
        
       <div
         class="level-right"

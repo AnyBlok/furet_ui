@@ -4,11 +4,11 @@ defineComponent('furet-ui-list', {
   template: `
     <section id="furet-ui-list">
       <furet-ui-page-errors v-bind:errors="errors"/>
-      <furet-ui-page-multi-entries-header 
+      <component
+        v-bind:is="headerComponentName"
         v-bind:title="title"
         v-bind:filters="filters"
         v-bind:tags="tags"
-        v-bind:total="total"
         v-bind:data="data"
         v-bind:can_go_to_new="can_go_to_new"
         v-bind:readonly="readonly"
@@ -26,7 +26,7 @@ defineComponent('furet-ui-list', {
           </a>
           <slot name="actions" v-bind:data="props.data" />
         </template>
-      </furet-ui-page-multi-entries-header>
+      </component>
       <slot name="hidden_columns" />
       <b-table
         ref="list_table"
@@ -36,6 +36,7 @@ defineComponent('furet-ui-list', {
         paginated
         backend-pagination
         pagination-position="both"
+        v-bind:pagination-size="pagination_size"
 
         v-bind:total="total"
         v-bind:current-page.sync="page"
@@ -55,11 +56,36 @@ defineComponent('furet-ui-list', {
         v-bind:detail-key="detail_key"
         v-bind:checkable="isCheckable"
         v-bind:checked-rows.sync="checkedRows"
+        v-bind:row-class="row_state"
 
         v-on:dblclick="goToPage"
       >
         <template slot-scope="props">
           <slot v-bind:row="props.row" />
+        </template>
+
+        <template slot="top-left">
+          <furet-ui-list-total
+            v-bind:pagination_size="pagination_size"
+            v-bind:total="total"
+            v-bind:number_created="number_created"
+            v-bind:number_updated="number_updated"
+            v-bind:number_deleted="number_deleted"
+            v-bind:number_linked="number_linked"
+            v-bind:number_unlinked="number_unlinked"
+          />
+        </template>
+
+        <template slot="bottom-left">
+          <furet-ui-list-total
+            v-bind:pagination_size="pagination_size"
+            v-bind:total="total"
+            v-bind:number_created="number_created"
+            v-bind:number_updated="number_updated"
+            v-bind:number_deleted="number_deleted"
+            v-bind:number_linked="number_linked"
+            v-bind:number_unlinked="number_unlinked"
+          />
         </template>
 
         <template v-if="detailed" slot="detail" slot-scope="props">
@@ -79,7 +105,7 @@ defineComponent('furet-ui-list', {
   extend: ['mixin-page-multi-entries'],
   prototype: {
     props: [
-      'is_checkable', 'checkedElements', 'detailed', 'detail_key', 'readonly'],
+      'is_checkable', 'checkedElements', 'detailed', 'detail_key', 'readonly', 'pagination_size'],
     data() {
       return {
         isCheckable: this.is_checkable || false,
@@ -91,6 +117,31 @@ defineComponent('furet-ui-list', {
         if (this.checkedRows.length !== 0) return this.checkedRows;
         return this.data;
       },
+      row_state() {
+        return (row, _index) => {
+          let style_class = ""
+          switch(row.__change_state) {
+            case "create":
+              style_class = "is-created";
+              break;
+            case "update":
+              style_class = "is-updated";
+              break;
+            case "delete":
+              style_class = "is-deleted";
+              break;
+            case "link":
+              style_class = "is-linked";
+              break;
+            case "unlink":
+              style_class = "is-unlinked";
+              break;
+            default:
+              style_class = "is-unmodified";
+            }
+            return style_class
+        };
+      }
     },
   },
 });

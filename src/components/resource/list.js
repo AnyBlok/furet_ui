@@ -8,9 +8,11 @@ import axios from 'axios';
 defineComponent('furet-ui-resource-list', {
   template : `
     <furet-ui-list
+      ref="list"
       v-bind:title="resource.title"
       v-bind:default_filters="resource.filters || []"
       v-bind:default_tags="resource.tags || []"
+      v-bind:default_header_component_name="manager.multi_header_component_name || null"
       v-bind:perpage="resource.perpage"
       v-bind:can_go_to_new="manager.can_create"
       v-bind:rest_api_url="rest_api_url"
@@ -19,6 +21,7 @@ defineComponent('furet-ui-resource-list', {
       v-bind:rest_api_formater="api_formater"
       v-bind:query="manager.query"
       v-bind:readonly="manager.readonly"
+      v-bind:pagination_size="manager.pagination_size"
 
       v-on:update-query-string="updateQueryString"
       v-on:go-to-new="goToNew"
@@ -51,8 +54,14 @@ defineComponent('furet-ui-resource-list', {
           v-bind:config="button" />
       </template>
       <template slot-scope="props">
+        <b-table-column class="is-action">
+          <a class="button is-outlined" v-on:click="revert_modification(props.row)">
+            <b-icon icon="redo-alt" size="is-small"/>
+          </a>
+        </b-table-column>
         <b-table-column 
           v-for="header in resource.headers" 
+          class="is-list-cell"
           v-bind:key="header.name"
           v-bind:field="typeof header.sortable === 'string'? header.sortable : header.name" 
           v-bind:label="header.label" 
@@ -71,7 +80,7 @@ defineComponent('furet-ui-resource-list', {
   extend: ['furet-ui-resource'],
   prototype: {
     props: ['id', 'manager'],
-    inject: ['getEntry', 'getNewEntry'],
+    inject: ['getEntry', 'getNewEntries'],
     data () {
       return {
         data: [],
@@ -89,7 +98,7 @@ defineComponent('furet-ui-resource-list', {
           'context[model]': this.resource.model,
           'context[fields]': this.resource.fields.toString(),
         }
-      },
+      }
     },
     methods: {
       safe_eval (hidden, row) {
@@ -99,29 +108,65 @@ defineComponent('furet-ui-resource-list', {
       getBreadcrumbInfo() {
         return {label: this.$t(this.resource.title), icon: "list"};
       },
-      api_formater (data) {
+      revert_modification(row){
+        this.$emit("revert-data", row)
+      },
+      api_formater (obj, data) {
         this.$dispatchAll(data.data);
-        const res = [];
-        if (this.manager.x2m_pks) {
-          this.manager.x2m_pks.forEach(pk => {
-            if (pk.__x2m_state === 'DELETED') { 
-             // do nothing
-            } else if (pk.__x2m_state === 'ADDED') { 
-              res.push(this.getNewEntry(this.resource.model, pk.uuid))
-            } else if (pk.__x2m_state === 'UPDATED') { 
-              const pk2 = Object.assign({}, pk)
-              delete pk2['__x2m_state']
-              res.push(this.getEntry(this.resource.model, pk2))
-            } else {
-              res.push(this.getEntry(this.resource.model, pk))
-            }
-          });
-        } else {
-          data.pks.forEach(pk => {
-            res.push(this.getEntry(this.resource.model, pk))
-          });
+        let res = [];
+        if(data.pks === undefined){
+          data.pks = [];
         }
-        return res;
+        data.pks.forEach(pk => {
+          res.push(this.getEntry(this.resource.model, pk))
+        });
+        const news = this.getNewEntries(this.resource.model);
+        const total = (data.total || 0) + news.length;
+        if (res.length < obj.perPage){
+          const modulus = data.total % obj.perPage;
+          const page_count = Math.floor(data.total / obj.perPage) + 1;
+          let start = ((obj.page - page_count) * obj.perPage);
+          if(start > 0 ){
+            start -= modulus;
+          }
+          const end = start + obj.perPage - res.length;
+          obj.data = res.concat(news.slice(start, end));
+        } else {
+          obj.data = res;
+        }
+        data.total = total;
+        obj.total = total;
+
+        let created = 0;
+        let updated = 0;
+        let deleted = 0;
+        let linked = 0;
+        let unlinked = 0;
+
+        (this.manager.changed_rows || []).forEach(change => {
+          switch (change.__x2m_state) {
+            case 'ADDED':
+              created++;
+              break;
+            case 'UPDATED':
+              updated++;
+              break;
+            case 'DELETED':
+              deleted++;
+              break;
+            case 'LINKED':
+              linked++;
+              break;
+            case 'UNLINKED':
+              unlinked++;
+              break;
+          }
+        })
+        obj.number_created = created;
+        obj.number_updated = updated;
+        obj.number_deleted = deleted;
+        obj.number_linked = linked;
+        obj.number_unlinked = unlinked;
       },
       toggleHiddenColumn (field) {
         this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})
@@ -133,7 +178,10 @@ defineComponent('furet-ui-resource-list', {
         this.$emit('go-to-new');
       },
       goToPage(row) {
-        this.$emit('go-to-page', row);
+        if(row.__change_state !== "delete") this.$emit('go-to-page', row);
+      },
+      refresh() {
+        this.$refs.list.loadAsyncData();
       },
     },
   },

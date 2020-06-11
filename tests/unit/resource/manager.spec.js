@@ -30,6 +30,11 @@ const getNewEntry = (model, uuid) => {
   return data[model][1]
 }
 
+const new_entries = {'Model.1': []}
+const getNewEntries = (model) => {
+  return new_entries[model];
+}
+
 describe('furet-ui-waiting-resource component', () => {
   it('snapshot', () => {
     const wrapper = mount(getComponentPrototype('furet-ui-waiting-resource'), {
@@ -130,6 +135,36 @@ describe('furet-ui-form-field-resource-manager component', () => {
     ], 
     'fields': ['id', 'title', 'color']
   }]})
+
+
+  
+  it("furet-ui-form-field-resource-manager.build_additional_filter", () => {
+    const wrapper = mount(getComponentPrototype("furet-ui-form-field-resource-manager"), {
+      store,
+      localVue,
+      propsData: {
+        config: {
+            local_columns: ["local_key1", "local_key2"],
+            remote_columns: ["remote_key1", "remote_key2"],
+        },
+        data: {},
+        resource: {},
+        x2m_resource: {
+            pks: {
+                "local_key1": "value1",
+                "local_key2": "value2",
+            }
+        }
+      },
+      provide: {
+        getEntry,
+        getNewEntry,
+        getNewEntries
+      }
+    });
+    expect(wrapper.vm.build_additional_filter()).toEqual({"remote_key1": "value1", "remote_key2": "value2"});
+  });
+
   it('snapshot', () => {
     const pushInBreadcrumb = jest.fn()
     const wrapper = mount(getComponentPrototype('furet-ui-form-field-resource-manager'), {
@@ -150,6 +185,7 @@ describe('furet-ui-form-field-resource-manager component', () => {
         getEntry,
         getNewEntry,
         pushInBreadcrumb,
+        getNewEntries,
       }
     });
     expect(wrapper.element).toMatchSnapshot();

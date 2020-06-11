@@ -3,7 +3,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import  {resources}  from './resources';
 import { defineComponent } from '../factory';
-import {pk2string, update_change_object} from '../../store/modules/data';
+import { update_change_object } from "../../store/modules/data";
 
 defineComponent('furet-ui-waiting-resource', {
   template: `
@@ -81,6 +81,7 @@ defineComponent('furet-ui-resource-manager', {
         updateChangeState: this.updateChangeState,
         getEntry: this.getEntryWrapper,
         getNewEntry: this.getNewEntryWrapper,
+        getNewEntries: this.getNewEntriesWrapper,
       }
     },
   },
@@ -197,6 +198,9 @@ defineComponent('furet-ui-space-resource-manager', {
       getNewEntryWrapper (model, uuid) {
         return this.$store.getters.get_new_entry(model, uuid)
       },
+      getNewEntriesWrapper (model, uuid) {
+        return this.$store.getters.get_new_entries(model, uuid)
+      },
     },
     provide() {
       return {
@@ -212,7 +216,7 @@ defineComponent('furet-ui-space-resource-manager', {
   },
 });
 
-defineComponent('furet-ui-form-field-resource-manager', {
+defineComponent("furet-ui-form-field-resource-manager", {
   template: `
     <div v-bind:style="{width: '100%'}" class="box">
         <furet-ui-page-errors v-bind:errors="errors"/>
@@ -226,107 +230,102 @@ defineComponent('furet-ui-form-field-resource-manager', {
           v-on:create-data="createData"
           v-on:update-data="updateData"
           v-on:delete-data="deleteData"
+          v-on:revert-data="revertData"
           v-on:clear-change="clearChange"
           v-on:go-to-list="goToList"
         />
     </div>
   `,
-  extend: ['furet-ui-resource-manager'],
+  extend: ["furet-ui-resource-manager"],
   prototype: {
-    props: ['value', 'x2m_resource', 'isReadonly', 'config'],
-    inject: ['getEntry', 'getNewEntry'],
-    data () {
-      const pks = this.get_pks()
+    props: ["value", "x2m_resource", "isReadonly", "config"],
+    inject: ["getEntry", "getNewEntry", "getNewEntries"],
+    data() {
       return {
         changes: {},
         manager: {
+          multi_header_component_name: this.config.multi_header_component_name,
+          page_header_component_name: this.config.page_header_component_name,
+          pagination_size: this.config.pagination_size,
+          changed_rows: this.value || [],
           readonly: this.isReadonly,
-          query: {additional_filter: pks},
-          pks,
-          x2m_pks: this.value,
-          selectors: this.x2m_resource.selectors || {},
-        },
+          query: { additional_filter: this.build_additional_filter() },
+          selectors: this.x2m_resource.selectors || {}
+        }
       };
     },
     methods: {
-      get_pks () {
-        if (!this.value) return null;
-        const pks = {};
-        this.value.forEach(value => {
-          if (value.__x2m_state === 'DELETED') {
-            // removed so don't search and display this value
-          }
-          else if (value.__x2m_state === 'ADDED') {
-            // new dont search this value
-          }
-          else {
-            _.each(_.keys(value), key => {
-              if (key !== '__x2m_state') {
-                if (pks[key] === undefined) pks[key] = []
-                pks[key].push(value[key])
-              }
-            });
-          }
-        });
-        return pks
+      build_additional_filter() {
+        let filters = {};
+        if (this.config.remote_columns && this.config.local_columns) {
+          _.each(
+            _.zip(this.config.remote_columns, this.config.local_columns),
+            cols => {
+              filters[cols[0]] = this.x2m_resource.pks[cols[1]];
+            }
+          );
+        }
+        return filters;
       },
-      updateQueryString (newquery) {
+      updateQueryString(newquery) {
         const query = Object.assign({}, newquery);
-        if (query.mode !== 'form') query.additional_filter = this.pks
-        this.manager = Object.assign({}, this.manager, {query})
+        if (query.mode !== "form")
+          query.additional_filter = this.build_additional_filter();
+        this.manager = Object.assign({}, this.manager, { query });
       },
-      goToList () {
-        const query = {additional_filter: this.manager.pks}
-        this.manager = Object.assign({}, this.manager, {query})
-        this.$refs.resource.mode = 'multi';
+      goToList() {
+        const query = {additional_filter: this.build_additional_filter()};
+        this.manager = Object.assign({}, this.manager, { query });
+        this.$refs.resource.$refs.resource.readonly = true;
+        this.$refs.resource.mode = "multi";
         this.clearChange();
       },
-      createData (data) {
-        data.changes = this.changes
-        this.$emit('add', data)
-        this.clearChange()
-        this.goToList ()
+      createData(data) {
+        data.changes = this.changes;
+        this.$emit("add", data);
+        this.goToList();
       },
-      updateData (data) {
-        data.changes = this.changes
-        this.$emit('update', data)
-        this.$refs.resource.saved();
+      updateData(data) {
+        data.changes = this.changes;
+        this.$emit("update", data);
+        this.goToList();
       },
-      deleteData (data) {
-        this.$emit('delete', data)
-        this.clearChange() // because is an hard action
-        this.updateQueryString({})  // replace it by breadscrumb
+      deleteData(data) {
+        this.$emit("delete", data);
+        this.goToList();
       },
-      clearChange () {
-        this.changes = {}  // clear the changes
+      revertData(data){
+        this.$emit("revert", data);
       },
-      updateChangeState (action) {
-        this.changes = update_change_object(this.changes, action)
+      clearChange(_data) {
+        this.changes = {}; // clear the changes
       },
-      getEntryWrapper (model, pk) {
-        const key = pk2string(pk)
-        const data = this.getEntry(model, pk)
-        const change = (this.changes[model] || {})[key] || {};
-        return Object.assign({}, data, change);
+      updateChangeState(action) {
+        this.changes = update_change_object(this.changes, action);
       },
-      getNewEntryWrapper (model, uuid) {
-        const data = this.getNewEntry(model, uuid)
-        const change = ((this.changes[model] || {}).new || {})[uuid] || {};
-        return Object.assign({__x2m_uuid: uuid}, data, change);
+      getEntryWrapper(model, pk) {
+        return this.getEntry(model, pk);
       },
+      getNewEntryWrapper(model, uuid) {
+        return this.getNewEntry(model, uuid);
+      },
+      getNewEntriesWrapper(model) {
+        return this.getNewEntries(model);
+      }
     },
     watch: {
-      isReadonly () {
-        this.manager.readonly = this.isReadonly
+      isReadonly() {
+        this.manager.readonly = this.isReadonly;
       },
-      value () {
-        const pks = this.get_pks()
-        const query = Object.assign({}, this.manager.query, {additional_filter: pks})
-        this.manager = Object.assign({}, this.manager, {query, pks, x2m_pks: this.value})
-      },
+      value() {
+        const query = Object.assign({}, this.manager.query, {
+          additional_filter: this.build_additional_filter()
+        });
+        this.manager = Object.assign({}, this.manager, { query, changed_rows: this.value });
+      }
     },
-    mounted () {
+    mounted() {
       this.load_resource(this.id);
-    },
-  },
+    }
+  }
 });

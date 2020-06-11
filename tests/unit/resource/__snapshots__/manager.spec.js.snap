@@ -39,9 +39,6 @@ exports[`furet-ui-form-field-resource-manager component snapshot 1`] = `
           <span
             class="level-item"
           >
-            <small>
-              (0)
-            </small>
              
           </span>
         </div>
@@ -121,7 +118,36 @@ exports[`furet-ui-form-field-resource-manager component snapshot 1`] = `
       >
         <div
           class="level-left"
-        />
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+             
+            <div
+              class="control"
+            >
+              <strong>
+                [object Promise] :
+              </strong>
+              
+        0
+      
+            </div>
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+          </div>
+        </div>
          
         <div
           class="level-right"
@@ -219,7 +245,36 @@ exports[`furet-ui-form-field-resource-manager component snapshot 1`] = `
       >
         <div
           class="level-left"
-        />
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+             
+            <div
+              class="control"
+            >
+              <strong>
+                [object Promise] :
+              </strong>
+              
+        0
+      
+            </div>
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+          </div>
+        </div>
          
         <div
           class="level-right"
@@ -327,9 +382,6 @@ exports[`furet-ui-space-resource-manager component snapshot 1`] = `
           <span
             class="level-item"
           >
-            <small>
-              (0)
-            </small>
              
           </span>
         </div>
@@ -409,7 +461,36 @@ exports[`furet-ui-space-resource-manager component snapshot 1`] = `
       >
         <div
           class="level-left"
-        />
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+             
+            <div
+              class="control"
+            >
+              <strong>
+                [object Promise] :
+              </strong>
+              
+        0
+      
+            </div>
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+          </div>
+        </div>
          
         <div
           class="level-right"
@@ -507,7 +588,36 @@ exports[`furet-ui-space-resource-manager component snapshot 1`] = `
       >
         <div
           class="level-left"
-        />
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+             
+            <div
+              class="control"
+            >
+              <strong>
+                [object Promise] :
+              </strong>
+              
+        0
+      
+            </div>
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+          </div>
+        </div>
          
         <div
           class="level-right"

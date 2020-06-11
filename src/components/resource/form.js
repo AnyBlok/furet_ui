@@ -9,7 +9,8 @@ defineComponent('furet-ui-resource-form', {
   template : `
     <section>
       <b-loading v-bind:active.sync="loading"></b-loading>
-      <furet-ui-header-page
+      <component
+        v-bind:is="headerComponentName"
         name="furet-ui-page"
         v-bind:title="resource.title"
         v-bind:can_go_to_new="readonly && manager.can_create"
@@ -28,24 +29,15 @@ defineComponent('furet-ui-resource-form', {
         v-bind:data="data"
       >
         <template slot="header" v-if="resource.header_template">
-        <keep-alive>
-          <component 
-            v-bind:is="form_card_header_template" 
-            v-bind:resource="resource"
-            v-bind:data="data"
-          />
-        </keep-alive>
+          <keep-alive>
+            <component 
+              v-bind:is="form_card_header_template" 
+              v-bind:resource="resource"
+              v-bind:data="data"
+            />
+          </keep-alive>
         </template>
-        <template slot="aftertitle" slot-scope="props">
-          <slot name="aftertitle" v-bind:data="props.data" />
-        </template>
-        <template slot="head_actions" slot-scope="props">
-          <slot name="head_actions" v-bind:data="props.data" />
-        </template>
-        <template slot="states" slot-scope="props">
-          <slot name="states" v-bind:data="props.data" />
-        </template>
-      </furet-ui-header-page>
+      </component>
       <div class="section">
         <component 
           v-bind:is="form_card_body_template" 
@@ -76,6 +68,8 @@ defineComponent('furet-ui-resource-form', {
         selectors: {},
         tabs: {},
         templates: {},
+        refreshCallbacks: [],
+        headerComponentName: this.manager.page_header_component_name || 'furet-ui-header-page',
       };
     },
     computed: {
@@ -141,6 +135,7 @@ defineComponent('furet-ui-resource-form', {
         this.$emit('clear-change', {pks: this.pks, uuid: this.uuid})
         this.readonly = true;
         if (this.uuid) this.goToList();
+        this.refresh_fields()
       },
       deleteEntry () {
         this.$emit('delete-data', {
@@ -160,6 +155,17 @@ defineComponent('furet-ui-resource-form', {
             pks: Object.assign({}, this.pks),
           })
         }
+      },
+      refresh_fields () {
+        this.$emit('clear-change', {pks: this.pks, uuid: this.uuid})
+        this.readonly = true;
+        this.refreshCallbacks.forEach(callback => {
+          callback();
+        });
+      },
+      refresh () {
+        this.loadAsyncData();
+        this.refresh_fields();
       },
       loadAsyncData() {
         // this.loading = true;
@@ -201,10 +207,16 @@ defineComponent('furet-ui-resource-form', {
       isReadonly () {
         return this.readonly
       },
+      registryRefreshCallback (callback) {
+        if (this.refreshCallbacks.indexOf(callback) === -1) {
+          this.refreshCallbacks.push(callback)
+        }
+      },
     },
     provide: function () {
       return {
-        partIsReadonly: this.isReadonly
+        partIsReadonly: this.isReadonly,
+        registryRefreshCallback: this.registryRefreshCallback,
       }
     },
     watch: {
