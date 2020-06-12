@@ -75,4 +75,36 @@ describe("furet-ui-breadcrumb", () => {
     expect(mock_router_push).toHaveBeenLastCalledWith("Go to user");
     expect(wrapper.element).toMatchSnapshot();
   });
+  it("makes sure data store changes is cleared when click on breadcrumb", () => {
+
+    store.commit("ClearBreadcrumb");
+    store.commit("PushBreadcrumb", {
+      label: "Home",
+      icon: "home",
+      route: "Go to home"
+    });
+    store.commit("PushBreadcrumb", {
+      label: "User",
+      icon: "user",
+      route: "Go to user"
+    });
+    store.commit("PushBreadcrumb", {
+      label: "something else",
+      route: "Go to somewhere else"
+    });
+    const commit_store_mock = jest.spyOn(store, "commit")
+    const wrapper = mount(Breadcrumb, {
+      store,
+      localVue,
+      router
+    });
+    // Only Home should be display after clicking on User element
+    wrapper
+      .findAll("li")
+      .at(1)
+      .find("a")
+      .trigger("click");
+      expect(commit_store_mock).toHaveBeenNthCalledWith(1, "ClearBreadcrumbFrom", 1);
+      expect(commit_store_mock).toHaveBeenNthCalledWith(2, "CLEAR_CHANGE");
+  });
 });
