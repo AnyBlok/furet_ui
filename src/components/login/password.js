@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { defineComponent } from './factory';
+import { defineComponent } from '../factory';
+import { loginPages } from './login-pages';
 
-defineComponent('login', {
+defineComponent('furet-ui-login-password', {
   template: `
     <div class="container has-text-centered">
       <form v-on:submit="logIn">
@@ -62,3 +63,5 @@ defineComponent('login', {
     },
   },
 });
+
+loginPages.password = 'furet-ui-login-password';

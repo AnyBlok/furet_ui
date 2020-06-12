@@ -22,7 +22,8 @@ export const defaultState = {
   right_menus: [],
   isOpenLeft: false,
   isOpenRight: false,
-  breadcrumb: []
+  breadcrumb: [],
+  loginPage: 'password',
 };
 
 // getters
