@@ -138,7 +138,7 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
       v-bind:config="config"
     >
       <b-field 
-        v-bind:label="config.label"
+        v-bind:label="label"
         v-bind:type="getType"
         v-bind:message="getMessage"
         v-bind:style="{'width': 'inherit'}"
@@ -152,6 +152,14 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
     computed: {
       value () {
         return this.data && this.data[this.config.name] || '';
+      },
+      label () {
+        const regex = new RegExp( "^i18n\\((.*)\\)$" )
+        const res = regex.exec(this.config.label)
+        if (res !== null) {
+          return this.$t(res[1])
+        }
+        return this.config.label;
       },
       isReadonly () {
         if (this.resource.readonly) return true;
