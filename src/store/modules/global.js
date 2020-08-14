@@ -23,7 +23,7 @@ export const defaultState = {
   isOpenLeft: false,
   isOpenRight: false,
   breadcrumb: [],
-  loginPage: 'password',
+  loginPage: "oidc",
 };
 
 // getters
@@ -33,7 +33,7 @@ export const getters = {
   },
   isLoaded(state) {
     return state.appLoaded;
-  }
+  },
 };
 
 // actions
@@ -93,12 +93,12 @@ export const mutations = {
   },
   UPDATE_CURRENT_RIGHT_MENUS(state, action) {
     state.right_menus = action.menus;
-  }
+  },
 };
 
 export default {
   state: defaultState,
   getters,
   actions,
-  mutations
+  mutations,
 };
