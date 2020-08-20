@@ -1,7 +1,6 @@
-// import axios from 'axios';
+import axios from "axios";
 import { defineComponent } from "../factory";
 import { loginPages } from "./login-pages";
-import axios from "axios";
 
 defineComponent("furet-ui-login-oidc", {
   template: `
@@ -16,14 +15,13 @@ defineComponent("furet-ui-login-oidc", {
   prototype: {
     data() {
       return {
-        loadingComponent: null,
-        popupWindow: null,
         errors: [],
       };
     },
     computed: {},
     methods: {
       logIn() {
+        this.errors = [];
         axios
           .post("/furet-ui/oidc/login", {
             redirect: this.$route.query.redirect,

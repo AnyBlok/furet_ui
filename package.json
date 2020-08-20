@@ -16,6 +16,7 @@
     "debounce": "^1.2.0",
     "moment": "^2.25.3",
     "moment-timezone": "^0.5.31",
+    "oidc-client": "^1.10.1",
     "underscore": "^1.10.2",
     "vue": "^2.6.11",
     "vue-i18n": "^8.17.6",

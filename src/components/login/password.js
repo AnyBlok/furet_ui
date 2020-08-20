@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { defineComponent } from '../factory';
-import { loginPages } from './login-pages';
+import axios from "axios";
+import { defineComponent } from "../factory";
+import { loginPages } from "./login-pages";
 
-defineComponent('furet-ui-login-password', {
+defineComponent("furet-ui-login-password", {
   template: `
     <div class="container has-text-centered">
       <form v-on:submit="logIn">
@@ -28,10 +28,10 @@ defineComponent('furet-ui-login-password', {
     </div>
   `,
   prototype: {
-    data () {
+    data() {
       return {
-        username: '',
-        password: '',
+        username: "",
+        password: "",
         errors: [],
       };
     },
@@ -40,28 +40,27 @@ defineComponent('furet-ui-login-password', {
         if (!this.username) return true;
         if (!this.password) return true;
         return false;
-      }
+      },
     },
     methods: {
       logIn() {
         if (this.is_not_clickable) return;
         this.errors = [];
-        axios.post('/furet-ui/login', 
-          {
-            login: this.username, 
+        axios
+          .post("/furet-ui/login", {
+            login: this.username,
             password: this.password,
             redirect: this.$route.query.redirect,
-          }
-        )
+          })
           .then((result) => {
             this.$dispatchAll(result.data);
           })
           .catch((error) => {
             this.errors = [error];
-          })
+          });
       },
     },
   },
 });
 
-loginPages.password = 'furet-ui-login-password';
+loginPages.password = "furet-ui-login-password";

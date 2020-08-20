@@ -23,7 +23,7 @@ export const defaultState = {
   isOpenLeft: false,
   isOpenRight: false,
   breadcrumb: [],
-  loginPage: "oidc",
+  loginPage: "password",
 };
 
 // getters
@@ -52,6 +52,10 @@ export const mutations = {
   },
   ClearBreadcrumb(state) {
     state.breadcrumb = [];
+  },
+  SET_LOGIN_PAGE(state, loginPage) {
+    if (loginPage && loginPage.login_page)
+      state.loginPage = loginPage.login_page;
   },
   "FURETUI LOADED"(state) {
     state.appLoaded = true;

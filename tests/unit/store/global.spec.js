@@ -15,7 +15,7 @@ describe("store global module: Mutation", () => {
     store = new Vuex.Store({
       getters,
       state,
-      mutations
+      mutations,
     });
   });
 
@@ -25,21 +25,27 @@ describe("store global module: Mutation", () => {
     expect(state.breadcrumb[0]).toBe("test");
   });
 
+  it("test SET_LOGIN_PAGE mutation", () => {
+    state.loginPage = "test";
+    store.commit("SET_LOGIN_PAGE", { login_page: "changed" });
+    expect(state.loginPage).toBe("changed");
+  });
+
   it("test ClearBreadcrumbFrom mutation", () => {
-    state.breadcrumb = ["a", "b", "c"]
+    state.breadcrumb = ["a", "b", "c"];
     store.commit("ClearBreadcrumbFrom", 1);
     expect(state.breadcrumb.length).toBe(1);
     expect(state.breadcrumb[0]).toBe("a");
   });
-  
+
   it("test ClearBreadcrumb mutation", () => {
-    state.breadcrumb = [{test: "1"}, {test: "2"}, {test: "3"}]
+    state.breadcrumb = [{ test: "1" }, { test: "2" }, { test: "3" }];
     store.commit("ClearBreadcrumb");
     expect(state.breadcrumb.length).toBe(0);
   });
-  
+
   it("test PopBreadcrumb mutation", () => {
-    state.breadcrumb = [{test: "1"}, {test: "2"}, {test: "3"}]
+    state.breadcrumb = [{ test: "1" }, { test: "2" }, { test: "3" }];
     store.commit("PopBreadcrumb");
     expect(state.breadcrumb.length).toBe(2);
     expect(state.breadcrumb[1].test).toBe("2");
@@ -84,7 +90,7 @@ describe("store global module: Mutation", () => {
     state = Object.assign(state, {
       authenticated: true,
       userName: "test",
-      space_name: "My menu"
+      space_name: "My menu",
     });
     store.commit("LOGOUT", { userName: "test" });
     expect(state.authenticated).toBe(false);
@@ -94,25 +100,25 @@ describe("store global module: Mutation", () => {
 
   it("test UPDATE_PREVIOUS_ROUTE", () => {
     expect(state.previous_route).toStrictEqual({});
-    store.commit("UPDATE_PREVIOUS_ROUTE", {route: 'test'});
-    expect(state.previous_route).toStrictEqual('test');
+    store.commit("UPDATE_PREVIOUS_ROUTE", { route: "test" });
+    expect(state.previous_route).toStrictEqual("test");
   });
 
   it("test UPDATE_SPACE_MENUS", () => {
     expect(state.space_menus).toStrictEqual([]);
-    store.commit("UPDATE_SPACE_MENUS", {menus: [1, 2, 3]});
+    store.commit("UPDATE_SPACE_MENUS", { menus: [1, 2, 3] });
     expect(state.space_menus).toStrictEqual([1, 2, 3]);
   });
 
   it("test UPDATE_CURRENT_SPACE", () => {
-    expect(state.space_name).toBe('Menu');
-    store.commit("UPDATE_CURRENT_SPACE", {label: 'test'});
-    expect(state.space_name).toBe('test');
+    expect(state.space_name).toBe("Menu");
+    store.commit("UPDATE_CURRENT_SPACE", { label: "test" });
+    expect(state.space_name).toBe("test");
   });
 
   it("test UPDATE_GLOBAL", () => {
     expect(state.isOpenLeft).toBe(false);
-    store.commit("UPDATE_GLOBAL", {isOpenLeft: true});
+    store.commit("UPDATE_GLOBAL", { isOpenLeft: true });
     expect(state.isOpenLeft).toBe(true);
   });
 
@@ -134,13 +140,13 @@ describe("store global module: Mutation", () => {
 
   it("test UPDATE_CURRENT_LEFT_MENUS", () => {
     expect(state.left_menus).toStrictEqual([]);
-    store.commit("UPDATE_CURRENT_LEFT_MENUS", {menus: [1, 2, 3]});
+    store.commit("UPDATE_CURRENT_LEFT_MENUS", { menus: [1, 2, 3] });
     expect(state.left_menus).toStrictEqual([1, 2, 3]);
   });
 
   it("test UPDATE_CURRENT_RIGHT_MENUS", () => {
     expect(state.right_menus).toStrictEqual([]);
-    store.commit("UPDATE_CURRENT_RIGHT_MENUS", {menus: [1, 2, 3]});
+    store.commit("UPDATE_CURRENT_RIGHT_MENUS", { menus: [1, 2, 3] });
     expect(state.right_menus).toStrictEqual([1, 2, 3]);
   });
 });
@@ -155,15 +161,15 @@ describe("store global module: Getter", () => {
     store = new Vuex.Store({
       getters,
       state,
-      mutations
+      mutations,
     });
   });
 
   it("test loggedIn", () => {
-    expect(store.getters.loggedIn).toBe(false)
+    expect(store.getters.loggedIn).toBe(false);
   });
 
   it("test isLoaded", () => {
-    expect(store.getters.isLoaded).toBe(false)
+    expect(store.getters.isLoaded).toBe(false);
   });
 });
