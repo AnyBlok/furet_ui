@@ -284,6 +284,10 @@ defineComponent("furet-ui-form-field-resource-manager", {
       },
       createData(data) {
         data.changes = this.changes;
+        data.changes[data["model"]]["new"][data["uuid"]] = Object.assign(
+          data.changes[data["model"]]["new"][data["uuid"]],
+          this.build_additional_filter()
+        );
         this.$emit("add", data);
         this.goToList();
       },
