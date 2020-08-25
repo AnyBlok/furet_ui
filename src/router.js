@@ -16,7 +16,7 @@ export const routes = [
         name: 'login',
         path: '/login',
         component: {
-            template: '<login />',
+            template: '<furet-ui-login />',
         },
         meta: { requiresAuth: false },
     },

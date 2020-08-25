@@ -22,7 +22,8 @@ export const defaultState = {
   right_menus: [],
   isOpenLeft: false,
   isOpenRight: false,
-  breadcrumb: []
+  breadcrumb: [],
+  loginPage: "password",
 };
 
 // getters
@@ -32,7 +33,7 @@ export const getters = {
   },
   isLoaded(state) {
     return state.appLoaded;
-  }
+  },
 };
 
 // actions
@@ -51,6 +52,10 @@ export const mutations = {
   },
   ClearBreadcrumb(state) {
     state.breadcrumb = [];
+  },
+  SET_LOGIN_PAGE(state, loginPage) {
+    if (loginPage && loginPage.login_page)
+      state.loginPage = loginPage.login_page;
   },
   "FURETUI LOADED"(state) {
     state.appLoaded = true;
@@ -92,12 +97,12 @@ export const mutations = {
   },
   UPDATE_CURRENT_RIGHT_MENUS(state, action) {
     state.right_menus = action.menus;
-  }
+  },
 };
 
 export default {
   state: defaultState,
   getters,
   actions,
-  mutations
+  mutations,
 };
