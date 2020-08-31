@@ -64,7 +64,7 @@ defineComponent('furet-ui-resource-list', {
           class="is-list-cell"
           v-bind:key="header.name"
           v-bind:field="typeof header.sortable === 'string'? header.sortable : header.name" 
-          v-bind:label="header.label" 
+          v-bind:label="translate(header.label)" 
           v-bind:sortable="typeof header.sortable === 'string'? true: header.sortable"
           v-bind:visible="!safe_eval(header['hidden-column'], props.row)"
           >
@@ -77,7 +77,7 @@ defineComponent('furet-ui-resource-list', {
       </template>
     </furet-ui-list>
   `,
-  extend: ['furet-ui-resource'],
+  extend: ['furet-ui-resource', 'i18n-translate'],
   prototype: {
     props: ['id', 'manager'],
     inject: ['getEntry', 'getNewEntries'],

@@ -146,6 +146,7 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
         <slot />
       </b-field>
     </furet-ui-form-field-common-tooltip>`,
+  extend: ['i18n-translate'],
   prototype: {
     props: ['resource', 'data', 'config'],
     inject: ['partIsReadonly'],
@@ -154,12 +155,7 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
         return this.data && this.data[this.config.name] || '';
       },
       label () {
-        const regex = new RegExp( "^i18n\\((.*)\\)$" )
-        const res = regex.exec(this.config.label)
-        if (res !== null) {
-          return this.$t(res[1])
-        }
-        return this.config.label;
+        return this.translate(this.config.label);
       },
       isReadonly () {
         if (this.resource.readonly) return true;

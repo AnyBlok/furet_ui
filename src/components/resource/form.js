@@ -177,7 +177,7 @@ defineComponent('furet-ui-resource-form', {
             params[`filter[${pk}][eq]`] = this.pks[pk];
         })
         this.errors = [];
-        axios.get('/furet-ui/resource/${this.id}/crud', { params })
+        axios.get(`/furet-ui/resource/${this.id}/crud`, { params })
           .then((response) => {
             this.$dispatchAll(response.data.data);
             this.loading = false;
