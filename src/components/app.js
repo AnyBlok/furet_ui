@@ -334,6 +334,9 @@ defineComponent('furet-ui-space-menu', {
             });
             this.$store.commit("ClearBreadcrumb");
             this.$store.commit("CLEAR_CHANGE");
+          } else if (menu.url !== undefined) {
+              if (menu.newtable) window.open(menu.url)
+              else location.replace(menu.url)
           }
         }
       }
