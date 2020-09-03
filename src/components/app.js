@@ -323,7 +323,7 @@ defineComponent('furet-ui-space-menu', {
             // TODO CLEAR DATA
             const query = {};
             if (menu.tags) query.tags = menu.tags
-            if (menu.order_by) query.order = menu.order_by
+            if (menu.order_by) query.orders = menu.order_by
             if (_.keys(menu.filters).length) {
               query.filters = JSON.stringify(menu.filters);
             }

@@ -344,7 +344,10 @@ defineComponent('mixin-page-multi-entries', {
         const regexWithOption = new RegExp('.*\\[(.+)\\]\\[(.+)\\]');
         const regexWithoutOption = new RegExp('.*\\[(.+)\\]');
         const query = this.query;
-        if (query === undefined) return;
+        if (query === undefined) {
+          this.loadAsyncData();
+          return;
+        }
         if (query.page) this.page = parseInt(query.page, 10);
         if (query.orders) {
           query.orders.split(',').forEach(sort => {
