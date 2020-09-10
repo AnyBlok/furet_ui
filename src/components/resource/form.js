@@ -55,7 +55,7 @@ defineComponent('furet-ui-resource-form', {
       />
     </section>
   `,
-  extend: ['furet-ui-resource'],
+  extend: ['furet-ui-resource', 'i18n-translate'],
   prototype: {
     props: ['manager'],
     inject: ['getEntry', 'getNewEntry'],
@@ -105,7 +105,7 @@ defineComponent('furet-ui-resource-form', {
     },
     methods: {
       getBreadcrumbInfo() {
-        return {label: this.$t(this.resource.title), icon: "newspaper"};
+        return {label: this.translate(this.resource.title || ''), icon: "newspaper"};
       },
       form_card (part) {
         if (this.templates[part] !== undefined) return this.templates[part];
@@ -270,7 +270,6 @@ defineComponent('furet-ui-form-button', {
         return readonlyParams ? true: false;
       },
       server_call () {
-        console.log(this.currentResource)
         this.currentResource.errors = [];
         this.currentResource.loading = true;
         const params = {pks: this.resource.pks}
