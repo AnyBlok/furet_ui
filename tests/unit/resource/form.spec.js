@@ -16,10 +16,14 @@ mock.mockResolvedValue({data: [], headers: {'x-total-records': 0}});
 const store = global.store
 
 const getEntry = (model, pk) => {
+  model;
+  pk;
   return {title: 'Entry 1', color: 'red'};
 }
 
 const getNewEntry = (model, uuid) => {
+  model;
+  uuid;
   return {title: 'New Entry 1', color: 'red'};
 }
 
