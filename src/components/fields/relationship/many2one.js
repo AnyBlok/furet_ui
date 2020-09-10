@@ -177,14 +177,14 @@ defineComponent('furet-ui-form-field-many2one', {
       onChange (value) {
         if (this.value) this.updateValue(null)
         const params = {
-          model: this.config.model,
-          fields: this.config.fields.toString(),
+          'context[model]': this.config.model,
+          'context[fields]': this.config.fields.toString(),
           limit: this.config.limit,
         }
         this.config.filter_by.forEach(filter => {
           params[`filter[${filter}][ilike]`] = value
         })
-        axios.get('/furet-ui/crud', { params })
+        axios.get(`/furet-ui/resource/${this.resource.id}/crud`, { params })
           .then((response) => {
             this.$dispatchAll(response.data.data);
             this.pks = response.data.pks

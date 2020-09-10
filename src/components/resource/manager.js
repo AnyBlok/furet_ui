@@ -57,6 +57,11 @@ defineComponent('furet-ui-resource', {
           });
       },
     },
+    provide: function () {
+      return {
+        currentResource: this,
+      }
+    },
   },
 });
 
