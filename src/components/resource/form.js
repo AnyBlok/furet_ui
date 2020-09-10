@@ -3,6 +3,7 @@ import _ from 'underscore';
 import { v1 as uuidv1 } from 'uuid';
 import { resources } from './resources';
 import { defineComponent } from '../factory';
+import { safe_eval } from '../fields/common';
 
 
 defineComponent('furet-ui-resource-form', {
@@ -230,3 +231,63 @@ defineComponent('furet-ui-resource-form', {
   },
 });
 resources.form = 'furet-ui-resource-form';
+
+defineComponent('furet-ui-form-button', {
+  template: `
+      <button 
+        v-bind:disabled="isReadonly" 
+        v-bind:class="getClass" 
+        v-on:click="server_call"
+        v-if="!isHidden"
+      >
+        <span class="icon" v-if="config.icon">
+          <b-icon v-bind:icon="config.icon" />
+        </span>
+        <span>{{ translate(config.label) }} {{ isHidden }}</span>
+      </button>
+  `,
+  extend: ['furet-ui-helper-mixin', 'i18n-translate'],
+  prototype: {
+    inject: ['currentResource'],
+    computed: {
+      getClass () {
+        if (this.config.class !== undefined)
+          if (this.config.class.length != 0)
+              return ['button', ...this.config.class];
+        return ['button', 'is-primary', 'is-outlined'];
+      },
+      isHidden () {
+        if (this.currentResource.uuid) return true;
+        if (this.config.hidden == undefined) return false;
+        return safe_eval(this.config.hidden, this.data || {}, this.resource);
+      },
+    },
+    methods: {
+      getIsReadonly () {
+        if (!this.resource.readonly) return true; // button is clickable when resource is readonly
+        if (!this.partIsReadonly()) return true; // button is clickable when resource is readonly
+        const readonlyParams = safe_eval(this.config.readonly, this.data, this.resource);
+        return readonlyParams ? true: false;
+      },
+      server_call () {
+        console.log(this.currentResource)
+        this.currentResource.errors = [];
+        this.currentResource.loading = true;
+        const params = {pks: this.resource.pks}
+        axios.post(`/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/${this.config.call}`, params)
+          .then((response) => {
+            this.currentResource.loading = false;
+            if (response.data.length) {
+              this.$dispatchAll(response.data)
+            } else {
+              this.currentResource.loadAsyncData()
+            }
+          })
+          .catch((error) => {
+            this.currentResource.loading = false;
+            this.currentResource.errors = error.response.data.errors;
+          });
+      },
+    },
+  },
+})

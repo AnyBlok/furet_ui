@@ -29,7 +29,7 @@ defineComponent('furet-ui-helper-mixin', {
     },
     provide: function () {
       return {
-        partIsReadonly: this.getIsReadonly
+        partIsReadonly: this.getIsReadonly,
       }
     },
   },

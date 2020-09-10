@@ -191,10 +191,11 @@ resources.list = 'furet-ui-resource-list';
 defineComponent('furet-ui-list-button', {
   template: `
     <a class="button is-primary is-outlined" v-on:click="server_call">
-      {{ $t(config.label) }}
+      {{ translate(config.label) }}
     </a>
   `,
   // extend: ['furet-ui-helper-mixin'], waittin readony / readwrite on view
+  extend: ['i18n-translate'],
   prototype: {
     props: ['resource', 'data', 'config'],
     methods: {
