@@ -114,14 +114,14 @@ defineComponent('furet-ui-resource-list', {
       api_formater (obj, data) {
         this.$dispatchAll(data.data);
         let res = [];
-        if(data.pks === undefined){
-          data.pks = [];
-        }
+        if(data.pks === undefined) data.pks = [];
+        if(data.total === undefined) data.total = 0;
+
         data.pks.forEach(pk => {
           res.push(this.getEntry(this.resource.model, pk))
         });
         const news = this.getNewEntries(this.resource.model);
-        const total = (data.total || 0) + news.length;
+        const total = data.total + news.length;
         if (res.length < obj.perPage){
           const modulus = data.total % obj.perPage;
           const page_count = Math.floor(data.total / obj.perPage) + 1;

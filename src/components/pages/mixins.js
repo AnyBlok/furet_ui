@@ -275,7 +275,23 @@ defineComponent('mixin-page-multi-entries', {
         tag.selected = false;
         this.updateData();
       },
+      from_x2m_with_a_newest_parent() {
+        if (this.additional_filter === null) return false;
+        let res = false;
+        _.each(_.keys(this.additional_filter), filter => {
+          if (this.additional_filter[filter] === undefined) {
+            res = true;
+          }
+        });
+        return res;
+      },
       loadAsyncData() {
+        if (this.from_x2m_with_a_newest_parent()) {
+          if (this.rest_api_formater) {
+            this.rest_api_formater(this, {});
+          }
+          return
+        }
         const params = this.rest_api_params || {};
         params.offset = (this.page - 1) * this.perPage;
         params.limit = this.perPage;
@@ -291,9 +307,7 @@ defineComponent('mixin-page-multi-entries', {
         });
         if (this.additional_filter !== null) {
           _.each(_.keys(this.additional_filter), filter => {
-            if (this.additional_filter[filter] !== undefined) {
-              params[`filter[${filter}][in]`] = this.additional_filter[filter].toString()
-            }
+            params[`filter[${filter}][in]`] = this.additional_filter[filter].toString()
           });
         }
         const tags = [];
