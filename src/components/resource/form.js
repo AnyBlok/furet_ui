@@ -284,7 +284,6 @@ defineComponent('furet-ui-form-button', {
             }
           })
           .catch((error) => {
-            console.log(error)
             this.currentResource.loading = false;
             this.currentResource.errors = error.response.data.errors;
           });
