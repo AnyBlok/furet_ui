@@ -10,6 +10,7 @@ defineComponent('furet-ui-resource-form', {
   template : `
     <section>
       <b-loading v-bind:active.sync="loading"></b-loading>
+      <furet-ui-page-errors v-bind:errors="errors"/>
       <component
         v-bind:is="headerComponentName"
         name="furet-ui-page"
@@ -243,7 +244,7 @@ defineComponent('furet-ui-form-button', {
         <span class="icon" v-if="config.icon">
           <b-icon v-bind:icon="config.icon" />
         </span>
-        <span>{{ translate(config.label) }} {{ isHidden }}</span>
+        <span>{{ translate(config.label) }}</span>
       </button>
   `,
   extend: ['furet-ui-helper-mixin', 'i18n-translate'],

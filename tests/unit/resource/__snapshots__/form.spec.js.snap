@@ -4,6 +4,12 @@ exports[`furet-ui-resource-form component furet-ui-resource-form: snapshot 1`] =
 <section>
   <!---->
    
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
   <header
     id="header_page"
     name="furet-ui-page"

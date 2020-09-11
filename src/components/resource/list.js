@@ -114,14 +114,14 @@ defineComponent('furet-ui-resource-list', {
       api_formater (obj, data) {
         this.$dispatchAll(data.data);
         let res = [];
-        if(data.pks === undefined){
-          data.pks = [];
-        }
+        if(data.pks === undefined) data.pks = [];
+        if(data.total === undefined) data.total = 0;
+
         data.pks.forEach(pk => {
           res.push(this.getEntry(this.resource.model, pk))
         });
         const news = this.getNewEntries(this.resource.model);
-        const total = (data.total || 0) + news.length;
+        const total = data.total + news.length;
         if (res.length < obj.perPage){
           const modulus = data.total % obj.perPage;
           const page_count = Math.floor(data.total / obj.perPage) + 1;
@@ -191,7 +191,10 @@ resources.list = 'furet-ui-resource-list';
 defineComponent('furet-ui-list-button', {
   template: `
     <a class="button is-primary is-outlined" v-on:click="server_call">
-      {{ translate(config.label) }}
+      <span class="icon" v-if="config.icon">
+        <b-icon v-bind:icon="config.icon" />
+      </span>
+      <span>{{ translate(config.label) }}</span>
     </a>
   `,
   // extend: ['furet-ui-helper-mixin'], waittin readony / readwrite on view
@@ -199,10 +202,28 @@ defineComponent('furet-ui-list-button', {
   prototype: {
     props: ['resource', 'data', 'config'],
     methods: {
+      get_call_information () {
+        if (this.config.call)
+          return {
+            url: `/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/${this.config.call}`,
+            params: {},
+          }
+        if (this.config['open-resource']) {
+          return {
+            url: `/furet-ui/open/resource/${this.config['open-resource']}`,
+            params: {
+              route: this.$route.name,
+              params: this.$route.params,
+              resource_type: this.config['resource-type'],
+            }
+          }
+        }
+      },
       server_call () {
         this.$parent.$parent.errors = [];
         this.$parent.$parent.loading = true;
-        axios.post(`/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/${this.config.call}`, {})
+        const {url, params} = this.get_call_information();
+        axios.post(url, params)
           .then((response) => {
             this.$parent.$parent.loading = false;
             if (response.data.length) {
