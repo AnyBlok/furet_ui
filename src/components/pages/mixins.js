@@ -21,7 +21,7 @@ defineComponent('furet-ui-page-errors', {
 
 defineComponent('furet-ui-page-header-date', {
   template: `
-    <span>formatDate(value)</span>
+    <span>{{ formatDate(value) }}</span>
   `,
   extend: ['date-display'],
   prototype: {
