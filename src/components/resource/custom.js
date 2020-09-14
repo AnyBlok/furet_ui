@@ -7,6 +7,7 @@ defineComponent('furet-ui-resource-custom', {
     <component 
       v-bind:is="resource.component" 
       v-bind:manager="manager" 
+      v-bind:id="id" 
       v-on:update-query-string="updateQueryString"
       />
   `,
