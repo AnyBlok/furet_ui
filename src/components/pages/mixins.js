@@ -307,7 +307,9 @@ defineComponent('mixin-page-multi-entries', {
         });
         if (this.additional_filter !== null) {
           _.each(_.keys(this.additional_filter), filter => {
-            params[`filter[${filter}][in]`] = this.additional_filter[filter].toString()
+            if (this.additional_filter[filter] !== undefined) {
+              params[`filter[${filter}][in]`] = this.additional_filter[filter].toString()
+            }
           });
         }
         const tags = [];
