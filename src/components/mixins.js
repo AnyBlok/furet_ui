@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { defineComponent } from './factory';
 
 defineComponent('mixin-logo', {
@@ -21,8 +21,9 @@ defineComponent('date-display', {
     methods: {
       formatDate(date) {
         if (date) {
+          const timezone = this.$store.state.global.userTimeZone;
           moment.locale(document.documentElement.lang);
-          return moment(date).format('LLL');
+          return moment(date).tz(timezone).format('LLL');
         }
         return '';
       },

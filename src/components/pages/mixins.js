@@ -19,6 +19,16 @@ defineComponent('furet-ui-page-errors', {
   },
 });
 
+defineComponent('furet-ui-page-header-date', {
+  template: `
+    <span>formatDate(value)</span>
+  `,
+  extend: ['date-display'],
+  prototype: {
+    props: ['value'],
+  },
+});
+
 defineComponent('furet-ui-list-total', {
   template: `
     <b-field grouped group-multiline v-bind:class="pagination_size">
