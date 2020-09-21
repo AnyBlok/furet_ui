@@ -76,6 +76,7 @@ export const eval_counter = (value, fields) => {
 }
 
 defineComponent('furet-ui-tab', {
+  extend: ['i18n-translate'],
   prototype: {
     functional: true,
     render: function (createElement, context) {
@@ -88,7 +89,7 @@ defineComponent('furet-ui-tab', {
       const props = context.props
       if (props.counter !== undefined) {
         const counter = eval_counter(props.counter, context.props.data);
-        options.attrs.label = `${props.label} (${counter})`
+        options.attrs.label = `${this.translate(props.label)} (${counter})`
       }
       return createElement( 'b-tab-item', options, [
         createElement('furet-ui-div', {props}, context.children)
