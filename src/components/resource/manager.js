@@ -16,9 +16,12 @@ defineComponent('furet-ui-waiting-resource', {
 defineComponent('furet-ui-resource-not-found', {
   template: `
     <div class="container"> 
-        <strong>Resource type not found</strong>
+        <strong>Resource type '{{ type }}' not found</strong>
     </div>
   `,
+  prototype: {
+    props: ['type']
+  },
 });
 
 defineComponent('furet-ui-resource', {
