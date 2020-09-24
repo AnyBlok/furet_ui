@@ -3,6 +3,7 @@
 exports[`Custom resource test furet ui resource custom 1`] = `
 <div
   class="b-table"
+  id="1"
   manager="[object Object]"
 >
   <!---->
