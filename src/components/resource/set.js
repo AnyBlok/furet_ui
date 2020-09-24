@@ -10,6 +10,7 @@ defineComponent('furet-ui-resource-set', {
         v-bind:is="getResourceComponent" 
         v-bind:id="subResource.id" 
         v-bind:key="subResource.id" 
+        v-bind:type="subResource.type" 
         v-bind:manager="resourceManager" 
 
         v-on:update-query-string="updateQueryString"

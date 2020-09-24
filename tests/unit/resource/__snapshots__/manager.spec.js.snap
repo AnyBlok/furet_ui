@@ -342,7 +342,7 @@ exports[`furet-ui-resource-not-found component snapshot 1`] = `
   class="container"
 >
   <strong>
-    Resource type not found
+    Resource type '' not found
   </strong>
 </div>
 `;
