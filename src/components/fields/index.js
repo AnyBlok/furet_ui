@@ -1,5 +1,6 @@
 import { fields } from './fields';
 import './common';
+import './barcode';
 import './boolean';
 import './datetime';
 import './mail';

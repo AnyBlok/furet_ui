@@ -11,6 +11,36 @@ import _ from 'underscore';
 import {defineComponent} from '../factory'
 import {fields} from './fields';
 
+defineComponent('furet-ui-list-field-statusbar', {
+  template:`
+    <span v-if="isHidden" />
+    <b-taglist v-else attached>
+      <b-tag type="is-dark" size="is-medium">{{ config.label }}</b-tag>
+      <b-tag 
+        v-for="state in getStates" 
+        v-bind:key="state.value" 
+        v-bind:type="state.type" 
+        size="is-medium"
+      >
+        {{ state.label }}
+      </b-tag>
+    </b-taglist>
+  `,
+  extend: ['furet-ui-list-field-common'],
+  prototype: {
+    computed: {
+      getStates () {
+        const res = []
+        _.each(this.config.selections, (label, value) => {
+          res.push({value, label, type: this.value == value ? 'is-success': ''})
+        })
+        return res
+      },
+    },
+  },
+})
+fields.list.statusbar = 'furet-ui-list-field-statusbar'
+
 defineComponent('furet-ui-form-field-statusbar', {
   template: `
     <furet-ui-form-field-common-tooltip
