@@ -15,7 +15,6 @@ defineComponent('furet-ui-list-field-statusbar', {
   template:`
     <span v-if="isHidden" />
     <b-taglist v-else attached>
-      <b-tag type="is-dark" size="is-medium">{{ config.label }}</b-tag>
       <b-tag 
         v-for="state in getStates" 
         v-bind:key="state.value" 
