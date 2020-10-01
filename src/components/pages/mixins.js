@@ -302,7 +302,7 @@ defineComponent('mixin-page-multi-entries', {
           }
           return
         }
-        const params = this.rest_api_params || {};
+        const params = Object.assign({}, this.rest_api_params || {});
         params.offset = (this.page - 1) * this.perPage;
         params.limit = this.perPage;
         this.sortingPriority.forEach(({field, order}) => {
@@ -383,6 +383,9 @@ defineComponent('mixin-page-multi-entries', {
             this.sortingPriority.push({field, order});
           })
         }
+
+        _.forEach(this.filters, f => {f.values = [];});
+        _.forEach(this.tags, f => {f.selected = false;});
         if (query.filters) {
           _.each(JSON.parse(query.filters), (queryStringValue, queryStringName) => {
             if (queryStringName.startsWith('filter')) {
