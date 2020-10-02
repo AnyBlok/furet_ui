@@ -11,6 +11,31 @@ import _ from 'underscore';
 import {defineComponent} from '../factory'
 import {fields} from './fields';
 
+defineComponent('furet-ui-field-statusbar-common', {
+  prototype: {
+    computed: {
+      getStates () {
+        const res = [];
+        _.each(this.config.selections, (label, value) => {
+          let type = '';
+          let added = true;
+          const isDone = this.config['done-states'].indexOf(value) !== -1 ? true : false;
+          const isDangerous = this.config['dangerous-states'].indexOf(value) !== -1 ? true : false;
+
+          if (this.value == value) {
+            if (isDone) type = 'is-success';
+            else if (isDangerous) type = 'is-danger';
+            else type = 'is-info';
+          } else if (isDangerous) added = false;
+
+          if (added) res.push({value, label, type})
+        })
+        return res
+      },
+    },
+  },
+})
+
 defineComponent('furet-ui-list-field-statusbar', {
   template:`
     <span v-if="isHidden" />
@@ -25,18 +50,7 @@ defineComponent('furet-ui-list-field-statusbar', {
       </b-tag>
     </b-taglist>
   `,
-  extend: ['furet-ui-list-field-common'],
-  prototype: {
-    computed: {
-      getStates () {
-        const res = []
-        _.each(this.config.selections, (label, value) => {
-          res.push({value, label, type: this.value == value ? 'is-success': ''})
-        })
-        return res
-      },
-    },
-  },
+  extend: ['furet-ui-list-field-common', 'furet-ui-field-statusbar-common'],
 })
 fields.list.statusbar = 'furet-ui-list-field-statusbar'
 
@@ -60,17 +74,6 @@ defineComponent('furet-ui-form-field-statusbar', {
       </b-taglist>
     </furet-ui-form-field-common-tooltip>
   `,
-  extend: ['furet-ui-form-field-common'],
-  prototype: {
-    computed: {
-      getStates () {
-        const res = []
-        _.each(this.config.selections, (label, value) => {
-          res.push({value, label, type: this.value == value ? 'is-success': ''})
-        })
-        return res
-      },
-    },
-  },
+  extend: ['furet-ui-form-field-common', 'furet-ui-field-statusbar-common'],
 })
 fields.form.statusbar = 'furet-ui-form-field-statusbar'
