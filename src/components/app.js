@@ -298,6 +298,7 @@ defineComponent('furet-ui-space-menus', {
 defineComponent('furet-ui-space-menu', {
     template: `
       <ul class="menu-list">
+        <b-loading v-bind:active.sync="isLoading"></b-loading>
         <li v-for="menu in menus">
             <a v-on:click="onClickMenu(menu)"
                v-bind:class="[menu.id == menuId ? 'is-active' : '']"
@@ -317,9 +318,14 @@ defineComponent('furet-ui-space-menu', {
     `,
     prototype: {
       props: ['menus', 'menuId', 'code'],
+      data () {
+        return {
+          isLoading: false,
+        }
+      },
       methods: {
         onClickMenu (menu) {
-          if (menu.resource !== undefined) {
+          if (!!menu.resource == true) {
             // TODO CLEAR DATA
             const query = {};
             if (menu.tags) query.tags = menu.tags
@@ -335,8 +341,21 @@ defineComponent('furet-ui-space-menu', {
             this.$store.commit("ClearBreadcrumb");
             this.$store.commit("CLEAR_CHANGE");
           } else if (menu.url !== undefined) {
-              if (menu.newtable) window.open(menu.url)
-              else location.replace(menu.url)
+            this.$store.commit("ClearBreadcrumb");
+            this.$store.commit("CLEAR_CHANGE");
+            if (menu.newtable) window.open(menu.url)
+            else location.replace(menu.url)
+          } else if (menu.method !== undefined) {
+            const params = {};
+            this.isLoading = true;
+            axios.post(`/furet-ui/resource/0/model/${menu.model}/call/${menu.method}`, params)
+              .then((response) => {
+                this.isLoading = false;
+                this.$dispatchAll(response.data)
+              })
+              .catch(() => {
+                this.isLoading = false;
+              });
           }
         }
       }
