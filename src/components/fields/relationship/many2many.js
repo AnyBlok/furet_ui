@@ -1,250 +1,245 @@
 /**
 This file is a part of the FuretUI project
 
-   Copyright (C) 2017 Jean-Sebastien SUZANNE <jssuzanne@anybox.fr>
+   Copyright (C) 2020 Pierre Verkest <pierrevekrest84@gmail.com>
 
 This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import Vue from 'vue';
-import {FormMixin, ThumbnailMixin, ListMixin} from '../common';
-import {RelationShip, RelationShipX2MList, RelationShipX2MThumbnail, RelationShipX2MForm} from './common';
-import {dispatchAll} from '../../store';
-import {json_post} from '../../server-call';
-import _ from 'underscore';
+import { defineComponent } from "../../factory";
+import { fields } from "../fields";
+import { RelationShipX2MList } from "./common";
 
-export const FieldListMany2Many = Vue.component('furet-ui-list-field-many2many', {
-    mixins: [ListMixin, RelationShip, RelationShipX2MList],
-})
-
-export const FieldThumbnailMany2Many = Vue.component('furet-ui-thumbnail-field-many2many', {
-    mixins: [ThumbnailMixin, RelationShip, RelationShipX2MThumbnail],
-})
-
-export const onChangeM2M = (config, name, dataId, value) => {
-    const values = (config && config.data && config.data[name] || []).slice(0);
-    if (value) {
-        values.push(dataId);
-    } else {
-        const index = values.indexOf(dataId);
-        if (index > -1) values.splice(index, 1);
-    }
-    return values;
-};
-
-export const FieldFormMany2ManyCheckbox = Vue.component('furet-ui-form-field-many2many-checkbox', {
-    props: ['checkbox_class', 'model', 'display', 'fields', 'fieldcolor'],
-    mixins: [FormMixin, RelationShip],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-bind:style="{'width': '100%'}"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:type="getType"
-                v-bind:message="getMessage"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <div class="columns is-multiline is-mobile">
-                    <div 
-                        v-for="value in existing"
-                        v-bind:id="value.dataId"
-                        v-bind:class="['column', checkbox_class]" 
-                    >
-                        <furet-ui-b-checkbox 
-                            v-bind:checked="isChecked(value.dataId)" 
-                            v-bind:disabled="isReadonly"
-                            v-on:change="onChange"
-                        >
-                            {{value.label}}
-                            <div v-bind:style="getStyle(value.dataId)" />
-                        </furet-ui-b-checkbox>
-                    </div>
-                </div>
-            </b-field>
-        </b-tooltip>`,
-    components: {
-        'furet-ui-b-checkbox': {
-            props: ['checked', 'disabled'],
-            template: `
-                <b-checkbox 
-                    v-model="value" 
-                    v-bind:disabled="disabled"
-                    v-on:change="onChange"
-                >
-                    <slot></slot>
-                </b-checkbox>
-            `,
-            data () {
-                return {
-                    value: this.checked,
-                };
-            },
-            methods: {
-                onChange (value, event) {
-                    this.$emit('change', value, event);
-                },
-            },
-            watch: {
-                disabled (_newDisabled) {
-                    this.value = this.checked;
-                },
-            }
-        },
-    },
-    created () {
-        json_post('/field/x2x/search', 
-                  {model: this.model, fields:this.fields}, 
-                  {
-                      onSuccess: (result) => {
-                          dispatchAll(result.data);
-                      }
-                  }
-        );
-    },
+/**
+ * furet-ui-field-many2many-common component is a mixin used to manage relationship many2one
+ *
+ * @mixin
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} model - A model name, needed to display the data
+ * @param {String} display - An evaluate string to display the entry
+ */
+defineComponent("furet-ui-field-many2many-common", {
+  prototype: {
     computed: {
-        existingIds () {
-            if (this.model) {
-                let data = this.$store.state.data.data;
-                if (data[this.model]) {
-                    return _.keys(data[this.model]);
-                }
-            }
-            return [];
-        },
-        existing () {
-            const data = this.$store.state.data.data[this.model];
-            return _.map(this.existingIds, dataId => ({
-                dataId, label: this.format(this.display, data[dataId])
-            }));
+      values() {
+        const res = [];
+        const display = this.config.display;
+        const model = this.config.model;
+        if (this.value === null) {
+          return [];
         }
+        this.value.forEach((pk) => {
+          res.push({
+            pk,
+            label: this.format(display, this.getEntry(model, pk)),
+          });
+        });
+        return res;
+      },
     },
     methods: {
-        isChecked(dataId) {
-            const value = this.config && this.config.data && this.config.data[this.name] || [];
-            const values = _.map(value, v => String(v));
-            if (values.indexOf(dataId) > -1) return true;
-            return false;
-        },
-        getStyle (dataId) {
-            if (this.fieldcolor) {
-                const data = this.$store.state.data.data[this.model][dataId];
-                if (data[this.fieldcolor]) return {width: '100%', height: '5px', backgroundColor: data[this.fieldcolor]};
-            }
-            return {'display': 'none'};
-        },
-        onChange (value, event) {
-            this.updateValue(onChangeM2M(this.config, this.name, event.path[2].id, value));
-        },
+      openResource(value) {
+        const params = { code: this.$route.params.code, menuId: 0, id: 0 };
+        if (this.config.menu) params.menuId = this.config.menu;
+        if (this.config.resource) {
+          const query = { mode: "form", pks: JSON.stringify(value.pk) };
+          params.id = this.config.resource;
+          this.pushInBreadcrumb();
+          this.$router.push({ name: "resource", params, query });
+        }
+      },
     },
-})
+  },
+});
 
-export const FieldFormMany2ManyTags = Vue.component('furet-ui-form-field-many2many-tags', {
-    props: ['placeholder', 'icon', 'fields', 'defaultIds', 'defaultValue'],
-    mixins: [FormMixin, RelationShip, RelationShipX2MForm],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-bind:style="{'width': '100%'}"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:type="getType"
-                v-bind:message="getMessage"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <div class="field has-addons" >
-                    <p class="control is-expanded">
-                        <span 
-                            v-for="value in values"
-                            class="tag" 
-                            v-bind:style="getStyle(value.dataId)"
-                        >
-                            <a 
-                                v-on:click.stop="onClick(value.dataId)">{{value.label}}
-                            </a>
-                            <button 
-                                v-if="!isReadonly" 
-                                class="delete is-small" 
-                                v-on:click="removeTag(value.dataId)"
-                            />
-                        </span>
-                        <b-autocomplete
-                            v-model="value" v-if="!isReadonly"
-                            v-bind:data="data"
-                            field="label"
-                            v-bind:placeholder="placeholder"
-                            icon-pack="fa"
-                            v-bind:icon="icon"
-                            v-on:change="onChange"
-                            v-on:select="onSelect"
-                        />
-                    </p>
-                </div>
-            </b-field>
-        </b-tooltip>`,
-    data () {
-        return {
-            ids: this.defaultIds || null,
-            value: this.defaultValue || '',
-        };
-    },
-    computed: {
-        data () {
-            if (this.model) {
-                const values = ({}, this.config && this.config.data && this.config.data[this.name] || []).slice(0);
-                let data = this.$store.state.data.data;
-                if (data[this.model]) {
-                    data = data[this.model];
-                    data = _.map(_.keys(data), dataId => ({dataId, label: this.format(this.display, data[dataId])}))
-                    if (this.ids) {
-                        data = _.filter(data, d => this.ids.indexOf(d.dataId) != -1);
-                    }
-                    data = _.filter(data, d => values.indexOf(d.dataId) == -1);
-                    return data;
-                }
-            }
-            return [];
-        },
-        getType () {
-            if (this.isRequired) {
-                if (this.values.length > 0) return 'is-info';
-                return 'is-danger';
-            }
-            return '';
-        },
-        getMessage () {
-            if (this.isRequired) {
-                if (this.values.length == 0) return this.$i18n.t('fields.common.required');
-            }
-            return ''
-        },
-    },
+/**
+ * furet-ui-list-field-many2many component is used to manage relationship many2many on list
+ * resource (``furet-ui-resource-list``).
+ *
+ * Extend Mixins:
+ *  * @see ``furet-ui-list-field-common``
+ *  * @see ``furet-ui-field-relationship``
+ *
+ * @example
+ *  <furet-ui-list-field-many2many
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @mixes <furet-ui-list-field-common>, <furet-ui-field-relationship>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String} model - A model name, needed to display the data
+ * @param {String} display - An evaluate string to display the entry
+ */
+defineComponent("furet-ui-list-field-many2many", {
+  template: RelationShipX2MList,
+  extend: [
+    "furet-ui-list-field-common",
+    "furet-ui-field-relationship",
+    "furet-ui-field-many2many-common",
+  ],
+  prototype: {
+    computed: {},
+    methods: {},
+  },
+});
+fields.list.many2many = "furet-ui-list-field-many2many";
+
+/**
+ * furet-ui-form-field-many2many component is used to manage relationship many2many on form
+ * resource (``furet-ui-resource-form``).
+ *
+ * Extend Mixins:
+ *  * @see ``furet-ui-list-field-common``
+ *
+ * @example
+ *  <furet-ui-form-field-many2many
+ *    :config="aConfigObject"
+ *    :data="aDataObject"
+ *    :resource="aResourceObject"/>
+ *
+ * @mixes <furet-ui-list-field-common>
+ *
+ * @param {Object} config - A config object to manage the behaviour of the component
+ * @param {Object} data - An object that contains data to display. The key to use
+ *                        in set in the `config.key`
+ * @param {Object} resource - A resource object used to properly bind data with parents
+ *                            tags and manage reactivity.
+ *
+ * ``config`` Object contains
+ * @param {String} name - the key to use in the ``data`` object where is store the value
+ * @param {String} model - A model name, needed to display the data
+ * @param {Integer} resource - Id of the resource to used
+ */
+defineComponent("furet-ui-form-field-many2many", {
+  template: `
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <div v-if="isReadonly" >
+          <div class="buttons">
+            <b-button 
+              v-on:click.stop="openResource(record)"
+              v-for="record in values"
+              :key="getKey(record)"
+              type="is-info"
+              size="is-small"
+              >
+                {{ record.label }}
+            </b-button>
+        </div>
+    </div>
+    <b-taginput
+        v-else
+        v-bind:value="values"
+        v-bind:data="choices"
+        autocomplete
+        ref="taginput"
+        v-bind:placeholder="config.placeholder"
+        v-bind:allow-new="false"
+        v-bind:open-on-focus="false"
+        icon-pack="fa"
+        type="is-info"
+        v-bind:icon="config.icon"
+        v-on:typing="onChange"
+        v-on:add="onSelect"
+        v-on:remove="onUnSelect">
+        <template slot="empty">
+            No data found with current filter.
+        </template>
+        <!-- template to display search results -->
+        <template slot-scope="searched">
+            {{searched.option.label}}
+        </template>
+        <template slot="selected" slot-scope="props">
+          <b-tag
+            v-for="(tag, index) in props.tags"
+                        :key="index"
+                        :type="getType(tag)"
+                        :tabstop="false"
+                        :closable="isClosable(tag)"
+                        @close="$refs.taginput.removeTag(index, $event)">
+                        {{tag.label}}
+                    </b-tag>
+        </template>
+      </b-taginput>
+    </furet-ui-form-field-common-tooltip-field>
+  `,
+  extend: [
+    "furet-ui-form-field-common",
+    "furet-ui-field-relationship",
+    "furet-ui-field-many2many-common",
+    "furet-ui-field-relationship-search",
+  ],
+  prototype: {
     methods: {
-        removeTag (dataId) {
-            this.updateValue(onChangeM2M(this.config, this.name, dataId, false));
-        },
-        onSelect (value) {
-            if (value) {
-                this.updateValue(onChangeM2M(this.config, this.name, value.dataId, true));
-                this.value = '';
-            }
-        },
-        onChange (value) {
-            json_post('/field/x2x/search', {model: this.model, fields:this.fields, value}, {
-                onSuccess: (result) => {
-                    this.ids = _.map(result.ids || [], id => String(id));
-                    dispatchAll(result.data);
-                }
-            });
-        },
+      isClosable(value) {
+        if (value.pk.__x2m_state && value.pk.__x2m_state === "UNLINKED") {
+          return false;
+        }
+        return true;
+      },
+      getType(value) {
+        if (value.pk.__x2m_state && value.pk.__x2m_state === "UNLINKED") {
+          return "";
+        }
+        return "is-primary";
+      },
+      onUnSelect(value) {
+        const data = {};
+        // data[this.config.model] = {};
+        // const pks = this.getKey(value);
+        // data[this.config.model][pks] = Object.assign(
+        //   { __change_state: "unlink" },
+        //   value
+        // );
+        const values = Object.assign([], this.value);
+        if (value.pk.__x2m_state && value.pk.__x2m_state === "LINKED") {
+          // values.splice(values.indexOf(value), 1);
+          Object.assign(values[values.indexOf(value.pk)], {
+            __revert: true,
+          });
+        } else {
+          Object.assign(values[values.indexOf(value.pk)], {
+            __x2m_state: "UNLINKED",
+          });
+        }
+        this.updateValue(values, data);
+      },
+      onSelect(value) {
+        const data = {};
+        // data[this.config.model] = {};
+        // const pks = this.getKey(value);
+        // data[this.config.model][pks] = Object.assign(
+        //   { __change_state: "link" },
+        //   value
+        // );
+        this.updateValue(
+          this.value.concat([
+            Object.assign({}, value.pk, { __x2m_state: "LINKED" }),
+          ]),
+          data
+        );
+      },
     },
-})
+  },
+});
+fields.form.many2many = "furet-ui-form-field-many2many";

@@ -7,11 +7,8 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-// import _ from 'underscore';
-import axios from 'axios';
-import {defineComponent} from '../../factory'
-import {fields} from '../fields';
-
+import { defineComponent } from "../../factory";
+import { fields } from "../fields";
 
 /**
  * furet-ui-field-many2one component is a mixin used to manage relationship many2one
@@ -29,26 +26,25 @@ import {fields} from '../fields';
  * @param {String} model - A model name, needed to display the data
  * @param {String} display - An evaluate string to display the entry
  */
-defineComponent('furet-ui-field-many2one-common', {
+defineComponent("furet-ui-field-many2one-common", {
   prototype: {
     computed: {
-      value () {
-        const value = this.data[this.config.name] || '';
+      value() {
+        const value = this.data[this.config.name] || "";
         if (value) {
-          const model = this.config.model; 
+          const model = this.config.model;
           return this.format(this.config.display, this.getEntry(model, value));
-        } else return ''
-      }
+        } else return "";
+      },
     },
     methods: {
-      onClick () {
+      onClick() {
         const value = this.data[this.config.name];
         if (value) this.openResource(value);
       },
     },
   },
-})
-
+});
 
 /**
  * furet-ui-list-field-many2one component is used to manage relationship many2one on list
@@ -78,20 +74,19 @@ defineComponent('furet-ui-field-many2one-common', {
  * @param {String} model - A model name, needed to display the data
  * @param {String} display - An evaluate string to display the entry
  */
-defineComponent('furet-ui-list-field-many2one', {
+defineComponent("furet-ui-list-field-many2one", {
   template: `
     <div>
       <span v-if="isHidden" />
       <a v-else v-on:click.stop="onClick">{{value}}</a>
     </div>`,
   extend: [
-    'furet-ui-list-field-common',
-    'furet-ui-field-relationship',
-    'furet-ui-field-many2one-common',
+    "furet-ui-list-field-common",
+    "furet-ui-field-relationship",
+    "furet-ui-field-many2one-common",
   ],
-})
-fields.list.many2one = 'furet-ui-list-field-many2one'
-
+});
+fields.list.many2one = "furet-ui-list-field-many2one";
 
 /**
  * furet-ui-form-field-many2one component is used to manage relationship many2one on form
@@ -126,7 +121,7 @@ fields.list.many2one = 'furet-ui-list-field-many2one'
  * @param {String} display - An evaluate string to display the entry
  * @param {Integer} limit - Apply a limit in the api query
  */
-defineComponent('furet-ui-form-field-many2one', {
+defineComponent("furet-ui-form-field-many2one", {
   template: `
     <furet-ui-form-field-common-tooltip-field
       v-bind:resource="resource"
@@ -148,50 +143,20 @@ defineComponent('furet-ui-form-field-many2one', {
     </furet-ui-form-field-common-tooltip-field>
   `,
   extend: [
-    'furet-ui-form-field-common',
-    'furet-ui-field-relationship',
-    'furet-ui-field-many2one-common',
+    "furet-ui-form-field-common",
+    "furet-ui-field-relationship",
+    "furet-ui-field-many2one-common",
+    "furet-ui-field-relationship-search",
   ],
   prototype: {
-    data () {
-        return {
-            pks: [],
-        };
-    },
-    computed: {
-      choices () {
-        const res = [];
-        this.pks.forEach(pk => {
-          res.push({
-              pk,
-              label: this.format(this.config.display, this.getEntry(this.config.model, pk)),
-          })
-        });
-        return res
-      },
-    },
     methods: {
-      onSelect (value) {
-        this.updateValue(value.pk)
+      onSelect(value) {
+        this.updateValue(value.pk);
       },
-      onChange (value) {
-        if (this.value) this.updateValue(null)
-        const params = {
-          'context[model]': this.config.model,
-          'context[fields]': this.config.fields.toString(),
-          limit: this.config.limit,
-        }
-        this.config.filter_by.forEach(filter => {
-          params[`filter[${filter}][ilike]`] = value
-        })
-        axios.get(`/furet-ui/resource/${this.resource.id}/crud`, { params })
-          .then((response) => {
-            this.$dispatchAll(response.data.data);
-            this.pks = response.data.pks
-            this.loading = false;
-          })
+      beforeOnChange() {
+        this.updateValue(null);
       },
     },
   },
-})
-fields.form.many2one = 'furet-ui-form-field-many2one'
+});
+fields.form.many2one = "furet-ui-form-field-many2one";
