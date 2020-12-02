@@ -102,14 +102,14 @@ defineComponent("furet-ui-list-field-many2many", {
 fields.list.many2many = "furet-ui-list-field-many2many";
 
 /**
- * furet-ui-form-field-many2many component is used to manage relationship many2many on form
+ * furet-ui-form-field-many2many-tags component is used to manage relationship many2many on form
  * resource (``furet-ui-resource-form``).
  *
  * Extend Mixins:
  *  * @see ``furet-ui-list-field-common``
  *
  * @example
- *  <furet-ui-form-field-many2many
+ *  <furet-ui-form-field-many2many-tags
  *    :config="aConfigObject"
  *    :data="aDataObject"
  *    :resource="aResourceObject"/>
@@ -127,7 +127,7 @@ fields.list.many2many = "furet-ui-list-field-many2many";
  * @param {String} model - A model name, needed to display the data
  * @param {Integer} resource - Id of the resource to used
  */
-defineComponent("furet-ui-form-field-many2many", {
+defineComponent("furet-ui-form-field-many2many-tags", {
   template: `
     <furet-ui-form-field-common-tooltip-field
       v-bind:resource="resource"
@@ -192,28 +192,29 @@ defineComponent("furet-ui-form-field-many2many", {
   prototype: {
     methods: {
       isClosable(value) {
-        if (value.pk.__x2m_state && value.pk.__x2m_state === "UNLINKED") {
+        if (
+          value.pk &&
+          value.pk.__x2m_state &&
+          value.pk.__x2m_state === "UNLINKED"
+        ) {
           return false;
         }
         return true;
       },
       getType(value) {
-        if (value.pk.__x2m_state && value.pk.__x2m_state === "UNLINKED") {
+        if (
+          value.pk &&
+          value.pk.__x2m_state &&
+          value.pk.__x2m_state === "UNLINKED"
+        ) {
           return "";
         }
         return "is-primary";
       },
       onUnSelect(value) {
         const data = {};
-        // data[this.config.model] = {};
-        // const pks = this.getKey(value);
-        // data[this.config.model][pks] = Object.assign(
-        //   { __change_state: "unlink" },
-        //   value
-        // );
         const values = Object.assign([], this.value);
         if (value.pk.__x2m_state && value.pk.__x2m_state === "LINKED") {
-          // values.splice(values.indexOf(value), 1);
           Object.assign(values[values.indexOf(value.pk)], {
             __revert: true,
           });
@@ -226,12 +227,6 @@ defineComponent("furet-ui-form-field-many2many", {
       },
       onSelect(value) {
         const data = {};
-        // data[this.config.model] = {};
-        // const pks = this.getKey(value);
-        // data[this.config.model][pks] = Object.assign(
-        //   { __change_state: "link" },
-        //   value
-        // );
         this.updateValue(
           this.value.concat([
             Object.assign({}, value.pk, { __x2m_state: "LINKED" }),
@@ -242,4 +237,8 @@ defineComponent("furet-ui-form-field-many2many", {
     },
   },
 });
-fields.form.many2many = "furet-ui-form-field-many2many";
+// As long we only support m2m tags widget for the moment we use it as default
+// developer should add widget="Many2ManyTags" if he wants to ensure this
+// components to be used for a long time
+fields.form.many2many = "furet-ui-form-field-many2many-tags";
+fields.form.many2manytags = "furet-ui-form-field-many2many-tags";
