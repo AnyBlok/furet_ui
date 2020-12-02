@@ -10,6 +10,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import axios from "axios";
 import { defineComponent } from "../../factory";
 import { pk2string } from "../../../store/modules/data";
+import { debounce } from "debounce";
 
 const safe_eval = (style, fields) => {
   fields; // lint
@@ -114,13 +115,11 @@ defineComponent("furet-ui-field-relationship-search", {
     methods: {
       beforeOnChange() {
         /** Method to overwrite in order to
-         * clear current value before searching.
-         *
-         * It's also a good place to debounce if needs
+         * clear current value before searching things.
          */
       },
-      onChange(value) {
-        if (this.value) this.beforeOnChange();
+      onChange: debounce(function(value) {
+        this.beforeOnChange();
         const params = {
           "context[model]": this.config.model,
           "context[fields]": this.config.fields.toString(),
@@ -129,14 +128,16 @@ defineComponent("furet-ui-field-relationship-search", {
         this.config.filter_by.forEach((filter) => {
           params[`filter[${filter}][ilike]`] = value;
         });
-        // TODO: We needs to improuve in case of composite key
-        const first_key = this.config.remote_columns[0];
-        const key_values = this.value
-          .map((key) => {
-            return key[first_key];
-          })
-          .join(",");
-        if (key_values) params[`~filter[${first_key}][in]`] = key_values;
+        if (this.value && Array.isArray(this.value)) {
+          // TODO: We needs to improuve in case of composite key
+          const first_key = this.config.remote_columns[0];
+          const key_values = this.value
+            .map((key) => {
+              return key[first_key];
+            })
+            .join(",");
+          if (key_values) params[`~filter[${first_key}][in]`] = key_values;
+        }
         axios
           .get(`/furet-ui/resource/${this.resource.id}/crud`, { params })
           .then((response) => {
@@ -144,7 +145,7 @@ defineComponent("furet-ui-field-relationship-search", {
             this.pks = response.data.pks;
             this.loading = false;
           });
-      },
+      }, 200),
     },
   },
 });
