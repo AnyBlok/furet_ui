@@ -139,7 +139,11 @@ defineComponent("furet-ui-form-field-many2one", {
         v-bind:icon="config.icon"
         v-on:typing="onChange"
         v-on:select="onSelect"
-      />
+      >
+        <template slot="empty">
+            No data found with current filter.
+        </template>
+      </b-autocomplete>
     </furet-ui-form-field-common-tooltip-field>
   `,
   extend: [
