@@ -119,6 +119,9 @@ defineComponent("furet-ui-field-relationship-search", {
          */
       },
       onChange: debounce(function(value) {
+        this._onChange(value);
+      }, 200),
+      _onChange(value) {
         this.beforeOnChange();
         const params = {
           "context[model]": this.config.model,
@@ -145,7 +148,7 @@ defineComponent("furet-ui-field-relationship-search", {
             this.pks = response.data.pks;
             this.loading = false;
           });
-      }, 200),
+      }
     },
   },
 });
