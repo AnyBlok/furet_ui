@@ -158,7 +158,7 @@ defineComponent("furet-ui-form-field-many2one", {
         this.updateValue(value.pk);
       },
       beforeOnChange() {
-        this.updateValue(null);
+        if (this.value) this.updateValue(null);
       },
     },
   },
