@@ -148,7 +148,7 @@ describe("Field.One2Many for Resource.Form", () => {
     const wrapper = mount(Component, getOptions(false));
     expect(wrapper.vm.pks).toStrictEqual([])
     expect(updateValue).not.toHaveBeenCalled()
-    wrapper.vm.onChange(test)
+    wrapper.vm._onChange(test)
     expect(wrapper.vm.pks).toStrictEqual([])
     expect(updateValue).toHaveBeenCalled()
   });
@@ -157,7 +157,7 @@ describe("Field.One2Many for Resource.Form", () => {
     wrapper.setProps({data: {}})
     expect(wrapper.vm.pks).toStrictEqual([])
     expect(updateValue).not.toHaveBeenCalled()
-    wrapper.vm.onChange(test)
+    wrapper.vm._onChange(test)
     expect(wrapper.vm.pks).toStrictEqual([])
     expect(updateValue).not.toHaveBeenCalled()
   });

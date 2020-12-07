@@ -7,17 +7,15 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-// import {json_post_dispatch_all} from '../../server-call';
-// import _ from 'underscore';
-import {defineComponent} from '../../factory';
-import {pk2string} from '../../../store/modules/data';
-
+import axios from "axios";
+import { defineComponent } from "../../factory";
+import { pk2string } from "../../../store/modules/data";
+import { debounce } from "debounce";
 
 const safe_eval = (style, fields) => {
-  fields  // lint
-  return  eval(style)
-}
-
+  fields; // lint
+  return eval(style);
+};
 
 /**
  * furet-ui-field-relationship component is a mixin used to manage relationship to add
@@ -27,7 +25,7 @@ const safe_eval = (style, fields) => {
  *   * openResource: strategie to open the resource as the main resource
  *   * getKey: transform primary key to string
  *   * getStyle: return a style string for ``a`` tag
- *   
+ *
  * added injection:
  *   * getEntry
  *   * pushInBreadcrumb
@@ -45,38 +43,37 @@ const safe_eval = (style, fields) => {
  * @param {String} model - A model name, needed to display the data
  * @param {String} display - An evaluate string to display the entry
  */
-defineComponent('furet-ui-field-relationship', {
+defineComponent("furet-ui-field-relationship", {
   prototype: {
-    inject: ['getEntry', 'pushInBreadcrumb'],
+    inject: ["getEntry", "pushInBreadcrumb"],
     methods: {
-      format (display, fields) {
+      format(display, fields) {
         return safe_eval(display, fields);
       },
       getKey(value) {
-        return pk2string(value.pk)
+        return pk2string(value.pk);
       },
       getStyle(value) {
-        let style = '';
+        let style = "";
         if (this.config.style !== undefined) {
-          const data =  this.getEntry(this.config.model, value.pk);
+          const data = this.getEntry(this.config.model, value.pk);
           style = safe_eval(this.config.style, data, {});
         }
-        return style
+        return style;
       },
-      openResource (value) {
-        const params = {code: this.$route.params.code, menuId: 0, id: 0}
+      openResource(value) {
+        const params = { code: this.$route.params.code, menuId: 0, id: 0 };
         if (this.config.menu) params.menuId = this.config.menu;
         if (this.config.resource) {
-          const query = {mode: 'form', pks: JSON.stringify(value)}
+          const query = { mode: "form", pks: JSON.stringify(value) };
           params.id = this.config.resource;
           this.pushInBreadcrumb();
-          this.$router.push({name: 'resource', params, query})
+          this.$router.push({ name: "resource", params, query });
         }
       },
     },
   },
 });
-
 
 export const RelationShipX2MList = `
   <div>
@@ -91,4 +88,68 @@ export const RelationShipX2MList = `
         <a v-on:click.stop="openResource(value)">{{value.label}}</a>
       </span>
     </div>
-  </div>`
+  </div>`;
+
+defineComponent("furet-ui-field-relationship-search", {
+  prototype: {
+    data() {
+      return {
+        pks: [],
+      };
+    },
+    computed: {
+      choices() {
+        const res = [];
+        this.pks.forEach((pk) => {
+          res.push({
+            pk,
+            label: this.format(
+              this.config.display,
+              this.getEntry(this.config.model, pk)
+            ),
+          });
+        });
+        return res;
+      },
+    },
+    methods: {
+      beforeOnChange() {
+        /** Method to overwrite in order to
+         * clear current value before searching things.
+         */
+      },
+      onChange: debounce(function(value) {
+        this._onChange(value);
+      }, 200),
+      _onChange(value) {
+        this.beforeOnChange();
+        const params = {
+          "context[model]": this.config.model,
+          "context[fields]": this.config.fields.toString(),
+          limit: this.config.limit,
+        };
+        this.config.filter_by.forEach((filter) => {
+          params[`filter[${filter}][ilike]`] = value;
+        });
+        if (this.value && Array.isArray(this.value) && this.value.length > 0) {
+          const pks = this.config.remote_columns.join(":");
+          const values = this.value
+            .map((val) => {
+              return this.config.remote_columns.map(key => {
+                return val[key]
+              }).join(":");
+            })
+            .join(",");
+          if (values) params[`~primary-keys[${pks}]`] = values;
+        }
+        axios
+          .get(`/furet-ui/resource/${this.resource.id}/crud`, { params })
+          .then((response) => {
+            this.$dispatchAll(response.data.data);
+            this.pks = response.data.pks;
+            this.loading = false;
+          });
+      }
+    },
+  },
+});
