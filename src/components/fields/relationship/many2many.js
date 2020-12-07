@@ -237,8 +237,4 @@ defineComponent("furet-ui-form-field-many2many-tags", {
     },
   },
 });
-// As long we only support m2m tags widget for the moment we use it as default
-// developer should add widget="Many2ManyTags" if he wants to ensure this
-// components to be used for a long time
-fields.form.many2many = "furet-ui-form-field-many2many-tags";
 fields.form.many2manytags = "furet-ui-form-field-many2many-tags";
