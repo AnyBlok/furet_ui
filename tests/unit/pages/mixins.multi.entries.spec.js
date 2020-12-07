@@ -596,7 +596,7 @@ describe('mixin-page-multi-entries component', () => {
     expect(wrapper.element).toMatchSnapshot()
     expect(wrapper.vm.tags[0].selected).toBe(true);
     expect(wrapper.vm.tags[1].selected).toBe(true);
-    expect(wrapper.vm.tags[2].selected).toBe(undefined);
+    expect(wrapper.vm.tags[2].selected).toBe(false);
   });
 
 });
