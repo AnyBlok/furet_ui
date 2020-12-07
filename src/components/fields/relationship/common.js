@@ -131,15 +131,16 @@ defineComponent("furet-ui-field-relationship-search", {
         this.config.filter_by.forEach((filter) => {
           params[`filter[${filter}][ilike]`] = value;
         });
-        if (this.value && Array.isArray(this.value)) {
-          // TODO: We needs to improuve in case of composite key
-          const first_key = this.config.remote_columns[0];
-          const key_values = this.value
-            .map((key) => {
-              return key[first_key];
+        if (this.value && Array.isArray(this.value) && this.value.length > 0) {
+          const pks = this.config.remote_columns.join(":");
+          const values = this.value
+            .map((val) => {
+              return this.config.remote_columns.map(key => {
+                return val[key]
+              }).join(":");
             })
             .join(",");
-          if (key_values) params[`~filter[${first_key}][in]`] = key_values;
+          if (values) params[`~primary-keys[${pks}]`] = values;
         }
         axios
           .get(`/furet-ui/resource/${this.resource.id}/crud`, { params })
