@@ -77,9 +77,9 @@ defineComponent('furet-ui-resource-form', {
     computed: {
       data () {
         if (this.uuid) {
-          return this.getNewEntry(this.resource.model, this.uuid)
+          return this.getNewEntry(this.resource.model, this.uuid);
         } else if (this.pks) {
-          return this.getEntry(this.resource.model, this.pks)
+          return this.getEntry(this.resource.model, this.pks);
         }
       },
       resource () {
@@ -128,7 +128,7 @@ defineComponent('furet-ui-resource-form', {
         this.$emit('go-to-list');
       },
       goToNew () {
-        this.updateQueryString({mode: 'form'})
+        this.updateQueryString({mode: 'form'});
       },
       goToEdit () {
         this.readonly = false;
@@ -138,6 +138,21 @@ defineComponent('furet-ui-resource-form', {
         this.readonly = true;
         if (this.uuid) this.goToList();
         this.refresh_fields()
+      },
+      getDefault() {
+        this.errors = [];
+        this.loading = true;
+        const params = {data: {uuid: this.uuid}}
+        // let self = this;
+        axios.post(`/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/default_values`, params)
+          .then((response) => {
+            this.$dispatchAll(response.data);
+            this.loading = false;
+          })
+          .catch((error) => {
+            this.loading = false;
+            this.errors = error.response.data.errors;
+          });
       },
       deleteEntry () {
         this.$emit('delete-data', {
@@ -170,7 +185,7 @@ defineComponent('furet-ui-resource-form', {
         this.refresh_fields();
       },
       loadAsyncData() {
-        // this.loading = true;
+        this.loading = true;
         const params = {
           'context[model]': this.resource.model,
           'context[fields]': this.resource.fields.toString(),
@@ -199,10 +214,12 @@ defineComponent('furet-ui-resource-form', {
             // new case
             this.readonly = false;
             this.uuid = this.manager.query.uuid;
+            this.getDefault();
           } else {
             // new case
             this.readonly = false;
             this.uuid = uuidv1();
+            this.getDefault();
           }
         }
       },
