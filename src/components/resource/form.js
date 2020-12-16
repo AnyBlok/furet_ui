@@ -59,7 +59,7 @@ defineComponent('furet-ui-resource-form', {
   extend: ['furet-ui-resource', 'i18n-translate'],
   prototype: {
     props: ['manager'],
-    inject: ['getEntry', 'getNewEntry'],
+    inject: ['getEntry', 'getNewEntry', 'updateChangeState'],
     data() {
       return {
         loading: false,
@@ -140,6 +140,17 @@ defineComponent('furet-ui-resource-form', {
         this.refresh_fields()
       },
       getDefault() {
+          console.log(this.manager.query)
+        if (this.manager.query.waiting_value !== undefined) {
+          _.each(JSON.parse(this.manager.query.waiting_value), (value, fieldname) => {
+              this.updateChangeState({
+                model: this.resource.model,
+                uuid: this.uuid,
+                fieldname,
+                value
+              })
+          })
+        }
         this.errors = [];
         this.loading = true;
         const params = {data: {uuid: this.uuid}}

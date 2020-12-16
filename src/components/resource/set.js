@@ -45,6 +45,7 @@ defineComponent('furet-ui-resource-set', {
               'can_create': this.resource.can_create,
               'can_update': this.resource.can_update,
               'can_delete': this.resource.can_delete,
+              'create_choices': this.resource.forms || [],
           }, 
           this.manager);
       },
@@ -82,10 +83,16 @@ defineComponent('furet-ui-resource-set', {
       clearChange (data) {
         this.$emit('clear-change', data);
       },
-      goToNew () {
+      goToNew (choice) {
         // add to breadscrumb
-        this.$emit('push-in-breadcrumb')
-        this.$emit('update-query-string', {mode: 'form'})
+        console.log(choice)
+        const query = {mode: 'form'};
+        if (choice !== undefined) {
+            query.waiting_value = JSON.stringify(choice.waiting_value);
+            query.resource_id = choice.resource_id;
+        }
+        this.$emit('push-in-breadcrumb');
+        this.$emit('update-query-string', query);
       },
       goToPage (row) {
         if (! this.resource.can_read) return

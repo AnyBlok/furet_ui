@@ -45,6 +45,7 @@ defineComponent('furet-ui-resource-polymorphic-form', {
         return this.getResource(resource_id)
       },
       resource_id () {
+        if (this.manager.query.resource_id !== undefined) return this.manager.query.resource_id;
         let id = undefined;
         const entry = this.getEntry(this.resource.model, this.pks)
         const identifiers = {}

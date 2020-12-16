@@ -15,6 +15,7 @@ defineComponent('furet-ui-resource-list', {
       v-bind:default_header_component_name="manager.multi_header_component_name || null"
       v-bind:perpage="resource.perpage"
       v-bind:can_go_to_new="manager.can_create"
+      v-bind:go_to_new_choices="manager.create_choices"
       v-bind:rest_api_url="rest_api_url"
       v-bind:rest_api_params="api_params"
 
@@ -174,8 +175,8 @@ defineComponent('furet-ui-resource-list', {
       updateQueryString (query) {
         this.$emit('update-query-string', query);
       },
-      goToNew() {
-        this.$emit('go-to-new');
+      goToNew(choice) {
+        this.$emit('go-to-new', choice);
       },
       goToPage(row) {
         if(row.__change_state !== "delete") this.$emit('go-to-page', row);
