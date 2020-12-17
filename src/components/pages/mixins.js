@@ -474,7 +474,7 @@ defineComponent('furet-ui-header-page', {
         </div>
       </slot>
       <div class="buttons is-grouped is-centered">
-        <a v-if="can_save" class="button is-warning is-outlined" v-on:click="goToPage">
+        <a v-if="show_save" class="button is-warning is-outlined" v-on:click="goToPage">
           <span class="icon">
             <b-icon icon="times" />
           </span>
@@ -533,7 +533,7 @@ defineComponent('furet-ui-header-page', {
           </span>
           <span>{{ $t('components.header.edit') }}</span>
         </button>
-        <button v-if="can_save" class="button is-primary is-outlined" v-on:click="save">
+        <button v-if="show_save" v-bind:disabled="can_save" class="button is-primary is-outlined" v-on:click="save">
           <span class="icon">
             <b-icon icon="save" />
           </span>
@@ -551,7 +551,7 @@ defineComponent('furet-ui-header-page', {
   `,
   prototype: {
     props: ['title', 'can_go_to_new', 'go_to_new_choices', 'can_modify',
-            'can_delete', 'can_save', 'data', 'readonly'],
+            'can_delete', 'show_save', 'can_save', 'data', 'readonly'],
     computed: {
       prevous_target() {
         return this.$store.getters.previousBrowserTarget;

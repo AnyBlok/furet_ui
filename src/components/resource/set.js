@@ -19,6 +19,7 @@ defineComponent('furet-ui-resource-set', {
         v-on:delete-data="deleteData"
         v-on:revert-data="revertData"
         v-on:clear-change="clearChange"
+        v-on:modify-state="modifyState"
 
         v-on:go-to-new="goToNew"
         v-on:go-to-page="goToPage"
@@ -79,6 +80,9 @@ defineComponent('furet-ui-resource-set', {
         }
 
         this.$emit('revert-data', action);
+      },
+      modifyState(state){
+        this.$emit("modify-state", state);
       },
       clearChange (data) {
         this.$emit('clear-change', data);

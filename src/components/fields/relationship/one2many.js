@@ -171,7 +171,7 @@ defineComponent('furet-ui-page-o2m-page-header', {
   template: `
     <header id="header_page">
       <div class="buttons is-grouped has-addons">
-        <a v-if="can_save" class="button is-small" v-on:click="goToPage">
+        <a v-if="show_save" class="button is-small" v-on:click="goToPage">
           <span class="icon">
             <b-icon icon="times" />
           </span>
@@ -230,13 +230,13 @@ defineComponent('furet-ui-page-o2m-page-header', {
           </span>
           <span>{{ $t('components.header.edit') }}</span>
         </button>
-        <button v-if="can_save & data.__uuid !== undefined" class="button is-x2m-created is-small" v-on:click="save">
+        <button v-if="show_save & data.__uuid !== undefined" v-bind:disabled="can_save" class="button is-x2m-created is-small" v-on:click="save">
           <span class="icon">
             <b-icon icon="save" />
           </span>
           <span>{{ $t('components.header.apply') }}</span>
         </button>
-        <button v-if="can_save & data.__uuid === undefined" class="button is-x2m-updated is-small" v-on:click="save">
+        <button v-if="show_save & data.__uuid === undefined" v-bind:disabled="can_save" class="button is-x2m-updated is-small" v-on:click="save">
           <span class="icon">
             <b-icon icon="save" />
           </span>
@@ -301,12 +301,14 @@ defineComponent("furet-ui-form-field-one2many", {
         v-on:revert="o2m_revert"
         v-on:update="o2m_update"
         v-on:delete="o2m_delete"
+
+        v-on:modify-state="modifyState"
       />
     </furet-ui-form-field-common-tooltip-field>
   `,
   extend: ["furet-ui-form-field-common"],
   prototype: {
-    inject: ['registryRefreshCallback'],
+    inject: ['registryRefreshCallback', 'updateModifyState'],
     computed: {
       x2mconfig () {
         if (this.config.multi_header_component_name === undefined) {
@@ -354,6 +356,9 @@ defineComponent("furet-ui-form-field-one2many", {
       },
       refresh () {
         this.$refs.manager.$refs.resource.refresh()
+      },
+      modifyState (state) {
+        this.updateModifyState(state)
       },
     },
     mounted () {
