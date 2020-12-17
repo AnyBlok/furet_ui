@@ -85,7 +85,6 @@ defineComponent('furet-ui-resource-set', {
       },
       goToNew (choice) {
         // add to breadscrumb
-        console.log(choice)
         const query = {mode: 'form'};
         if (choice !== undefined) {
             query.waiting_value = JSON.stringify(choice.waiting_value);

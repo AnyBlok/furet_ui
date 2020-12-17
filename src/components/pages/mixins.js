@@ -133,16 +133,16 @@ defineComponent('furet-ui-page-multi-entries-header', {
         <div v-if="can_go_to_new">
           <b-dropdown 
             :triggers="['hover']" 
-            aria-role="list"
             v-if="go_to_new_choices.length"
             v-bind:disabled="readonly"
           >
             <button 
               class="button is-primary is-outlined" 
+              slot-scope="{ active }"
               slot="trigger">
               <span class="icon"><b-icon icon="plus" /></span>
               <span>{{ $t('components.header.new') }}</span>
-              <span class="icon"><b-icon icon="caret-down" /></span>
+              <span class="icon"><b-icon :icon="active ? 'caret-up' : 'caret-down'" /></span>
             </button>
             <b-dropdown-item 
               v-for="choice in go_to_new_choices"
@@ -498,12 +498,35 @@ defineComponent('furet-ui-header-page', {
           </span>
           <span>{{ $t('components.header.next') }}</span>
         </a>
-        <button v-if="can_go_to_new" v-bind:disabled="readonly" class="button is-primary is-outlined" v-on:click="goToNew">
-          <span class="icon">
-            <b-icon icon="plus" />
-          </span>
-          <span>{{ $t('components.header.new') }}</span>
-        </button>
+        <div v-if="can_go_to_new">
+          <b-dropdown 
+            :triggers="['hover']" 
+            v-if="go_to_new_choices.length"
+            v-bind:disabled="readonly"
+          >
+            <button 
+              class="button is-primary is-outlined" 
+              slot-scope="{ active }"
+              slot="trigger">
+              <span class="icon"><b-icon icon="plus" /></span>
+              <span>{{ $t('components.header.new') }}</span>
+              <span class="icon"><b-icon :icon="active ? 'caret-up' : 'caret-down'" /></span>
+            </button>
+            <b-dropdown-item 
+              v-for="choice in go_to_new_choices"
+              aria-role="listitem"
+              v-on:click="goToNewPolymorphic(choice)"
+            >
+              {{ choice.label }}
+            </b-dropdown-item>
+          </b-dropdown>
+          <button v-else v-bind:disabled="readonly" class="button is-primary is-outlined" v-on:click="goToNew">
+            <span class="icon">
+              <b-icon icon="plus" />
+            </span>
+            <span>{{ $t('components.header.new') }}</span>
+          </button>
+        </div>
         <button v-if="can_modify" v-bind:disabled="readonly" class="button is-primary is-outlined" v-on:click="goToEdit">
           <span class="icon">
             <b-icon icon="pencil-alt" />
@@ -527,7 +550,8 @@ defineComponent('furet-ui-header-page', {
     </header>
   `,
   prototype: {
-    props: ['title', 'can_go_to_new', 'can_modify', 'can_delete', 'can_save', 'data', 'readonly'],
+    props: ['title', 'can_go_to_new', 'go_to_new_choices', 'can_modify',
+            'can_delete', 'can_save', 'data', 'readonly'],
     computed: {
       prevous_target() {
         return this.$store.getters.previousBrowserTarget;
@@ -559,6 +583,9 @@ defineComponent('furet-ui-header-page', {
       },
       goToNew() {
         this.$emit('go-to-new');
+      },
+      goToNewPolymorphic(choice) {
+        this.$emit('go-to-new', choice);
       },
       goToEdit() {
         this.$emit('go-to-edit');
