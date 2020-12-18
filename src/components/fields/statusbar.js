@@ -19,8 +19,8 @@ defineComponent('furet-ui-field-statusbar-common', {
         _.each(this.config.selections, (label, value) => {
           let type = '';
           let added = true;
-          const isDone = (this.config['done-states'] || []).indexOf(value) !== -1 ? true : false;
-          const isDangerous = (this.config['dangerous-states'] || []).indexOf(value) !== -1 ? true : false;
+          const isDone = (this.config['done-states'] || []).indexOf(value) !== -1 ? true : false;
+          const isDangerous = (this.config['dangerous-states'] || []).indexOf(value) !== -1 ? true : false;
 
           if (this.value == value) {
             if (isDone) type = 'is-success';
