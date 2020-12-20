@@ -291,7 +291,7 @@ defineComponent('furet-ui-space-menus', {
         'furet-ui/spaces').then((result) => {
           this.$dispatchAll(result.data);
         })
-        .catch((error) => {
+        .catch(() => {
           // console.error(error);
         });
     }

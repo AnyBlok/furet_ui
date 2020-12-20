@@ -149,7 +149,7 @@ defineComponent("furet-ui-field-relationship-search", {
             this.pks = response.data.pks;
             this.loading = false;
           })
-          .catch((error) => {
+          .catch(() => {
             // console.error(error);
           });
       }
