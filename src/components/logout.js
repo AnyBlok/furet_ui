@@ -28,6 +28,9 @@ defineComponent('furet-ui-appbar-user-dropmenu', {
           .then((result) => {
             this.$dispatchAll(result.data);
           })
+          .catch((error) => {
+            console.error(error);
+          })
       },
     },
   },

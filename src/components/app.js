@@ -290,6 +290,9 @@ defineComponent('furet-ui-space-menus', {
       axios.get(
         'furet-ui/spaces').then((result) => {
           this.$dispatchAll(result.data);
+        })
+        .catch((error) => {
+          // console.error(error);
         });
     }
   },
