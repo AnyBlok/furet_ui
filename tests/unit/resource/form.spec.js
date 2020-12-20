@@ -27,6 +27,8 @@ const getNewEntry = (model, uuid) => {
   return {title: 'New Entry 1', color: 'red'};
 }
 
+const updateChangeState = () => {}
+
 describe('furet-ui-resource-form component', () => {
 
   store.commit('UPDATE_RESOURCES', {'definitions': [{
@@ -93,6 +95,7 @@ describe('furet-ui-resource-form component', () => {
     provide: {
       getEntry,
       getNewEntry,
+      updateChangeState,
     }
   });
   it('furet-ui-resource-form: snapshot', () => {
