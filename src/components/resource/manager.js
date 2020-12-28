@@ -73,7 +73,9 @@ defineComponent('furet-ui-resource-manager', {
   prototype: {
     data () {
       return {
-        manager: {},
+        manager: {
+          children_is_modified: false,
+        },
         errors: [],
       };
     },
@@ -84,9 +86,16 @@ defineComponent('furet-ui-resource-manager', {
         return 'furet-ui-resource-not-found';
       },
     },
+    methods: {
+      updateModifyState (state) {
+        const children_is_modified = state;
+        this.manager = Object.assign({}, this.manager, { children_is_modified });
+      }
+    },
     provide: function () {
       return {
         updateChangeState: this.updateChangeState,
+        updateModifyState: this.updateModifyState,
         getEntry: this.getEntryWrapper,
         getNewEntry: this.getNewEntryWrapper,
         getNewEntries: this.getNewEntriesWrapper,
@@ -242,6 +251,7 @@ defineComponent("furet-ui-form-field-resource-manager", {
           v-on:delete-data="deleteData"
           v-on:revert-data="revertData"
           v-on:clear-change="clearChange"
+          v-on:modify-state="modifyState"
           v-on:go-to-list="goToList"
         />
     </div>
@@ -260,7 +270,8 @@ defineComponent("furet-ui-form-field-resource-manager", {
           changed_rows: this.value || [],
           readonly: this.isReadonly,
           query: { additional_filter: this.build_additional_filter() },
-          selectors: this.x2m_resource.selectors || {}
+          selectors: this.x2m_resource.selectors || {},
+          children_is_modified: false
         }
       };
     },
@@ -310,6 +321,9 @@ defineComponent("furet-ui-form-field-resource-manager", {
       },
       revertData(data){
         this.$emit("revert", data);
+      },
+      modifyState(state){
+        this.$emit("modify-state", state);
       },
       clearChange(_data) {
         this.changes = {}; // clear the changes

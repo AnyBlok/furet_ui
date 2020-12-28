@@ -19,7 +19,8 @@ defineComponent('furet-ui-resource-form', {
         v-bind:go_to_new_choices="manager.create_choices"
         v-bind:can_modify="readonly && manager.can_update"
         v-bind:can_delete="readonly && manager.can_delete"
-        v-bind:can_save="!readonly"
+        v-bind:show_save="!readonly"
+        v-bind:can_save="manager.children_is_modified"
         v-bind:readonly="manager.readonly"
 
         v-on:go-to-list="goToList"
@@ -126,9 +127,11 @@ defineComponent('furet-ui-resource-form', {
         this.$emit('update-query-string', query);
       },
       goToList () {
+        this.$emit('modify-state', false);
         this.$emit('go-to-list');
       },
       goToNew (choice) {
+        this.$emit('modify-state', false);
         const query = {mode: 'form'};
         if (choice !== undefined) {
             query.waiting_value = JSON.stringify(choice.waiting_value);
@@ -137,13 +140,17 @@ defineComponent('furet-ui-resource-form', {
         this.updateQueryString(query);
       },
       goToEdit () {
-        this.readonly = false;
+        this.updateReadOnly(false);
       },
       goToPage () {
         this.$emit('clear-change', {pks: this.pks, uuid: this.uuid})
-        this.readonly = true;
+        this.updateReadOnly(true);
         if (this.uuid) this.goToList();
         this.refresh_fields()
+      },
+      updateReadOnly (readonly) {
+        this.readonly = readonly;
+        this.$emit('modify-state', !readonly);
       },
       getDefault() {
         if (this.manager.query.waiting_value !== undefined) {
@@ -171,12 +178,14 @@ defineComponent('furet-ui-resource-form', {
           });
       },
       deleteEntry () {
+        this.$emit('modify-state', false);
         this.$emit('delete-data', {
           model: this.resource.model,
           pks: Object.assign({}, this.pks),
         })
       },
       save () {
+        this.$emit('modify-state', false);
         if (this.uuid) {
           this.$emit('create-data', {
             model: this.resource.model,
@@ -191,7 +200,7 @@ defineComponent('furet-ui-resource-form', {
       },
       refresh_fields () {
         this.$emit('clear-change', {pks: this.pks, uuid: this.uuid})
-        this.readonly = true;
+        this.updateReadOnly(true);
         this.refreshCallbacks.forEach(callback => {
           callback();
         });
@@ -228,12 +237,12 @@ defineComponent('furet-ui-resource-form', {
             this.loadAsyncData();
           } else if (this.manager.query.uuid) {
             // new case
-            this.readonly = false;
+            this.updateReadOnly(false);
             this.uuid = this.manager.query.uuid;
             this.getDefault();
           } else {
             // new case
-            this.readonly = false;
+            this.updateReadOnly(false);
             this.uuid = uuidv1();
             this.getDefault();
           }

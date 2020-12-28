@@ -24,6 +24,7 @@ defineComponent('furet-ui-resource-polymorphic-form', {
         v-on:delete-data="deleteData"
         v-on:revert-data="revertData"
         v-on:clear-change="clearChange"
+        v-on:modify-state="modifyState"
 
         v-on:go-to-new="goToNew"
         v-on:go-to-list="goToList"
@@ -89,6 +90,9 @@ defineComponent('furet-ui-resource-polymorphic-form', {
       },
       clearChange (data) {
         this.$emit('clear-change', data);
+      },
+      modifyState(state){
+        this.$emit("modify-state", state);
       },
       getBreadcrumbInfo(){
         return this.$refs.resource.getBreadcrumbInfo();
