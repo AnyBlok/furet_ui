@@ -149,7 +149,7 @@ exports[`Field.StatusBar for Resource.Form With value, label and icon 1`] = `
     </span>
      
     <span
-      class="tag is-success is-medium"
+      class="tag is-info is-medium"
     >
       <span
         class=""
@@ -200,7 +200,7 @@ exports[`Field.StatusBar for Resource.Form With value, label, readonly 1`] = `
     </span>
      
     <span
-      class="tag is-success is-medium"
+      class="tag is-info is-medium"
     >
       <span
         class=""
@@ -251,7 +251,7 @@ exports[`Field.StatusBar for Resource.Form With, required, value, label and icon
     </span>
      
     <span
-      class="tag is-success is-medium"
+      class="tag is-info is-medium"
     >
       <span
         class=""

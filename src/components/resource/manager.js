@@ -55,8 +55,8 @@ defineComponent('furet-ui-resource', {
           .get(`furet-ui/resource/${id}`).then((result) => {
             this.$dispatchAll(result.data);
           })
-          .catch((error) => {
-            console.error(error)
+          .catch(() => {
+            //console.error(error)
           });
       },
     },

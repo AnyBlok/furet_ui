@@ -81,25 +81,28 @@ describe('furet-ui-resource-list component', () => {
     'fields': ['id', 'title', 'color']
   }]});
 
-  const wrapper = mount(getComponentPrototype("furet-ui-resource-list"), {
-    store,
-    localVue,
-    router,
-    i18n,
-    propsData: {
-      id: 1,
-      manager: {},
-    },
-    provide: {
-      getEntry,
-      getNewEntries
-    }
-  });
+  const getWrapper = () => {
+    return mount(getComponentPrototype("furet-ui-resource-list"), {
+      store,
+      localVue,
+      router,
+      i18n,
+      propsData: {
+        id: 1,
+        manager: {},
+      },
+      provide: {
+        getEntry,
+        getNewEntries
+      }
+    });
+  }
 
   beforeEach(() => {
     new_entries["Model.1"] = [];
   });
   it('furet-ui-resource-list.api_formater without data', () => {
+      const wrapper = getWrapper();
       const obj = {
       };
       wrapper.vm.api_formater(obj, {});
@@ -112,6 +115,7 @@ describe('furet-ui-resource-list component', () => {
       expect(obj.number_unlinked).toBe(0);
   });
   it('furet-ui-resource-list.api_formater exist object', () => {
+      const wrapper = getWrapper();
       const obj = {
         data : 1,
         number_created : 1,
@@ -131,6 +135,7 @@ describe('furet-ui-resource-list component', () => {
   });
 
   it('furet-ui-resource-list.api_formater page 1 with data and new entries', () => {
+    const wrapper = getWrapper();
     const obj = {
       page: 1,
       perPage: 5,
@@ -149,6 +154,7 @@ describe('furet-ui-resource-list component', () => {
     );
   });
   it('furet-ui-resource-list.api_formater page 2 with data and new entries', () => {
+    const wrapper = getWrapper();
     const obj = {
       page: 2,
       perPage: 5,
@@ -167,6 +173,7 @@ describe('furet-ui-resource-list component', () => {
     );
   });
   it('furet-ui-resource-list.api_formater page 3 with data and new entries', () => {
+    const wrapper = getWrapper();
     const obj = {
       page: 3,
       perPage: 5,
@@ -185,6 +192,7 @@ describe('furet-ui-resource-list component', () => {
     );
   });
   it('furet-ui-resource-list.api_formater page 4 with data and new entries', () => {
+    const wrapper = getWrapper();
     const obj = {
       page: 4,
       perPage: 5,
@@ -203,6 +211,7 @@ describe('furet-ui-resource-list component', () => {
     );
   });
   it('furet-ui-resource-list.api_formater page 1 with no data and new entries', () => {
+    const wrapper = getWrapper();
     const obj = {
       page: 1,
       perPage: 5,
@@ -221,6 +230,7 @@ describe('furet-ui-resource-list component', () => {
     );
   });
   it('furet-ui-resource-list.api_formater page 2 with no data and new entries', () => {
+    const wrapper = getWrapper();
     const obj = {
       page: 2,
       perPage: 5,
