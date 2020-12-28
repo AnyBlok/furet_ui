@@ -81,7 +81,7 @@ exports[`app component snapshot 1`] = `
    
   <div
     class="vue-notification-group"
-    style="width: 300px; top: 0px;"
+    style="width: 300px; top: 0px; left: calc(50% - 150px);"
   >
     <span />
   </div>

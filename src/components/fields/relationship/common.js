@@ -148,6 +148,9 @@ defineComponent("furet-ui-field-relationship-search", {
             this.$dispatchAll(response.data.data);
             this.pks = response.data.pks;
             this.loading = false;
+          })
+          .catch(() => {
+            // console.error(error);
           });
       }
     },
