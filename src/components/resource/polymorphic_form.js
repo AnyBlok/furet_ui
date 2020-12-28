@@ -12,6 +12,7 @@ defineComponent('furet-ui-resource-polymorphic-form', {
       <furet-ui-page-errors v-bind:errors="errors"/>
       <component 
         ref="resource"
+        v-if="subResource"
         v-bind:is="getResourceComponent" 
         v-bind:id="subResource.id" 
         v-bind:key="subResource.id" 
@@ -45,6 +46,7 @@ defineComponent('furet-ui-resource-polymorphic-form', {
         return this.getResource(resource_id)
       },
       resource_id () {
+        if (this.manager.query.resource_id !== undefined) return this.manager.query.resource_id;
         let id = undefined;
         const entry = this.getEntry(this.resource.model, this.pks)
         const identifiers = {}
@@ -106,7 +108,6 @@ defineComponent('furet-ui-resource-polymorphic-form', {
         this.errors = [];
         axios.get(`/furet-ui/resource/${this.id}/crud`, { params })
           .then((response) => {
-            console.log(response.data.data)
             this.$dispatchAll(response.data.data);
             this.loading = false;
           })

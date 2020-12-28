@@ -11,6 +11,7 @@ defineComponent('furet-ui-list', {
         v-bind:tags="tags"
         v-bind:data="data"
         v-bind:can_go_to_new="can_go_to_new"
+        v-bind:go_to_new_choices="go_to_new_choices"
         v-bind:readonly="readonly"
         v-on:updateFilters="updateFilters"
         v-on:removeFilter="removeFilter"

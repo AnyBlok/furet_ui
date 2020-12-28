@@ -16,6 +16,7 @@ defineComponent('furet-ui-resource-form', {
         name="furet-ui-page"
         v-bind:title="resource.title"
         v-bind:can_go_to_new="readonly && manager.can_create"
+        v-bind:go_to_new_choices="manager.create_choices"
         v-bind:can_modify="readonly && manager.can_update"
         v-bind:can_delete="readonly && manager.can_delete"
         v-bind:can_save="!readonly"
@@ -59,7 +60,7 @@ defineComponent('furet-ui-resource-form', {
   extend: ['furet-ui-resource', 'i18n-translate'],
   prototype: {
     props: ['manager'],
-    inject: ['getEntry', 'getNewEntry'],
+    inject: ['getEntry', 'getNewEntry', 'updateChangeState'],
     data() {
       return {
         loading: false,
@@ -127,8 +128,13 @@ defineComponent('furet-ui-resource-form', {
       goToList () {
         this.$emit('go-to-list');
       },
-      goToNew () {
-        this.updateQueryString({mode: 'form'});
+      goToNew (choice) {
+        const query = {mode: 'form'};
+        if (choice !== undefined) {
+            query.waiting_value = JSON.stringify(choice.waiting_value);
+            query.resource_id = choice.resource_id;
+        }
+        this.updateQueryString(query);
       },
       goToEdit () {
         this.readonly = false;
@@ -140,6 +146,16 @@ defineComponent('furet-ui-resource-form', {
         this.refresh_fields()
       },
       getDefault() {
+        if (this.manager.query.waiting_value !== undefined) {
+          _.each(JSON.parse(this.manager.query.waiting_value), (value, fieldname) => {
+              this.updateChangeState({
+                model: this.resource.model,
+                uuid: this.uuid,
+                fieldname,
+                value
+              })
+          })
+        }
         this.errors = [];
         this.loading = true;
         const params = {data: {uuid: this.uuid}}

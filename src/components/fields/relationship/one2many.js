@@ -69,16 +69,39 @@ defineComponent('furet-ui-page-o2m-list-header', {
       <div class="level">
         <div class="level-left">
           <div class="buttons is-grouped is-left">
-            <button 
-              id="furet-ui-page-multi-entries-header-new" 
-              v-if="can_go_to_new" 
-              v-bind:disabled="readonly"
-              class="button is-x2m-created is-small" 
-              v-on:click="goToNew"
-            >
-              <span class="icon"><b-icon icon="plus" /></span>
-              <span>{{ $t('components.header.new') }}</span>
-            </button>
+            <div v-if="can_go_to_new">
+              <b-dropdown 
+                :triggers="['hover']" 
+                v-if="go_to_new_choices.length"
+                v-bind:disabled="readonly"
+              >
+                <button 
+                  class="button is-x2m-created is-small" 
+                  slot-scope="{ active }"
+                  slot="trigger">
+                  <span class="icon"><b-icon icon="plus" /></span>
+                  <span>{{ $t('components.header.new') }}</span>
+                  <span class="icon"><b-icon :icon="active ? 'caret-up' : 'caret-down'" /></span>
+                </button>
+                <b-dropdown-item 
+                  v-for="choice in go_to_new_choices"
+                  aria-role="listitem"
+                  v-on:click="goToNewPolymorphic(choice)"
+                >
+                  {{ choice.label }}
+                </b-dropdown-item>
+              </b-dropdown>
+              <button 
+                id="furet-ui-page-multi-entries-header-new" 
+                v-else
+                v-bind:disabled="readonly"
+                class="button is-x2m-created is-small" 
+                v-on:click="goToNew"
+              >
+                <span class="icon"><b-icon icon="plus" /></span>
+                <span>{{ $t('components.header.new') }}</span>
+              </button>
+            </div>
             <slot name="actions" v-bind:data="data" />
           </div>
         </div>
@@ -172,12 +195,35 @@ defineComponent('furet-ui-page-o2m-page-header', {
           </span>
           <span>{{ $t('components.header.next') }}</span>
         </a>
-        <button v-if="can_go_to_new" v-bind:disabled="readonly" class="button is-x2m-created is-small" v-on:click="goToNew">
-          <span class="icon">
-            <b-icon icon="plus" />
-          </span>
-          <span>{{ $t('components.header.new') }}</span>
-        </button>
+        <div v-if="can_go_to_new">
+          <b-dropdown 
+            :triggers="['hover']" 
+            v-if="go_to_new_choices.length"
+            v-bind:disabled="readonly"
+          >
+            <button 
+              class="button is-x2m-created is-small" 
+              slot-scope="{ active }"
+              slot="trigger">
+              <span class="icon"><b-icon icon="plus" /></span>
+              <span>{{ $t('components.header.new') }}</span>
+              <span class="icon"><b-icon :icon="active ? 'caret-up' : 'caret-down'" /></span>
+            </button>
+            <b-dropdown-item 
+              v-for="choice in go_to_new_choices"
+              aria-role="listitem"
+              v-on:click="goToNewPolymorphic(choice)"
+            >
+              {{ choice.label }}
+            </b-dropdown-item>
+          </b-dropdown>
+          <button v-else v-bind:disabled="readonly" class="button is-x2m-created is-small" v-on:click="goToNew">
+            <span class="icon">
+              <b-icon icon="plus" />
+            </span>
+            <span>{{ $t('components.header.new') }}</span>
+          </button>
+        </div>
         <button v-if="can_modify" v-bind:disabled="readonly" class="button is-x2m-updated is-small" v-on:click="goToEdit">
           <span class="icon">
             <b-icon icon="pencil-alt" />
