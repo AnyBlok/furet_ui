@@ -80,7 +80,7 @@ describe('mixin-page-multi-entries component', () => {
     const wrapper = mount(Component, { localVue, i18n, propsData});
     expect(wrapper.emitted()['go-to-new']).toBe(undefined);
     wrapper.vm.goToNew();
-    expect(wrapper.emitted()['go-to-new'][0]).toStrictEqual([]);
+    expect(wrapper.emitted()['go-to-new'][0]).toStrictEqual([undefined]);
   });
 
   it('goToPage', () => {
