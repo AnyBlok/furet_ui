@@ -146,6 +146,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
             </button>
             <b-dropdown-item 
               v-for="choice in go_to_new_choices"
+              v-bind:key="choice.resource_id"
               aria-role="listitem"
               v-on:click="goToNewPolymorphic(choice)"
             >
@@ -243,6 +244,7 @@ defineComponent('mixin-page-multi-entries', {
         tags: _.map((this.default_tags || []), t => Object.assign({}, t)),
         sortingPriority,
         headerComponentName: this.default_header_component_name || 'furet-ui-page-multi-entries-header',
+        received_query: null,
       };
     },
     computed: {
@@ -395,6 +397,9 @@ defineComponent('mixin-page-multi-entries', {
         this.updateData();
       },
       parse_query() {
+        if (this.received_query == this.query) return;
+
+        this.received_query = this.query;
         const regexWithOption = new RegExp('.*\\[(.+)\\]\\[(.+)\\]');
         const regexWithoutOption = new RegExp('.*\\[(.+)\\]');
         const query = this.query;
