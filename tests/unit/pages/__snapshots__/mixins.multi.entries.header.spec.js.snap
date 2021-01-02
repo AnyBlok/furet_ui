@@ -804,26 +804,28 @@ exports[`furet-ui-page-multi-entries-header component snapshot can_go_to_new 1`]
   <div
     class="buttons is-grouped is-centered"
   >
-    <button
-      class="button is-primary is-outlined"
-      id="furet-ui-page-multi-entries-header-new"
-    >
-      <span
-        class="icon"
+    <div>
+      <button
+        class="button is-primary is-outlined"
+        id="furet-ui-page-multi-entries-header-new"
       >
         <span
           class="icon"
         >
-          <i
-            class="fa fa-plus fa-lg"
-          />
+          <span
+            class="icon"
+          >
+            <i
+              class="fa fa-plus fa-lg"
+            />
+          </span>
         </span>
-      </span>
-       
-      <span>
-        [object Promise]
-      </span>
-    </button>
+         
+        <span>
+          [object Promise]
+        </span>
+      </button>
+    </div>
      
   </div>
 </header>

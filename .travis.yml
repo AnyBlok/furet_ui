@@ -2,9 +2,10 @@ language: node_js
 sudo: true
 node_js:
   - "node"
+  - "lts/*"
 
 install:
-  - npm install
+  - npm ci
 
 script:
   - npm run test:unit

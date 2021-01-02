@@ -133,7 +133,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
         <div v-if="can_go_to_new">
           <b-dropdown 
             :triggers="['hover']" 
-            v-if="go_to_new_choices.length"
+            v-if="(go_to_new_choices || []).length"
             v-bind:disabled="readonly"
           >
             <button 
@@ -514,6 +514,7 @@ defineComponent('furet-ui-header-page', {
             </button>
             <b-dropdown-item 
               v-for="choice in go_to_new_choices"
+              v-bind:key="choice.resource_id"
               aria-role="listitem"
               v-on:click="goToNewPolymorphic(choice)"
             >
