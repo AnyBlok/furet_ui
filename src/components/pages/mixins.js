@@ -395,6 +395,7 @@ defineComponent('mixin-page-multi-entries', {
         this.updateData();
       },
       parse_query() {
+        console.log(this.query)
         const regexWithOption = new RegExp('.*\\[(.+)\\]\\[(.+)\\]');
         const regexWithoutOption = new RegExp('.*\\[(.+)\\]');
         const query = this.query;
@@ -450,8 +451,10 @@ defineComponent('mixin-page-multi-entries', {
       }
     },
     watch: {
-      query () {
-        this.parse_query();  // query is reactive
+      query (newQuery, oldQuery) {
+        if (JSON.stringify(newQuery) !== JSON.stringify(oldQuery)) {
+          this.parse_query();  // query is reactive
+        }
       },
     },
     mounted() {

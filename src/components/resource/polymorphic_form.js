@@ -124,7 +124,7 @@ defineComponent('furet-ui-resource-polymorphic-form', {
         if (this.manager.query !== undefined) {
           if (this.manager.query.pks) {
             const pks = JSON.parse(this.manager.query.pks);
-            if (pks != this.pks) {
+            if (JSON.stringify(pks) != JSON.stringify(this.pks)) {
               this.pks = pks
               this.loadAsyncData();
             }
