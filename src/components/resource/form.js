@@ -274,7 +274,9 @@ defineComponent('furet-ui-resource-form', {
       },
     },
     created() {
-      this.parse_query()
+      // PV: not sure this one is requiered as long manager changed as well
+      // as created
+      // this.parse_query()
     },
   },
 });
