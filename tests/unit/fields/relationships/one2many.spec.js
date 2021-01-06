@@ -176,6 +176,7 @@ describe("Field.One2Many for Resource.Form", () => {
         },
         getEntry,
         updateChangeState: () => {},
+        updateModifyState: () => {},
         getNewEntry: () => {return {}},
         getNewEntries: () => {return []},
         registryRefreshCallback: () => {},

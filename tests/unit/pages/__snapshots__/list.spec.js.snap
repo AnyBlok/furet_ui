@@ -99,7 +99,7 @@ exports[`furet-ui-list component snapshot minimum 1`] = `
   </header>
     
   <div
-    class="b-table is-loading"
+    class="b-table"
   >
     <!---->
      
@@ -425,7 +425,7 @@ exports[`furet-ui-list component snapshot minimum with error 1`] = `
   </header>
     
   <div
-    class="b-table is-loading"
+    class="b-table"
   >
     <!---->
      
