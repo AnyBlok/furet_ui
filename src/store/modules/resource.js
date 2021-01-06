@@ -26,7 +26,11 @@ export const actions = {
 export const mutations = {
   UPDATE_RESOURCES(state, action) {
     action.definitions.forEach(definition => {
-      Vue.set(state, String(definition.id), definition)
+      let updateDefinition = true;
+      if (state[definition.id] !== undefined) {
+        if (JSON.stringify(definition) === JSON.stringify(state[definition.id])) updateDefinition = false;
+      }
+      if (updateDefinition) Vue.set(state, String(definition.id), definition);
     });
   },
   UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN(state, action) {

@@ -146,6 +146,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
             </button>
             <b-dropdown-item 
               v-for="choice in go_to_new_choices"
+              v-bind:key="choice.resource_id"
               aria-role="listitem"
               v-on:click="goToNewPolymorphic(choice)"
             >
@@ -399,7 +400,7 @@ defineComponent('mixin-page-multi-entries', {
         const regexWithoutOption = new RegExp('.*\\[(.+)\\]');
         const query = this.query;
         if (query === undefined) {
-          this.loadAsyncData();
+          // this.loadAsyncData();
           return;
         }
         if (query.page) this.page = parseInt(query.page, 10);
@@ -450,8 +451,10 @@ defineComponent('mixin-page-multi-entries', {
       }
     },
     watch: {
-      query () {
-        this.parse_query();  // query is reactive
+      query (newQuery, oldQuery) {
+        if (JSON.stringify(newQuery) !== JSON.stringify(oldQuery)) {
+          this.parse_query();  // query is reactive
+        }
       },
     },
     mounted() {

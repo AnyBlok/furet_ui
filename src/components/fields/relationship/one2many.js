@@ -85,6 +85,7 @@ defineComponent('furet-ui-page-o2m-list-header', {
                 </button>
                 <b-dropdown-item 
                   v-for="choice in go_to_new_choices"
+                  v-bind:key="choice.resource_id"
                   aria-role="listitem"
                   v-on:click="goToNewPolymorphic(choice)"
                 >
@@ -211,6 +212,7 @@ defineComponent('furet-ui-page-o2m-page-header', {
             </button>
             <b-dropdown-item 
               v-for="choice in go_to_new_choices"
+              v-bind:key="choice.resource_id"
               aria-role="listitem"
               v-on:click="goToNewPolymorphic(choice)"
             >
