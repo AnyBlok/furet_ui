@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`furet-ui-div component snapshot 1`] = `<div />`;
+
+exports[`furet-ui-div component snapshot: hidden 1`] = `<!---->`;
+
+exports[`furet-ui-fieldset component snapshot 1`] = `<fieldset />`;
+
+exports[`furet-ui-fieldset component snapshot readonly 1 1`] = `<fieldset />`;
+
+exports[`furet-ui-fieldset component snapshot readonly 2 1`] = `<fieldset />`;
+
+exports[`furet-ui-fieldset component snapshot: hidden 1`] = `<!---->`;
+
+exports[`furet-ui-selector component snapshot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+      
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`furet-ui-selector component snapshot: hidden 1`] = `<div />`;
+
+exports[`furet-ui-selector component snapshot: readonly by config 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+      
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`furet-ui-selector component snapshot: readonly by provide 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+      
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`furet-ui-tabs/furet-ui-tab component snapshot 1`] = `
+<div
+  class="b-tabs"
+>
+  <nav
+    class="tabs"
+  >
+    <ul />
+  </nav>
+   
+  <section
+    class="tab-content"
+  >
+    <div
+      class="tab-item"
+      config="[object Object]"
+      data="[object Object]"
+      resource="[object Object]"
+      style="display: none;"
+    >
+      <div />
+    </div>
+  </section>
+</div>
+`;
+
+exports[`furet-ui-tabs/furet-ui-tab component snapshot counter 1`] = `
+<div
+  class="b-tabs"
+>
+  <nav
+    class="tabs"
+  >
+    <ul />
+  </nav>
+   
+  <section
+    class="tab-content"
+  >
+    <div
+      class="tab-item"
+      config="[object Object]"
+      counter="1"
+      data="[object Object]"
+      resource="[object Object]"
+      style="display: none;"
+    >
+      <div />
+    </div>
+  </section>
+</div>
+`;
+
+exports[`furet-ui-tabs/furet-ui-tab component snapshot hidden 1`] = `
+<div
+  class="b-tabs"
+>
+  <nav
+    class="tabs"
+  >
+    <ul />
+  </nav>
+   
+  <section
+    class="tab-content"
+  >
+    <div
+      class="tab-item"
+      config="[object Object]"
+      data="[object Object]"
+      resource="[object Object]"
+      style="display: none;"
+    >
+      <!---->
+    </div>
+  </section>
+</div>
+`;

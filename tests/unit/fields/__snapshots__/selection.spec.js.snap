@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field.Selection for Resource.Form Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="field has-addons"
+    >
+      <!---->
+       
+      <div
+        class="control is-expanded"
+      >
+        <span
+          class="select is-fullwidth is-empty"
+        >
+          <select>
+            <!---->
+             
+            <option
+              value=""
+            >
+              
+            
+          
+            </option>
+            <option
+              value="entry1"
+            >
+              
+            [object Promise]
+          
+            </option>
+            <option
+              value="entry2"
+            >
+              
+            [object Promise]
+          
+            </option>
+          </select>
+        </span>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Form Empty without selections 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="field has-addons"
+    >
+      <!---->
+       
+      <div
+        class="control is-expanded"
+      >
+        <span
+          class="select is-fullwidth is-empty"
+        >
+          <select>
+            <!---->
+             
+            <option
+              value=""
+            >
+              
+            
+          
+            </option>
+          </select>
+        </span>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Form With unknown value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div>
+      <span>
+         --- 
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Form With value, label and icon 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="field has-addons"
+    >
+      <!---->
+       
+      <div
+        class="control is-expanded has-icons-left"
+      >
+        <span
+          class="select is-fullwidth"
+        >
+          <select>
+            <!---->
+             
+            <option
+              value=""
+            >
+              
+            
+          
+            </option>
+            <option
+              value="entry1"
+            >
+              
+            [object Promise]
+          
+            </option>
+            <option
+              value="entry2"
+            >
+              
+            [object Promise]
+          
+            </option>
+          </select>
+        </span>
+         
+        <span
+          class="icon is-left"
+        >
+          <i
+            class="fa fa-user fa-lg"
+          />
+        </span>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Form With value, label, readonly 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div>
+      <span>
+        [object Promise]
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Form With, required, value, label and icon 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="field has-addons"
+    >
+      <!---->
+       
+      <div
+        class="control is-expanded has-icons-left"
+      >
+        <span
+          class="select is-info is-fullwidth"
+        >
+          <select>
+            <!---->
+             
+            <option
+              value="entry1"
+            >
+              
+            [object Promise]
+          
+            </option>
+            <option
+              value="entry2"
+            >
+              
+            [object Promise]
+          
+            </option>
+          </select>
+        </span>
+         
+        <span
+          class="icon is-left"
+        >
+          <i
+            class="fa fa-user fa-lg"
+          />
+        </span>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Selection for Resource.List Empty 1`] = `
+<div>
+  <div>
+    <span>
+       --- 
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Field.Selection for Resource.List Empty without selection 1`] = `
+<div>
+  <div>
+    <span>
+       --- 
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Field.Selection for Resource.List With value 1`] = `
+<div>
+  <div>
+    <span>
+      [object Promise]
+    </span>
+  </div>
+</div>
+`;

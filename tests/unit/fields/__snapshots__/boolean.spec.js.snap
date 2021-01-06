@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field.Boolean for Resource.Form Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <label
+    class="b-checkbox checkbox"
+  >
+    <input
+      true-value="true"
+      type="checkbox"
+      value="false"
+    />
+     
+    <span
+      class="check"
+    />
+     
+    <span
+      class="control-label"
+    >
+      
+        
+      
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.Form With security issue value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <label
+    class="b-checkbox checkbox"
+  >
+    <input
+      true-value="true"
+      type="checkbox"
+      value="false"
+    />
+     
+    <span
+      class="check"
+    />
+     
+    <span
+      class="control-label"
+    >
+      
+        
+      
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.Form With value and label 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <label
+    class="b-checkbox checkbox is-disabled"
+    disabled="disabled"
+  >
+    <input
+      disabled="disabled"
+      true-value="true"
+      type="checkbox"
+      value="false"
+    />
+     
+    <span
+      class="check"
+    />
+     
+    <span
+      class="control-label"
+    >
+      
+        My field label
+      
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.List Empty 1`] = `
+<div>
+  <label
+    class="b-checkbox checkbox is-disabled"
+    disabled="disabled"
+  >
+    <input
+      disabled="disabled"
+      true-value="true"
+      type="checkbox"
+      value="false"
+    />
+     
+    <span
+      class="check"
+    />
+     
+    <span
+      class="control-label"
+    />
+  </label>
+</div>
+`;
+
+exports[`Field.Boolean for Resource.List With false value 1`] = `
+<div>
+  <label
+    class="b-checkbox checkbox is-disabled"
+    disabled="disabled"
+  >
+    <input
+      disabled="disabled"
+      true-value="true"
+      type="checkbox"
+      value="false"
+    />
+     
+    <span
+      class="check"
+    />
+     
+    <span
+      class="control-label"
+    />
+  </label>
+</div>
+`;
+
+exports[`Field.Boolean for Resource.List With security issue value 1`] = `
+<div>
+  <label
+    class="b-checkbox checkbox is-disabled"
+    disabled="disabled"
+  >
+    <input
+      disabled="disabled"
+      true-value="true"
+      type="checkbox"
+      value="false"
+    />
+     
+    <span
+      class="check"
+    />
+     
+    <span
+      class="control-label"
+    />
+  </label>
+</div>
+`;
+
+exports[`Field.Boolean for Resource.List With true value 1`] = `
+<div>
+  <label
+    class="b-checkbox checkbox is-disabled"
+    disabled="disabled"
+  >
+    <input
+      disabled="disabled"
+      true-value="true"
+      type="checkbox"
+      value="false"
+    />
+     
+    <span
+      class="check"
+    />
+     
+    <span
+      class="control-label"
+    />
+  </label>
+</div>
+`;
+
+exports[`Field.YesNo YesNo for Resource.List Empty 1`] = `
+<div>
+  <span>
+    No
+  </span>
+</div>
+`;
+
+exports[`Field.YesNo YesNo for Resource.List With false value 1`] = `
+<div>
+  <span>
+    No
+  </span>
+</div>
+`;
+
+exports[`Field.YesNo YesNo for Resource.List With security issue value 1`] = `
+<div>
+  <span>
+    No
+  </span>
+</div>
+`;
+
+exports[`Field.YesNo YesNo for Resource.List With true value 1`] = `
+<div>
+  <span>
+    Yes
+  </span>
+</div>
+`;

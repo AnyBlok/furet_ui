@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components factory Define a new component overwrite it and mount it 1`] = `
+<div
+  class="container has-text-centered"
+>
+  <h1
+    class="title"
+  >
+    Welcome in Furet UI
+  </h1>
+   
+  <div
+    class="column is-half is-offset-one-quarter"
+  >
+    <img
+      alt="Logo"
+      class="image"
+      src="/furet-ui/logo"
+    />
+  </div>
+</div>
+`;
+
+exports[`components factory Define a new component with extend 1`] = `<div />`;
+
+exports[`components factory createComponents makes homepage component available to new component 1`] = `
+<div
+  class="container has-text-centered"
+>
+  <h1
+    class="title"
+  >
+    Welcome in Furet UI
+  </h1>
+   
+  <div
+    class="column is-half is-offset-one-quarter"
+  >
+    <img
+      alt="Logo"
+      class="image"
+      src="/furet-ui/logo"
+    />
+  </div>
+</div>
+`;
