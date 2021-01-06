@@ -123,8 +123,11 @@ defineComponent('furet-ui-resource-polymorphic-form', {
       parse_query() {
         if (this.manager.query !== undefined) {
           if (this.manager.query.pks) {
-            this.pks = JSON.parse(this.manager.query.pks)
-            this.loadAsyncData();
+            const pks = JSON.parse(this.manager.query.pks);
+            if (JSON.stringify(pks) != JSON.stringify(this.pks)) {
+              this.pks = pks
+              this.loadAsyncData();
+            }
           }
         }
       },
