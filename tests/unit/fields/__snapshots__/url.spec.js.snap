@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field.Url for Resource.Form Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="field has-addons"
+    >
+      <p
+        class="control is-expanded"
+      >
+        <div
+          class="control is-clearfix"
+        >
+          <input
+            autocomplete="on"
+            class="input"
+            type="text"
+          />
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </p>
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Url for Resource.Form With value, label and icon 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="field has-addons"
+    >
+      <p
+        class="control is-expanded"
+      >
+        <div
+          class="control has-icons-left is-clearfix"
+        >
+          <input
+            autocomplete="on"
+            class="input"
+            maxlength="10"
+            placeholder="An explicit placeholder"
+            type="text"
+          />
+           
+          <span
+            class="icon is-left"
+          >
+            <i
+              class="fa fa-user fa-lg"
+            />
+          </span>
+           
+          <!---->
+           
+          <small
+            class="help counter is-invisible"
+          >
+            
+            16 / 10
+        
+          </small>
+        </div>
+      </p>
+       
+      <p
+        class="control"
+      >
+        <a
+          class="button"
+          href="http://my.ferret"
+          target="_blank"
+        >
+          <span
+            class="icon"
+          >
+            <i
+              class="fa fa-external-link-alt fa-lg"
+            />
+          </span>
+        </a>
+      </p>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Url for Resource.Form With value, label and icon with incorrect email 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="field has-addons"
+    >
+      <p
+        class="control is-expanded"
+      >
+        <div
+          class="control has-icons-left is-clearfix"
+        >
+          <input
+            autocomplete="on"
+            class="input"
+            maxlength="10"
+            placeholder="An explicit placeholder"
+            type="text"
+          />
+           
+          <span
+            class="icon is-left"
+          >
+            <i
+              class="fa fa-user fa-lg"
+            />
+          </span>
+           
+          <!---->
+           
+          <small
+            class="help counter is-invisible"
+          >
+            
+            8 / 10
+        
+          </small>
+        </div>
+      </p>
+       
+      <p
+        class="control"
+      >
+        <a
+          class="button"
+          href="my-feret"
+          target="_blank"
+        >
+          <span
+            class="icon"
+          >
+            <i
+              class="fa fa-external-link-alt fa-lg"
+            />
+          </span>
+        </a>
+      </p>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Url for Resource.Form With value, label, readonly 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <span>
+      http://my.ferret
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Url for Resource.List Empty 1`] = `
+<div>
+  <span>
+    
+  </span>
+</div>
+`;
+
+exports[`Field.Url for Resource.List With value 1`] = `
+<div>
+  <span>
+    http://my.ferret
+  </span>
+</div>
+`;

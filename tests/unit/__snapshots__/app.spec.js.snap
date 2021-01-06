@@ -1,0 +1,345 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app component snapshot 1`] = `
+<div
+  id="furet-ui-app"
+>
+  <header
+    class="hero is-primary"
+  >
+    <div
+      class="hero-head"
+    >
+      <nav
+        class="navbar is-primary"
+        role="navigation"
+      >
+        <div
+          class="navbar-menu"
+          id="navbarUserMenu"
+        >
+          <div
+            class="navbar-start"
+          >
+            <button
+              class="button is-primary"
+              type="button"
+            >
+              <span
+                class="icon is-small"
+              >
+                <i
+                  class="fa fa-bars"
+                />
+              </span>
+               
+              <span>
+                
+        [object Promise]
+     
+              </span>
+               
+              <!---->
+            </button>
+          </div>
+           
+          <div
+            class="navbar-end"
+          />
+        </div>
+      </nav>
+    </div>
+     
+    <div
+      class="hero-body"
+    >
+      <div
+        class="container has-text-centered"
+      >
+        <h1
+          class="title"
+        >
+          
+          Furet UI
+        
+        </h1>
+         
+        <p
+          class="subtitle"
+        >
+          
+          Web Client for all your AnyBlok backend
+        
+        </p>
+      </div>
+    </div>
+     
+    <div
+      class="hero-foot"
+    />
+  </header>
+   
+  <div
+    class="vue-notification-group"
+    style="width: 300px; top: 0px; left: calc(50% - 150px);"
+  >
+    <span />
+  </div>
+   
+  <!---->
+   
+  <footer
+    class="footer"
+  >
+    <div
+      class="content has-text-centered is-success"
+    >
+      <p>
+        <strong>
+          Furet UI
+        </strong>
+         by 
+        <a
+          href="https://github.com/jssuzanne"
+        >
+          Jean-Sébastien Suzanne
+        </a>
+        . 
+          The source code is licensed 
+        <a
+          href="http://opensource.org/licenses/MPL-2.0"
+        >
+          MPL-2.0
+        </a>
+         and 
+          is available on 
+        <a
+          href="https://github.com/AnyBlok/furet_ui"
+        >
+          Github
+        </a>
+        .
+        
+      </p>
+    </div>
+  </footer>
+</div>
+`;
+
+exports[`furet-ui-appbar component snapshot 1`] = `
+<header
+  class="hero is-primary"
+>
+  <div
+    class="hero-head"
+  >
+    <nav
+      class="navbar is-primary"
+      role="navigation"
+    >
+      <div
+        class="navbar-menu"
+        id="navbarUserMenu"
+      >
+        <div
+          class="navbar-start"
+        >
+          <button
+            class="button is-primary"
+            type="button"
+          >
+            <span
+              class="icon is-small"
+            >
+              <i
+                class="fa fa-bars"
+              />
+            </span>
+             
+            <span>
+              
+        [object Promise]
+     
+            </span>
+             
+            <!---->
+          </button>
+        </div>
+         
+        <div
+          class="navbar-end"
+        />
+      </div>
+    </nav>
+  </div>
+   
+  <div
+    class="hero-body"
+  >
+    <div
+      class="container has-text-centered"
+    >
+      <h1
+        class="title"
+      >
+        
+          Furet UI
+        
+      </h1>
+       
+      <p
+        class="subtitle"
+      >
+        
+          Web Client for all your AnyBlok backend
+        
+      </p>
+    </div>
+  </div>
+   
+  <div
+    class="hero-foot"
+  />
+</header>
+`;
+
+exports[`furet-ui-appbar-body component snapshot 1`] = `
+<div
+  class="hero-body"
+>
+  <div
+    class="container has-text-centered"
+  >
+    <h1
+      class="title"
+    >
+      
+          Furet UI
+        
+    </h1>
+     
+    <p
+      class="subtitle"
+    >
+      
+          Web Client for all your AnyBlok backend
+        
+    </p>
+  </div>
+</div>
+`;
+
+exports[`furet-ui-appbar-footer component snapshot (empty) 1`] = `
+<div
+  class="hero-foot"
+/>
+`;
+
+exports[`furet-ui-appbar-footer component snapshot (not empty) 1`] = `
+<div
+  class="hero-foot"
+/>
+`;
+
+exports[`furet-ui-appbar-header component snapshot 1`] = `
+<div
+  class="hero-head"
+>
+  <nav
+    class="navbar is-primary"
+    role="navigation"
+  >
+    <div
+      class="navbar-menu"
+      id="navbarUserMenu"
+    >
+      <div
+        class="navbar-start"
+      >
+        <button
+          class="button is-primary"
+          type="button"
+        >
+          <span
+            class="icon is-small"
+          >
+            <i
+              class="fa fa-bars"
+            />
+          </span>
+           
+          <span>
+            
+        [object Promise]
+     
+          </span>
+           
+          <!---->
+        </button>
+      </div>
+       
+      <div
+        class="navbar-end"
+      />
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`furet-ui-appbar-user-menu component snapshot (empty) 1`] = `
+<div
+  class="navbar-end"
+/>
+`;
+
+exports[`furet-ui-appbar-user-menu component snapshot (not empty) 1`] = `
+<div
+  class="navbar-end"
+>
+  <a
+    class="navbar-item"
+  >
+    
+      [object Promise]
+    
+  </a>
+</div>
+`;
+
+exports[`furet-ui-footer component snapshot 1`] = `
+<footer
+  class="footer"
+>
+  <div
+    class="content has-text-centered is-success"
+  >
+    <p>
+      <strong>
+        Furet UI
+      </strong>
+       by 
+      <a
+        href="https://github.com/jssuzanne"
+      >
+        Jean-Sébastien Suzanne
+      </a>
+      . 
+          The source code is licensed 
+      <a
+        href="http://opensource.org/licenses/MPL-2.0"
+      >
+        MPL-2.0
+      </a>
+       and 
+          is available on 
+      <a
+        href="https://github.com/AnyBlok/furet_ui"
+      >
+        Github
+      </a>
+      .
+        
+    </p>
+  </div>
+</footer>
+`;

@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import "~bulma/sass/utilities/_all";
+
+$primary: #0075a2;
+$primary-invert: findColorInvert($primary);
+
+$x2m-created: $green;
+$x2m-created-invert: findColorInvert($x2m-created);
+$x2m-updated: $blue;
+$x2m-updated-invert: findColorInvert($x2m-updated);
+$x2m-deleted: $red;
+$x2m-deleted-invert: findColorInvert($x2m-deleted);
+$x2m-linked: $cyan;
+$x2m-linked-invert: findColorInvert($x2m-linked);
+$x2m-unlinked: $orange;
+$x2m-unlinked-invert: findColorInvert($x2m-unlinked);
+
+$colors: (
+  "primary": ($primary, $primary-invert),
+  "x2m-created": ($x2m-created, $x2m-created-invert),
+  "x2m-updated": ($x2m-updated, $x2m-updated-invert),
+  "x2m-deleted": ($x2m-deleted, $x2m-deleted-invert),
+  "x2m-linked": ($x2m-linked, $x2m-linked-invert),
+  "x2m-unlinked": ($x2m-unlinked, $x2m-unlinked-invert),
+);
+
+.b-table {
+  .table {
+    tr {
+      &.is-unmodified {
+        td {
+          &.is-action {
+            a {
+              display: None;
+            }
+          }
+        }
+      }
+      &.is-created {
+        td {
+          &.is-action {
+            a {
+              background-color: $x2m-created;
+              color: $x2m-created-invert;
+            }
+          }
+        }
+      }
+      &.is-updated {
+        td {
+          &.is-action {
+            a {
+              background-color: $x2m-updated;
+              color: $x2m-updated-invert;
+            }
+          }
+        }
+      }
+      &.is-deleted {
+        td {
+          &.is-action {
+            a {
+              background-color: $x2m-deleted;
+              color: $x2m-deleted-invert;
+            }
+          }
+          &.is-list-cell {
+            background-color: $x2m-deleted;
+            color: $x2m-deleted-invert;
+          }
+        }
+      }
+      &.is-linked {
+        td {
+          &.is-action {
+            a {
+              background-color: $x2m-linked;
+              color: $x2m-linked-invert;
+            }
+          }
+        }
+      }
+      &.is-unlinked {
+        td {
+          &.is-action {
+            a {
+              background-color: $x2m-unlinked;
+              color: $x2m-unlinked-invert;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";

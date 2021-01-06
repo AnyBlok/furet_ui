@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app component snapshot: init 1`] = `
+<div
+  class="container has-text-centered"
+>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <button
+    class="button is-primary"
+    type="button"
+  >
+    <!---->
+     
+    <span>
+      Connect with Gitlab
+    </span>
+     
+    <!---->
+  </button>
+</div>
+`;
+
+exports[`app component snapshot: with auth and errors 1`] = `
+<div
+  class="container has-text-centered"
+>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <button
+    class="button is-primary"
+    type="button"
+  >
+    <!---->
+     
+    <span>
+      Connect with Gitlab
+    </span>
+     
+    <!---->
+  </button>
+</div>
+`;
