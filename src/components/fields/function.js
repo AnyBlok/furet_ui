@@ -12,40 +12,30 @@ import {fields} from './fields';
 import { listTemplate, thumbnailTemplate } from './common';
 
 
-defineComponent('furet-ui-list-field-string', {
+defineComponent('furet-ui-list-field-function', {
   template: listTemplate,
   extend: ['furet-ui-list-field-common'],
 })
-fields.list.string = 'furet-ui-list-field-string'
+fields.list.function = 'furet-ui-list-field-function'
 
 
-defineComponent('furet-ui-thumbnail-field-string', {
+defineComponent('furet-ui-thumbnail-field-function', {
   template: thumbnailTemplate,
   extend: ['furet-ui-thumbnail-field-common'],
 })
-fields.thumbnail.string = 'furet-ui-thumbnail-field-string'
+fields.thumbnail.function = 'furet-ui-thumbnail-field-function'
 
 
-defineComponent('furet-ui-form-field-string', {
+defineComponent('furet-ui-form-field-function', {
   template: `
     <furet-ui-form-field-common-tooltip-field
       v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
     >
-      <span v-if="isReadonly">{{ value }}</span>
-      <b-input 
-        v-else
-        v-bind:value="value" 
-        v-on:input="updateValue"
-        v-bind:maxlength="config.maxlength"
-        v-bind:placeholder="config.placeholder"
-        icon-pack="fa"
-        v-bind:icon="config.icon"
-        v-bind:key="config.key"
-      />
+      <span>{{ value }}</span>
     </furet-ui-form-field-common-tooltip-field>
   `,
   extend: ['furet-ui-form-field-common'],
 })
-fields.form.string = 'furet-ui-form-field-string'
+fields.form.function = 'furet-ui-form-field-function'

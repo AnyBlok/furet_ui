@@ -1,14 +1,12 @@
-import _ from 'underscore';
 import { resources } from './resources';
-import { safe_eval } from '../fields/common';
 import { defineComponent } from '../factory';
 import axios from 'axios';
 
 
-defineComponent('furet-ui-resource-list', {
+defineComponent('furet-ui-resource-thumbnail', {
   template : `
-    <furet-ui-list
-      ref="list"
+    <furet-ui-thumbnail
+      ref="thumbnail"
       v-bind:title="resource.title"
       v-bind:default_filters="resource.filters || []"
       v-bind:default_tags="resource.tags || []"
@@ -28,24 +26,6 @@ defineComponent('furet-ui-resource-list', {
       v-on:go-to-new="goToNew"
       v-on:go-to-page="goToPage"
     >
-      <template slot="hidden_columns">
-        <section v-if="hidden_columns.length">
-          <b-field grouped group-multiline>
-            <div 
-              v-for="header in hidden_columns"
-              v-bind:key="header.name"
-              class="control"
-            >
-              <b-checkbox 
-                v-bind:value="!header.column_column"
-                v-on:input="toggleHiddenColumn(header.name)"
-              > 
-                  {{ header.label }}
-              </b-checkbox>
-            </div>
-          </b-field>
-        </section>
-      </template>
       <template slot="actions" slot-scope="props">
         <furet-ui-list-button 
           v-for="button in resource.buttons" 
@@ -55,28 +35,29 @@ defineComponent('furet-ui-resource-list', {
           v-bind:config="button" />
       </template>
       <template slot-scope="props">
-        <b-table-column class="is-action">
-          <a class="button is-outlined" v-on:click="revert_modification(props.row)">
-            <b-icon icon="redo-alt" size="is-small"/>
-          </a>
-        </b-table-column>
-        <b-table-column 
-          v-for="header in resource.headers" 
-          class="is-list-cell"
-          v-bind:key="header.name"
-          v-bind:field="typeof header.sortable === 'string'? header.sortable : header.name" 
-          v-bind:label="translate(header.label)" 
-          v-bind:sortable="typeof header.sortable === 'string'? true: header.sortable"
-          v-bind:visible="!safe_eval(header['hidden-column'], props.row)"
-          >
+        <div class="card">
+          <component 
+            v-bind:is="form_card_header_template" 
+            v-bind:resource="resource"
+            v-bind:data="props.data"
+          />
+          <div class="card-content">
             <component 
-              v-bind:is="header.component" 
-              v-bind:config="header"
+              v-bind:is="form_card_body_template" 
               v-bind:resource="resource"
-              v-bind:data="props.row" />
-        </b-table-column>
+              v-bind:data="props.data"
+              v-bind:key="'body_' + resource.id"
+            />
+          </div>
+          <component 
+            v-bind:is="form_card_footer_template" 
+            v-bind:resource="resource"
+            v-bind:data="props.data"
+            v-bind:key="'footer_' + resource.id"
+          />
+        </div>
       </template>
-    </furet-ui-list>
+    </furet-ui-thumbnail>
   `,
   extend: ['furet-ui-resource', 'i18n-translate'],
   prototype: {
@@ -85,12 +66,10 @@ defineComponent('furet-ui-resource-list', {
     data () {
       return {
         data: [],
+        templates: {},
       };
     },
     computed: {
-      hidden_columns () {
-        return _.filter(this.resource.headers, header => header['column-can-be-hidden']);
-      },
       rest_api_url () {
         return `/furet-ui/resource/${this.id}/crud`;
       },
@@ -99,15 +78,33 @@ defineComponent('furet-ui-resource-list', {
           'context[model]': this.resource.model,
           'context[fields]': this.resource.fields.toString(),
         }
-      }
+      },
+      form_card_header_template () {
+        return this.form_card('header_template');
+      },
+      form_card_body_template () {
+        return this.form_card('body_template');
+      },
+      form_card_footer_template () {
+        return this.form_card('footer_template');
+      },
     },
     methods: {
-      safe_eval (hidden, row) {
-        const resource = Object.assign({manager: this.manager}, this.resource)
-        return safe_eval(hidden, row, resource)
+      form_card (part) {
+        if (this.templates[part] !== undefined) return this.templates[part];
+        const template = {
+          template: '<div></div>',
+          name: `${part}_${this.resource.id}`,
+          props: ['data', 'resource'],
+        }
+        if (this.resource[part]) {
+            template.template = this.resource[part];
+            this.templates[part] = template;
+        }
+        return template;
       },
       getBreadcrumbInfo() {
-        return {label: this.$t(this.resource.title), icon: "list"};
+        return {label: this.$t(this.resource.title), icon: "th"};
       },
       revert_modification(row){
         this.$emit("revert-data", row)
@@ -169,9 +166,6 @@ defineComponent('furet-ui-resource-list', {
         obj.number_linked = linked;
         obj.number_unlinked = unlinked;
       },
-      toggleHiddenColumn (field) {
-        this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})
-      },
       updateQueryString (query) {
         this.$emit('update-query-string', query);
       },
@@ -182,23 +176,28 @@ defineComponent('furet-ui-resource-list', {
         if(row.__change_state !== "delete") this.$emit('go-to-page', row, options);
       },
       refresh() {
-        this.$refs.list.loadAsyncData();
+        this.$refs.thumbnail.loadAsyncData();
       },
+    },
+    provide: function () {
+      return {
+        partIsReadonly: true,
+        // registryRefreshCallback: this.registryRefreshCallback,
+      }
     },
   },
 });
-resources.list = 'furet-ui-resource-list';
+resources.thumbnail = 'furet-ui-resource-thumbnail';
 
-defineComponent('furet-ui-list-button', {
+defineComponent('furet-ui-thumbnail-footer-button', {
   template: `
-    <a class="button is-primary is-outlined" v-on:click="server_call">
+    <a v-bind:class="config.class" v-on:click="server_call">
       <span class="icon" v-if="config.icon">
         <b-icon v-bind:icon="config.icon" />
       </span>
       <span>{{ translate(config.label) }}</span>
     </a>
   `,
-  // extend: ['furet-ui-helper-mixin'], waittin readony / readwrite on view
   extend: ['i18n-translate'],
   prototype: {
     props: ['resource', 'data', 'config'],
@@ -207,7 +206,7 @@ defineComponent('furet-ui-list-button', {
         if (this.config.call)
           return {
             url: `/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/${this.config.call}`,
-            params: {},
+            params: {pks: this.resource.pks},
           }
         if (this.config['open-resource']) {
           return {

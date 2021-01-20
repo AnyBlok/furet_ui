@@ -33,13 +33,11 @@ defineComponent('furet-ui-resource-form', {
         v-bind:data="data"
       >
         <template slot="header" v-if="resource.header_template">
-          <keep-alive>
-            <component 
-              v-bind:is="form_card_header_template" 
-              v-bind:resource="resource"
-              v-bind:data="data"
-            />
-          </keep-alive>
+          <component 
+            v-bind:is="form_card_header_template" 
+            v-bind:resource="resource"
+            v-bind:data="data"
+          />
         </template>
       </component>
       <div class="section">

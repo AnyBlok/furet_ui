@@ -256,7 +256,8 @@ defineComponent('mixin-page-multi-entries', {
         this.$emit('go-to-new', choice);
       },
       goToPage(row) {
-        this.$emit('go-to-page', row);
+        const offset = ((this.page - 1) * this.perPage) + this.data.indexOf(row)
+        this.$emit('go-to-page', row, {offset, query: this.query});
       },
       updateData() {
         const query = { page: this.page };

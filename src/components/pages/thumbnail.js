@@ -1,6 +1,6 @@
 import { defineComponent } from '../factory';
 
-defineComponent('furet-ui-list', {
+defineComponent('furet-ui-thumbnail', {
   template: `
     <section id="furet-ui-list">
       <furet-ui-page-errors v-bind:errors="errors"/>
@@ -24,44 +24,8 @@ defineComponent('furet-ui-list', {
           <slot name="actions" v-bind:data="props.data" />
         </template>
       </component>
-      <slot name="hidden_columns" />
-      <b-table
-        ref="list_table"
-        v-bind:data="data"
-        v-bind:loading="loading"
-
-        paginated
-        backend-pagination
-        pagination-position="both"
-        v-bind:pagination-size="pagination_size"
-
-        v-bind:total="total"
-        v-bind:current-page.sync="page"
-        v-bind:per-page="perPage"
-        v-on:page-change="onPageChange"
-
-        backend-sorting
-        sort-multiple
-        :sort-multiple-data="sortingPriority"
-
-        v-on:sort="onSort"
-        @sorting-priority-removed="onSortingPriorityRemoved"
-
-        striped
-        hoverable
-        v-bind:detailed="detailed"
-        v-bind:detail-key="detail_key"
-        v-bind:checkable="isCheckable"
-        v-bind:checked-rows.sync="checkedRows"
-        v-bind:row-class="row_state"
-
-        v-on:dblclick="goToPage"
-      >
-        <template slot-scope="props">
-          <slot v-bind:row="props.row" />
-        </template>
-
-        <template slot="top-left">
+      <div class="top level">
+        <div class="level-left">
           <furet-ui-list-total
             v-bind:pagination_size="pagination_size"
             v-bind:total="total"
@@ -71,9 +35,37 @@ defineComponent('furet-ui-list', {
             v-bind:number_linked="number_linked"
             v-bind:number_unlinked="number_unlinked"
           />
-        </template>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <b-pagination
+              :total="total"
+              :per-page="perPage"
+              :size="pagination_size"
+              :current="page"
+              @change="onPageChange"
+            />
+          </div>
+        </div>
+      </div>
 
-        <template slot="bottom-left">
+      <div v-if="data.length > 0" class="columns is-multiline">
+        <div 
+          v-for="thumbnail in data" 
+          v-on:dblclick="goToPage(thumbnail)"
+          class="column is-one-quarter-desktop is-half-tablet is-12-mobile"
+        >
+          <slot v-bind:data="thumbnail" />
+        </div>
+      </div>
+      <section v-else class="section">
+        <div class="content has-text-grey has-text-centered">
+          <p>{{ $t('components.header.notFound') }}</p>
+        </div>
+      </section>
+
+      <div class="top level">
+        <div class="level-left">
           <furet-ui-list-total
             v-bind:pagination_size="pagination_size"
             v-bind:total="total"
@@ -83,20 +75,19 @@ defineComponent('furet-ui-list', {
             v-bind:number_linked="number_linked"
             v-bind:number_unlinked="number_unlinked"
           />
-        </template>
-
-        <template v-if="detailed" slot="detail" slot-scope="props">
-          <slot name="detail" v-bind:row="props.row" />
-        </template>
-
-        <template slot="empty">
-          <section class="section">
-            <div class="content has-text-grey has-text-centered">
-              <p>{{ $t('components.header.notFound') }}</p>
-            </div>
-          </section>
-        </template>
-      </b-table>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <b-pagination
+              :total="total"
+              :per-page="perPage"
+              :size="pagination_size"
+              :current="page"
+              @change="onPageChange"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   `,
   extend: ['mixin-page-multi-entries'],

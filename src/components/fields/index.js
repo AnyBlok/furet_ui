@@ -5,6 +5,7 @@ import './boolean';
 import './datetime';
 import './mail';
 import './integer';
+import './function';
 import './json';
 import './float';
 import './decimal';

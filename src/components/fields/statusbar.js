@@ -54,6 +54,29 @@ defineComponent('furet-ui-list-field-statusbar', {
 })
 fields.list.statusbar = 'furet-ui-list-field-statusbar'
 
+defineComponent('furet-ui-thumbnail-field-statusbar', {
+  template: `
+    <furet-ui-form-field-common-tooltip
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <b-taglist attached>
+        <b-tag 
+          v-for="state in getStates" 
+          v-bind:key="state.value" 
+          v-bind:type="state.type" 
+          size="is-small"
+        >
+          {{ state.label }}
+        </b-tag>
+      </b-taglist>
+    </furet-ui-form-field-common-tooltip>
+  `,
+  extend: ['furet-ui-thumbnail-field-common', 'furet-ui-field-statusbar-common'],
+})
+fields.thumbnail.statusbar = 'furet-ui-thumbnail-field-statusbar'
+
 defineComponent('furet-ui-form-field-statusbar', {
   template: `
     <furet-ui-form-field-common-tooltip
