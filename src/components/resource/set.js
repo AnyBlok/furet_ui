@@ -97,8 +97,7 @@ defineComponent('furet-ui-resource-set', {
         this.$emit('push-in-breadcrumb');
         this.$emit('update-query-string', query);
       },
-      goToPage (row, options) {
-        console.log(options)
+      goToPage (row) {
         if (! this.resource.can_read) return
         if (row.__uuid) {
           this.$emit('update-query-string', {mode: 'form', uuid: row.__uuid})

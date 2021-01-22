@@ -203,11 +203,16 @@ defineComponent('furet-ui-thumbnail-footer-button', {
     props: ['resource', 'data', 'config'],
     methods: {
       get_call_information () {
-        if (this.config.call)
+        if (this.config.call) { 
+          const pks = {}
+          this.resource.pks.forEach(pk => {
+              pks[pk] = this.data[pk]
+          })
           return {
             url: `/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/${this.config.call}`,
-            params: {pks: this.resource.pks},
+            params: {pks},
           }
+        }
         if (this.config['open-resource']) {
           return {
             url: `/furet-ui/open/resource/${this.config['open-resource']}`,
