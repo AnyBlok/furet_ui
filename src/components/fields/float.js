@@ -9,12 +9,9 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import { defineComponent } from "../factory";
 import { fields } from "./fields";
-import { listTemplate } from "./common";
+import { listTemplate, thumbnailTemplate } from "./common";
 
-
-defineComponent("furet-ui-list-field-float", {
-  template: listTemplate,
-  extend: ["furet-ui-list-field-common"],
+defineComponent("furet-ui-common-field-float", {
   prototype: {
     computed: {
       value () {
@@ -25,7 +22,18 @@ defineComponent("furet-ui-list-field-float", {
     }
   }
 });
+
+defineComponent("furet-ui-list-field-float", {
+  template: listTemplate,
+  extend: ["furet-ui-list-field-common", "furet-ui-common-field-float"],
+});
 fields.list.float = "furet-ui-list-field-float";
+
+defineComponent("furet-ui-thumbnail-field-float", {
+  template: thumbnailTemplate,
+  extend: ["furet-ui-thumbnail-field-common", "furet-ui-common-field-float"],
+});
+fields.thumbnail.float = "furet-ui-thumbnail-field-float";
 
 /**
  * furet-ui-form-fieldfloatinteger component is used to manage float on form
