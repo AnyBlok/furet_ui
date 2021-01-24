@@ -67,6 +67,30 @@ defineComponent('furet-ui-list-field-json', {
 fields.list.json = 'furet-ui-list-field-json'
 fields.list.jsonb = 'furet-ui-list-field-json'
 
+defineComponent('furet-ui-thumbnail-field-json', {
+  template: `
+    <furet-ui-form-field-common-tooltip
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <pre 
+        v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+      >{{value}}</pre>
+    </furet-ui-form-field-common-tooltip>
+  `,
+  extend: ['furet-ui-thumbnail-field-common'],
+  prototype: {
+    computed: {
+      value () {
+        const value = this.data[this.config.name] || '';
+        return format(value)
+      },
+    },
+  },
+})
+fields.thumbnail.json = 'furet-ui-thumbnail-field-json'
+fields.thumbnail.jsonb = 'furet-ui-thumbnail-field-json'
 
 /**
  * furet-ui-form-field-json component is used to manage json/jsonb on form

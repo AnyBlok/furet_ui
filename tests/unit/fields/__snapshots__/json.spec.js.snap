@@ -272,3 +272,34 @@ exports[`Field.Json for Resource.List With value 1`] = `
   </pre>
 </div>
 `;
+
+exports[`Field.Json for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <pre
+    style="width: 100%; background-color: white;"
+  >
+    
+  </pre>
+</span>
+`;
+
+exports[`Field.Json for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <pre
+    style="width: 100%; background-color: white;"
+  >
+    {
+  "entry1": "Entry 1",
+  "entry2": "Entry 2"
+}
+  </pre>
+</span>
+`;
