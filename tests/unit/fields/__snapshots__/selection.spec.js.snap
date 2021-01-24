@@ -318,3 +318,39 @@ exports[`Field.Selection for Resource.List With value 1`] = `
   </div>
 </div>
 `;
+
+exports[`Field.Selection for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <span>
+     --- 
+  </span>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Thumbnail Empty without selection 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <span>
+     --- 
+  </span>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <span>
+    [object Promise]
+  </span>
+</span>
+`;
