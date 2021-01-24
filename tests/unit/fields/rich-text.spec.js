@@ -46,6 +46,43 @@ describe("Field.RichText for Resource.List", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 });
+
+describe("Field.RichText for Resource.Thumbnail", () => {
+  const ThumbnailRichTextField = getComponentPrototype("furet-ui-thumbnail-field-rich-text");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailRichTextField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailRichTextField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "<p>A value</p>"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.RichText for Resource.Form", () => {
   const FormRichTextField = getComponentPrototype("furet-ui-form-field-rich-text");
 

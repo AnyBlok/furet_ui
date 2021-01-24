@@ -4163,3 +4163,33 @@ exports[`Field.RichText for Resource.List With value 1`] = `
   </div>
 </div>
 `;
+
+exports[`Field.RichText for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="content is-small"
+    style="width: 100%;"
+  />
+</span>
+`;
+
+exports[`Field.RichText for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="content is-small"
+    style="width: 100%;"
+  >
+    <p>
+      A value
+    </p>
+  </div>
+</span>
+`;
