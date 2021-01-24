@@ -103,8 +103,6 @@ exports[`furet-ui-form-field-resource-manager component snapshot 1`] = `
       >
         <!---->
          
-        <!---->
-         
       </div>
     </header>
       
@@ -444,8 +442,6 @@ exports[`furet-ui-space-resource-manager component snapshot 1`] = `
       <div
         class="buttons is-grouped is-centered"
       >
-        <!---->
-         
         <!---->
          
       </div>

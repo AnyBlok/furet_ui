@@ -94,7 +94,7 @@ describe('mixin-page-multi-entries component', () => {
     const wrapper = mount(Component, { localVue, i18n, propsData});
     expect(wrapper.emitted()['go-to-page']).toBe(undefined);
     wrapper.vm.goToPage('data');
-    expect(wrapper.emitted()['go-to-page'][0]).toStrictEqual(["data"]);
+    expect(wrapper.emitted()['go-to-page'][0]).toStrictEqual(["data", {offset: -1, query: undefined}]);
   });
   it('updateData', () => {
     const propsData = {

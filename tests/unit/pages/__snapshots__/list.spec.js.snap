@@ -93,8 +93,6 @@ exports[`furet-ui-list component snapshot minimum 1`] = `
     >
       <!---->
        
-      <!---->
-       
     </div>
   </header>
     
@@ -417,8 +415,6 @@ exports[`furet-ui-list component snapshot minimum with error 1`] = `
     <div
       class="buttons is-grouped is-centered"
     >
-      <!---->
-       
       <!---->
        
     </div>
