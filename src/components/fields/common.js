@@ -85,15 +85,13 @@ export const listTemplate = `
 `
 
 export const thumbnailTemplate = `
-  <div>
-    <furet-ui-thumbnail-field-common-tooltip-field
-      v-bind:resource="resource"
-      v-bind:data="data"
-      v-bind:config="config"
-    >
-      <span>{{ value }}</span>
-    </furet-ui-thumbnail-field-common-tooltip-field>
-  </div>
+  <furet-ui-thumbnail-field-common-tooltip-field
+    v-bind:resource="resource"
+    v-bind:data="data"
+    v-bind:config="config"
+  >
+    <span>{{ value }}</span>
+  </furet-ui-thumbnail-field-common-tooltip-field>
 `
 
 defineComponent('furet-ui-list-field-common', {
