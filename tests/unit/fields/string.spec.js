@@ -46,6 +46,43 @@ describe("Field.String for Resource.List", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 });
+
+describe("Field.String for Resource.Thumbnail", () => {
+  const ThumbnailStringField = getComponentPrototype("furet-ui-thumbnail-field-string");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailStringField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailStringField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.String for Resource.Form", () => {
   const FormStringField = getComponentPrototype("furet-ui-form-field-string");
 

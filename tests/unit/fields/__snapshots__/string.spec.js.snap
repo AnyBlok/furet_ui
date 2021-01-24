@@ -124,3 +124,45 @@ exports[`Field.String for Resource.List With value 1`] = `
   </span>
 </div>
 `;
+
+exports[`Field.String for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.String for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      A value
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
