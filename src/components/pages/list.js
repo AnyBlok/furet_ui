@@ -114,31 +114,6 @@ defineComponent('furet-ui-list', {
         if (this.checkedRows.length !== 0) return this.checkedRows;
         return this.data;
       },
-      row_state() {
-        return (row, _index) => {
-          let style_class = ""
-          switch(row.__change_state) {
-            case "create":
-              style_class = "is-created";
-              break;
-            case "update":
-              style_class = "is-updated";
-              break;
-            case "delete":
-              style_class = "is-deleted";
-              break;
-            case "link":
-              style_class = "is-linked";
-              break;
-            case "unlink":
-              style_class = "is-unlinked";
-              break;
-            default:
-              style_class = "is-unmodified";
-            }
-            return style_class
-        };
-      }
     },
   },
 });

@@ -318,29 +318,7 @@ defineComponent('mixin-page-multi-entries', {
         return this.data;
       },
       row_state() {
-        return (row, _index) => {
-          let style_class = ""
-          switch(row.__change_state) {
-            case "create":
-              style_class = "is-created";
-              break;
-            case "update":
-              style_class = "is-updated";
-              break;
-            case "delete":
-              style_class = "is-deleted";
-              break;
-            case "link":
-              style_class = "is-linked";
-              break;
-            case "unlink":
-              style_class = "is-unlinked";
-              break;
-            default:
-              style_class = "is-unmodified";
-            }
-            return style_class
-        };
+        return this.row_state_callback;
       }
     },
     methods: {
@@ -414,6 +392,29 @@ defineComponent('mixin-page-multi-entries', {
           }
         });
         return res;
+      },
+      row_state_callback (row, _index) {
+        let style_class = ""
+        switch(row.__change_state) {
+          case "create":
+            style_class = "is-created";
+            break;
+          case "update":
+            style_class = "is-updated";
+            break;
+          case "delete":
+            style_class = "is-deleted";
+            break;
+          case "link":
+            style_class = "is-linked";
+            break;
+          case "unlink":
+            style_class = "is-unlinked";
+            break;
+          default:
+            style_class = "is-unmodified";
+          }
+        return style_class
       },
       loadAsyncData() {
         if (this.from_x2m_with_a_newest_parent()) {

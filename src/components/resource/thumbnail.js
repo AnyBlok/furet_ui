@@ -182,7 +182,6 @@ defineComponent('furet-ui-resource-thumbnail', {
     provide: function () {
       return {
         partIsReadonly: true,
-        // registryRefreshCallback: this.registryRefreshCallback,
       }
     },
   },
