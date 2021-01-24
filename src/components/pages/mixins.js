@@ -66,6 +66,73 @@ defineComponent('furet-ui-list-total', {
   },
 });
 
+defineComponent('furet-ui-list-pagination', {
+  template: `
+    <div>
+      <div class="top level">
+        <div class="level-left">
+          <furet-ui-list-total
+            v-bind:pagination_size="pagination_size"
+            v-bind:total="total"
+            v-bind:number_created="number_created"
+            v-bind:number_updated="number_updated"
+            v-bind:number_deleted="number_deleted"
+            v-bind:number_linked="number_linked"
+            v-bind:number_unlinked="number_unlinked"
+          />
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <b-pagination
+              v-bind:total="total"
+              v-bind:per-page="perPage"
+              v-bind:size="pagination_size"
+              v-bind:current="page"
+              v-on:change="onPageChange"
+            />
+          </div>
+        </div>
+      </div>
+      <slot />
+      <div class="top level">
+        <div class="level-left">
+          <furet-ui-list-total
+            v-bind:pagination_size="pagination_size"
+            v-bind:total="total"
+            v-bind:number_created="number_created"
+            v-bind:number_updated="number_updated"
+            v-bind:number_deleted="number_deleted"
+            v-bind:number_linked="number_linked"
+            v-bind:number_unlinked="number_unlinked"
+          />
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <b-pagination
+              v-bind:total="total"
+              v-bind:per-page="perPage"
+              v-bind:size="pagination_size"
+              v-bind:current="page"
+              v-on:change="onPageChange"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+  prototype: {
+    props: [
+      'total', 'number_created', 'number_updated', 'number_deleted',
+      'number_linked', 'number_unlinked', 'pagination_size', 'perPage', 'page'
+    ],
+    methods: {
+      onPageChange(page) {
+        this.$emit('change', page);
+      }
+    }
+  },
+});
+
 defineComponent('furet-ui-page-multi-entries-header', {
   template: `
     <header id="furet-ui-page-multi-entries-header">
@@ -221,7 +288,7 @@ defineComponent('mixin-page-multi-entries', {
     props: [
       'title', 'default_filters', 'default_tags', 'defaultSortField', 'defaultSortOrder',
       'perpage', 'can_go_to_new', 'go_to_new_choices', 'rest_api_url', 'rest_api_params',
-      'rest_api_formater', 'query', 'default_header_component_name'],
+      'rest_api_formater', 'query', 'default_header_component_name', 'pagination_size'],
     data() {
       const sortingPriority = [];
       if (this.defaultSortField) {
@@ -250,6 +317,31 @@ defineComponent('mixin-page-multi-entries', {
       selectedEntries() {
         return this.data;
       },
+      row_state() {
+        return (row, _index) => {
+          let style_class = ""
+          switch(row.__change_state) {
+            case "create":
+              style_class = "is-created";
+              break;
+            case "update":
+              style_class = "is-updated";
+              break;
+            case "delete":
+              style_class = "is-deleted";
+              break;
+            case "link":
+              style_class = "is-linked";
+              break;
+            case "unlink":
+              style_class = "is-unlinked";
+              break;
+            default:
+              style_class = "is-unmodified";
+            }
+            return style_class
+        };
+      }
     },
     methods: {
       goToNew(choice) {
