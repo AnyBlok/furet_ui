@@ -190,6 +190,8 @@ exports[`furet-ui-thumbnail component snapshot minimum 1`] = `
       </div>
     </div>
      
+    <!---->
+     
     <section
       class="section"
     >
@@ -487,6 +489,8 @@ exports[`furet-ui-thumbnail component snapshot minimum with error 1`] = `
         </div>
       </div>
     </div>
+     
+    <!---->
      
     <section
       class="section"

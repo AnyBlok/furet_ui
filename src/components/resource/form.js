@@ -56,9 +56,8 @@ defineComponent('furet-ui-resource-form', {
       />
     </section>
   `,
-  extend: ['furet-ui-resource', 'i18n-translate'],
+  extend: ['furet-ui-resource-with-ssr'],
   prototype: {
-    props: ['manager'],
     inject: ['getEntry', 'getNewEntry', 'updateChangeState'],
     data() {
       return {
@@ -69,7 +68,6 @@ defineComponent('furet-ui-resource-form', {
         uuid: null,
         selectors: {},
         tabs: {},
-        templates: {},
         refreshCallbacks: [],
         headerComponentName: this.manager.page_header_component_name || 'furet-ui-header-page',
       };
@@ -94,35 +92,10 @@ defineComponent('furet-ui-resource-form', {
           this.$store.state.resource[this.id]
         );
       },
-      form_card_header_template () {
-        return this.form_card('header_template');
-      },
-      form_card_body_template () {
-        return this.form_card('body_template');
-      },
-      form_card_footer_template () {
-        return this.form_card('footer_template');
-      },
     },
     methods: {
       getBreadcrumbInfo() {
         return {label: this.translate(this.resource.title || ''), icon: "newspaper"};
-      },
-      form_card (part) {
-        if (this.templates[part] !== undefined) return this.templates[part];
-        const template = {
-          template: '<div></div>',
-          name: `${part}_${this.resource.id}`,
-          props: ['data', 'resource'],
-        }
-        if (this.resource[part]) {
-            template.template = this.resource[part];
-            this.templates[part] = template;
-        }
-        return template;
-      },
-      updateQueryString (query) {
-        this.$emit('update-query-string', query);
       },
       goToList () {
         this.$emit('modify-state', false);

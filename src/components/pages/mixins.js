@@ -93,6 +93,7 @@ defineComponent('furet-ui-list-pagination', {
           </div>
         </div>
       </div>
+      <b-loading v-bind:active.sync="loading"></b-loading>
       <slot />
       <div class="top level">
         <div class="level-left">
@@ -123,7 +124,8 @@ defineComponent('furet-ui-list-pagination', {
   prototype: {
     props: [
       'total', 'number_created', 'number_updated', 'number_deleted',
-      'number_linked', 'number_unlinked', 'pagination_size', 'perPage', 'page'
+      'number_linked', 'number_unlinked', 'pagination_size', 'perPage', 'page',
+      'loading'
     ],
     methods: {
       onPageChange(page) {

@@ -78,28 +78,14 @@ defineComponent('furet-ui-resource-list', {
       </template>
     </furet-ui-list>
   `,
-  extend: ['furet-ui-resource', 'i18n-translate'],
+  extend: ['furet-ui-resource-with-search'],
   prototype: {
     props: ['id', 'manager'],
     inject: ['getEntry', 'getNewEntries'],
-    data () {
-      return {
-        data: [],
-      };
-    },
     computed: {
       hidden_columns () {
         return _.filter(this.resource.headers, header => header['column-can-be-hidden']);
       },
-      rest_api_url () {
-        return `/furet-ui/resource/${this.id}/crud`;
-      },
-      api_params () {
-        return {
-          'context[model]': this.resource.model,
-          'context[fields]': this.resource.fields.toString(),
-        }
-      }
     },
     methods: {
       safe_eval (hidden, row) {
@@ -109,80 +95,8 @@ defineComponent('furet-ui-resource-list', {
       getBreadcrumbInfo() {
         return {label: this.$t(this.resource.title), icon: "list"};
       },
-      revert_modification(row){
-        this.$emit("revert-data", row)
-      },
-      api_formater (obj, data) {
-        this.$dispatchAll(data.data);
-        let res = [];
-        if(data.pks === undefined) data.pks = [];
-        if(data.total === undefined) data.total = 0;
-
-        data.pks.forEach(pk => {
-          res.push(this.getEntry(this.resource.model, pk))
-        });
-        const news = this.getNewEntries(this.resource.model);
-        const total = data.total + news.length;
-        if (res.length < obj.perPage){
-          const modulus = data.total % obj.perPage;
-          const page_count = Math.floor(data.total / obj.perPage) + 1;
-          let start = ((obj.page - page_count) * obj.perPage);
-          if(start > 0 ){
-            start -= modulus;
-          }
-          const end = start + obj.perPage - res.length;
-          obj.data = res.concat(news.slice(start, end));
-        } else {
-          obj.data = res;
-        }
-        data.total = total;
-        obj.total = total;
-
-        let created = 0;
-        let updated = 0;
-        let deleted = 0;
-        let linked = 0;
-        let unlinked = 0;
-
-        (this.manager.changed_rows || []).forEach(change => {
-          switch (change.__x2m_state) {
-            case 'ADDED':
-              created++;
-              break;
-            case 'UPDATED':
-              updated++;
-              break;
-            case 'DELETED':
-              deleted++;
-              break;
-            case 'LINKED':
-              linked++;
-              break;
-            case 'UNLINKED':
-              unlinked++;
-              break;
-          }
-        })
-        obj.number_created = created;
-        obj.number_updated = updated;
-        obj.number_deleted = deleted;
-        obj.number_linked = linked;
-        obj.number_unlinked = unlinked;
-      },
       toggleHiddenColumn (field) {
         this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})
-      },
-      updateQueryString (query) {
-        this.$emit('update-query-string', query);
-      },
-      goToNew(choice) {
-        this.$emit('go-to-new', choice);
-      },
-      goToPage(row, options) {
-        if(row.__change_state !== "delete") this.$emit('go-to-page', row, options);
-      },
-      refresh() {
-        this.$refs.list.loadAsyncData();
       },
     },
   },

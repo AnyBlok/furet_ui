@@ -26,6 +26,7 @@ defineComponent('furet-ui-thumbnail', {
       </component>
 
       <furet-ui-list-pagination
+        v-bind:loading="loading"
         v-bind:total="total"
         v-bind:perPage="perPage"
         v-bind:page="page"
