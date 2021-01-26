@@ -98,6 +98,9 @@ defineComponent('furet-ui-resource-list', {
       toggleHiddenColumn (field) {
         this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})
       },
+      refresh() {
+        this.$refs.list.loadAsyncData();
+      },
     },
   },
 });

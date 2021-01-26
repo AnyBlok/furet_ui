@@ -66,6 +66,9 @@ defineComponent('furet-ui-resource-thumbnail', {
       getBreadcrumbInfo() {
         return {label: this.$t(this.resource.title), icon: "th"};
       },
+      refresh() {
+        this.$refs.thumbnail.loadAsyncData();
+      },
     },
     provide: function () {
       return {
@@ -112,21 +115,21 @@ defineComponent('furet-ui-thumbnail-footer-button', {
         }
       },
       server_call () {
-        this.$parent.$parent.errors = [];
-        this.$parent.$parent.loading = true;
+        this.$parent.$parent.$parent.errors = [];
+        this.$parent.$parent.$parent.loading = true;
         const {url, params} = this.get_call_information();
         axios.post(url, params)
           .then((response) => {
-            this.$parent.$parent.loading = false;
+            this.$parent.$parent.$parent.loading = false;
             if (response.data.length) {
               this.$dispatchAll(response.data)
             } else {
-              this.$parent.$parent.loadAsyncData()
+              this.$parent.$parent.$parent.loadAsyncData()
             }
           })
           .catch((error) => {
-            this.$parent.$parent.loading = false;
-            this.$parent.$parent.errors = error.response.data.errors;
+            this.$parent.$parent.$parent.loading = false;
+            this.$parent.$parent.$parent.errors = error.response.data.errors;
           });
       },
     },

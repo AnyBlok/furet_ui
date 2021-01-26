@@ -1,8 +1,548 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`furet-ui-resource-thumbnail component furet-ui-resource-thumbnail with data 1`] = `
+<section
+  id="furet-ui-thumbnail"
+>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <header
+    id="furet-ui-page-multi-entries-header"
+  >
+    <div
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <h2
+          class="level-item is-size-3"
+        >
+          Templates
+        </h2>
+         
+        <span
+          class="level-item"
+        >
+           
+        </span>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+         
+        <!---->
+         
+        <div
+          class="level-item buttons"
+        >
+          <a
+            class="button"
+            id="furet-ui-page-multi-entries-header-refresh"
+          >
+            <span
+              class="icon"
+            >
+              <i
+                class="fa fa-redo fa-lg"
+              />
+            </span>
+          </a>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="collapse panel is-pulled-right"
+    >
+      <div
+        class="collapse-trigger"
+      />
+      <div
+        class="collapse-content"
+        id=""
+        style="display: none;"
+      >
+        <div
+          class="tags"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="buttons is-grouped is-centered"
+    >
+      <!---->
+       
+    </div>
+  </header>
+   
+  <div>
+    <div
+      class="top level"
+    >
+      <div
+        class="level-left"
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        2
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <nav
+            class="pagination"
+          >
+            <a
+              class="pagination-link pagination-previous"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-left fa-lg"
+                />
+              </span>
+            </a>
+             
+            <a
+              class="pagination-link pagination-next"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-right fa-lg"
+                />
+              </span>
+            </a>
+             
+            <ul
+              class="pagination-list"
+            >
+              <!---->
+               
+              <!---->
+               
+              <li>
+                <a
+                  aria-current="true"
+                  class="pagination-link is-current "
+                  href="#"
+                  role="button"
+                >
+                  1
+                </a>
+              </li>
+               
+              <!---->
+               
+              <!---->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+     
+    <div
+      class="columns is-multiline"
+    >
+      <div
+        class="column is-one-quarter-desktop is-half-tablet is-12-mobile"
+      >
+        <div
+          class="card"
+        >
+          <header
+            class="card-header"
+          >
+            
+        Entry 1
+      
+          </header>
+           
+          <div
+            class="card-content"
+          >
+            <div
+              class="columns"
+            >
+              <div
+                class="column"
+              >
+                <span
+                  class="is-primary is-top is-medium b-tooltip"
+                  data-label=""
+                  style="transition-delay: 0ms; width: 100%;"
+                >
+                  <div
+                    class="field"
+                    style="width: inherit;"
+                  >
+                    <label
+                      class="label"
+                    >
+                      Title
+                    </label>
+                     
+                    <span>
+                      Entry 1
+                    </span>
+                     
+                    <!---->
+                  </div>
+                </span>
+              </div>
+               
+              <div
+                class="column"
+              >
+                <span
+                  class="is-primary is-top is-medium b-tooltip"
+                  data-label=""
+                  style="transition-delay: 0ms; width: 100%;"
+                >
+                  <div
+                    class="field"
+                    style="width: inherit;"
+                  >
+                    <!---->
+                     
+                    <span>
+                      red
+                    </span>
+                     
+                    <!---->
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+           
+          <footer
+            class="card-footer"
+          >
+            <div
+              class="card-footer-item"
+              id="button1"
+            >
+              <a>
+                <!---->
+                 
+                <span>
+                  Test 1
+                </span>
+              </a>
+            </div>
+             
+            <div
+              class="card-footer-item"
+              id="button2"
+            >
+              <a>
+                <span
+                  class="icon"
+                >
+                  <span
+                    class="icon"
+                  >
+                    <i
+                      class="fa fa-th fa-lg"
+                    />
+                  </span>
+                </span>
+                 
+                <span>
+                  Test 2
+                </span>
+              </a>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <div
+        class="column is-one-quarter-desktop is-half-tablet is-12-mobile"
+      >
+        <div
+          class="card"
+        >
+          <header
+            class="card-header"
+          >
+            
+        Entry 2
+      
+          </header>
+           
+          <div
+            class="card-content"
+          >
+            <div
+              class="columns"
+            >
+              <div
+                class="column"
+              >
+                <span
+                  class="is-primary is-top is-medium b-tooltip"
+                  data-label=""
+                  style="transition-delay: 0ms; width: 100%;"
+                >
+                  <div
+                    class="field"
+                    style="width: inherit;"
+                  >
+                    <label
+                      class="label"
+                    >
+                      Title
+                    </label>
+                     
+                    <span>
+                      Entry 2
+                    </span>
+                     
+                    <!---->
+                  </div>
+                </span>
+              </div>
+               
+              <div
+                class="column"
+              >
+                <span
+                  class="is-primary is-top is-medium b-tooltip"
+                  data-label=""
+                  style="transition-delay: 0ms; width: 100%;"
+                >
+                  <div
+                    class="field"
+                    style="width: inherit;"
+                  >
+                    <!---->
+                     
+                    <span>
+                      blue
+                    </span>
+                     
+                    <!---->
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+           
+          <footer
+            class="card-footer"
+          >
+            <div
+              class="card-footer-item"
+              id="button1"
+            >
+              <a>
+                <!---->
+                 
+                <span>
+                  Test 1
+                </span>
+              </a>
+            </div>
+             
+            <div
+              class="card-footer-item"
+              id="button2"
+            >
+              <a>
+                <span
+                  class="icon"
+                >
+                  <span
+                    class="icon"
+                  >
+                    <i
+                      class="fa fa-th fa-lg"
+                    />
+                  </span>
+                </span>
+                 
+                <span>
+                  Test 2
+                </span>
+              </a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="top level"
+    >
+      <div
+        class="level-left"
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        2
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <nav
+            class="pagination"
+          >
+            <a
+              class="pagination-link pagination-previous"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-left fa-lg"
+                />
+              </span>
+            </a>
+             
+            <a
+              class="pagination-link pagination-next"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-right fa-lg"
+                />
+              </span>
+            </a>
+             
+            <ul
+              class="pagination-list"
+            >
+              <!---->
+               
+              <!---->
+               
+              <li>
+                <a
+                  aria-current="true"
+                  class="pagination-link is-current "
+                  href="#"
+                  role="button"
+                >
+                  1
+                </a>
+              </li>
+               
+              <!---->
+               
+              <!---->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
 exports[`furet-ui-resource-thumbnail component furet-ui-resource-thumbnail without data 1`] = `
 <section
-  id="furet-ui-list"
+  id="furet-ui-thumbnail"
 >
   <div
     class="container"

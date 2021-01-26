@@ -81,17 +81,11 @@ defineComponent('furet-ui-resource-with-search', {
         obj.number_linked = linked;
         obj.number_unlinked = unlinked;
       },
-      updateQueryString (query) {
-        this.$emit('update-query-string', query);
-      },
       goToNew(choice) {
         this.$emit('go-to-new', choice);
       },
       goToPage(row, options) {
         if(row.__change_state !== "delete") this.$emit('go-to-page', row, options);
-      },
-      refresh() {
-        this.$refs.list.loadAsyncData();
       },
     },
   },
@@ -131,9 +125,6 @@ defineComponent('furet-ui-resource-with-ssr', {
             this.templates[part] = template;
         }
         return template;
-      },
-      updateQueryString (query) {
-        this.$emit('update-query-string', query);
       },
     },
   },

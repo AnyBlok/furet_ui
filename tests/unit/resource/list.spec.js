@@ -101,6 +101,24 @@ describe('furet-ui-resource-list component', () => {
   beforeEach(() => {
     new_entries["Model.1"] = [];
   });
+  it('furet-ui-resource-list snapshot without data', () => {
+      const wrapper = getWrapper();
+      expect(wrapper.element).toMatchSnapshot();
+  });
+  it('furet-ui-resource-list snapshot with data', () => {
+    const response = {
+      pks: [{id: 1}, {id: 2}],
+      total: 2,
+      data: [] // useless for test because getEntry is mocked
+    };
+
+    const wrapper = getWrapper();
+    const list = wrapper.vm.$refs.list;
+    wrapper.vm.api_formater(list, response)
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.element).toMatchSnapshot();
+    })
+  });
   it('furet-ui-resource-list.api_formater without data', () => {
       const wrapper = getWrapper();
       const obj = {
