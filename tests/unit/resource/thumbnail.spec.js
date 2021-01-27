@@ -14,15 +14,24 @@ mock.mockResolvedValue({data: [], headers: {'x-total-records': 0}});
 
 const store = global.store
 
+const mockAxios = jest.spyOn(axios, "post");
+mockAxios.mockImplementationOnce(() =>
+  Promise.resolve({ data: "redirect/uri" })
+);
+const mockAxios2 = jest.spyOn(axios, "get");
+mockAxios2.mockImplementationOnce(() =>
+  Promise.resolve({})
+);
+
 const data = {
   'Model.1': {
-    1: {title: 'Entry 1', color: 'red'},
-    2: {title: 'Entry 2', color: 'blue'},
-    3: {title: 'Entry 3', color: 'blue'},
-    4: {title: 'Entry 4', color: 'blue'},
-    5: {title: 'Entry 5', color: 'blue'},
-    6: {title: 'Entry 6', color: 'blue'},
-    7: {title: 'Entry 7', color: 'blue'},
+    1: {id: 1, title: 'Entry 1', color: 'red'},
+    2: {id: 2, title: 'Entry 2', color: 'blue'},
+    3: {id: 3, title: 'Entry 3', color: 'blue'},
+    4: {id: 4, title: 'Entry 4', color: 'blue'},
+    5: {id: 5, title: 'Entry 5', color: 'blue'},
+    6: {id: 6, title: 'Entry 6', color: 'blue'},
+    7: {id: 7, title: 'Entry 7', color: 'blue'},
   }
 }
 
@@ -93,6 +102,11 @@ describe('furet-ui-resource-thumbnail component', () => {
     });
   }
 
+  beforeEach(() => {
+    mockAxios.mockClear();
+    mockAxios2.mockClear();
+  });
+
   it('furet-ui-resource-thumbnail without data', () => {
     const wrapper = getWrapper();
     expect(wrapper.element).toMatchSnapshot();
@@ -115,7 +129,7 @@ describe('furet-ui-resource-thumbnail component', () => {
     const wrapper = getWrapper();
     expect(wrapper.vm.getBreadcrumbInfo().icon).toBe('th');
   });
-  it('furet-ui-resource-thumbnail click button 1', () => {
+  it('furet-ui-resource-thumbnail click button 1', async () => {
     const response = {
       pks: [{id: 1}],
       total: 1,
@@ -125,12 +139,15 @@ describe('furet-ui-resource-thumbnail component', () => {
     const wrapper = getWrapper();
     const thumbnail = wrapper.vm.$refs.thumbnail;
     wrapper.vm.api_formater(thumbnail, response)
-    wrapper.vm.$nextTick(() => {
-        const button = wrapper.find('#button1').find('a');
-        button.trigger('click')
-    })
+    await wrapper.vm.$nextTick()
+    const button = wrapper.find('#button1').find('a');
+    button.trigger('click')
+    expect(mockAxios).toBeCalledWith(
+      "/furet-ui/resource/1/model/Model.1/call/test", 
+      {pks: {id: 1}}
+    );
   });
-  it('furet-ui-resource-thumbnail click button 2', () => {
+  it('furet-ui-resource-thumbnail click button 2', async () => {
     const response = {
       pks: [{id: 1}],
       total: 1,
@@ -140,10 +157,13 @@ describe('furet-ui-resource-thumbnail component', () => {
     const wrapper = getWrapper();
     const thumbnail = wrapper.vm.$refs.thumbnail;
     wrapper.vm.api_formater(thumbnail, response)
-    wrapper.vm.$nextTick(() => {
-        const button = wrapper.find('#button2').find('a');
-        // button.trigger('click')
-    })
+    await wrapper.vm.$nextTick()
+    const button = wrapper.find('#button2').find('a');
+    button.trigger('click')
+    expect(mockAxios).toBeCalledWith(
+      "/furet-ui/open/resource/test", 
+      {params: {}, resource_type: undefined, route: null}
+    );
   });
   it('furet-ui-resource-thumbnail updateQueryString', () => {
     const wrapper = getWrapper();
@@ -184,5 +204,26 @@ describe('furet-ui-resource-thumbnail component', () => {
     wrapper.vm.$nextTick(() => {
       expect(wrapper.emitted()['revert-data']).toBeTruthy()
     })
+  });
+  it('furet-ui-resource-thumbnail click button 1', () => {
+    const response = {
+      pks: [{id: 1}],
+      total: 1,
+      data: [] // useless for test because getEntry is mocked
+    };
+
+    const wrapper = getWrapper();
+    wrapper.vm.refresh()
+    expect(mockAxios2).toBeCalledWith(
+      "/furet-ui/resource/1/crud", 
+      {
+        params: {
+          'context[fields]': "id,title,color",
+          'context[model]': "Model.1",
+          limit: 25,
+          offset: 0,
+        }
+      }
+    );
   });
 });
