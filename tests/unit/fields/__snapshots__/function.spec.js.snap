@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field.Function for Resource.Form Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Function for Resource.Form With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <span>
+      A value
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Function for Resource.List Empty 1`] = `
+<div>
+  <span>
+    
+  </span>
+</div>
+`;
+
+exports[`Field.Function for Resource.List With value 1`] = `
+<div>
+  <span>
+    A value
+  </span>
+</div>
+`;
+
+exports[`Field.Function for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Function for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      A value
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
