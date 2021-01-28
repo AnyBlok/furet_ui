@@ -27,6 +27,26 @@ defineComponent('furet-ui-list-field-barcode', {
 })
 fields.list.barcode = 'furet-ui-list-field-barcode'
 
+defineComponent('furet-ui-thumbnail-field-barcode', {
+  template: `
+    <furet-ui-form-field-common-tooltip
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <barcode v-if="isReadonly" v-bind:value="value" v-bind="config.options">
+        Can't generate the barcode
+      </barcode>
+    </furet-ui-form-field-common-tooltip>
+  `,
+  extend: ['furet-ui-thumbnail-field-common'],
+  prototype: {
+    components: {
+      barcode: VueBarcode
+    },
+  },
+})
+fields.thumbnail.barcode = 'furet-ui-thumbnail-field-barcode'
 
 defineComponent('furet-ui-form-field-barcode', {
   template: `

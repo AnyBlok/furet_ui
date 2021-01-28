@@ -17,6 +17,14 @@ import './string';
 import './timestamp';
 import './url';
 
+/* TO ADD
+ * color
+ * date
+ * file
+ * text
+ * time
+ */
+
 import './relationship';
 
 import { defineComponent } from '../factory';
