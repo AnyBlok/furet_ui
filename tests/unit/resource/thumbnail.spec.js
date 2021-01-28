@@ -9,9 +9,6 @@ const router = global.router;
 const mocki18n = jest.spyOn(i18n, "_t");
 mocki18n.mockResolvedValue('');
 
-const mock = jest.spyOn(axios, "post");
-mock.mockResolvedValue({data: [], headers: {'x-total-records': 0}});
-
 const store = global.store
 
 const mockAxios = jest.spyOn(axios, "post");

@@ -108,7 +108,7 @@ resources.list = 'furet-ui-resource-list';
 
 defineComponent('furet-ui-list-button', {
   template: `
-    <a class="button is-primary is-outlined" v-on:click="server_call">
+    <a class="furet-ui-list-button button is-primary is-outlined" v-on:click="server_call">
       <span class="icon" v-if="config.icon">
         <b-icon v-bind:icon="config.icon" />
       </span>
