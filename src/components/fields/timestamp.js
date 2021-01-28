@@ -11,4 +11,5 @@ import {fields} from './fields';
 
 
 fields.list.timestamp = 'furet-ui-list-field-datetime'
+fields.thumbnail.timestamp = 'furet-ui-thumbnail-field-datetime'
 fields.form.timestamp = 'furet-ui-form-field-datetime'
