@@ -205,13 +205,7 @@ describe('furet-ui-resource-thumbnail component', () => {
       expect(wrapper.emitted()['revert-data']).toBeTruthy()
     })
   });
-  it('furet-ui-resource-thumbnail click button 1', () => {
-    const response = {
-      pks: [{id: 1}],
-      total: 1,
-      data: [] // useless for test because getEntry is mocked
-    };
-
+  it('furet-ui-resource-thumbnail refresh', () => {
     const wrapper = getWrapper();
     wrapper.vm.refresh()
     expect(mockAxios2).toBeCalledWith(
