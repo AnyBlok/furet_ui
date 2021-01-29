@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field.Color for Resource.Form Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="field has-addons"
+    >
+      <p
+        class="control"
+      >
+        <div
+          class="control is-clearfix"
+          style="width: 100px;"
+        >
+          <input
+            autocomplete="on"
+            class="input"
+            type="color"
+          />
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </p>
+       
+      <p
+        class="control is-expanded"
+      >
+        <div
+          class="control is-clearfix"
+        >
+          <input
+            autocomplete="on"
+            class="input"
+            pattern="#[A-Fa-f1-9]{6}"
+            type="text"
+          />
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </p>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Color for Resource.Form With value, label 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="field has-addons"
+    >
+      <p
+        class="control"
+      >
+        <div
+          class="control is-clearfix"
+          style="width: 100px;"
+        >
+          <input
+            autocomplete="on"
+            class="input"
+            type="color"
+          />
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </p>
+       
+      <p
+        class="control is-expanded"
+      >
+        <div
+          class="control is-clearfix"
+        >
+          <input
+            autocomplete="on"
+            class="input"
+            pattern="#[A-Fa-f1-9]{6}"
+            placeholder="An explicit placeholder"
+            type="text"
+          />
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </p>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Color for Resource.Form With value, label, readonly 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="field has-addons"
+    >
+      <p
+        class="control is-expanded"
+      >
+        <div
+          class="control is-clearfix"
+        >
+          <input
+            autocomplete="on"
+            class="input"
+            disabled="disabled"
+            type="color"
+          />
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </p>
+       
+      <p
+        class="control is-expanded"
+      >
+        <!---->
+      </p>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Color for Resource.List Empty 1`] = `<span />`;
+
+exports[`Field.Color for Resource.List With value 1`] = `
+<div
+  class="control is-clearfix"
+>
+  <input
+    autocomplete="on"
+    class="input"
+    disabled="disabled"
+    type="color"
+  />
+   
+  <!---->
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`Field.Color for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+      
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Color for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="control is-clearfix"
+    >
+      <input
+        autocomplete="on"
+        class="input"
+        disabled="disabled"
+        type="color"
+      />
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;

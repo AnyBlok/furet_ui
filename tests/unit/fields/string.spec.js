@@ -1,5 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { getComponentPrototype } from "@/components/factory";
+import { i18n } from "@/i18n";
 
 const localVue = global.localVue;
 const store = global.store;
@@ -100,6 +101,39 @@ describe("Field.String for Resource.Form", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it("Empty and required", () => {
+    const wrapper = mount(FormStringField, {
+      store,
+      localVue,
+      i18n,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {
+          required: true
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("Hidden", () => {
+    const wrapper = mount(FormStringField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {
+          hidden: true
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("With value, label, readonly", () => {
     const wrapper = mount(FormStringField, {
       store,
@@ -148,5 +182,28 @@ describe("Field.String for Resource.Form", () => {
     expect(wrapper.find("input").element.placeholder).toBe(
       "An explicit placeholder"
     );
+  });
+
+  it("With value, label, readonly and writable", () => {
+    const wrapper = mount(FormStringField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+        },
+        config: {
+          name: "fieldName",
+          label: "My field label",
+          readonly: true,
+          writable: true
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

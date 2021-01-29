@@ -69,7 +69,7 @@ fields.list.jsonb = 'furet-ui-list-field-json'
 
 defineComponent('furet-ui-thumbnail-field-json', {
   template: `
-    <furet-ui-form-field-common-tooltip
+    <furet-ui-thumbnail-field-common-tooltip-field
       v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
@@ -77,7 +77,7 @@ defineComponent('furet-ui-thumbnail-field-json', {
       <pre 
         v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
       >{{value}}</pre>
-    </furet-ui-form-field-common-tooltip>
+    </furet-ui-thumbnail-field-common-tooltip-field>
   `,
   extend: ['furet-ui-thumbnail-field-common'],
   prototype: {

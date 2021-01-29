@@ -2,6 +2,7 @@ import { fields } from './fields';
 import './common';
 import './barcode';
 import './boolean';
+import './color';
 import './datetime';
 import './mail';
 import './integer';
@@ -18,7 +19,6 @@ import './timestamp';
 import './url';
 
 /* TO ADD
- * color
  * date
  * file
  * text

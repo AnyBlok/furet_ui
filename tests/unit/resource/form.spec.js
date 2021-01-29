@@ -13,6 +13,11 @@ mocki18n.mockResolvedValue('');
 const mock = jest.spyOn(axios, "get");
 mock.mockResolvedValue({data: [], headers: {'x-total-records': 0}});
 
+const mockAxios = jest.spyOn(axios, "post");
+mockAxios.mockImplementationOnce(() =>
+  Promise.resolve({ data: "redirect/uri" })
+);
+
 const store = global.store
 
 const getEntry = (model, pk) => {
@@ -83,6 +88,11 @@ describe('furet-ui-resource-form component', () => {
     'fields': ['id', 'title', 'color']
   }]});
 
+  beforeEach(() => {
+    mock.mockClear();
+    mockAxios.mockClear();
+  });
+
   const wrapper = mount(getComponentPrototype("furet-ui-resource-form"), {
     store,
     localVue,
@@ -90,7 +100,7 @@ describe('furet-ui-resource-form component', () => {
     i18n,
     propsData: {
       id: 1,
-      manager: {},
+      manager: {query: {pks: JSON.stringify({id: 1})}},
     },
     provide: {
       getEntry,
@@ -104,5 +114,174 @@ describe('furet-ui-resource-form component', () => {
   it('furet-ui-resource-form: getBreadcrumbInfo', () => {
     const info = wrapper.vm.getBreadcrumbInfo()
     expect(info).toStrictEqual({icon: "newspaper", label: ""})
+  });
+  it('refresh callback', () => {
+    wrapper.vm.registryRefreshCallback(() => {});
+  });
+  it('furet-ui-resource-form: readonly.', () => {
+    expect(wrapper.vm.isReadonly()).toBe(wrapper.vm.readonly);
+  });
+  it('furet-ui-resource-form: loadAsyncData.', () => {
+    wrapper.vm.loadAsyncData()
+    expect(mock).toBeCalledWith(
+      "/furet-ui/resource/1/crud", 
+      {
+        params: {
+          "context[fields]": "id,title,color",
+          "context[model]": "Model.1",
+          "filter[id][eq]": 1,
+        }
+      }
+    );
+  });
+  it('furet-ui-resource-form: refresh.', () => {
+    wrapper.vm.refresh()
+    expect(mock).toBeCalledWith(
+      "/furet-ui/resource/1/crud", 
+      {
+        params: {
+          "context[fields]": "id,title,color",
+          "context[model]": "Model.1",
+          "filter[id][eq]": 1,
+        }
+      }
+    );
+  });
+});
+
+describe('furet-ui-form-button component', () => {
+  it('snapshot isReadonly', () => {
+    const wrapper = mount(getComponentPrototype("furet-ui-form-button"), {
+      store,
+      localVue,
+      router,
+      i18n,
+      propsData: {
+        resource: {
+        },
+        data: {},
+        config: {
+          label: 'Test',
+          icon: 'th',
+        },
+      },
+      provide: {
+        partIsReadonly: () => {},
+        currentResource: {
+          uuid: null,
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('snapshot not isReadonly', () => {
+    const wrapper = mount(getComponentPrototype("furet-ui-form-button"), {
+      store,
+      localVue,
+      router,
+      i18n,
+      propsData: {
+        resource: {
+          readonly: true,
+        },
+        data: {},
+        config: {
+          readonly: false,
+          label: 'Test',
+          icon: 'th',
+        },
+      },
+      provide: {
+        partIsReadonly: () => true,
+        currentResource: {
+          uuid: null,
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('snapshot with class', () => {
+    const wrapper = mount(getComponentPrototype("furet-ui-form-button"), {
+      store,
+      localVue,
+      router,
+      i18n,
+      propsData: {
+        resource: {
+          readonly: true,
+        },
+        data: {},
+        config: {
+          readonly: false,
+          label: 'Test',
+          icon: 'th',
+          class: ['c1', 'c2']
+        },
+      },
+      provide: {
+        partIsReadonly: () => true,
+        currentResource: {
+          uuid: null,
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('snapshot isHidden', () => {
+    const wrapper = mount(getComponentPrototype("furet-ui-form-button"), {
+      store,
+      localVue,
+      router,
+      i18n,
+      propsData: {
+        resource: {
+        },
+        data: {},
+        config: {
+          hidden: true,
+          label: 'Test',
+          icon: 'th',
+        },
+      },
+      provide: {
+        partIsReadonly: () => {},
+        currentResource: {
+          uuid: null,
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('snapshot server_call', () => {
+    const wrapper = mount(getComponentPrototype("furet-ui-form-button"), {
+      store,
+      localVue,
+      router,
+      i18n,
+      propsData: {
+        resource: {
+          pks: {id: 1},
+          model: 'Model.1',
+          id: 1
+        },
+        data: {},
+        config: {
+          label: 'Test',
+          icon: 'th',
+          call: 'test',
+        },
+      },
+      provide: {
+        partIsReadonly: () => {},
+        currentResource: {
+          uuid: null,
+        }
+      }
+    });
+    wrapper.vm.server_call()
+    expect(mockAxios).toBeCalledWith(
+      "/furet-ui/resource/1/model/Model.1/call/test", 
+      {pks: {id: 1}}
+    );
   });
 });

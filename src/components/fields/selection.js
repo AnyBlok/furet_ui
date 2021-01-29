@@ -49,14 +49,14 @@ fields.list.selection = 'furet-ui-list-field-selection'
 
 defineComponent('furet-ui-thumbnail-field-selection', {
   template: `
-    <furet-ui-form-field-common-tooltip
+    <furet-ui-thumbnail-field-common-tooltip-field
       v-bind:resource="resource"
       v-bind:data="data"
       v-bind:config="config"
     >
       <b-tag v-if="color !== undefined" v-bind:type="color">{{value}}</b-tag>
       <span v-else>{{value}}</span>
-    </furet-ui-form-field-common-tooltip>
+    </furet-ui-thumbnail-field-common-tooltip-field>
   `,
   extend: ['furet-ui-thumbnail-field-common', 'furet-ui-common-field-selection'],
 })

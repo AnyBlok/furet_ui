@@ -33,6 +33,54 @@ exports[`Field.String for Resource.Form Empty 1`] = `
 </span>
 `;
 
+exports[`Field.String for Resource.Form Empty and required 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="control has-icons-right"
+    >
+      <input
+        autocomplete="on"
+        class="input is-danger"
+        type="text"
+      />
+       
+      <!---->
+       
+      <span
+        class="icon is-right has-text-danger"
+      >
+        <i
+          class="fa fa-exclamation-circle fa-lg"
+        />
+      </span>
+       
+      <!---->
+    </div>
+     
+    <p
+      class="help is-danger"
+    >
+      
+                    fields.common.required
+                    
+      <!---->
+    </p>
+  </div>
+</span>
+`;
+
+exports[`Field.String for Resource.Form Hidden 1`] = `<div />`;
+
 exports[`Field.String for Resource.Form With value, label and icon 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
@@ -103,6 +151,43 @@ exports[`Field.String for Resource.Form With value, label, readonly 1`] = `
     <span>
       A value
     </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.String for Resource.Form With value, label, readonly and writable 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="control is-clearfix"
+    >
+      <input
+        autocomplete="on"
+        class="input"
+        type="text"
+      />
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
      
     <!---->
   </div>

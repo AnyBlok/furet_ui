@@ -4171,9 +4171,18 @@ exports[`Field.RichText for Resource.Thumbnail Empty 1`] = `
   style="transition-delay: 0ms; width: 100%;"
 >
   <div
-    class="content is-small"
-    style="width: 100%;"
-  />
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="content is-small"
+      style="width: 100%;"
+    />
+     
+    <!---->
+  </div>
 </span>
 `;
 
@@ -4184,12 +4193,21 @@ exports[`Field.RichText for Resource.Thumbnail With value 1`] = `
   style="transition-delay: 0ms; width: 100%;"
 >
   <div
-    class="content is-small"
-    style="width: 100%;"
+    class="field"
+    style="width: inherit;"
   >
-    <p>
-      A value
-    </p>
+    <!---->
+     
+    <div
+      class="content is-small"
+      style="width: 100%;"
+    >
+      <p>
+        A value
+      </p>
+    </div>
+     
+    <!---->
   </div>
 </span>
 `;

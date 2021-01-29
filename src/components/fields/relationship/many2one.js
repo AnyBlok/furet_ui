@@ -88,6 +88,25 @@ defineComponent("furet-ui-list-field-many2one", {
 });
 fields.list.many2one = "furet-ui-list-field-many2one";
 
+defineComponent("furet-ui-thumbnail-field-many2one", {
+  template: `
+    <furet-ui-thumbnail-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <a v-on:click.stop="onClick">{{value}}</a>
+    </furet-ui-thumbnail-field-common-tooltip-field>
+  `,
+  extend: [
+    "furet-ui-thumbnail-field-common",
+    "furet-ui-field-relationship",
+    "furet-ui-field-many2one-common",
+    "furet-ui-field-relationship-search",
+  ],
+});
+fields.thumbnail.many2one = "furet-ui-thumbnail-field-many2one";
+
 /**
  * furet-ui-form-field-many2one component is used to manage relationship many2one on form
  * resource (``furet-ui-resource-form``).
