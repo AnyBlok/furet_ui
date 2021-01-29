@@ -137,7 +137,6 @@ defineComponent('furet-ui-resource-form', {
         this.errors = [];
         this.loading = true;
         const params = {data: {uuid: this.uuid}}
-        // let self = this;
         axios.post(`/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/default_values`, params)
           .then((response) => {
             this.$dispatchAll(response.data);
