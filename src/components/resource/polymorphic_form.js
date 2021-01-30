@@ -101,7 +101,7 @@ defineComponent('furet-ui-resource-polymorphic-form', {
         this.$refs.resource.refresh()
       },
       loadAsyncData() {
-        // this.loading = true;
+        this.loading = true;
         const params = {
           'context[model]': this.resource.model,
           'context[fields]': this.resource.fields.toString(),
