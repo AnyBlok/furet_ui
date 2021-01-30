@@ -29,6 +29,7 @@ const localVue = global.localVue;
 const store = global.store;
 const router = global.router;
 const mock_router_push = jest.spyOn(router, "push");
+mock_router_push.mockResolvedValue({})
 
 const data = {
   "Model.1": {

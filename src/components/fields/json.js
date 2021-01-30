@@ -162,7 +162,7 @@ defineComponent('furet-ui-form-field-json', {
         if (this.isRequired) {
           if (!this.value) {
             if (this.isJsonInvalid) return this.$t('components.fields.json.invalid');
-            return this.$i18n.t('fields.common.required');
+            return this.$i18n.t('components.fields.common.required');
           }
         }
         if (this.isJsonInvalid) return this.$t('components.fields.json.invalid');

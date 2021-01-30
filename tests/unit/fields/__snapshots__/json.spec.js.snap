@@ -72,7 +72,7 @@ exports[`Field.Json for Resource.Form Empty 1 With required 1`] = `
       class="help is-danger"
     >
       
-                    fields.common.required
+                    This is a required field
                     
       <!---->
     </p>

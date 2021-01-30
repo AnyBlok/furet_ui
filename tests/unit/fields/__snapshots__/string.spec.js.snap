@@ -71,7 +71,7 @@ exports[`Field.String for Resource.Form Empty and required 1`] = `
       class="help is-danger"
     >
       
-                    fields.common.required
+                    This is a required field
                     
       <!---->
     </p>

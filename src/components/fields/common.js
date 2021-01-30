@@ -189,7 +189,7 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
       },
       getMessage () {
         if (this.isRequired) {
-          if (!this.value) return this.$i18n.t('fields.common.required');
+          if (!this.value) return this.$i18n.t('components.fields.common.required');
         }
         return ''
       },
