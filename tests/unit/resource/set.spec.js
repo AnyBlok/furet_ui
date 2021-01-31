@@ -33,7 +33,7 @@ const getNewEntry = (model, uuid) => {
 }
 
 const getNewEntries = (model) => {
-  return new_entries[model];
+  return [];
 }
 
 const updateChangeState = () => {}
