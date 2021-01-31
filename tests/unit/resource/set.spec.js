@@ -32,7 +32,7 @@ const getNewEntry = (model, uuid) => {
   return {title: 'New Entry 1', color: 'red'};
 }
 
-const getNewEntries = (model) => {
+const getNewEntries = () => {
   return [];
 }
 
