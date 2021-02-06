@@ -29,8 +29,6 @@ defineComponent('furet-ui-common-field-selection', {
     },
   },
 })
-fields.list.selection = 'furet-ui-list-field-selection'
-
 
 defineComponent('furet-ui-list-field-selection', {
   template: `
@@ -60,7 +58,7 @@ defineComponent('furet-ui-thumbnail-field-selection', {
   `,
   extend: ['furet-ui-thumbnail-field-common', 'furet-ui-common-field-selection'],
 })
-fields.thumbnail.selection = 'furet-ui-thumbnail-field-selection'
+fields.kanban.selection = 'furet-ui-thumbnail-field-selection'
 
 
 defineComponent('furet-ui-form-field-selection', {

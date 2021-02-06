@@ -39,6 +39,7 @@ defineComponent('furet-ui-thumbnail-field-datetime', {
   extend: ['furet-ui-thumbnail-field-common', 'furet-ui-common-field-datetime'],
 })
 fields.thumbnail.datetime = 'furet-ui-thumbnail-field-datetime'
+fields.kanban.datetime = 'furet-ui-thumbnail-field-datetime'
 
 defineComponent('furet-ui-form-field-datetime', {
   extend: ['furet-ui-form-field-common'],

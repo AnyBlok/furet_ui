@@ -76,6 +76,7 @@ defineComponent('furet-ui-thumbnail-field-statusbar', {
   extend: ['furet-ui-thumbnail-field-common', 'furet-ui-field-statusbar-common'],
 })
 fields.thumbnail.statusbar = 'furet-ui-thumbnail-field-statusbar'
+fields.kanban.statusbar = 'furet-ui-thumbnail-field-statusbar'
 
 defineComponent('furet-ui-form-field-statusbar', {
   template: `

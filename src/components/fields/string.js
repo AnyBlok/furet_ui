@@ -24,6 +24,7 @@ defineComponent('furet-ui-thumbnail-field-string', {
   extend: ['furet-ui-thumbnail-field-common'],
 })
 fields.thumbnail.string = 'furet-ui-thumbnail-field-string'
+fields.kanban.string = 'furet-ui-thumbnail-field-string'
 
 
 defineComponent('furet-ui-form-field-string', {

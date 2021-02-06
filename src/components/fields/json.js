@@ -91,6 +91,8 @@ defineComponent('furet-ui-thumbnail-field-json', {
 })
 fields.thumbnail.json = 'furet-ui-thumbnail-field-json'
 fields.thumbnail.jsonb = 'furet-ui-thumbnail-field-json'
+fields.kanban.json = 'furet-ui-thumbnail-field-json'
+fields.kanban.jsonb = 'furet-ui-thumbnail-field-json'
 
 /**
  * furet-ui-form-field-json component is used to manage json/jsonb on form

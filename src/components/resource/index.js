@@ -4,5 +4,6 @@ import './custom';
 import './set';
 import './list';
 import './thumbnail';
+import './kanban';
 import './form';
 import './polymorphic_form';

@@ -44,6 +44,7 @@ defineComponent('furet-ui-thumbnail-field-rich-text', {
   extend: ['furet-ui-thumbnail-field-common'],
 })
 fields.thumbnail.richtext = 'furet-ui-thumbnail-field-rich-text'
+fields.kanban.richtext = 'furet-ui-thumbnail-field-rich-text'
 
 defineComponent('furet-ui-form-field-rich-text', {
   template: `

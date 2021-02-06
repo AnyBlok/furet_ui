@@ -43,6 +43,7 @@ defineComponent('furet-ui-thumbnail-field-color', {
   extend: ['furet-ui-thumbnail-field-common'],
 })
 fields.thumbnail.color = 'furet-ui-thumbnail-field-color'
+fields.kanban.color = 'furet-ui-thumbnail-field-color'
 
 defineComponent('furet-ui-form-field-color', {
   template: `

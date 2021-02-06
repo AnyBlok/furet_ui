@@ -9,6 +9,11 @@ defineComponent('furet-ui-resource-with-search', {
   extend: ['furet-ui-resource', 'i18n-translate'],
   prototype: {
     props: ['id', 'manager'],
+    data () {
+      return {
+        received_pks: [],
+      };
+    },
     computed: {
       rest_api_url () {
         return `/furet-ui/resource/${this.id}/crud`;
@@ -33,6 +38,7 @@ defineComponent('furet-ui-resource-with-search', {
         data.pks.forEach(pk => {
           res.push(this.getEntry(this.resource.model, pk))
         });
+        this.received_pks = data.pks;
         const news = this.getNewEntries(this.resource.model);
         const total = data.total + news.length;
         if (res.length < obj.perPage){

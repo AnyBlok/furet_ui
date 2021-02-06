@@ -24,6 +24,7 @@ defineComponent('furet-ui-thumbnail-field-url', {
   extend: ['furet-ui-thumbnail-field-common'],
 })
 fields.thumbnail.url = 'furet-ui-thumbnail-field-url'
+fields.kanban.url = 'furet-ui-thumbnail-field-url'
 
 
 /**

@@ -22,6 +22,7 @@ defineComponent("furet-ui-thumbnail-field-integer", {
   extend: ["furet-ui-thumbnail-field-common"]
 });
 fields.thumbnail.integer = "furet-ui-thumbnail-field-integer";
+fields.kanban.integer = "furet-ui-thumbnail-field-integer";
 
 /**
  * furet-ui-form-field-integer component is used to manage integer on form

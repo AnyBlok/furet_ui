@@ -23,6 +23,7 @@ defineComponent('furet-ui-thumbnail-field-email', {
   extend: ['furet-ui-thumbnail-field-common'],
 })
 fields.thumbnail.email = 'furet-ui-thumbnail-field-email'
+fields.kanban.email = 'furet-ui-thumbnail-field-email'
 
 
 /**
