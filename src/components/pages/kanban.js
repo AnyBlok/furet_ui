@@ -41,7 +41,7 @@ defineComponent('furet-ui-kanban', {
             <div 
               v-for="kanban in splited_data[header.value]" 
               v-on:dblclick="goToPage(kanban)"
-              class="block thumbnail"
+              v-bind:class="['block', draganddrop ? 'thumbnail': '']"
             >
               <slot v-bind:data="kanban.data" />
             </div>
@@ -57,7 +57,7 @@ defineComponent('furet-ui-kanban', {
   `,
   extend: ['mixin-page-multi-entries'],
   prototype: {
-    props: ['headers', 'field_identity', 'field_order', 'pks'],
+    props: ['headers', 'field_identity', 'field_order', 'pks', 'draganddrop'],
     components: {
       draggable,
     },

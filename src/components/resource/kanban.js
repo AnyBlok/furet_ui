@@ -17,6 +17,7 @@ defineComponent('furet-ui-resource-kanban', {
       v-bind:headers="headers"
       v-bind:field_identity="resource.field_identity"
       v-bind:field_order="resource.field_order"
+      v-bind:draganddrop="resource.draganddrop"
       v-bind:pks="resource.pks"
 
       v-bind:rest_api_url="rest_api_url"
@@ -24,7 +25,6 @@ defineComponent('furet-ui-resource-kanban', {
 
       v-bind:rest_api_formater="api_formater"
       v-bind:query="manager.query"
-      v-bind:readonly="manager.readonly"
       v-bind:pagination_size="manager.pagination_size"
 
       v-on:update-thumbnail="updateThumbnail"
