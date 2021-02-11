@@ -12,7 +12,7 @@ defineComponent('furet-ui-thumbnail', {
         v-bind:data="data"
         v-bind:can_go_to_new="can_go_to_new"
         v-bind:go_to_new_choices="go_to_new_choices"
-        readonly
+        v-bind:readonly="readonly"
         v-on:updateFilters="updateFilters"
         v-on:removeFilter="removeFilter"
         v-on:refresh="refresh"

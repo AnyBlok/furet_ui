@@ -102,7 +102,7 @@ defineComponent('furet-ui-list', {
   extend: ['mixin-page-multi-entries'],
   prototype: {
     props: [
-      'is_checkable', 'checkedElements', 'detailed', 'detail_key', 'readonly'],
+      'is_checkable', 'checkedElements', 'detailed', 'detail_key'],
     data() {
       return {
         isCheckable: this.is_checkable || false,

@@ -34,7 +34,7 @@ defineComponent('furet-ui-thumbnail-field-barcode', {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <barcode v-if="isReadonly" v-bind:value="value" v-bind="config.options">
+      <barcode v-bind:value="value" v-bind="config.options">
         Can't generate the barcode
       </barcode>
     </furet-ui-thumbnail-field-common-tooltip-field>
