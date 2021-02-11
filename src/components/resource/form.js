@@ -215,7 +215,7 @@ defineComponent('furet-ui-resource-form', {
               this.uuid = this.manager.query.uuid;
               this.getDefault();
             }
-          } else if (!this.uuid) {
+          } else {
             // new case
             this.updateReadOnly(false);
             this.uuid = uuidv1();

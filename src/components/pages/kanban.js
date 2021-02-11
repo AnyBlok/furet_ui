@@ -13,7 +13,7 @@ defineComponent('furet-ui-kanban', {
         v-bind:data="data"
         v-bind:can_go_to_new="can_go_to_new"
         v-bind:go_to_new_choices="go_to_new_choices"
-        readonly
+        v-bind:readonly="readonly"
         v-on:updateFilters="updateFilters"
         v-on:removeFilter="removeFilter"
         v-on:refresh="refresh"
@@ -41,7 +41,7 @@ defineComponent('furet-ui-kanban', {
             <div 
               v-for="kanban in splited_data[header.value]" 
               v-on:dblclick="goToPage(kanban)"
-              v-bind:class="['block', draganddrop ? 'thumbnail': '']"
+              v-bind:class="['block', (draganddrop && !readonly) ? 'thumbnail': '']"
             >
               <slot v-bind:data="kanban.data" />
             </div>

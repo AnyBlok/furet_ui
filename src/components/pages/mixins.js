@@ -290,7 +290,8 @@ defineComponent('mixin-page-multi-entries', {
     props: [
       'title', 'default_filters', 'default_tags', 'defaultSortField', 'defaultSortOrder',
       'perpage', 'can_go_to_new', 'go_to_new_choices', 'rest_api_url', 'rest_api_params',
-      'rest_api_formater', 'query', 'default_header_component_name', 'pagination_size'],
+      'rest_api_formater', 'query', 'default_header_component_name', 'pagination_size',
+      'readonly'],
     data() {
       const sortingPriority = [];
       if (this.defaultSortField) {
@@ -547,10 +548,8 @@ defineComponent('mixin-page-multi-entries', {
       }
     },
     watch: {
-      query (newQuery, oldQuery) {
-        if (JSON.stringify(newQuery) !== JSON.stringify(oldQuery)) {
-          this.parse_query();  // query is reactive
-        }
+      query () {
+        this.parse_query();  // query is reactive
       },
     },
     mounted() {
