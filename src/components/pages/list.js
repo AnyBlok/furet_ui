@@ -21,10 +21,6 @@ defineComponent('furet-ui-list', {
         v-on:go-to-new="goToNew"
       >
         <template slot="actions" slot-scope="props">
-          <a v-if="checkedRows.length > 0" class="button is-primary is-outlined" v-on:click="startBrowsing">
-            <span class="icon"><b-icon icon="file-document-box-multiple" /></span>
-            <span>{{ $t('components.header.browse') }}</span>
-          </a>
           <slot name="actions" v-bind:data="props.data" />
         </template>
       </component>
@@ -106,7 +102,7 @@ defineComponent('furet-ui-list', {
   extend: ['mixin-page-multi-entries'],
   prototype: {
     props: [
-      'is_checkable', 'checkedElements', 'detailed', 'detail_key', 'readonly', 'pagination_size'],
+      'is_checkable', 'checkedElements', 'detailed', 'detail_key'],
     data() {
       return {
         isCheckable: this.is_checkable || false,
@@ -118,31 +114,6 @@ defineComponent('furet-ui-list', {
         if (this.checkedRows.length !== 0) return this.checkedRows;
         return this.data;
       },
-      row_state() {
-        return (row, _index) => {
-          let style_class = ""
-          switch(row.__change_state) {
-            case "create":
-              style_class = "is-created";
-              break;
-            case "update":
-              style_class = "is-updated";
-              break;
-            case "delete":
-              style_class = "is-deleted";
-              break;
-            case "link":
-              style_class = "is-linked";
-              break;
-            case "unlink":
-              style_class = "is-unlinked";
-              break;
-            default:
-              style_class = "is-unmodified";
-            }
-            return style_class
-        };
-      }
     },
   },
 });

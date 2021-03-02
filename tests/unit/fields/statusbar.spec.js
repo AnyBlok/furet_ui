@@ -14,6 +14,385 @@ const provide = {
   updateChangeState: () => {}
 };
 
+describe("Field.StatusBar for Resource.List", () => {
+  const ListStatusBarField = getComponentPrototype("furet-ui-list-field-statusbar");
+
+  it("Empty", () => {
+    const wrapper = mount(ListStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("Empty without selection", () => {
+    const wrapper = mount(ListStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ListStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and dangerous state 1", () => {
+    const wrapper = mount(ListStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'dangerous-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and dangerous state 2", () => {
+    const wrapper = mount(ListStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'dangerous-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry2"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and done state 1", () => {
+    const wrapper = mount(ListStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'done-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and done state 2", () => {
+    const wrapper = mount(ListStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'done-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry2"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
+describe("Field.StatusBar for Resource.Thumbnail", () => {
+  const ThumbnailStatusBarField = getComponentPrototype("furet-ui-thumbnail-field-statusbar");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("Empty without selection", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
+describe("Field.StatusBar for Resource.Thumbnail", () => {
+  const ThumbnailStatusBarField = getComponentPrototype("furet-ui-thumbnail-field-statusbar");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("Empty without selection", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and dangerous state 1", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'dangerous-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and dangerous state 2", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'dangerous-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry2"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and done state 1", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'done-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and done state 2", () => {
+    const wrapper = mount(ThumbnailStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'done-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry2"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.StatusBar for Resource.Form", () => {
   const FormStatusBarField = getComponentPrototype("furet-ui-form-field-statusbar");
 
@@ -159,6 +538,102 @@ describe("Field.StatusBar for Resource.Form", () => {
         },
         data: {
           fieldName: "entry1"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and dangerous state 1", () => {
+    const wrapper = mount(FormStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'dangerous-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and dangerous state 2", () => {
+    const wrapper = mount(FormStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'dangerous-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry2"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and done state 1", () => {
+    const wrapper = mount(FormStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'done-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and done state 2", () => {
+    const wrapper = mount(FormStatusBarField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName",
+          'done-states': ['entry1']
+        },
+        data: {
+          fieldName: "entry2"
         }
       }
     });

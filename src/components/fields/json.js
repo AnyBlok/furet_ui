@@ -67,6 +67,30 @@ defineComponent('furet-ui-list-field-json', {
 fields.list.json = 'furet-ui-list-field-json'
 fields.list.jsonb = 'furet-ui-list-field-json'
 
+defineComponent('furet-ui-thumbnail-field-json', {
+  template: `
+    <furet-ui-thumbnail-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <pre 
+        v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+      >{{value}}</pre>
+    </furet-ui-thumbnail-field-common-tooltip-field>
+  `,
+  extend: ['furet-ui-thumbnail-field-common'],
+  prototype: {
+    computed: {
+      value () {
+        const value = this.data[this.config.name] || '';
+        return format(value)
+      },
+    },
+  },
+})
+fields.thumbnail.json = 'furet-ui-thumbnail-field-json'
+fields.thumbnail.jsonb = 'furet-ui-thumbnail-field-json'
 
 /**
  * furet-ui-form-field-json component is used to manage json/jsonb on form
@@ -138,7 +162,7 @@ defineComponent('furet-ui-form-field-json', {
         if (this.isRequired) {
           if (!this.value) {
             if (this.isJsonInvalid) return this.$t('components.fields.json.invalid');
-            return this.$i18n.t('fields.common.required');
+            return this.$i18n.t('components.fields.common.required');
           }
         }
         if (this.isJsonInvalid) return this.$t('components.fields.json.invalid');

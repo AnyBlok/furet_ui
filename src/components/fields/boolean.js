@@ -10,7 +10,12 @@
 // import _ from 'underscore';
 import { defineComponent } from "../factory";
 import { fields } from "./fields";
-import { listTemplate, safe_eval_boolean } from "./common";
+import { listTemplate, thumbnailTemplate, safe_eval_boolean } from "./common";
+
+const computed_boolean_checked = (obj) => {
+  // #11 safe eval can return null at the moment we are ignoring null values
+  return safe_eval_boolean(obj.value) ? true : false;
+};
 
 defineComponent("furet-ui-list-field-boolean", {
   template: `
@@ -26,17 +31,14 @@ defineComponent("furet-ui-list-field-boolean", {
   prototype: {
     computed: {
       checked() {
-        // #11 safe eval can return null at the moment we are ignoring null values
-        return safe_eval_boolean(this.value) ? true : false;
+        return computed_boolean_checked(this);
       }
     }
   }
 });
 fields.list.boolean = "furet-ui-list-field-boolean";
 
-defineComponent("furet-ui-list-field-yesno", {
-  template: listTemplate,
-  extend: ["furet-ui-list-field-common"],
+defineComponent("furet-ui-common-field-yesno", {
   prototype: {
     computed: {
       value() {
@@ -51,7 +53,46 @@ defineComponent("furet-ui-list-field-yesno", {
     }
   }
 });
+
+defineComponent("furet-ui-list-field-yesno", {
+  template: listTemplate,
+  extend: ["furet-ui-list-field-common", "furet-ui-common-field-yesno"],
+});
 fields.list.yesno = "furet-ui-list-field-yesno";
+
+defineComponent("furet-ui-thumbnail-field-boolean", {
+  template: `
+  <furet-ui-thumbnail-field-common-tooltip-field
+    v-bind:resource="resource"
+    v-bind:data="data"
+    v-bind:config="config"
+  >
+    <span>{{ value }}</span>
+      <b-checkbox 
+        v-model="checked" 
+        disabled
+        v-bind:key="config.key"
+      >
+        {{ config.label }}
+      </b-checkbox>
+  </furet-ui-thumbnail-field-common-tooltip-field>
+  `,
+  extend: ["furet-ui-thumbnail-field-common"],
+  prototype: {
+    computed: {
+      checked() {
+        return computed_boolean_checked(this);
+      }
+    }
+  }
+});
+fields.thumbnail.boolean = "furet-ui-thumbnail-field-boolean";
+
+defineComponent("furet-ui-thumbnail-field-yesno", {
+  template: thumbnailTemplate,
+  extend: ["furet-ui-thumbnail-field-common", "furet-ui-common-field-yesno"],
+});
+fields.thumbnail.yesno = "furet-ui-thumbnail-field-yesno";
 
 defineComponent("furet-ui-form-field-boolean", {
   template: `

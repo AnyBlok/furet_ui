@@ -188,6 +188,186 @@ exports[`Field.Boolean for Resource.List With true value 1`] = `
 </div>
 `;
 
+exports[`Field.Boolean for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field has-addons"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      
+    </span>
+     
+    <label
+      class="b-checkbox checkbox is-disabled"
+      disabled="disabled"
+    >
+      <input
+        disabled="disabled"
+        true-value="true"
+        type="checkbox"
+        value="false"
+      />
+       
+      <span
+        class="check"
+      />
+       
+      <span
+        class="control-label"
+      >
+        
+        
+      
+      </span>
+    </label>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.Thumbnail With false value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field has-addons"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      false
+    </span>
+     
+    <label
+      class="b-checkbox checkbox is-disabled"
+      disabled="disabled"
+    >
+      <input
+        disabled="disabled"
+        true-value="true"
+        type="checkbox"
+        value="false"
+      />
+       
+      <span
+        class="check"
+      />
+       
+      <span
+        class="control-label"
+      >
+        
+        
+      
+      </span>
+    </label>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.Thumbnail With security issue value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field has-addons"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      throw Error('this is a security issue')
+    </span>
+     
+    <label
+      class="b-checkbox checkbox is-disabled"
+      disabled="disabled"
+    >
+      <input
+        disabled="disabled"
+        true-value="true"
+        type="checkbox"
+        value="false"
+      />
+       
+      <span
+        class="check"
+      />
+       
+      <span
+        class="control-label"
+      >
+        
+        
+      
+      </span>
+    </label>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.Thumbnail With true value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field has-addons"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      true
+    </span>
+     
+    <label
+      class="b-checkbox checkbox is-disabled"
+      disabled="disabled"
+    >
+      <input
+        disabled="disabled"
+        true-value="true"
+        type="checkbox"
+        value="false"
+      />
+       
+      <span
+        class="check"
+      />
+       
+      <span
+        class="control-label"
+      >
+        
+        
+      
+      </span>
+    </label>
+     
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Field.YesNo YesNo for Resource.List Empty 1`] = `
 <div>
   <span>
@@ -218,4 +398,88 @@ exports[`Field.YesNo YesNo for Resource.List With true value 1`] = `
     Yes
   </span>
 </div>
+`;
+
+exports[`Field.YesNo YesNo for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      No
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.YesNo YesNo for Resource.Thumbnail With false value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      No
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.YesNo YesNo for Resource.Thumbnail With security issue value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      No
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.YesNo YesNo for Resource.Thumbnail With true value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      Yes
+    </span>
+     
+    <!---->
+  </div>
+</span>
 `;

@@ -1,0 +1,1181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`furet-ui-resource-list component furet-ui-resource-list snapshot with data 1`] = `
+<section
+  id="furet-ui-list"
+>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <header
+    id="furet-ui-page-multi-entries-header"
+  >
+    <div
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <h2
+          class="level-item is-size-3"
+        >
+          Templates
+        </h2>
+         
+        <span
+          class="level-item"
+        >
+           
+        </span>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+         
+        <!---->
+         
+        <div
+          class="level-item buttons"
+        >
+          <a
+            class="button"
+            id="furet-ui-page-multi-entries-header-refresh"
+          >
+            <span
+              class="icon"
+            >
+              <i
+                class="fa fa-redo fa-lg"
+              />
+            </span>
+          </a>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="collapse panel is-pulled-right"
+    >
+      <div
+        class="collapse-trigger"
+      />
+      <div
+        class="collapse-content"
+        id=""
+        style="display: none;"
+      >
+        <div
+          class="tags"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="buttons is-grouped is-centered"
+    >
+      <!---->
+       
+    </div>
+  </header>
+    
+  <div
+    class="b-table"
+  >
+    <div
+      class="field table-mobile-sort"
+    >
+      <div
+        class="field has-addons"
+      >
+        <div
+          class="control is-expanded"
+        >
+          <span
+            class="select is-fullwidth"
+          >
+            <select>
+              <!---->
+               
+              <!---->
+              <option
+                value="[object Object]"
+              >
+                
+                    Title
+                    
+                <!---->
+              </option>
+              <option
+                value="[object Object]"
+              >
+                
+                    Color
+                    
+                <!---->
+              </option>
+            </select>
+          </span>
+           
+          <!---->
+        </div>
+         
+        <div
+          class="control"
+        >
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="top level"
+    >
+      <div
+        class="level-left"
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        2
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <nav
+            class="pagination"
+          >
+            <a
+              class="pagination-link pagination-previous"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-left fa-lg"
+                />
+              </span>
+            </a>
+             
+            <a
+              class="pagination-link pagination-next"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-right fa-lg"
+                />
+              </span>
+            </a>
+             
+            <ul
+              class="pagination-list"
+            >
+              <!---->
+               
+              <!---->
+               
+              <li>
+                <a
+                  aria-current="true"
+                  class="pagination-link is-current "
+                  href="#"
+                  role="button"
+                >
+                  1
+                </a>
+              </li>
+               
+              <!---->
+               
+              <!---->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="table-wrapper has-mobile-cards"
+    >
+      <table
+        class="table is-striped is-hoverable"
+      >
+        <thead>
+          <tr>
+            <!---->
+             
+            <!---->
+             
+            <th
+              class=""
+            >
+              <div
+                class="th-wrap"
+              >
+                 
+                <!---->
+              </div>
+            </th>
+            <th
+              class="is-sortable"
+            >
+              <div
+                class="th-wrap"
+              >
+                Title 
+                <!---->
+              </div>
+            </th>
+            <th
+              class="is-sortable"
+            >
+              <div
+                class="th-wrap"
+              >
+                Color 
+                <!---->
+              </div>
+            </th>
+             
+            <!---->
+          </tr>
+           
+          <!---->
+           
+          <!---->
+        </thead>
+         
+        <tbody>
+          <tr
+            class="is-unmodified"
+            draggable="false"
+          >
+            <!---->
+             
+            <!---->
+             
+            <td
+              class="is-action"
+            >
+              <a
+                class="button is-outlined"
+              >
+                <span
+                  class="icon is-small"
+                >
+                  <i
+                    class="fa fa-redo-alt"
+                  />
+                </span>
+              </a>
+            </td>
+             
+            <td
+              class="is-list-cell"
+              data-label="Title"
+            >
+              <div>
+                <span>
+                  Entry 1
+                </span>
+              </div>
+            </td>
+            <td
+              class="is-list-cell"
+              data-label="Color"
+            >
+              <div>
+                <span>
+                  red
+                </span>
+              </div>
+            </td>
+             
+            <!---->
+          </tr>
+           
+          <!---->
+           
+          <!---->
+          <tr
+            class="is-unmodified"
+            draggable="false"
+          >
+            <!---->
+             
+            <!---->
+             
+            <td
+              class="is-action"
+            >
+              <a
+                class="button is-outlined"
+              >
+                <span
+                  class="icon is-small"
+                >
+                  <i
+                    class="fa fa-redo-alt"
+                  />
+                </span>
+              </a>
+            </td>
+             
+            <td
+              class="is-list-cell"
+              data-label="Title"
+            >
+              <div>
+                <span>
+                  Entry 2
+                </span>
+              </div>
+            </td>
+            <td
+              class="is-list-cell"
+              data-label="Color"
+            >
+              <div>
+                <span>
+                  blue
+                </span>
+              </div>
+            </td>
+             
+            <!---->
+          </tr>
+           
+          <!---->
+           
+          <!---->
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+     
+    <div
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        2
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <nav
+            class="pagination"
+          >
+            <a
+              class="pagination-link pagination-previous"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-left fa-lg"
+                />
+              </span>
+            </a>
+             
+            <a
+              class="pagination-link pagination-next"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-right fa-lg"
+                />
+              </span>
+            </a>
+             
+            <ul
+              class="pagination-list"
+            >
+              <!---->
+               
+              <!---->
+               
+              <li>
+                <a
+                  aria-current="true"
+                  class="pagination-link is-current "
+                  href="#"
+                  role="button"
+                >
+                  1
+                </a>
+              </li>
+               
+              <!---->
+               
+              <!---->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`furet-ui-resource-list component furet-ui-resource-list snapshot without data 1`] = `
+<section
+  id="furet-ui-list"
+>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <header
+    id="furet-ui-page-multi-entries-header"
+  >
+    <div
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <h2
+          class="level-item is-size-3"
+        >
+          Templates
+        </h2>
+         
+        <span
+          class="level-item"
+        >
+           
+        </span>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+         
+        <!---->
+         
+        <div
+          class="level-item buttons"
+        >
+          <a
+            class="button"
+            id="furet-ui-page-multi-entries-header-refresh"
+          >
+            <span
+              class="icon"
+            >
+              <i
+                class="fa fa-redo fa-lg"
+              />
+            </span>
+          </a>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="collapse panel is-pulled-right"
+    >
+      <div
+        class="collapse-trigger"
+      />
+      <div
+        class="collapse-content"
+        id=""
+        style="display: none;"
+      >
+        <div
+          class="tags"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="buttons is-grouped is-centered"
+    >
+      <!---->
+       
+    </div>
+  </header>
+    
+  <div
+    class="b-table"
+  >
+    <!---->
+     
+    <div
+      class="top level"
+    >
+      <div
+        class="level-left"
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        0
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <nav
+            class="pagination"
+          >
+            <a
+              class="pagination-link pagination-previous"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-left fa-lg"
+                />
+              </span>
+            </a>
+             
+            <a
+              class="pagination-link pagination-next"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-right fa-lg"
+                />
+              </span>
+            </a>
+             
+            <ul
+              class="pagination-list"
+            >
+              <!---->
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="table-wrapper has-mobile-cards"
+    >
+      <table
+        class="table is-striped"
+      >
+        <!---->
+         
+        <tbody>
+          <tr
+            class="is-empty"
+          >
+            <td
+              colspan="0"
+            >
+              <section
+                class="section"
+              >
+                <div
+                  class="content has-text-grey has-text-centered"
+                >
+                  <p>
+                    [object Promise]
+                  </p>
+                </div>
+              </section>
+            </td>
+          </tr>
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+     
+    <div
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        0
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <nav
+            class="pagination"
+          >
+            <a
+              class="pagination-link pagination-previous"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-left fa-lg"
+                />
+              </span>
+            </a>
+             
+            <a
+              class="pagination-link pagination-next"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-right fa-lg"
+                />
+              </span>
+            </a>
+             
+            <ul
+              class="pagination-list"
+            >
+              <!---->
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`furet-ui-resource-list component furet-ui-resource-list snapshot without data with button 1`] = `
+<section
+  id="furet-ui-list"
+>
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <header
+    id="furet-ui-page-multi-entries-header"
+  >
+    <div
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <h2
+          class="level-item is-size-3"
+        >
+          Templates
+        </h2>
+         
+        <span
+          class="level-item"
+        >
+           
+        </span>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <div
+            class="field is-grouped-multiline is-grouped"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+         
+        <!---->
+         
+        <div
+          class="level-item buttons"
+        >
+          <a
+            class="button"
+            id="furet-ui-page-multi-entries-header-refresh"
+          >
+            <span
+              class="icon"
+            >
+              <i
+                class="fa fa-redo fa-lg"
+              />
+            </span>
+          </a>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="collapse panel is-pulled-right"
+    >
+      <div
+        class="collapse-trigger"
+      />
+      <div
+        class="collapse-content"
+        id=""
+        style="display: none;"
+      >
+        <div
+          class="tags"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="buttons is-grouped is-centered"
+    >
+      <!---->
+       
+      <a
+        class="furet-ui-list-button button is-primary is-outlined"
+      >
+        <span
+          class="icon"
+        >
+          <span
+            class="icon"
+          >
+            <i
+              class="fa fa-th fa-lg"
+            />
+          </span>
+        </span>
+         
+        <span>
+          Test
+        </span>
+      </a>
+    </div>
+  </header>
+    
+  <div
+    class="b-table"
+  >
+    <!---->
+     
+    <div
+      class="top level"
+    >
+      <div
+        class="level-left"
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        0
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <nav
+            class="pagination"
+          >
+            <a
+              class="pagination-link pagination-previous"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-left fa-lg"
+                />
+              </span>
+            </a>
+             
+            <a
+              class="pagination-link pagination-next"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-right fa-lg"
+                />
+              </span>
+            </a>
+             
+            <ul
+              class="pagination-list"
+            >
+              <!---->
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="table-wrapper has-mobile-cards"
+    >
+      <table
+        class="table is-striped"
+      >
+        <!---->
+         
+        <tbody>
+          <tr
+            class="is-empty"
+          >
+            <td
+              colspan="0"
+            >
+              <section
+                class="section"
+              >
+                <div
+                  class="content has-text-grey has-text-centered"
+                >
+                  <p>
+                    [object Promise]
+                  </p>
+                </div>
+              </section>
+            </td>
+          </tr>
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+     
+    <div
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <div
+          class="field is-grouped-multiline is-grouped"
+        >
+          <!---->
+           
+          <div
+            class="control"
+          >
+            <strong>
+              [object Promise] :
+            </strong>
+            
+        0
+      
+          </div>
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="level-right"
+      >
+        <div
+          class="level-item"
+        >
+          <nav
+            class="pagination"
+          >
+            <a
+              class="pagination-link pagination-previous"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-left fa-lg"
+                />
+              </span>
+            </a>
+             
+            <a
+              class="pagination-link pagination-next"
+              disabled="disabled"
+              href="#"
+              role="button"
+            >
+              <span
+                aria-hidden="true"
+                class="icon"
+              >
+                <i
+                  class="fa fa-angle-right fa-lg"
+                />
+              </span>
+            </a>
+             
+            <ul
+              class="pagination-list"
+            >
+              <!---->
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

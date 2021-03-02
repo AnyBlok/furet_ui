@@ -50,6 +50,9 @@ defineComponent('furet-ui-resource', {
       getResource (id) {
         return this.$store.state.resource[id];
       },
+      updateQueryString (query) {
+        this.$emit('update-query-string', query);
+      },
       load_resource (id) {
         axios
           .get(`furet-ui/resource/${id}`).then((result) => {

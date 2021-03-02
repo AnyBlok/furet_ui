@@ -84,6 +84,15 @@ export const listTemplate = `
   </div>
 `
 
+export const thumbnailTemplate = `
+  <furet-ui-thumbnail-field-common-tooltip-field
+    v-bind:resource="resource"
+    v-bind:data="data"
+    v-bind:config="config"
+  >
+    <span>{{ value }}</span>
+  </furet-ui-thumbnail-field-common-tooltip-field>
+`
 
 defineComponent('furet-ui-list-field-common', {
   prototype: {
@@ -180,7 +189,7 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
       },
       getMessage () {
         if (this.isRequired) {
-          if (!this.value) return this.$i18n.t('fields.common.required');
+          if (!this.value) return this.$i18n.t('components.fields.common.required');
         }
         return ''
       },
@@ -233,6 +242,43 @@ defineComponent('furet-ui-form-field-common', {
         }
         this.updateChangeState(action);
       }, 200),
+    },
+  }
+});
+
+
+defineComponent('furet-ui-thumbnail-field-common-tooltip-field', {
+  template: `
+    <furet-ui-form-field-common-tooltip
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <b-field 
+        v-bind:label="label"
+        v-bind:style="{'width': 'inherit'}"
+      >
+        <slot />
+      </b-field>
+    </furet-ui-form-field-common-tooltip>`,
+  extend: ['i18n-translate'],
+  prototype: {
+    props: ['resource', 'data', 'config'],
+    computed: {
+      label () {
+        return this.translate(this.config.label);
+      },
+    },
+  },
+})
+
+defineComponent('furet-ui-thumbnail-field-common', {
+  prototype: {
+    props: ['resource', 'data', 'config'],
+    computed: {
+      value () {
+        return this.data && this.data[this.config.name] || null;
+      },
     },
   }
 });

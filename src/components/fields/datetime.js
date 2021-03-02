@@ -10,13 +10,11 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import moment from 'moment-timezone';
 import {defineComponent} from '../factory'
 import {fields} from './fields';
-import { listTemplate } from './common';
+import { listTemplate, thumbnailTemplate } from './common';
 import {i18n} from '../../i18n';
 
 
-defineComponent('furet-ui-list-field-datetime', {
-  template: listTemplate,
-  extend: ['furet-ui-list-field-common'],
+defineComponent('furet-ui-common-field-datetime', {
   prototype: {
     computed: {
       value () {
@@ -29,7 +27,18 @@ defineComponent('furet-ui-list-field-datetime', {
     },
   },
 })
+
+defineComponent('furet-ui-list-field-datetime', {
+  template: listTemplate,
+  extend: ['furet-ui-list-field-common', 'furet-ui-common-field-datetime'],
+})
 fields.list.datetime = 'furet-ui-list-field-datetime'
+
+defineComponent('furet-ui-thumbnail-field-datetime', {
+  template: thumbnailTemplate,
+  extend: ['furet-ui-thumbnail-field-common', 'furet-ui-common-field-datetime'],
+})
+fields.thumbnail.datetime = 'furet-ui-thumbnail-field-datetime'
 
 defineComponent('furet-ui-form-field-datetime', {
   extend: ['furet-ui-form-field-common'],

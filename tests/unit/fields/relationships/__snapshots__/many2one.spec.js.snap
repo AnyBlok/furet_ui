@@ -22,6 +22,50 @@ exports[`Field.Many2One for Resource.List With value: snapshot 1`] = `
 </div>
 `;
 
+exports[`Field.Many2One for Resource.Thumbnail Empty snapshot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <a>
+      
+    </a>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Many2One for Resource.Thumbnail Hidden 1`] = `<div />`;
+
+exports[`Field.Many2One for Resource.Thumbnail With value: snapshot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <a>
+      Go to =&gt; Entry
+    </a>
+     
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Field.One2Many for Resource.Form snapshot: RO 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"

@@ -127,6 +127,197 @@ exports[`Field.StatusBar for Resource.Form With unknown value 1`] = `
 </span>
 `;
 
+exports[`Field.StatusBar for Resource.Form With value and dangerous state 1 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        
+      </span>
+       
+      <!---->
+    </span>
+     
+    <span
+      class="tag is-danger is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Form With value and dangerous state 2 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        
+      </span>
+       
+      <!---->
+    </span>
+     
+    <span
+      class="tag is-info is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Form With value and done state 1 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        
+      </span>
+       
+      <!---->
+    </span>
+     
+    <span
+      class="tag is-success is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Form With value and done state 2 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-dark is-medium"
+    >
+      <span
+        class=""
+      >
+        
+      </span>
+       
+      <!---->
+    </span>
+     
+    <span
+      class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-info is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
 exports[`Field.StatusBar for Resource.Form With value, label and icon 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
@@ -265,6 +456,520 @@ exports[`Field.StatusBar for Resource.Form With, required, value, label and icon
     </span>
     <span
       class="tag is-medium"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.List Empty 1`] = `
+<div
+  class="tags has-addons"
+>
+  <span
+    class="tag is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 1
+      
+    </span>
+     
+    <!---->
+  </span>
+  <span
+    class="tag is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 2
+      
+    </span>
+     
+    <!---->
+  </span>
+</div>
+`;
+
+exports[`Field.StatusBar for Resource.List Empty without selection 1`] = `
+<div
+  class="tags has-addons"
+/>
+`;
+
+exports[`Field.StatusBar for Resource.List With value 1`] = `
+<div
+  class="tags has-addons"
+>
+  <span
+    class="tag is-info is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 1
+      
+    </span>
+     
+    <!---->
+  </span>
+  <span
+    class="tag is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 2
+      
+    </span>
+     
+    <!---->
+  </span>
+</div>
+`;
+
+exports[`Field.StatusBar for Resource.List With value and dangerous state 1 1`] = `
+<div
+  class="tags has-addons"
+>
+  <span
+    class="tag is-danger is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 1
+      
+    </span>
+     
+    <!---->
+  </span>
+  <span
+    class="tag is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 2
+      
+    </span>
+     
+    <!---->
+  </span>
+</div>
+`;
+
+exports[`Field.StatusBar for Resource.List With value and dangerous state 2 1`] = `
+<div
+  class="tags has-addons"
+>
+  <span
+    class="tag is-info is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 2
+      
+    </span>
+     
+    <!---->
+  </span>
+</div>
+`;
+
+exports[`Field.StatusBar for Resource.List With value and done state 1 1`] = `
+<div
+  class="tags has-addons"
+>
+  <span
+    class="tag is-success is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 1
+      
+    </span>
+     
+    <!---->
+  </span>
+  <span
+    class="tag is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 2
+      
+    </span>
+     
+    <!---->
+  </span>
+</div>
+`;
+
+exports[`Field.StatusBar for Resource.List With value and done state 2 1`] = `
+<div
+  class="tags has-addons"
+>
+  <span
+    class="tag is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 1
+      
+    </span>
+     
+    <!---->
+  </span>
+  <span
+    class="tag is-info is-medium"
+  >
+    <span
+      class=""
+    >
+      
+        Entry 2
+      
+    </span>
+     
+    <!---->
+  </span>
+</div>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail Empty 2`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail Empty without selection 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  />
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail Empty without selection 2`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  />
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-info is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail With value 2`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-info is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail With value and dangerous state 1 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-danger is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail With value and dangerous state 2 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-info is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail With value and done state 1 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-success is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 2
+        
+      </span>
+       
+      <!---->
+    </span>
+  </div>
+</span>
+`;
+
+exports[`Field.StatusBar for Resource.Thumbnail With value and done state 2 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="tags has-addons"
+  >
+    <span
+      class="tag is-small"
+    >
+      <span
+        class=""
+      >
+        
+          Entry 1
+        
+      </span>
+       
+      <!---->
+    </span>
+    <span
+      class="tag is-info is-small"
     >
       <span
         class=""

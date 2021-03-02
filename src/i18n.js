@@ -49,6 +49,9 @@ export const i18nConf = {
           unlinked: 'Unlinked',
         },
         fields: {
+          common: {
+            required: 'This is a required field',
+          },
           yesno: {
             yes: 'Yes',
             no: 'No',

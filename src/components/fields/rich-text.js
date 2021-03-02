@@ -27,6 +27,24 @@ defineComponent('furet-ui-list-field-rich-text', {
 })
 fields.list.richtext = 'furet-ui-list-field-rich-text'
 
+defineComponent('furet-ui-thumbnail-field-rich-text', {
+  template: `
+    <furet-ui-thumbnail-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <div 
+        class="content is-small"
+        v-html="value" 
+        v-bind:style="{width: '100%'}"
+      />
+    </furet-ui-thumbnail-field-common-tooltip-field>
+  `,
+  extend: ['furet-ui-thumbnail-field-common'],
+})
+fields.thumbnail.richtext = 'furet-ui-thumbnail-field-rich-text'
+
 defineComponent('furet-ui-form-field-rich-text', {
   template: `
     <furet-ui-form-field-common-tooltip-field

@@ -12,17 +12,7 @@ import {defineComponent} from '../factory'
 import {fields} from './fields';
 
 
-defineComponent('furet-ui-list-field-selection', {
-  template: `
-    <div>
-      <span v-if="isHidden" />
-      <div v-else>
-        <b-tag v-if="color !== undefined" v-bind:type="color">{{value}}</b-tag>
-        <span v-else>{{value}}</span>
-      </div>
-    </div>
-  `,
-  extend: ['furet-ui-list-field-common'],
+defineComponent('furet-ui-common-field-selection', {
   prototype: {
     computed: {
       value () {
@@ -40,6 +30,37 @@ defineComponent('furet-ui-list-field-selection', {
   },
 })
 fields.list.selection = 'furet-ui-list-field-selection'
+
+
+defineComponent('furet-ui-list-field-selection', {
+  template: `
+    <div>
+      <span v-if="isHidden" />
+      <div v-else>
+        <b-tag v-if="color !== undefined" v-bind:type="color">{{value}}</b-tag>
+        <span v-else>{{value}}</span>
+      </div>
+    </div>
+  `,
+  extend: ['furet-ui-list-field-common', 'furet-ui-common-field-selection'],
+})
+fields.list.selection = 'furet-ui-list-field-selection'
+
+
+defineComponent('furet-ui-thumbnail-field-selection', {
+  template: `
+    <furet-ui-thumbnail-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <b-tag v-if="color !== undefined" v-bind:type="color">{{value}}</b-tag>
+      <span v-else>{{value}}</span>
+    </furet-ui-thumbnail-field-common-tooltip-field>
+  `,
+  extend: ['furet-ui-thumbnail-field-common', 'furet-ui-common-field-selection'],
+})
+fields.thumbnail.selection = 'furet-ui-thumbnail-field-selection'
 
 
 defineComponent('furet-ui-form-field-selection', {

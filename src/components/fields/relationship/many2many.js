@@ -101,6 +101,31 @@ defineComponent("furet-ui-list-field-many2many", {
 });
 fields.list.many2many = "furet-ui-list-field-many2many";
 
+defineComponent("furet-ui-thumbnail-field-many2many", {
+  template: `
+    <furet-ui-thumbnail-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <span 
+        v-for="value in values"
+        class="tag" 
+        v-bind:key="getKey(value)"
+        v-bind:style="getStyle(value)"
+      >
+        <a v-on:click.stop="openResource(value)">{{value.label}}</a>
+      </span>
+    </furet-ui-thumbnail-field-common-tooltip-field>
+  `,
+  extend: [
+    "furet-ui-thumbnail-field-common",
+    "furet-ui-field-relationship",
+    "furet-ui-field-many2many-common",
+  ],
+});
+fields.thumbnail.many2many = "furet-ui-thumbnail-field-many2many";
+
 /**
  * furet-ui-form-field-many2many-tags component is used to manage relationship many2many on form
  * resource (``furet-ui-resource-form``).

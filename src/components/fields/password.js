@@ -9,14 +9,12 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import {defineComponent} from '../factory'
 import {fields} from './fields';
-import { listTemplate } from './common';
+import { listTemplate, thumbnailTemplate } from './common';
 import _ from 'underscore';
 import {safe_eval} from './common';
 
 
-defineComponent('furet-ui-list-field-password', {
-  template: listTemplate,
-  extend: ['furet-ui-list-field-common'],
+defineComponent('furet-ui-common-field-password', {
   prototype: {
     computed: {
       value () {
@@ -27,7 +25,20 @@ defineComponent('furet-ui-list-field-password', {
     },
   },
 })
+
+
+defineComponent('furet-ui-list-field-password', {
+  template: listTemplate,
+  extend: ['furet-ui-list-field-common', 'furet-ui-common-field-password'],
+})
 fields.list.password = 'furet-ui-list-field-password'
+
+
+defineComponent('furet-ui-thumbnail-field-password', {
+  template: thumbnailTemplate,
+  extend: ['furet-ui-thumbnail-field-common', 'furet-ui-common-field-password'],
+})
+fields.thumbnail.password = 'furet-ui-thumbnail-field-password'
 
 defineComponent('furet-ui-form-field-password', {
   template: `

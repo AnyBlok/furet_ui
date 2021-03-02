@@ -9,13 +9,19 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import { defineComponent } from "../factory";
 import { fields } from "./fields";
-import { listTemplate } from "./common";
+import { listTemplate, thumbnailTemplate } from "./common";
 
 defineComponent("furet-ui-list-field-integer", {
   template: listTemplate,
   extend: ["furet-ui-list-field-common"]
 });
 fields.list.integer = "furet-ui-list-field-integer";
+
+defineComponent("furet-ui-thumbnail-field-integer", {
+  template: thumbnailTemplate,
+  extend: ["furet-ui-thumbnail-field-common"]
+});
+fields.thumbnail.integer = "furet-ui-thumbnail-field-integer";
 
 /**
  * furet-ui-form-field-integer component is used to manage integer on form

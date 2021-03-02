@@ -33,13 +33,11 @@ defineComponent('furet-ui-resource-form', {
         v-bind:data="data"
       >
         <template slot="header" v-if="resource.header_template">
-          <keep-alive>
-            <component 
-              v-bind:is="form_card_header_template" 
-              v-bind:resource="resource"
-              v-bind:data="data"
-            />
-          </keep-alive>
+          <component 
+            v-bind:is="form_card_header_template" 
+            v-bind:resource="resource"
+            v-bind:data="data"
+          />
         </template>
       </component>
       <div class="section">
@@ -58,9 +56,8 @@ defineComponent('furet-ui-resource-form', {
       />
     </section>
   `,
-  extend: ['furet-ui-resource', 'i18n-translate'],
+  extend: ['furet-ui-resource-with-ssr'],
   prototype: {
-    props: ['manager'],
     inject: ['getEntry', 'getNewEntry', 'updateChangeState'],
     data() {
       return {
@@ -71,7 +68,6 @@ defineComponent('furet-ui-resource-form', {
         uuid: null,
         selectors: {},
         tabs: {},
-        templates: {},
         refreshCallbacks: [],
         headerComponentName: this.manager.page_header_component_name || 'furet-ui-header-page',
       };
@@ -96,35 +92,10 @@ defineComponent('furet-ui-resource-form', {
           this.$store.state.resource[this.id]
         );
       },
-      form_card_header_template () {
-        return this.form_card('header_template');
-      },
-      form_card_body_template () {
-        return this.form_card('body_template');
-      },
-      form_card_footer_template () {
-        return this.form_card('footer_template');
-      },
     },
     methods: {
       getBreadcrumbInfo() {
         return {label: this.translate(this.resource.title || ''), icon: "newspaper"};
-      },
-      form_card (part) {
-        if (this.templates[part] !== undefined) return this.templates[part];
-        const template = {
-          template: '<div></div>',
-          name: `${part}_${this.resource.id}`,
-          props: ['data', 'resource'],
-        }
-        if (this.resource[part]) {
-            template.template = this.resource[part];
-            this.templates[part] = template;
-        }
-        return template;
-      },
-      updateQueryString (query) {
-        this.$emit('update-query-string', query);
       },
       goToList () {
         this.$emit('modify-state', false);
@@ -166,7 +137,6 @@ defineComponent('furet-ui-resource-form', {
         this.errors = [];
         this.loading = true;
         const params = {data: {uuid: this.uuid}}
-        // let self = this;
         axios.post(`/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/default_values`, params)
           .then((response) => {
             this.$dispatchAll(response.data);
@@ -245,7 +215,7 @@ defineComponent('furet-ui-resource-form', {
               this.uuid = this.manager.query.uuid;
               this.getDefault();
             }
-          } else if (!this.uuid) {
+          } else {
             // new case
             this.updateReadOnly(false);
             this.uuid = uuidv1();

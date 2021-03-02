@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`furet-ui-resource-form component snapshot 1`] = `
+<section>
+  <div
+    class="loading-overlay is-active is-full-page"
+  >
+    <div
+      class="loading-background"
+    />
+     
+    <div
+      class="loading-icon"
+    />
+  </div>
+   
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <!---->
+</section>
+`;
+
+exports[`furet-ui-resource-form component snapshot with specific resource 1`] = `
+<section>
+  <div
+    class="loading-overlay is-active is-full-page"
+  >
+    <div
+      class="loading-background"
+    />
+     
+    <div
+      class="loading-icon"
+    />
+  </div>
+   
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <section>
+    <div
+      class="loading-overlay is-active is-full-page"
+    >
+      <div
+        class="loading-background"
+      />
+       
+      <div
+        class="loading-icon"
+      />
+    </div>
+     
+    <div
+      class="container"
+    >
+      <!---->
+    </div>
+     
+    <header
+      id="header_page"
+      name="furet-ui-page"
+    >
+      <nav
+        class="level"
+      >
+        <div
+          class="level-left"
+        >
+          <div
+            class="level-item content"
+          >
+            <h1
+              class="is-large"
+            >
+              Entry 1
+            </h1>
+          </div>
+        </div>
+      </nav>
+       
+      <div
+        class="buttons is-grouped is-centered"
+      >
+        <a
+          class="button is-primary is-outlined"
+        >
+          <span
+            class="icon"
+          >
+            <span
+              class="icon"
+            >
+              <i
+                class="fa fa-arrow-left fa-lg"
+              />
+            </span>
+          </span>
+           
+          <span>
+            [object Promise]
+          </span>
+        </a>
+         
+        <!---->
+         
+        <!---->
+         
+        <!---->
+         
+        <!---->
+         
+        <!---->
+         
+        <!---->
+         
+      </div>
+    </header>
+     
+    <div
+      class="section"
+    >
+      <div
+        id="id"
+      >
+        <div
+          class="columns"
+        >
+          <div
+            class="column"
+          >
+            <span
+              class="is-primary is-top is-medium b-tooltip"
+              data-label=""
+              name="title"
+              style="transition-delay: 0ms; width: 100%;"
+            >
+              <div
+                class="field"
+                style="width: inherit;"
+              >
+                <label
+                  class="label"
+                >
+                  Title
+                </label>
+                 
+                <span>
+                  Entry 1
+                </span>
+                 
+                <!---->
+              </div>
+            </span>
+          </div>
+           
+          <div
+            class="column"
+          >
+            <span
+              class="is-primary is-top is-medium b-tooltip"
+              data-label=""
+              name="color"
+              style="transition-delay: 0ms; width: 100%;"
+            >
+              <div
+                class="field"
+                style="width: inherit;"
+              >
+                <label
+                  class="label"
+                >
+                  Color
+                </label>
+                 
+                <span>
+                  red
+                </span>
+                 
+                <!---->
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <nav
+      class="level"
+    >
+      <div
+        class="level-left"
+      >
+        <div
+          class="level-item content"
+        >
+          <h1
+            class="is-large"
+          >
+            Entry 1
+          </h1>
+        </div>
+      </div>
+    </nav>
+  </section>
+</section>
+`;
+
+exports[`furet-ui-resource-form component snapshot with specific resource not found 1`] = `
+<section>
+  <div
+    class="loading-overlay is-active is-full-page"
+  >
+    <div
+      class="loading-background"
+    />
+     
+    <div
+      class="loading-icon"
+    />
+  </div>
+   
+  <div
+    class="container"
+  >
+    <!---->
+  </div>
+   
+  <div
+    class="container"
+    id="3"
+    manager="[object Object]"
+  >
+    <strong>
+      Resource type '' not found
+    </strong>
+  </div>
+</section>
+`;

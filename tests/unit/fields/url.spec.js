@@ -42,10 +42,46 @@ describe("Field.Url for Resource.List", () => {
         }
       }
     });
-
     expect(wrapper.element).toMatchSnapshot();
   });
 });
+
+describe("Field.Url for Resource.Thumbnail", () => {
+  const ThumbnailUrlField = getComponentPrototype("furet-ui-thumbnail-field-url");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailUrlField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailUrlField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "http://my.ferret"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.Url for Resource.Form", () => {
   const FormUrlField = getComponentPrototype("furet-ui-form-field-url");
 

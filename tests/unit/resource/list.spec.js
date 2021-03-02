@@ -10,8 +10,14 @@ const router = global.router;
 const mocki18n = jest.spyOn(i18n, "_t");
 mocki18n.mockResolvedValue('');
 
-const mock = jest.spyOn(axios, "get");
-mock.mockResolvedValue({data: [], headers: {'x-total-records': 0}});
+const mockAxios = jest.spyOn(axios, "post");
+mockAxios.mockImplementationOnce(() =>
+  Promise.resolve({ data: "redirect/uri" })
+);
+const mockAxios2 = jest.spyOn(axios, "get");
+mockAxios2.mockImplementationOnce(() =>
+  Promise.resolve({})
+);
 
 const store = global.store
 
@@ -81,14 +87,73 @@ describe('furet-ui-resource-list component', () => {
     'fields': ['id', 'title', 'color']
   }]});
 
-  const getWrapper = () => {
+  store.commit('UPDATE_RESOURCES', {'definitions': [{
+    'id': 2, 
+    'type': 'list', 
+    'title': 'Templates', 
+    'model': 'Model.1', 
+    'filters': [], 
+    'tags': [], 
+    'buttons': [
+      {
+        icon: 'th',
+        label: 'Test',
+        call: 'test',
+      },
+    ],
+    'headers': [
+      {
+        'hidden': false, 
+        'name': 'title', 
+        'label': 'Title', 
+        'component': 'furet-ui-field', 
+        'type': 'string', 
+        'numeric': false, 
+        'tooltip': null, 
+        'sortable': true
+      },
+    ], 
+    'fields': ['id', 'title', 'color']
+  }]});
+
+  store.commit('UPDATE_RESOURCES', {'definitions': [{
+    'id': 3, 
+    'type': 'list', 
+    'title': 'Templates', 
+    'model': 'Model.1', 
+    'filters': [], 
+    'tags': [], 
+    'buttons': [
+      {
+        icon: 'th',
+        label: 'Test',
+        'open-resource': 'test',
+      },
+    ],
+    'headers': [
+      {
+        'hidden': false, 
+        'name': 'title', 
+        'label': 'Title', 
+        'component': 'furet-ui-field', 
+        'type': 'string', 
+        'numeric': false, 
+        'tooltip': null, 
+        'sortable': true
+      },
+    ], 
+    'fields': ['id', 'title', 'color']
+  }]});
+
+  const getWrapper = (resourceId) => {
+    const id = resourceId || 1;
     return mount(getComponentPrototype("furet-ui-resource-list"), {
       store,
       localVue,
       router,
       i18n,
       propsData: {
-        id: 1,
+        id,
         manager: {},
       },
       provide: {
@@ -98,8 +163,34 @@ describe('furet-ui-resource-list component', () => {
     });
   }
 
+
   beforeEach(() => {
+    mockAxios.mockClear();
+    mockAxios2.mockClear();
     new_entries["Model.1"] = [];
+  });
+
+  it('furet-ui-resource-list snapshot without data', () => {
+      const wrapper = getWrapper();
+      expect(wrapper.element).toMatchSnapshot();
+  });
+  it('furet-ui-resource-list snapshot without data with button', () => {
+      const wrapper = getWrapper(2);
+      expect(wrapper.element).toMatchSnapshot();
+  });
+  it('furet-ui-resource-list snapshot with data', () => {
+    const response = {
+      pks: [{id: 1}, {id: 2}],
+      total: 2,
+      data: [] // useless for test because getEntry is mocked
+    };
+
+    const wrapper = getWrapper();
+    const list = wrapper.vm.$refs.list;
+    wrapper.vm.api_formater(list, response)
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.element).toMatchSnapshot();
+    })
   });
   it('furet-ui-resource-list.api_formater without data', () => {
       const wrapper = getWrapper();
@@ -246,6 +337,66 @@ describe('furet-ui-resource-list component', () => {
       }, [])
     ).toEqual(
       ["Entry 13", "Entry 14", "Entry 15", "Entry 16" ]
+    );
+  });
+  it('furet-ui-resource-list breadscrumb', () => {
+    const wrapper = getWrapper();
+    expect(wrapper.vm.getBreadcrumbInfo().icon).toBe('list');
+  });
+  it('furet-ui-resource-list refresh', () => {
+    const wrapper = getWrapper();
+    wrapper.vm.refresh()
+    expect(mockAxios2).toBeCalledWith(
+      "/furet-ui/resource/1/crud", 
+      {
+        params: {
+          'context[fields]': "id,title,color",
+          'context[model]': "Model.1",
+          limit: 25,
+          offset: 0,
+        }
+      }
+    );
+  });
+  it('furet-ui-resource-list toggleHiddenColumn', () => {
+    const wrapper = getWrapper();
+    wrapper.vm.toggleHiddenColumn({})
+  });
+  it('furet-ui-resource-list click button call', async () => {
+    const response = {
+      pks: [{id: 1}],
+      total: 1,
+      data: [] // useless for test because getEntry is mocked
+    };
+
+    const wrapper = getWrapper(2);
+    const list = wrapper.vm.$refs.list;
+    wrapper.vm.api_formater(list, response)
+    await wrapper.vm.$nextTick()
+    const button = wrapper.find('a.furet-ui-list-button');
+    button.trigger('click')
+    expect(mockAxios).toBeCalledWith("/furet-ui/resource/2/model/Model.1/call/test", {});
+  });
+  it('furet-ui-resource-list click button open resource', async () => {
+    const response = {
+      pks: [{id: 1}],
+      total: 1,
+      data: [] // useless for test because getEntry is mocked
+    };
+
+    const wrapper = getWrapper(3);
+    const list = wrapper.vm.$refs.list;
+    wrapper.vm.api_formater(list, response)
+    await wrapper.vm.$nextTick()
+    const button = wrapper.find('a.furet-ui-list-button');
+    button.trigger('click')
+    expect(mockAxios).toBeCalledWith(
+      "/furet-ui/open/resource/test", 
+      {
+        params: {},
+        resource_type: undefined,
+        route: null,
+      }
     );
   });
 });

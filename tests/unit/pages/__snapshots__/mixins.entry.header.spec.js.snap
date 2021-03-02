@@ -1,0 +1,580 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`furet-ui-header-page component click can_delete 1`] = `
+<header
+  id="header_page"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        [object Promise]
+      </h2>
+       
+      <span
+        class="level-item"
+      />
+    </div>
+     
+    <div
+      class="level-right"
+    />
+  </div>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <a
+      class="button is-primary is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-arrow-left fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </a>
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <button
+      class="button is-danger is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-trash fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </button>
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-header-page component click can_go_to_new 1`] = `
+<header
+  id="header_page"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        [object Promise]
+      </h2>
+       
+      <span
+        class="level-item"
+      />
+    </div>
+     
+    <div
+      class="level-right"
+    />
+  </div>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <a
+      class="button is-primary is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-arrow-left fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </a>
+     
+    <!---->
+     
+    <!---->
+     
+    <div>
+      <button
+        class="button is-primary is-outlined"
+      >
+        <span
+          class="icon"
+        >
+          <span
+            class="icon"
+          >
+            <i
+              class="fa fa-plus fa-lg"
+            />
+          </span>
+        </span>
+         
+        <span>
+          [object Promise]
+        </span>
+      </button>
+    </div>
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-header-page component click can_go_to_new with multi choice 1`] = `
+<header
+  id="header_page"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        [object Promise]
+      </h2>
+       
+      <span
+        class="level-item"
+      />
+    </div>
+     
+    <div
+      class="level-right"
+    />
+  </div>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <a
+      class="button is-primary is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-arrow-left fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </a>
+     
+    <!---->
+     
+    <!---->
+     
+    <div>
+      <div
+        class="dropdown dropdown-menu-animation is-mobile-modal"
+        triggers="hover"
+      >
+        <div
+          aria-haspopup="true"
+          class="dropdown-trigger"
+          role="button"
+        >
+          <button
+            class="button is-primary is-outlined"
+          >
+            <span
+              class="icon"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fa fa-plus fa-lg"
+                />
+              </span>
+            </span>
+             
+            <span>
+              [object Promise]
+            </span>
+             
+            <span
+              class="icon"
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fa fa-caret-down fa-lg"
+                />
+              </span>
+            </span>
+          </button>
+        </div>
+         
+        <div
+          aria-hidden="true"
+          class="background"
+          style="display: none;"
+        />
+         
+        <div
+          aria-hidden="true"
+          class="dropdown-menu"
+          style="display: none;"
+        >
+          <div
+            class="dropdown-content"
+          >
+             
+            <a
+              class="dropdown-item"
+              role="listitem"
+              tabindex="0"
+            >
+              
+              Resource 0
+            
+            </a>
+            <a
+              class="dropdown-item"
+              role="listitem"
+              tabindex="0"
+            >
+              
+              Resource 1
+            
+            </a>
+            <a
+              class="dropdown-item"
+              role="listitem"
+              tabindex="0"
+            >
+              
+              Resource 2
+            
+            </a>
+            <a
+              class="dropdown-item"
+              role="listitem"
+              tabindex="0"
+            >
+              
+              Resource 3
+            
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-header-page component click can_modify : save 1`] = `
+<header
+  id="header_page"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        [object Promise]
+      </h2>
+       
+      <span
+        class="level-item"
+      />
+    </div>
+     
+    <div
+      class="level-right"
+    />
+  </div>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <a
+      class="button is-warning is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-times fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </a>
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <button
+      class="button is-primary is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-pencil-alt fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </button>
+     
+    <button
+      class="button is-primary is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-save fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </button>
+     
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-header-page component click can_modify snapshot 1`] = `
+<header
+  id="header_page"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        [object Promise]
+      </h2>
+       
+      <span
+        class="level-item"
+      />
+    </div>
+     
+    <div
+      class="level-right"
+    />
+  </div>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <a
+      class="button is-primary is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-arrow-left fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </a>
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <button
+      class="button is-primary is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-pencil-alt fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </button>
+     
+    <!---->
+     
+    <!---->
+     
+  </div>
+</header>
+`;
+
+exports[`furet-ui-header-page component snapshot minimum 1`] = `
+<header
+  id="header_page"
+>
+  <div
+    class="level"
+  >
+    <div
+      class="level-left"
+    >
+      <h2
+        class="level-item is-size-3"
+      >
+        [object Promise]
+      </h2>
+       
+      <span
+        class="level-item"
+      />
+    </div>
+     
+    <div
+      class="level-right"
+    />
+  </div>
+   
+  <div
+    class="buttons is-grouped is-centered"
+  >
+    <a
+      class="button is-primary is-outlined"
+    >
+      <span
+        class="icon"
+      >
+        <span
+          class="icon"
+        >
+          <i
+            class="fa fa-arrow-left fa-lg"
+          />
+        </span>
+      </span>
+       
+      <span>
+        [object Promise]
+      </span>
+    </a>
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+  </div>
+</header>
+`;

@@ -9,7 +9,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import {defineComponent} from '../factory'
 import {fields} from './fields';
-import { listTemplate } from './common';
+import { listTemplate, thumbnailTemplate } from './common';
 
 
 defineComponent('furet-ui-list-field-url', {
@@ -19,6 +19,11 @@ defineComponent('furet-ui-list-field-url', {
 fields.list.url = 'furet-ui-list-field-url'
 
 
+defineComponent('furet-ui-thumbnail-field-url', {
+  template: thumbnailTemplate,
+  extend: ['furet-ui-thumbnail-field-common'],
+})
+fields.thumbnail.url = 'furet-ui-thumbnail-field-url'
 
 
 /**

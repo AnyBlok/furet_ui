@@ -94,7 +94,7 @@ describe('mixin-page-multi-entries component', () => {
     const wrapper = mount(Component, { localVue, i18n, propsData});
     expect(wrapper.emitted()['go-to-page']).toBe(undefined);
     wrapper.vm.goToPage('data');
-    expect(wrapper.emitted()['go-to-page'][0]).toStrictEqual(["data"]);
+    expect(wrapper.emitted()['go-to-page'][0]).toStrictEqual(["data", {offset: -1, query: undefined}]);
   });
   it('updateData', () => {
     const propsData = {
@@ -597,6 +597,73 @@ describe('mixin-page-multi-entries component', () => {
     expect(wrapper.vm.tags[0].selected).toBe(true);
     expect(wrapper.vm.tags[1].selected).toBe(true);
     expect(wrapper.vm.tags[2].selected).toBe(false);
+  });
+
+  it('row_state_callback is-created', () => {
+    const propsData = {
+      title: 'Title',
+      query: {},
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/test',
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData });
+    expect(wrapper.vm.row_state_callback({__change_state: 'create'})).toBe('is-created');
+  });
+  it('row_state_callback is-updated', () => {
+    const propsData = {
+      title: 'Title',
+      query: {},
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/test',
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData });
+    expect(wrapper.vm.row_state_callback({__change_state: 'update'})).toBe('is-updated');
+  });
+  it('row_state_callback is-deleted', () => {
+    const propsData = {
+      title: 'Title',
+      query: {},
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/test',
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData });
+    expect(wrapper.vm.row_state_callback({__change_state: 'delete'})).toBe('is-deleted');
+  });
+  it('row_state_callback is-linked', () => {
+    const propsData = {
+      title: 'Title',
+      query: {},
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/test',
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData });
+    expect(wrapper.vm.row_state_callback({__change_state: 'link'})).toBe('is-linked');
+  });
+  it('row_state_callback is-unlinked', () => {
+    const propsData = {
+      title: 'Title',
+      query: {},
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/test',
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData });
+    expect(wrapper.vm.row_state_callback({__change_state: 'unlink'})).toBe('is-unlinked');
+  });
+  it('row_state_callback is-unmodified', () => {
+    const propsData = {
+      title: 'Title',
+      query: {},
+      default_filters: [],
+      default_tags: [],
+      rest_api_url: '/test',
+    };
+    const wrapper = mount(Component, { localVue, i18n, propsData });
+    expect(wrapper.vm.row_state_callback({})).toBe('is-unmodified');
   });
 
 });

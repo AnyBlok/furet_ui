@@ -82,6 +82,76 @@ describe("Field.Boolean for Resource.List", () => {
   });
 });
 
+describe("Field.Boolean for Resource.Thumbnail", () => {
+  const ThumbnailBooleanField = getComponentPrototype("furet-ui-thumbnail-field-boolean");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With true value", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "true"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With false value", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "false"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With security issue value", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "throw Error('this is a security issue')"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 
 describe("Field.YesNo YesNo for Resource.List", () => {
   const ListBooleanField = getComponentPrototype("furet-ui-list-field-yesno");
@@ -139,6 +209,80 @@ describe("Field.YesNo YesNo for Resource.List", () => {
   });
   it("With security issue value", () => {
     const wrapper = mount(ListBooleanField, {
+      store,
+      localVue,
+      i18n,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "throw Error('this is a security issue')"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
+describe("Field.YesNo YesNo for Resource.Thumbnail", () => {
+  const ThumbnailBooleanField = getComponentPrototype("furet-ui-thumbnail-field-yesno");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
+      store,
+      localVue,
+      i18n,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With true value", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
+      store,
+      localVue,
+      i18n,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "true"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With false value", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
+      store,
+      localVue,
+      i18n,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "false"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With security issue value", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
       store,
       localVue,
       i18n,

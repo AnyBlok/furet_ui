@@ -2,9 +2,11 @@ import { fields } from './fields';
 import './common';
 import './barcode';
 import './boolean';
+import './color';
 import './datetime';
 import './mail';
 import './integer';
+import './function';
 import './json';
 import './float';
 import './decimal';
@@ -15,6 +17,13 @@ import './statusbar';
 import './string';
 import './timestamp';
 import './url';
+
+/* TO ADD
+ * date
+ * file
+ * text
+ * time
+ */
 
 import './relationship';
 

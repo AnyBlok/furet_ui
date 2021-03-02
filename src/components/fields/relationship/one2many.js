@@ -12,6 +12,24 @@ import {fields} from '../fields';
 import {RelationShipX2MList} from './common';
 import { pk2string } from "../../../store/modules/data";
 
+defineComponent('furet-ui-common-field-one2many', {
+  prototype: {
+    computed: {
+      values () {
+        const res = [];
+        const display = this.config.display;
+        const model = this.config.model;
+        this.value.forEach(pk => {
+          res.push({
+            pk,
+            label: this.format(display, this.getEntry(model, pk)),
+          });
+        });
+        return res;
+      },
+    },
+  },
+})
 
 /**
  * furet-ui-list-field-one2many component is used to manage relationship one2many on list
@@ -42,25 +60,30 @@ import { pk2string } from "../../../store/modules/data";
  */
 defineComponent('furet-ui-list-field-one2many', {
   template: RelationShipX2MList,
-  extend: ['furet-ui-list-field-common', 'furet-ui-field-relationship'],
-  prototype: {
-    computed: {
-      values () {
-        const res = [];
-        const display = this.config.display;
-        const model = this.config.model;
-        this.value.forEach(pk => {
-          res.push({
-            pk,
-            label: this.format(display, this.getEntry(model, pk)),
-          });
-        });
-        return res;
-      },
-    },
-  },
+  extend: ['furet-ui-list-field-common', 'furet-ui-field-relationship', 'furet-ui-common-field-one2many'],
 })
 fields.list.one2many = 'furet-ui-list-field-one2many'
+
+defineComponent("furet-ui-thumbnail-field-one2many", {
+  template: `
+    <furet-ui-thumbnail-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <span 
+        v-for="value in values"
+        class="tag" 
+        v-bind:key="getKey(value)"
+        v-bind:style="getStyle(value)"
+      >
+        <a v-on:click.stop="openResource(value)">{{value.label}}</a>
+      </span>
+    </furet-ui-thumbnail-field-common-tooltip-field>
+  `,
+  extend: ["furet-ui-thumbnail-field-common", "furet-ui-field-relationship", "furet-ui-common-field-one2many"],
+});
+fields.thumbnail.one2many = "furet-ui-thumbnail-field-one2many";
 
 
 defineComponent('furet-ui-page-o2m-list-header', {
@@ -256,7 +279,6 @@ defineComponent('furet-ui-page-o2m-page-header', {
   `,
   extend: ['furet-ui-header-page'],
 });
-
 
 /**
  * furet-ui-form-field-one2many component is used to manage relationship one2many on form

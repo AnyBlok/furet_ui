@@ -4549,3 +4549,45 @@ exports[`Field.Datetime for Resource.List With value 1`] = `
   </span>
 </div>
 `;
+
+exports[`Field.Datetime for Resource.Thumbnail Empty 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Datetime for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      May 6, 2020 2:20 PM
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;

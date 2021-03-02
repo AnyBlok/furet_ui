@@ -37,15 +37,11 @@ describe("app component", () => {
     expect(wrapper.vm.is_not_clickable).toBe(false);
   });
   it("login: ok", () => {
-    const $dispatchAll = jest.fn();
     const wrapper = mount(getComponentPrototype("furet-ui-login-password"), {
       store,
       localVue,
       router,
       i18n,
-      methods: {
-        $dispatchAll,
-      },
     });
     wrapper.setData({
       username: "login",
