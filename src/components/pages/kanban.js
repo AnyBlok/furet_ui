@@ -84,6 +84,10 @@ defineComponent('furet-ui-kanban', {
             data: d
           })
         });
+        this.headers.forEach(header => {
+          // reorder
+          data[header.value].sort((a, b) => a.order - b.order)
+        });
         return data
       },
     },

@@ -100,6 +100,9 @@ defineComponent('furet-ui-resource-polymorphic-form', {
       refresh () {
         this.$refs.resource.refresh()
       },
+      goToPage () {
+        this.$refs.resource.goToPage()
+      },
       loadAsyncData() {
         this.loading = true;
         const params = {

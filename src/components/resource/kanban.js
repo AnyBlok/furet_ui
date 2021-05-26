@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { resources } from './resources';
 import { defineComponent } from '../factory';
 
@@ -25,6 +25,7 @@ defineComponent('furet-ui-resource-kanban', {
 
       v-bind:rest_api_formater="api_formater"
       v-bind:query="manager.query"
+      v-bind:readonly="manager.readonly"
       v-bind:pagination_size="manager.pagination_size"
 
       v-on:update-thumbnail="updateThumbnail"
@@ -67,7 +68,7 @@ defineComponent('furet-ui-resource-kanban', {
   `,
   extend: ['furet-ui-resource-with-ssr', 'furet-ui-resource-with-search'],
   prototype: {
-    inject: ['getEntry', 'getNewEntries'],
+    inject: ['getEntry', 'getNewEntries', 'updateChangeState'],
     computed: {
       headers () {
         const headers = [];
@@ -87,46 +88,54 @@ defineComponent('furet-ui-resource-kanban', {
     methods: {
       updateThumbnail (header, e) {
         if (e.added !== undefined) {
-          this.server_call('change_column', {
-            pks: e.added.element.pks,
-            identity: header.value,
-            index: e.added.newIndex,
-          });
+          const action = {
+            model: this.resource.model,
+            pk: e.added.element.pks,
+            uuid: e.added.element.uuid,
+            fieldname: this.resource.field_identity,
+            value: header.value,
+          }
+          this.updateChangeState(action);
+          const action2 = {
+            model: this.resource.model,
+            pk: e.added.element.pks,
+            uuid: e.added.element.uuid,
+            fieldname: this.resource.field_order,
+            value: e.added.newIndex,
+          }
+          this.updateChangeState(action2);
+          this.save(e.added.element.pks, e.added.element.uuid);
         } else if (e.moved !== undefined) {
-          this.server_call('change_position', {
-            pks: e.moved.element.pks,
-            fromIndex: e.moved.oldIndex,
-            toIndex: e.moved.newIndex,
-          });
+          const action2 = {
+            model: this.resource.model,
+            pk: e.moved.element.pks,
+            uuid: e.moved.element.uuid,
+            fieldname: this.resource.field_order,
+            value: e.moved.newIndex,
+          }
+          this.updateChangeState(action2);
+          this.save(e.moved.element.pks, e.moved.element.uuid);
         }
       },
-      server_call (method, data) {
-        this.$refs.kanban.errors = [];
-        this.$refs.kanban.loading = true;
-        const params = {
-          pks: {id: this.resource.id},
-          data,
-        };
-        axios.post(`/furet-ui/resource/${this.resource.id}/model/Model.FuretUI.Resource.Kanban/call/${method}`, params)
-          .then((response) => {
-            this.$refs.kanban.loading = false;
-            if (response.data.length) {
-                response.pks = this.received_pks
-                this.api_formater(this.$refs.kanban, response)
-            } else {
-              this.$refs.kanban.loadAsyncData()
-            }
+      save (pks, uuid) {
+        const model = this.resource.model;
+        if (uuid) {
+          this.$emit('create-data', {model, uuid})
+        } else {
+          this.$emit('update-data', {
+            model, pks: Object.assign({}, pks),
           })
-          .catch((error) => {
-            this.$refs.kanban.loading = false;
-            this.$refs.kanban.errors = error.response.data.errors;
-          });
+        }
       },
       getBreadcrumbInfo() {
         return {label: this.$t(this.resource.title), icon: "columns"};
       },
       refresh() {
         this.$refs.kanban.loadAsyncData();
+      },
+      goToPage(card, options) {
+        const data = card.data;
+        if(data.__change_state !== "delete") this.$emit('go-to-page', data, options);
       },
     },
     provide: function () {
