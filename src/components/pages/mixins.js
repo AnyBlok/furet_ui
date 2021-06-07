@@ -19,6 +19,23 @@ defineComponent('furet-ui-page-errors', {
   },
 });
 
+defineComponent('furet-ui-page-infos', {
+  template: `
+    <div class="container">
+      <b-message type="is-danger" v-if="infos && infos.length" v-bind:closable="false" v-bind:title="$i18n.t('info')">
+        <ul>
+          <li v-for="info in infos">
+            <pre>{{ info }}</pre>
+          </li>
+        </ul>
+      </b-message>
+    </div>
+  `,
+  prototype: {
+    props: ['infos'],
+  },
+});
+
 defineComponent('furet-ui-page-header-date', {
   template: `
     <span>{{ formatDate(value) }}</span>
