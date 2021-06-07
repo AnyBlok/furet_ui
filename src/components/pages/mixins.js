@@ -22,7 +22,7 @@ defineComponent('furet-ui-page-errors', {
 defineComponent('furet-ui-page-infos', {
   template: `
     <div class="container">
-      <b-message type="is-danger" v-if="infos && infos.length" v-bind:closable="false" v-bind:title="$i18n.t('info')">
+      <b-message type="is-success" v-if="infos && infos.length" v-bind:closable="false" v-bind:title="$i18n.t('info')">
         <ul>
           <li v-for="info in infos">
             <pre>{{ info }}</pre>
