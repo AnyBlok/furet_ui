@@ -25,11 +25,9 @@ defineComponent('furet-ui-appbar', {
 defineComponent('furet-ui-appbar-header', {
   template: `
     <div class="hero-head">
-      <nav class="navbar is-primary" role="navigation">
-        <div id="navbarUserMenu" v-bind:class="['navbar-menu', isOpen ? 'is-active' : '']">
-          <furet-ui-appbar-spaces-menu />
-          <furet-ui-appbar-user-menu />
-        </div>
+      <nav role="navigation" class="navbar is-primary">
+        <furet-ui-appbar-spaces-menu />
+        <furet-ui-appbar-user-menu />
       </nav>
     </div>
   `,
@@ -170,29 +168,37 @@ defineComponent('furet-ui-appbar-head-router-link-dropdown', {
 defineComponent('furet-ui-appbar-spaces-menu', {
   template: `
     <div class="navbar-start">
-      <b-button 
-        type="is-primary"
-        v-on:click="toggle_menu"
-        icon-left="bars"
-     >
-        {{ $t(space_name) }}
-     </b-button>
+      <div class="navbar-item" v-for="menu in space_menus" v-on:click="selectMenu(menu)">
+        <b-tooltip :label="$t(menu.description)" position="is-bottom">
+          <button :class="['button', 'is-primary', menu.code === space_code ? 'is-active' : '']">
+            <b-icon
+              v-bind:icon="menu.icon.code"
+              v-bind:type="menu.icon.type">
+            </b-icon>
+            <span>{{ $t(menu.label) }}</span>
+          </button>
+        </b-tooltip>
+      </div>
     </div>
   `,
   prototype: {
     computed: {
-        space_name () {
-          return this.$store.state.global.space_name;
-        },
+      space_name () {
+        return this.$store.state.global.space_name;
+      },
+      space_code () {
+        return this.$store.state.route.params.code;
+      },
+      space_menus () {
+        const menus = this.$store.state.global.space_menus;
+        return menus;
+      }
     },
     methods: {
-      toggle_menu () {
-        if (this.$route.name == 'space_menus') {
-          this.$router.push(this.$store.state.global.previous_route);
-        } else {
-          this.$store.commit('UPDATE_PREVIOUS_ROUTE', {route: this.$route});
-          this.$router.push({name: 'space_menus'});
-        }
+      selectMenu (menu) {
+        this.$router.push(menu.path);
+        this.$store.commit("ClearBreadcrumb");
+        this.$store.commit("CLEAR_CHANGE");
       }
     }
   },
