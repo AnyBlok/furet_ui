@@ -203,7 +203,7 @@ defineComponent('furet-ui-footer', {
   `,
 });
 
-defineComponent('furet-ui-space-menu', {
+defineComponent('furet-ui-menu', {
     template: `
       <ul class="menu-list">
         <b-loading v-bind:active.sync="isLoading"></b-loading>
@@ -215,7 +215,7 @@ defineComponent('furet-ui-space-menu', {
                   {{ $t(menu.label) }}
               </span>
             </a>
-            <furet-ui-space-menu
+            <furet-ui-menu
                 v-if="(menu.children || []).length != 0"
                 v-bind:menus="menu.children || []"
                 v-bind:menuId="menuId"
@@ -324,7 +324,7 @@ defineComponent('furet-ui-space', {
     >
       <div v-if="isOpenLeft && left_menus.length > 0" class="column is-one-quarter is-half-mobile">
           <aside class="menu" v-bind:style="{padding: '5px'}">
-              <furet-ui-space-menu 
+              <furet-ui-menu 
                   v-bind:menus="left_menus" 
                   v-bind:menuId="menuId" 
                   v-bind:code="code"
