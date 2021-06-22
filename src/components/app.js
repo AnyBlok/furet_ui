@@ -323,20 +323,20 @@ defineComponent('furet-ui-space', {
         v-bind:style="{marginTop: '5px'}"
     >
       <div v-if="isOpenLeft && left_menus.length > 0" class="column is-one-quarter is-half-mobile">
-          <aside class="menu" v-bind:style="{padding: '5px'}">
-              <furet-ui-menu 
-                  v-bind:menus="left_menus" 
-                  v-bind:menuId="menuId" 
-                  v-bind:code="code"
-              />
-          </aside>
+        <aside class="menu" v-bind:style="{padding: '5px'}">
+          <furet-ui-menu 
+            v-bind:menus="left_menus" 
+            v-bind:menuId="menuId" 
+            v-bind:code="code"
+          />
+        </aside>
       </div>
       <div class="column" v-bind:style="{paddingLeft: '10px', paddingRight: '10px'}">
         <nav class="level">
           <div class="level-left">
             <div class="level-item">
               <a class="button" v-on:click="isOpenLeft = !isOpenLeft" v-if="left_menus.length > 0">
-                  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
               </a>
             </div>
             <div class="level-item">
