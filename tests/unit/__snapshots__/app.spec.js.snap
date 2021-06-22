@@ -1,54 +1,455 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`app component snapshot 1`] = `
+exports[`app component: logged snapshot 1`] = `
 <div
   id="furet-ui-app"
 >
   <header
     class="hero is-primary"
   >
-    <div
-      class="hero-head"
+    <nav
+      aria-label="main navigation"
+      class="navbar is-primary"
+      role="navigation"
     >
-      <nav
-        class="navbar is-primary"
-        role="navigation"
+      <div
+        class="navbar-brand"
+      >
+        <a
+          aria-current="page"
+          class="navbar-item router-link-exact-active router-link-active"
+          href="#/"
+        >
+          <img
+            class="image"
+            src="/furet-ui/logo"
+          />
+        </a>
+        <a
+          aria-label="menu"
+          class="navbar-burger burger"
+          role="button"
+        >
+          <span
+            aria-hidden="true"
+          />
+           
+          <span
+            aria-hidden="true"
+          />
+           
+          <span
+            aria-hidden="true"
+          />
+        </a>
+      </div>
+      <div
+        class="navbar-menu"
       >
         <div
-          class="navbar-menu"
-          id="navbarUserMenu"
+          class="navbar-start"
         >
           <div
             class="navbar-start"
-          >
-            <button
-              class="button is-primary"
-              type="button"
-            >
-              <span
-                class="icon is-small"
-              >
-                <i
-                  class="fa fa-bars"
-                />
-              </span>
-               
-              <span>
-                
-        [object Promise]
-     
-              </span>
-               
-              <!---->
-            </button>
-          </div>
-           
-          <div
-            class="navbar-end"
           />
         </div>
-      </nav>
+        <div
+          class="navbar-end"
+        >
+          <div>
+            <div
+              class="navbar-item has-dropdown is-hoverable"
+            >
+              <a
+                aria-haspopup="true"
+                class="navbar-link"
+                href="#"
+                role="menuitem"
+              />
+               
+              <div
+                class="navbar-dropdown"
+              >
+                <a
+                  class="navbar-item"
+                >
+                  <a
+                    class="button is-primary is-inverted is-fullwidth"
+                  >
+                    
+          Plop 1
+        
+                  </a>
+                </a>
+                <a
+                  class="navbar-item"
+                >
+                  <a
+                    class="button is-primary is-inverted is-fullwidth"
+                  >
+                    
+          Plop 2
+        
+                  </a>
+                </a>
+                <a
+                  class="navbar-item"
+                >
+                  <a
+                    class="button is-primary is-inverted is-fullwidth"
+                  >
+                    
+          Plop 3
+        
+                  </a>
+                </a>
+                <a
+                  class="navbar-item"
+                >
+                  <a
+                    class="button is-primary is-inverted is-fullwidth"
+                  >
+                    
+          Plop 4
+        
+                  </a>
+                </a>
+                 
+                <a
+                  class="navbar-item"
+                >
+                  <a
+                    class="button is-primary is-inverted is-fullwidth"
+                  >
+                    
+          [object Promise]
+        
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+     
+    <div
+      class="hero-body"
+    >
+      <div
+        class="container has-text-centered"
+      >
+        <h1
+          class="title"
+        >
+          
+          Furet UI
+        
+        </h1>
+         
+        <p
+          class="subtitle"
+        >
+          
+          Web Client for all your AnyBlok backend
+        
+        </p>
+      </div>
     </div>
+     
+    <div
+      class="hero-foot"
+    />
+  </header>
+   
+  <div
+    class="vue-notification-group"
+    style="width: 300px; top: 0px; left: calc(50% - 150px);"
+  >
+    <span />
+  </div>
+   
+  <!---->
+   
+  <footer
+    class="footer"
+  >
+    <div
+      class="content has-text-centered is-success"
+    >
+      <p>
+        <strong>
+          Furet UI
+        </strong>
+         by 
+        <a
+          href="https://github.com/jssuzanne"
+        >
+          Jean-Sébastien Suzanne
+        </a>
+        . 
+          The source code is licensed 
+        <a
+          href="http://opensource.org/licenses/MPL-2.0"
+        >
+          MPL-2.0
+        </a>
+         and 
+          is available on 
+        <a
+          href="https://github.com/AnyBlok/furet_ui"
+        >
+          Github
+        </a>
+        .
+        
+      </p>
+    </div>
+  </footer>
+</div>
+`;
+
+exports[`app component: unlogged snapshot 1`] = `
+<div
+  id="furet-ui-app"
+>
+  <header
+    class="hero is-primary"
+  >
+    <nav
+      aria-label="main navigation"
+      class="navbar is-primary"
+      role="navigation"
+    >
+      <div
+        class="navbar-brand"
+      >
+        <a
+          aria-current="page"
+          class="navbar-item router-link-exact-active router-link-active"
+          href="#/"
+        >
+          <img
+            class="image"
+            src="/furet-ui/logo"
+          />
+        </a>
+        <a
+          aria-label="menu"
+          class="navbar-burger burger"
+          role="button"
+        >
+          <span
+            aria-hidden="true"
+          />
+           
+          <span
+            aria-hidden="true"
+          />
+           
+          <span
+            aria-hidden="true"
+          />
+        </a>
+      </div>
+      <div
+        class="navbar-menu"
+      >
+        <div
+          class="navbar-start"
+        >
+          <div
+            class="navbar-start"
+          />
+        </div>
+        <div
+          class="navbar-end"
+        >
+          <div>
+            <div
+              class="navbar-item"
+            >
+              <div
+                class="buttons"
+              >
+                <a
+                  class="button is-light"
+                >
+                  
+          [object Promise]
+        
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+     
+    <div
+      class="hero-body"
+    >
+      <div
+        class="container has-text-centered"
+      >
+        <h1
+          class="title"
+        >
+          
+          Furet UI
+        
+        </h1>
+         
+        <p
+          class="subtitle"
+        >
+          
+          Web Client for all your AnyBlok backend
+        
+        </p>
+      </div>
+    </div>
+     
+    <div
+      class="hero-foot"
+    />
+  </header>
+   
+  <div
+    class="vue-notification-group"
+    style="width: 300px; top: 0px; left: calc(50% - 150px);"
+  >
+    <span />
+  </div>
+   
+  <!---->
+   
+  <footer
+    class="footer"
+  >
+    <div
+      class="content has-text-centered is-success"
+    >
+      <p>
+        <strong>
+          Furet UI
+        </strong>
+         by 
+        <a
+          href="https://github.com/jssuzanne"
+        >
+          Jean-Sébastien Suzanne
+        </a>
+        . 
+          The source code is licensed 
+        <a
+          href="http://opensource.org/licenses/MPL-2.0"
+        >
+          MPL-2.0
+        </a>
+         and 
+          is available on 
+        <a
+          href="https://github.com/AnyBlok/furet_ui"
+        >
+          Github
+        </a>
+        .
+        
+      </p>
+    </div>
+  </footer>
+</div>
+`;
+
+exports[`app component: with root menus snapshot 1`] = `
+<div
+  id="furet-ui-app"
+>
+  <header
+    class="hero is-primary"
+  >
+    <nav
+      aria-label="main navigation"
+      class="navbar is-primary"
+      role="navigation"
+    >
+      <div
+        class="navbar-brand"
+      >
+        <a
+          aria-current="page"
+          class="navbar-item router-link-exact-active router-link-active"
+          href="#/"
+        >
+          <img
+            class="image"
+            src="/furet-ui/logo"
+          />
+        </a>
+        <a
+          aria-label="menu"
+          class="navbar-burger burger"
+          role="button"
+        >
+          <span
+            aria-hidden="true"
+          />
+           
+          <span
+            aria-hidden="true"
+          />
+           
+          <span
+            aria-hidden="true"
+          />
+        </a>
+      </div>
+      <div
+        class="navbar-menu"
+      >
+        <div
+          class="navbar-start"
+        >
+          <div
+            class="navbar-start"
+          />
+        </div>
+        <div
+          class="navbar-end"
+        >
+          <div>
+            <div
+              class="navbar-item has-dropdown is-hoverable"
+            >
+              <a
+                aria-haspopup="true"
+                class="navbar-link"
+                href="#"
+                role="menuitem"
+              />
+               
+              <div
+                class="navbar-dropdown"
+              >
+                 
+                <a
+                  class="navbar-item"
+                >
+                  <a
+                    class="button is-primary is-inverted is-fullwidth"
+                  >
+                    
+          [object Promise]
+        
+                  </a>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
      
     <div
       class="hero-body"
@@ -130,48 +531,75 @@ exports[`furet-ui-appbar component snapshot 1`] = `
 <header
   class="hero is-primary"
 >
-  <div
-    class="hero-head"
+  <nav
+    aria-label="main navigation"
+    class="navbar is-primary"
+    role="navigation"
   >
-    <nav
-      class="navbar is-primary"
-      role="navigation"
+    <div
+      class="navbar-brand"
+    >
+      <a
+        aria-current="page"
+        class="navbar-item router-link-exact-active router-link-active"
+        href="#/"
+      >
+        <img
+          class="image"
+          src="/furet-ui/logo"
+        />
+      </a>
+      <a
+        aria-label="menu"
+        class="navbar-burger burger"
+        role="button"
+      >
+        <span
+          aria-hidden="true"
+        />
+         
+        <span
+          aria-hidden="true"
+        />
+         
+        <span
+          aria-hidden="true"
+        />
+      </a>
+    </div>
+    <div
+      class="navbar-menu"
     >
       <div
-        class="navbar-menu"
-        id="navbarUserMenu"
+        class="navbar-start"
       >
         <div
           class="navbar-start"
-        >
-          <button
-            class="button is-primary"
-            type="button"
-          >
-            <span
-              class="icon is-small"
-            >
-              <i
-                class="fa fa-bars"
-              />
-            </span>
-             
-            <span>
-              
-        [object Promise]
-     
-            </span>
-             
-            <!---->
-          </button>
-        </div>
-         
-        <div
-          class="navbar-end"
         />
       </div>
-    </nav>
-  </div>
+      <div
+        class="navbar-end"
+      >
+        <div>
+          <div
+            class="navbar-item"
+          >
+            <div
+              class="buttons"
+            >
+              <a
+                class="button is-light"
+              >
+                
+          [object Promise]
+        
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
    
   <div
     class="hero-body"
@@ -235,75 +663,76 @@ exports[`furet-ui-appbar-footer component snapshot (empty) 1`] = `
 />
 `;
 
-exports[`furet-ui-appbar-footer component snapshot (not empty) 1`] = `
-<div
-  class="hero-foot"
-/>
-`;
-
 exports[`furet-ui-appbar-header component snapshot 1`] = `
-<div
-  class="hero-head"
+<nav
+  aria-label="main navigation"
+  class="navbar is-primary"
+  role="navigation"
 >
-  <nav
-    class="navbar is-primary"
-    role="navigation"
+  <div
+    class="navbar-brand"
+  >
+    <a
+      aria-current="page"
+      class="navbar-item router-link-exact-active router-link-active"
+      href="#/"
+    >
+      <img
+        class="image"
+        src="/furet-ui/logo"
+      />
+    </a>
+    <a
+      aria-label="menu"
+      class="navbar-burger burger"
+      role="button"
+    >
+      <span
+        aria-hidden="true"
+      />
+       
+      <span
+        aria-hidden="true"
+      />
+       
+      <span
+        aria-hidden="true"
+      />
+    </a>
+  </div>
+  <div
+    class="navbar-menu"
   >
     <div
-      class="navbar-menu"
-      id="navbarUserMenu"
+      class="navbar-start"
     >
       <div
         class="navbar-start"
-      >
-        <button
-          class="button is-primary"
-          type="button"
-        >
-          <span
-            class="icon is-small"
-          >
-            <i
-              class="fa fa-bars"
-            />
-          </span>
-           
-          <span>
-            
-        [object Promise]
-     
-          </span>
-           
-          <!---->
-        </button>
-      </div>
-       
-      <div
-        class="navbar-end"
       />
     </div>
-  </nav>
-</div>
-`;
-
-exports[`furet-ui-appbar-user-menu component snapshot (empty) 1`] = `
-<div
-  class="navbar-end"
-/>
-`;
-
-exports[`furet-ui-appbar-user-menu component snapshot (not empty) 1`] = `
-<div
-  class="navbar-end"
->
-  <a
-    class="navbar-item"
-  >
-    
-      [object Promise]
-    
-  </a>
-</div>
+    <div
+      class="navbar-end"
+    >
+      <div>
+        <div
+          class="navbar-item"
+        >
+          <div
+            class="buttons"
+          >
+            <a
+              class="button is-light"
+            >
+              
+          [object Promise]
+        
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 `;
 
 exports[`furet-ui-footer component snapshot 1`] = `

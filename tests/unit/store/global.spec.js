@@ -90,12 +90,10 @@ describe("store global module: Mutation", () => {
     state = Object.assign(state, {
       authenticated: true,
       userName: "test",
-      space_name: "My menu",
     });
     store.commit("LOGOUT", { userName: "test" });
     expect(state.authenticated).toBe(false);
     expect(state.userName).toBe("");
-    expect(state.space_name).toBe("Menu");
   });
 
   it("test UPDATE_PREVIOUS_ROUTE", () => {
@@ -104,16 +102,10 @@ describe("store global module: Mutation", () => {
     expect(state.previous_route).toStrictEqual("test");
   });
 
-  it("test UPDATE_SPACE_MENUS", () => {
-    expect(state.space_menus).toStrictEqual([]);
-    store.commit("UPDATE_SPACE_MENUS", { menus: [1, 2, 3] });
-    expect(state.space_menus).toStrictEqual([1, 2, 3]);
-  });
-
-  it("test UPDATE_CURRENT_SPACE", () => {
-    expect(state.space_name).toBe("Menu");
-    store.commit("UPDATE_CURRENT_SPACE", { label: "test" });
-    expect(state.space_name).toBe("test");
+  it("test UPDATE_ROOT_MENUS", () => {
+    expect(state.root_menus).toStrictEqual([]);
+    store.commit("UPDATE_ROOT_MENUS", { menus: [1, 2, 3] });
+    expect(state.root_menus).toStrictEqual([1, 2, 3]);
   });
 
   it("test UPDATE_GLOBAL", () => {
@@ -130,24 +122,10 @@ describe("store global module: Mutation", () => {
     expect(state.isOpenLeft).toBe(false);
   });
 
-  it("test OPEN_RIGHT_MENU", () => {
-    expect(state.isOpenRight).toBe(false);
-    store.commit("OPEN_RIGHT_MENU", true);
-    expect(state.isOpenRight).toBe(true);
-    store.commit("OPEN_RIGHT_MENU", false);
-    expect(state.isOpenRight).toBe(false);
-  });
-
   it("test UPDATE_CURRENT_LEFT_MENUS", () => {
     expect(state.left_menus).toStrictEqual([]);
     store.commit("UPDATE_CURRENT_LEFT_MENUS", { menus: [1, 2, 3] });
     expect(state.left_menus).toStrictEqual([1, 2, 3]);
-  });
-
-  it("test UPDATE_CURRENT_RIGHT_MENUS", () => {
-    expect(state.right_menus).toStrictEqual([]);
-    store.commit("UPDATE_CURRENT_RIGHT_MENUS", { menus: [1, 2, 3] });
-    expect(state.right_menus).toStrictEqual([1, 2, 3]);
   });
 });
 

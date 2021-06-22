@@ -24,12 +24,17 @@ defineComponent('furet-ui-appbar', {
 
 defineComponent('furet-ui-appbar-header', {
   template: `
-    <div class="hero-head">
-      <nav role="navigation" class="navbar is-primary">
-        <furet-ui-appbar-spaces-menu />
-        <furet-ui-appbar-user-menu />
-      </nav>
-    </div>
+    <b-navbar type="is-primary">
+      <template #brand>
+        <furet-ui-appbar-header-brand />
+      </template>
+      <template #start>
+        <furet-ui-appbar-header-menus />
+      </template>
+      <template #end>
+        <furet-ui-appbar-header-user />
+      </template>
+    </b-navbar>
   `,
   prototype: {
     data() {
@@ -61,115 +66,19 @@ defineComponent('furet-ui-appbar-footer', {
   `,
 });
 
-defineComponent('furet-ui-appbar-user-menu', {
-  prototype: {
-    render(createElement) {
-      const menus = [];
-      this.menus.forEach((menu) => {
-        menus.push(createElement(
-          menu.component,
-          {
-            class: menu.class,
-            style: menu.style,
-            attrs: menu.attrs,
-            props: menu.props,
-            domProps: menu.domProps,
-            on: menu.on,
-            nativeOn: menu.nativeOn,
-          },
-          [menu.label]));
-      });
-      return createElement('div', { class: 'navbar-end' }, menus);
-    },
-    computed: {
-      menus() {
-        return this.$store.state.menus.user;
-      },
-    },
-  },
-});
-
-defineComponent('furet-ui-appbar-router-link-goto', {
-  prototype: {
-    props: ['label', 'to'],
-    methods: {
-      goTo() {
-        // TODO clear data
-        this.$router.push(this.to);
-      },
-      format_label(label) {
-        return this.$i18n.t(label);
-      },
-    },
-  },
-});
-
-defineComponent('furet-ui-appbar-head-router-link', {
+defineComponent('furet-ui-appbar-header-brand', {
   template: `
-    <a class="navbar-item" v-on:click="goTo">
-      {{ format_label(label) }}
-    </a>
+    <b-navbar-item tag="router-link" :to="{ path: '/' }">
+      <img class="image" v-bind:src="logo" />
+    </b-navbar-item>
   `,
-  extend: ['furet-ui-appbar-router-link-goto'],
+  extend: ['mixin-logo'],
 });
 
-defineComponent('furet-ui-appbar-head-router-link-button', {
-  template: `
-    <span class="navbar-item">
-      <a class="button is-primary is-inverted is-fullwidth" v-on:click="goTo">
-        <span class="icon" v-if="icon">
-          <b-icon v-bind:icon="icon" />
-        </span>
-        <span>{{ format_label(label) }}</span>
-      </a>
-    </span>
-  `,
-  extend: ['furet-ui-appbar-router-link-goto'],
-  prototype: {
-    props: ['icon'],
-  },
-});
-
-defineComponent('furet-ui-appbar-head-router-link-dropdown', {
-  template: `
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link">
-        <router-link v-bind:to="to" v-if="to">
-          <b-icon v-bind:icon="icon" v-if="child.icon" />
-          <span>{{ format_label(label) }}</span>
-        </router-link>
-        <div v-else>
-          <b-icon v-bind:icon="icon" v-if="icon" />
-          <span>{{ format_label(label) }}</span>
-        </div>
-      </a>
-      <div class="navbar-dropdown">
-        <div v-bind:key="child.name" v-for="child in children">
-          <hr class="navbar-divider" v-if="child.divider === 'before'">
-          <div class="navbar-item">
-            <a class="button is-primary is-inverted is-fullwidth">
-              <router-link v-bind:to="child.to">
-                <b-icon v-bind:icon="child.icon" v-if="child.icon" />
-                <span>{{ format_label(child.label) }}</span>
-              </router-link>
-            </a>
-          </div>
-          <hr class="navbar-divider" v-if="child.divider === 'after'">
-        </div>
-      </div>
-    </div>
-  `,
-  extend: ['furet-ui-appbar-router-link-goto'],
-  prototype: {
-    props: ['icon', 'children'],
-  },
-});
-
-defineComponent('furet-ui-appbar-spaces-menu', {
+defineComponent('furet-ui-appbar-header-menus', {
   template: `
     <div class="navbar-start">
-      <div class="navbar-item" v-for="menu in space_menus" v-on:click="selectMenu(menu)">
-        <b-tooltip :label="$t(menu.description)" position="is-bottom">
+      <b-navbar-item v-for="menu in space_menus" v-on:click="selectMenu(menu)" tab="dir" :active="menu.code === space_code ? true : false">
           <button :class="['button', 'is-primary', menu.code === space_code ? 'is-active' : '']">
             <b-icon
               v-bind:icon="menu.icon.code"
@@ -177,20 +86,16 @@ defineComponent('furet-ui-appbar-spaces-menu', {
             </b-icon>
             <span>{{ $t(menu.label) }}</span>
           </button>
-        </b-tooltip>
-      </div>
+      </b-navbar-item>
     </div>
   `,
   prototype: {
     computed: {
-      space_name () {
-        return this.$store.state.global.space_name;
-      },
       space_code () {
         return this.$store.state.route.params.code;
       },
       space_menus () {
-        const menus = this.$store.state.global.space_menus;
+        const menus = this.$store.state.global.root_menus;
         return menus;
       }
     },
@@ -201,6 +106,86 @@ defineComponent('furet-ui-appbar-spaces-menu', {
         this.$store.commit("CLEAR_CHANGE");
       }
     }
+  },
+});
+
+defineComponent('furet-ui-appbar-header-user', {
+  template: `
+    <div>
+      <furet-ui-appbar-header-logged-user v-if="loggedIn" />
+      <furet-ui-appbar-header-unlogged-user v-else />
+    </div>
+  `,
+  prototype: {
+    computed: {
+      loggedIn () {
+        return this.$store.getters.loggedIn;
+      },
+    },
+  },
+});
+
+defineComponent('furet-ui-appbar-header-unlogged-user', {
+  template: `
+    <b-navbar-item tag="div">
+      <div class="buttons">
+        <a class="button is-light" @click="call_login_page">
+          {{ $t('components.login.appbar') }}
+        </a>
+      </div>
+    </b-navbar-item>
+  `,
+  prototype: {
+    methods: {
+      call_login_page () {
+        this.$router.push({path: '/login'});
+      },
+    },
+  },
+});
+
+defineComponent('furet-ui-appbar-header-logged-user', {
+  template: `
+    <b-navbar-dropdown :label="userName" hoverable >
+      <b-navbar-item v-for="menu in user_menus" :key="menu.label">
+        <a v-on:click="routerPush(menu.path)" class="button is-primary is-inverted is-fullwidth">
+          {{ translate(menu.label) }}
+        </a>
+      </b-navbar-item>
+      <b-navbar-item>
+        <a v-on:click="logOut" class="button is-primary is-inverted is-fullwidth">
+          {{ $t('components.logout.button') }}
+        </a>
+      </b-navbar-item>
+    </b-navbar-dropdown>
+  `,
+  extend: ['i18n-translate'],
+  prototype: {
+    computed: {
+      userName () {
+        return this.$store.state.global.userName;
+      },
+      user_menus() {
+        return this.$store.state.global.user_menus;
+      },
+    },
+    methods: {
+      call_login_page () {
+        this.$router.push({path: '/login'});
+      },
+      routerPush (path) {
+        this.$router.push({path});
+      },
+      logOut() {
+        axios.post('/furet-ui/logout')
+          .then((result) => {
+            this.$dispatchAll(result.data);
+          })
+          .catch((error) => {
+            console.error(error);
+          })
+      },
+    },
   },
 });
 
@@ -216,92 +201,6 @@ defineComponent('furet-ui-footer', {
       </div>
     </footer>
   `,
-});
-
-defineComponent('furet-ui-space-menus', {
-  template: `
-    <div class="container">
-      <h1 class="subtitle">{{$t('components.spaces.title')}}</h1>
-      <b-field>
-        <b-input 
-          v-model="searchText"
-          v-bind:placeholder="this.$i18n.t('components.spaces.search')"
-          icon="search"
-          rounded
-        >
-        </b-input>
-      </b-field>
-      <section class="section">
-        <div class="columns is-multiline">
-          <div 
-            v-for="menu in space_menus" 
-            v-bind:key="menu.code"
-            class="column is-one-quarter-desktop is-half-tablet is-12-mobile"
-          >
-            <div class="box" v-on:click="selectMenu(menu)">
-              <article class="media">
-                <figure class="media-left">
-                  <p class="image is-64x64">
-                    <b-icon
-                      v-bind:icon="menu.icon.code"
-                      size="is-large"
-                      v-bind:type="menu.icon.type">
-                    </b-icon>
-                  </p>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>{{ $t(menu.label) }}</strong>
-                      <br>
-                      {{ $t(menu.description) }}
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  `,
-  prototype: {
-    data () {
-        return {
-            searchText: '',
-        }
-    },
-    computed: {
-        space_menus () {
-          const menus = this.$store.state.global.space_menus;
-          if (! this.searchText) return menus;
-          return _.filter(
-              menus,
-              (menu) => {
-                  if (menu.label.search(this.searchText) >= 0) return true;
-                  if (menu.description.search(this.searchText) >= 0) return true;
-                  return false;
-              }
-          );
-        }
-    },
-    methods: {
-      selectMenu (menu) {
-        this.$router.push(menu.path);
-        this.$store.commit("ClearBreadcrumb");
-        this.$store.commit("CLEAR_CHANGE");
-      }
-    },
-    mounted() {
-      axios.get(
-        'furet-ui/spaces').then((result) => {
-          this.$dispatchAll(result.data);
-        })
-        .catch(() => {
-          // console.error(error);
-        });
-    }
-  },
 });
 
 defineComponent('furet-ui-space-menu', {
@@ -444,25 +343,8 @@ defineComponent('furet-ui-space', {
               <furet-ui-breadcrumb/>
             </div>
           </diV>
-          <div class="level-right">
-            <div class="level-item">
-              <a class="button" 
-                v-on:click="isOpenRight = !isOpenRight" v-if="right_menus.length > 0">
-                  <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-              </a>
-            </div>
-          </diV>
         </nav>
         <router-view v-bind:key="$route.fullPath"></router-view>
-      </div>
-      <div v-if="isOpenRight && right_menus.length > 0" class="column is-one-quarter is-half-mobile">
-          <aside class="menu" v-bind:style="{padding: '5px'}">
-              <furet-ui-space-menu 
-                  v-bind:menus="right_menus" 
-                  v-bind:menuId="menuId" 
-                  v-bind:spaceId="spaceId"
-              />
-          </aside>
       </div>
     </div>
   `,
@@ -477,19 +359,8 @@ defineComponent('furet-ui-space', {
           this.$store.commit('OPEN_LEFT_MENU', newvalue);
         },
       },
-      isOpenRight: {
-        get () {
-          return this.$store.state.global.isOpenRight;
-        },
-        set (newvalue) {
-          this.$store.commit('OPEN_RIGHT_MENU', newvalue);
-        },
-      },
       left_menus () {
         return this.$store.state.global.left_menus;
-      },
-      right_menus () {
-        return this.$store.state.global.right_menus;
       },
     },
     mounted() {
