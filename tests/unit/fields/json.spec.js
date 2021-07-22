@@ -49,6 +49,29 @@ describe("Field.Json for Resource.List", () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ListJsonField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: {
+            entry1: 'Entry 1',
+            entry2: 'Entry 2',
+          }
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
 
 describe("Field.Json for Resource.Thumbnail", () => {
@@ -76,6 +99,28 @@ describe("Field.Json for Resource.Thumbnail", () => {
       propsData: {
         resource: {},
         config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: {
+            entry1: 'Entry 1',
+            entry2: 'Entry 2',
+          }
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ThumbnailJsonField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           name: "fieldName"
         },
         data: {
@@ -119,6 +164,33 @@ describe("Field.Json for Resource.Form", () => {
         },
         config: {
           name: "fieldName",
+          label: "My field label"
+        },
+        data: {
+          fieldName: {
+            entry1: 'Entry 1',
+            entry2: 'Entry 2',
+          }
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value, label, readonly and slot", () => {
+    const wrapper = mount(FormJsonField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           label: "My field label"
         },
         data: {

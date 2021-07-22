@@ -33,7 +33,15 @@ defineComponent('furet-ui-form-field-function', {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <span>{{ value }}</span>
+      <component 
+        v-if="config.slot" 
+        v-bind:is="component_template"
+        v-bind:config="config"
+        v-bind:resource="resource"
+        v-bind:data="data"
+        v-bind:value="value"
+      />
+      <span v-else>{{ value }}</span>
     </furet-ui-form-field-common-tooltip-field>
   `,
   extend: ['furet-ui-form-field-common'],

@@ -43,7 +43,25 @@ describe("Field.String for Resource.List", () => {
         }
       }
     });
+    expect(wrapper.element).toMatchSnapshot();
+  });
 
+  it("With value and slot", () => {
+    const wrapper = mount(ListStringField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
     expect(wrapper.element).toMatchSnapshot();
   });
 });
@@ -74,6 +92,24 @@ describe("Field.String for Resource.Thumbnail", () => {
         resource: {},
         config: {
           name: "fieldName"
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With value and slot", () => {
+    const wrapper = mount(ThumbnailStringField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
         },
         data: {
           fieldName: "A value"
@@ -146,6 +182,29 @@ describe("Field.String for Resource.Form", () => {
         config: {
           name: "fieldName",
           label: "My field label"
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value, label, readonly and slot", () => {
+    const wrapper = mount(FormStringField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          name: "fieldName",
+          label: "My field label",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
         },
         data: {
           fieldName: "A value"

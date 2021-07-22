@@ -173,9 +173,40 @@ exports[`Field.Float for Resource.Form With value, label, readonly 1`] = `
       My field label
     </label>
      
-    <span>
-      15.12
-    </span>
+    <div>
+      <span>
+        15.12
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Float for Resource.Form With value, label, readonly and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div>
+      <div>
+        15.123 
+        <br />
+         15.12
+      </div>
+    </div>
      
     <!---->
   </div>
@@ -195,6 +226,16 @@ exports[`Field.Float for Resource.List With value 1`] = `
   <span>
     10.10
   </span>
+</div>
+`;
+
+exports[`Field.Float for Resource.List With value and slot 1`] = `
+<div>
+  <div>
+    10.1 
+    <br />
+     10.10
+  </div>
 </div>
 `;
 
@@ -234,6 +275,29 @@ exports[`Field.Float for Resource.Thumbnail With value 1`] = `
     <span>
       10.10
     </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Float for Resource.Thumbnail With value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      10.1 
+      <br />
+       10.10
+    </div>
      
     <!---->
   </div>

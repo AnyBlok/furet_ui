@@ -151,9 +151,40 @@ exports[`Field.Email for Resource.Form With value, label, readonly 1`] = `
       My field label
     </label>
      
-    <span>
-      my@feret
-    </span>
+    <div>
+      <span>
+        my@feret
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Email for Resource.Form With value, label, readonly and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div>
+      <div>
+        my@feret 
+        <br />
+         my@feret
+      </div>
+    </div>
      
     <!---->
   </div>
@@ -173,6 +204,16 @@ exports[`Field.Email for Resource.List With value 1`] = `
   <span>
     my@feret
   </span>
+</div>
+`;
+
+exports[`Field.Email for Resource.List With value and slot 1`] = `
+<div>
+  <div>
+    my@feret 
+    <br />
+     my@feret
+  </div>
 </div>
 `;
 
@@ -212,6 +253,29 @@ exports[`Field.Email for Resource.Thumbnail With value 1`] = `
     <span>
       my@feret
     </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Email for Resource.Thumbnail With value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      my@feret 
+      <br />
+       my@feret
+    </div>
      
     <!---->
   </div>

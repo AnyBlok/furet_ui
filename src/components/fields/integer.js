@@ -51,7 +51,17 @@ defineComponent("furet-ui-form-field-integer", {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <span v-if="isReadonly">{{ value }}</span>
+      <div v-if="isReadonly">
+        <component 
+          v-if="config.slot" 
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:value="value"
+        />
+        <span v-else>{{ value }}</span>
+      </div>
       <b-numberinput 
         v-else
         step="1"

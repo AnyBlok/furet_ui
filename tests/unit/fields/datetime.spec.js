@@ -37,6 +37,26 @@ describe("Field.Datetime for Resource.List", () => {
       propsData: {
         resource: {},
         config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: value
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ListDatetimeField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
           name: "fieldName"
         },
         data: {
@@ -74,6 +94,26 @@ describe("Field.Datetime for Resource.Thumbnail", () => {
       propsData: {
         resource: {},
         config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: value
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ThumbnailDatetimeField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           name: "fieldName"
         },
         data: {
@@ -131,6 +171,29 @@ describe("Field.Datetime for Resource.Form", () => {
         },
         config: {
           name: "fieldName",
+          label: "My field label"
+        },
+        data: {
+          fieldName: value
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value, label, readonly and slot", () => {
+    const wrapper = mount(FormDatetimeField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           label: "My field label"
         },
         data: {

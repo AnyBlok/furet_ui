@@ -121,9 +121,11 @@ exports[`Field.Selection for Resource.Form With unknown value 1`] = `
     </label>
      
     <div>
-      <span>
-         --- 
-      </span>
+      <div>
+        <span>
+           --- 
+        </span>
+      </div>
     </div>
      
     <!---->
@@ -217,9 +219,40 @@ exports[`Field.Selection for Resource.Form With value, label, readonly 1`] = `
     </label>
      
     <div>
-      <span>
-        [object Promise]
-      </span>
+      <div>
+        <span>
+          [object Promise]
+        </span>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Form With value, label, readonly and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div>
+      <div>
+        entry1 
+        <br />
+         [object Promise]
+      </div>
     </div>
      
     <!---->
@@ -319,6 +352,16 @@ exports[`Field.Selection for Resource.List With value 1`] = `
 </div>
 `;
 
+exports[`Field.Selection for Resource.List With value and slot 1`] = `
+<div>
+  <div>
+    entry1 
+    <br />
+     [object Promise]
+  </div>
+</div>
+`;
+
 exports[`Field.Selection for Resource.Thumbnail Empty 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
@@ -331,9 +374,11 @@ exports[`Field.Selection for Resource.Thumbnail Empty 1`] = `
   >
     <!---->
      
-    <span>
-       --- 
-    </span>
+    <div>
+      <span>
+         --- 
+      </span>
+    </div>
      
     <!---->
   </div>
@@ -352,9 +397,11 @@ exports[`Field.Selection for Resource.Thumbnail Empty without selection 1`] = `
   >
     <!---->
      
-    <span>
-       --- 
-    </span>
+    <div>
+      <span>
+         --- 
+      </span>
+    </div>
      
     <!---->
   </div>
@@ -373,9 +420,34 @@ exports[`Field.Selection for Resource.Thumbnail With value 1`] = `
   >
     <!---->
      
-    <span>
-      [object Promise]
-    </span>
+    <div>
+      <span>
+        [object Promise]
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Thumbnail With value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      entry1 
+      <br />
+       [object Promise]
+    </div>
      
     <!---->
   </div>

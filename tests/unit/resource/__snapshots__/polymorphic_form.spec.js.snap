@@ -151,9 +151,11 @@ exports[`furet-ui-resource-form component snapshot with specific resource 1`] = 
                   Title
                 </label>
                  
-                <span>
-                  Entry 1
-                </span>
+                <div>
+                  <span>
+                    Entry 1
+                  </span>
+                </div>
                  
                 <!---->
               </div>
@@ -179,9 +181,11 @@ exports[`furet-ui-resource-form component snapshot with specific resource 1`] = 
                   Color
                 </label>
                  
-                <span>
-                  red
-                </span>
+                <div>
+                  <span>
+                    red
+                  </span>
+                </div>
                  
                 <!---->
               </div>

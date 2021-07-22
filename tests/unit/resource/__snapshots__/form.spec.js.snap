@@ -177,9 +177,11 @@ exports[`furet-ui-resource-form component furet-ui-resource-form: snapshot 1`] =
                 Title
               </label>
                
-              <span>
-                Entry 1
-              </span>
+              <div>
+                <span>
+                  Entry 1
+                </span>
+              </div>
                
               <!---->
             </div>
@@ -205,9 +207,11 @@ exports[`furet-ui-resource-form component furet-ui-resource-form: snapshot 1`] =
                 Color
               </label>
                
-              <span>
-                red
-              </span>
+              <div>
+                <span>
+                  red
+                </span>
+              </div>
                
               <!---->
             </div>

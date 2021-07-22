@@ -75,6 +75,31 @@ describe("Field.Selection for Resource.List", () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ListSelectionField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
 
 describe("Field.Selection for Resource.Thumbnail", () => {
@@ -138,6 +163,31 @@ describe("Field.Selection for Resource.Thumbnail", () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ThumbnailSelectionField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
 
 describe("Field.Selection for Resource.Form", () => {
@@ -190,6 +240,34 @@ describe("Field.Selection for Resource.Form", () => {
         },
         config: {
           name: "fieldName",
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          label: "My field label"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value, label, readonly and slot", () => {
+    const wrapper = mount(FormSelectionField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           selections: {
             'entry1': 'Entry 1',
             'entry2': 'Entry 2',

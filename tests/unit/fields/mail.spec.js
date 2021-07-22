@@ -45,6 +45,26 @@ describe("Field.Email for Resource.List", () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ListEmailField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "my@feret"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
 
 describe("Field.Email for Resource.Thumbnail", () => {
@@ -72,6 +92,25 @@ describe("Field.Email for Resource.Thumbnail", () => {
       propsData: {
         resource: {},
         config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "my@feret"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ThumbnailEmailField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           name: "fieldName"
         },
         data: {
@@ -111,6 +150,29 @@ describe("Field.Email for Resource.Form", () => {
         },
         config: {
           name: "fieldName",
+          label: "My field label"
+        },
+        data: {
+          fieldName: "my@feret"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value, label, readonly and slot", () => {
+    const wrapper = mount(FormEmailField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           label: "My field label"
         },
         data: {

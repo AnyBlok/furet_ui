@@ -80,6 +80,14 @@ export const safe_eval = (condition, fields, resource) => {
 export const listTemplate = `
   <div>
     <span v-if="isHidden" />
+    <component 
+      v-else-if="config.slot" 
+      v-bind:is="component_template"
+      v-bind:config="config"
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:value="value"
+    />
     <span v-else>{{value}}</span>
   </div>
 `
@@ -90,7 +98,15 @@ export const thumbnailTemplate = `
     v-bind:data="data"
     v-bind:config="config"
   >
-    <span>{{ value }}</span>
+    <component 
+      v-if="config.slot" 
+      v-bind:is="component_template"
+      v-bind:config="config"
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:value="value"
+    />
+    <span v-else>{{value}}</span>
   </furet-ui-thumbnail-field-common-tooltip-field>
 `
 
@@ -105,6 +121,12 @@ defineComponent('furet-ui-list-field-common', {
         if (this.config.hidden === undefined) return false;
         return safe_eval(this.config.hidden, this.data || {}, this.resource);
       },
+      component_template () {
+        return {
+          template: this.config.slot,
+          props: ['resource', 'data', 'config', 'value'],
+        }
+      }
     },
   }
 });
@@ -229,6 +251,12 @@ defineComponent('furet-ui-form-field-common', {
       isRequired () {
         return safe_eval(this.config.required, this.data || {}, this.resource);
       },
+      component_template () {
+        return {
+          template: this.config.slot,
+          props: ['resource', 'data', 'config', 'value'],
+        }
+      }
     },
     methods: {
       updateValue: debounce(function(value, merge) {
@@ -279,6 +307,12 @@ defineComponent('furet-ui-thumbnail-field-common', {
       value () {
         return this.data && this.data[this.config.name] || null;
       },
+      component_template () {
+        return {
+          template: this.config.slot,
+          props: ['resource', 'data', 'config', 'value'],
+        }
+      }
     },
   }
 });
