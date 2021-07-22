@@ -19,14 +19,14 @@ CORS(app)
 def getFuretUISpaces():
     return [
         {
-            'type': 'UPDATE_SPACE_MENUS',
+            'type': 'UPDATE_ROOT_MENUS',
             'menus': [
                 {
                     'code': 'menu%d' % i,
                     'label': 'Menu %d' % i,
                     'icon': {
                         'code': 'bars' if i % 3 else 'user',
-                        'type': 'is-success' if i % 2 else 'is-primary',
+                        'type': 'is-success' if i % 2 else '',
                     },
                     'description': 'One menu for Furet UI',
                     'path': '/spaces/menu%d/resource/%d' % (i, i),
@@ -37,22 +37,21 @@ def getFuretUISpaces():
     ]
 
 
-@app.route('/furet-ui/spaces', methods=['GET'])
-def spaces():
-    return jsonify(getFuretUISpaces())
-
-
 @app.route('/furet-ui/login', methods=['POST'])
 def login():
     data = request.json
     redirect = data.get('redirect') or '/'
     return jsonify([
         {
-            'type': 'UPDATE_MENUS',
-            'user': [
+            'type': 'UPDATE_USER_MENUS',
+            'menus': [
                 {
-                    'name': data['login'],
-                    'component': 'furet-ui-appbar-user-dropmenu',
+                    'label': 'One menu',
+                    'path': '/login',
+                },
+                {
+                    'label': 'Second menu',
+                    'path': '/',
                 },
             ],
         },
@@ -64,23 +63,15 @@ def login():
             'type': 'UPDATE_ROUTE',
             'path': redirect,
         },
+        *getFuretUISpaces(),
     ])
 
 
 @app.route('/furet-ui/logout', methods=['POST'])
 def logout():
     return jsonify([
-        {
-            'type': 'UPDATE_MENUS',
-            'user': [
-                {
-                    'name': 'login',
-                    'component': 'furet-ui-appbar-head-router-link-button',
-                    'props': {'to': '/login',
-                              'label': 'components.login.appbar'},
-                },
-            ],
-        },
+        {'type': 'UPDATE_USER_MENUS', 'menus': []},
+        {'type': 'UPDATE_ROOT_MENUS', 'menus': []},
         {'type': 'LOGOUT'},
         {'type': 'UPDATE_ROUTE', 'path': '/'},
     ])
