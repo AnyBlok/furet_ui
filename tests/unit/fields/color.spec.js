@@ -45,6 +45,26 @@ describe("Field.Color for Resource.List", () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ListColorField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "#FF00F0"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
 
 describe("Field.Color for Resource.Thumbnail", () => {
@@ -72,6 +92,25 @@ describe("Field.Color for Resource.Thumbnail", () => {
       propsData: {
         resource: {},
         config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "#FF00F0"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ThumbnailColorField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           name: "fieldName"
         },
         data: {
@@ -112,6 +151,28 @@ describe("Field.Color for Resource.Form", () => {
         config: {
           name: "fieldName",
           label: "My field label"
+        },
+        data: {
+          fieldName: "#FF00F0"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value, readonly and slot", () => {
+    const wrapper = mount(FormColorField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
         },
         data: {
           fieldName: "#FF00F0"

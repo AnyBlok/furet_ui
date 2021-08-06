@@ -183,6 +183,43 @@ exports[`Field.Color for Resource.Form With value, label, readonly 1`] = `
 </span>
 `;
 
+exports[`Field.Color for Resource.Form With value, readonly and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="field has-addons"
+    >
+      <p
+        class="control is-expanded"
+      >
+        <div>
+          #FF00F0 
+          <br />
+           #FF00F0
+        </div>
+      </p>
+       
+      <p
+        class="control is-expanded"
+      >
+        <!---->
+      </p>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Field.Color for Resource.List Empty 1`] = `<span />`;
 
 exports[`Field.Color for Resource.List With value 1`] = `
@@ -201,6 +238,14 @@ exports[`Field.Color for Resource.List With value 1`] = `
   <!---->
    
   <!---->
+</div>
+`;
+
+exports[`Field.Color for Resource.List With value and slot 1`] = `
+<div>
+  #FF00F0 
+  <br />
+   #FF00F0
 </div>
 `;
 
@@ -248,6 +293,29 @@ exports[`Field.Color for Resource.Thumbnail With value 1`] = `
       <!---->
        
       <!---->
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Color for Resource.Thumbnail With value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      #FF00F0 
+      <br />
+       #FF00F0
     </div>
      
     <!---->
