@@ -21,6 +21,15 @@ defineComponent("furet-ui-list-field-boolean", {
   template: `
     <div>
       <span v-if="isHidden" />
+      <component 
+        v-else-if="config.slot" 
+        v-bind:is="component_template"
+        v-bind:config="config"
+        v-bind:resource="resource"
+        v-bind:data="data"
+        v-bind:value="value"
+        v-bind:checked="checked"
+      />
       <b-checkbox 
         v-else
         v-model="checked"
@@ -32,6 +41,12 @@ defineComponent("furet-ui-list-field-boolean", {
     computed: {
       checked() {
         return computed_boolean_checked(this);
+      },
+      component_template () {
+        return {
+          template: this.config.slot,
+          props: ['resource', 'data', 'config', 'value', 'checked'],
+        }
       }
     }
   }
@@ -67,14 +82,23 @@ defineComponent("furet-ui-thumbnail-field-boolean", {
     v-bind:data="data"
     v-bind:config="config"
   >
-    <span>{{ value }}</span>
-      <b-checkbox 
-        v-model="checked" 
-        disabled
-        v-bind:key="config.key"
-      >
-        {{ config.label }}
-      </b-checkbox>
+    <component 
+      v-if="config.slot" 
+      v-bind:is="component_template"
+      v-bind:config="config"
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:value="value"
+      v-bind:checked="checked"
+    />
+    <b-checkbox 
+      v-else
+      v-model="checked" 
+      disabled
+      v-bind:key="config.key"
+    >
+      {{ config.label }}
+    </b-checkbox>
   </furet-ui-thumbnail-field-common-tooltip-field>
   `,
   extend: ["furet-ui-thumbnail-field-common"],
@@ -82,6 +106,12 @@ defineComponent("furet-ui-thumbnail-field-boolean", {
     computed: {
       checked() {
         return computed_boolean_checked(this);
+      },
+      component_template () {
+        return {
+          template: this.config.slot,
+          props: ['resource', 'data', 'config', 'value', 'checked'],
+        }
       }
     }
   }
@@ -101,6 +131,15 @@ defineComponent("furet-ui-form-field-boolean", {
       v-bind:data="data"
       v-bind:config="config"
     >
+      <component 
+        v-if="isReadonly && config.slot" 
+        v-bind:is="component_template"
+        v-bind:config="config"
+        v-bind:resource="resource"
+        v-bind:data="data"
+        v-bind:value="value"
+        v-bind:checked="checked"
+      />
       <b-checkbox 
         v-model="checked" 
         v-bind:disabled="isReadonly"
@@ -119,6 +158,12 @@ defineComponent("furet-ui-form-field-boolean", {
         },
         set(value) {
           this.updateValue(value);
+        }
+      },
+      component_template () {
+        return {
+          template: this.config.slot,
+          props: ['resource', 'data', 'config', 'value', 'checked'],
         }
       }
     }

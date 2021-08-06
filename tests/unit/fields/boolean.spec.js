@@ -46,6 +46,26 @@ describe("Field.Boolean for Resource.List", () => {
     });
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With true value and slot", () => {
+    const wrapper = mount(ListBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }} <br/> {{ checked }}</div>',
+        },
+        data: {
+          fieldName: "true"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("With false value", () => {
     const wrapper = mount(ListBooleanField, {
       store,
@@ -63,6 +83,26 @@ describe("Field.Boolean for Resource.List", () => {
     });
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With false value and slot", () => {
+    const wrapper = mount(ListBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }} <br/> {{ checked }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "false"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("With security issue value", () => {
     const wrapper = mount(ListBooleanField, {
       store,
@@ -116,6 +156,26 @@ describe("Field.Boolean for Resource.Thumbnail", () => {
     });
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With true value and slot", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }} <br/> {{ checked }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "true"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("With false value", () => {
     const wrapper = mount(ThumbnailBooleanField, {
       store,
@@ -133,6 +193,26 @@ describe("Field.Boolean for Resource.Thumbnail", () => {
     });
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With false value and slot", () => {
+    const wrapper = mount(ThumbnailBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }} <br/> {{ checked }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "false"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("With security issue value", () => {
     const wrapper = mount(ThumbnailBooleanField, {
       store,
@@ -355,6 +435,50 @@ describe("Field.Boolean for Resource.Form", () => {
     });
     expect(wrapper.element).toMatchSnapshot();
     expect(wrapper.find("input").element.checked).toBe(true);
+  });
+
+  it("With value and slot", () => {
+    const wrapper = mount(FormBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }} <br/> {{ checked }}</div>',
+          name: "fieldName",
+        },
+        data: {
+          fieldName: true
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+    expect(wrapper.find("input").element.checked).toBe(true);
+  });
+
+  it("With  false value and slot", () => {
+    const wrapper = mount(FormBooleanField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }} <br/> {{ checked }}</div>',
+          name: "fieldName",
+        },
+        data: {
+          fieldName: false
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+    expect(wrapper.find("input").element.checked).toBe(false);
   });
 });
 
