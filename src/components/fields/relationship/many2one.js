@@ -36,19 +36,6 @@ defineComponent("furet-ui-field-many2one-common", {
           return this.format(this.config.display, this.getEntry(model, value));
         } else return "";
       },
-      slot_fields() {
-        const value = this.data[this.config.name] || "";
-        if (value) {
-          const model = this.config.model;
-          return this.getEntry(model, value);
-        } else return {};
-      },
-      component_template () {
-        return {
-          template: this.config.slot,
-          props: ['resource', 'data', 'config', 'relation'],
-        }
-      }
     },
     methods: {
       onClick() {

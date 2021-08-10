@@ -77,7 +77,16 @@ defineComponent("furet-ui-thumbnail-field-one2many", {
         v-bind:key="getKey(value)"
         v-bind:style="getStyle(value)"
       >
-        <a v-on:click.stop="openResource(value)">{{value.label}}</a>
+        <a v-if="config.slot" v-on:click.stop="openResource(value)">
+          <component 
+            v-bind:is="component_template"
+            v-bind:config="config"
+            v-bind:resource="resource"
+            v-bind:data="data"
+            v-bind:relation="get_slot_fields_for(value.pk)"
+          />
+        </a>
+        <a v-else v-on:click.stop="openResource(value)">{{value.label}}</a>
       </span>
     </furet-ui-thumbnail-field-common-tooltip-field>
   `,

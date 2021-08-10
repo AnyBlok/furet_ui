@@ -46,7 +46,25 @@ const safe_eval = (style, fields) => {
 defineComponent("furet-ui-field-relationship", {
   prototype: {
     inject: ["getEntry", "pushInBreadcrumb"],
+    computed: {
+      slot_fields() {
+        const value = this.data[this.config.name] || "";
+        return this.get_slot_fields_for(value);
+      },
+      component_template () {
+        return {
+          template: this.config.slot,
+          props: ['resource', 'data', 'config', 'relation'],
+        }
+      }
+    },
     methods: {
+      get_slot_fields_for(value) {
+        if (value) {
+          const model = this.config.model;
+          return this.getEntry(model, value);
+        } else return {};
+      },
       format(display, fields) {
         return safe_eval(display, fields);
       },
@@ -85,7 +103,16 @@ export const RelationShipX2MList = `
         v-bind:key="getKey(value)"
         v-bind:style="getStyle(value)"
       >
-        <a v-on:click.stop="openResource(value)">{{value.label}}</a>
+        <a v-if="config.slot" v-on:click.stop="openResource(value)">
+          <component 
+            v-bind:is="component_template"
+            v-bind:config="config"
+            v-bind:resource="resource"
+            v-bind:data="data"
+            v-bind:relation="get_slot_fields_for(value.pk)"
+          />
+        </a>
+        <a v-else v-on:click.stop="openResource(value)">{{value.label}}</a>
       </span>
     </div>
   </div>`;
