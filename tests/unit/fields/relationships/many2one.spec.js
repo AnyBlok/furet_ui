@@ -16,7 +16,7 @@ const pushInBreadcrumb = () => {}
 describe("Field.Many2One for Resource.List", () => {
   const Component = getComponentPrototype("furet-ui-list-field-many2one");
   const openResource = jest.fn()
-  const getOptions = (data, hidden) => {
+  const getOptions = (data, hidden, slot) => {
     return {
       store,
       localVue,
@@ -29,7 +29,8 @@ describe("Field.Many2One for Resource.List", () => {
           hidden,
           model: 'Model.1',
           name: 'test',
-          display: "'Go to => ' + fields.title"
+          display: "'Go to => ' + fields.title",
+          slot,
         }
       },
       methods: {
@@ -49,6 +50,11 @@ describe("Field.Many2One for Resource.List", () => {
     const wrapper = mount(Component, getOptions(null, false))
     expect(wrapper.element).toMatchSnapshot();
   });
+  it("Empty snapshot and slot", () => {
+    const slot = '<div>{{ relation.title }}</div>',
+          wrapper = mount(Component, getOptions(null, false, slot))
+    expect(wrapper.element).toMatchSnapshot();
+  });
   it("Empty breadcrumb", () => {
     const wrapper = mount(Component, getOptions(null, false))
     expect(openResource).not.toHaveBeenCalled()
@@ -58,6 +64,11 @@ describe("Field.Many2One for Resource.List", () => {
   });
   it("With value: snapshot", () => {
     const wrapper = mount(Component, getOptions({id: 1}, false))
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With value and slot: snapshot", () => {
+    const slot = '<div>{{ relation.title }}</div>',
+          wrapper = mount(Component, getOptions({id: 1}, false, slot))
     expect(wrapper.element).toMatchSnapshot();
   });
   it("With value: breadcrumb", () => {
@@ -76,7 +87,7 @@ describe("Field.Many2One for Resource.List", () => {
 describe("Field.Many2One for Resource.Thumbnail", () => {
   const Component = getComponentPrototype("furet-ui-thumbnail-field-many2one");
   const openResource = jest.fn()
-  const getOptions = (data, hidden) => {
+  const getOptions = (data, hidden, slot) => {
     return {
       store,
       localVue,
@@ -89,7 +100,8 @@ describe("Field.Many2One for Resource.Thumbnail", () => {
           hidden,
           model: 'Model.1',
           name: 'test',
-          display: "'Go to => ' + fields.title"
+          display: "'Go to => ' + fields.title",
+          slot,
         }
       },
       methods: {
@@ -109,6 +121,11 @@ describe("Field.Many2One for Resource.Thumbnail", () => {
     const wrapper = mount(Component, getOptions(null, false))
     expect(wrapper.element).toMatchSnapshot();
   });
+  it("Empty snapshot and slot", () => {
+    const slot = '<div>{{ relation.title }}</div>',
+          wrapper = mount(Component, getOptions(null, false, slot))
+    expect(wrapper.element).toMatchSnapshot();
+  });
   it("Empty breadcrumb", () => {
     const wrapper = mount(Component, getOptions(null, false))
     expect(openResource).not.toHaveBeenCalled()
@@ -118,6 +135,11 @@ describe("Field.Many2One for Resource.Thumbnail", () => {
   });
   it("With value: snapshot", () => {
     const wrapper = mount(Component, getOptions({id: 1}, false))
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With value and slot: snapshot", () => {
+    const slot = '<div>{{ relation.title }}</div>',
+          wrapper = mount(Component, getOptions({id: 1}, false, slot))
     expect(wrapper.element).toMatchSnapshot();
   });
   it("With value: breadcrumb", () => {
@@ -133,12 +155,12 @@ describe("Field.Many2One for Resource.Thumbnail", () => {
   });
 });
 
-describe("Field.One2Many for Resource.Form", () => {
+describe("Field.Many2One for Resource.Form", () => {
   const Component = getComponentPrototype("furet-ui-form-field-many2one");
   const updateValue = jest.fn()
   const openResource = jest.fn()
 
-  const getOptions = (readonly) => {
+  const getOptions = (readonly, slot) => {
     return {
       store,
       localVue,
@@ -155,6 +177,7 @@ describe("Field.One2Many for Resource.Form", () => {
           fields: ['title'],
           filter_by: ['code'],
           limit: 10,
+          slot,
         }
       },
       provide: {
@@ -184,6 +207,11 @@ describe("Field.One2Many for Resource.Form", () => {
     const wrapper = mount(Component, getOptions(true));
     expect(wrapper.element).toMatchSnapshot();
   });
+  it("snapshot: RO and slot", () => {
+    const slot = '<div>{{ relation.title }}</div>',
+          wrapper = mount(Component, getOptions(true, slot));
+    expect(wrapper.element).toMatchSnapshot();
+  });
   it("openResource", () => {
     const wrapper = mount(Component, getOptions(true));
     expect(openResource).not.toHaveBeenCalled()
@@ -196,7 +224,10 @@ describe("Field.One2Many for Resource.Form", () => {
     expect(wrapper.vm.choices).toStrictEqual([])
     wrapper.setData({pks: [{id: 1}]})
     expect(wrapper.vm.choices).toStrictEqual([{
-      label: "Go to => Entry", pk: {id: 1}}])
+      label: "Go to => Entry", 
+      pk: {id: 1},
+      relation: {title: 'Entry'},
+    }])
   });
   it("onSelect", () => {
     const wrapper = mount(Component, getOptions(false));
@@ -220,5 +251,9 @@ describe("Field.One2Many for Resource.Form", () => {
     wrapper.vm._onChange(test)
     expect(wrapper.vm.pks).toStrictEqual([])
     expect(updateValue).not.toHaveBeenCalled()
+  });
+  it("getKey", () => {
+    const wrapper = mount(Component, getOptions(false));
+    expect(wrapper.vm.getKey({pk: {foo: 'bar'}})).toStrictEqual("[[\"foo\",\"bar\"]]")
   });
 });

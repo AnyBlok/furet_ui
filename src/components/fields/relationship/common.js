@@ -95,18 +95,21 @@ defineComponent("furet-ui-field-relationship-search", {
     data() {
       return {
         pks: [],
+        page: 0,
+        total: null,
+        isFetching: false,
+        tmp_value: null,
       };
     },
     computed: {
       choices() {
         const res = [];
         this.pks.forEach((pk) => {
+          const relation = this.getEntry(this.config.model, pk);
           res.push({
             pk,
-            label: this.format(
-              this.config.display,
-              this.getEntry(this.config.model, pk)
-            ),
+            label: this.format(this.config.display, relation),
+            relation,
           });
         });
         return res;
@@ -121,12 +124,27 @@ defineComponent("furet-ui-field-relationship-search", {
       onChange: debounce(function(value) {
         this._onChange(value);
       }, 200),
+      getMoreAsyncData: debounce(function () {
+        this._onChange(this.tmp_value)
+      }, 250),
       _onChange(value) {
         this.beforeOnChange();
+        if ((this.tmp_value !== value) || (!value.length)) {
+          this.tmp_value = value;
+          this.pks = [];
+          this.page = 0;
+          this.total = null;
+        }
+        if (this.total != null) {
+          if (this.page * this.config.limit >= this.total) {
+            return
+          }
+        }
         const params = {
           "context[model]": this.config.model,
           "context[fields]": this.config.fields.toString(),
           limit: this.config.limit,
+          offset: this.page * this.config.limit,
         };
         this.config.filter_by.forEach((filter) => {
           params[`filter[${filter}][ilike]`] = value;
@@ -142,15 +160,20 @@ defineComponent("furet-ui-field-relationship-search", {
             .join(",");
           if (values) params[`~primary-keys[${pks}]`] = values;
         }
+        this.isFetching = true
         axios
           .get(`/furet-ui/resource/${this.resource.id}/crud`, { params })
           .then((response) => {
             this.$dispatchAll(response.data.data);
-            this.pks = response.data.pks;
-            this.loading = false;
+            response.data.pks.forEach((item) => this.pks.push(item));
+            this.page++;
+            this.total = response.data.total;
           })
-          .catch(() => {
+          .catch((/* error */) => {
             // console.error(error);
+          })
+          .finally(() => {
+            this.isFetching = false
           });
       }
     },
