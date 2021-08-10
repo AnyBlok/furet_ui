@@ -37,9 +37,11 @@ defineComponent("furet-ui-field-many2many-common", {
           return [];
         }
         this.value.forEach((pk) => {
+          const relation = this.getEntry(model, pk);
           res.push({
             pk,
-            label: this.format(display, this.getEntry(model, pk)),
+            label: this.format(display, relation),
+            relation,
           });
         });
         return res;
@@ -141,54 +143,88 @@ defineComponent("furet-ui-form-field-many2many-tags", {
       v-bind:config="config"
     >
       <div v-if="isReadonly" >
-          <div class="buttons">
-            <b-button 
-              v-on:click.stop="openResource(record)"
-              v-for="record in values"
-              :key="getKey(record)"
-              type="is-info"
-              size="is-small"
-              >
-                {{ record.label }}
-            </b-button>
+        <div class="buttons">
+          <b-button 
+            v-on:click.stop="openResource(record)"
+            v-for="record in values"
+            :key="getKey(record)"
+            type="is-info"
+            size="is-small"
+            >
+              <component 
+                v-if="config.slot"
+                v-bind:is="component_template"
+                v-bind:config="config"
+                v-bind:resource="resource"
+                v-bind:data="data"
+                v-bind:relation="get_slot_fields_for(record.pk)"
+              />
+              <span v-else>{{ record.label }}</span>
+          </b-button>
         </div>
     </div>
     <b-taginput
-        v-else
-        v-bind:value="values"
-        v-bind:data="choices"
-        autocomplete
-        ref="taginput"
-        v-bind:placeholder="config.placeholder"
-        v-bind:allow-new="false"
-        v-bind:open-on-focus="false"
-        icon-pack="fa"
-        type="is-info"
-        v-bind:icon="config.icon"
-        v-on:typing="onChange"
-        v-on:add="onSelect"
-        v-on:remove="onUnSelect">
-        <template slot="empty">
-            No data found with current filter.
-        </template>
-        <!-- template to display search results -->
-        <template slot-scope="searched">
-            {{searched.option.label}}
-        </template>
-        <template slot="selected" slot-scope="props">
-          <b-tag
-            v-for="(tag, index) in props.tags"
-                        :key="index"
-                        :type="getType(tag)"
-                        :tabstop="false"
-                        :closable="isClosable(tag)"
-                        @close="$refs.taginput.removeTag(index, $event)">
-                        {{tag.label}}
-                    </b-tag>
-        </template>
-      </b-taginput>
-    </furet-ui-form-field-common-tooltip-field>
-  `,
+      v-else
+      v-bind:value="values"
+      v-bind:data="choices"
+      autocomplete
+      ref="taginput"
+      v-bind:placeholder="config.placeholder"
+      v-bind:allow-new="false"
+      v-bind:open-on-focus="false"
+      v-bind:check-infinite-scroll="true"
+      icon-pack="fa"
+      type="is-info"
+      v-bind:icon="config.icon"
+      v-on:typing="onChange"
+      v-on:add="onSelect"
+      v-on:remove="onUnSelect"
+      v-on:infinite-scroll="getMoreAsyncData"
+    >
+      <template slot="empty">
+          No data found with current filter.
+      </template>
+      <!-- template to display search results -->
+      <template slot-scope="searched">
+          <component 
+            v-if="config.slot"
+            v-bind:is="component_template"
+            v-bind:config="config"
+            v-bind:resource="resource"
+            v-bind:data="data"
+            v-bind:relation="searched.option.relation"
+          />
+          <span v-else>
+            {{ searched.option.label }}
+          </span>
+      </template>
+      <template #footer>
+        <span v-if="total !== null" v-show="page * config.limit >= total" class="has-text-grey"> Thats it! No more movies found. </span>
+      </template>
+      <template slot="selected" slot-scope="props">
+        <b-tag
+          v-for="(tag, index) in props.tags"
+          v-bind:key="index"
+          v-bind:type="getType(tag)"
+          v-bind:tabstop="false"
+          v-bind:closable="isClosable(tag)"
+          v-on:close="$refs.taginput.removeTag(index, $event)"
+        >
+          <component 
+            v-if="config.slot"
+            v-bind:is="component_template"
+            v-bind:config="config"
+            v-bind:resource="resource"
+            v-bind:data="data"
+            v-bind:relation="tag.relation"
+          />
+          <span v-else>
+            {{ tag.label }}
+          </span>
+        </b-tag>
+      </template>
+    </b-taginput>
+  </furet-ui-form-field-common-tooltip-field>`,
   extend: [
     "furet-ui-form-field-common",
     "furet-ui-field-relationship",

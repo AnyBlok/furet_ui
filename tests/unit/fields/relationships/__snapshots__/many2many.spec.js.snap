@@ -284,7 +284,7 @@ exports[`Field.Many2Many for Resource.Thumbnail With two value: Snapshot 1`] = `
 </span>
 `;
 
-exports[`Field.Many2ManyTags for Resource.Form snapshot 1`] = `
+exports[`Field.Many2ManyTags  and slot for Resource.Form snapshot 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
   data-label=""
@@ -308,9 +308,9 @@ exports[`Field.Many2ManyTags for Resource.Form snapshot 1`] = `
           <span
             class=""
           >
-            
-                        
-                    
+            <div>
+              Entry 1
+            </div>
           </span>
            
           <a
@@ -324,9 +324,9 @@ exports[`Field.Many2ManyTags for Resource.Form snapshot 1`] = `
           <span
             class=""
           >
-            
-                        
-                    
+            <div>
+              Entry 2
+            </div>
           </span>
            
           <a
@@ -368,8 +368,114 @@ exports[`Field.Many2ManyTags for Resource.Form snapshot 1`] = `
                 class="dropdown-item is-disabled"
               >
                 
-            No data found with current filter.
-        
+          No data found with current filter.
+      
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Many2ManyTags for Resource.Form snapshot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div
+      class="taginput control"
+    >
+      <div
+        class="taginput-container is-focusable"
+      >
+        <span
+          class="tag is-primary"
+        >
+          <span
+            class=""
+          >
+            <span>
+              
+            Go to =&gt; Entry 1
+          
+            </span>
+          </span>
+           
+          <a
+            class="delete is-small"
+            role="button"
+          />
+        </span>
+        <span
+          class="tag is-primary"
+        >
+          <span
+            class=""
+          >
+            <span>
+              
+            Go to =&gt; Entry 2
+          
+            </span>
+          </span>
+           
+          <a
+            class="delete is-small"
+            role="button"
+          />
+        </span>
+         
+        <div
+          class="autocomplete control"
+        >
+          <div
+            class="control is-clearfix"
+          >
+            <input
+              autocomplete="off"
+              class="input"
+              type="text"
+            />
+             
+            <!---->
+             
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="dropdown-menu"
+            style="display: none;"
+          >
+            <div
+              class="dropdown-content"
+              style="display: none;"
+            >
+              <!---->
+                
+              <div
+                class="dropdown-item is-disabled"
+              >
+                
+          No data found with current filter.
+      
               </div>
                
               <!---->

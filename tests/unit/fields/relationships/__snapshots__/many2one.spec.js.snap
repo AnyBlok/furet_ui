@@ -95,14 +95,7 @@ exports[`Field.Many2One for Resource.Form snapshot: RW 1`] = `
         
           </div>
            
-          <div
-            class="dropdown-item"
-          >
-            <!---->
-            
-          
-        
-          </div>
+          <!---->
         </div>
       </div>
     </div>

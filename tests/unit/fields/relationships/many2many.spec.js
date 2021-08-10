@@ -270,6 +270,7 @@ describe("Field.Many2ManyTags for Resource.Form", () => {
           model: "Model.1",
           name: "test",
           resource: 1,
+          display: "'Go to => ' + fields.title",
         },
       },
       provide: {
@@ -353,5 +354,55 @@ describe("Field.Many2ManyTags for Resource.Form", () => {
     expect(wrapper.vm.getType({ pk: { id: 1, __x2m_state: "UNLINKED" } })).toBe(
       ""
     );
+  });
+});
+
+describe("Field.Many2ManyTags  and slot for Resource.Form", () => {
+  const Component = getComponentPrototype("furet-ui-form-field-many2many-tags");
+  const updateValue = jest.fn();
+  let wrapper;
+  const pushInBreadcrumb = jest.fn();
+
+  beforeEach(() => {
+    updateValue.mockClear();
+    pushInBreadcrumb.mockClear();
+    wrapper = mount(Component, {
+      store,
+      i18n,
+      localVue,
+      propsData: {
+        resource: {},
+        data: {
+          test: [{ id: 1 }, { id: 2 }],
+        },
+        config: {
+          model: "Model.1",
+          name: "test",
+          resource: 1,
+          slot: '<div>{{ relation.title }}</div>',
+        },
+      },
+      provide: {
+        pushInBreadcrumb,
+        partIsReadonly: () => {
+          return false;
+        },
+        getEntry,
+        updateChangeState: () => {},
+        getNewEntry: () => {
+          return {};
+        },
+        getNewEntries: () => {
+          return [];
+        },
+        registryRefreshCallback: () => {},
+      },
+      methods: {
+        updateValue,
+      },
+    });
+  });
+  it("snapshot", () => {
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

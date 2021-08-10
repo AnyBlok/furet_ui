@@ -187,7 +187,7 @@ defineComponent("furet-ui-field-relationship-search", {
           this.page = 0;
           this.total = null;
         }
-        if (this.total != null) {
+        if (this.total) {
           if (this.page * this.config.limit >= this.total) {
             return
           }

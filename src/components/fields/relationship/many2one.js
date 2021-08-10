@@ -205,7 +205,6 @@ defineComponent("furet-ui-form-field-many2one", {
         </template>
         <template #footer>
           <span v-if="total !== null" v-show="page * config.limit >= total" class="has-text-grey"> Thats it! No more movies found. </span>
-          {{ total }}
         </template>
         <template #empty>
             No data found with current filter.
