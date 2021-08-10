@@ -9,7 +9,7 @@ obtain one at http://mozilla.org/MPL/2.0/.
 **/
 import { defineComponent } from "../../factory";
 import { fields } from "../fields";
-import { RelationShipX2MList } from "./common";
+import { RelationShipX2MList, RelationShipX2MThumbnail } from "./common";
 
 /**
  * furet-ui-field-many2many-common component is a mixin used to manage relationship many2one
@@ -94,30 +94,11 @@ defineComponent("furet-ui-list-field-many2many", {
     "furet-ui-field-relationship",
     "furet-ui-field-many2many-common",
   ],
-  prototype: {
-    computed: {},
-    methods: {},
-  },
 });
 fields.list.many2many = "furet-ui-list-field-many2many";
 
 defineComponent("furet-ui-thumbnail-field-many2many", {
-  template: `
-    <furet-ui-thumbnail-field-common-tooltip-field
-      v-bind:resource="resource"
-      v-bind:data="data"
-      v-bind:config="config"
-    >
-      <span 
-        v-for="value in values"
-        class="tag" 
-        v-bind:key="getKey(value)"
-        v-bind:style="getStyle(value)"
-      >
-        <a v-on:click.stop="openResource(value)">{{value.label}}</a>
-      </span>
-    </furet-ui-thumbnail-field-common-tooltip-field>
-  `,
+  template: RelationShipX2MThumbnail,
   extend: [
     "furet-ui-thumbnail-field-common",
     "furet-ui-field-relationship",

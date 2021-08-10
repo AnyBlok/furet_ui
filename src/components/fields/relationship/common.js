@@ -117,6 +117,31 @@ export const RelationShipX2MList = `
     </div>
   </div>`;
 
+export const RelationShipX2MThumbnail = `
+  <furet-ui-thumbnail-field-common-tooltip-field
+    v-bind:resource="resource"
+    v-bind:data="data"
+    v-bind:config="config"
+  >
+    <span 
+      v-for="value in values"
+      class="tag" 
+      v-bind:key="getKey(value)"
+      v-bind:style="getStyle(value)"
+    >
+      <a v-if="config.slot" v-on:click.stop="openResource(value)">
+        <component 
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:relation="get_slot_fields_for(value.pk)"
+        />
+      </a>
+      <a v-else v-on:click.stop="openResource(value)">{{value.label}}</a>
+    </span>
+  </furet-ui-thumbnail-field-common-tooltip-field>`;
+
 defineComponent("furet-ui-field-relationship-search", {
   prototype: {
     data() {

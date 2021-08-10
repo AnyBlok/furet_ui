@@ -45,7 +45,7 @@ const getEntry = (model, pk) => {
 describe("Field.Many2Many for Resource.List", () => {
   const Component = getComponentPrototype("furet-ui-list-field-many2many");
   const pushInBreadcrumb = jest.fn();
-  const getOptions = (data, hidden, style, menu, resource) => {
+  const getOptions = (data, hidden, style, menu, resource, slot) => {
     return {
       store,
       router,
@@ -61,8 +61,9 @@ describe("Field.Many2Many for Resource.List", () => {
           model: "Model.1",
           name: "test",
           display: "'Title: ' + fields.title",
-          menu: menu,
-          resource: resource,
+          menu,
+          resource,
+          slot,
         },
       },
       provide: {
@@ -82,6 +83,11 @@ describe("Field.Many2Many for Resource.List", () => {
   });
   it("With one value: Snapshot", () => {
     const wrapper = mount(Component, getOptions([{ id: 1 }], false, undefined));
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With one value and slot: Snapshot", () => {
+    const slot = '<div>{{relation.title}}</div>',
+          wrapper = mount(Component, getOptions([{id: 1}], false, undefined, undefined, undefined, slot))
     expect(wrapper.element).toMatchSnapshot();
   });
   it("With one value: openResource", () => {
@@ -115,6 +121,11 @@ describe("Field.Many2Many for Resource.List", () => {
       Component,
       getOptions([{ id: 1 }, { id: 2 }], false, undefined)
     );
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With two value and slot: Snapshot", () => {
+    const slot = '<div>{{relation.title}}</div>',
+          wrapper = mount(Component, getOptions([{id: 1}, {id: 2}], false, undefined, undefined, undefined, slot))
     expect(wrapper.element).toMatchSnapshot();
   });
   it("Hidden", () => {
@@ -137,7 +148,7 @@ describe("Field.Many2Many for Resource.List", () => {
 describe("Field.Many2Many for Resource.Thumbnail", () => {
   const Component = getComponentPrototype("furet-ui-thumbnail-field-many2many");
   const pushInBreadcrumb = jest.fn();
-  const getOptions = (data, hidden, style, menu, resource) => {
+  const getOptions = (data, hidden, style, menu, resource, slot) => {
     return {
       store,
       router,
@@ -153,8 +164,9 @@ describe("Field.Many2Many for Resource.Thumbnail", () => {
           model: "Model.1",
           name: "test",
           display: "'Title: ' + fields.title",
-          menu: menu,
-          resource: resource,
+          menu,
+          resource,
+          slot,
         },
       },
       provide: {
@@ -174,6 +186,11 @@ describe("Field.Many2Many for Resource.Thumbnail", () => {
   });
   it("With one value: Snapshot", () => {
     const wrapper = mount(Component, getOptions([{ id: 1 }], false, undefined));
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With one value and slot: Snapshot", () => {
+    const slot = '<div>{{relation.title}}</div>',
+          wrapper = mount(Component, getOptions([{id: 1}], false, undefined, undefined, undefined, slot))
     expect(wrapper.element).toMatchSnapshot();
   });
   it("With one value: openResource", () => {
@@ -207,6 +224,11 @@ describe("Field.Many2Many for Resource.Thumbnail", () => {
       Component,
       getOptions([{ id: 1 }, { id: 2 }], false, undefined)
     );
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With two value and slot: Snapshot", () => {
+    const slot = '<div>{{relation.title}}</div>',
+          wrapper = mount(Component, getOptions([{id: 1}, {id: 2}], false, undefined, undefined, undefined, slot))
     expect(wrapper.element).toMatchSnapshot();
   });
   it("Hidden", () => {
