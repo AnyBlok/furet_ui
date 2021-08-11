@@ -204,10 +204,10 @@ defineComponent("furet-ui-form-field-many2one", {
           </span>
         </template>
         <template #footer>
-          <span v-if="total !== null" v-show="page * config.limit >= total" class="has-text-grey"> Thats it! No more movies found. </span>
+          <span v-if="((page * config.limit) > total)" class="has-text-grey">{{ $t('components.fields.relationship.no_more') }}</span>
         </template>
         <template #empty>
-            No data found with current filter.
+          <span class="has-text-grey">{{ $t('components.fields.relationship.not_found') }}</span>
         </template>
       </b-autocomplete>
     </furet-ui-form-field-common-tooltip-field>

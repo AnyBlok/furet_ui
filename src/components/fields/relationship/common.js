@@ -148,7 +148,7 @@ defineComponent("furet-ui-field-relationship-search", {
       return {
         pks: [],
         page: 0,
-        total: null,
+        total: 0,
         isFetching: false,
         tmp_value: null,
       };
@@ -185,12 +185,10 @@ defineComponent("furet-ui-field-relationship-search", {
           this.tmp_value = value;
           this.pks = [];
           this.page = 0;
-          this.total = null;
+          this.total = 0;
         }
-        if (this.total) {
-          if (this.page * this.config.limit >= this.total) {
-            return
-          }
+        if (this.page * this.config.limit > this.total) {
+          return
         }
         const params = {
           "context[model]": this.config.model,

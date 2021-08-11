@@ -367,9 +367,11 @@ exports[`Field.Many2ManyTags  and slot for Resource.Form snapshot 1`] = `
               <div
                 class="dropdown-item is-disabled"
               >
-                
-          No data found with current filter.
-      
+                <span
+                  class="has-text-grey"
+                >
+                  No data found with current filter.
+                </span>
               </div>
                
               <!---->
@@ -473,9 +475,11 @@ exports[`Field.Many2ManyTags for Resource.Form snapshot 1`] = `
               <div
                 class="dropdown-item is-disabled"
               >
-                
-          No data found with current filter.
-      
+                <span
+                  class="has-text-grey"
+                >
+                  No data found with current filter.
+                </span>
               </div>
                
               <!---->

@@ -59,6 +59,10 @@ export const i18nConf = {
           json: {
             invalid: 'Json is invalid',
           },
+          relationship: {
+            no_more: 'No more datas found.',
+            not_found: 'No data found with current filter.',
+          },
         },
       },
     },

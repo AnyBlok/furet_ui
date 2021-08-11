@@ -1,5 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { getComponentPrototype } from "@/components/factory";
+import { i18n } from "@/i18n";
 import axios from 'axios';
 
 const mock = jest.spyOn(axios, "get");
@@ -163,6 +164,7 @@ describe("Field.Many2One for Resource.Form", () => {
   const getOptions = (readonly, slot) => {
     return {
       store,
+      i18n,
       localVue,
       propsData: {
         resource: {

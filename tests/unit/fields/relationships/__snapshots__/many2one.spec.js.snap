@@ -90,9 +90,11 @@ exports[`Field.Many2One for Resource.Form snapshot: RW 1`] = `
           <div
             class="dropdown-item is-disabled"
           >
-            
-            No data found with current filter.
-        
+            <span
+              class="has-text-grey"
+            >
+              No data found with current filter.
+            </span>
           </div>
            
           <!---->

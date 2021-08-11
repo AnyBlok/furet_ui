@@ -182,24 +182,24 @@ defineComponent("furet-ui-form-field-many2many-tags", {
       v-on:infinite-scroll="getMoreAsyncData"
     >
       <template slot="empty">
-          No data found with current filter.
+        <span class="has-text-grey">{{ $t('components.fields.relationship.not_found') }}</span>
       </template>
       <!-- template to display search results -->
       <template slot-scope="searched">
-          <component 
-            v-if="config.slot"
-            v-bind:is="component_template"
-            v-bind:config="config"
-            v-bind:resource="resource"
-            v-bind:data="data"
-            v-bind:relation="searched.option.relation"
-          />
-          <span v-else>
-            {{ searched.option.label }}
-          </span>
+        <component 
+          v-if="config.slot"
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:relation="searched.option.relation"
+        />
+        <span v-else>
+          {{ searched.option.label }}
+        </span>
       </template>
       <template #footer>
-        <span v-if="total !== null" v-show="page * config.limit >= total" class="has-text-grey"> Thats it! No more movies found. </span>
+        <span v-if="((page * config.limit) > total)" class="has-text-grey">{{ $t('components.fields.relationship.no_more') }}</span>
       </template>
       <template slot="selected" slot-scope="props">
         <b-tag
