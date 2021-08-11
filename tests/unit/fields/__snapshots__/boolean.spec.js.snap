@@ -305,14 +305,10 @@ exports[`Field.Boolean for Resource.Thumbnail Empty 1`] = `
   style="transition-delay: 0ms; width: 100%;"
 >
   <div
-    class="field has-addons"
+    class="field"
     style="width: inherit;"
   >
     <!---->
-     
-    <span>
-      
-    </span>
      
     <label
       class="b-checkbox checkbox is-disabled"
@@ -350,14 +346,10 @@ exports[`Field.Boolean for Resource.Thumbnail With false value 1`] = `
   style="transition-delay: 0ms; width: 100%;"
 >
   <div
-    class="field has-addons"
+    class="field"
     style="width: inherit;"
   >
     <!---->
-     
-    <span>
-      false
-    </span>
      
     <label
       class="b-checkbox checkbox is-disabled"
@@ -378,10 +370,35 @@ exports[`Field.Boolean for Resource.Thumbnail With false value 1`] = `
         class="control-label"
       >
         
-        
       
+    
       </span>
     </label>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.Thumbnail With false value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      false 
+      <br />
+       false 
+      <br />
+       false
+    </div>
      
     <!---->
   </div>
@@ -395,14 +412,10 @@ exports[`Field.Boolean for Resource.Thumbnail With security issue value 1`] = `
   style="transition-delay: 0ms; width: 100%;"
 >
   <div
-    class="field has-addons"
+    class="field"
     style="width: inherit;"
   >
     <!---->
-     
-    <span>
-      throw Error('this is a security issue')
-    </span>
      
     <label
       class="b-checkbox checkbox is-disabled"
@@ -423,8 +436,8 @@ exports[`Field.Boolean for Resource.Thumbnail With security issue value 1`] = `
         class="control-label"
       >
         
-        
       
+    
       </span>
     </label>
      
@@ -440,14 +453,10 @@ exports[`Field.Boolean for Resource.Thumbnail With true value 1`] = `
   style="transition-delay: 0ms; width: 100%;"
 >
   <div
-    class="field has-addons"
+    class="field"
     style="width: inherit;"
   >
     <!---->
-     
-    <span>
-      true
-    </span>
      
     <label
       class="b-checkbox checkbox is-disabled"
@@ -468,8 +477,8 @@ exports[`Field.Boolean for Resource.Thumbnail With true value 1`] = `
         class="control-label"
       >
         
-        
       
+    
       </span>
     </label>
      

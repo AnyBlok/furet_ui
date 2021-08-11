@@ -128,7 +128,26 @@ exports[`Field.Many2Many for Resource.Thumbnail Empty 1`] = `
 </span>
 `;
 
+exports[`Field.Many2Many for Resource.Thumbnail Empty 2`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+      
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Field.Many2Many for Resource.Thumbnail Hidden 1`] = `<div />`;
+
+exports[`Field.Many2Many for Resource.Thumbnail Hidden 2`] = `<div />`;
 
 exports[`Field.Many2Many for Resource.Thumbnail With one value and slot: Snapshot 1`] = `
 <span
@@ -182,7 +201,66 @@ exports[`Field.Many2Many for Resource.Thumbnail With one value: Snapshot 1`] = `
 </span>
 `;
 
+exports[`Field.Many2Many for Resource.Thumbnail With one value: Snapshot 2`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span
+      class="tag"
+    >
+      <a>
+        Title: Entry 1
+      </a>
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Field.Many2Many for Resource.Thumbnail With style 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field has-addons"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span
+      class="tag"
+      style="color: red;"
+    >
+      <a>
+        Title: Entry 1
+      </a>
+    </span>
+    <span
+      class="tag"
+      style="color: blue;"
+    >
+      <a>
+        Title: Entry 2
+      </a>
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Many2Many for Resource.Thumbnail With style 2`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
   data-label=""
@@ -253,6 +331,38 @@ exports[`Field.Many2Many for Resource.Thumbnail With two value and slot: Snapsho
 `;
 
 exports[`Field.Many2Many for Resource.Thumbnail With two value: Snapshot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field has-addons"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span
+      class="tag"
+    >
+      <a>
+        Title: Entry 1
+      </a>
+    </span>
+    <span
+      class="tag"
+    >
+      <a>
+        Title: Entry 2
+      </a>
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Many2Many for Resource.Thumbnail With two value: Snapshot 2`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
   data-label=""
