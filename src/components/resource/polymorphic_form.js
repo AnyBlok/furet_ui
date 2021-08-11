@@ -104,6 +104,11 @@ defineComponent('furet-ui-resource-polymorphic-form', {
         this.$refs.resource.goToPage()
       },
       loadAsyncData() {
+        if (this.$refs.resource) {
+          this.$refs.resource.loadAsyncData();
+          return
+        }
+
         this.loading = true;
         const params = {
           'context[model]': this.resource.model,

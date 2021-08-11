@@ -10,10 +10,6 @@ export const i18nConf = {
     en: {
       error: 'Error',
       components: {
-        spaces: {
-            title: 'Space menus',
-            search: 'Filter ...',
-        },
         login: {
           appbar: 'Log in',
           button: 'Log in',
@@ -21,11 +17,6 @@ export const i18nConf = {
           password: 'Password',
         },
         logout: {
-          appbar: {
-            administrator: 'Administrator',
-            logout: 'Log out',
-            about: 'About ...',
-          },
           button: 'Log out',
         },
         header: {
