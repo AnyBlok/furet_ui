@@ -15,13 +15,11 @@ export const defaultState = {
   userName: "",
   userTimeZone: "Europe/Paris",
   authenticated: false,
-  space_menus: [],
-  space_name: "Menu",
+  root_menus: [],
+  user_menus: [],
   previous_route: {},
   left_menus: [],
-  right_menus: [],
   isOpenLeft: false,
-  isOpenRight: false,
   breadcrumb: [],
   loginPage: "password",
 };
@@ -69,16 +67,15 @@ export const mutations = {
   LOGOUT(state) {
     state.authenticated = false;
     state.userName = "";
-    state.space_name = "Menu";
   },
   UPDATE_PREVIOUS_ROUTE(state, action) {
     state.previous_route = action.route;
   },
-  UPDATE_SPACE_MENUS(state, action) {
-    state.space_menus = action.menus;
+  UPDATE_ROOT_MENUS(state, action) {
+    state.root_menus = action.menus;
   },
-  UPDATE_CURRENT_SPACE(state, action) {
-    state.space_name = action.label;
+  UPDATE_USER_MENUS(state, action) {
+    state.user_menus = action.menus;
   },
   UPDATE_GLOBAL(state, action) {
     // eslint-disable-next-line
@@ -89,14 +86,8 @@ export const mutations = {
   OPEN_LEFT_MENU(state, value) {
     state.isOpenLeft = value;
   },
-  OPEN_RIGHT_MENU(state, value) {
-    state.isOpenRight = value;
-  },
   UPDATE_CURRENT_LEFT_MENUS(state, action) {
     state.left_menus = action.menus;
-  },
-  UPDATE_CURRENT_RIGHT_MENUS(state, action) {
-    state.right_menus = action.menus;
   },
 };
 

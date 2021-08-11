@@ -2256,9 +2256,11 @@ exports[`Field.Datetime for Resource.Form Empty and readonly 1`] = `
   >
     <!---->
      
-    <span>
-      
-    </span>
+    <div>
+      <span>
+        
+      </span>
+    </div>
      
     <!---->
   </div>
@@ -4525,9 +4527,40 @@ exports[`Field.Datetime for Resource.Form With value, label, readonly 1`] = `
       My field label
     </label>
      
-    <span>
-      May 6, 2020 2:20 PM
-    </span>
+    <div>
+      <span>
+        May 6, 2020 2:20 PM
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Datetime for Resource.Form With value, label, readonly and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div>
+      <div>
+        Wed May 06 2020 14:20:00 GMT+0200 (heure d’été d’Europe centrale) 
+        <br />
+         May 6, 2020 2:20 PM
+      </div>
+    </div>
      
     <!---->
   </div>
@@ -4543,6 +4576,16 @@ exports[`Field.Datetime for Resource.List Empty 1`] = `
 `;
 
 exports[`Field.Datetime for Resource.List With value 1`] = `
+<div>
+  <div>
+    Wed May 06 2020 14:20:00 GMT+0200 (heure d’été d’Europe centrale) 
+    <br />
+     May 6, 2020 2:20 PM
+  </div>
+</div>
+`;
+
+exports[`Field.Datetime for Resource.List With value and slot 1`] = `
 <div>
   <span>
     May 6, 2020 2:20 PM
@@ -4586,6 +4629,29 @@ exports[`Field.Datetime for Resource.Thumbnail With value 1`] = `
     <span>
       May 6, 2020 2:20 PM
     </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Datetime for Resource.Thumbnail With value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      Wed May 06 2020 14:20:00 GMT+0200 (heure d’été d’Europe centrale) 
+      <br />
+       May 6, 2020 2:20 PM
+    </div>
      
     <!---->
   </div>

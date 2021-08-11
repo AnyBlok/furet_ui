@@ -49,6 +49,14 @@ defineComponent('furet-ui-list-field-json', {
   template: `
     <div>
       <span v-if="isHidden" />
+      <component 
+        v-else-if="config.slot" 
+        v-bind:is="component_template"
+        v-bind:config="config"
+        v-bind:resource="resource"
+        v-bind:data="data"
+        v-bind:value="value"
+      />
       <pre 
         v-else
         v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
@@ -74,8 +82,16 @@ defineComponent('furet-ui-thumbnail-field-json', {
       v-bind:data="data"
       v-bind:config="config"
     >
+      <component 
+        v-if="config.slot" 
+        v-bind:is="component_template"
+        v-bind:config="config"
+        v-bind:resource="resource"
+        v-bind:data="data"
+        v-bind:value="value"
+      />
       <pre 
-        v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+        v-else v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
       >{{value}}</pre>
     </furet-ui-thumbnail-field-common-tooltip-field>
   `,
@@ -127,9 +143,19 @@ defineComponent('furet-ui-form-field-json', {
         v-bind:message="getMessage"
         v-bind:style="{'width': 'inherit'}"
       >
-        <pre v-if="isReadonly"
-            v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
-        >{{value}}</pre>
+        <div v-if="isReadonly">
+          <component 
+            v-if="config.slot" 
+            v-bind:is="component_template"
+            v-bind:config="config"
+            v-bind:resource="resource"
+            v-bind:data="data"
+            v-bind:value="value"
+          />
+          <pre v-else
+              v-bind:style="{width: '100%', padding: 2, backgroundColor: 'white'}"
+          >{{value}}</pre>
+        </div>
         <b-input 
           type="textarea"
           v-else 

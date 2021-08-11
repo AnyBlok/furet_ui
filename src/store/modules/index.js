@@ -11,12 +11,10 @@ obtain one at http://mozilla.org/MPL/2.0/.
 import global from './global';
 import data from './data';
 import resource from './resource';
-import menus from './menus';
 // import browser from './browser';
 
 export default {
   global,
   data,
   resource,
-  menus,
 };

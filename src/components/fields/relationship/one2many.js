@@ -7,9 +7,9 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import {defineComponent} from '../../factory'
-import {fields} from '../fields';
-import {RelationShipX2MList} from './common';
+import { defineComponent } from '../../factory'
+import { fields } from '../fields';
+import { RelationShipX2MList, RelationShipX2MThumbnail } from './common';
 import { pk2string } from "../../../store/modules/data";
 
 defineComponent('furet-ui-common-field-one2many', {
@@ -60,30 +60,24 @@ defineComponent('furet-ui-common-field-one2many', {
  */
 defineComponent('furet-ui-list-field-one2many', {
   template: RelationShipX2MList,
-  extend: ['furet-ui-list-field-common', 'furet-ui-field-relationship', 'furet-ui-common-field-one2many'],
+  extend: [
+    'furet-ui-list-field-common',
+    'furet-ui-field-relationship', 
+    'furet-ui-common-field-one2many'
+  ],
 })
 fields.list.one2many = 'furet-ui-list-field-one2many'
 
 defineComponent("furet-ui-thumbnail-field-one2many", {
-  template: `
-    <furet-ui-thumbnail-field-common-tooltip-field
-      v-bind:resource="resource"
-      v-bind:data="data"
-      v-bind:config="config"
-    >
-      <span 
-        v-for="value in values"
-        class="tag" 
-        v-bind:key="getKey(value)"
-        v-bind:style="getStyle(value)"
-      >
-        <a v-on:click.stop="openResource(value)">{{value.label}}</a>
-      </span>
-    </furet-ui-thumbnail-field-common-tooltip-field>
-  `,
-  extend: ["furet-ui-thumbnail-field-common", "furet-ui-field-relationship", "furet-ui-common-field-one2many"],
+  template: RelationShipX2MThumbnail,
+  extend: [
+    "furet-ui-thumbnail-field-common", 
+    "furet-ui-field-relationship", 
+    "furet-ui-common-field-one2many"
+  ],
 });
 fields.thumbnail.one2many = "furet-ui-thumbnail-field-one2many";
+fields.kanban.one2many = "furet-ui-thumbnail-field-one2many";
 
 
 defineComponent('furet-ui-page-o2m-list-header', {

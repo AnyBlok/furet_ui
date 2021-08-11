@@ -46,7 +46,25 @@ const safe_eval = (style, fields) => {
 defineComponent("furet-ui-field-relationship", {
   prototype: {
     inject: ["getEntry", "pushInBreadcrumb"],
+    computed: {
+      slot_fields() {
+        const value = this.data[this.config.name] || "";
+        return this.get_slot_fields_for(value);
+      },
+      component_template () {
+        return {
+          template: this.config.slot,
+          props: ['resource', 'data', 'config', 'relation'],
+        }
+      }
+    },
     methods: {
+      get_slot_fields_for(value) {
+        if (value) {
+          const model = this.config.model;
+          return this.getEntry(model, value);
+        } else return {};
+      },
       format(display, fields) {
         return safe_eval(display, fields);
       },
@@ -85,28 +103,65 @@ export const RelationShipX2MList = `
         v-bind:key="getKey(value)"
         v-bind:style="getStyle(value)"
       >
-        <a v-on:click.stop="openResource(value)">{{value.label}}</a>
+        <a v-if="config.slot" v-on:click.stop="openResource(value)">
+          <component 
+            v-bind:is="component_template"
+            v-bind:config="config"
+            v-bind:resource="resource"
+            v-bind:data="data"
+            v-bind:relation="get_slot_fields_for(value.pk)"
+          />
+        </a>
+        <a v-else v-on:click.stop="openResource(value)">{{value.label}}</a>
       </span>
     </div>
   </div>`;
+
+export const RelationShipX2MThumbnail = `
+  <furet-ui-thumbnail-field-common-tooltip-field
+    v-bind:resource="resource"
+    v-bind:data="data"
+    v-bind:config="config"
+  >
+    <span 
+      v-for="value in values"
+      class="tag" 
+      v-bind:key="getKey(value)"
+      v-bind:style="getStyle(value)"
+    >
+      <a v-if="config.slot" v-on:click.stop="openResource(value)">
+        <component 
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:relation="get_slot_fields_for(value.pk)"
+        />
+      </a>
+      <a v-else v-on:click.stop="openResource(value)">{{value.label}}</a>
+    </span>
+  </furet-ui-thumbnail-field-common-tooltip-field>`;
 
 defineComponent("furet-ui-field-relationship-search", {
   prototype: {
     data() {
       return {
         pks: [],
+        page: 0,
+        total: null,
+        isFetching: false,
+        tmp_value: null,
       };
     },
     computed: {
       choices() {
         const res = [];
         this.pks.forEach((pk) => {
+          const relation = this.getEntry(this.config.model, pk);
           res.push({
             pk,
-            label: this.format(
-              this.config.display,
-              this.getEntry(this.config.model, pk)
-            ),
+            label: this.format(this.config.display, relation),
+            relation,
           });
         });
         return res;
@@ -121,12 +176,27 @@ defineComponent("furet-ui-field-relationship-search", {
       onChange: debounce(function(value) {
         this._onChange(value);
       }, 200),
+      getMoreAsyncData: debounce(function () {
+        this._onChange(this.tmp_value)
+      }, 250),
       _onChange(value) {
         this.beforeOnChange();
+        if ((this.tmp_value !== value) || (!value.length)) {
+          this.tmp_value = value;
+          this.pks = [];
+          this.page = 0;
+          this.total = null;
+        }
+        if (this.total) {
+          if (this.page * this.config.limit >= this.total) {
+            return
+          }
+        }
         const params = {
           "context[model]": this.config.model,
           "context[fields]": this.config.fields.toString(),
           limit: this.config.limit,
+          offset: this.page * this.config.limit,
         };
         this.config.filter_by.forEach((filter) => {
           params[`filter[${filter}][ilike]`] = value;
@@ -142,15 +212,20 @@ defineComponent("furet-ui-field-relationship-search", {
             .join(",");
           if (values) params[`~primary-keys[${pks}]`] = values;
         }
+        this.isFetching = true
         axios
           .get(`/furet-ui/resource/${this.resource.id}/crud`, { params })
           .then((response) => {
             this.$dispatchAll(response.data.data);
-            this.pks = response.data.pks;
-            this.loading = false;
+            response.data.pks.forEach((item) => this.pks.push(item));
+            this.page++;
+            this.total = response.data.total;
           })
-          .catch(() => {
+          .catch((/* error */) => {
             // console.error(error);
+          })
+          .finally(() => {
+            this.isFetching = false
           });
       }
     },

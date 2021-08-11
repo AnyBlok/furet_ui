@@ -148,9 +148,77 @@ exports[`Field.String for Resource.Form With value, label, readonly 1`] = `
       My field label
     </label>
      
-    <span>
-      A value
-    </span>
+    <div>
+      <span>
+        A value
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.String for Resource.Form With value, label, readonly and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div>
+      <div>
+        A value 
+        <br />
+         A value
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.String for Resource.Form With value, label, readonly and writable 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="control is-clearfix"
+    >
+      <input
+        autocomplete="on"
+        class="input"
+        type="text"
+      />
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
      
     <!---->
   </div>
@@ -210,6 +278,16 @@ exports[`Field.String for Resource.List With value 1`] = `
 </div>
 `;
 
+exports[`Field.String for Resource.List With value and slot 1`] = `
+<div>
+  <div>
+    A value 
+    <br />
+     A value
+  </div>
+</div>
+`;
+
 exports[`Field.String for Resource.Thumbnail Empty 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
@@ -246,6 +324,29 @@ exports[`Field.String for Resource.Thumbnail With value 1`] = `
     <span>
       A value
     </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.String for Resource.Thumbnail With value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      A value 
+      <br />
+       A value
+    </div>
      
     <!---->
   </div>

@@ -6,10 +6,52 @@ exports[`Field.Boolean for Resource.Form Empty 1`] = `
   data-label=""
   style="transition-delay: 0ms; width: 100%;"
 >
+  <!---->
+   
   <label
     class="b-checkbox checkbox"
   >
     <input
+      true-value="true"
+      type="checkbox"
+      value="false"
+    />
+     
+    <span
+      class="check"
+    />
+     
+    <span
+      class="control-label"
+    >
+      
+        
+      
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.Form With  false value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div>
+    false 
+    <br />
+      
+    <br />
+     
+  </div>
+   
+  <label
+    class="b-checkbox checkbox is-disabled"
+    disabled="disabled"
+  >
+    <input
+      disabled="disabled"
       true-value="true"
       type="checkbox"
       value="false"
@@ -36,6 +78,8 @@ exports[`Field.Boolean for Resource.Form With security issue value 1`] = `
   data-label=""
   style="transition-delay: 0ms; width: 100%;"
 >
+  <!---->
+   
   <label
     class="b-checkbox checkbox"
   >
@@ -66,6 +110,8 @@ exports[`Field.Boolean for Resource.Form With value and label 1`] = `
   data-label=""
   style="transition-delay: 0ms; width: 100%;"
 >
+  <!---->
+   
   <label
     class="b-checkbox checkbox is-disabled"
     disabled="disabled"
@@ -86,6 +132,46 @@ exports[`Field.Boolean for Resource.Form With value and label 1`] = `
     >
       
         My field label
+      
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.Form With value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div>
+    true 
+    <br />
+     true 
+    <br />
+     true
+  </div>
+   
+  <label
+    class="b-checkbox checkbox is-disabled"
+    disabled="disabled"
+  >
+    <input
+      disabled="disabled"
+      true-value="true"
+      type="checkbox"
+      value="false"
+    />
+     
+    <span
+      class="check"
+    />
+     
+    <span
+      class="control-label"
+    >
+      
+        
       
     </span>
   </label>
@@ -140,6 +226,18 @@ exports[`Field.Boolean for Resource.List With false value 1`] = `
 </div>
 `;
 
+exports[`Field.Boolean for Resource.List With false value and slot 1`] = `
+<div>
+  <div>
+    false 
+    <br />
+     false 
+    <br />
+     false
+  </div>
+</div>
+`;
+
 exports[`Field.Boolean for Resource.List With security issue value 1`] = `
 <div>
   <label
@@ -188,6 +286,18 @@ exports[`Field.Boolean for Resource.List With true value 1`] = `
 </div>
 `;
 
+exports[`Field.Boolean for Resource.List With true value and slot 1`] = `
+<div>
+  <div>
+    true 
+    <br />
+     true 
+    <br />
+     true
+  </div>
+</div>
+`;
+
 exports[`Field.Boolean for Resource.Thumbnail Empty 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
@@ -223,8 +333,8 @@ exports[`Field.Boolean for Resource.Thumbnail Empty 1`] = `
         class="control-label"
       >
         
-        
       
+    
       </span>
     </label>
      
@@ -362,6 +472,31 @@ exports[`Field.Boolean for Resource.Thumbnail With true value 1`] = `
       
       </span>
     </label>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Boolean for Resource.Thumbnail With true value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      true 
+      <br />
+       true 
+      <br />
+       true
+    </div>
      
     <!---->
   </div>

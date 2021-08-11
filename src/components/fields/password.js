@@ -48,7 +48,17 @@ defineComponent('furet-ui-form-field-password', {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <span v-if="isReadonly">{{ readonly_value }}</span>
+      <div v-if="isReadonly">
+        <component 
+          v-if="config.slot" 
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:value="readonly_value"
+        />
+        <span v-else>{{ readonly_value }}</span>
+      </div>
       <b-input 
         v-else
         v-bind:value="value" 

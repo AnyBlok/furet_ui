@@ -5,51 +5,43 @@ Vue.use(Router);
 
 export const routes = [
     {
-        name: 'homepage',
-        path: '/',
-        component: {
-            template: '<homepage />',
-        },
-        meta: { requiresAuth: false },
+      name: 'homepage',
+      path: '/',
+      component: {
+        template: '<homepage />',
+      },
+      meta: { requiresAuth: false },
     },
     {
-        name: 'login',
-        path: '/login',
-        component: {
-            template: '<furet-ui-login />',
-        },
-        meta: { requiresAuth: false },
+      name: 'login',
+      path: '/login',
+      component: {
+        template: '<furet-ui-login />',
+      },
+      meta: { requiresAuth: false },
     },
     {
-        name: 'space_menus',
-        path: '/space/menus',
-        component: {
-            template: '<furet-ui-space-menus />',
-        },
-        meta: { requiresAuth: true },
-    },
-    {
-        name: 'space',
-        path: '/space/:code/menu/:menuId',
-        component: {
+      name: 'space',
+      path: '/space/:code/menu/:menuId',
+      component: {
+        template: `
+          <furet-ui-space 
+            v-bind:code="$route.params.code"
+            v-bind:menuId="$route.params.menuId"
+          />`,
+      },
+      meta: { requiresAuth: true },
+      children: [
+        {
+          name: 'resource',
+          path: 'resource/:id',
+          component: {
             template: `
-              <furet-ui-space 
-                v-bind:code="$route.params.code"
-                v-bind:menuId="$route.params.menuId"
-              />`,
-        },
-        meta: { requiresAuth: true },
-        children: [
-          {
-            name: 'resource',
-            path: 'resource/:id',
-            component: {
-                template: `
-                    <furet-ui-space-resource-manager v-bind:id="$route.params.id" />
-                `,
-            },
-          }
-        ],
+                <furet-ui-space-resource-manager v-bind:id="$route.params.id" />
+            `,
+          },
+        }
+      ],
     },
 ];
 

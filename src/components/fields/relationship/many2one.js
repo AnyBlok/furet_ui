@@ -73,11 +73,21 @@ defineComponent("furet-ui-field-many2one-common", {
  * @param {String} name - the key to use in the ``data`` object where is store the value
  * @param {String} model - A model name, needed to display the data
  * @param {String} display - An evaluate string to display the entry
+ * @param {String} slot - An evaluate template to display the entry more power full that display
  */
 defineComponent("furet-ui-list-field-many2one", {
   template: `
     <div>
       <span v-if="isHidden" />
+      <a v-else-if="config.slot" v-on:click.stop="onClick">
+        <component 
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:relation="slot_fields"
+        />
+      </a>
       <a v-else v-on:click.stop="onClick">{{value}}</a>
     </div>`,
   extend: [
@@ -95,7 +105,16 @@ defineComponent("furet-ui-thumbnail-field-many2one", {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <a v-on:click.stop="onClick">{{value}}</a>
+      <a v-if="config.slot" v-on:click.stop="onClick">
+        <component 
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:relation="slot_fields"
+        />
+      </a>
+      <a v-else v-on:click.stop="onClick">{{value}}</a>
     </furet-ui-thumbnail-field-common-tooltip-field>
   `,
   extend: [
@@ -106,6 +125,7 @@ defineComponent("furet-ui-thumbnail-field-many2one", {
   ],
 });
 fields.thumbnail.many2one = "furet-ui-thumbnail-field-many2one";
+fields.kanban.many2one = "furet-ui-thumbnail-field-many2one";
 
 /**
  * furet-ui-form-field-many2one component is used to manage relationship many2one on form
@@ -147,19 +167,47 @@ defineComponent("furet-ui-form-field-many2one", {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <a v-if="isReadonly" v-on:click.stop="onClick">{{value}}</a>
+      <a v-if="isReadonly" v-on:click.stop="onClick">
+        <component 
+          v-if="config.slot"
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:relation="slot_fields"
+        />
+        <span v-else>{{value}}</span>
+      </a>
       <b-autocomplete
         v-else
         v-bind:value="value"
         v-bind:data="choices"
-        field="label"
         v-bind:placeholder="config.placeholder"
+        v-bind:max-height="config.maxheight ? config.maxheight : '200px'"
         icon-pack="fa"
+        v-bind:check-infinite-scroll="true"
         v-bind:icon="config.icon"
         v-on:typing="onChange"
         v-on:select="onSelect"
+        v-on:infinite-scroll="getMoreAsyncData"
       >
-        <template slot="empty">
+        <template slot-scope="props">
+          <component 
+            v-if="config.slot"
+            v-bind:is="component_template"
+            v-bind:config="config"
+            v-bind:resource="resource"
+            v-bind:data="data"
+            v-bind:relation="props.option.relation"
+          />
+          <span v-else>
+            {{ props.option.label }}
+          </span>
+        </template>
+        <template #footer>
+          <span v-if="total !== null" v-show="page * config.limit >= total" class="has-text-grey"> Thats it! No more movies found. </span>
+        </template>
+        <template #empty>
             No data found with current filter.
         </template>
       </b-autocomplete>

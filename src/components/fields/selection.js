@@ -34,6 +34,14 @@ defineComponent('furet-ui-list-field-selection', {
   template: `
     <div>
       <span v-if="isHidden" />
+      <component 
+        v-else-if="config.slot" 
+        v-bind:is="component_template"
+        v-bind:config="config"
+        v-bind:resource="resource"
+        v-bind:data="data"
+        v-bind:value="value"
+      />
       <div v-else>
         <b-tag v-if="color !== undefined" v-bind:type="color">{{value}}</b-tag>
         <span v-else>{{value}}</span>
@@ -52,13 +60,24 @@ defineComponent('furet-ui-thumbnail-field-selection', {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <b-tag v-if="color !== undefined" v-bind:type="color">{{value}}</b-tag>
-      <span v-else>{{value}}</span>
+      <component 
+        v-if="config.slot" 
+        v-bind:is="component_template"
+        v-bind:config="config"
+        v-bind:resource="resource"
+        v-bind:data="data"
+        v-bind:value="value"
+      />
+      <div v-else>
+        <b-tag v-if="color !== undefined" v-bind:type="color">{{value}}</b-tag>
+        <span v-else>{{value}}</span>
+      </div>
     </furet-ui-thumbnail-field-common-tooltip-field>
   `,
   extend: ['furet-ui-thumbnail-field-common', 'furet-ui-common-field-selection'],
 })
 fields.kanban.selection = 'furet-ui-thumbnail-field-selection'
+fields.thumbnail.selection = 'furet-ui-thumbnail-field-selection'
 
 
 defineComponent('furet-ui-form-field-selection', {
@@ -69,8 +88,18 @@ defineComponent('furet-ui-form-field-selection', {
       v-bind:config="config"
     >
       <div v-if="isReadonly">
-        <b-tag v-if="color !== undefined" v-bind:type="color">{{formated_value}}</b-tag>
-        <span v-else>{{formated_value}}</span>
+        <component 
+          v-if="config.slot" 
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:value="formated_value"
+        />
+        <div v-else>
+          <b-tag v-if="color !== undefined" v-bind:type="color">{{formated_value}}</b-tag>
+          <span v-else>{{formated_value}}</span>
+        </div>
       </div>
       <div class="field has-addons" v-else>
         <p class="control" v-if="color">

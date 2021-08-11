@@ -1,25 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Field.Many2One for Resource.List Empty snapshot 1`] = `
-<div>
-  <a>
-    
-  </a>
-</div>
-`;
-
-exports[`Field.Many2One for Resource.List Hidden 1`] = `
-<div>
-  <span />
-</div>
-`;
-
-exports[`Field.Many2One for Resource.List With value: snapshot 1`] = `
-<div>
-  <a>
-    Go to =&gt; Entry
-  </a>
-</div>
+exports[`Field.Many2One for Resource.Form snapshot: RO 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <a>
+      <span>
+        Go to =&gt; Entry
+      </span>
+    </a>
+     
+    <!---->
+  </div>
+</span>
 `;
 
 exports[`Field.Many2One for Resource.Thumbnail Empty snapshot 1`] = `
@@ -79,7 +80,9 @@ exports[`Field.One2Many for Resource.Form snapshot: RO 1`] = `
     <!---->
      
     <a>
-      Go to =&gt; Entry
+      <div>
+        Entry
+      </div>
     </a>
      
     <!---->
@@ -87,7 +90,7 @@ exports[`Field.One2Many for Resource.Form snapshot: RO 1`] = `
 </span>
 `;
 
-exports[`Field.One2Many for Resource.Form snapshot: RW 1`] = `
+exports[`Field.Many2One for Resource.Form snapshot: RW 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
   data-label=""
@@ -124,7 +127,7 @@ exports[`Field.One2Many for Resource.Form snapshot: RW 1`] = `
       >
         <div
           class="dropdown-content"
-          style="display: none;"
+          style="max-height: 200px; display: none;"
         >
           <!---->
             
@@ -140,6 +143,138 @@ exports[`Field.One2Many for Resource.Form snapshot: RW 1`] = `
         </div>
       </div>
     </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Many2One for Resource.List Empty snapshot 1`] = `
+<div>
+  <a>
+    
+  </a>
+</div>
+`;
+
+exports[`Field.Many2One for Resource.List Empty snapshot and slot 1`] = `
+<div>
+  <a>
+    <div>
+      
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Field.Many2One for Resource.List Hidden 1`] = `
+<div>
+  <span />
+</div>
+`;
+
+exports[`Field.Many2One for Resource.List With value and slot: snapshot 1`] = `
+<div>
+  <a>
+    <div>
+      Entry
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Field.Many2One for Resource.List With value: snapshot 1`] = `
+<div>
+  <a>
+    Go to =&gt; Entry
+  </a>
+</div>
+`;
+
+exports[`Field.Many2One for Resource.Thumbnail Empty snapshot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <a>
+      
+    </a>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Many2One for Resource.Thumbnail Empty snapshot and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <a>
+      <div>
+        
+      </div>
+    </a>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Many2One for Resource.Thumbnail Hidden 1`] = `<div />`;
+
+exports[`Field.Many2One for Resource.Thumbnail With value and slot: snapshot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <a>
+      <div>
+        Entry
+      </div>
+    </a>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Many2One for Resource.Thumbnail With value: snapshot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <a>
+      Go to =&gt; Entry
+    </a>
      
     <!---->
   </div>

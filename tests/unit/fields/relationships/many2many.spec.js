@@ -45,7 +45,7 @@ const getEntry = (model, pk) => {
 describe("Field.Many2Many for Resource.List", () => {
   const Component = getComponentPrototype("furet-ui-list-field-many2many");
   const pushInBreadcrumb = jest.fn();
-  const getOptions = (data, hidden, style, menu, resource) => {
+  const getOptions = (data, hidden, style, menu, resource, slot) => {
     return {
       store,
       router,
@@ -61,8 +61,9 @@ describe("Field.Many2Many for Resource.List", () => {
           model: "Model.1",
           name: "test",
           display: "'Title: ' + fields.title",
-          menu: menu,
-          resource: resource,
+          menu,
+          resource,
+          slot,
         },
       },
       provide: {
@@ -82,6 +83,11 @@ describe("Field.Many2Many for Resource.List", () => {
   });
   it("With one value: Snapshot", () => {
     const wrapper = mount(Component, getOptions([{ id: 1 }], false, undefined));
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With one value and slot: Snapshot", () => {
+    const slot = '<div>{{relation.title}}</div>',
+          wrapper = mount(Component, getOptions([{id: 1}], false, undefined, undefined, undefined, slot))
     expect(wrapper.element).toMatchSnapshot();
   });
   it("With one value: openResource", () => {
@@ -115,6 +121,114 @@ describe("Field.Many2Many for Resource.List", () => {
       Component,
       getOptions([{ id: 1 }, { id: 2 }], false, undefined)
     );
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With two value and slot: Snapshot", () => {
+    const slot = '<div>{{relation.title}}</div>',
+          wrapper = mount(Component, getOptions([{id: 1}, {id: 2}], false, undefined, undefined, undefined, slot))
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("Hidden", () => {
+    const wrapper = mount(
+      Component,
+      getOptions([{ id: 1 }, { id: 2 }], true, undefined)
+    );
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With style", () => {
+    const style = "`color: ${fields.color};`";
+    const wrapper = mount(
+      Component,
+      getOptions([{ id: 1 }, { id: 2 }], false, style)
+    );
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
+describe("Field.Many2Many for Resource.Thumbnail", () => {
+  const Component = getComponentPrototype("furet-ui-thumbnail-field-many2many");
+  const pushInBreadcrumb = jest.fn();
+  const getOptions = (data, hidden, style, menu, resource, slot) => {
+    return {
+      store,
+      router,
+      localVue,
+      propsData: {
+        resource: {},
+        data: {
+          test: data,
+        },
+        config: {
+          hidden,
+          style,
+          model: "Model.1",
+          name: "test",
+          display: "'Title: ' + fields.title",
+          menu,
+          resource,
+          slot,
+        },
+      },
+      provide: {
+        getEntry,
+        pushInBreadcrumb,
+      },
+    };
+  };
+
+  beforeEach(() => {
+    pushInBreadcrumb.mockClear();
+    mock_router_push.mockClear();
+  });
+  it("Empty", () => {
+    const wrapper = mount(Component, getOptions([], false, undefined));
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With one value: Snapshot", () => {
+    const wrapper = mount(Component, getOptions([{ id: 1 }], false, undefined));
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With one value and slot: Snapshot", () => {
+    const slot = '<div>{{relation.title}}</div>',
+          wrapper = mount(Component, getOptions([{id: 1}], false, undefined, undefined, undefined, slot))
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With one value: openResource", () => {
+    const wrapper = mount(
+      Component,
+      getOptions([{ id: 1 }], false, undefined, 10, 20)
+    );
+    expect(pushInBreadcrumb).not.toHaveBeenCalled();
+    const m2m = wrapper.find("a");
+    m2m.trigger("click");
+    expect(pushInBreadcrumb).toHaveBeenCalled();
+    expect(mock_router_push).toHaveBeenLastCalledWith({
+      name: "resource",
+      params: { code: undefined, id: 20, menuId: 10 },
+      query: {
+        mode: "form",
+        pks: '{"id":1}',
+      },
+    });
+  });
+  it("With one value: openResource without link", () => {
+    const wrapper = mount(Component, getOptions([{ id: 1 }], false, undefined));
+    expect(pushInBreadcrumb).not.toHaveBeenCalled();
+    const m2m = wrapper.find("a");
+    m2m.trigger("click");
+    expect(pushInBreadcrumb).not.toHaveBeenCalled();
+    expect(mock_router_push).not.toHaveBeenCalled();
+  });
+  it("With two value: Snapshot", () => {
+    const wrapper = mount(
+      Component,
+      getOptions([{ id: 1 }, { id: 2 }], false, undefined)
+    );
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With two value and slot: Snapshot", () => {
+    const slot = '<div>{{relation.title}}</div>',
+          wrapper = mount(Component, getOptions([{id: 1}, {id: 2}], false, undefined, undefined, undefined, slot))
     expect(wrapper.element).toMatchSnapshot();
   });
   it("Hidden", () => {
@@ -248,6 +362,7 @@ describe("Field.Many2ManyTags for Resource.Form", () => {
           model: "Model.1",
           name: "test",
           resource: 1,
+          display: "'Go to => ' + fields.title",
         },
       },
       provide: {
@@ -331,5 +446,55 @@ describe("Field.Many2ManyTags for Resource.Form", () => {
     expect(wrapper.vm.getType({ pk: { id: 1, __x2m_state: "UNLINKED" } })).toBe(
       ""
     );
+  });
+});
+
+describe("Field.Many2ManyTags  and slot for Resource.Form", () => {
+  const Component = getComponentPrototype("furet-ui-form-field-many2many-tags");
+  const updateValue = jest.fn();
+  let wrapper;
+  const pushInBreadcrumb = jest.fn();
+
+  beforeEach(() => {
+    updateValue.mockClear();
+    pushInBreadcrumb.mockClear();
+    wrapper = mount(Component, {
+      store,
+      i18n,
+      localVue,
+      propsData: {
+        resource: {},
+        data: {
+          test: [{ id: 1 }, { id: 2 }],
+        },
+        config: {
+          model: "Model.1",
+          name: "test",
+          resource: 1,
+          slot: '<div>{{ relation.title }}</div>',
+        },
+      },
+      provide: {
+        pushInBreadcrumb,
+        partIsReadonly: () => {
+          return false;
+        },
+        getEntry,
+        updateChangeState: () => {},
+        getNewEntry: () => {
+          return {};
+        },
+        getNewEntries: () => {
+          return [];
+        },
+        registryRefreshCallback: () => {},
+      },
+      methods: {
+        updateValue,
+      },
+    });
+  });
+  it("snapshot", () => {
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

@@ -44,6 +44,25 @@ describe("Field.Url for Resource.List", () => {
     });
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ListUrlField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "http://my.ferret"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
 
 describe("Field.Url for Resource.Thumbnail", () => {
@@ -71,6 +90,25 @@ describe("Field.Url for Resource.Thumbnail", () => {
       propsData: {
         resource: {},
         config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "http://my.ferret"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ThumbnailUrlField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           name: "fieldName"
         },
         data: {
@@ -110,6 +148,29 @@ describe("Field.Url for Resource.Form", () => {
         },
         config: {
           name: "fieldName",
+          label: "My field label"
+        },
+        data: {
+          fieldName: "http://my.ferret"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value, label, readonly and slot", () => {
+    const wrapper = mount(FormUrlField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           label: "My field label"
         },
         data: {

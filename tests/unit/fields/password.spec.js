@@ -45,6 +45,81 @@ describe("Field.Password for Resource.List", () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ListPasswordField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
+describe("Field.Password for Resource.Thumbnail", () => {
+  const ThumbnailPasswordField = getComponentPrototype("furet-ui-thumbnail-field-password");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailPasswordField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailPasswordField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ThumbnailPasswordField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
 
 describe("Field.Password for Resource.Thumbnail", () => {
@@ -126,6 +201,29 @@ describe("Field.Password for Resource.Form", () => {
           readonly: true
         },
         config: {
+          name: "fieldName",
+          label: "My field label"
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value, label, readonly and slot", () => {
+    const wrapper = mount(FormPasswordField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           name: "fieldName",
           label: "My field label"
         },

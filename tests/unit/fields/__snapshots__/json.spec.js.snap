@@ -236,14 +236,51 @@ exports[`Field.Json for Resource.Form With value, label, readonly 1`] = `
       My field label
     </label>
      
-    <pre
-      style="width: 100%; background-color: white;"
-    >
-      {
+    <div>
+      <pre
+        style="width: 100%; background-color: white;"
+      >
+        {
   "entry1": "Entry 1",
   "entry2": "Entry 2"
 }
-    </pre>
+      </pre>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Json for Resource.Form With value, label, readonly and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div>
+      <div>
+        {
+  "entry1": "Entry 1",
+  "entry2": "Entry 2"
+} 
+        <br />
+         {
+  "entry1": "Entry 1",
+  "entry2": "Entry 2"
+}
+      </div>
+    </div>
      
     <!---->
   </div>
@@ -270,6 +307,22 @@ exports[`Field.Json for Resource.List With value 1`] = `
   "entry2": "Entry 2"
 }
   </pre>
+</div>
+`;
+
+exports[`Field.Json for Resource.List With value and slot 1`] = `
+<div>
+  <div>
+    {
+  "entry1": "Entry 1",
+  "entry2": "Entry 2"
+} 
+    <br />
+     {
+  "entry1": "Entry 1",
+  "entry2": "Entry 2"
+}
+  </div>
 </div>
 `;
 
@@ -316,6 +369,35 @@ exports[`Field.Json for Resource.Thumbnail With value 1`] = `
   "entry2": "Entry 2"
 }
     </pre>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Json for Resource.Thumbnail With value and slot 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      {
+  "entry1": "Entry 1",
+  "entry2": "Entry 2"
+} 
+      <br />
+       {
+  "entry1": "Entry 1",
+  "entry2": "Entry 2"
+}
+    </div>
      
     <!---->
   </div>

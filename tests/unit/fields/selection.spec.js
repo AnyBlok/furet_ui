@@ -75,6 +75,119 @@ describe("Field.Selection for Resource.List", () => {
 
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ListSelectionField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
+describe("Field.Selection for Resource.Thumbnail", () => {
+  const ThumbnailSelectionField = getComponentPrototype("furet-ui-thumbnail-field-selection");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailSelectionField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("Empty without selection", () => {
+    const wrapper = mount(ThumbnailSelectionField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailSelectionField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value and slot", () => {
+    const wrapper = mount(ThumbnailSelectionField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {},
+        config: {
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
 
 describe("Field.Selection for Resource.Thumbnail", () => {
@@ -190,6 +303,34 @@ describe("Field.Selection for Resource.Form", () => {
         },
         config: {
           name: "fieldName",
+          selections: {
+            'entry1': 'Entry 1',
+            'entry2': 'Entry 2',
+          },
+          label: "My field label"
+        },
+        data: {
+          fieldName: "entry1"
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value, label, readonly and slot", () => {
+    const wrapper = mount(FormSelectionField, {
+      store,
+      localVue,
+      provide,
+      i18n,
+      propsData: {
+        resource: {
+          readonly: true
+        },
+        config: {
+          name: "fieldName",
+          slot: '<div>{{ data.fieldName }} <br/> {{ value }}</div>',
           selections: {
             'entry1': 'Entry 1',
             'entry2': 'Entry 2',

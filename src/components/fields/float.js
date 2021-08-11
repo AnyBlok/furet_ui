@@ -65,7 +65,17 @@ defineComponent("furet-ui-form-field-float", {
       v-bind:data="data"
       v-bind:config="config"
     >
-      <span v-if="isReadonly">{{ rounded_value }}</span>
+      <div v-if="isReadonly">
+        <component 
+          v-if="config.slot" 
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:value="rounded_value"
+        />
+        <span v-else>{{ rounded_value }}</span>
+      </div>
       <b-numberinput 
         v-else
         v-bind:step="step"

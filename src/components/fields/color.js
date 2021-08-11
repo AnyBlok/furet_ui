@@ -13,6 +13,14 @@ import {fields} from './fields';
 defineComponent('furet-ui-list-field-color', {
   template:`
     <span v-if="isHidden" />
+    <component 
+      v-else-if="config.slot" 
+      v-bind:is="component_template"
+      v-bind:config="config"
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:value="value"
+    />
     <b-input 
       v-else-if="value"
       type="color"
@@ -32,8 +40,16 @@ defineComponent('furet-ui-thumbnail-field-color', {
       v-bind:data="data"
       v-bind:config="config"
     >
+      <component 
+        v-if="config.slot" 
+        v-bind:is="component_template"
+        v-bind:config="config"
+        v-bind:resource="resource"
+        v-bind:data="data"
+        v-bind:value="value"
+      />
       <b-input 
-        v-if="value"
+        v-else-if="value"
         type="color"
         v-bind:value="value" 
         disabled
@@ -54,8 +70,16 @@ defineComponent('furet-ui-form-field-color', {
     >
       <div class="field has-addons">
         <p v-if="isReadonly" class="control is-expanded">
+          <component 
+            v-if="config.slot" 
+            v-bind:is="component_template"
+            v-bind:config="config"
+            v-bind:resource="resource"
+            v-bind:data="data"
+            v-bind:value="value"
+          />
           <b-input 
-            v-if="data"
+            v-else-if="data"
             type="color"
             v-bind:value="value" 
             disabled

@@ -98,6 +98,7 @@ defineComponent('furet-ui-resource-form', {
         return {label: this.translate(this.resource.title || ''), icon: "newspaper"};
       },
       goToList () {
+        this.uuid = null;
         this.$emit('modify-state', false);
         this.$emit('go-to-list');
       },
@@ -161,6 +162,7 @@ defineComponent('furet-ui-resource-form', {
             model: this.resource.model,
             uuid: this.uuid,
           })
+          this.uuid = null;
         } else {
           this.$emit('update-data', {
             model: this.resource.model,
@@ -215,6 +217,8 @@ defineComponent('furet-ui-resource-form', {
               this.uuid = this.manager.query.uuid;
               this.getDefault();
             }
+          } else if (this.uuid !== null) {
+              // nothing
           } else {
             // new case
             this.updateReadOnly(false);
