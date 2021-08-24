@@ -181,6 +181,7 @@ defineComponent("furet-ui-form-field-many2one", {
         v-else
         v-bind:value="value"
         v-bind:data="choices"
+        field="label"
         v-bind:placeholder="config.placeholder"
         v-bind:max-height="config.maxheight ? config.maxheight : '200px'"
         icon-pack="fa"
