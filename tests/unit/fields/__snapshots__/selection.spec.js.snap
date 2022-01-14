@@ -385,6 +385,29 @@ exports[`Field.Selection for Resource.Thumbnail Empty 1`] = `
 </span>
 `;
 
+exports[`Field.Selection for Resource.Thumbnail Empty 2`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      <span>
+         --- 
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Field.Selection for Resource.Thumbnail Empty without selection 1`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
@@ -408,7 +431,53 @@ exports[`Field.Selection for Resource.Thumbnail Empty without selection 1`] = `
 </span>
 `;
 
+exports[`Field.Selection for Resource.Thumbnail Empty without selection 2`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      <span>
+         --- 
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Field.Selection for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <div>
+      <span>
+        [object Promise]
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Selection for Resource.Thumbnail With value 2`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
   data-label=""

@@ -34,6 +34,7 @@ defineComponent("furet-ui-thumbnail-field-float", {
   extend: ["furet-ui-thumbnail-field-common", "furet-ui-common-field-float"],
 });
 fields.thumbnail.float = "furet-ui-thumbnail-field-float";
+fields.kanban.float = "furet-ui-thumbnail-field-float";
 
 /**
  * furet-ui-form-fieldfloatinteger component is used to manage float on form

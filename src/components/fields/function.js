@@ -24,6 +24,7 @@ defineComponent('furet-ui-thumbnail-field-function', {
   extend: ['furet-ui-thumbnail-field-common'],
 })
 fields.thumbnail.function = 'furet-ui-thumbnail-field-function'
+fields.kanban.function = 'furet-ui-thumbnail-field-function'
 
 
 defineComponent('furet-ui-form-field-function', {

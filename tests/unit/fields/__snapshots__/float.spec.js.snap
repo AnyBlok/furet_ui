@@ -260,7 +260,49 @@ exports[`Field.Float for Resource.Thumbnail Empty 1`] = `
 </span>
 `;
 
+exports[`Field.Float for Resource.Thumbnail Empty 2`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Field.Float for Resource.Thumbnail With value 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <!---->
+     
+    <span>
+      10.10
+    </span>
+     
+    <!---->
+  </div>
+</span>
+`;
+
+exports[`Field.Float for Resource.Thumbnail With value 2`] = `
 <span
   class="is-primary is-top is-medium b-tooltip"
   data-label=""

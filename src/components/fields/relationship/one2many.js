@@ -77,6 +77,7 @@ defineComponent("furet-ui-thumbnail-field-one2many", {
   ],
 });
 fields.thumbnail.one2many = "furet-ui-thumbnail-field-one2many";
+fields.kanban.one2many = "furet-ui-thumbnail-field-one2many";
 
 
 defineComponent('furet-ui-page-o2m-list-header', {

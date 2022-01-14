@@ -170,6 +170,7 @@ defineComponent('furet-ui-space-resource-manager', {
             this.$refs.resource.saved();
           })
           .catch((error) => {
+            console.log(error)
             this.errors = error.response.data.errors;
           });
       },

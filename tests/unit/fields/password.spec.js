@@ -122,6 +122,42 @@ describe("Field.Password for Resource.Thumbnail", () => {
   });
 });
 
+describe("Field.Password for Resource.Thumbnail", () => {
+  const ThumbnailPasswordField = getComponentPrototype("furet-ui-thumbnail-field-password");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailPasswordField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailPasswordField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "A value"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.Password for Resource.Form", () => {
   const FormPasswordField = getComponentPrototype("furet-ui-form-field-password");
 

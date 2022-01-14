@@ -125,6 +125,7 @@ defineComponent("furet-ui-thumbnail-field-many2one", {
   ],
 });
 fields.thumbnail.many2one = "furet-ui-thumbnail-field-many2one";
+fields.kanban.many2one = "furet-ui-thumbnail-field-many2one";
 
 /**
  * furet-ui-form-field-many2one component is used to manage relationship many2one on form

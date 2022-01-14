@@ -225,6 +225,43 @@ exports[`Field.String for Resource.Form With value, label, readonly and writable
 </span>
 `;
 
+exports[`Field.String for Resource.Form With value, label, readonly and writable 1`] = `
+<span
+  class="is-primary is-top is-medium b-tooltip"
+  data-label=""
+  style="transition-delay: 0ms; width: 100%;"
+>
+  <div
+    class="field"
+    style="width: inherit;"
+  >
+    <label
+      class="label"
+    >
+      My field label
+    </label>
+     
+    <div
+      class="control is-clearfix"
+    >
+      <input
+        autocomplete="on"
+        class="input"
+        type="text"
+      />
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Field.String for Resource.List Empty 1`] = `
 <div>
   <span>

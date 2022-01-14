@@ -126,6 +126,43 @@ describe("Field.Datetime for Resource.Thumbnail", () => {
   });
 });
 
+describe("Field.Datetime for Resource.Thumbnail", () => {
+  const ThumbnailDatetimeField = getComponentPrototype("furet-ui-thumbnail-field-datetime");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailDatetimeField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailDatetimeField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: value
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.Datetime for Resource.Form", () => {
   const FormDatetimeField = getComponentPrototype("furet-ui-form-field-datetime");
   jest.spyOn(global.Date, 'now').mockImplementationOnce(() => value.valueOf())

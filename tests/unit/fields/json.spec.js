@@ -135,6 +135,45 @@ describe("Field.Json for Resource.Thumbnail", () => {
   });
 });
 
+describe("Field.Json for Resource.Thumbnail", () => {
+  const ThumbnailJsonField = getComponentPrototype("furet-ui-thumbnail-field-json");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailJsonField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailJsonField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: {
+            entry1: 'Entry 1',
+            entry2: 'Entry 2',
+          }
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.Json for Resource.Form", () => {
   const FormJsonField = getComponentPrototype("furet-ui-form-field-json");
   it("Empty", () => {

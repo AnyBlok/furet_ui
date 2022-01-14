@@ -156,6 +156,66 @@ describe("Field.Many2One for Resource.Thumbnail", () => {
   });
 });
 
+describe("Field.Many2One for Resource.Thumbnail", () => {
+  const Component = getComponentPrototype("furet-ui-thumbnail-field-many2one");
+  const openResource = jest.fn()
+  const getOptions = (data, hidden) => {
+    return {
+      store,
+      localVue,
+      propsData: {
+        resource: {},
+        data: {
+          test: data,
+        },
+        config: {
+          hidden,
+          model: 'Model.1',
+          name: 'test',
+          display: "'Go to => ' + fields.title"
+        }
+      },
+      methods: {
+        openResource,
+      },
+      provide: {
+        getEntry,
+        pushInBreadcrumb,
+      }
+    }
+  }
+
+  beforeEach(() => {
+    openResource.mockClear()
+  })
+  it("Empty snapshot", () => {
+    const wrapper = mount(Component, getOptions(null, false))
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("Empty breadcrumb", () => {
+    const wrapper = mount(Component, getOptions(null, false))
+    expect(openResource).not.toHaveBeenCalled()
+    const a = wrapper.find('a')
+    a.trigger('click')
+    expect(openResource).not.toHaveBeenCalled()
+  });
+  it("With value: snapshot", () => {
+    const wrapper = mount(Component, getOptions({id: 1}, false))
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it("With value: breadcrumb", () => {
+    const wrapper = mount(Component, getOptions({id: 1}, false))
+    expect(openResource).not.toHaveBeenCalled()
+    const a = wrapper.find('a')
+    a.trigger('click')
+    expect(openResource).toHaveBeenCalled()
+  });
+  it("Hidden", () => {
+    const wrapper = mount(Component, getOptions({id: 1}, true))
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.Many2One for Resource.Form", () => {
   const Component = getComponentPrototype("furet-ui-form-field-many2one");
   const updateValue = jest.fn()

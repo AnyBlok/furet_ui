@@ -122,6 +122,42 @@ describe("Field.Email for Resource.Thumbnail", () => {
   });
 });
 
+describe("Field.Email for Resource.Thumbnail", () => {
+  const ThumbnailEmailField = getComponentPrototype("furet-ui-thumbnail-field-email");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailEmailField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailEmailField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: "my@feret"
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.Email for Resource.Form", () => {
   const FormEmailField = getComponentPrototype("furet-ui-form-field-email");
 

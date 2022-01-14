@@ -39,6 +39,7 @@ defineComponent('furet-ui-thumbnail-field-password', {
   extend: ['furet-ui-thumbnail-field-common', 'furet-ui-common-field-password'],
 })
 fields.thumbnail.password = 'furet-ui-thumbnail-field-password'
+fields.kanban.password = 'furet-ui-thumbnail-field-password'
 
 defineComponent('furet-ui-form-field-password', {
   template: `

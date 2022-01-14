@@ -47,6 +47,7 @@ defineComponent('furet-ui-thumbnail-field-barcode', {
   },
 })
 fields.thumbnail.barcode = 'furet-ui-thumbnail-field-barcode'
+fields.kanban.barcode = 'furet-ui-thumbnail-field-barcode'
 
 defineComponent('furet-ui-form-field-barcode', {
   template: `

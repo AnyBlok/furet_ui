@@ -117,12 +117,14 @@ defineComponent("furet-ui-thumbnail-field-boolean", {
   }
 });
 fields.thumbnail.boolean = "furet-ui-thumbnail-field-boolean";
+fields.kanban.boolean = "furet-ui-thumbnail-field-boolean";
 
 defineComponent("furet-ui-thumbnail-field-yesno", {
   template: thumbnailTemplate,
   extend: ["furet-ui-thumbnail-field-common", "furet-ui-common-field-yesno"],
 });
 fields.thumbnail.yesno = "furet-ui-thumbnail-field-yesno";
+fields.kanban.yesno = "furet-ui-thumbnail-field-yesno";
 
 defineComponent("furet-ui-form-field-boolean", {
   template: `

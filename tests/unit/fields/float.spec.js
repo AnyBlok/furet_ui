@@ -124,6 +124,43 @@ describe("Field.Float for Resource.Thumbnail", () => {
   });
 });
 
+describe("Field.Float for Resource.Thumbnail", () => {
+  const ThumbnailIntegerField = getComponentPrototype("furet-ui-thumbnail-field-float");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailIntegerField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailIntegerField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: 10.1
+        }
+      }
+    });
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.Float for Resource.Form", () => {
   const FormIntegerField = getComponentPrototype("furet-ui-form-field-float");
 

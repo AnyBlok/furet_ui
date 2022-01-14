@@ -122,6 +122,42 @@ describe("Field.Integer for Resource.Thumbnail", () => {
   });
 });
 
+describe("Field.Integer for Resource.Thumbnail", () => {
+  const ThumbnailIntegerField = getComponentPrototype("furet-ui-thumbnail-field-integer");
+
+  it("Empty", () => {
+    const wrapper = mount(ThumbnailIntegerField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        data: {},
+        config: {}
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("With value", () => {
+    const wrapper = mount(ThumbnailIntegerField, {
+      store,
+      localVue,
+      provide,
+      propsData: {
+        resource: {},
+        config: {
+          name: "fieldName"
+        },
+        data: {
+          fieldName: 10
+        }
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+});
+
 describe("Field.Integer for Resource.Form", () => {
   const FormIntegerField = getComponentPrototype("furet-ui-form-field-integer");
 
