@@ -342,7 +342,6 @@ defineComponent("furet-ui-form-field-resource-manager", {
       getNewEntryWrapper(model, uuid) {
         const res = this.getNewEntry(model, uuid);
         const changes = ((this.changes[model] || {}).new || {})[uuid] || {};
-        console.log(this.changes, changes, res)
         return Object.assign({}, res, changes);
       },
       getNewEntriesWrapper(model) {
