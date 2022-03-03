@@ -214,9 +214,9 @@ exports[`Field.Url for Resource.Form With value, label, readonly 1`] = `
     </label>
      
     <div>
-      <span>
+      <a>
         http://my.ferret
-      </span>
+      </a>
     </div>
      
     <!---->

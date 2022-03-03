@@ -64,7 +64,7 @@ defineComponent('furet-ui-form-field-url', {
           v-bind:data="data"
           v-bind:value="value"
         />
-        <span v-else>{{ value }}</span>
+        <a v-else>{{ value }}</a>
       </div>
       <div 
         v-else
