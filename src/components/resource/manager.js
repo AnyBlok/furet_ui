@@ -3,7 +3,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import  {resources}  from './resources';
 import { defineComponent } from '../factory';
-import { update_change_object } from "../../store/modules/data";
+import { update_change_object, pk2string } from "../../store/modules/data";
 
 defineComponent('furet-ui-waiting-resource', {
   template: `
@@ -335,10 +335,15 @@ defineComponent("furet-ui-form-field-resource-manager", {
         this.changes = update_change_object(this.changes, action);
       },
       getEntryWrapper(model, pk) {
-        return this.getEntry(model, pk);
+        const res = this.getEntry(model, pk);
+        const changes = (this.changes[model] || {})[pk2string(pk)] || {};
+        return Object.assign({}, res, changes);
       },
       getNewEntryWrapper(model, uuid) {
-        return this.getNewEntry(model, uuid);
+        const res = this.getNewEntry(model, uuid);
+        const changes = ((this.changes[model] || {}).new || {})[uuid] || {};
+        console.log(this.changes, changes, res)
+        return Object.assign({}, res, changes);
       },
       getNewEntriesWrapper(model) {
         return this.getNewEntries(model);
