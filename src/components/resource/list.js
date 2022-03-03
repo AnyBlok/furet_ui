@@ -67,7 +67,7 @@ defineComponent('furet-ui-resource-list', {
           v-bind:field="typeof header.sortable === 'string'? header.sortable : header.name" 
           v-bind:label="translate(header.label)" 
           v-bind:sortable="typeof header.sortable === 'string'? true: header.sortable"
-          v-bind:visible="!safe_eval(header['hidden-column'], props.row)"
+          v-bind:visible="!header['hidden'] && !safe_eval(header['hidden-column'], props.row)"
           >
             <component 
               v-bind:is="header.component" 
