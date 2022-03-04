@@ -49,7 +49,9 @@ defineComponent('furet-ui-field', {
     props: ['resource', 'config', 'data'],
     computed: {
       component () {
-        return (fields[this.resource.type] || {})[this.config.type] || 'furet-ui-unknown-field'
+        let type = this.resource.type;
+        if (type === 'singleton') type = 'form';
+        return (fields[type] || {})[this.config.type] || 'furet-ui-unknown-field'
       },
     },
   }

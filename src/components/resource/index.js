@@ -5,4 +5,5 @@ import './set';
 import './list';
 import './thumbnail';
 import './form';
+import './singleton';
 import './polymorphic_form';
