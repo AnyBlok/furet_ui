@@ -199,6 +199,9 @@ defineComponent("furet-ui-field-relationship-search", {
         this.config.filter_by.forEach((filter) => {
           params[`filter[${filter}][ilike]`] = value;
         });
+        if (this.config.tags) {
+          params['tags'] = this.config.tags;
+        }
         if (this.value && Array.isArray(this.value) && this.value.length > 0) {
           const pks = this.config.remote_columns.join(":");
           const values = this.value
