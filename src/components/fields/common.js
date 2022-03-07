@@ -58,17 +58,23 @@ export const safe_eval_boolean = value => {
   return false;
 };
 
+export const In = (entry, entries) => entries.indexOf(entry) !== -1;
+export const Not = (entry) => !entry;
+export const Equal = (a, b) => a === b;
+
 export const safe_eval = (condition, fields, resource) => {
     const now = Date.now(),
           toDate = (v) => new Date(v),
           selectors = Object.assign((resource.manager || {}).selectors || {}, resource.selectors || {}),
           tabs = resource.tabs;
-    fields  // lint
+    const data = fields;  // lint
+    data  // lint
     selectors  // lint
     tabs  // lint
     now  // lint
     toDate  // lint
     let res = false;
+
     try {
         res = safe_eval_boolean(eval(condition));
     } catch (e) {
