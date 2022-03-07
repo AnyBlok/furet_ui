@@ -111,14 +111,9 @@ defineComponent('furet-ui-resource-singleton', {
       parse_query() {
         if (this.manager.query !== undefined) {
           if (this.manager.query.pks) {
-            const pks = JSON.parse(this.manager.query.pks);
-            if (JSON.stringify(pks) != JSON.stringify(this.pks)) {
-              this.pks = pks
-              this.uuid = null;
-              this.loadAsyncData();
-            }
+            this.getDefault();
           } else if (this.uuid !== null) {
-              // nothing
+            // nothing
           } else {
             // new case
             this.uuid = uuidv1();
