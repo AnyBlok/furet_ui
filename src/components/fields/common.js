@@ -61,6 +61,23 @@ export const safe_eval_boolean = value => {
 export const In = (entry, entries) => entries.indexOf(entry) !== -1;
 export const Not = (entry) => !entry;
 export const Equal = (a, b) => a === b;
+export const Diff = (a, b) => a != b;
+export const Greater = (a, b) => a > b;
+export const GreaterOrEqual = (a, b) => a >= b;
+export const Lesser = (a, b) => a < b;
+export const LesserOrEqual = (a, b) => a <= b;
+export const IsTrue = (a) => safe_eval_boolean(a) ? true : false;
+export const IsFalse = (a) => safe_eval_boolean(a) ? false : true;
+export const And = (...options) => {
+  if (options.length == 0) false;
+  if (options.length == 1) IsTrue(options[0]);
+  return options.reduce((previous, current) => previous && IsTrue(current));
+}
+export const Or = (...options) => {
+  if (options.length == 0) false;
+  if (options.length == 1) IsTrue(options[0]);
+  return options.reduce((previous, current) => previous || IsTrue(current));
+}
 
 export const safe_eval = (condition, fields, resource) => {
     const now = Date.now(),
