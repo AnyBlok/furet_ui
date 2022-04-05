@@ -85,10 +85,9 @@ defineComponent('furet-ui-thumbnail-footer-button', {
       <span class="icon" v-if="config.icon">
         <b-icon v-bind:icon="config.icon" />
       </span>
-      <span>{{ translate(config.label) }}</span>
+      <span>{{ config.label }}</span>
     </a>
   `,
-  extend: ['i18n-translate'],
   prototype: {
     props: ['resource', 'data', 'config'],
     methods: {

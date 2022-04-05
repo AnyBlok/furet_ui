@@ -65,7 +65,7 @@ defineComponent('furet-ui-resource-list', {
           class="is-list-cell"
           v-bind:key="header.name"
           v-bind:field="typeof header.sortable === 'string'? header.sortable : header.name" 
-          v-bind:label="translate(header.label)" 
+          v-bind:label="header.label" 
           v-bind:sortable="typeof header.sortable === 'string'? true: header.sortable"
           v-bind:visible="!header['hidden'] && !safe_eval(header['hidden-column'], props.row)"
           >
@@ -112,11 +112,10 @@ defineComponent('furet-ui-list-button', {
       <span class="icon" v-if="config.icon">
         <b-icon v-bind:icon="config.icon" />
       </span>
-      <span>{{ translate(config.label) }}</span>
+      <span>{{ config.label }}</span>
     </a>
   `,
   // extend: ['furet-ui-helper-mixin'], waittin readony / readwrite on view
-  extend: ['i18n-translate'],
   prototype: {
     props: ['resource', 'data', 'config'],
     methods: {

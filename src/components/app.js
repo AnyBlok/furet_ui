@@ -149,7 +149,7 @@ defineComponent('furet-ui-appbar-header-logged-user', {
     <b-navbar-dropdown :label="userName" hoverable >
       <b-navbar-item v-for="menu in user_menus" :key="menu.label">
         <a v-on:click="routerPush(menu.path)" class="button is-primary is-inverted is-fullwidth">
-          {{ translate(menu.label) }}
+          {{ menu.label }}
         </a>
       </b-navbar-item>
       <b-navbar-item>
@@ -159,7 +159,6 @@ defineComponent('furet-ui-appbar-header-logged-user', {
       </b-navbar-item>
     </b-navbar-dropdown>
   `,
-  extend: ['i18n-translate'],
   prototype: {
     computed: {
       userName () {

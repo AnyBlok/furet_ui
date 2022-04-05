@@ -6,7 +6,7 @@ export default {
 
 
 defineComponent('furet-ui-resource-with-search', {
-  extend: ['furet-ui-resource', 'i18n-translate'],
+  extend: ['furet-ui-resource'],
   prototype: {
     props: ['id', 'manager'],
     computed: {
@@ -93,7 +93,7 @@ defineComponent('furet-ui-resource-with-search', {
 
 
 defineComponent('furet-ui-resource-with-ssr', {
-  extend: ['furet-ui-resource', 'i18n-translate'],
+  extend: ['furet-ui-resource'],
   prototype: {
     props: ['id', 'manager'],
     data () {

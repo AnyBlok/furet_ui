@@ -200,7 +200,6 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
         <slot />
       </b-field>
     </furet-ui-form-field-common-tooltip>`,
-  extend: ['i18n-translate'],
   prototype: {
     props: ['resource', 'data', 'config'],
     inject: ['partIsReadonly'],
@@ -209,7 +208,7 @@ defineComponent('furet-ui-form-field-common-tooltip-field', {
         return this.data && this.data[this.config.name] || '';
       },
       label () {
-        return this.translate(this.config.label);
+        return this.config.label;
       },
       isReadonly () {
         if (this.resource.readonly) return true;
@@ -312,12 +311,11 @@ defineComponent('furet-ui-thumbnail-field-common-tooltip-field', {
         <slot />
       </b-field>
     </furet-ui-form-field-common-tooltip>`,
-  extend: ['i18n-translate'],
   prototype: {
     props: ['resource', 'data', 'config'],
     computed: {
       label () {
-        return this.translate(this.config.label);
+        return this.config.label;
       },
     },
   },

@@ -95,7 +95,7 @@ defineComponent('furet-ui-resource-form', {
     },
     methods: {
       getBreadcrumbInfo() {
-        return {label: this.translate(this.resource.title || ''), icon: "newspaper"};
+        return {label: this.resource.title || '', icon: "newspaper"};
       },
       goToList () {
         this.uuid = null;
@@ -265,10 +265,10 @@ defineComponent('furet-ui-form-button', {
         <span class="icon" v-if="config.icon">
           <b-icon v-bind:icon="config.icon" />
         </span>
-        <span>{{ translate(config.label) }}</span>
+        <span>{{ config.label }}</span>
       </button>
   `,
-  extend: ['furet-ui-helper-mixin', 'i18n-translate'],
+  extend: ['furet-ui-helper-mixin'],
   prototype: {
     inject: ['currentResource'],
     computed: {

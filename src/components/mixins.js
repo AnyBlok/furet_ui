@@ -33,18 +33,3 @@ defineComponent('date-display', {
     },
   },
 });
-
-defineComponent('i18n-translate', {
-  prototype: {
-    methods: {
-      translate(label) {
-        const regex = new RegExp( "^i18n\\((.*)\\)$" )
-        const res = regex.exec(label)
-        if (res !== null) {
-          return this.$t(res[1])
-        }
-        return label;
-      },
-    },
-  },
-});
