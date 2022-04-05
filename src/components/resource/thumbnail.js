@@ -64,7 +64,7 @@ defineComponent('furet-ui-resource-thumbnail', {
     inject: ['getEntry', 'getNewEntries'],
     methods: {
       getBreadcrumbInfo() {
-        return {label: this.$t(this.resource.title), icon: "th"};
+        return {label: this.resource.title, icon: "th"};
       },
       refresh() {
         this.$refs.thumbnail.loadAsyncData();

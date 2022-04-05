@@ -9,7 +9,7 @@ defineComponent('furet-ui-header-page-singleton', {
       <slot name="header" v-bind:data="data">
         <div class="level">
           <div class="level-left">
-            <h2 class="level-item is-size-3">{{ $t(title) }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
+            <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
           </div>
           <div class="level-right">
             <slot name="states" v-bind:data="data" />

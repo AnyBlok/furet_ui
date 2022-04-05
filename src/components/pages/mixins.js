@@ -166,12 +166,12 @@ defineComponent('furet-ui-page-multi-entries-header', {
                   <b-tag 
                     v-bind:class="['furet-ui-page-multi-entries-header-tag', tag.key]" 
                     type="is-primary" closable 
-                    v-on:close="removeTag(tag)">{{ $t(tag.label) }} </b-tag>
+                    v-on:close="removeTag(tag)">{{ tag.label }} </b-tag>
               </div>
               <div class="control" v-for="filter in filters" v-if="filter.values.length" v-bind:key="filter.key + '-' + filter.mode + '-' + filter.opt">
                 <b-taglist attached>
                   <b-tag type="is-danger" v-if="filter.mode == 'exclude'"> ~ </b-tag>
-                  <b-tag type="is-dark">{{ $t(filter.label) }}</b-tag>
+                  <b-tag type="is-dark">{{ filter.label }}</b-tag>
                   <b-tag 
                     type="is-primary" 
                     closable 
@@ -194,7 +194,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
             >
               <template slot="empty">{{ $t('components.header.notFound') }}</template>
               <template slot-scope="props">
-                {{ props.option.mode == 'exclude' ? ' ~ ' : '' }} <small>{{ $t(props.option.label) }} </small> : <strong>{{ props.option.value }}</strong>
+                {{ props.option.mode == 'exclude' ? ' ~ ' : '' }} <small>{{ props.option.label }} </small> : <strong>{{ props.option.value }}</strong>
               </template>
             </b-autocomplete>
           </div>
@@ -211,7 +211,7 @@ defineComponent('furet-ui-page-multi-entries-header', {
           <b-tag v-for="tag in tags" v-bind:key="tag.key" v-bind:class="['is-small', tag.selected ? '': 'has-text-weight-bold']" >
             <a 
               v-bind:class="['furet-ui-page-multi-entries-header-toggle-tag', tag.key]" 
-              v-on:click.stop="toggleTag(tag)">{{ $t(tag.label) }}</a>
+              v-on:click.stop="toggleTag(tag)">{{ tag.label }}</a>
           </b-tag>
         </b-taglist>
       </b-collapse>
@@ -581,7 +581,7 @@ defineComponent('furet-ui-header-page', {
       <slot name="header" v-bind:data="data">
         <div class="level">
           <div class="level-left">
-            <h2 class="level-item is-size-3">{{ $t(title) }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
+            <h2 class="level-item is-size-3">{{ title }}</h2>&nbsp;<span class="level-item"><slot name="aftertitle" v-bind:data="data" /></span>
           </div>
           <div class="level-right">
             <slot name="states" v-bind:data="data" />

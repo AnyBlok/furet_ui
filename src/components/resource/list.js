@@ -93,7 +93,7 @@ defineComponent('furet-ui-resource-list', {
         return safe_eval(hidden, row, resource)
       },
       getBreadcrumbInfo() {
-        return {label: this.$t(this.resource.title), icon: "list"};
+        return {label: this.resource.title, icon: "list"};
       },
       toggleHiddenColumn (field) {
         this.$store.commit('UPDATE_RESOURCE_TOGGLE_HIDDEN_COLUMN', {id: this.id, field})

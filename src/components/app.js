@@ -78,13 +78,13 @@ defineComponent('furet-ui-appbar-header-brand', {
 defineComponent('furet-ui-appbar-header-menus', {
   template: `
     <div class="navbar-start">
-      <b-navbar-item v-for="menu in space_menus" v-on:click="selectMenu(menu)" tab="dir" :active="menu.code === space_code ? true : false">
+      <b-navbar-item v-for="menu in space_menus" v-bind:key="menu.code" v-on:click="selectMenu(menu)" tab="dir" :active="menu.code === space_code ? true : false">
           <button :class="['button', 'is-primary', menu.code === space_code ? 'is-active' : '']">
             <b-icon
               v-bind:icon="menu.icon.code"
               v-bind:type="menu.icon.type">
             </b-icon>
-            <span>{{ $t(menu.label) }}</span>
+            <span>{{ menu.label }}</span>
           </button>
       </b-navbar-item>
     </div>
@@ -211,7 +211,7 @@ defineComponent('furet-ui-menu', {
                v-bind:class="[menu.id == menuId ? 'is-active' : '']"
             >
               <span v-if="menu.label">
-                  {{ $t(menu.label) }}
+                  {{ menu.label }}
               </span>
             </a>
             <furet-ui-menu
