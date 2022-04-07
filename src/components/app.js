@@ -210,6 +210,10 @@ defineComponent('furet-ui-menu', {
             <a v-on:click="onClickMenu(menu)"
                v-bind:class="[menu.id == menuId ? 'is-active' : '']"
             >
+              <b-icon
+                v-bind:icon="menu.icon_code"
+                v-bind:type="menu.icon_type">
+              </b-icon>
               <span v-if="menu.label">
                   {{ menu.label }}
               </span>

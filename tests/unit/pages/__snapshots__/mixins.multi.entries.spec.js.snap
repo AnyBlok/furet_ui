@@ -93,7 +93,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters 1`
                   
                  ~  
                   <small>
-                    [object Promise] 
+                    State 
                   </small>
                    : 
                   <strong>
@@ -164,7 +164,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters 1`
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag1"
               >
-                [object Promise]
+                Tag 1
               </a>
             </span>
              
@@ -179,7 +179,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters 1`
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag2"
               >
-                [object Promise]
+                Tag 2
               </a>
             </span>
              
@@ -194,7 +194,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters 1`
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag3"
               >
-                [object Promise]
+                Tag 3
               </a>
             </span>
              
@@ -305,7 +305,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters an
                   
                  ~  
                   <small>
-                    [object Promise] 
+                    State 
                   </small>
                    : 
                   <strong>
@@ -376,7 +376,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters an
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag1"
               >
-                [object Promise]
+                Tag 1
               </a>
             </span>
              
@@ -391,7 +391,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters an
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag2"
               >
-                [object Promise]
+                Tag 2
               </a>
             </span>
              
@@ -406,7 +406,7 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters an
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag3"
               >
-                [object Promise]
+                Tag 3
               </a>
             </span>
              
@@ -519,7 +519,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters 1`] 
                   
                  
                   <small>
-                    [object Promise] 
+                    State 
                   </small>
                    : 
                   <strong>
@@ -590,7 +590,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters 1`] 
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag1"
               >
-                [object Promise]
+                Tag 1
               </a>
             </span>
              
@@ -605,7 +605,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters 1`] 
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag2"
               >
-                [object Promise]
+                Tag 2
               </a>
             </span>
              
@@ -620,7 +620,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters 1`] 
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag3"
               >
-                [object Promise]
+                Tag 3
               </a>
             </span>
              
@@ -733,7 +733,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters with
                   
                  
                   <small>
-                    [object Promise] 
+                    State 
                   </small>
                    : 
                   <strong>
@@ -804,7 +804,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters with
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag1"
               >
-                [object Promise]
+                Tag 1
               </a>
             </span>
              
@@ -819,7 +819,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters with
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag2"
               >
-                [object Promise]
+                Tag 2
               </a>
             </span>
              
@@ -834,7 +834,7 @@ exports[`mixin-page-multi-entries component mount with queryString: filters with
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag3"
               >
-                [object Promise]
+                Tag 3
               </a>
             </span>
              
@@ -947,7 +947,7 @@ exports[`mixin-page-multi-entries component mount with queryString: order 1`] = 
                   
                  
                   <small>
-                    [object Promise] 
+                    State 
                   </small>
                    : 
                   <strong>
@@ -1018,7 +1018,7 @@ exports[`mixin-page-multi-entries component mount with queryString: order 1`] = 
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag1"
               >
-                [object Promise]
+                Tag 1
               </a>
             </span>
              
@@ -1033,7 +1033,7 @@ exports[`mixin-page-multi-entries component mount with queryString: order 1`] = 
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag2"
               >
-                [object Promise]
+                Tag 2
               </a>
             </span>
              
@@ -1048,7 +1048,7 @@ exports[`mixin-page-multi-entries component mount with queryString: order 1`] = 
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag3"
               >
-                [object Promise]
+                Tag 3
               </a>
             </span>
              
@@ -1161,7 +1161,7 @@ exports[`mixin-page-multi-entries component mount with queryString: page 1`] = `
                   
                  
                   <small>
-                    [object Promise] 
+                    State 
                   </small>
                    : 
                   <strong>
@@ -1232,7 +1232,7 @@ exports[`mixin-page-multi-entries component mount with queryString: page 1`] = `
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag1"
               >
-                [object Promise]
+                Tag 1
               </a>
             </span>
              
@@ -1247,7 +1247,7 @@ exports[`mixin-page-multi-entries component mount with queryString: page 1`] = `
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag2"
               >
-                [object Promise]
+                Tag 2
               </a>
             </span>
              
@@ -1262,7 +1262,7 @@ exports[`mixin-page-multi-entries component mount with queryString: page 1`] = `
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag3"
               >
-                [object Promise]
+                Tag 3
               </a>
             </span>
              
@@ -1373,7 +1373,7 @@ exports[`mixin-page-multi-entries component mount with queryString: tags 1`] = `
                   
                  
                   <small>
-                    [object Promise] 
+                    State 
                   </small>
                    : 
                   <strong>
@@ -1444,7 +1444,7 @@ exports[`mixin-page-multi-entries component mount with queryString: tags 1`] = `
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag1"
               >
-                [object Promise]
+                Tag 1
               </a>
             </span>
              
@@ -1459,7 +1459,7 @@ exports[`mixin-page-multi-entries component mount with queryString: tags 1`] = `
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag2"
               >
-                [object Promise]
+                Tag 2
               </a>
             </span>
              
@@ -1474,7 +1474,7 @@ exports[`mixin-page-multi-entries component mount with queryString: tags 1`] = `
               <a
                 class="furet-ui-page-multi-entries-header-toggle-tag tag3"
               >
-                [object Promise]
+                Tag 3
               </a>
             </span>
              

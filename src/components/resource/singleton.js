@@ -108,6 +108,10 @@ defineComponent('furet-ui-resource-singleton', {
         if (this.uuid) this.getDefault();
         this.updateReadOnly(true);
       },
+      new_uuid(uuid) {
+        this.uuid = uuid;
+        this.getDefault();
+      },
       parse_query() {
         if (this.manager.query !== undefined) {
           if (this.manager.query.pks) {
@@ -119,10 +123,13 @@ defineComponent('furet-ui-resource-singleton', {
             }
           } else if (this.uuid !== null) {
             // nothing
+          } else if (this.manager.query.uuid) {
+            if (this.uuid != this.manager.query.uuid) {
+              this.new_uuid(this.manager.query.uuid);
+            }
           } else {
             // new case
-            this.uuid = uuidv1();
-            this.getDefault();
+            this.new_uuid(uuidv1());
           }
         }
       },

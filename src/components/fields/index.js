@@ -3,6 +3,7 @@ import './common';
 import './barcode';
 import './boolean';
 import './color';
+import './date';
 import './datetime';
 import './mail';
 import './integer';
@@ -19,7 +20,6 @@ import './timestamp';
 import './url';
 
 /* TO ADD
- * date
  * file
  * text
  * time

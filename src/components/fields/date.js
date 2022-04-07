@@ -7,94 +7,93 @@ This Source Code Form is subject to the terms of the Mozilla Public License,
 v. 2.0. If a copy of the MPL was not distributed with this file,You can
 obtain one at http://mozilla.org/MPL/2.0/.
 **/
-import Vue from 'vue';
-import {FormMixin, ThumbnailMixin, ListMixin} from './common';
-import {i18n} from '../i18n';
-import moment from 'moment';
+import moment from 'moment-timezone';
+import {defineComponent} from '../factory'
+import {fields} from './fields';
+import { listTemplate, thumbnailTemplate } from './common';
+import {i18n} from '../../i18n';
 
 
-export const FieldListDate = Vue.component('furet-ui-list-field-date', {
-    mixins: [ListMixin],
+defineComponent('furet-ui-common-field-date', {
+  prototype: {
     computed: {
-        value () {
-            moment.locale(i18n.locale);
-            const value = this.row[this.header.name];
-            if (value) return moment(value).format('LL');
-            return '';
-        },
-    }
+      value () {
+        moment.locale(i18n.locale);
+        const value = this.data[this.config.name];
+        const timezone = this.$store.state.global.userTimeZone;
+        if (value) return moment(value).tz(timezone).format('LL');
+        return '';
+      },
+    },
+  },
 })
 
-export const FieldThumbnailDate = Vue.component('furet-ui-thumbnail-field-date', {
-    mixins: [ThumbnailMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <span> {{value}} </span>
-            </b-field>
-        </b-tooltip>`,
-    computed: {
-        value () {
-            moment.locale(i18n.locale);
-            const value = this.data && this.data[this.name];
-            if (value) return moment(value).format('LL');
-            return '';
-        },
-    }
+defineComponent('furet-ui-list-field-date', {
+  template: listTemplate,
+  extend: ['furet-ui-list-field-common', 'furet-ui-common-field-date'],
 })
+fields.list.date = 'furet-ui-list-field-date'
 
-export const FieldFormDate = Vue.component('furet-ui-form-field-date', {
-    props: ['icon', 'min', 'max'],
-    mixins: [FormMixin],
-    template: `
-        <div v-if="this.isInvisible" />
-        <b-tooltip 
-            v-bind:label="getTooltip" 
-            v-bind:position="tooltipPosition"
-            v-bind:style="{'width': '100%'}"
-            v-else
-        >
-            <b-field 
-                v-bind:label="this.label"
-                v-bind:type="getType"
-                v-bind:message="getMessage"
-                v-bind:style="{'width': 'inherit'}"
-            >
-                <span v-if="isReadonly"> {{value}} </span>
-                <b-input 
-                    v-else 
-                    type="date"
-                    v-bind:value="data" 
-                    v-on:change="updateValue"
-                    v-bind:icon="icon"
-                    v-bind:min="min"
-                    v-bind:max="max"
-                >
-                </b-input>
-            </b-field>
-        </b-tooltip>`,
-    computed: {
-        value () {
-            moment.locale(i18n.locale);
-            const value = this.config && this.config.data && this.config.data[this.name];
-            if (value) return moment(value).format('LL');
-            return '';
-        },
-        data () {
-            const value = this.config && this.config.data && this.config.data[this.name];
-            if (value) {
-                const date = new Date(Date.parse(value)).toISOString();
-                return date.split('T')[0];
-            }
-            return '';
-        }
-    }
+defineComponent('furet-ui-thumbnail-field-date', {
+  template: thumbnailTemplate,
+  extend: ['furet-ui-thumbnail-field-common', 'furet-ui-common-field-date'],
 })
+fields.thumbnail.date = 'furet-ui-thumbnail-field-date'
+
+defineComponent('furet-ui-form-field-date', {
+  extend: ['furet-ui-form-field-common'],
+  template: `
+    <furet-ui-form-field-common-tooltip-field
+      v-bind:resource="resource"
+      v-bind:data="data"
+      v-bind:config="config"
+    >
+      <div v-if="isReadonly">
+        <component 
+          v-if="config.slot" 
+          v-bind:is="component_template"
+          v-bind:config="config"
+          v-bind:resource="resource"
+          v-bind:data="data"
+          v-bind:value="readonly_value"
+        />
+        <span v-else>{{ readonly_value }}</span>
+      </div>
+      <b-datepicker
+        v-else
+        v-bind:placeholder="config.placeholder"
+        v-bind:value="value" 
+        v-on:input="updateDateValue"
+        v-bind:editable="config.editable"
+        v-bind:show-week-number="config.showWeekNumber"
+        icon-pack="fa"
+        v-bind:icon="config.icon"
+        v-bind:key="config.key"
+        trap-focus
+      />
+    </furet-ui-form-field-common-tooltip-field>
+  `,
+  prototype: {
+    computed: {
+      readonly_value () {
+        moment.locale(i18n.locale);
+        const value = this.data[this.config.name];
+        const timezone = this.$store.state.global.userTimeZone;
+        if (value) return moment(value).tz(timezone).format('LL');
+        return '';
+      },
+      value () {
+        moment.locale(i18n.locale);
+        const value = this.data[this.config.name];
+        if (!value) return null;
+        return new Date(Date.parse(value))
+      },
+    },
+    methods: {
+      updateDateValue (value) {
+        this.updateValue(value.toISOString())
+      },
+    },
+  },
+})
+fields.form.date = 'furet-ui-form-field-date'

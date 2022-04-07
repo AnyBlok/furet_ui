@@ -13,7 +13,7 @@ exports[`furet-ui-header-page component click can_delete 1`] = `
       <h2
         class="level-item is-size-3"
       >
-        [object Promise]
+        Title
       </h2>
        
       <span
@@ -96,7 +96,7 @@ exports[`furet-ui-header-page component click can_go_to_new 1`] = `
       <h2
         class="level-item is-size-3"
       >
-        [object Promise]
+        Title
       </h2>
        
       <span
@@ -181,7 +181,7 @@ exports[`furet-ui-header-page component click can_go_to_new with multi choice 1`
       <h2
         class="level-item is-size-3"
       >
-        [object Promise]
+        Title
       </h2>
        
       <span
@@ -343,7 +343,7 @@ exports[`furet-ui-header-page component click can_modify : save 1`] = `
       <h2
         class="level-item is-size-3"
       >
-        [object Promise]
+        Title
       </h2>
        
       <span
@@ -444,7 +444,7 @@ exports[`furet-ui-header-page component click can_modify snapshot 1`] = `
       <h2
         class="level-item is-size-3"
       >
-        [object Promise]
+        Title
       </h2>
        
       <span
@@ -527,7 +527,7 @@ exports[`furet-ui-header-page component snapshot minimum 1`] = `
       <h2
         class="level-item is-size-3"
       >
-        [object Promise]
+        Title
       </h2>
        
       <span

@@ -85,7 +85,7 @@ exports[`furet-ui-page-multi-entries-header component empty filter 1`] = `
                 
                  
                 <small>
-                  [object Promise] 
+                  State 
                 </small>
                  : 
                 <strong>
@@ -198,7 +198,7 @@ exports[`furet-ui-page-multi-entries-header component filter close value 1`] = `
                 <span
                   class=""
                 >
-                  [object Promise]
+                  State
                 </span>
                  
                 <!---->
@@ -271,7 +271,7 @@ exports[`furet-ui-page-multi-entries-header component filter close value 1`] = `
                 
                  
                 <small>
-                  [object Promise] 
+                  State 
                 </small>
                  : 
                 <strong>
@@ -384,7 +384,7 @@ exports[`furet-ui-page-multi-entries-header component filter one value 1`] = `
                 <span
                   class=""
                 >
-                  [object Promise]
+                  State
                 </span>
                  
                 <!---->
@@ -457,7 +457,7 @@ exports[`furet-ui-page-multi-entries-header component filter one value 1`] = `
                 
                  
                 <small>
-                  [object Promise] 
+                  State 
                 </small>
                  : 
                 <strong>
@@ -570,7 +570,7 @@ exports[`furet-ui-page-multi-entries-header component filter two value 1`] = `
                 <span
                   class=""
                 >
-                  [object Promise]
+                  State
                 </span>
                  
                 <!---->
@@ -658,7 +658,7 @@ exports[`furet-ui-page-multi-entries-header component filter two value 1`] = `
                 
                  
                 <small>
-                  [object Promise] 
+                  State 
                 </small>
                  : 
                 <strong>
@@ -1017,7 +1017,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags no sele
             <a
               class="furet-ui-page-multi-entries-header-toggle-tag tag1"
             >
-              [object Promise]
+              Tag 1
             </a>
           </span>
            
@@ -1032,7 +1032,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags no sele
             <a
               class="furet-ui-page-multi-entries-header-toggle-tag tag2"
             >
-              [object Promise]
+              Tag 2
             </a>
           </span>
            
@@ -1096,7 +1096,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags one sel
               <span
                 class=""
               >
-                [object Promise] 
+                Tag 1 
               </span>
                
               <a
@@ -1169,7 +1169,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags one sel
             <a
               class="furet-ui-page-multi-entries-header-toggle-tag tag1"
             >
-              [object Promise]
+              Tag 1
             </a>
           </span>
            
@@ -1184,7 +1184,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags one sel
             <a
               class="furet-ui-page-multi-entries-header-toggle-tag tag2"
             >
-              [object Promise]
+              Tag 2
             </a>
           </span>
            
@@ -1248,7 +1248,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags two sel
               <span
                 class=""
               >
-                [object Promise] 
+                Tag 1 
               </span>
                
               <a
@@ -1267,7 +1267,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags two sel
               <span
                 class=""
               >
-                [object Promise] 
+                Tag 2 
               </span>
                
               <a
@@ -1339,7 +1339,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags two sel
             <a
               class="furet-ui-page-multi-entries-header-toggle-tag tag1"
             >
-              [object Promise]
+              Tag 1
             </a>
           </span>
            
@@ -1354,7 +1354,7 @@ exports[`furet-ui-page-multi-entries-header component snapshot with tags two sel
             <a
               class="furet-ui-page-multi-entries-header-toggle-tag tag2"
             >
-              [object Promise]
+              Tag 2
             </a>
           </span>
            
