@@ -97,6 +97,7 @@ defineComponent("furet-ui-list-field-many2one", {
   ],
 });
 fields.list.many2one = "furet-ui-list-field-many2one";
+fields.list.one2one = "furet-ui-list-field-many2one";
 
 defineComponent("furet-ui-thumbnail-field-many2one", {
   template: `
@@ -125,6 +126,7 @@ defineComponent("furet-ui-thumbnail-field-many2one", {
   ],
 });
 fields.thumbnail.many2one = "furet-ui-thumbnail-field-many2one";
+fields.thumbnail.one2one = "furet-ui-thumbnail-field-many2one";
 
 /**
  * furet-ui-form-field-many2one component is used to manage relationship many2one on form
@@ -231,3 +233,4 @@ defineComponent("furet-ui-form-field-many2one", {
   },
 });
 fields.form.many2one = "furet-ui-form-field-many2one";
+fields.form.one2one = "furet-ui-form-field-many2one";
