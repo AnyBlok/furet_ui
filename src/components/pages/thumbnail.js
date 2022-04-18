@@ -3,7 +3,6 @@ import { defineComponent } from '../factory';
 defineComponent('furet-ui-thumbnail', {
   template: `
     <section id="furet-ui-thumbnail">
-      <furet-ui-page-errors v-bind:errors="errors"/>
       <component
         v-bind:is="headerComponentName"
         v-bind:title="title"

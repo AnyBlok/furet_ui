@@ -16,22 +16,10 @@ exports[`Field.One2Many for Resource.Form snapshot 1`] = `
       class="box"
       style="width: 100%;"
     >
-      <div
-        class="container"
-      >
-        <!---->
-      </div>
-       
       <section
         config="[object Object]"
         id="furet-ui-list"
       >
-        <div
-          class="container"
-        >
-          <!---->
-        </div>
-         
         <header
           id="furet-ui-page-multi-entries-header"
         >

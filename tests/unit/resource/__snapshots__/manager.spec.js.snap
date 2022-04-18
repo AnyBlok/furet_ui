@@ -5,22 +5,10 @@ exports[`furet-ui-form-field-resource-manager component snapshot 1`] = `
   class="box"
   style="width: 100%;"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <section
     config="[object Object]"
     id="furet-ui-list"
   >
-    <div
-      class="container"
-    >
-      <!---->
-    </div>
-     
     <header
       id="furet-ui-page-multi-entries-header"
     >
@@ -347,21 +335,9 @@ exports[`furet-ui-resource-not-found component snapshot 1`] = `
 
 exports[`furet-ui-space-resource-manager component snapshot 1`] = `
 <div>
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <section
     id="furet-ui-list"
   >
-    <div
-      class="container"
-    >
-      <!---->
-    </div>
-     
     <header
       id="furet-ui-page-multi-entries-header"
     >

@@ -15,7 +15,6 @@ describe('mixin-page-multi-entries component', () => {
   const Component = getComponentPrototype('mixin-page-multi-entries');
   Component.template = `
     <div>
-      <furet-ui-page-errors v-bind:errors="errors"/>
       <furet-ui-page-multi-entries-header 
         can_go_to_new
         v-bind:title="title"

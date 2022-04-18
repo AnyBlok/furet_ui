@@ -5,12 +5,6 @@ exports[`furet-ui-list component snapshot minimum 1`] = `
   id="furet-ui-list"
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
   >
@@ -329,12 +323,6 @@ exports[`furet-ui-list component snapshot minimum with error 1`] = `
   id="furet-ui-list"
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
   >

@@ -5,12 +5,6 @@ exports[`furet-ui-resource-form component snapshot 1`] = `
   id="furet-ui-list"
   type="list"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
   >
@@ -329,12 +323,6 @@ exports[`furet-ui-resource-form component snapshot 2 1`] = `
   id="furet-ui-list"
   type="list"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
   >

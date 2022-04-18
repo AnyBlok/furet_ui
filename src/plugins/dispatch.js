@@ -1,5 +1,6 @@
 import _ from 'underscore';
 import moment from 'moment';
+import { DialogProgrammatic as Dialog } from 'buefy';
 
 export default {
   install(Vue, options) {
@@ -33,6 +34,18 @@ export default {
             case 'NOTIFY':
               delete data.type;
               notify(data);
+              break;
+            case 'USER_ERROR':
+              Dialog.alert({
+                title: data.title,
+                message: data.message,
+                type: 'is-danger',
+                hasIcon: true,
+                icon: 'times-circle',
+                iconPack: 'fa',
+                ariaRole: 'alertdialog',
+                ariaModal: true
+              })
               break;
             case 'RELOAD':
               location.reload();

@@ -4,12 +4,6 @@ exports[`furet-ui-resource-thumbnail component furet-ui-resource-thumbnail with 
 <section
   id="furet-ui-thumbnail"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
   >
@@ -544,12 +538,6 @@ exports[`furet-ui-resource-thumbnail component furet-ui-resource-thumbnail witho
 <section
   id="furet-ui-thumbnail"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
   >

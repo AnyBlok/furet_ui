@@ -4,12 +4,6 @@ exports[`furet-ui-resource-list component furet-ui-resource-list snapshot with d
 <section
   id="furet-ui-list"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
   >
@@ -519,12 +513,6 @@ exports[`furet-ui-resource-list component furet-ui-resource-list snapshot withou
 <section
   id="furet-ui-list"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
   >
@@ -842,12 +830,6 @@ exports[`furet-ui-resource-list component furet-ui-resource-list snapshot withou
 <section
   id="furet-ui-list"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
   >

@@ -79,7 +79,6 @@ defineComponent('furet-ui-resource-manager', {
         manager: {
           children_is_modified: false,
         },
-        errors: [],
       };
     },
     computed: {
@@ -110,7 +109,6 @@ defineComponent('furet-ui-resource-manager', {
 defineComponent('furet-ui-space-resource-manager', {
   template: `
     <div>
-      <furet-ui-page-errors v-bind:errors="errors"/>
       <component 
         ref="resource"
         v-bind:is="resourceComponents" 
@@ -151,7 +149,6 @@ defineComponent('furet-ui-space-resource-manager', {
       createData (data) {
         const query = Object.assign({}, this.$route.query);
         data.changes = this.$store.state.data.changes;
-        this.errors = [];
         axios.post(`/furet-ui/resource/${this.id}/crud`, data)
           .then((response) => {
             this.$store.commit('CLEAR_CHANGE')
@@ -159,22 +156,18 @@ defineComponent('furet-ui-space-resource-manager', {
             this.updateQueryString(query)
           })
           .catch((error) => {
-            this.errors = error.response.data.errors;
           });
       },
       updateData (data) {
         data.changes = this.$store.state.data.changes;
-        this.errors = [];
         axios.patch(`/furet-ui/resource/${this.id}/crud`, data)
           .then(() => {
             this.$refs.resource.saved();
           })
           .catch((error) => {
-            this.errors = error.response.data.errors;
           });
       },
       deleteData (data) {
-        this.errors = [];
         axios.delete(`/furet-ui/resource/${this.id}/crud`, {params: data})
           .then(() => {
             this.$store.commit('CLEAR_CHANGE');
@@ -182,7 +175,6 @@ defineComponent('furet-ui-space-resource-manager', {
             this.goToPreviousBreadcrumbElement();
           })
           .catch((error) => {
-            this.errors = error.response.data.errors;
           });
       },
       clearChange () {
@@ -241,7 +233,6 @@ defineComponent('furet-ui-space-resource-manager', {
 defineComponent("furet-ui-form-field-resource-manager", {
   template: `
     <div v-bind:style="{width: '100%'}" class="box">
-        <furet-ui-page-errors v-bind:errors="errors"/>
         <component 
           ref="resource"
           v-bind:is="resourceComponents" 

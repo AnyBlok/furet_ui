@@ -25,7 +25,7 @@ export const startFuretUI = (elementId, routes) => {
   const router = createRouter(store, routes);
 
   sync(store, router); // use vue-router with vuex
-    Vue.use(PluginDispatch, {router, store, i18n});
+  Vue.use(PluginDispatch, {router, store, i18n});
   new Vue({
     // el: '#furet-ui',
     template: `

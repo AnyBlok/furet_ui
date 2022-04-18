@@ -10,7 +10,6 @@ defineComponent('furet-ui-resource-form', {
   template : `
     <section>
       <b-loading v-bind:active.sync="loading"></b-loading>
-      <furet-ui-page-errors v-bind:errors="errors"/>
       <component
         v-bind:is="headerComponentName"
         name="furet-ui-page"
@@ -62,7 +61,6 @@ defineComponent('furet-ui-resource-form', {
     data() {
       return {
         loading: false,
-        errors: [],
         readonly: true,  // RO, RW
         pks: {},
         uuid: null,
@@ -135,7 +133,6 @@ defineComponent('furet-ui-resource-form', {
               })
           })
         }
-        this.errors = [];
         this.loading = true;
         const params = {data: {uuid: this.uuid}}
         axios.post(`/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/default_values`, params)
@@ -145,7 +142,6 @@ defineComponent('furet-ui-resource-form', {
           })
           .catch((error) => {
             this.loading = false;
-            this.errors = error.response.data.errors;
           });
       },
       deleteEntry () {
@@ -190,14 +186,12 @@ defineComponent('furet-ui-resource-form', {
         _.each(_.keys(this.pks), pk => {
             params[`filter[${pk}][eq]`] = this.pks[pk];
         })
-        this.errors = [];
         axios.get(`/furet-ui/resource/${this.id}/crud`, { params })
           .then((response) => {
             this.$dispatchAll(response.data.data);
             this.loading = false;
           })
           .catch((error) => {
-            this.errors = error.response.data.errors;
             this.loading = false;
           });
       },
@@ -292,7 +286,6 @@ defineComponent('furet-ui-form-button', {
         return readonlyParams ? true: false;
       },
       server_call () {
-        this.currentResource.errors = [];
         this.currentResource.loading = true;
         const params = {pks: this.resource.pks}
         axios.post(`/furet-ui/resource/${this.resource.id}/model/${this.resource.model}/call/${this.config.call}`, params)
@@ -306,7 +299,6 @@ defineComponent('furet-ui-form-button', {
           })
           .catch((error) => {
             this.currentResource.loading = false;
-            this.currentResource.errors = error.response.data.errors;
           });
       },
     },

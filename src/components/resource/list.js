@@ -137,7 +137,6 @@ defineComponent('furet-ui-list-button', {
         }
       },
       server_call () {
-        this.$parent.$parent.errors = [];
         this.$parent.$parent.loading = true;
         const {url, params} = this.get_call_information();
         axios.post(url, params)
@@ -151,7 +150,6 @@ defineComponent('furet-ui-list-button', {
           })
           .catch((error) => {
             this.$parent.$parent.loading = false;
-            this.$parent.$parent.errors = error.response.data.errors;
           });
       },
     },

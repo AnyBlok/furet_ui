@@ -203,12 +203,6 @@ exports[`furet-ui-resource-singleton component furet-ui-resource-singleton: snap
     />
   </div>
    
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="header_page"
     name="furet-ui-page"

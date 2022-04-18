@@ -4,12 +4,6 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters 1`
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -216,12 +210,6 @@ exports[`mixin-page-multi-entries component mount with queryString: ~ filters 1`
 
 exports[`mixin-page-multi-entries component mount with queryString: ~ filters and opt 1`] = `
 <div>
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -430,12 +418,6 @@ exports[`mixin-page-multi-entries component mount with queryString: filters 1`] 
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -644,12 +626,6 @@ exports[`mixin-page-multi-entries component mount with queryString: filters with
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -858,12 +834,6 @@ exports[`mixin-page-multi-entries component mount with queryString: order 1`] = 
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -1072,12 +1042,6 @@ exports[`mixin-page-multi-entries component mount with queryString: page 1`] = `
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -1284,12 +1248,6 @@ exports[`mixin-page-multi-entries component mount with queryString: page 1`] = `
 
 exports[`mixin-page-multi-entries component mount with queryString: tags 1`] = `
 <div>
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -1498,12 +1456,6 @@ exports[`mixin-page-multi-entries component onSort 1`] = `
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -1596,12 +1548,6 @@ exports[`mixin-page-multi-entries component onSort multi 1`] = `
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -1694,12 +1640,6 @@ exports[`mixin-page-multi-entries component onSort remove 1`] = `
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -1792,12 +1732,6 @@ exports[`mixin-page-multi-entries component snapshot minimum 1`] = `
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"
@@ -1890,12 +1824,6 @@ exports[`mixin-page-multi-entries component snapshot minimum with error 1`] = `
 <div
   subtitle="Sub Title"
 >
-  <div
-    class="container"
-  >
-    <!---->
-  </div>
-   
   <header
     id="furet-ui-page-multi-entries-header"
     total="0"

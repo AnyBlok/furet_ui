@@ -61,7 +61,6 @@ defineComponent('furet-ui-resource-singleton', {
   template : `
     <section>
       <b-loading v-bind:active.sync="loading"></b-loading>
-      <furet-ui-page-errors v-bind:errors="errors"/>
       <furet-ui-header-page-singleton
         name="furet-ui-page"
         v-bind:title="resource.title"
