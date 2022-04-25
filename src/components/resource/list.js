@@ -148,7 +148,7 @@ defineComponent('furet-ui-list-button', {
               this.$parent.$parent.loadAsyncData()
             }
           })
-          .catch((error) => {
+          .catch(() => {
             this.$parent.$parent.loading = false;
           });
       },

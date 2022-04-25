@@ -31,6 +31,9 @@ export default {
               if (data.name) router.push({name: data.name, params: data.params, query: data.query});
               else if (data.path) router.push({path: data.path});
               break;
+            case 'EXPIRED_SESSION':
+              router.push({path: '/login', query:{redirect: router.currentRoute.fullPath}});
+              break;
             case 'NOTIFY':
               delete data.type;
               notify(data);
@@ -40,11 +43,10 @@ export default {
                 title: data.title,
                 message: data.message,
                 type: 'is-danger',
-                hasIcon: true,
-                icon: 'times-circle',
                 iconPack: 'fa',
                 ariaRole: 'alertdialog',
-                ariaModal: true
+                ariaModal: true,
+                onConfirm: () => Vue.prototype.$dispatchAll(data.datas || []),
               })
               break;
             case 'RELOAD':

@@ -140,7 +140,7 @@ defineComponent('furet-ui-resource-form', {
             this.$dispatchAll(response.data);
             this.loading = false;
           })
-          .catch((error) => {
+          .catch(() => {
             this.loading = false;
           });
       },
@@ -191,7 +191,7 @@ defineComponent('furet-ui-resource-form', {
             this.$dispatchAll(response.data.data);
             this.loading = false;
           })
-          .catch((error) => {
+          .catch(() => {
             this.loading = false;
           });
       },
@@ -297,7 +297,7 @@ defineComponent('furet-ui-form-button', {
               this.currentResource.loadAsyncData()
             }
           })
-          .catch((error) => {
+          .catch(() => {
             this.currentResource.loading = false;
           });
       },

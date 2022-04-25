@@ -125,7 +125,7 @@ defineComponent('furet-ui-thumbnail-footer-button', {
               this.$parent.$parent.$parent.loadAsyncData()
             }
           })
-          .catch((error) => {
+          .catch(() => {
             this.$parent.$parent.$parent.loading = false;
           });
       },

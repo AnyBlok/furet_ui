@@ -155,7 +155,7 @@ defineComponent('furet-ui-space-resource-manager', {
             query.pks = JSON.stringify(response.data.pks);
             this.updateQueryString(query)
           })
-          .catch((error) => {
+          .catch(() => {
           });
       },
       updateData (data) {
@@ -164,7 +164,7 @@ defineComponent('furet-ui-space-resource-manager', {
           .then(() => {
             this.$refs.resource.saved();
           })
-          .catch((error) => {
+          .catch(() => {
           });
       },
       deleteData (data) {
@@ -174,7 +174,7 @@ defineComponent('furet-ui-space-resource-manager', {
             this.$store.commit('DELETE_DATA', data);
             this.goToPreviousBreadcrumbElement();
           })
-          .catch((error) => {
+          .catch(() => {
           });
       },
       clearChange () {

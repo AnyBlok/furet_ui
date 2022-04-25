@@ -120,7 +120,7 @@ defineComponent('furet-ui-resource-polymorphic-form', {
             this.$dispatchAll(response.data.data);
             this.loading = false;
           })
-          .catch((error) => {
+          .catch(() => {
             this.loading = false;
           });
       },
