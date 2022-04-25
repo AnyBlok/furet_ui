@@ -32,7 +32,16 @@ export default {
               else if (data.path) router.push({path: data.path});
               break;
             case 'EXPIRED_SESSION':
+              if (router.currentRoute.name === 'login') break;
               router.push({path: '/login', query:{redirect: router.currentRoute.fullPath}});
+              Dialog.alert({
+                title: 'Expired session',
+                message: 'The session is expired, login again',
+                type: 'is-danger',
+                iconPack: 'fa',
+                ariaRole: 'alertdialog',
+                ariaModal: true,
+              })
               break;
             case 'NOTIFY':
               delete data.type;
