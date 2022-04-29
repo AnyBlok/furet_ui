@@ -74,8 +74,8 @@ defineComponent('furet-ui-resource-polymorphic-form', {
       goToList () {
         this.$emit('go-to-list');
       },
-      createData (data) {
-        this.$emit('create-data', data);
+      createData (data, on_create_success) {
+        this.$emit('create-data', data, on_create_success);
       },
       updateData (data) {
         this.$emit('update-data', data);

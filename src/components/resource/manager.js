@@ -146,14 +146,19 @@ defineComponent('furet-ui-space-resource-manager', {
         });
         this.$store.commit("CLEAR_CHANGE");
       },
-      createData (data) {
+      createData (data, on_create_success) {
         const query = Object.assign({}, this.$route.query);
         data.changes = this.$store.state.data.changes;
         axios.post(`/furet-ui/resource/${this.id}/crud`, data)
           .then((response) => {
-            this.$store.commit('CLEAR_CHANGE')
-            query.pks = JSON.stringify(response.data.pks);
-            this.updateQueryString(query)
+            if (response.data.pks) {
+                on_create_success();
+                this.$store.commit('CLEAR_CHANGE');
+                query.pks = JSON.stringify(response.data.pks);
+                this.updateQueryString(query);
+            } else {
+                this.$dispatchAll(response.data.data);
+            }
           })
           .catch(() => {
           });
@@ -161,18 +166,26 @@ defineComponent('furet-ui-space-resource-manager', {
       updateData (data) {
         data.changes = this.$store.state.data.changes;
         axios.patch(`/furet-ui/resource/${this.id}/crud`, data)
-          .then(() => {
-            this.$refs.resource.saved();
+          .then((response) => {
+            if (response.data.pks) {
+              this.$refs.resource.saved();
+            } else {
+              this.$dispatchAll(response.data.data);
+            }
           })
           .catch(() => {
           });
       },
       deleteData (data) {
         axios.delete(`/furet-ui/resource/${this.id}/crud`, {params: data})
-          .then(() => {
-            this.$store.commit('CLEAR_CHANGE');
-            this.$store.commit('DELETE_DATA', data);
-            this.goToPreviousBreadcrumbElement();
+          .then((response) => {
+            if (response.data.pks) {
+              this.$store.commit('CLEAR_CHANGE');
+              this.$store.commit('DELETE_DATA', data);
+              this.goToPreviousBreadcrumbElement();
+            } else {
+              this.$dispatchAll(response.data.data);
+            }
           })
           .catch(() => {
           });
@@ -295,7 +308,8 @@ defineComponent("furet-ui-form-field-resource-manager", {
         this.$refs.resource.mode = "multi";
         this.clearChange();
       },
-      createData(data) {
+      createData(data, on_create_success) {
+        on_create_success()
         data.changes = this.changes;
         data.changes[data["model"]]["new"][data["uuid"]] = Object.assign(
           data.changes[data["model"]]["new"][data["uuid"]],

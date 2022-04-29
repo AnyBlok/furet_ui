@@ -151,14 +151,16 @@ defineComponent('furet-ui-resource-form', {
           pks: Object.assign({}, this.pks),
         })
       },
+      on_create_success () {
+        this.uuid = null;
+      },
       save () {
         this.$emit('modify-state', false);
         if (this.uuid) {
           this.$emit('create-data', {
             model: this.resource.model,
             uuid: this.uuid,
-          })
-          this.uuid = null;
+          }, this.on_create_success)
         } else {
           this.$emit('update-data', {
             model: this.resource.model,
